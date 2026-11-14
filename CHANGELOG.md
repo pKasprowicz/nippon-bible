@@ -4,6 +4,15 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+- Branch protection ruleset for `main` and `develop` (`.github/rulesets/protect-main-develop.json`)
+- PR checks workflow: git flow branch policy and a content check (`scripts/check-content.mjs`)
+
+### Changed
+- Releases now go through pull requests (see `CONTRIBUTING.md`)
+
 ## [1.1.0] - 2026-11-14
 
 ### Added

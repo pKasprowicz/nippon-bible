@@ -13,22 +13,38 @@ This repository uses **git flow**.
 | `hotfix/<x.y.z>` | Urgent fix to the live version | `main` | `main` **and** `develop` |
 
 Use `--no-ff` merges (or pull requests) so each feature, release and hotfix
-stays visible in the history. With the [git-flow](https://github.com/nvie/gitflow)
-extension installed, run `git flow init -d` once; the defaults match this table
-(version tag prefix `v`).
+stays visible in the history. Because `main` and `develop` are protected, all merges
+into them go through pull requests (see below).
+
+## Branch protection
+
+`main` and `develop` are protected by the ruleset in
+[`.github/rulesets/protect-main-develop.json`](.github/rulesets/protect-main-develop.json):
+
+- no direct pushes: every change arrives through a **pull request**, merged with a **merge commit**
+- no force pushes, and the branches can't be deleted
+- the **PR checks** workflow must pass:
+  - **Git flow branch policy**: `main` accepts only `release/x.y.z` and `hotfix/x.y.z`;
+    `develop` accepts `feature/*`, `release/*`, `hotfix/*` and `main` (the merge-back after a release)
+  - **Content check**: runs `node scripts/check-content.mjs` (lesson registry, relative links, drill data, VERSION ↔ CHANGELOG)
+
+No approving review is required, so the owner can merge their own PRs.
+
+To apply or update the ruleset: **Settings → Rules → Rulesets → New ruleset → Import a ruleset**,
+then choose the JSON file.
 
 ## Making a release
 
-1. `git flow release start 1.1.0` (or `git checkout -b release/1.1.0 develop`)
-2. Update `VERSION` and add a `## [1.1.0] - YYYY-MM-DD` section to `CHANGELOG.md`
-3. `git flow release finish 1.1.0` merges into `main`, tags `v1.1.0` and merges back into `develop`
-4. `git push origin main develop --follow-tags`
+1. Create `release/1.2.0` from `develop`.
+2. Update `VERSION` and rename `## [Unreleased]` to `## [1.2.0] - YYYY-MM-DD` in `CHANGELOG.md`.
+3. Open a PR **`release/1.2.0` → `main`** and merge it once the checks pass. This deploys the website.
+4. Open a PR **`main` → `develop`** and merge it, so `develop` gets the release commit.
+5. Tag the release: push `v1.2.0` on the `main` merge commit, or run the
+   **Publish GitHub release** workflow by hand (Actions → Run workflow) with version `1.2.0`
+   and target `main`. Either way, `.github/workflows/release.yml` creates the GitHub release
+   from the matching `CHANGELOG.md` section.
 
-Pushing the tag runs `.github/workflows/release.yml`, which creates the GitHub
-release from the matching `CHANGELOG.md` section. If you can't push tags, run the
-**Publish GitHub release** workflow by hand (Actions → Run workflow) with the
-version number. It creates the `vX.Y.Z` tag on `main` and the release. Pushing `main` runs
-`.github/workflows/pages.yml`, which deploys the website.
+Hotfixes work the same way, starting from `main` as `hotfix/1.2.1`.
 
 Versions follow [Semantic Versioning](https://semver.org/): a new lesson or site
 feature is a minor bump, and corrections are a patch bump.
