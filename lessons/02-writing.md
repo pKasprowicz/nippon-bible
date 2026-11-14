@@ -5,10 +5,12 @@ to find the exit, the toilet, the right train and the price.
 
 ## 1. Three scripts in one sentence
 
-```
-東京駅  へ  行き ます。   → "I go to Tokyo Station."
-kanji  hira kanji+hira
-```
+**東京駅へ行きます。** · *Tōkyō-eki e ikimasu.* · "I'm going to Tokyo Station."
+
+| 東京駅 | へ | 行きます。 |
+|---|---|---|
+| Tōkyō-eki · Tokyo Station | e · to | ikimasu · go |
+| **kanji** | **hiragana** | **kanji + hiragana** |
 
 | Script | Looks | Used for | Learn it? |
 |--------|-------|----------|-----------|
