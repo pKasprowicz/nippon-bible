@@ -4,6 +4,18 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.1.0] - 2026-11-14
+
+### Added
+- Lesson 6, Subways in Tokyo & Osaka: line codes, platform displays, exits, fares and passes, transfer gates, through-running, Umeda/Namba name confusion, airport links
+- Lesson 7, Customs & etiquette: meeting people, visiting homes, table manners, streets, trains, temples and shrines, onsen, toilets and shops, plus a do's & don'ts list
+- Lesson 8, Tourist pitfalls: plugs, banned medicines, driving permits, peak seasons, cash, currency conversion, cover charges, touts, last trains, Shinkansen luggage, restaurants, crowds and safety
+- Eight new self-test questions on getting around and customs
+
+### Changed
+- Cheat sheet & self-test is now Lesson 9 (old `#/06-cheat-sheet` links redirect)
+- Lesson 5's short etiquette list is replaced by links to the new lessons
+
 ## [1.0.0] - 2026-11-14
 
 First public release of the Japanese survival course for European travellers.
@@ -26,4 +38,5 @@ First public release of the Japanese survival course for European travellers.
 - Git flow branching model (see `CONTRIBUTING.md`)
 - GitHub Actions: Pages deployment from `main`, and a GitHub release for each `v*` tag
 
+[1.1.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.1.0
 [1.0.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.0.0

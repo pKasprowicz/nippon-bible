@@ -25,7 +25,9 @@ extension installed, run `git flow init -d` once; the defaults match this table
 4. `git push origin main develop --follow-tags`
 
 Pushing the tag runs `.github/workflows/release.yml`, which creates the GitHub
-release from the matching `CHANGELOG.md` section. Pushing `main` runs
+release from the matching `CHANGELOG.md` section. If you can't push tags, run the
+**Publish GitHub release** workflow by hand (Actions → Run workflow) with the
+version number. It creates the `vX.Y.Z` tag on `main` and the release. Pushing `main` runs
 `.github/workflows/pages.yml`, which deploys the website.
 
 Versions follow [Semantic Versioning](https://semver.org/): a new lesson or site
