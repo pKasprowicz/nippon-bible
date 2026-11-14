@@ -3,6 +3,15 @@ name: Publish GitHub release
 on:
   push:
     tags: ['v*.*.*']
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Version to release, without the "v" (e.g. 1.0.0)
+        required: true
+      target:
+        description: Branch or commit the tag points to (if the tag doesn't exist yet)
+        required: true
+        default: main
 
 permissions:
   contents: write
@@ -10,11 +19,15 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
+    env:
+      TAG: ${{ github.event_name == 'workflow_dispatch' && format('v{0}', inputs.version) || github.ref_name }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.target || github.ref }}
       - name: Extract release notes from CHANGELOG.md
         run: |
-          version="${GITHUB_REF_NAME#v}"
+          version="${TAG#v}"
           awk -v v="$version" '
             $0 ~ "^## \\[" v "\\]" { found=1; next }
             found && /^## \[/ { exit }
@@ -25,11 +38,11 @@ jobs:
             exit 1
           fi
           cat notes.md
-      - name: Create release
+      - name: Create release (and tag, when started by hand)
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "$GITHUB_REF_NAME" \
-            --title "Nippon Bible $GITHUB_REF_NAME" \
+          gh release create "$TAG" \
+            --title "Nippon Bible $TAG" \
             --notes-file notes.md \
-            --verify-tag
+            --target "$(git rev-parse HEAD)"
