@@ -7,8 +7,13 @@
     { id: '03-core-words', title: 'Core words' },
     { id: '04-phrases', title: 'Phrases & patterns' },
     { id: '05-situations', title: 'Situations' },
-    { id: '06-cheat-sheet', title: 'Cheat sheet & self-test' }
+    { id: '06-subways', title: 'Subways: Tokyo & Osaka' },
+    { id: '07-etiquette', title: 'Customs & etiquette' },
+    { id: '08-pitfalls', title: 'Tourist pitfalls' },
+    { id: '09-cheat-sheet', title: 'Cheat sheet & self-test' }
   ];
+  // Old lesson ids (kept so bookmarks and saved progress keep working)
+  var ALIASES = { '06-cheat-sheet': '09-cheat-sheet' };
   var JA_RUN = /[々぀-ヿ㐀-䶿一-鿿～〜]+(?:[、。\s]?[々぀-ヿ㐀-䶿一-鿿～〜]+)*/g;
 
   var content = document.getElementById('content');
@@ -26,6 +31,9 @@
     try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) { /* ignore */ }
   }
   var done = load('nb-done', {});
+  Object.keys(ALIASES).forEach(function (old) {
+    if (done[old]) { done[ALIASES[old]] = true; delete done[old]; save('nb-done', done); }
+  });
 
   /* ---------- helpers ---------- */
   function el(tag, attrs, children) {
@@ -321,6 +329,7 @@
   /* ---------- router ---------- */
   function route() {
     var r = location.hash.replace(/^#\/?/, '');
+    if (ALIASES[r]) { location.replace('#/' + ALIASES[r]); return; }
     if (r && r !== 'drill' && !LESSONS.some(function (l) { return l.id === r; })) r = '';
     setCurrent(r);
     if ('speechSynthesis' in window) speechSynthesis.cancel();

@@ -1,10 +1,11 @@
 # Nippon Bible: Japanese Survival Course for European Travellers
 
 A short beginner course for Europeans visiting Japan. It covers enough to
-**pronounce** Japanese, handle **everyday situations** politely, and **recognise**
-the signs, menus and labels you'll see.
+**pronounce** Japanese, handle **everyday situations** politely, **recognise**
+the signs, menus and labels you'll see, find your way on the **subway**, and
+avoid the usual **etiquette mistakes and tourist pitfalls**.
 
-No previous knowledge needed. Plan on about **7 short sessions** of 30–45 minutes each.
+No previous knowledge needed. Plan on about **9 short sessions** of 30–45 minutes each.
 
 **Read it online:** <https://pkasprowicz.github.io/nippon-bible/>. The website
 adds tap-to-listen audio for all Japanese text, progress tracking and a
@@ -19,9 +20,12 @@ flashcard drill for kana and sign kanji.
 | 3 | [Core words](lessons/03-core-words.md) | Use numbers, prices, counting, places and question words |
 | 4 | [Phrases & sentence patterns](lessons/04-phrases.md) | Build polite requests and questions from 8 templates |
 | 5 | [Situations](lessons/05-situations.md) | Get through trains, restaurants, shops, hotels, emergencies |
-| 6 | [Cheat sheet & self-test](lessons/06-cheat-sheet.md) | Revise in 5 minutes; check what you've learned |
+| 6 | [Subways in Tokyo & Osaka](lessons/06-subways.md) | Read line codes, platform displays and exits; pick the right pass |
+| 7 | [Customs, etiquette, do's & don'ts](lessons/07-etiquette.md) | Behave well in homes, restaurants, trains, temples and onsen |
+| 8 | [Tourist pitfalls](lessons/08-pitfalls.md) | Avoid the usual traps with money, luggage, food, crowds and paperwork |
+| 9 | [Cheat sheet & self-test](lessons/09-cheat-sheet.md) | Revise in 5 minutes; check what you've learned |
 
-## Suggested 7-day plan
+## Suggested 9-day plan
 
 | Day | Study | Practice |
 |-----|-------|----------|
@@ -31,7 +35,9 @@ flashcard drill for kana and sign kanji.
 | 4 | Lesson 3 | Say 10 random prices aloud (e.g. ¥1,380, ¥12,000) |
 | 5 | Lesson 4 | Make 3 sentences from each template |
 | 6 | Lesson 5 | Role-play the restaurant and train dialogues |
-| 7 | Lesson 6 | Take the self-test; save the cheat sheet on your phone |
+| 7 | Lesson 6 | Plan a route from your hotel to 3 sights; note the line codes and exit numbers |
+| 8 | Lessons 7 & 8 | Make your own packing and do's-and-don'ts checklist |
+| 9 | Lesson 9 | Take the self-test; save the cheat sheet on your phone |
 
 ## Conventions
 

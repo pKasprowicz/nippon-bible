@@ -157,15 +157,10 @@ To make it easier, show your map: *Chizu de oshiete kudasai.* (Please show me on
 Lost property often gets returned. Ask at the station office or the nearest
 **kōban** (交番, police box).
 
-## 9. Etiquette in one list
+## 9. More on getting around and behaving well
 
-- **Bowing**: a small nod of the head is enough as a visitor. Don't overdo it.
-- **Shoes off** wherever there's a raised step at the entrance, or a slipper rack.
-- **Quiet on public transport**: no phone calls, and keep your voice low.
-- **Escalators**: stand on the **left** in Tokyo and on the **right** in Osaka. Many stations now ask you to stand on both sides and not walk. Watch what others do.
-- **Don't eat while walking** in most places. Eat by the stall or konbini.
-- **Cash** is still common in small places. Konbini ATMs (7-Eleven, etc.) accept foreign cards.
-- **Business cards & money**: give and take them with **both hands**.
-- **Blowing your nose** at the table is impolite. Step away.
+- Subways in Tokyo and Osaka: [Lesson 6](06-subways.md)
+- Customs, etiquette, do's and don'ts: [Lesson 7](07-etiquette.md)
+- Tourist pitfalls and how to avoid them: [Lesson 8](08-pitfalls.md)
 
-➡️ Next: [Lesson 6: Cheat sheet & self-test](06-cheat-sheet.md)
+➡️ Next: [Lesson 6: Subways in Tokyo & Osaka](06-subways.md)

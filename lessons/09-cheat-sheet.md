@@ -1,4 +1,4 @@
-# Lesson 6: Cheat Sheet & Self-Test
+# Lesson 9: Cheat Sheet & Self-Test
 
 ## Cheat sheet (screenshot this)
 
@@ -38,6 +38,11 @@ double consonants = short pause (*kippu*) · keep every beat even, no stress.
 
 **Emergency:** 110 police · 119 ambulance · *tasukete!* = help!
 
+**Subway:** match the line **colour + letter** and station code (G09) · 〜行 = bound for · choose your **exit number** before leaving the platform · short on fare? use the 精算機 · last trains around midnight.
+
+**Never:** tip · make phone calls on trains · eat while walking · stand chopsticks in rice · wear shoes on tatami · enter the onsen unwashed.
+**Always:** carry cash, a handkerchief and your passport · pay in **yen** on card terminals · queue · use both hands to give and receive.
+
 ---
 
 ## Self-test
@@ -70,6 +75,16 @@ Try every question before opening the answers.
 19. What do you say before and after a meal?
 20. Should you leave a tip in a restaurant?
 
+### D. Getting around & customs
+21. The platform display says **新宿行**. What does it tell you?
+22. You're in Tokyo and switch from a Tokyo Metro line to a Toei line. Which gate do you use?
+23. Your IC card balance is too low at the exit gate. What do you do?
+24. In Osaka, are Umeda and JR Ōsaka station in different parts of the city?
+25. You're visiting a Japanese home. Name two things to do at the entrance.
+26. The card terminal asks whether to pay in EUR or JPY. Which do you choose?
+27. An izakaya bill includes a small starter you didn't order. Is it a scam?
+28. Name two of the three things to do before getting into an onsen bath.
+
 <details>
 <summary><strong>Answers</strong></summary>
 
@@ -93,8 +108,16 @@ Try every question before opening the answers.
 18. *Kyōto eki made onegaishimasu.*
 19. *Itadakimasu* (before) · *Gochisōsama deshita* (after).
 20. **No.** Tipping isn't done in Japan.
+21. The train is **bound for Shinjuku** (行 = *-iki*, destination).
+22. The **transfer gate** (乗換改札, often marked in orange). Don't use a normal exit, or you'll pay twice.
+23. Top it up at the **精算機** (fare adjustment machine) or go to the staffed window.
+24. **No.** They're the same area under different names, linked underground.
+25. Take off your shoes (pointing them to the door), say *o-jama shimasu*, hand over a small gift with both hands.
+26. **JPY (yen).** The euro conversion rate is usually worse.
+27. **No.** It's *otōshi*, a normal cover charge.
+28. Undress fully (no swimwear), **wash before getting in**, keep your towel out of the water.
 
-**Score:** 16+ you're ready · 10–15 re-read lessons 2 and 4 · under 10 do the 7-day plan again.
+**Score:** 22+ you're ready · 14–21 re-read the lessons where you missed answers · under 14 follow the study plan again.
 </details>
 
 ---
