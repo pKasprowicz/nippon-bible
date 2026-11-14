@@ -1,0 +1,38 @@
+name: PR checks
+
+on:
+  pull_request:
+    branches: [main, develop]
+
+permissions:
+  contents: read
+
+jobs:
+  branch-policy:
+    name: Git flow branch policy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check source branch is allowed for the target
+        env:
+          HEAD: ${{ github.head_ref }}
+          BASE: ${{ github.base_ref }}
+        run: |
+          echo "PR: $HEAD -> $BASE"
+          case "$BASE" in
+            main)    pattern='^(release|hotfix)/[0-9]+\.[0-9]+\.[0-9]+$' ;;
+            develop) pattern='^(feature/.+|release/[0-9]+\.[0-9]+\.[0-9]+|hotfix/[0-9]+\.[0-9]+\.[0-9]+|main)$' ;;
+          esac
+          if ! [[ "$HEAD" =~ $pattern ]]; then
+            echo "::error::Branch '$HEAD' may not be merged into '$BASE' under git flow (see CONTRIBUTING.md)."
+            exit 1
+          fi
+
+  content:
+    name: Content check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/check-content.mjs
