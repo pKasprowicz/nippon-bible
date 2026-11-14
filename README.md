@@ -6,6 +6,10 @@ the signs, menus and labels you'll see.
 
 No previous knowledge needed. Plan on about **7 short sessions** of 30–45 minutes each.
 
+**Read it online:** <https://pkasprowicz.github.io/nippon-bible/>. The website
+adds tap-to-listen audio for all Japanese text, progress tracking and a
+flashcard drill for kana and sign kanji.
+
 ## Lessons
 
 | # | Lesson | You will be able to… |
