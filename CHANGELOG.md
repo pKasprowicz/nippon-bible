@@ -4,7 +4,7 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [1.4.0] - 2026-11-15
 
 ### Added
 - **Hiragana course**, a new section of the site: a start page, 8 units, real-world reading and a final test, and a daily review page
@@ -71,6 +71,7 @@ First public release of the Japanese survival course for European travellers.
 - Git flow branching model (see `CONTRIBUTING.md`)
 - GitHub Actions: Pages deployment from `main`, and a GitHub release for each `v*` tag
 
+[1.4.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.4.0
 [1.3.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.3.0
 [1.2.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.2.0
 [1.1.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.1.0
