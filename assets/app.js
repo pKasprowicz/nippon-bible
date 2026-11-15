@@ -1,18 +1,39 @@
 (function () {
   'use strict';
 
-  var LESSONS = [
-    { id: '01-pronunciation', title: 'Pronunciation' },
-    { id: '02-writing', title: 'Writing & recognition' },
-    { id: '03-core-words', title: 'Core words' },
-    { id: '04-phrases', title: 'Phrases & patterns' },
-    { id: '05-situations', title: 'Situations' },
-    { id: '06-subways', title: 'Subways: Tokyo & Osaka' },
-    { id: '07-etiquette', title: 'Customs & etiquette' },
-    { id: '08-pitfalls', title: 'Tourist pitfalls' },
-    { id: '09-food', title: 'Food & dishes' },
-    { id: '10-cheat-sheet', title: 'Cheat sheet & self-test' }
+  var GROUPS = [
+    { id: 'course', title: 'Survival course' },
+    { id: 'hiragana', title: 'Hiragana course' }
   ];
+  var LESSONS = [
+    { id: '01-pronunciation', file: 'lessons/01-pronunciation.md', group: 'course', title: 'Pronunciation' },
+    { id: '02-writing', file: 'lessons/02-writing.md', group: 'course', title: 'Writing & recognition' },
+    { id: '03-core-words', file: 'lessons/03-core-words.md', group: 'course', title: 'Core words' },
+    { id: '04-phrases', file: 'lessons/04-phrases.md', group: 'course', title: 'Phrases & patterns' },
+    { id: '05-situations', file: 'lessons/05-situations.md', group: 'course', title: 'Situations' },
+    { id: '06-subways', file: 'lessons/06-subways.md', group: 'course', title: 'Subways: Tokyo & Osaka' },
+    { id: '07-etiquette', file: 'lessons/07-etiquette.md', group: 'course', title: 'Customs & etiquette' },
+    { id: '08-pitfalls', file: 'lessons/08-pitfalls.md', group: 'course', title: 'Tourist pitfalls' },
+    { id: '09-food', file: 'lessons/09-food.md', group: 'course', title: 'Food & dishes' },
+    { id: '10-cheat-sheet', file: 'lessons/10-cheat-sheet.md', group: 'course', title: 'Cheat sheet & self-test' },
+    { id: 'hiragana', file: 'hiragana/00-start.md', group: 'hiragana', title: 'Start here', label: '★' },
+    { id: 'hiragana-1', file: 'hiragana/01-vowels.md', group: 'hiragana', title: 'あいうえお vowels' },
+    { id: 'hiragana-2', file: 'hiragana/02-k-s.md', group: 'hiragana', title: 'か・さ rows' },
+    { id: 'hiragana-3', file: 'hiragana/03-t-n.md', group: 'hiragana', title: 'た・な rows' },
+    { id: 'hiragana-4', file: 'hiragana/04-h-m.md', group: 'hiragana', title: 'は・ま rows' },
+    { id: 'hiragana-5', file: 'hiragana/05-y-r-w.md', group: 'hiragana', title: 'や・ら・わ rows and ん' },
+    { id: 'hiragana-6', file: 'hiragana/06-dakuten.md', group: 'hiragana', title: '゛ and ゜: が, ぱ…' },
+    { id: 'hiragana-7', file: 'hiragana/07-combinations.md', group: 'hiragana', title: 'きゃ, っ, long vowels' },
+    { id: 'hiragana-8', file: 'hiragana/08-real-world.md', group: 'hiragana', title: 'Real-world reading & final test' },
+    { id: 'hiragana-review', file: 'hiragana/09-review.md', group: 'hiragana', title: 'Daily review', label: '↻' }
+  ];
+  // Number lessons within their group unless they have their own label.
+  GROUPS.forEach(function (g) {
+    var n = 0;
+    LESSONS.forEach(function (l) { if (l.group === g.id && !l.label) l.label = String(++n); });
+  });
+  var BY_FILE = {};
+  LESSONS.forEach(function (l) { BY_FILE[l.file] = l; });
   // Old lesson ids (kept so bookmarks and saved progress keep working)
   var ALIASES = { '06-cheat-sheet': '10-cheat-sheet', '09-cheat-sheet': '10-cheat-sheet' };
   var JA_RUN = /[々぀-ヿ㐀-䶿一-鿿～〜]+(?:[、。\s]?[々぀-ヿ㐀-䶿一-鿿～〜]+)*/g;
@@ -74,10 +95,14 @@
     pickVoice();
     speechSynthesis.addEventListener('voiceschanged', pickVoice);
   }
+  var voiceWarned = false;
   function speak(text, node) {
-    if (!('speechSynthesis' in window)) { toast('Speech is not supported in this browser.'); return; }
+    if (!('speechSynthesis' in window)) {
+      if (!voiceWarned) toast('Speech is not supported in this browser.');
+      voiceWarned = true; return;
+    }
     pickVoice();
-    if (!jaVoice) toast('No Japanese voice found. Install one in your system settings for best results.');
+    if (!jaVoice && !voiceWarned) { toast('No Japanese voice found. Install one in your system settings for best results.'); voiceWarned = true; }
     speechSynthesis.cancel();
     var u = new SpeechSynthesisUtterance(text.replace(/[〜～]/g, ''));
     u.lang = 'ja-JP'; u.rate = 0.85;
@@ -120,20 +145,37 @@
     if (t && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); speak(t.textContent, t); }
   });
 
+  /* ---------- hiragana course hooks ---------- */
+  if (window.NBHira) {
+    window.NBHira.init({
+      speak: function (text) { speak(text); },
+      toast: toast,
+      markDone: function (id) {
+        if (done[id]) return;
+        done[id] = true; save('nb-done', done); buildNav(); setCurrent(id);
+        var b = document.querySelector('.lesson-foot .btn:not(.primary)');
+        if (b) { b.textContent = '✓ Completed'; b.className = 'btn done'; }
+      }
+    });
+  }
+
   /* ---------- navigation ---------- */
   function buildNav() {
     navList.innerHTML = '';
     navList.appendChild(el('li', {}, [el('a', { 'class': 'nav-link', href: '#/', 'data-route': '' }, [
       el('span', { 'class': 'nav-num', 'aria-hidden': 'true', text: '⌂' }), el('span', { text: 'Overview' })
     ])]));
-    LESSONS.forEach(function (l, i) {
-      navList.appendChild(el('li', {}, [el('a', {
-        'class': 'nav-link' + (done[l.id] ? ' done' : ''), href: '#/' + l.id, 'data-route': l.id
-      }, [
-        el('span', { 'class': 'nav-num', 'aria-hidden': 'true', text: done[l.id] ? '✓' : String(i + 1) }),
-        el('span', { text: l.title }),
-        done[l.id] ? el('span', { 'class': 'sr-only', style: 'position:absolute;left:-9999px', text: ' (completed)' }) : null
-      ])]));
+    GROUPS.forEach(function (g) {
+      navList.appendChild(el('li', { 'class': 'nav-group', role: 'presentation', text: g.title }));
+      LESSONS.filter(function (l) { return l.group === g.id; }).forEach(function (l) {
+        navList.appendChild(el('li', {}, [el('a', {
+          'class': 'nav-link' + (done[l.id] ? ' done' : '') + (l.group === 'hiragana' ? ' nav-hira' : ''), href: '#/' + l.id, 'data-route': l.id
+        }, [
+          el('span', { 'class': 'nav-num', 'aria-hidden': 'true', text: done[l.id] ? '✓' : l.label }),
+          el('span', { text: l.title }),
+          done[l.id] ? el('span', { 'class': 'sr-only', style: 'position:absolute;left:-9999px', text: ' (completed)' }) : null
+        ])]));
+      });
     });
   }
   function setCurrent(route) {
@@ -159,13 +201,27 @@
   });
 
   /* ---------- markdown pages ---------- */
-  function rewriteLinks(root, pageKey) {
+  function resolvePath(fromFile, href) {
+    var stack = fromFile.split('/').slice(0, -1);
+    href.split('/').forEach(function (seg) {
+      if (seg === '..') stack.pop();
+      else if (seg && seg !== '.') stack.push(seg);
+    });
+    return stack.join('/');
+  }
+  function rewriteLinks(root, pageKey, file) {
     root.querySelectorAll('a[href]').forEach(function (a) {
       var href = a.getAttribute('href');
-      var m = href.match(/(?:^|\/)(\d\d-[a-z-]+)\.md(?:#(.+))?$/);
-      if (m) { a.setAttribute('href', '#/' + m[1] + (m[2] ? '/' + m[2] : '')); return; }
-      m = href.match(/(?:^|\/)README\.md(?:#(.+))?$/);
-      if (m) { a.setAttribute('href', m[1] ? '#/overview/' + m[1] : '#/'); return; }
+      var m = href.match(/^([^:#]+\.md)(?:#(.+))?$/);
+      if (m) {
+        var target = resolvePath(file, m[1]);
+        var lesson = BY_FILE[target];
+        if (lesson) { a.setAttribute('href', '#/' + lesson.id + (m[2] ? '/' + m[2] : '')); return; }
+        if (target === 'README.md') { a.setAttribute('href', m[2] ? '#/overview/' + m[2] : '#/'); return; }
+        a.setAttribute('href', 'https://github.com/pKasprowicz/nippon-bible/blob/main/' + target);
+        a.target = '_blank'; a.rel = 'noopener';
+        return;
+      }
       if (/^#[^\/]/.test(href)) { a.setAttribute('href', '#/' + pageKey + '/' + href.slice(1)); return; }
       if (/^https?:/.test(href)) { a.target = '_blank'; a.rel = 'noopener'; }
     });
@@ -177,17 +233,18 @@
       wrap.appendChild(t);
     });
   }
-  function renderMarkdown(md, pageKey) {
+  function renderMarkdown(md, pageKey, file) {
     var article = el('article');
     article.innerHTML = marked.parse(md, { gfm: true });
-    rewriteLinks(article, pageKey);
+    rewriteLinks(article, pageKey, file);
     wrapTables(article);
     markSpeakable(article);
+    if (window.NBHira) window.NBHira.mount(article, pageKey);
     return article;
   }
   function lessonFooter(id) {
     var i = LESSONS.findIndex(function (l) { return l.id === id; });
-    var next = LESSONS[i + 1];
+    var next = LESSONS[i + 1] && LESSONS[i + 1].group === LESSONS[i].group ? LESSONS[i + 1] : null;
     var btn = el('button', { 'class': 'btn' + (done[id] ? ' done' : ''), type: 'button' });
     function label() { btn.textContent = done[id] ? '✓ Completed' : 'Mark lesson as completed'; btn.className = 'btn' + (done[id] ? ' done' : ''); }
     label();
@@ -197,7 +254,9 @@
     return el('div', { 'class': 'lesson-foot' }, [
       btn,
       next ? el('a', { 'class': 'btn primary', href: '#/' + next.id, text: 'Next: ' + next.title + ' →' })
-           : el('a', { 'class': 'btn primary', href: '#/drill', text: 'Practise with flashcards →' })
+           : LESSONS[i].group === 'hiragana'
+             ? el('a', { 'class': 'btn primary', href: '#/hiragana', text: 'Back to the hiragana course →' })
+             : el('a', { 'class': 'btn primary', href: '#/hiragana', text: 'Next: learn hiragana →' })
     ]);
   }
   /* ---------- chapter navigation ---------- */
@@ -356,10 +415,10 @@
 
   function showPage(route) {
     var lesson = LESSONS.filter(function (l) { return l.id === route; })[0];
-    var path = lesson ? 'lessons/' + lesson.id + '.md' : 'README.md';
+    var path = lesson ? lesson.file : 'README.md';
     var pageKey = lesson ? lesson.id : 'overview';
     return fetchText(path).then(function (md) {
-      var article = renderMarkdown(md, pageKey);
+      var article = renderMarkdown(md, pageKey, path);
       if (lesson) article.appendChild(lessonFooter(lesson.id));
       var sections = addHeadingIds(article, pageKey);
       if (sections.length >= 3) {
@@ -371,7 +430,7 @@
       }
       rendered = pageKey;
       var h1 = article.querySelector('h1');
-      document.title = (lesson ? (h1 ? h1.textContent.replace(/^Lesson \d+:\s*/, '') + ' · ' : '') : '') + 'Nippon Bible';
+      document.title = (lesson ? (h1 ? h1.textContent.replace(/^(Lesson|Hiragana) \d+:\s*/, '').replace(/#$/, '') + ' · ' : '') : '') + 'Nippon Bible';
     });
   }
 

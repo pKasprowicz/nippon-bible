@@ -4,6 +4,20 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.4.0] - 2026-11-15
+
+### Added
+- **Hiragana course**, a new section of the site: a start page, 8 units, real-world reading and a final test, and a daily review page
+  - Character cards with original memory aids and audio for all 46 basic hiragana, 25 voiced variants and 33 combinations
+  - Exercises: guess-first quizzes, practice that moves from reading to finding to listening to typing, look-alike contrast drills, real-word reading with hints, listen-and-choose minimal pairs, station-sign reading, timed speed rounds, and unit checkpoints (90% marks a unit complete)
+  - Spaced repetition: practised characters and words go into a Leitner-style daily review (1, 2, 4, 8, 16 and 32 days), with a progress map and a day streak, stored in the browser only
+  - Each unit's words and signs use only characters taught so far; the content check enforces it
+- Sidebar groups: "Survival course" and "Hiragana course"
+
+### Changed
+- The content check also validates hiragana exercise blocks and unit order, and supports pages outside `lessons/`
+- "No Japanese voice" notice now appears once per visit instead of on every sound
+
 ## [1.3.0] - 2026-11-15
 
 ### Added
@@ -57,6 +71,7 @@ First public release of the Japanese survival course for European travellers.
 - Git flow branching model (see `CONTRIBUTING.md`)
 - GitHub Actions: Pages deployment from `main`, and a GitHub release for each `v*` tag
 
+[1.4.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.4.0
 [1.3.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.3.0
 [1.2.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.2.0
 [1.1.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.1.0
