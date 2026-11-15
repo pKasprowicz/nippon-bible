@@ -20,9 +20,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Assemble site
+        # Publish every tracked file except CI and tooling, so new content folders deploy automatically.
         run: |
           mkdir _site
-          cp -r index.html .nojekyll README.md VERSION assets lessons _site/
+          git ls-files -z | grep -zvE '^(\.github|scripts)/' | xargs -0 cp --parents -t _site
+          test -f _site/index.html && test -d _site/lessons && test -d _site/hiragana
+          find _site -type f | wc -l
       - uses: actions/configure-pages@v5
         with:
           enablement: true
