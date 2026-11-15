@@ -159,12 +159,14 @@
   });
 
   /* ---------- markdown pages ---------- */
-  function rewriteLinks(root) {
+  function rewriteLinks(root, pageKey) {
     root.querySelectorAll('a[href]').forEach(function (a) {
       var href = a.getAttribute('href');
-      var m = href.match(/(?:^|\/)(\d\d-[a-z-]+)\.md(#.*)?$/);
-      if (m) { a.setAttribute('href', '#/' + m[1]); return; }
-      if (/(^|\/)README\.md$/.test(href)) { a.setAttribute('href', '#/'); return; }
+      var m = href.match(/(?:^|\/)(\d\d-[a-z-]+)\.md(?:#(.+))?$/);
+      if (m) { a.setAttribute('href', '#/' + m[1] + (m[2] ? '/' + m[2] : '')); return; }
+      m = href.match(/(?:^|\/)README\.md(?:#(.+))?$/);
+      if (m) { a.setAttribute('href', m[1] ? '#/overview/' + m[1] : '#/'); return; }
+      if (/^#[^\/]/.test(href)) { a.setAttribute('href', '#/' + pageKey + '/' + href.slice(1)); return; }
       if (/^https?:/.test(href)) { a.target = '_blank'; a.rel = 'noopener'; }
     });
   }
@@ -175,10 +177,10 @@
       wrap.appendChild(t);
     });
   }
-  function renderMarkdown(md) {
+  function renderMarkdown(md, pageKey) {
     var article = el('article');
     article.innerHTML = marked.parse(md, { gfm: true });
-    rewriteLinks(article);
+    rewriteLinks(article, pageKey);
     wrapTables(article);
     markSpeakable(article);
     return article;
@@ -198,13 +200,176 @@
            : el('a', { 'class': 'btn primary', href: '#/drill', text: 'Practise with flashcards →' })
     ]);
   }
+  /* ---------- chapter navigation ---------- */
+  // Section ids follow GitHub's heading slugs, so README/lesson anchors work on GitHub and here.
+  var SECTION_PREFIX = 'sec-';
+  var WIDE = window.matchMedia('(min-width: 1280px)');
+  var rendered = null;      // page key currently on screen ('overview' or a lesson id)
+  var spyHandler = null;
+  var closeBarPanel = null;   // closes the mobile contents panel on outside clicks
+  document.addEventListener('click', function (e) { if (closeBarPanel) closeBarPanel(e.target); });
+
+  function slugify(text) {
+    return text.trim().toLowerCase().replace(/[^\p{L}\p{M}\p{N}\p{Pc} -]/gu, '').replace(/ /g, '-');
+  }
+  function stripNumber(slug) { return slug.replace(/^\d+-/, ''); }
+  function sectionHref(pageKey, slug) { return '#/' + pageKey + '/' + slug; }
+
+  function addHeadingIds(article, pageKey) {
+    var seen = {};
+    return [].slice.call(article.querySelectorAll('h2, h3')).map(function (h) {
+      var base = slugify(h.textContent) || 'section';
+      var slug = base;
+      if (seen[base] !== undefined) { seen[base] += 1; slug = base + '-' + seen[base]; } else { seen[base] = 0; }
+      h.id = SECTION_PREFIX + slug;
+      h.setAttribute('tabindex', '-1');
+      h.appendChild(el('a', { 'class': 'heading-anchor', href: sectionHref(pageKey, slug), 'aria-label': 'Link to this section', text: '#' }));
+      return { el: h, slug: slug, level: h.tagName === 'H2' ? 2 : 3, text: h.textContent.replace(/#$/, '').trim() };
+    });
+  }
+
+  function tocList(sections, pageKey, className) {
+    var root = el('ol', { 'class': className }), current = null;
+    sections.forEach(function (s) {
+      var link = el('a', { 'class': 'toc-link', href: sectionHref(pageKey, s.slug), 'data-slug': s.slug, text: s.text });
+      if (s.level === 2 || !current) {
+        current = el('li', { 'class': 'toc-item' }, [link]);
+        root.appendChild(current);
+      } else {
+        var sub = current.querySelector('ol') || current.appendChild(el('ol', { 'class': 'toc-sub' }));
+        sub.appendChild(el('li', {}, [link]));
+      }
+    });
+    return root;
+  }
+
+  function buildChapterNav(sections, pageKey) {
+    var rail = el('nav', { 'class': 'toc-rail', 'aria-label': 'On this page' }, [
+      el('p', { 'class': 'toc-title', text: 'On this page' }),
+      tocList(sections, pageKey, 'toc-list'),
+      el('a', { 'class': 'toc-top', href: '#/' + pageKey + '/', 'data-slug': '', text: '↑ Back to top' })
+    ]);
+    var panel = el('div', { 'class': 'toc-panel', id: 'tocPanel', hidden: '' }, [
+      el('a', { 'class': 'toc-link toc-top-link', href: '#/' + pageKey + '/', 'data-slug': '', text: '↑ Top of page' }),
+      tocList(sections, pageKey, 'toc-list')
+    ]);
+    var current = el('span', { 'class': 'bar-current', text: 'Contents' });
+    var toggle = el('button', { 'class': 'bar-toggle', type: 'button', 'aria-expanded': 'false', 'aria-controls': 'tocPanel' }, [
+      el('span', { 'class': 'bar-label', text: 'On this page' }), current,
+      el('span', { 'class': 'bar-chevron', 'aria-hidden': 'true',
+        html: '<svg viewBox="0 0 24 24" width="18" height="18"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>' })
+    ]);
+    var bar = el('div', { 'class': 'section-bar' }, [toggle, panel]);
+    function setOpen(open) {
+      panel.hidden = !open;
+      toggle.setAttribute('aria-expanded', String(open));
+      bar.classList.toggle('open', open);
+      var active = open && panel.querySelector('.toc-link.active');
+      if (active) panel.scrollTop = active.offsetTop - panel.clientHeight / 3;
+    }
+    toggle.addEventListener('click', function () { setOpen(panel.hidden); });
+    panel.addEventListener('click', function (e) { if (e.target.closest('a')) setOpen(false); });
+    closeBarPanel = function (target) { if (!bar.contains(target)) setOpen(false); };
+    bar.addEventListener('keydown', function (e) { if (e.key === 'Escape') { setOpen(false); toggle.focus(); } });
+    return { rail: rail, bar: bar, current: current };
+  }
+
+  function startScrollSpy(sections, nav) {
+    if (spyHandler) window.removeEventListener('scroll', spyHandler);
+    var links = [].slice.call(document.querySelectorAll('.toc-rail .toc-link, .toc-panel .toc-link[data-slug]:not([data-slug=""])'));
+    var ticking = false, last;
+    function update() {
+      ticking = false;
+      var offset = WIDE.matches ? 96 : 136, active = null, activeH2 = null;
+      for (var i = 0; i < sections.length; i++) {
+        if (sections[i].el.getBoundingClientRect().top - offset > 0) break;
+        active = sections[i];
+        if (active.level === 2) activeH2 = active;
+      }
+      if (active && !activeH2) activeH2 = active;
+      var key = active ? active.slug : '';
+      if (key === last) return;
+      last = key;
+      links.forEach(function (a) {
+        var on = !!active && a.getAttribute('data-slug') === active.slug;
+        a.classList.toggle('active', on);
+        if (on) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current');
+      });
+      document.querySelectorAll('.toc-rail .toc-item').forEach(function (li) {
+        li.classList.toggle('open', !!activeH2 && li.firstChild.getAttribute('data-slug') === activeH2.slug);
+      });
+      nav.current.textContent = activeH2 ? activeH2.text : 'Contents';
+      var railActive = nav.rail.querySelector('.toc-link.active');
+      if (railActive) {
+        var r = railActive.getBoundingClientRect(), box = nav.rail.getBoundingClientRect();
+        if (r.top < box.top || r.bottom > box.bottom) nav.rail.scrollTop += r.top - box.top - box.height / 3;
+      }
+    }
+    spyHandler = function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+    window.addEventListener('scroll', spyHandler, { passive: true });
+    update();
+  }
+
+  function scrollToSection(slug, smooth) {
+    var behavior = smooth && !matchMedia('(prefers-reduced-motion: reduce)').matches ? 'smooth' : 'auto';
+    if (!slug) { window.scrollTo({ top: 0, behavior: behavior }); return; }
+    var target = document.getElementById(SECTION_PREFIX + slug);
+    if (!target) {
+      // Tolerate renumbered sections: "3-ramen" still finds "4-ramen".
+      var want = stripNumber(slug);
+      target = [].slice.call(content.querySelectorAll('h2[id], h3[id]')).filter(function (h) {
+        return stripNumber(h.id.slice(SECTION_PREFIX.length)) === want;
+      })[0];
+    }
+    if (!target) { window.scrollTo(0, 0); return; }
+    target.scrollIntoView({ behavior: behavior, block: 'start' });
+    target.focus({ preventScroll: true });
+  }
+
+  // On a fresh page, fonts and Japanese glyphs load after the first layout and push
+  // headings down. Keep the target aligned while the page settles, unless the reader
+  // starts scrolling.
+  function jumpWhenSettled(slug) {
+    var page = content.firstElementChild, stopped = false, ro = null;
+    function stop() {
+      if (stopped) return;
+      stopped = true;
+      if (ro) ro.disconnect();
+      ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(function (t) { window.removeEventListener(t, stop, true); });
+    }
+    ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(function (t) { window.addEventListener(t, stop, true); });
+    function align() { if (!stopped) scrollToSection(slug, false); }
+    requestAnimationFrame(function () { requestAnimationFrame(align); });
+    if (window.ResizeObserver && page) { ro = new ResizeObserver(align); ro.observe(page); }
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(align);
+    setTimeout(stop, 2500);
+  }
+
+  // Re-clicking the link of the section you're already on doesn't fire hashchange.
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href^="#/"]');
+    if (a && a.getAttribute('href') === location.hash) {
+      e.preventDefault();
+      scrollToSection(location.hash.split('/').slice(2).join('/'), true);
+    }
+  });
+
   function showPage(route) {
     var lesson = LESSONS.filter(function (l) { return l.id === route; })[0];
     var path = lesson ? 'lessons/' + lesson.id + '.md' : 'README.md';
+    var pageKey = lesson ? lesson.id : 'overview';
     return fetchText(path).then(function (md) {
-      var article = renderMarkdown(md);
+      var article = renderMarkdown(md, pageKey);
       if (lesson) article.appendChild(lessonFooter(lesson.id));
-      content.replaceChildren(article);
+      var sections = addHeadingIds(article, pageKey);
+      if (sections.length >= 3) {
+        var nav = buildChapterNav(sections, pageKey);
+        content.replaceChildren(el('div', { 'class': 'page has-toc' }, [nav.bar, article, nav.rail]));
+        startScrollSpy(sections, nav);
+      } else {
+        content.replaceChildren(el('div', { 'class': 'page' }, [article]));
+      }
+      rendered = pageKey;
       var h1 = article.querySelector('h1');
       document.title = (lesson ? (h1 ? h1.textContent.replace(/^Lesson \d+:\s*/, '') + ' · ' : '') : '') + 'Nippon Bible';
     });
@@ -329,13 +494,24 @@
 
   /* ---------- router ---------- */
   function route() {
-    var r = location.hash.replace(/^#\/?/, '');
-    if (ALIASES[r]) { location.replace('#/' + ALIASES[r]); return; }
-    if (r && r !== 'drill' && !LESSONS.some(function (l) { return l.id === r; })) r = '';
+    var parts = location.hash.replace(/^#\/?/, '').split('/');
+    var r = parts[0], section = '';
+    try { section = decodeURIComponent(parts.slice(1).join('/')); } catch (e) { section = ''; }
+    if (r === 'overview') r = '';
+    if (ALIASES[r]) { location.replace('#/' + ALIASES[r] + (section ? '/' + section : '')); return; }
+    if (r && r !== 'drill' && !LESSONS.some(function (l) { return l.id === r; })) { r = ''; section = ''; }
+    var key = r === 'drill' ? 'drill' : (r || 'overview');
+    if (key !== 'drill' && key === rendered) { scrollToSection(section, true); return; }
     setCurrent(r);
     if ('speechSynthesis' in window) speechSynthesis.cancel();
+    if (spyHandler) { window.removeEventListener('scroll', spyHandler); spyHandler = null; }
+    rendered = null;
     var p = r === 'drill' ? showDrill() : showPage(r);
-    p.then(function () { window.scrollTo(0, 0); content.focus({ preventScroll: true }); })
+    p.then(function () {
+      if (section) jumpWhenSettled(section);
+      else window.scrollTo(0, 0);
+      if (!section) content.focus({ preventScroll: true });
+    })
      .catch(function (err) {
        content.replaceChildren(el('article', {}, [el('h1', { text: 'Could not load this page' }), el('p', { text: String(err.message || err) })]));
      });
