@@ -4,7 +4,7 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [1.2.0] - 2026-11-15
 
 ### Added
 - Lesson 9, Food & dishes: the pantry (dashi, soy sauce, miso, mirin, kōji, wasabi, pickles); rice and sushi (styles, Edomae preparation, toppings, conveyor-belt sushi), donburi and rice balls; ramen (broth, tare, noodles, oil, toppings, regional styles), soba, udon and other noodles; cooking methods with tempura, tonkatsu, karaage, yakitori, yakiniku and wagyu grades, eel, okonomiyaki (Osaka vs Hiroshima), takoyaki, gyōza, hot pots and oden; soups, eggs, tofu and side dishes; seafood and delicacies; meal formats from teishoku to kaiseki and shōjin ryōri; sweets, tea, sake grades and other drinks; regional specialities; menu vocabulary, ordering phrases, dietary needs and allergen labels; practice questions
@@ -51,5 +51,6 @@ First public release of the Japanese survival course for European travellers.
 - Git flow branching model (see `CONTRIBUTING.md`)
 - GitHub Actions: Pages deployment from `main`, and a GitHub release for each `v*` tag
 
+[1.2.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.2.0
 [1.1.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.1.0
 [1.0.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.0.0
