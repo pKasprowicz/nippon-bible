@@ -61,6 +61,9 @@ python3 -m http.server 8000
 ## Content conventions
 
 - Lessons live in `lessons/NN-name.md`. Add new lessons to `LESSONS` in `assets/app.js`.
+- Use `##` for a lesson's main sections and `###` for subsections. The site builds each lesson's
+  contents navigation from them, so keep headings short. To link to a section, use the GitHub
+  anchor (`06-subways.md#2-tokyo`); the link works on GitHub and on the site.
 - Write Japanese as **script · romaji · meaning**. The website makes any Japanese script clickable for audio.
 - The flashcard drill reads the kana chart and the `| Sign | Reading | Meaning |` tables in
   `lessons/02-writing.md`. Keep that table format if you edit them.
