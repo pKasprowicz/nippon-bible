@@ -10,10 +10,11 @@
     { id: '06-subways', title: 'Subways: Tokyo & Osaka' },
     { id: '07-etiquette', title: 'Customs & etiquette' },
     { id: '08-pitfalls', title: 'Tourist pitfalls' },
-    { id: '09-cheat-sheet', title: 'Cheat sheet & self-test' }
+    { id: '09-food', title: 'Food & dishes' },
+    { id: '10-cheat-sheet', title: 'Cheat sheet & self-test' }
   ];
   // Old lesson ids (kept so bookmarks and saved progress keep working)
-  var ALIASES = { '06-cheat-sheet': '09-cheat-sheet' };
+  var ALIASES = { '06-cheat-sheet': '10-cheat-sheet', '09-cheat-sheet': '10-cheat-sheet' };
   var JA_RUN = /[々぀-ヿ㐀-䶿一-鿿～〜]+(?:[、。\s]?[々぀-ヿ㐀-䶿一-鿿～〜]+)*/g;
 
   var content = document.getElementById('content');

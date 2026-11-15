@@ -1,4 +1,4 @@
-# Lesson 9: Cheat Sheet & Self-Test
+# Lesson 10: Cheat Sheet & Self-Test
 
 ## Cheat sheet (screenshot this)
 
@@ -39,6 +39,8 @@ double consonants = short pause (*kippu*) · keep every beat even, no stress.
 **Emergency:** 110 police · 119 ambulance · *tasukete!* = help!
 
 **Subway:** match the line **colour + letter** and station code (G09) · 〜行 = bound for · choose your **exit number** before leaving the platform · short on fare? use the 精算機 · last trains around midnight.
+
+**Food:** *-don* = rice bowl · *zaru* = cold noodles on a tray · *kake* = hot noodles in broth · 定食 = set meal · 大盛 = large · 時価 = market price, ask first · dashi (fish stock) hides in most savoury dishes · slurping noodles is fine.
 
 **Never:** tip · make phone calls on trains · eat while walking · stand chopsticks in rice · wear shoes on tatami · enter the onsen unwashed.
 **Always:** carry cash, a handkerchief and your passport · pay in **yen** on card terminals · queue · use both hands to give and receive.
@@ -85,6 +87,14 @@ Try every question before opening the answers.
 27. An izakaya bill includes a small starter you didn't order. Is it a scam?
 28. Name two of the three things to do before getting into an onsen bath.
 
+### E. Food & dishes
+29. What is the difference between *sushi* and *sashimi*?
+30. You order *oyakodon*. What's in it?
+31. The ramen shop asks how firm you want your noodles. Say "firm, please".
+32. Is *kitsune udon* topped with fox meat?
+33. Your skewer of *tsukune* arrives with a raw egg yolk. What is it for?
+34. Which sake is more polished, *junmai ginjō* or *junmai daiginjō*?
+
 <details>
 <summary><strong>Answers</strong></summary>
 
@@ -116,8 +126,14 @@ Try every question before opening the answers.
 26. **JPY (yen).** The euro conversion rate is usually worse.
 27. **No.** It's *otōshi*, a normal cover charge.
 28. Undress fully (no swimwear), **wash before getting in**, keep your towel out of the water.
+29. *Sushi* is the vinegared rice with its toppings; *sashimi* is sliced raw fish without rice.
+30. **Chicken and egg** ("parent and child"), simmered with onion in sweet soy-dashi broth, on rice.
+31. *Katame de onegaishimasu.*
+32. **No.** It's topped with sweet fried tofu (*aburaage*), which foxes are said to love.
+33. A **dip**: tsukune (chicken meatball) is dipped into the yolk.
+34. **Junmai daiginjō**: at most 50% of the grain remains (ginjō: at most 60%).
 
-**Score:** 22+ you're ready · 14–21 re-read the lessons where you missed answers · under 14 follow the study plan again.
+**Score:** 27+ you're ready · 17–26 re-read the lessons where you missed answers · under 17 follow the study plan again.
 </details>
 
 ---
