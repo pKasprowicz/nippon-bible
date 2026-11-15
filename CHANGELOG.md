@@ -7,10 +7,14 @@ and versions follow [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Added
+- Lesson 9, Food & dishes: the pantry (dashi, soy sauce, miso, mirin, kōji, wasabi, pickles); rice and sushi (styles, Edomae preparation, toppings, conveyor-belt sushi), donburi and rice balls; ramen (broth, tare, noodles, oil, toppings, regional styles), soba, udon and other noodles; cooking methods with tempura, tonkatsu, karaage, yakitori, yakiniku and wagyu grades, eel, okonomiyaki (Osaka vs Hiroshima), takoyaki, gyōza, hot pots and oden; soups, eggs, tofu and side dishes; seafood and delicacies; meal formats from teishoku to kaiseki and shōjin ryōri; sweets, tea, sake grades and other drinks; regional specialities; menu vocabulary, ordering phrases, dietary needs and allergen labels; practice questions
+- Six food questions in the self-test and a food line on the cheat sheet
 - Branch protection ruleset for `main` and `develop` (`.github/rulesets/protect-main-develop.json`)
 - PR checks workflow: git flow branch policy and a content check (`scripts/check-content.mjs`)
 
 ### Changed
+- Cheat sheet & self-test is now Lesson 10 (old `#/09-cheat-sheet` and `#/06-cheat-sheet` links redirect; saved progress carries over)
+- The suggested study plan is now 10 days
 - Releases now go through pull requests (see `CONTRIBUTING.md`)
 
 ## [1.1.0] - 2026-11-14
