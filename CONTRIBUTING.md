@@ -26,7 +26,8 @@ into them go through pull requests (see below).
 - the **PR checks** workflow must pass:
   - **Git flow branch policy**: `main` accepts only `release/x.y.z` and `hotfix/x.y.z`;
     `develop` accepts `feature/*`, `release/*`, `hotfix/*` and `main` (the merge-back after a release)
-  - **Content check**: runs `node scripts/check-content.mjs` (lesson registry, relative links, drill data, VERSION ↔ CHANGELOG)
+  - **Content check**: runs `node scripts/check-content.mjs` (page registry, relative links, drill data,
+    hiragana exercise syntax and unit order, VERSION ↔ CHANGELOG)
 
 No approving review is required, so the owner can merge their own PRs.
 
@@ -60,10 +61,31 @@ python3 -m http.server 8000
 
 ## Content conventions
 
-- Lessons live in `lessons/NN-name.md`. Add new lessons to `LESSONS` in `assets/app.js`.
+- Lessons live in `lessons/NN-name.md`, and the Hiragana course in `hiragana/NN-name.md`. Register
+  every page in `LESSONS` in `assets/app.js` (id, file, group, title).
 - Use `##` for a lesson's main sections and `###` for subsections. The site builds each lesson's
   contents navigation from them, so keep headings short. To link to a section, use the GitHub
   anchor (`06-subways.md#2-tokyo`); the link works on GitHub and on the site.
 - Write Japanese as **script · romaji · meaning**. The website makes any Japanese script clickable for audio.
 - The flashcard drill reads the kana chart and the `| Sign | Reading | Meaning |` tables in
   `lessons/02-writing.md`. Keep that table format if you edit them.
+
+## Hiragana course exercises
+
+Character data (readings, memory aids, look-alikes, which unit teaches what) lives in
+`assets/hiragana-data.js`; the exercise engine is `assets/hiragana.js`. Pages embed exercises
+as fenced code blocks, which the website turns into interactive widgets (on GitHub they show as
+plain text):
+
+| Block | Content | Purpose |
+|-------|---------|---------|
+| ` ```cards ` | `kana: かきくけこ` | Character cards with memory aid and audio |
+| ` ```practice ` | `kana:` targets, `mix:` earlier characters, `modes: see,pick,listen,type`, `count:`, optional `timer: 60` (speed round), `checkpoint: yes` (90% marks the unit complete), `title:` | Kana drill; adds the targets to the daily review |
+| ` ```words ` | rows `kana \| romaji \| meaning \| optional context`, optional `mode: listen`, `title:` | Read (type) or listen-and-choose real words |
+| ` ```station ` | rows `kana \| romaji \| kanji \| prev \| next`, optional `color:` | Read a station sign |
+| ` ```contrast ` | rows `き さ \| cue` | Look-alike discrimination |
+| ` ```quiz ` | `? question`, `- option` (mark the right one with `*`), `> explanation` | Multiple-choice questions |
+| ` ```review `, ` ```map `, ` ```reset ` | empty | Daily spaced review, progress map, progress reset |
+
+In units 1–8, `cards`, `practice`, `words` and `station` blocks may only use characters taught in
+that unit or earlier. The content check enforces this, and it also checks the block syntax.
