@@ -66,4 +66,4 @@ Japan is very safe, but natural hazards are real:
 - **Lost property** is usually handed in: ask at the station office or the nearest **kōban** (交番, police box).
 - Emergency numbers: **110** police · **119** ambulance & fire · **050-3816-2787** Japan Visitor Hotline.
 
-➡️ Next: [Lesson 9: Cheat sheet & self-test](09-cheat-sheet.md)
+➡️ Next: [Lesson 9: Food & dishes](09-food.md)
