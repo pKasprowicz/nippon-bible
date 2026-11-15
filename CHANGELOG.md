@@ -4,7 +4,7 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [1.3.0] - 2026-11-15
 
 ### Added
 - Chapter navigation on every lesson: a sticky "On this page" rail on wide screens that highlights the section being read, and a sticky section bar with a contents dropdown on tablets and phones
@@ -57,6 +57,7 @@ First public release of the Japanese survival course for European travellers.
 - Git flow branching model (see `CONTRIBUTING.md`)
 - GitHub Actions: Pages deployment from `main`, and a GitHub release for each `v*` tag
 
+[1.3.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.3.0
 [1.2.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.2.0
 [1.1.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.1.0
 [1.0.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.0.0
