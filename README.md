@@ -26,6 +26,25 @@ flashcard drill for kana and sign kanji.
 | 9 | [Food & dishes](lessons/09-food.md) | Read a menu, know what each dish is, how it's made and how to eat it |
 | 10 | [Cheat sheet & self-test](lessons/10-cheat-sheet.md) | Revise in 5 minutes; check what you've learned |
 
+## Hiragana course
+
+A separate, interactive course that teaches you to **read hiragana** at a traveller's level in
+8 short units, with spaced daily review. It's built on well-researched learning techniques:
+self-testing, spacing, memory aids with audio, guessing first, mixing old and new, and look-alike
+drills. Its exercises run on the website. **[Start here](hiragana/00-start.md).**
+
+| Unit | Characters | You'll read… |
+|------|-----------|--------------|
+| [1](hiragana/01-vowels.md) | あ い う え お | いいえ (no), うえ (up) |
+| [2](hiragana/02-k-s.md) | か・さ rows | えき (station), すし, おいしい |
+| [3](hiragana/03-t-n.md) | た・な rows | ちかてつ (subway), うえの station |
+| [4](hiragana/04-h-m.md) | は・ま rows | はい (yes), つめたい (cold) |
+| [5](hiragana/05-y-r-w.md) | や・ら・わ rows, ん | すみません, おんせん, ゆ |
+| [6](hiragana/06-dakuten.md) | ゛ and ゜ | ありがとう, いりぐち / でぐち |
+| [7](hiragana/07-combinations.md) | きゃ…, っ, long vowels | とうきょう, きっぷ (ticket) |
+| [8](hiragana/08-real-world.md) | everything | menus, signs, station boards, final test |
+| [Daily review](hiragana/09-review.md) | | 5 minutes of spaced review a day |
+
 ## Suggested 10-day plan
 
 | Day | Study | Practice |
