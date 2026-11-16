@@ -41,7 +41,7 @@ const KANA = sandbox.window.NB_KANA;
 const unitOf = {};
 for (const [unit, chars] of Object.entries(KANA.unitChars)) for (const c of chars) unitOf[c] = Number(unit);
 const isKana = (c) => /[ぁ-ゟ]/.test(c);
-const WIDGETS = ['cards', 'practice', 'words', 'quiz', 'contrast', 'station', 'map', 'review', 'reset'];
+const WIDGETS = ['cards', 'practice', 'words', 'quiz', 'contrast', 'station', 'map', 'review', 'reset', 'game'];
 // Blocks checked for "taught so far": these are what the learner must read.
 const STRICT = new Set(['cards', 'practice', 'words', 'station']);
 let blocks = 0;
@@ -64,7 +64,11 @@ for (const file of pageFiles.filter((f) => f.startsWith('hiragana/'))) {
       const right = body.split('\n').filter((l) => /^\s*-.*\*\s*$/.test(l)).length;
       if (!qs || qs !== right) fail(`${where}: each "?" question needs exactly one option marked with *`);
     }
-    if (type === 'practice' && cfg.modes && cfg.modes.split(',').some((m) => !['see', 'pick', 'listen', 'type'].includes(m.trim()))) fail(`${where}: unknown mode in "${cfg.modes}"`);
+    if (type === 'game') {
+      if (!(cfg.pool === 'learned' || (Number(cfg.unit) >= 1 && Number(cfg.unit) <= 8))) fail(`${where}: needs "unit: 1–8" or "pool: learned"`);
+      if (unit >= 1 && unit <= 8 && Number(cfg.unit) > unit) fail(`${where}: unit ${cfg.unit} game in unit ${unit} uses characters not taught yet`);
+    }
+    if ((type === 'practice' || type === 'game') && cfg.modes && cfg.modes.split(',').some((m) => !['see', 'pick', 'listen', 'type'].includes(m.trim()))) fail(`${where}: unknown mode in "${cfg.modes}"`);
     // Every character used must exist in the data…
     const texts = [cfg.kana || '', cfg.mix || '', ...rows.map((r) => (type === 'station' ? [r[0], r[3] || '', r[4] || ''] : [r[0]]).join(''))].join('');
     for (const c of texts) {

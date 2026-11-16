@@ -4,6 +4,15 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+- **Endless game** at the end of every hiragana unit, plus "Free play" on the Daily review page
+  - Checkpoint-style questions that never run out, covering every character taught so far
+  - Adaptive selection: weak, slow and unseen characters come up more often, the unit's new characters get extra turns, and missed ones come back 3–4 questions later
+  - A live statistics panel that updates after every answer: answered, accuracy, streak (with best), average answer time, overall proficiency, focus characters, and a per-character proficiency grid
+  - Proficiency is saved per character in the browser, so it carries across units and visits; an end-of-game summary shows improvements and newly mastered characters
+
 ## [1.4.1] - 2026-11-15
 
 ### Fixed

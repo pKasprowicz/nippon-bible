@@ -85,6 +85,7 @@ plain text):
 | ` ```station ` | rows `kana \| romaji \| kanji \| prev \| next`, optional `color:` | Read a station sign |
 | ` ```contrast ` | rows `き さ \| cue` | Look-alike discrimination |
 | ` ```quiz ` | `? question`, `- option` (mark the right one with `*`), `> explanation` | Multiple-choice questions |
+| ` ```game ` | `unit: N` (every character from units 1–N, with unit N's new ones boosted) or `pool: learned` (the review deck), `modes:`, `title:` | Endless adaptive game with live per-character proficiency |
 | ` ```review `, ` ```map `, ` ```reset ` | empty | Daily spaced review, progress map, progress reset |
 
 In units 1–8, `cards`, `practice`, `words` and `station` blocks may only use characters taught in

@@ -137,7 +137,16 @@ modes: see
 timer: 60
 ```
 
-## 7. Keep it alive
+## 7. Endless game
+
+The ultimate open-ended practice: **every** hiragana, asked checkpoint-style, with the weakest ones served most. Come back to it during your trip.
+
+```game
+unit: 8
+modes: see,listen,type
+```
+
+## 8. Keep it alive
 
 Reading speed and long-term memory come from **use**, not from finishing a course.
 
