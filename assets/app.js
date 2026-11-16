@@ -264,12 +264,54 @@
     btn.addEventListener('click', function () {
       done[id] = !done[id]; save('nb-done', done); label(); buildNav(); setCurrent(id);
     });
-    return el('div', { 'class': 'lesson-foot' }, [
-      btn,
-      next ? el('a', { 'class': 'btn primary', href: '#/' + next.id, text: 'Next: ' + next.title + ' →' })
-           : LESSONS[i].group !== 'course'
-             ? el('a', { 'class': 'btn primary', href: '#/' + LESSONS[i].group, text: 'Back to the ' + LESSONS[i].group + ' course →' })
-             : el('a', { 'class': 'btn primary', href: '#/hiragana', text: 'Next: learn hiragana →' })
+    return el('div', {}, [el('div', { 'class': 'lesson-foot' }, [btn]), pager(id)]);
+  }
+
+  /* ---------- previous / next in content order (guide → hiragana → katakana) ---------- */
+  function groupTitle(g) { return (GROUPS.filter(function (x) { return x.id === g; })[0] || {}).title || ''; }
+  function pageKind(l) {
+    if (l.label === '★') return l.group === 'course' ? 'Overview' : 'Start here';
+    if (l.label === '↻') return 'Daily review';
+    return (l.group === 'course' ? 'Lesson ' : 'Unit ') + l.label;
+  }
+  function neighbours(id) {
+    var i = LESSONS.findIndex(function (l) { return l.id === id; });
+    return { i: i, prev: LESSONS[i - 1] || null, next: LESSONS[i + 1] || null };
+  }
+  function pagerCard(target, dir, from) {
+    if (!target) {
+      return el('a', { 'class': 'pager-card ' + dir + ' home', href: '#/', rel: dir }, [
+        el('span', { 'class': 'pager-dir', text: dir === 'prev' ? '← Previous' : 'Next →' }),
+        el('span', { 'class': 'pager-title', text: 'Home' }),
+        el('span', { 'class': 'pager-meta', text: dir === 'prev' ? 'All three courses' : 'You\'ve reached the end. Back to all three courses' })
+      ]);
+    }
+    var crossing = target.group !== from.group;
+    return el('a', { 'class': 'pager-card ' + dir + (crossing ? ' crossing' : ''), href: '#/' + target.id, rel: dir }, [
+      el('span', { 'class': 'pager-dir', text: dir === 'prev' ? '← Previous' : 'Next →' }),
+      el('span', { 'class': 'pager-title', text: crossing ? groupTitle(target.group) : target.title }),
+      el('span', { 'class': 'pager-meta', text: crossing
+        ? (dir === 'prev' ? 'Previous course · ' : 'Next course · ') + (pageKind(target) === target.title ? target.title : pageKind(target) + ': ' + target.title)
+        : groupTitle(target.group) + ' · ' + pageKind(target) })
+    ]);
+  }
+  function pager(id) {
+    var n = neighbours(id), here = LESSONS[n.i];
+    return el('nav', { 'class': 'pager', 'aria-label': 'Previous and next page' }, [pagerCard(n.prev, 'prev', here), pagerCard(n.next, 'next', here)]);
+  }
+  function topPager(id) {
+    var n = neighbours(id), here = LESSONS[n.i];
+    var inGroup = LESSONS.filter(function (l) { return l.group === here.group; });
+    var pos = inGroup.indexOf(here) + 1;
+    function link(target, dir) {
+      var label = dir === 'prev' ? '‹ Previous' : 'Next ›';
+      return el('a', { 'class': 'pager-mini', rel: dir, href: target ? '#/' + target.id : '#/',
+        title: target ? (dir === 'prev' ? 'Previous: ' : 'Next: ') + target.title + ' (' + groupTitle(target.group) + ')' : 'Home',
+        'aria-label': target ? (dir === 'prev' ? 'Previous page: ' : 'Next page: ') + target.title : 'Home' }, [label]);
+    }
+    return el('nav', { 'class': 'pager-top', 'aria-label': 'Page position' }, [
+      el('span', { 'class': 'pager-pos' }, [el('a', { href: '#/' + LESSONS.filter(function (l) { return l.group === here.group; })[0].id, text: groupTitle(here.group) }), ' · ' + pageKind(here) + ' · ' + pos + ' of ' + inGroup.length]),
+      el('span', { 'class': 'pager-links' }, [link(n.prev, 'prev'), link(n.next, 'next')])
     ]);
   }
   /* ---------- chapter navigation ---------- */
@@ -432,6 +474,7 @@
     var pageKey = lesson.id;
     return fetchText(path).then(function (md) {
       var article = renderMarkdown(md, pageKey, path);
+      article.insertBefore(topPager(lesson.id), article.firstChild);
       article.appendChild(lessonFooter(lesson.id));
       var sections = addHeadingIds(article, pageKey);
       if (sections.length >= 3) {

@@ -4,6 +4,15 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.7.0] - 2026-11-16
+
+### Added
+- Previous / next navigation on every page, in content order across all three courses (Japan guide → Hiragana course → Katakana course):
+  - A compact bar at the top showing where you are ("Hiragana course · Unit 3 · 4 of 10") with ‹ Previous and Next › links
+  - Previous and next cards at the bottom, naming the page and, when you move into another course, that course. The first and last pages link back to Home
+
+### Changed
+- The single "Next" button at the end of each page is replaced by the previous/next cards
 ## [1.6.1] - 2026-11-16
 
 ### Fixed
@@ -111,6 +120,7 @@ First public release of the Japanese survival course for European travellers.
 - Git flow branching model (see `CONTRIBUTING.md`)
 - GitHub Actions: Pages deployment from `main`, and a GitHub release for each `v*` tag
 
+[1.7.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.7.0
 [1.6.1]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.6.1
 [1.6.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.6.0
 [1.5.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.5.0
