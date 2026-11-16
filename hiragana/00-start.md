@@ -33,6 +33,7 @@ None of them are tricks, and together they explain why the exercises look the wa
 | **Immediate, explained feedback** | Feedback that tells you *why* corrects errors and stops them sticking. | Wrong answers show the memory aid for both the right answer and the one you chose. |
 | **Small chunks** (cognitive load) | Working memory holds only a few new items at once (Sweller). | 5–11 new characters per unit, and real words use only characters you've already met. |
 | **Fluency** | Reading signs from a moving train needs speed, not just accuracy. | Timed speed rounds once you're accurate. |
+| **Adaptive practice** | Practice time pays off most when it goes to what you don't know yet. | An **endless game** after every unit serves your weakest characters most, and shows each character's proficiency live. |
 | **Sleep** | Memory consolidates during sleep. | One unit per day, and the review the next morning. |
 
 > **The golden rule:** a mistake during practice isn't a failure. It shows you exactly what
