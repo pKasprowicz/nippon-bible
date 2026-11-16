@@ -86,7 +86,16 @@ count: 10
 checkpoint: yes
 ```
 
-## 7. Before you go
+## 7. Endless game
+
+Keep playing as long as you like. The game asks in checkpoint style, picks the vowels you know least, and the panel shows each one's proficiency live.
+
+```game
+unit: 1
+modes: type,listen,type
+```
+
+## 8. Before you go
 
 - **Recall without looking:** close your eyes and picture all five characters in order. Which one is hardest to see? That's the one to look at again.
 - Your five characters are now in the [Daily review](09-review.md). Come back tomorrow, *after* a night's sleep.

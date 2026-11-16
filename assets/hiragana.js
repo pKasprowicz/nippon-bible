@@ -141,9 +141,13 @@
     var bar = el('div', { 'class': 'hw-progress', role: 'progressbar', 'aria-valuemin': '0' }, [el('span')]);
     var status = el('div', { 'class': 'hw-status' });
     root.replaceChildren(bar, status, stage);
-    var current = null, answered = false, onKey = null;
+    var current = null, answered = false, onKey = null, stopped = false, shownAt = 0;
+    if (opts.endless) bar.hidden = true;
+    // Characters in the last few queued questions, so new picks don't repeat them back to back.
+    function tail() { return queue.slice(Math.max(pos, queue.length - 3)).map(function (q) { return q.k; }); }
 
     function updateStatus() {
+      if (opts.endless) { status.textContent = opts.statusText ? opts.statusText() : ''; return; }
       var total = opts.timer ? null : queue.length;
       var label = opts.timer
         ? Math.max(0, Math.ceil((timerEnd - Date.now()) / 1000)) + ' s left · ' + right + ' correct'
@@ -155,6 +159,8 @@
       bar.setAttribute('aria-valuemax', '100');
     }
     function finish() {
+      if (stopped) return;
+      stopped = true;
       if (timerId) clearInterval(timerId);
       stage.removeEventListener('keydown', onKey);
       var uniqueAsked = Object.keys(firstTry);
@@ -163,8 +169,11 @@
         score: uniqueAsked.length ? firstOk / uniqueAsked.length : 0, missed: uniq(missed), lapsed: lapsed });
     }
     function next() {
+      if (stopped) return;
       if (opts.timer && Date.now() >= timerEnd) { finish(); return; }
       if (opts.timer && pos >= queue.length) queue.push(opts.more());
+      // Endless mode keeps a few questions queued so a missed item can come back 3–4 questions later.
+      while (opts.endless && queue.length < pos + 4) queue.push(opts.more(tail()));
       if (pos >= queue.length) { finish(); return; }
       current = queue[pos]; answered = false;
       render(current);
@@ -177,11 +186,16 @@
       if (firstTry[current.id] === undefined) firstTry[current.id] = res.ok;
       if (res.ok) right++;
       else { missed.push(current); lapsed[current.id] = true; }
-      if (opts.onAnswer) opts.onAnswer(current, res.ok, !!lapsed[current.id]);
+      if (opts.onAnswer) opts.onAnswer(current, res.ok, !!lapsed[current.id], performance.now() - shownAt);
       if (!res.ok && !opts.timer) {
         // Re-ask a missed item a few questions later (in-session spacing).
         var again = Object.assign({}, current, { retry: true });
-        queue.splice(Math.min(queue.length, pos + 3 + Math.floor(Math.random() * 2)), 0, again);
+        var at = Math.min(queue.length, pos + 3 + Math.floor(Math.random() * 2));
+        var same = function (q) { return q && q.k && q.k === current.k; };
+        if (opts.endless) while (queue.length < at + 2) queue.push(opts.more(tail()));
+        while (at < queue.length && (same(queue[at - 1]) || same(queue[at]))) at++;
+        if (at === queue.length && same(queue[at - 1]) && opts.endless) queue.push(opts.more(tail()));
+        queue.splice(Math.min(at, queue.length), 0, again);
       }
       showFeedback(res, chosenLabel);
       updateStatus();
@@ -209,7 +223,7 @@
       }
       if (current.audioOnCorrect !== false && current.audio) ctx.speak(current.audio);
       if (res.ok && !opts.timer && !current.pauseOnCorrect) {
-        setTimeout(function () { if (answered && queue[pos] === current) { pos++; next(); } }, opts.fast ? 450 : 1100);
+        setTimeout(function () { if (answered && queue[pos] === current) { pos++; next(); } }, opts.advanceMs || (opts.fast ? 450 : 1100));
       } else if (opts.timer) {
         setTimeout(function () { pos++; next(); }, res.ok ? 250 : 900);
       } else {
@@ -242,6 +256,7 @@
         answerBox = el('div', {}, [form, extra]);
       }
       stage.replaceChildren(promptBox, answerBox, el('div', { 'class': 'hw-feedback', 'aria-live': 'polite' }));
+      shownAt = performance.now();
       if (q.audio && q.autoplay) setTimeout(function () { ctx.speak(q.audio); }, 150);
       var focusTarget = stage.querySelector('.hw-input') || stage;
       focusTarget.focus({ preventScroll: true });
@@ -266,6 +281,7 @@
     }
     if (opts.timer) timerId = setInterval(function () { updateStatus(); if (Date.now() >= timerEnd && !answered) finish(); }, 250);
     next();
+    return { stop: finish };
   }
 
   /* ---------- question builders ---------- */
@@ -624,6 +640,197 @@
       } });
     }
     startScreen(sh.body, 'Board the train', begin);
+    return sh.root;
+  };
+
+  /* ---------- endless game ---------- */
+  // Proficiency per character: an exponential moving average of answer quality
+  // (1 = right and fast, 0.8 = right but slow, 0 = wrong), starting from 0.5.
+  var GAME_ALPHA = 0.3, FAST_MS = { type: 5000, choice: 3500 };
+  var LEVELS = [
+    { cls: 'g0', label: 'new (under 3 answers)' }, { cls: 'g1', label: 'weak (under 60%)' }, { cls: 'g2', label: 'learning (60–84%)' },
+    { cls: 'g3', label: 'strong (85%+)' }, { cls: 'g4', label: 'mastered (95%+, 8+ answers)' }
+  ];
+  function gameLevel(g) {
+    if (!g || g.n < 3) return LEVELS[0];
+    if (g.ema >= 0.95 && g.n >= 8) return LEVELS[4];
+    if (g.ema >= 0.85) return LEVELS[3];
+    if (g.ema >= 0.6) return LEVELS[2];
+    return LEVELS[1];
+  }
+  function gamePool(cfg) {
+    var exclude = { 'ぢ': 1, 'づ': 1 }; // same sound as じ/ず: unfair in a listening game
+    if (cfg.pool === 'learned') {
+      var s = loadState();
+      return D.list.filter(function (e) { return s.srs['k:' + e.k] && !exclude[e.k]; }).map(function (e) { return e.k; });
+    }
+    var unit = Number(cfg.unit) || 8;
+    return D.list.filter(function (e) { return e.unit <= unit && !exclude[e.k]; }).map(function (e) { return e.k; });
+  }
+  function recordGame(k, ok, ms, isChoice) {
+    var s = loadState();
+    s.game = s.game || {};
+    var g = s.game[k] || { n: 0, ok: 0, ema: 0.5, ms: 0 };
+    var score = ok ? (ms < (isChoice ? FAST_MS.choice : FAST_MS.type) ? 1 : 0.8) : 0;
+    g.n++; if (ok) g.ok++;
+    g.ema = Math.round((g.ema + GAME_ALPHA * (score - g.ema)) * 1000) / 1000;
+    if (ok) g.ms = g.ms ? Math.round(g.ms * 0.7 + ms * 0.3) : Math.round(ms);
+    g.last = Date.now();
+    s.game[k] = g;
+    markPractised(s);
+    saveState(s);
+    return g;
+  }
+  // Adaptive selection: weak, slow and unseen characters come up more often;
+  // the unit's new characters get a boost; the last few are held back.
+  function chooseNext(pool, focus, recent) {
+    var stats = loadState().game || {};
+    var weights = pool.map(function (k) {
+      if (recent.indexOf(k) >= 0) return 0;
+      var g = stats[k], w;
+      if (!g || !g.n) w = 2.5;
+      else {
+        w = 0.2 + Math.pow(1 - g.ema, 1.5) * 4;
+        if (g.ms > 4000) w += 0.4;
+        if (g.n < 3) w += 0.8;
+      }
+      return focus.indexOf(k) >= 0 ? w * 1.6 : w;
+    });
+    var total = weights.reduce(function (a, b) { return a + b; }, 0), r = Math.random() * total;
+    for (var i = 0; i < pool.length; i++) { r -= weights[i]; if (r <= 0 && weights[i] > 0) return pool[i]; }
+    return pick(pool);
+  }
+  function pct(x) { return Math.round(x * 100) + '%'; }
+  function secs(ms) { return ms ? (ms / 1000).toFixed(1) + ' s' : '–'; }
+
+  // ```game\nunit: 3\nmodes: type,listen,type   (or  pool: learned)
+  WIDGETS.game = function (block, env) {
+    var c = block.cfg;
+    var modes = (c.modes || 'type,listen,type').split(',').map(function (x) { return x.trim(); });
+    var focus = c.unit ? D.list.filter(function (e) { return e.unit === Number(c.unit); }).map(function (e) { return e.k; }) : [];
+    var bestKey = 'game:' + (c.pool || 'unit' + (c.unit || 8));
+    var sh = shell(c.title || 'Endless game',
+      'Checkpoint-style questions that never run out. The game picks the characters you know least, and the panel updates after every answer.', 'hw-game');
+    var play = el('div', { 'class': 'hw-game-play' });
+    var panel = el('aside', { 'class': 'hw-game-panel', 'aria-label': 'Live statistics' });
+    sh.body.replaceChildren(el('div', { 'class': 'hw-game-layout' }, [play, panel]));
+    var pool = [], session = null, runner = null, before = {}, gridOpen = null;
+
+    function renderPanel(lastK, lastOk) {
+      var stats = loadState().game || {};
+      pool = gamePool(c);
+      var played = pool.filter(function (k) { return stats[k] && stats[k].n; });
+      var avg = pool.length ? pool.reduce(function (a, k) { return a + (stats[k] && stats[k].n ? stats[k].ema : 0); }, 0) / pool.length : 0;
+      var mastered = pool.filter(function (k) { return gameLevel(stats[k]) === LEVELS[4]; }).length;
+      var weakest = played.filter(function (k) { return stats[k].n >= 3 && stats[k].ema < 0.85; })
+        .sort(function (a, b) { return stats[a].ema - stats[b].ema; }).slice(0, 5);
+      var nodes = [];
+      if (session) {
+        var acc = session.answered ? session.correct / session.answered : 0;
+        nodes.push(el('div', { 'class': 'hw-gtiles' }, [
+          tile(session.answered, 'answered'), tile(session.answered ? pct(acc) : '–', 'accuracy'),
+          tile('🔥 ' + session.streak, 'streak · best ' + Math.max(session.best, loadState().best[bestKey] || 0)),
+          tile(secs(session.correct ? session.ms / session.correct : 0), 'avg. time')
+        ]));
+      }
+      nodes.push(el('div', { 'class': 'hw-gprof' }, [
+        el('div', { 'class': 'hw-gprof-head' }, [el('strong', { text: 'Proficiency ' + pct(avg) }), el('span', { text: mastered + ' of ' + pool.length + ' mastered' })]),
+        el('div', { 'class': 'hw-gprof-bar', role: 'img', 'aria-label': 'Overall proficiency ' + pct(avg) }, [el('span', { style: 'width:' + pct(avg) })])
+      ]));
+      nodes.push(el('p', { 'class': 'hw-gfocus' }, weakest.length
+        ? [el('span', { text: 'Focus: ' })].concat(weakest.map(function (k) { return el('span', { 'class': 'hw-gfocus-k', lang: 'ja', text: k + ' ' + pct(stats[k].ema) }); }))
+        : [el('span', { text: played.some(function (k) { return stats[k].n >= 3; }) ? 'No weak characters right now. Keep the streak going!' : 'Play a few rounds to see which characters need work.' })]));
+      var grid = el('div', { 'class': 'hw-ggrid' }, pool.map(function (k) {
+        var g = stats[k], lv = gameLevel(g), e = info(k);
+        var cell = el('div', { 'class': 'hw-gcell ' + lv.cls + (k === lastK ? (lastOk ? ' flash-ok' : ' flash-bad') : ''),
+          title: e.r + ' · ' + (g && g.n ? pct(g.ema) + ' · ' + g.ok + '/' + g.n + ' right · ' + secs(g.ms) : 'not played yet') }, [
+          el('span', { 'class': 'hw-gcell-k', lang: 'ja', text: k }),
+          el('span', { 'class': 'hw-gcell-p', text: g && g.n ? pct(g.ema) : '·' })
+        ]);
+        return cell;
+      }));
+      var legend = el('div', { 'class': 'hw-legend' }, LEVELS.map(function (l) { return el('span', {}, [el('i', { 'class': 'hw-swatch ' + l.cls }), l.label]); }));
+      // Big sets and small screens: the grid folds away (remembering the reader's choice).
+      if (gridOpen === null) gridOpen = pool.length <= 30 && window.matchMedia('(min-width: 1000px)').matches;
+      var details = el('details', { 'class': 'hw-gdetails', open: gridOpen }, [
+        el('summary', { text: 'All characters (' + pool.length + ')' }), grid, legend
+      ]);
+      details.addEventListener('toggle', function () { gridOpen = details.open; });
+      nodes.push(details);
+      panel.replaceChildren.apply(panel, nodes);
+    }
+    function tile(v, label) { return el('div', { 'class': 'hw-gtile' }, [el('strong', { text: String(v) }), el('span', { text: label })]); }
+
+    function makeQuestion(queuedTail) {
+      var k = chooseNext(pool, focus, session.recent.concat(queuedTail || []));
+      session.recent.push(k);
+      session.recent = session.recent.slice(-Math.min(4, Math.max(0, pool.length - 2)));
+      var q = kanaQuestion(k, pick(modes), pool);
+      q.id = 'g' + (session.count++) + ':' + k;
+      return q;
+    }
+    function start() {
+      pool = gamePool(c);
+      if (pool.length < 4) {
+        play.replaceChildren(el('p', { 'class': 'hw-note', text: 'Practise at least one unit first: the game needs a few characters you\'ve studied.' }));
+        return;
+      }
+      var st = loadState().game || {};
+      before = {};
+      pool.forEach(function (k) { before[k] = st[k] ? st[k].ema : null; });
+      session = { answered: 0, correct: 0, streak: 0, best: 0, ms: 0, count: 0, recent: [], mastered: [] };
+      var sessionBox = el('div', { 'class': 'hw-game-session' });
+      var stopBtn = el('button', { 'class': 'btn hw-game-stop', type: 'button', text: 'End game', onclick: function () { if (runner) runner.stop(); } });
+      play.replaceChildren(sessionBox, el('div', { 'class': 'hw-actions' }, [stopBtn]));
+      enroll(pool.map(kanaItem));
+      runner = runSession(sessionBox, {
+        questions: [], endless: true, advanceMs: 750,
+        more: makeQuestion,
+        statusText: function () {
+          return session.answered + ' answered · ' + (session.answered ? pct(session.correct / session.answered) : '–') + ' right · streak ' + session.streak + (session.streak >= 5 ? ' 🔥' : '');
+        },
+        onAnswer: function (q, ok, lapsedNow, ms) {
+          var wasMastered = gameLevel((loadState().game || {})[q.k]) === LEVELS[4];
+          var g = recordGame(q.k, ok, ms, !!q.options);
+          session.answered++;
+          if (ok) { session.correct++; session.streak++; session.ms += ms; } else session.streak = 0;
+          if (session.streak > session.best) session.best = session.streak;
+          if (!wasMastered && gameLevel(g) === LEVELS[4]) { session.mastered.push(q.k); ctx.toast(q.k + ' (' + info(q.k).r + ') mastered! 🎉'); }
+          var s = loadState();
+          if (session.best > (s.best[bestKey] || 0)) { s.best[bestKey] = session.best; saveState(s); }
+          renderPanel(q.k, ok);
+        },
+        onDone: function () { runner = null; summary(); }
+      });
+      renderPanel();
+    }
+    function summary() {
+      var st = loadState().game || {};
+      var changes = pool.filter(function (k) { return st[k] && before[k] !== (st[k] && st[k].ema); }).map(function (k) {
+        return { k: k, from: before[k] === null ? 0.5 : before[k], to: st[k].ema };
+      }).sort(function (a, b) { return (b.to - b.from) - (a.to - a.from); });
+      var up = changes.filter(function (x) { return x.to > x.from; }).slice(0, 6);
+      var down = changes.filter(function (x) { return x.to < x.from; }).sort(function (a, b) { return (a.to - a.from) - (b.to - b.from); }).slice(0, 4);
+      var out = [el('p', { 'class': 'hw-win', text: 'Game over: ' + session.answered + ' answered, ' + (session.answered ? pct(session.correct / session.answered) : '0%') + ' right, best streak ' + session.best + '.' })];
+      if (session.mastered.length) out.push(el('p', {}, [el('strong', { text: 'Newly mastered: ' }), el('span', { lang: 'ja', text: session.mastered.join(' ') })]));
+      if (up.length) out.push(el('p', {}, [el('strong', { text: 'Improved: ' })].concat(up.map(function (x) { return el('span', { 'class': 'hw-delta up', lang: 'ja', text: x.k + ' ' + pct(x.from) + '→' + pct(x.to) }); }))));
+      if (down.length) out.push(el('p', {}, [el('strong', { text: 'Needs work: ' })].concat(down.map(function (x) { return el('span', { 'class': 'hw-delta down', lang: 'ja', text: x.k + ' ' + pct(x.from) + '→' + pct(x.to) }); }))));
+      out.push(el('div', { 'class': 'hw-actions' }, [el('button', { 'class': 'btn primary', type: 'button', text: 'Play again', onclick: start })]));
+      play.replaceChildren(el('div', { 'class': 'hw-result' }, out));
+      session = null;
+      renderPanel();
+    }
+    function intro() {
+      var best = loadState().best[bestKey];
+      play.replaceChildren(el('div', { 'class': 'hw-start' }, [
+        el('button', { 'class': 'btn primary', type: 'button', text: 'Start the game', onclick: start }),
+        best ? el('span', { 'class': 'hw-best', text: 'Best streak: ' + best }) : null,
+        el('p', { 'class': 'hw-note', text: 'Play as long as you like and end whenever you want. Every answer updates your proficiency, which is saved for each character.' })
+      ]));
+    }
+    intro();
+    renderPanel();
+    document.addEventListener('nb-hira-changed', function () { if (!session) renderPanel(); });
     return sh.root;
   };
 

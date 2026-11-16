@@ -30,6 +30,18 @@ recall is what makes memories last (the spacing effect and the testing effect).
 - Got many due after a break? Do 40 today and the rest tomorrow; the schedule copes.
 - "Extra practice" drills your 15 weakest items without changing your schedule. Use it when you have spare minutes, like waiting for a train.
 
+## Free play
+
+An endless game with **every character in your review deck**, asked checkpoint-style, weakest
+first. It doesn't change your review schedule. Use it whenever you have a few minutes, for
+example on the train.
+
+```game
+title: Free play: everything you've learned
+pool: learned
+modes: type,listen,type
+```
+
 ## Your progress map
 
 ```map

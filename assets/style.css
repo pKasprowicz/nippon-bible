@@ -263,6 +263,47 @@ details[open] summary { border-bottom: 1px solid var(--line); margin-bottom: 8px
 .hw-pair { padding: 4px 12px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); font-size: 20px; letter-spacing: .2em; }
 .hw-error { color: var(--accent); }
 
+/* Endless game */
+.hw-game-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; }
+@media (min-width: 1000px) { .hw-game-layout { grid-template-columns: minmax(0, 1fr) 270px; align-items: start; } }
+.hw-game-panel { padding: 14px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); }
+.hw-gtiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-bottom: 12px; }
+.hw-gtile { display: flex; flex-direction: column; padding: 8px 10px; border-radius: 10px; background: var(--surface-2); }
+.hw-gtile strong { font-size: 20px; line-height: 1.2; }
+.hw-gtile span { font-size: 12px; color: var(--ink-soft); }
+.hw-gprof-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; font-size: 14px; }
+.hw-gprof-head span { color: var(--ink-soft); font-size: 12px; }
+.hw-gprof-bar { height: 8px; margin: 6px 0 10px; border-radius: 99px; background: var(--line); overflow: hidden; }
+.hw-gprof-bar span { display: block; height: 100%; background: var(--good); transition: width .4s; }
+.hw-gfocus { margin: 0 0 10px; font-size: 13px; color: var(--ink-soft); display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.hw-gfocus-k { padding: 1px 8px; border-radius: 99px; background: var(--accent-soft); color: var(--ink); font-size: 13px; }
+.hw-ggrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(42px, 1fr)); gap: 5px; }
+.hw-gcell {
+  display: flex; flex-direction: column; align-items: center; padding: 3px 0 2px; border-radius: 8px;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink-soft);
+}
+.hw-gcell-k { font-size: 18px; line-height: 1.2; color: var(--ink); }
+.hw-gcell-p { font-size: 10px; font-variant-numeric: tabular-nums; }
+.hw-gcell.g1, .hw-swatch.g1 { background: color-mix(in srgb, var(--accent) 22%, var(--surface)); border-color: color-mix(in srgb, var(--accent) 45%, transparent); }
+.hw-gcell.g2, .hw-swatch.g2 { background: color-mix(in srgb, #e0a100 24%, var(--surface)); border-color: color-mix(in srgb, #e0a100 50%, transparent); }
+.hw-gcell.g3, .hw-swatch.g3 { background: color-mix(in srgb, var(--good) 24%, var(--surface)); border-color: color-mix(in srgb, var(--good) 45%, transparent); }
+.hw-gcell.g4, .hw-swatch.g4 { background: var(--good); border-color: var(--good); }
+.hw-gcell.g4 .hw-gcell-k, .hw-gcell.g4 .hw-gcell-p { color: #fff; }
+.hw-gcell.g1 .hw-gcell-p, .hw-gcell.g2 .hw-gcell-p, .hw-gcell.g3 .hw-gcell-p { color: var(--ink); }
+.hw-gcell.flash-ok { animation: hw-flash-ok .9s ease; }
+.hw-gcell.flash-bad { animation: hw-flash-bad .9s ease; }
+@keyframes hw-flash-ok { 0% { transform: scale(1.25); box-shadow: 0 0 0 3px var(--good); } 100% { transform: none; box-shadow: none; } }
+@keyframes hw-flash-bad { 0% { transform: scale(1.25); box-shadow: 0 0 0 3px var(--accent); } 100% { transform: none; box-shadow: none; } }
+@media (prefers-reduced-motion: reduce) { .hw-gcell.flash-ok, .hw-gcell.flash-bad { animation: none; outline: 2px solid var(--ink-soft); } }
+.hw-game-panel .hw-legend { gap: 6px 12px; font-size: 11px; margin-top: 10px; }
+.hw-game-stop { margin-top: 4px; }
+.hw-gdetails { margin: 0; padding: 0; border: 0; background: none; }
+.hw-gdetails summary { padding: 4px 0 8px; font-size: 13px; font-weight: 600; color: var(--ink-soft); cursor: pointer; }
+.hw-gdetails[open] summary { border-bottom: 0; margin-bottom: 4px; }
+.hw-delta { display: inline-block; margin: 2px 6px 2px 0; padding: 1px 8px; border-radius: 99px; font-size: 14px; }
+.hw-delta.up { background: color-mix(in srgb, var(--good) 18%, var(--surface)); }
+.hw-delta.down { background: var(--accent-soft); }
+
 /* Character cards */
 .hw-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; margin: 18px 0; }
 .hw-card {

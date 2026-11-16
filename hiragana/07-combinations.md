@@ -163,7 +163,16 @@ title: Checkpoint: words
 ちょっと | chotto | a little
 ```
 
-## 8. Before you go
+## 8. Endless game
+
+An open-ended game with every character from Units 1–7, asked the way the checkpoint asks. It serves your weakest characters most often (this unit's new ones get extra turns), and the panel tracks each character's proficiency live. Stop whenever you like; your proficiency is saved.
+
+```game
+unit: 7
+modes: see,listen,type
+```
+
+## 9. Before you go
 
 - You can now read **every hiragana word**. What's left is practice, so the last unit puts you in front of real signs and menus.
 - Long vowels and っ are where travellers mispronounce place names. Say **To-o-kyo-o** (4 beats) and **Kyo-o-to** (3 beats) out loud.

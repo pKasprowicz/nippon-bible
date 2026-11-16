@@ -155,7 +155,16 @@ count: 24
 checkpoint: yes
 ```
 
-## 9. Before you go
+## 9. Endless game
+
+An open-ended game with every character from Units 1–6, asked the way the checkpoint asks. It serves your weakest characters most often (this unit's new ones get extra turns), and the panel tracks each character's proficiency live. Stop whenever you like; your proficiency is saved.
+
+```game
+unit: 6
+modes: see,type,listen,type
+```
+
+## 10. Before you go
 
 - In real life the marks are small. **Look closely at the top right** of every character.
 - ありがとう has a long **ō** at the end (とう). Hold it: *a-ri-ga-to-o*. Unit 7 is all about these long sounds.

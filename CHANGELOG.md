@@ -4,6 +4,15 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.5.0] - 2026-11-16
+
+### Added
+- **Endless game** at the end of every hiragana unit, plus "Free play" on the Daily review page
+  - Checkpoint-style questions that never run out, covering every character taught so far
+  - Adaptive selection: weak, slow and unseen characters come up more often, the unit's new characters get extra turns, and missed ones come back 3–4 questions later
+  - A live statistics panel that updates after every answer: answered, accuracy, streak (with best), average answer time, overall proficiency, focus characters, and a per-character proficiency grid
+  - Proficiency is saved per character in the browser, so it carries across units and visits; an end-of-game summary shows improvements and newly mastered characters
+
 ## [1.4.1] - 2026-11-15
 
 ### Fixed
@@ -76,6 +85,7 @@ First public release of the Japanese survival course for European travellers.
 - Git flow branching model (see `CONTRIBUTING.md`)
 - GitHub Actions: Pages deployment from `main`, and a GitHub release for each `v*` tag
 
+[1.5.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.5.0
 [1.4.1]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.4.1
 [1.4.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.4.0
 [1.3.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.3.0

@@ -155,7 +155,16 @@ count: 22
 checkpoint: yes
 ```
 
-## 12. Before you go
+## 12. Endless game
+
+An open-ended game with every character from Units 1–5, asked the way the checkpoint asks. It serves your weakest characters most often (this unit's new ones get extra turns), and the panel tracks each character's proficiency live. Stop whenever you like; your proficiency is saved.
+
+```game
+unit: 5
+modes: type,listen,type
+```
+
+## 13. Before you go
 
 - 🎉 **All 46 basic hiragana.** Look at your [progress map](09-review.md): every coloured cell is a character you can read.
 - From now on, the **Daily review** matters most. Reviews spaced over the next weeks
