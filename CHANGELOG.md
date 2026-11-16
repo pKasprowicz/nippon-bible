@@ -4,7 +4,7 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [1.5.0] - 2026-11-16
 
 ### Added
 - **Endless game** at the end of every hiragana unit, plus "Free play" on the Daily review page
@@ -85,6 +85,7 @@ First public release of the Japanese survival course for European travellers.
 - Git flow branching model (see `CONTRIBUTING.md`)
 - GitHub Actions: Pages deployment from `main`, and a GitHub release for each `v*` tag
 
+[1.5.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.5.0
 [1.4.1]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.4.1
 [1.4.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.4.0
 [1.3.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.3.0
