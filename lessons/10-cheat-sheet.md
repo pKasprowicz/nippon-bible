@@ -140,4 +140,4 @@ Try every question before opening the answers.
 
 🎌 *Ki o tsukete!* · Take care, and have a great trip!
 
-⬅️ Back to [course overview](../README.md)
+⬅️ Back to the [Japan guide overview](00-guide.md) · Next: learn to read with the [Hiragana course](../hiragana/00-start.md)

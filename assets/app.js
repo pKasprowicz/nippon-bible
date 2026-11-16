@@ -2,10 +2,12 @@
   'use strict';
 
   var GROUPS = [
-    { id: 'course', title: 'Survival course' },
-    { id: 'hiragana', title: 'Hiragana course' }
+    { id: 'course', title: 'Japan guide' },
+    { id: 'hiragana', title: 'Hiragana course' },
+    { id: 'katakana', title: 'Katakana course' }
   ];
   var LESSONS = [
+    { id: 'guide', file: 'lessons/00-guide.md', group: 'course', title: 'Overview', label: '★' },
     { id: '01-pronunciation', file: 'lessons/01-pronunciation.md', group: 'course', title: 'Pronunciation' },
     { id: '02-writing', file: 'lessons/02-writing.md', group: 'course', title: 'Writing & recognition' },
     { id: '03-core-words', file: 'lessons/03-core-words.md', group: 'course', title: 'Core words' },
@@ -25,7 +27,17 @@
     { id: 'hiragana-6', file: 'hiragana/06-dakuten.md', group: 'hiragana', title: '゛ and ゜: が, ぱ…' },
     { id: 'hiragana-7', file: 'hiragana/07-combinations.md', group: 'hiragana', title: 'きゃ, っ, long vowels' },
     { id: 'hiragana-8', file: 'hiragana/08-real-world.md', group: 'hiragana', title: 'Real-world reading & final test' },
-    { id: 'hiragana-review', file: 'hiragana/09-review.md', group: 'hiragana', title: 'Daily review', label: '↻' }
+    { id: 'hiragana-review', file: 'hiragana/09-review.md', group: 'hiragana', title: 'Daily review', label: '↻' },
+    { id: 'katakana', file: 'katakana/00-start.md', group: 'katakana', title: 'Start here', label: '★' },
+    { id: 'katakana-1', file: 'katakana/01-a-k.md', group: 'katakana', title: 'ア and カ rows' },
+    { id: 'katakana-2', file: 'katakana/02-s-t.md', group: 'katakana', title: 'サ・タ rows' },
+    { id: 'katakana-3', file: 'katakana/03-n-h.md', group: 'katakana', title: 'ナ・ハ rows' },
+    { id: 'katakana-4', file: 'katakana/04-m-y.md', group: 'katakana', title: 'マ・ヤ rows' },
+    { id: 'katakana-5', file: 'katakana/05-r-w.md', group: 'katakana', title: 'ラ・ワ rows and ン' },
+    { id: 'katakana-6', file: 'katakana/06-dakuten.md', group: 'katakana', title: '゛ and ゜: ガ, パ…' },
+    { id: 'katakana-7', file: 'katakana/07-combinations.md', group: 'katakana', title: 'ッ, キャ, ティ, ファ…' },
+    { id: 'katakana-8', file: 'katakana/08-real-world.md', group: 'katakana', title: 'Real-world reading & final test' },
+    { id: 'katakana-review', file: 'katakana/09-review.md', group: 'katakana', title: 'Daily review', label: '↻' }
   ];
   // Number lessons within their group unless they have their own label.
   GROUPS.forEach(function (g) {
@@ -35,7 +47,7 @@
   var BY_FILE = {};
   LESSONS.forEach(function (l) { BY_FILE[l.file] = l; });
   // Old lesson ids (kept so bookmarks and saved progress keep working)
-  var ALIASES = { '06-cheat-sheet': '10-cheat-sheet', '09-cheat-sheet': '10-cheat-sheet' };
+  var ALIASES = { overview: 'guide', '06-cheat-sheet': '10-cheat-sheet', '09-cheat-sheet': '10-cheat-sheet' };
   var JA_RUN = /[々぀-ヿ㐀-䶿一-鿿～〜]+(?:[、。\s]?[々぀-ヿ㐀-䶿一-鿿～〜]+)*/g;
 
   var content = document.getElementById('content');
@@ -146,8 +158,8 @@
   });
 
   /* ---------- hiragana course hooks ---------- */
-  if (window.NBHira) {
-    window.NBHira.init({
+  if (window.NBKana) {
+    window.NBKana.init({
       speak: function (text) { speak(text); },
       toast: toast,
       markDone: function (id) {
@@ -163,7 +175,7 @@
   function buildNav() {
     navList.innerHTML = '';
     navList.appendChild(el('li', {}, [el('a', { 'class': 'nav-link', href: '#/', 'data-route': '' }, [
-      el('span', { 'class': 'nav-num', 'aria-hidden': 'true', text: '⌂' }), el('span', { text: 'Overview' })
+      el('span', { 'class': 'nav-num', 'aria-hidden': 'true', text: '⌂' }), el('span', { text: 'Home' })
     ])]));
     GROUPS.forEach(function (g) {
       navList.appendChild(el('li', { 'class': 'nav-group', role: 'presentation', text: g.title }));
@@ -217,7 +229,7 @@
         var target = resolvePath(file, m[1]);
         var lesson = BY_FILE[target];
         if (lesson) { a.setAttribute('href', '#/' + lesson.id + (m[2] ? '/' + m[2] : '')); return; }
-        if (target === 'README.md') { a.setAttribute('href', m[2] ? '#/overview/' + m[2] : '#/'); return; }
+        if (target === 'README.md') { a.setAttribute('href', '#/'); return; }
         a.setAttribute('href', 'https://github.com/pKasprowicz/nippon-bible/blob/main/' + target);
         a.target = '_blank'; a.rel = 'noopener';
         return;
@@ -239,7 +251,8 @@
     rewriteLinks(article, pageKey, file);
     wrapTables(article);
     markSpeakable(article);
-    if (window.NBHira) window.NBHira.mount(article, pageKey);
+    var lesson = LESSONS.filter(function (l) { return l.id === pageKey; })[0];
+    if (window.NBKana) window.NBKana.mount(article, pageKey, lesson && lesson.group === 'katakana' ? 'katakana' : 'hiragana');
     return article;
   }
   function lessonFooter(id) {
@@ -254,8 +267,8 @@
     return el('div', { 'class': 'lesson-foot' }, [
       btn,
       next ? el('a', { 'class': 'btn primary', href: '#/' + next.id, text: 'Next: ' + next.title + ' →' })
-           : LESSONS[i].group === 'hiragana'
-             ? el('a', { 'class': 'btn primary', href: '#/hiragana', text: 'Back to the hiragana course →' })
+           : LESSONS[i].group !== 'course'
+             ? el('a', { 'class': 'btn primary', href: '#/' + LESSONS[i].group, text: 'Back to the ' + LESSONS[i].group + ' course →' })
              : el('a', { 'class': 'btn primary', href: '#/hiragana', text: 'Next: learn hiragana →' })
     ]);
   }
@@ -263,7 +276,7 @@
   // Section ids follow GitHub's heading slugs, so README/lesson anchors work on GitHub and here.
   var SECTION_PREFIX = 'sec-';
   var WIDE = window.matchMedia('(min-width: 1280px)');
-  var rendered = null;      // page key currently on screen ('overview' or a lesson id)
+  var rendered = null;      // page key currently on screen ('home' or a lesson id)
   var spyHandler = null;
   var closeBarPanel = null;   // closes the mobile contents panel on outside clicks
   document.addEventListener('click', function (e) { if (closeBarPanel) closeBarPanel(e.target); });
@@ -415,11 +428,11 @@
 
   function showPage(route) {
     var lesson = LESSONS.filter(function (l) { return l.id === route; })[0];
-    var path = lesson ? lesson.file : 'README.md';
-    var pageKey = lesson ? lesson.id : 'overview';
+    var path = lesson.file;
+    var pageKey = lesson.id;
     return fetchText(path).then(function (md) {
       var article = renderMarkdown(md, pageKey, path);
-      if (lesson) article.appendChild(lessonFooter(lesson.id));
+      article.appendChild(lessonFooter(lesson.id));
       var sections = addHeadingIds(article, pageKey);
       if (sections.length >= 3) {
         var nav = buildChapterNav(sections, pageKey);
@@ -430,8 +443,76 @@
       }
       rendered = pageKey;
       var h1 = article.querySelector('h1');
-      document.title = (lesson ? (h1 ? h1.textContent.replace(/^(Lesson|Hiragana) \d+:\s*/, '').replace(/#$/, '') + ' · ' : '') : '') + 'Nippon Bible';
+      document.title = (h1 ? h1.textContent.replace(/^(Lesson|Hiragana|Katakana) \d+:\s*/, '').replace(/#$/, '') + ' · ' : '') + 'Nippon Bible';
     });
+  }
+
+  /* ---------- home: three tiles ---------- */
+  function groupProgress(group) {
+    var pages = LESSONS.filter(function (l) { return l.group === group && l.label !== '★' && l.label !== '↻'; });
+    var doneCount = pages.filter(function (l) { return done[l.id]; }).length;
+    var next = pages.filter(function (l) { return !done[l.id]; })[0];
+    return { total: pages.length, done: doneCount, next: next };
+  }
+  function tile(opts) {
+    var pct = opts.total ? Math.round(100 * opts.value / opts.total) : 0;
+    return el('a', { 'class': 'home-tile tile-' + opts.id, href: opts.href }, [
+      el('span', { 'class': 'home-glyph', lang: 'ja', 'aria-hidden': 'true', text: opts.glyph }),
+      el('span', { 'class': 'home-kicker', text: opts.kicker }),
+      el('span', { 'class': 'home-title', text: opts.title }),
+      el('span', { 'class': 'home-desc', text: opts.desc }),
+      el('span', { 'class': 'home-examples', lang: 'ja', text: opts.examples }),
+      el('span', { 'class': 'home-progress' }, [
+        el('span', { 'class': 'home-bar', role: 'img', 'aria-label': opts.progressLabel }, [el('span', { style: 'width:' + pct + '%' })]),
+        el('span', { 'class': 'home-progress-text', text: opts.progressLabel })
+      ]),
+      el('span', { 'class': 'home-cta', text: opts.cta + ' →' })
+    ]);
+  }
+  function kanaTile(id, glyph, title, desc, examples) {
+    var g = groupProgress(id), sum = window.NBKana ? window.NBKana.summary(id) : null;
+    var label = sum && sum.learned
+      ? sum.learned + ' of ' + sum.total + ' characters learned · ' + sum.mastered + ' mastered' + (sum.due ? ' · ' + sum.due + ' review' + (sum.due > 1 ? 's' : '') + ' due' : '')
+      : g.done + ' of ' + g.total + ' units completed';
+    var started = (sum && sum.learned) || g.done;
+    return tile({
+      id: id, glyph: glyph, kicker: 'Interactive course', title: title, desc: desc, examples: examples,
+      href: started && g.next ? '#/' + g.next.id : '#/' + id,
+      value: sum && sum.learned ? sum.learned : g.done, total: sum && sum.learned ? sum.total : g.total, progressLabel: label,
+      cta: !started ? 'Start learning' : g.next ? 'Continue: unit ' + g.next.label : 'Review and play'
+    });
+  }
+  function showHome() {
+    var guide = groupProgress('course');
+    var article = el('article', { 'class': 'home' }, [
+      el('header', { 'class': 'home-hero' }, [
+        el('p', { 'class': 'home-hero-kicker' }, [el('span', { lang: 'ja', text: '日本へようこそ' }), ' · welcome to Japan']),
+        el('h1', { text: 'Japanese for your trip' }),
+        el('p', { 'class': 'home-lead', text: 'Three ways in. Get the practical know-how for travelling in Japan, then learn to read the two kana scripts you\'ll see on every sign, menu and station board.' })
+      ]),
+      el('div', { 'class': 'home-tiles' }, [
+        tile({
+          id: 'guide', glyph: '日本', kicker: 'Travel know-how', title: 'Japan guide',
+          desc: 'Pronunciation, survival words and phrases, trains and subways, etiquette, food and tourist pitfalls.',
+          examples: 'すみません · 駅 · いただきます', href: guide.done && guide.next ? '#/' + guide.next.id : '#/guide',
+          value: guide.done, total: guide.total, progressLabel: guide.done + ' of ' + guide.total + ' lessons completed',
+          cta: !guide.done ? 'Open the guide' : guide.next ? 'Continue: lesson ' + guide.next.label : 'Revise the cheat sheet'
+        }),
+        kanaTile('hiragana', 'あ', 'Hiragana course', 'The native script: grammar, food words, station names and the ゆ on onsen curtains.', 'えき · すし · ありがとう'),
+        kanaTile('katakana', 'ア', 'Katakana course', 'The script for foreign words. Menus, shops and signs are full of them, and you already know most of the words.', 'ホテル · コーヒー · タクシー')
+      ]),
+      el('p', { 'class': 'home-foot' }, [
+        'Tip: tap any Japanese text to hear it. Quick practice: ',
+        el('a', { href: '#/drill', text: 'flashcard drill' }), ' · ',
+        el('a', { href: '#/hiragana-review', text: 'hiragana review' }), ' · ',
+        el('a', { href: '#/katakana-review', text: 'katakana review' })
+      ])
+    ]);
+    markSpeakable(article.querySelector('.home-hero'));
+    content.replaceChildren(el('div', { 'class': 'page' }, [article]));
+    rendered = 'home';
+    document.title = 'Nippon Bible: Japanese for your trip';
+    return Promise.resolve();
   }
 
   /* ---------- flashcard drill ---------- */
@@ -556,16 +637,15 @@
     var parts = location.hash.replace(/^#\/?/, '').split('/');
     var r = parts[0], section = '';
     try { section = decodeURIComponent(parts.slice(1).join('/')); } catch (e) { section = ''; }
-    if (r === 'overview') r = '';
     if (ALIASES[r]) { location.replace('#/' + ALIASES[r] + (section ? '/' + section : '')); return; }
     if (r && r !== 'drill' && !LESSONS.some(function (l) { return l.id === r; })) { r = ''; section = ''; }
-    var key = r === 'drill' ? 'drill' : (r || 'overview');
-    if (key !== 'drill' && key === rendered) { scrollToSection(section, true); return; }
+    var key = r === 'drill' ? 'drill' : (r || 'home');
+    if (key !== 'drill' && key !== 'home' && key === rendered) { scrollToSection(section, true); return; }
     setCurrent(r);
     if ('speechSynthesis' in window) speechSynthesis.cancel();
     if (spyHandler) { window.removeEventListener('scroll', spyHandler); spyHandler = null; }
     rendered = null;
-    var p = r === 'drill' ? showDrill() : showPage(r);
+    var p = r === 'drill' ? showDrill() : r ? showPage(r) : showHome();
     p.then(function () {
       if (section) jumpWhenSettled(section);
       else window.scrollTo(0, 0);

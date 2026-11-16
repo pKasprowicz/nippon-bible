@@ -4,12 +4,32 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.6.0] - 2026-11-16
+
+### Added
+- **Katakana course**, a new section: a start page, 8 units, real-world reading and a final test, and a daily review with free play
+  - Original memory aids linking each katakana to its hiragana twin or source kanji, for 46 basic characters, 25 voiced variants, 33 combinations and 11 extra sounds for foreign words (ティ, ファ, チェ…)
+  - The long-vowel bar ー from Unit 1, so real loanwords appear from the start
+  - Katakana-specific content: how English becomes katakana, made-in-Japan English (コンセント, サラリーマン), European words in Japanese (パン, アルバイト), European countries and capitals, café menus, shop names, hotel and station signs, and names in katakana
+  - All exercise types from the Hiragana course, plus a new "guess the meaning" word mode
+- **New home page** with three tiles (Japan guide, Hiragana course, Katakana course), each showing your progress and a link to continue where you left off
+- Japan guide overview page; sidebar groups "Japan guide", "Hiragana course" and "Katakana course"
+
+### Changed
+- The exercise engine (`assets/kana-engine.js`) now serves both scripts, with separate saved progress
+- The README is a short map of the three parts; the guide's lesson list and study plan moved to the guide overview
+- Old `#/overview` links redirect to the guide overview
+- The deploy check also requires the `katakana/` folder
+
+### Fixed
+- Changelog for 1.5.0: missed characters in the endless game come back 3–5 questions later (it said 3–4)
+
 ## [1.5.0] - 2026-11-16
 
 ### Added
 - **Endless game** at the end of every hiragana unit, plus "Free play" on the Daily review page
   - Checkpoint-style questions that never run out, covering every character taught so far
-  - Adaptive selection: weak, slow and unseen characters come up more often, the unit's new characters get extra turns, and missed ones come back 3–4 questions later
+  - Adaptive selection: weak, slow and unseen characters come up more often, the unit's new characters get extra turns, and missed ones come back 3–5 questions later
   - A live statistics panel that updates after every answer: answered, accuracy, streak (with best), average answer time, overall proficiency, focus characters, and a per-character proficiency grid
   - Proficiency is saved per character in the browser, so it carries across units and visits; an end-of-game summary shows improvements and newly mastered characters
 
@@ -85,6 +105,7 @@ First public release of the Japanese survival course for European travellers.
 - Git flow branching model (see `CONTRIBUTING.md`)
 - GitHub Actions: Pages deployment from `main`, and a GitHub release for each `v*` tag
 
+[1.6.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.6.0
 [1.5.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.5.0
 [1.4.1]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.4.1
 [1.4.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.4.0

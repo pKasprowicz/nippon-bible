@@ -36,8 +36,9 @@ columns going right → left), common on old signs, books and menus.
 
 Each cell: **hiragana · katakana · romaji**. Read across rows (a-i-u-e-o).
 
-> **Want to really learn hiragana?** The interactive [Hiragana course](../hiragana/00-start.md)
-> takes you from zero to reading station signs in 8 short units, with daily spaced review.
+> **Want to really learn to read?** The interactive [Hiragana course](../hiragana/00-start.md)
+> and [Katakana course](../katakana/00-start.md) take you from zero to reading signs and menus
+> in 8 short units each, with daily spaced review.
 
 | | a | i | u | e | o |
 |---|---|---|---|---|---|

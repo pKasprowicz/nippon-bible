@@ -113,5 +113,12 @@
     (UNIT_CHARS[e.unit] = UNIT_CHARS[e.unit] || []).push(e.k);
   });
 
-  root.NB_KANA = { list: KANA, byChar: BY_CHAR, unitChars: UNIT_CHARS };
+  root.NB_KANA = {
+    name: 'hiragana', Name: 'Hiragana', list: KANA, byChar: BY_CHAR, unitChars: UNIT_CHARS,
+    exclude: ['ぢ', 'づ'], // sound the same as じ/ず
+    gojuon: [['あ', 'い', 'う', 'え', 'お'], ['か', 'き', 'く', 'け', 'こ'], ['さ', 'し', 'す', 'せ', 'そ'], ['た', 'ち', 'つ', 'て', 'と'],
+      ['な', 'に', 'ぬ', 'ね', 'の'], ['は', 'ひ', 'ふ', 'へ', 'ほ'], ['ま', 'み', 'む', 'め', 'も'], ['や', '', 'ゆ', '', 'よ'],
+      ['ら', 'り', 'る', 'れ', 'ろ'], ['わ', '', '', '', 'を'], ['ん', '', '', '', '']],
+    sets: [{ set: 'voiced', label: 'With ゛ and ゜' }, { set: 'yoon', label: 'Combinations', wide: true }]
+  };
 })(typeof window !== 'undefined' ? window : globalThis);
