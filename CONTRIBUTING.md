@@ -27,7 +27,7 @@ into them go through pull requests (see below).
   - **Git flow branch policy**: `main` accepts only `release/x.y.z` and `hotfix/x.y.z`;
     `develop` accepts `feature/*`, `release/*`, `hotfix/*` and `main` (the merge-back after a release)
   - **Content check**: runs `node scripts/check-content.mjs` (page registry, relative links, drill data,
-    hiragana exercise syntax and unit order, VERSION ↔ CHANGELOG)
+    kana exercise syntax and unit order, VERSION ↔ CHANGELOG)
 
 No approving review is required, so the owner can merge their own PRs.
 
@@ -61,7 +61,8 @@ python3 -m http.server 8000
 
 ## Content conventions
 
-- Lessons live in `lessons/NN-name.md`, and the Hiragana course in `hiragana/NN-name.md`. Register
+- The Japan guide lives in `lessons/NN-name.md` (`00-guide.md` is its overview), and the kana courses in
+  `hiragana/NN-name.md` and `katakana/NN-name.md`. Register
   every page in `LESSONS` in `assets/app.js` (id, file, group, title).
 - Use `##` for a lesson's main sections and `###` for subsections. The site builds each lesson's
   contents navigation from them, so keep headings short. To link to a section, use the GitHub
@@ -70,10 +71,13 @@ python3 -m http.server 8000
 - The flashcard drill reads the kana chart and the `| Sign | Reading | Meaning |` tables in
   `lessons/02-writing.md`. Keep that table format if you edit them.
 
-## Hiragana course exercises
+## Kana course exercises
 
-Character data (readings, memory aids, look-alikes, which unit teaches what) lives in
-`assets/hiragana-data.js`; the exercise engine is `assets/hiragana.js`. Pages embed exercises
+Character data (readings, memory aids, look-alikes, which unit teaches what, the grid layout)
+lives in `assets/hiragana-data.js` and `assets/katakana-data.js`. The exercise engine,
+`assets/kana-engine.js`, runs one instance per script, so each course keeps its own progress
+(`nb-hira` / `nb-kata` in localStorage). The site picks the engine from the page's group in
+`LESSONS`. The home page (three tiles) is built in `showHome()` in `assets/app.js`. Pages embed exercises
 as fenced code blocks, which the website turns into interactive widgets (on GitHub they show as
 plain text):
 
@@ -81,7 +85,7 @@ plain text):
 |-------|---------|---------|
 | ` ```cards ` | `kana: かきくけこ` | Character cards with memory aid and audio |
 | ` ```practice ` | `kana:` targets, `mix:` earlier characters, `modes: see,pick,listen,type`, `count:`, optional `timer: 60` (speed round), `checkpoint: yes` (90% marks the unit complete), `title:` | Kana drill; adds the targets to the daily review |
-| ` ```words ` | rows `kana \| romaji \| meaning \| optional context`, optional `mode: listen`, `title:` | Read (type) or listen-and-choose real words |
+| ` ```words ` | rows `kana \| romaji \| meaning \| optional context`, optional `mode: listen` or `mode: meaning` (pick the meaning; needs 4+ words), `title:` | Read (type), listen-and-choose, or guess-the-meaning for real words |
 | ` ```station ` | rows `kana \| romaji \| kanji \| prev \| next`, optional `color:` | Read a station sign |
 | ` ```contrast ` | rows `き さ \| cue` | Look-alike discrimination |
 | ` ```quiz ` | `? question`, `- option` (mark the right one with `*`), `> explanation` | Multiple-choice questions |

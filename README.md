@@ -1,70 +1,18 @@
-# Nippon Bible: Japanese Survival Course for European Travellers
+# Nippon Bible
 
-A short beginner course for Europeans visiting Japan. It covers enough to
-**pronounce** Japanese, handle **everyday situations** politely, **recognise**
-the signs, menus and labels you'll see, find your way on the **subway**, and
-avoid the usual **etiquette mistakes and tourist pitfalls**.
+Japanese for European travellers, in three parts:
 
-No previous knowledge needed. Plan on about **10 short sessions** of 30–45 minutes each.
+| Part | What it is | Start |
+|------|-----------|-------|
+| **Japan guide** | 10 lessons: pronunciation, words, phrases, situations, subways, etiquette, pitfalls, food, and a cheat sheet with a self-test | [Overview](lessons/00-guide.md) |
+| **Hiragana course** | Learn to read hiragana (えき, すし, ありがとう) in 8 interactive units, with spaced daily review and an endless adaptive game | [Start here](hiragana/00-start.md) |
+| **Katakana course** | Learn to read katakana, the script of foreign words (ホテル, コーヒー, タクシー), in 8 interactive units, with the same exercises, review and game | [Start here](katakana/00-start.md) |
 
-**Read it online:** <https://pkasprowicz.github.io/nippon-bible/>. The website
-adds tap-to-listen audio for all Japanese text, progress tracking and a
-flashcard drill for kana and sign kanji.
+**Read it online:** <https://pkasprowicz.github.io/nippon-bible/>. The website adds
+tap-to-listen audio for all Japanese text, the interactive exercises, progress tracking
+and a flashcard drill. On GitHub, the kana courses' exercises show as plain text.
 
-## Lessons
+No previous knowledge needed. Japanese is given as **script · romaji · meaning**, e.g.
+`駅 · eki · station`, with Hepburn romaji (a macron marks a long vowel: **ō** = "oo").
 
-| # | Lesson | You will be able to… |
-|---|--------|----------------------|
-| 1 | [Pronunciation](lessons/01-pronunciation.md) | Read romanised Japanese aloud and be understood |
-| 2 | [Writing systems & recognition](lessons/02-writing.md) | Tell the scripts apart, decode katakana, spot key kanji |
-| 3 | [Core words](lessons/03-core-words.md) | Use numbers, prices, counting, places and question words |
-| 4 | [Phrases & sentence patterns](lessons/04-phrases.md) | Build polite requests and questions from 8 templates |
-| 5 | [Situations](lessons/05-situations.md) | Get through trains, restaurants, shops, hotels, emergencies |
-| 6 | [Subways in Tokyo & Osaka](lessons/06-subways.md) | Read line codes, platform displays and exits; pick the right pass |
-| 7 | [Customs, etiquette, do's & don'ts](lessons/07-etiquette.md) | Behave well in homes, restaurants, trains, temples and onsen |
-| 8 | [Tourist pitfalls](lessons/08-pitfalls.md) | Avoid the usual traps with money, luggage, food, crowds and paperwork |
-| 9 | [Food & dishes](lessons/09-food.md) | Read a menu, know what each dish is, how it's made and how to eat it |
-| 10 | [Cheat sheet & self-test](lessons/10-cheat-sheet.md) | Revise in 5 minutes; check what you've learned |
-
-## Hiragana course
-
-A separate, interactive course that teaches you to **read hiragana** at a traveller's level in
-8 short units, with spaced daily review. It's built on well-researched learning techniques:
-self-testing, spacing, memory aids with audio, guessing first, mixing old and new, and look-alike
-drills. Its exercises run on the website. **[Start here](hiragana/00-start.md).**
-
-| Unit | Characters | You'll read… |
-|------|-----------|--------------|
-| [1](hiragana/01-vowels.md) | あ い う え お | いいえ (no), うえ (up) |
-| [2](hiragana/02-k-s.md) | か・さ rows | えき (station), すし, おいしい |
-| [3](hiragana/03-t-n.md) | た・な rows | ちかてつ (subway), うえの station |
-| [4](hiragana/04-h-m.md) | は・ま rows | はい (yes), つめたい (cold) |
-| [5](hiragana/05-y-r-w.md) | や・ら・わ rows, ん | すみません, おんせん, ゆ |
-| [6](hiragana/06-dakuten.md) | ゛ and ゜ | ありがとう, いりぐち / でぐち |
-| [7](hiragana/07-combinations.md) | きゃ…, っ, long vowels | とうきょう, きっぷ (ticket) |
-| [8](hiragana/08-real-world.md) | everything | menus, signs, station boards, final test |
-| [Daily review](hiragana/09-review.md) | | 5 minutes of spaced review a day |
-
-## Suggested 10-day plan
-
-| Day | Study | Practice |
-|-----|-------|----------|
-| 1 | Lesson 1 | Read every example out loud; record yourself once |
-| 2 | Lesson 2, katakana half | Read 10 loanwords (コーヒー, ホテル…) without the key |
-| 3 | Lesson 2, kanji half | Cover the meanings and name 20 sign kanji |
-| 4 | Lesson 3 | Say 10 random prices aloud (e.g. ¥1,380, ¥12,000) |
-| 5 | Lesson 4 | Make 3 sentences from each template |
-| 6 | Lesson 5 | Role-play the restaurant and train dialogues |
-| 7 | Lesson 6 | Plan a route from your hotel to 3 sights; note the line codes and exit numbers |
-| 8 | Lessons 7 & 8 | Make your own packing and do's-and-don'ts checklist |
-| 9 | Lesson 9 | Pick 5 dishes to try; say their names and what's in them aloud |
-| 10 | Lesson 10 | Take the self-test; save the cheat sheet on your phone |
-
-## Conventions
-
-- Japanese is given as **Japanese script · romaji · meaning**, e.g. `駅 · eki · station`.
-- Romaji uses Hepburn spelling. A macron marks a long vowel: **ō** = "oo",
-  **ū** = "uu". Hold it twice as long. On signs you may see *Tokyo*, *Toukyou*
-  or *Tōkyō*; all three are the same word.
-- Phrases are in **polite form** (*-masu / desu*). That's the right register
-  with any stranger, shopkeeper or hotel employee.
+Contributing: see [CONTRIBUTING.md](CONTRIBUTING.md).
