@@ -13,6 +13,11 @@ and versions follow [Semantic Versioning](https://semver.org/).
 
 ### Changed
 - The single "Next" button at the end of each page is replaced by the previous/next cards
+## [1.6.1] - 2026-11-16
+
+### Fixed
+- The lesson menu (☰) couldn't be scrolled on phones, so lessons near the bottom of the list were unreachable. The drawer kept `align-self: start` from the desktop layout, which current browsers apply to fixed elements, so it grew to its full content height instead of fitting the screen. It now stretches to the screen height (using `dvh` for mobile browser toolbars).
+- Swiping past the end of the lesson menu or the "On this page" list no longer scrolls the page behind it.
 
 ## [1.6.0] - 2026-11-16
 
@@ -115,6 +120,7 @@ First public release of the Japanese survival course for European travellers.
 - Git flow branching model (see `CONTRIBUTING.md`)
 - GitHub Actions: Pages deployment from `main`, and a GitHub release for each `v*` tag
 
+[1.6.1]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.6.1
 [1.6.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.6.0
 [1.5.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.5.0
 [1.4.1]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.4.1
