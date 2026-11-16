@@ -4,6 +4,16 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+- Previous / next navigation on every page, in content order across all three courses (Japan guide → Hiragana course → Katakana course):
+  - A compact bar at the top showing where you are ("Hiragana course · Unit 3 · 4 of 10") with ‹ Previous and Next › links
+  - Previous and next cards at the bottom, naming the page and, when you move into another course, that course. The first and last pages link back to Home
+
+### Changed
+- The single "Next" button at the end of each page is replaced by the previous/next cards
+
 ## [1.6.0] - 2026-11-16
 
 ### Added
