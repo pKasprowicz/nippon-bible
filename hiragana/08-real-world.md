@@ -152,7 +152,7 @@ Reading speed and long-term memory come from **use**, not from finishing a cours
 
 - **Daily review**, 5 minutes, for the next month: [open it](09-review.md). After about a month most characters will be solid green.
 - **Kana hunt in Japan:** every day of your trip, find and read **five** hiragana words in the wild: signs, packaging, station boards. Say them out loud.
-- **Next step:** katakana, the angular script for foreign words like ホテル and コーヒー. See [Lesson 2](../lessons/02-writing.md) for the chart and the most useful loanwords.
+- **Next step:** katakana, the angular script for foreign words like ホテル and コーヒー. Take the [Katakana course](../katakana/00-start.md): same format, and your hiragana makes it faster.
 
 🎌 *O-tsukaresama deshita!* Well done.
 
