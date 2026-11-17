@@ -115,6 +115,12 @@ for (const file of CUISINE) {
     if (!credits.includes(src.split('/').pop())) fail(`${file}: image '${src}' has no entry in cuisine/16-sources.md`);
   }
   for (const m of text.matchAll(/<img(?![^>]*\salt="[^"]+")[^>]*>/g)) fail(`${file}: image without alt text: ${m[0].slice(0, 60)}`);
+  // Wikipedia is further reading only: never in a source list.
+  const sourcesAt = text.indexOf('## Sources for this chapter');
+  if (sourcesAt >= 0 && /wikipedia\.org/.test(text.slice(sourcesAt))) fail(`${file}: Wikipedia link in the chapter's source list`);
+  for (const [, url] of text.matchAll(/\]\((https:\/\/en\.wikipedia\.org\/[^)\s]*)\)/g)) {
+    if (!/^https:\/\/en\.wikipedia\.org\/wiki\/[^#\s]+$/.test(url)) fail(`${file}: malformed Wikipedia link ${url}`);
+  }
 }
 if (existsSync('cuisine/img')) {
   for (const f of readdirSync('cuisine/img')) if (!usedImages.has(`cuisine/img/${f}`)) fail(`cuisine/img/${f} is not used by any page`);

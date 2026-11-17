@@ -1,6 +1,6 @@
 # 2. Dashi: Extraction as a Discipline
 
-*Dashi* is the stock behind miso soup, simmered dishes, noodle broths and many sauces. It differs from a Western stock in the way it is made. The Umami Information Center contrasts the two: a European bouillon is made by boiling ingredients for a long time, whereas dashi uses ingredients that have already been carefully prepared and matured, and extracts them only by soaking or brief heating (Umami Information Center, *What is Dashi?*). The flavour is made in advance, by drying, smoking and moulding. The cook's job is to extract what is wanted and leave the rest behind.
+*[Dashi](https://en.wikipedia.org/wiki/Dashi)* is the stock behind [miso](https://en.wikipedia.org/wiki/Miso) soup, simmered dishes, noodle broths and many sauces. It differs from a Western stock in the way it is made. The [Umami](https://en.wikipedia.org/wiki/Umami) Information Center contrasts the two: a European bouillon is made by boiling ingredients for a long time, whereas dashi uses ingredients that have already been carefully prepared and matured, and extracts them only by soaking or brief heating (Umami Information Center, *What is Dashi?*). The flavour is made in advance, by drying, smoking and moulding. The cook's job is to extract what is wanted and leave the rest behind.
 
 This chapter covers the three classic dashi ingredients, how each is made, and what research says about extracting them.
 
@@ -11,7 +11,7 @@ This chapter covers the three classic dashi ingredients, how each is made, and w
 
 ## 2.1 A short history
 
-According to the Umami Information Center, boiling food in water goes back to the Jōmon period (about 13,000–300 BCE), with stocks of shellfish and fish bones. Dashi from kombu and katsuobushi existed in some form by the seventh century (Umami Information Center, *What is Dashi?*). Kombu reached Kyoto from Hokkaido in the Heian period, as Buddhist vegetarian temple cooking (*shōjin ryōri*) spread (Umami Information Center, *Kombu*). Katsuobushi in its present form is described as a tradition of about 400 years (Umami Information Center, *Katsuobushi*).
+According to the Umami Information Center, boiling food in water goes back to the [Jōmon](https://en.wikipedia.org/wiki/J%C5%8Dmon_period) period (about 13,000–300 BCE), with stocks of shellfish and fish bones. Dashi from [kombu](https://en.wikipedia.org/wiki/Kombu) and [katsuobushi](https://en.wikipedia.org/wiki/Katsuobushi) existed in some form by the seventh century (Umami Information Center, *What is Dashi?*). Kombu reached Kyoto from Hokkaido in the Heian period, as Buddhist vegetarian temple cooking (*shōjin ryōri*) spread (Umami Information Center, *Kombu*). Katsuobushi in its present form is described as a tradition of about 400 years (Umami Information Center, *Katsuobushi*).
 
 ## 2.2 Kombu: the glutamate source
 
@@ -39,9 +39,9 @@ The professional *ichiban dashi* recipe in §2.5 uses ma-kombu for its clarity a
 
 ### What kombu releases into water
 
-Kombu has the highest glutamate content of the foods in Kurihara's table: 1,200–3,400 mg per 100 g (Kurihara 2015). The Umami Information Center describes it as having the highest natural level of glutamate of any foodstuff (*What is Dashi?*). Kurihara gives a reference method of soaking kombu in water at 60 °C for an hour. The resulting stock contains only glutamate and aspartate as its umami-tasting components, which makes it, in his words, a "pure umami solution" (Kurihara 2015).
+Kombu has the highest [glutamate](https://en.wikipedia.org/wiki/Glutamic_acid) content of the foods in Kurihara's table: 1,200–3,400 mg per 100 g (Kurihara 2015). The Umami Information Center describes it as having the highest natural level of glutamate of any foodstuff (*What is Dashi?*). Kurihara gives a reference method of soaking kombu in water at 60 °C for an hour. The resulting stock contains only glutamate and aspartate as its umami-tasting components, which makes it, in his words, a "pure umami solution" (Kurihara 2015).
 
-Analysis of Rishiri-kombu stock by Koda and Matsumoto adds detail. The main free amino acids extracted were **glutamic acid, aspartic acid and alanine**, and the main nucleotides were **AMP and GMP**. They compared three temperature regimes: steady 10 °C, heating from 10 to 100 °C, and steady 100 °C. They also compared extraction times from 2.5 to 30 minutes. Taster preference depended on the dish. A dilute-umami stock was preferred for seasoning sushi rice. Strongly umami kombu was preferred for *shio-kombu* (salted simmered kombu) (Koda and Matsumoto).
+Analysis of Rishiri-kombu stock by Koda and Matsumoto adds detail. The main free [amino acids](https://en.wikipedia.org/wiki/Amino_acid) extracted were **glutamic acid, aspartic acid and alanine**, and the main [nucleotides](https://en.wikipedia.org/wiki/Nucleotide) were **[AMP](https://en.wikipedia.org/wiki/Adenosine_monophosphate) and GMP**. They compared three temperature regimes: steady 10 °C, heating from 10 to 100 °C, and steady 100 °C. They also compared extraction times from 2.5 to 30 minutes. Taster preference depended on the dish. A dilute-umami stock was preferred for seasoning [sushi](https://en.wikipedia.org/wiki/Sushi) rice. Strongly umami kombu was preferred for *shio-kombu* (salted simmered kombu) (Koda and Matsumoto).
 
 ### How long, how hot: the extraction trade-off
 
@@ -65,7 +65,7 @@ For a first experiment, the Umami Information Center suggests leaving a piece of
 
 ## 2.3 Katsuobushi: the inosinate source
 
-Katsuobushi is skipjack tuna (*katsuo*) that has been filleted, simmered, smoked and, in its highest grade, deliberately moulded, until it is one of the hardest foodstuffs known. The Umami Information Center calls it "the hardest food in the world". Its protein content rises from about **25%** in raw bonito to about **77%** in the finished product (Umami Information Center, *Katsuobushi*).
+Katsuobushi is [skipjack tuna](https://en.wikipedia.org/wiki/Skipjack_tuna) (*katsuo*) that has been filleted, simmered, smoked and, in its highest grade, deliberately moulded, until it is one of the hardest foodstuffs known. The Umami Information Center calls it "the hardest food in the world". Its protein content rises from about **25%** in raw bonito to about **77%** in the finished product (Umami Information Center, *Katsuobushi*).
 
 <figure>
 <img src="img/katsuobushi-block.jpg" alt="A dark, hard block of katsuobushi lying on a wooden box plane, with pink shavings in the drawer below">
@@ -78,7 +78,7 @@ The two sources below describe the same process from different angles. One is an
 
 **1. Filleting.** The fish is cut into three pieces. Small fish yield ***kame-bushi*** (one fillet per side). From large fish, each side is split again into a belly piece (***mebushi***) and a back piece (***obushi***). Together these are called ***honbushi*** (Umami Information Center, *Katsuobushi*).
 
-**2. Simmering (*shajuku*).** The fillets are arranged in woven trays and simmered. The Umami Information Center gives **60–90 minutes** and describes the step as "sealing in the inosinate". Afterwards, skin and bones are removed, and the result is called ***namaribushi*** (*Katsuobushi*). Takenaka's process chart gives boiling at **85 °C for 70–90 minutes** (Takenaka, IFO report, after Dimichi and Wada 1994).
+**2. Simmering (*shajuku*).** The fillets are arranged in woven trays and simmered. The Umami Information Center gives **60–90 minutes** and describes the step as "sealing in the [inosinate](https://en.wikipedia.org/wiki/Inosinic_acid)". Afterwards, skin and bones are removed, and the result is called ***namaribushi*** (*Katsuobushi*). Takenaka's process chart gives boiling at **85 °C for 70–90 minutes** (Takenaka, IFO report, after Dimichi and Wada 1994).
 
 **3. Smoke-drying (*baikan*).** After the first round of smoking, cracks are filled with a paste made from the fish's head and leftover flesh (*nakaochi*). The sources describe the number of rounds differently. The Umami Information Center says "over a dozen more rounds" (*Katsuobushi*). Takenaka's chart gives smoking at **80–90 °C for 5–6 hours, repeated 8–10 times over 10 days** (Takenaka). The product at this stage is ***arabushi***.
 
@@ -92,7 +92,7 @@ Both sources agree on the sequence. They differ on the number of rounds and the 
 
 ### What the mould does
 
-The mould has long been described as *Aspergillus glaucus* and its relatives. Takenaka's study of the mould population identified **five xerophilic** (dryness-loving) species: *A. amstelodami*, *A. chevalieri*, *A. pseudoglaucus*, *A. ruber* and *A. sydowii* (Takenaka). Takenaka lists the results of moulding as fat breakdown, aroma, colour change, a mellow flavour and a refined colour. The Umami Information Center explains the mechanism: the mould draws moisture out from deep inside the fish and breaks down triglycerides (fats). This gives the stock its clarity, because less fat ends up in the dashi (*Katsuobushi*).
+The mould has long been described as *[Aspergillus](https://en.wikipedia.org/wiki/Aspergillus) glaucus* and its relatives. Takenaka's study of the mould population identified **five xerophilic** (dryness-loving) species: *A. amstelodami*, *A. chevalieri*, *A. pseudoglaucus*, *A. ruber* and *A. sydowii* (Takenaka). Takenaka lists the results of moulding as fat breakdown, aroma, colour change, a mellow flavour and a refined colour. The Umami Information Center explains the mechanism: the mould draws moisture out from deep inside the fish and breaks down triglycerides (fats). This gives the stock its clarity, because less fat ends up in the dashi (*Katsuobushi*).
 
 The Umami Information Center also states that smoke-drying and moulding raise the inosinate content above that of fresh bonito (*Katsuobushi*). Kurihara gives 470–800 mg IMP per 100 g for dried bonito (Kurihara 2015).
 
@@ -102,7 +102,7 @@ According to the Umami Information Center (*Katsuobushi*, *What is Dashi?*):
 
 - **Obushi** (back) gives a refined, low-fat stock. **Mebushi** (belly) gives a richer one.
 - For the finest ichiban dashi, the dark muscle (***chiai***) is removed before shaving.
-- Some high-end restaurants use *magurobushi* (dried bluefin tuna) instead of katsuobushi. Stock made from arabushi is popular in the Kansai region.
+- Some high-end restaurants use *magurobushi* (dried bluefin tuna) instead of katsuobushi. Stock made from arabushi is popular in the [Kansai](https://en.wikipedia.org/wiki/Kansai_region) region.
 
 ### Why it is shaved so thin
 
@@ -115,9 +115,9 @@ Katsuobushi is shaved into paper-thin flakes. The Umami Information Center gives
 
 ## 2.4 Dried shiitake and other stocks
 
-- **Dried shiitake** is sun-dried to intensify its taste and supplies guanylate (Umami Information Center, *What is Dashi?*). Kurihara's enzyme rules from Chapter 1 apply: soak cold, then heat quickly to 60–70 °C (Kurihara 2015).
-- **Niboshi** are small sardines or anchovies, cooked in water and then sun-dried. They give a strong, slightly bitter stock, well suited to miso soup and hotpots (*What is Dashi?*). Kurihara gives 350–800 mg IMP per 100 g for dried sardine (Kurihara 2015).
-- **Shōjin dashi**, the stock of Buddhist temple cooking, uses no animal products. It is made from kombu, dried shiitake, soybeans, dried gourd strips (*kanpyō*) and vegetable skins. The Umami Information Center warns that shiitake's strong flavour can unbalance it (*What is Dashi?*). Chemically, this is the vegetable version of the synergy in Chapter 1: kombu's glutamate paired with shiitake's guanylate instead of fish inosinate.
+- **Dried [shiitake](https://en.wikipedia.org/wiki/Shiitake)** is sun-dried to intensify its taste and supplies [guanylate](https://en.wikipedia.org/wiki/Guanosine_monophosphate) (Umami Information Center, *What is Dashi?*). Kurihara's enzyme rules from Chapter 1 apply: soak cold, then heat quickly to 60–70 °C (Kurihara 2015).
+- **[Niboshi](https://en.wikipedia.org/wiki/Niboshi)** are small sardines or anchovies, cooked in water and then sun-dried. They give a strong, slightly bitter stock, well suited to miso soup and hotpots (*What is Dashi?*). Kurihara gives 350–800 mg IMP per 100 g for dried sardine (Kurihara 2015).
+- **Shōjin dashi**, the stock of Buddhist temple cooking, uses no animal products. It is made from kombu, dried shiitake, [soybeans](https://en.wikipedia.org/wiki/Soybean), dried gourd strips (*kanpyō*) and vegetable skins. The Umami Information Center warns that shiitake's strong flavour can unbalance it (*What is Dashi?*). Chemically, this is the vegetable version of the synergy in Chapter 1: kombu's glutamate paired with shiitake's guanylate instead of fish inosinate.
 
 ## 2.5 Ichiban and niban dashi: the professional method
 

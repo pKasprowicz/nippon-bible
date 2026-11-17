@@ -1,6 +1,6 @@
 # 11. Tofu: Turning Soy Milk into a Gel
 
-Tofu is the clearest example in this handbook of texture made by chemistry. It is soy milk turned solid by adding a coagulant, and its character depends almost entirely on three choices: **which coagulant**, **how much**, and at **what temperature**. Then comes one mechanical choice: whether to press the water out. This chapter goes through these choices using a 2024 review of the research on coagulants and the Ministry of Agriculture's description of Japanese tofu types.
+[Tofu](https://en.wikipedia.org/wiki/Tofu) is the clearest example in this handbook of texture made by chemistry. It is [soy milk](https://en.wikipedia.org/wiki/Soy_milk) turned solid by adding a coagulant, and its character depends almost entirely on three choices: **which coagulant**, **how much**, and at **what temperature**. Then comes one mechanical choice: whether to press the water out. This chapter goes through these choices using a 2024 review of the research on coagulants and the Ministry of Agriculture's description of Japanese tofu types.
 
 <figure>
 <img src="img/kinugoshi-tofu.jpg" alt="A smooth white block of kinugoshi tofu on a blue patterned plate">
@@ -9,7 +9,7 @@ Tofu is the clearest example in this handbook of texture made by chemistry. It i
 
 ## 11.1 Origins and the Japanese types
 
-Geng and colleagues describe tofu as a Chinese food that originated in the Western Han dynasty more than 2,000 years ago (Geng et al. 2024). MAFF gives its Japanese history: tofu came from China together with Buddhism, probably in the **Nara period**. It was at first a food of nobles and priests, and became common among ordinary people in the **Edo period**. MAFF also notes that soybeans are believed to have reached Japan almost 2,000 years ago (MAFF, *Processed bean products*).
+Geng and colleagues describe tofu as a Chinese food that originated in the Western Han dynasty more than 2,000 years ago (Geng et al. 2024). [MAFF](https://en.wikipedia.org/wiki/Ministry_of_Agriculture,_Forestry_and_Fisheries_%28Japan%29) gives its Japanese history: tofu came from China together with Buddhism, probably in the **[Nara](https://en.wikipedia.org/wiki/Nara_period) period**. It was at first a food of nobles and priests, and became common among ordinary people in the **[Edo](https://en.wikipedia.org/wiki/Edo_period) period**. MAFF also notes that [soybeans](https://en.wikipedia.org/wiki/Soybean) are believed to have reached Japan almost 2,000 years ago (MAFF, *Processed bean products*).
 
 MAFF divides today's tofu into two main types (MAFF, *Processed bean products*):
 
@@ -24,11 +24,11 @@ MAFF adds a historical note. Tofu as introduced from China is believed to have b
 
 ## 11.2 From bean to soy milk
 
-Geng and colleagues list the operations of tofu-making: **selecting, soaking, grinding, filtering, boiling, pulping, setting and pressing** (Geng et al. 2024). MAFF summarises the core: soybeans are ground and heated with water, the fibre and other solids are removed as ***okara***, and the soy milk is set with a coagulant (MAFF).
+Geng and colleagues list the operations of tofu-making: **selecting, soaking, grinding, filtering, boiling, pulping, setting and pressing** (Geng et al. 2024). MAFF summarises the core: soybeans are ground and heated with water, the fibre and other solids are removed as ***[okara](https://en.wikipedia.org/wiki/Okara_%28food%29)***, and the soy milk is set with a coagulant (MAFF).
 
 ### Why the milk must be heated first
 
-Heating is not just sterilisation. The review explains that the **thermal denaturation of the proteins is necessary** to form an aggregated network. Heating disrupts the compact protein structure, whereas acid precipitation and calcium alone do not. The network formed by heat-denatured soybean protein has high water retention, low hardness and high springiness (Geng et al. 2024).
+Heating is not just sterilisation. The review explains that the **thermal [denaturation](https://en.wikipedia.org/wiki/Denaturation_%28biochemistry%29) of the proteins is necessary** to form an aggregated network. Heating disrupts the compact protein structure, whereas acid precipitation and calcium alone do not. The network formed by heat-denatured soybean protein has high water retention, low hardness and high springiness (Geng et al. 2024).
 
 Soybean protein is not one protein. Its two main storage proteins denature at different temperatures (Geng et al. 2024):
 
@@ -41,17 +41,17 @@ One study exploited this difference. A **two-step heating, 75 °C for 5 minutes 
 
 ## 11.3 The coagulants
 
-The review groups coagulants into **salts**, **acids**, **enzymes** and newer composite types (Geng et al. 2024). In ancient times, **brine** (bittern, Japanese *nigari*) or **gypsum** (calcium sulfate) were the main coagulants. **Glucono-δ-lactone** ("lactone tofu") has been used in large-scale production since the **1980s** because of its softness, smooth texture, high water retention and springiness (Geng et al. 2024).
+The review groups coagulants into **salts**, **acids**, **enzymes** and newer composite types (Geng et al. 2024). In ancient times, **brine** (bittern, Japanese *[nigari](https://en.wikipedia.org/wiki/Bittern_%28salt%29)*) or **gypsum** ([calcium sulfate](https://en.wikipedia.org/wiki/Calcium_sulfate)) were the main coagulants. **[Glucono-δ-lactone](https://en.wikipedia.org/wiki/Glucono-%CE%B4-lactone)** ("lactone tofu") has been used in large-scale production since the **1980s** because of its softness, smooth texture, high water retention and springiness (Geng et al. 2024).
 
 ### Salt coagulants: bridges of calcium and magnesium
 
-Salt coagulants are the oldest and most widely used. They include **magnesium chloride**, **magnesium sulfate**, **calcium chloride**, **calcium sulfate** and **calcium acetate** (Geng et al. 2024).
+Salt coagulants are the oldest and most widely used. They include **[magnesium chloride](https://en.wikipedia.org/wiki/Magnesium_chloride)**, **[magnesium sulfate](https://en.wikipedia.org/wiki/Magnesium_sulfate)**, **calcium chloride**, **calcium sulfate** and **calcium acetate** (Geng et al. 2024).
 
-How they work: the most-cited explanation is the **"ion bridge" theory**. The divalent cations **Ca²⁺** and **Mg²⁺** bind to the **carboxyl groups** of protein side chains, especially those of aspartic acid and glutamic acid, and link protein molecules together (Geng et al. 2024). The review concludes from comparisons of calcium salts that the **cations start** curd formation, while the **anions** have a greater effect on how fast the protein gels and how much water the tofu keeps (Geng et al. 2024).
+How they work: the most-cited explanation is the **"ion bridge" theory**. The divalent cations **Ca²⁺** and **Mg²⁺** bind to the **carboxyl groups** of protein side chains, especially those of aspartic acid and [glutamic acid](https://en.wikipedia.org/wiki/Glutamic_acid), and link protein molecules together (Geng et al. 2024). The review concludes from comparisons of calcium salts that the **cations start** curd formation, while the **anions** have a greater effect on how fast the protein gels and how much water the tofu keeps (Geng et al. 2024).
 
 Comparisons reported in the review (Geng et al. 2024):
 
-- **Calcium sulfate** gave a **more uniform network** with a **finer, smoother surface** than magnesium chloride. In another study, calcium sulfate was judged the most suitable coagulant overall, with high yield, good isoflavone retention and superior texture.
+- **Calcium sulfate** gave a **more uniform network** with a **finer, smoother surface** than magnesium chloride. In another study, calcium sulfate was judged the most suitable coagulant overall, with high yield, good [isoflavone](https://en.wikipedia.org/wiki/Isoflavone) retention and superior texture.
 - **Calcium chloride** gave a significantly **higher yield** than other calcium salts. **Calcium sulfate** and **calcium gluconate** gave significantly **harder** tofu.
 - **More coagulant** increased gel strength but **reduced water retention**.
 
@@ -76,7 +76,12 @@ The review points out why this matters in practice. Real production uses **conce
 
 ### Acid coagulants: glucono-δ-lactone
 
-**Glucono-δ-lactone (GDL)** slowly turns into **gluconic acid** in water. Acid coagulants work mainly through **hydrogen ions**. The process has **two steps**: heat denatures the protein, then the acid promotes **hydrophobic coagulation**. Compared with GDL, **calcium ions** set the milk **more rapidly** (Geng et al. 2024).
+**Glucono-δ-lactone (GDL)** slowly turns into **[gluconic acid](https://en.wikipedia.org/wiki/Gluconic_acid)** in water. Acid coagulants work mainly through **hydrogen ions**. The process has **two steps**: heat denatures the protein, then the acid promotes **[hydrophobic](https://en.wikipedia.org/wiki/Hydrophobic_effect) coagulation**. Compared with GDL, **calcium ions** set the milk **more rapidly** (Geng et al. 2024).
+
+<figure class="diagram">
+<img src="img/mol-gdl.svg" alt="Diagram: the ring of glucono-delta-lactone opening in water to give gluconic acid">
+<figcaption>GDL is the closed-ring form of gluconic acid. In water the ring opens slowly, releasing the acid that sets the curd (Geng et al. 2024). <span class="credit">Diagram drawn for this handbook with <a href="https://www.rdkit.org/">RDKit</a> from PubChem structure records: <a href="https://pubchem.ncbi.nlm.nih.gov/compound/7027">glucono-δ-lactone</a>, <a href="https://pubchem.ncbi.nlm.nih.gov/compound/10690">gluconic acid</a>.</span></figcaption>
+</figure>
 
 Findings on GDL tofu (Geng et al. 2024):
 
@@ -92,11 +97,11 @@ For both salts and acids, the review summarises the traditional model as (Geng e
 1. **thermal denaturation** of the proteins;
 2. **hydrophobic coagulation**, promoted by metal ions or acid protons.
 
-A finer three-step description divides it into **denaturation**, **aggregation of protein chains** (driven mainly by electrostatic and hydrophobic interactions) and **connection of the chains** (mainly through hydrogen bonds and disulfide bonds) (Geng et al. 2024). The two main proteins play different roles: the **11S** protein dominates at low coagulant concentrations, and the **7S** protein matters more at high ones (Geng et al. 2024).
+A finer three-step description divides it into **denaturation**, **aggregation of protein chains** (driven mainly by electrostatic and hydrophobic interactions) and **connection of the chains** (mainly through [hydrogen bonds](https://en.wikipedia.org/wiki/Hydrogen_bond) and disulfide bonds) (Geng et al. 2024). The two main proteins play different roles: the **11S** protein dominates at low coagulant concentrations, and the **7S** protein matters more at high ones (Geng et al. 2024).
 
 ## 11.4 The hidden variable: phytic acid
 
-Two batches of soybeans can make different tofu with the same coagulant. One reason is **phytic acid**, a phosphate compound in seeds that is highest in legume seeds, bran and germ (Geng et al. 2024):
+Two batches of soybeans can make different tofu with the same coagulant. One reason is **[phytic acid](https://en.wikipedia.org/wiki/Phytic_acid)**, a phosphate compound in seeds that is highest in legume seeds, bran and germ (Geng et al. 2024):
 
 - Phytic acid **binds calcium preferentially** and reversibly. When calcium is added, it reduces the direct reaction between calcium and protein, creating a "**buffer period**" in coagulation.
 - Overall, **the more phytic acid, the softer the tofu**. Removing it with the enzyme phytase gave tofu with higher fracture stress.
@@ -109,11 +114,11 @@ Two batches of soybeans can make different tofu with the same coagulant. One rea
 
 Tofu is mostly water, fragile and quick to spoil. MAFF describes the traditional ways of changing it (MAFF, *Processed bean products*):
 
-- ***Aburaage***: thin slices of tofu fried in oil, with the surface dried.
+- ***[Aburaage](https://en.wikipedia.org/wiki/Abura-age)***: thin slices of tofu fried in oil, with the surface dried.
 - ***Atsuage***: thick slices fried briefly in hot oil, so the inside is still tofu.
 - ***Ganmodoki***: tofu broken up, mixed with vegetables and other ingredients, shaped, and fried.
-- ***Kōri-dōfu*** (*kōya-dōfu* in Kansai, *shimi-dōfu* in Tōhoku): **freeze-dried** tofu. Freezing and drying change the tissue, giving a texture unlike the original.
-- ***Yuba***: the **film** that forms on the surface of soy milk when it is heated continuously. It is made only from soybeans and concentrates all their components. It is eaten fresh, dried or moulded.
+- ***Kōri-dōfu*** (*[kōya-dōfu](https://en.wikipedia.org/wiki/Koya-dofu)* in [Kansai](https://en.wikipedia.org/wiki/Kansai_region), *shimi-dōfu* in Tōhoku): **[freeze-dried](https://en.wikipedia.org/wiki/Freeze_drying)** tofu. Freezing and drying change the tissue, giving a texture unlike the original.
+- ***[Yuba](https://en.wikipedia.org/wiki/Tofu_skin)***: the **film** that forms on the surface of soy milk when it is heated continuously. It is made only from soybeans and concentrates all their components. It is eaten fresh, dried or moulded.
 
 ## 11.6 Check yourself
 

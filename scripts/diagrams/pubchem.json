@@ -1,0 +1,149 @@
+{
+ "L-glutamic acid": {
+  "CID": 33032,
+  "MolecularFormula": "C5H9NO4",
+  "SMILES": "C(CC(=O)O)[C@@H](C(=O)O)N",
+  "IUPACName": "(2S)-2-aminopentanedioic acid",
+  "Title": "L-Glutamic Acid"
+ },
+ "inosinic acid": {
+  "CID": 135398640,
+  "MolecularFormula": "C10H13N4O8P",
+  "SMILES": "C1=NC2=C(C(=O)N1)N=CN2[C@H]3[C@@H]([C@@H]([C@H](O3)COP(=O)(O)O)O)O",
+  "IUPACName": "[(2R,3S,4R,5R)-3,4-dihydroxy-5-(6-oxo-1H-purin-9-yl)oxolan-2-yl]methyl dihydrogen phosphate",
+  "Title": "Inosinic Acid"
+ },
+ "guanylic acid": {
+  "CID": 135398631,
+  "MolecularFormula": "C10H14N5O8P",
+  "SMILES": "C1=NC2=C(N1[C@H]3[C@@H]([C@@H]([C@H](O3)COP(=O)(O)O)O)O)N=C(NC2=O)N",
+  "IUPACName": "[(2R,3S,4R,5R)-5-(2-amino-6-oxo-1H-purin-9-yl)-3,4-dihydroxyoxolan-2-yl]methyl dihydrogen phosphate",
+  "Title": "Guanosine Monophosphate"
+ },
+ "adenosine triphosphate": {
+  "CID": 5957,
+  "MolecularFormula": "C10H16N5O13P3",
+  "SMILES": "C1=NC(=C2C(=N1)N(C=N2)[C@H]3[C@@H]([C@@H]([C@H](O3)COP(=O)(O)OP(=O)(O)OP(=O)(O)O)O)O)N",
+  "IUPACName": "[[(2R,3S,4R,5R)-5-(6-aminopurin-9-yl)-3,4-dihydroxyoxolan-2-yl]methoxy-hydroxyphosphoryl] phosphono hydrogen phosphate",
+  "Title": "5'-Atp"
+ },
+ "adenosine diphosphate": {
+  "CID": 6022,
+  "MolecularFormula": "C10H15N5O10P2",
+  "SMILES": "C1=NC(=C2C(=N1)N(C=N2)[C@H]3[C@@H]([C@@H]([C@H](O3)COP(=O)(O)OP(=O)(O)O)O)O)N",
+  "IUPACName": "[(2R,3S,4R,5R)-5-(6-aminopurin-9-yl)-3,4-dihydroxyoxolan-2-yl]methyl phosphono hydrogen phosphate",
+  "Title": "5'-Adp"
+ },
+ "adenosine monophosphate": {
+  "CID": 6083,
+  "MolecularFormula": "C10H14N5O7P",
+  "SMILES": "C1=NC(=C2C(=N1)N(C=N2)[C@H]3[C@@H]([C@@H]([C@H](O3)COP(=O)(O)O)O)O)N",
+  "IUPACName": "[(2R,3S,4R,5R)-5-(6-aminopurin-9-yl)-3,4-dihydroxyoxolan-2-yl]methyl dihydrogen phosphate",
+  "Title": "Adenosine Monophosphate"
+ },
+ "inosine": {
+  "CID": 135398641,
+  "MolecularFormula": "C10H12N4O5",
+  "SMILES": "C1=NC2=C(C(=O)N1)N=CN2[C@H]3[C@@H]([C@@H]([C@H](O3)CO)O)O",
+  "IUPACName": "9-[(2R,3R,4S,5R)-3,4-dihydroxy-5-(hydroxymethyl)oxolan-2-yl]-1H-purin-6-one",
+  "Title": "Inosine"
+ },
+ "hypoxanthine": {
+  "CID": 135398638,
+  "MolecularFormula": "C5H4N4O",
+  "SMILES": "C1=NC2=C(N1)C(=O)NC=N2",
+  "IUPACName": "1,7-dihydropurin-6-one",
+  "Title": "Hypoxanthine"
+ },
+ "L-glutamine": {
+  "CID": 5961,
+  "MolecularFormula": "C5H10N2O3",
+  "SMILES": "C(CC(=O)N)[C@@H](C(=O)O)N",
+  "IUPACName": "(2S)-2,5-diamino-5-oxopentanoic acid",
+  "Title": "L-Glutamine"
+ },
+ "L-pyroglutamic acid": {
+  "CID": 7405,
+  "MolecularFormula": "C5H7NO3",
+  "SMILES": "C1CC(=O)N[C@@H]1C(=O)O",
+  "IUPACName": "(2S)-5-oxopyrrolidine-2-carboxylic acid",
+  "Title": "L-Pyroglutamic Acid"
+ },
+ "glucono-delta-lactone": {
+  "CID": 7027,
+  "MolecularFormula": "C6H10O6",
+  "SMILES": "C([C@@H]1[C@H]([C@@H]([C@H](C(=O)O1)O)O)O)O",
+  "IUPACName": "(3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-one",
+  "Title": "delta-Gluconolactone"
+ },
+ "D-gluconic acid": {
+  "CID": 10690,
+  "MolecularFormula": "C6H12O7",
+  "SMILES": "C([C@H]([C@H]([C@@H]([C@H](C(=O)O)O)O)O)O)O",
+  "IUPACName": "(2R,3S,4R,5R)-2,3,4,5,6-pentahydroxyhexanoic acid",
+  "Title": "Gluconic Acid"
+ },
+ "agarobiose": {
+  "CID": 54758703,
+  "MolecularFormula": "C12H20O10",
+  "SMILES": "C1[C@H]2[C@H]([C@@H](O1)[C@@H]([C@@H](O2)O)O)O[C@H]3[C@@H]([C@H]([C@H]([C@H](O3)CO)O)O)O",
+  "IUPACName": "(2S,3R,4S,5R,6R)-2-[[(1S,3R,4S,5S,8R)-3,4-dihydroxy-2,6-dioxabicyclo[3.2.1]octan-8-yl]oxy]-6-(hydroxymethyl)oxane-3,4,5-triol",
+  "Title": "Agarobiose"
+ },
+ "panose": {
+  "CID": 94448,
+  "MolecularFormula": "C18H32O16",
+  "SMILES": "C([C@@H]1[C@H]([C@@H]([C@H]([C@H](O1)OC[C@@H]2[C@H]([C@@H]([C@H]([C@H](O2)O[C@H]([C@@H](CO)O)[C@@H]([C@H](C=O)O)O)O)O)O)O)O)O)O",
+  "IUPACName": "(2R,3R,4R,5R)-2,3,5,6-tetrahydroxy-4-[(2R,3R,4S,5S,6R)-3,4,5-trihydroxy-6-[[(2S,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxymethyl]oxan-2-yl]oxyhexanal",
+  "Title": "Panose"
+ },
+ "ethanol": {
+  "CID": 702,
+  "MolecularFormula": "C2H6O",
+  "SMILES": "CCO",
+  "IUPACName": "ethanol",
+  "Title": "Ethanol"
+ },
+ "acetic acid": {
+  "CID": 176,
+  "MolecularFormula": "C2H4O2",
+  "SMILES": "CC(=O)O",
+  "IUPACName": "acetic acid",
+  "Title": "Acetic Acid"
+ },
+ "lactic acid": {
+  "CID": 612,
+  "MolecularFormula": "C3H6O3",
+  "SMILES": "CC(C(=O)O)O",
+  "IUPACName": "2-hydroxypropanoic acid",
+  "Title": "Lactic Acid"
+ },
+ "alpha-D-glucose": {
+  "CID": 79025,
+  "MolecularFormula": "C6H12O6",
+  "SMILES": "C([C@@H]1[C@H]([C@@H]([C@H]([C@H](O1)O)O)O)O)O",
+  "IUPACName": "(2S,3R,4S,5S,6R)-6-(hydroxymethyl)oxane-2,3,4,5-tetrol",
+  "Title": "Alpha-D-Glucose"
+ },
+ "glucose": {
+  "CID": 5793,
+  "MolecularFormula": "C6H12O6",
+  "SMILES": "C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O",
+  "IUPACName": "(3R,4S,5S,6R)-6-(hydroxymethyl)oxane-2,3,4,5-tetrol",
+  "Title": "D-Glucose"
+ },
+ "maltose": {
+  "CID": 439186,
+  "MolecularFormula": "C12H22O11",
+  "SMILES": "C([C@@H]1[C@H]([C@@H]([C@H]([C@H](O1)O[C@@H]2[C@H](OC([C@@H]([C@H]2O)O)O)CO)O)O)O)O",
+  "IUPACName": "(2R,3S,4S,5R,6R)-2-(hydroxymethyl)-6-[(2R,3S,4R,5R)-4,5,6-trihydroxy-2-(hydroxymethyl)oxan-3-yl]oxyoxane-3,4,5-triol",
+  "Title": "Maltose"
+ },
+ "isomaltose": {
+  "CID": 439193,
+  "MolecularFormula": "C12H22O11",
+  "SMILES": "C([C@@H]1[C@H]([C@@H]([C@H]([C@H](O1)OC[C@@H]2[C@H]([C@@H]([C@H](C(O2)O)O)O)O)O)O)O)O",
+  "IUPACName": "(3R,4S,5S,6R)-6-[[(2S,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxymethyl]oxane-2,3,4,5-tetrol",
+  "Title": "Isomaltose"
+ }
+}

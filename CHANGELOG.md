@@ -4,6 +4,20 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+- **Molecule diagrams in the cuisine handbook**: seven structural diagrams drawn from PubChem records, each with a cited caption and the relevant group highlighted
+  - The three umami substances (chapter 1); the two fates of glutamine in soy-sauce moromi (4); rice vinegar's two fermentations (5); ATP breakdown to hypoxanthine in fish muscle (6); the α-1,4 and α-1,6 links of amylose and amylopectin (9); glucono-δ-lactone opening to gluconic acid (11); agarobiose, the repeating unit of agar (12)
+  - Tap a diagram to open it full size, also in the offline app
+  - The sources page lists every diagram with its PubChem records
+- **Further-reading links**: about 350 terms, people, organisms and places across the handbook link to Wikipedia at their first appearance in each chapter, and the molecules in the diagrams link to PubChem. They are marked ↗, open in a new tab and are kept apart from the cited sources
+- Chapter 12 now gives agar's chemical structure from the EFSA re-evaluation
+
+### Changed
+- The content check fails if a chapter's source list cites Wikipedia or if a Wikipedia link is malformed
+- The offline app serves files opened directly (such as a full-size diagram) instead of the home page
+
 ## [1.11.0] - 2026-11-17
 
 ### Added

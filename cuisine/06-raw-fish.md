@@ -1,6 +1,6 @@
 # 6. Raw Fish: Death, Rigor and Freshness
 
-Sashimi is the barest test of technique in Japanese cooking. There is no heat, no sauce to hide behind, and almost no time between fish and plate. The flavour and texture of raw fish are decided mostly **before** the knife touches it: by how the fish died, at what temperature it was kept, and how many hours have passed. This chapter follows the biochemistry of fish muscle after death, as described in the research literature, and turns it into the questions a cook should ask. It ends with the parasite risk, which no kitchen technique can ignore.
+[Sashimi](https://en.wikipedia.org/wiki/Sashimi) is the barest test of technique in Japanese cooking. There is no heat, no sauce to hide behind, and almost no time between fish and plate. The flavour and texture of raw fish are decided mostly **before** the knife touches it: by how the fish died, at what temperature it was kept, and how many hours have passed. This chapter follows the biochemistry of fish muscle after death, as described in the research literature, and turns it into the questions a cook should ask. It ends with the parasite risk, which no kitchen technique can ignore.
 
 <figure>
 <img src="img/sashimi.jpg" alt="A wooden board of sashimi: slices of tuna, white fish and squid with shredded daikon and garnishes">
@@ -9,11 +9,11 @@ Sashimi is the barest test of technique in Japanese cooking. There is no heat, n
 
 ## 6.1 What happens in muscle after death
 
-Duarte and colleagues' review of fish quality divides the changes after death into three stages: **rigor mortis**, **autolysis** (self-digestion by the fish's own enzymes) and **bacterial spoilage** (Duarte et al. 2020).
+Duarte and colleagues' review of fish quality divides the changes after death into three stages: **[rigor mortis](https://en.wikipedia.org/wiki/Rigor_mortis)**, **autolysis** (self-digestion by the fish's own enzymes) and **bacterial spoilage** (Duarte et al. 2020).
 
 ### Pre-rigor: the flexible hours
 
-At the moment of death, fish muscle still holds **glycogen**, **phosphocreatine** and **ATP**. These keep it flexible and elastic for a few hours. Blood circulation stops, and with it the oxygen supply. The muscle switches to **anaerobic glycolysis**: it breaks down glycogen, uses up its ATP, and produces **lactic acid**, so the pH falls (Duarte et al. 2020).
+At the moment of death, fish muscle still holds **[glycogen](https://en.wikipedia.org/wiki/Glycogen)**, **[phosphocreatine](https://en.wikipedia.org/wiki/Phosphocreatine)** and **[ATP](https://en.wikipedia.org/wiki/Adenosine_triphosphate)**. These keep it flexible and elastic for a few hours. Blood circulation stops, and with it the oxygen supply. The muscle switches to **anaerobic glycolysis**: it breaks down glycogen, uses up its ATP, and produces **[lactic acid](https://en.wikipedia.org/wiki/Lactic_acid)**, so the pH falls (Duarte et al. 2020).
 
 How much glycogen there is depends on the fish. Duarte and colleagues note that reserves are higher in **well-fed fish** and in fish that had **a calm death**, and that this extends shelf life (Duarte et al. 2020).
 
@@ -21,23 +21,23 @@ The falling pH has two effects: it **slows bacterial growth**, which is good, an
 
 ### Rigor: the stiff phase
 
-When ATP runs low, the contractile proteins **actin and myosin** bind together. The muscle contracts and becomes rigid and inextensible. This is rigor mortis. Rigor resolves after **hours or more than a day**, depending on species, handling, size, physical condition and, above all, **temperature and stress before death**. The lower the stress and temperature, the later rigor starts and the longer it lasts. Duarte and colleagues treat fish **before or during rigor** as synonymous with high quality (Duarte et al. 2020).
+When ATP runs low, the contractile proteins **[actin](https://en.wikipedia.org/wiki/Actin) and [myosin](https://en.wikipedia.org/wiki/Myosin)** bind together. The muscle contracts and becomes rigid and inextensible. This is rigor mortis. Rigor resolves after **hours or more than a day**, depending on species, handling, size, physical condition and, above all, **temperature and stress before death**. The lower the stress and temperature, the later rigor starts and the longer it lasts. Duarte and colleagues treat fish **before or during rigor** as synonymous with high quality (Duarte et al. 2020).
 
 ### Post-rigor: softening and spoilage
 
-After rigor resolves, autolysis begins. **Cathepsins** (especially B and L) and the **calpain** system break down the myosin heavy chain, and **collagenase** breaks down collagen types I and V, which give the muscle its structure. The flesh softens. Peptides and free amino acids are released, which feed bacteria (Duarte et al. 2020). During the first five to six days on ice, bacteria are still in their **lag phase**, adapting to the new environment of the dead fish. After that they grow exponentially, and bacterial action becomes the main cause of deterioration from about the **sixth day on ice** (Duarte et al. 2020). Autolysis starts in the digestive tract, so **gutting under hygienic conditions** keeps digestive enzymes and gut bacteria out of the flesh (Duarte et al. 2020).
+After rigor resolves, autolysis begins. **Cathepsins** (especially B and L) and the **calpain** system break down the myosin heavy chain, and **collagenase** breaks down collagen types I and V, which give the muscle its structure. The flesh softens. Peptides and free [amino acids](https://en.wikipedia.org/wiki/Amino_acid) are released, which feed bacteria (Duarte et al. 2020). During the first five to six days on ice, bacteria are still in their **lag phase**, adapting to the new environment of the dead fish. After that they grow exponentially, and bacterial action becomes the main cause of deterioration from about the **sixth day on ice** (Duarte et al. 2020). Autolysis starts in the digestive tract, so **gutting under hygienic conditions** keeps digestive enzymes and gut bacteria out of the flesh (Duarte et al. 2020).
 
-> **Two different clocks.** Chapter 1 showed that the same ATP breakdown that drives rigor also **makes inosinate (IMP)**, the umami of fish, which in yellowtail peaks about 10 hours after killing (Kurihara 2015). So a fish can be texturally at its best (pre-rigor, elastic) before it is at its most savoury (IMP peak). Neither source tells the cook which to prefer. That is a matter of the dish and the fish.
+> **Two different clocks.** Chapter 1 showed that the same ATP breakdown that drives rigor also **makes [inosinate](https://en.wikipedia.org/wiki/Inosinic_acid) (IMP)**, the [umami](https://en.wikipedia.org/wiki/Umami) of fish, which in [yellowtail](https://en.wikipedia.org/wiki/Japanese_amberjack) peaks about 10 hours after killing (Kurihara 2015). So a fish can be texturally at its best (pre-rigor, elastic) before it is at its most savoury (IMP peak). Neither source tells the cook which to prefer. That is a matter of the dish and the fish.
 
 ## 6.2 How the killing method changes the timing
 
 ### Stress speeds everything up
 
-Nakayama and colleagues at Mie University compared three treatments of **red sea bream** (*madai*, 33–36 cm, 1.2–1.4 kg), stored at **3 °C** after death (Nakayama et al. 1996):
+Nakayama and colleagues at Mie University compared three treatments of **[red sea bream](https://en.wikipedia.org/wiki/Pagrus_major)** (*madai*, 33–36 cm, 1.2–1.4 kg), stored at **3 °C** after death (Nakayama et al. 1996):
 
 1. **Stressed:** held out of water for 30 minutes, then killed by a spike into the medulla oblongata (the base of the brain).
 2. **Unstressed:** removed gently from the tank and killed immediately with the same spike.
-3. **Unstressed + spinal cord destroyed:** killed the same way, then **a wire passed through the neural canal** to destroy the spinal cord. This is the principle of the Japanese technique known as ***ikejime***.
+3. **Unstressed + spinal cord destroyed:** killed the same way, then **a wire passed through the neural canal** to destroy the spinal cord. This is the principle of the Japanese technique known as ***[ikejime](https://en.wikipedia.org/wiki/Ikejime)***.
 
 The authors explain the reasoning. After a spike to the brain, the **spinal reflex arc still works**, and nerve impulses keep reaching the muscles. Destroying the spinal cord stops those impulses, which could delay rigor (Nakayama et al. 1996).
 
@@ -78,7 +78,12 @@ A follow-up study on **plaice** by the same group found **two patterns** in spin
 
 ## 6.3 Measuring freshness: the K value
 
-The ATP breakdown chain continues past IMP. Hwang and colleagues describe the sequence: ATP → ADP → AMP → **IMP** → **inosine (HxR)** → **hypoxanthine (Hx)**, each step at its own rate. ATP falls rapidly within **24 hours** of death (Hwang et al. 2019).
+The ATP breakdown chain continues past IMP. Hwang and colleagues describe the sequence: ATP → [ADP](https://en.wikipedia.org/wiki/Adenosine_diphosphate) → [AMP](https://en.wikipedia.org/wiki/Adenosine_monophosphate) → **IMP** → **[inosine](https://en.wikipedia.org/wiki/Inosine) (HxR)** → **[hypoxanthine](https://en.wikipedia.org/wiki/Hypoxanthine) (Hx)**, each step at its own rate. ATP falls rapidly within **24 hours** of death (Hwang et al. 2019).
+
+<figure class="diagram">
+<img src="img/mol-atp-breakdown.svg" alt="Six skeletal formulas in sequence: ATP, ADP, AMP, IMP, inosine and hypoxanthine, with the part that changes at each step highlighted">
+<figcaption>The ATP breakdown chain in fish muscle, in the order given by Hwang and colleagues (Hwang et al. 2019). Each step removes or changes one part of the molecule: two phosphates come off, the amino group of AMP is replaced by oxygen to give IMP, then the last phosphate and finally the ribose sugar are lost. <span class="credit">Diagram drawn for this handbook with <a href="https://www.rdkit.org/">RDKit</a> from PubChem structure records: <a href="https://pubchem.ncbi.nlm.nih.gov/compound/5957">ATP</a>, <a href="https://pubchem.ncbi.nlm.nih.gov/compound/6022">ADP</a>, <a href="https://pubchem.ncbi.nlm.nih.gov/compound/6083">AMP</a>, <a href="https://pubchem.ncbi.nlm.nih.gov/compound/135398640">IMP</a>, <a href="https://pubchem.ncbi.nlm.nih.gov/compound/135398641">inosine</a>, <a href="https://pubchem.ncbi.nlm.nih.gov/compound/135398638">hypoxanthine</a>.</span></figcaption>
+</figure>
 
 The **K value** expresses how far along this chain the fish has gone. It is calculated from the concentrations of ATP and its breakdown products. In Hwang and colleagues' study it was calculated as the percentage of hypoxanthine among all the ATP breakdown products (Hwang et al. 2019). The thresholds they cite (Hwang et al. 2019, citing Ehira 1976 and Kuda et al. 2007):
 
@@ -102,11 +107,11 @@ Their flatfish data show how fast temperature moves fish along this chain (Hwang
 
 ### The risk
 
-*Anisakis* larvae are parasitic nematodes in marine fish, and they cause **anisakiasis**, a gastrointestinal disease. Suzuki and colleagues, from the Tokyo Metropolitan Institute of Public Health, report (Suzuki et al. 2021):
+*[Anisakis](https://en.wikipedia.org/wiki/Anisakis)* larvae are parasitic nematodes in marine fish, and they cause **anisakiasis**, a gastrointestinal disease. Suzuki and colleagues, from the Tokyo Metropolitan Institute of Public Health, report (Suzuki et al. 2021):
 
 - *Anisakis* has been listed as a **distinct food-poisoning agent** in Japan's Food Poisoning Statistics since **2013**, and reported cases are gradually **increasing**.
 - Of larvae taken from patients in Tokyo between 2011 and 2018, **94.0%** were *Anisakis simplex* sensu stricto and **4.4%** *A. pegreffii*.
-- **Mackerel** has been the most common source. "Marinated mackerel" accounted for **32.8%** of cases in Tokyo between 2011 and 2017. In May 2018, **skipjack tuna** was the leading source.
+- **Mackerel** has been the most common source. "Marinated mackerel" accounted for **32.8%** of cases in Tokyo between 2011 and 2017. In May 2018, **[skipjack tuna](https://en.wikipedia.org/wiki/Skipjack_tuna)** was the leading source.
 - In skipjack tuna, some larvae had already migrated from the guts to the **belly muscle** of the **live fish before capture**. A good cold chain after capture therefore **cannot** prevent infection.
 
 > **Technique consequence: marinating is not a kill step.** The single largest category of cases in Tokyo was *marinated* mackerel. Salting and vinegaring a fish, as in *shime-saba*, changes its flavour and texture, but the case data give no reason to treat it as protection against *Anisakis*.

@@ -1,6 +1,6 @@
 # 13. Mochi and Starch Gels
 
-***Mochi***, the stretchy cake of glutinous rice, takes the starch chemistry of Chapter 9 to its extreme. Its rice has almost no amylose, so its behaviour, both the stretch and the slow hardening, is governed almost entirely by **amylopectin**. This chapter covers mochi and its relatives, and then a very different traditional thickener, **kuzu** (kudzu) starch, which owes its usefulness to the opposite: a relatively **high** amylose content.
+***[Mochi](https://en.wikipedia.org/wiki/Mochi)***, the stretchy cake of [glutinous rice](https://en.wikipedia.org/wiki/Glutinous_rice), takes the [starch](https://en.wikipedia.org/wiki/Starch) chemistry of Chapter 9 to its extreme. Its rice has almost no [amylose](https://en.wikipedia.org/wiki/Amylose), so its behaviour, both the stretch and the slow hardening, is governed almost entirely by **[amylopectin](https://en.wikipedia.org/wiki/Amylopectin)**. This chapter covers mochi and its relatives, and then a very different traditional thickener, **[kuzu](https://en.wikipedia.org/wiki/Kudzu)** (kudzu) starch, which owes its usefulness to the opposite: a relatively **high** amylose content.
 
 <figure>
 <img src="img/mochi-pounding.jpg" alt="Two men pounding mochi in a large wooden mortar with a heavy wooden mallet">
@@ -9,22 +9,22 @@
 
 ## 13.1 Mochi in Japan
 
-MAFF gives a short history (MAFF, *Grain products*):
+[MAFF](https://en.wikipedia.org/wiki/Ministry_of_Agriculture,_Forestry_and_Fisheries_%28Japan%29) gives a short history (MAFF, *Grain products*):
 
-- Rice cake is said to have existed since the **Jōmon** era. Originally it was made by kneading, steaming and pounding a mixture of **flour of minor cereals** and water.
-- In the **late Nara** era, the original form of today's mochi appeared: rice cake made by **mashing rice grains**.
+- Rice cake is said to have existed since the **[Jōmon](https://en.wikipedia.org/wiki/J%C5%8Dmon_period)** era. Originally it was made by kneading, steaming and pounding a mixture of **flour of minor cereals** and water.
+- In the **late [Nara](https://en.wikipedia.org/wiki/Nara_period)** era, the original form of today's mochi appeared: rice cake made by **mashing rice grains**.
 - Mochi became a major offering in rituals, at auspicious occasions and in Buddhist services.
 
-MAFF also records a clear regional split: **round** mochi is popular around **Kansai**, **square** mochi in **Kantō** and further north. Forms include *kiri-mochi* (cut pieces), *noshi-mochi* (flattened), *namako-mochi* (flat half-cylinders), *hishi-mochi* (diamonds), *kōri-mochi* (freeze-dried), *arare* (small cubes for rice crackers), *kiritanpo* (mashed rice pressed onto skewers and roasted) and *kibi-dango* (millet dumplings) (MAFF, *Grain products*).
+MAFF also records a clear regional split: **round** mochi is popular around **[Kansai](https://en.wikipedia.org/wiki/Kansai_region)**, **square** mochi in **[Kantō](https://en.wikipedia.org/wiki/Kant%C5%8D_region)** and further north. Forms include *kiri-mochi* (cut pieces), *noshi-mochi* (flattened), *namako-mochi* (flat half-cylinders), *hishi-mochi* (diamonds), *kōri-mochi* ([freeze-dried](https://en.wikipedia.org/wiki/Freeze_drying)), *arare* (small cubes for rice crackers), *[kiritanpo](https://en.wikipedia.org/wiki/Kiritanpo)* (mashed rice pressed onto skewers and roasted) and *kibi-dango* (millet dumplings) (MAFF, *Grain products*).
 
 ## 13.2 Glutinous rice: nearly all amylopectin
 
-Chapter 9 gave the amylose classes of rice. **Waxy** (glutinous) rice has an apparent amylose content **below 2%** (Nakamura et al. 2021). Qiu and colleagues put it another way: glutinous rice starch consists **mainly of amylopectin (>98%)** (Qiu et al. 2022).
+Chapter 9 gave the amylose classes of rice. **Waxy** (glutinous) rice has an apparent amylose content **below 2%** (Nakamura et al. 2021). Qiu and colleagues put it another way: glutinous rice starch consists **mainly of amylopectin (>98%)** (Qiu et al. 2022). Chapter 9 draws the two links, α-1,4 and α-1,6, that build the branched amylopectin molecule.
 
 Two consequences follow, according to the same source (Qiu et al. 2022):
 
 - Glutinous rice gives products an **adhesive texture**.
-- It has a **longer shelf life against retrogradation** (staling) than ordinary, amylose-containing rice.
+- It has a **longer shelf life against [retrogradation](https://en.wikipedia.org/wiki/Retrogradation_%28starch%29)** (staling) than ordinary, amylose-containing rice.
 
 Hanashiro and colleagues' leaching experiment from Chapter 9 fits this picture. The waxy rice Hiyokumochi released a leachate that was only **1% amylose** (Hanashiro et al. 2004). Its starch surface is almost pure branched amylopectin, the component that Li and colleagues link to stickiness (Li et al. 2017).
 
@@ -40,7 +40,7 @@ Hanashiro and colleagues' leaching experiment from Chapter 9 fits this picture. 
 Over the same period, the samples became **less adhesive**. The authors' earlier work, summarised in this paper, found that (Qiu et al. 2022):
 
 - **moisture content** was the most significant factor in preventing retrogradation of cooked glutinous rice. Negligible retrogradation occurred over 14 days at 4 °C when moisture was **above 80%**;
-- adding **sugar, salt, lipid and surfactant** significantly reduced retrogradation after 14 days at 4 °C.
+- adding **sugar, salt, [lipid](https://en.wikipedia.org/wiki/Lipid) and surfactant** significantly reduced retrogradation after 14 days at 4 °C.
 
 The sweetened cake hardened less than the plain gel in the table above. That is consistent with the protective effect of sugar, although the two samples also differed in other ways.
 
@@ -56,11 +56,11 @@ Matsue and Ogata compared mochi made from native red- and black-grained glutinou
 
 ## 13.4 Daifuku: amylopectin chain length
 
-***Daifuku*** is mochi made from glutinous rice flour, shaped into a round, soft, moist shell around a filling (Tian et al. 2025). Tian and colleagues name its common faults: **flattened** shape, **dry, tough skin** and a **high cracking rate**. They trace these to the weak water absorption and retention of glutinous rice flour and its **poor gel network** (Tian et al. 2025).
+***[Daifuku](https://en.wikipedia.org/wiki/Daifuku)*** is mochi made from glutinous rice flour, shaped into a round, soft, moist shell around a filling (Tian et al. 2025). Tian and colleagues name its common faults: **flattened** shape, **dry, tough skin** and a **high cracking rate**. They trace these to the weak water absorption and retention of glutinous rice flour and its **poor gel network** (Tian et al. 2025).
 
 They compared ten glutinous rice flours, from *indica* and *japonica* varieties (Tian et al. 2025):
 
-- *Indica* flours had **higher** viscosity, amylopectin content, proportion of **long-branched chains**, gelatinisation enthalpy and setback.
+- *Indica* flours had **higher** [viscosity](https://en.wikipedia.org/wiki/Viscosity), amylopectin content, proportion of **long-branched chains**, [gelatinisation](https://en.wikipedia.org/wiki/Starch_gelatinization) enthalpy and setback.
 - Their longer B₂ and B₃ amylopectin chains formed **more double helices** after pasting. This gave **higher hardness** and a **compact gel network** with better water retention. Daifuku made from them kept an excellent appearance.
 - *Japonica* flours, with **more short chains**, **retrograded slowly** but formed an **unstable gel network**.
 - The authors concluded that *indica* flour was more suitable for daifuku.
@@ -79,7 +79,7 @@ They compared ten glutinous rice flours, from *indica* and *japonica* varieties 
 
 Shi and colleagues compared *Pueraria* starches with commercial starches. The *Pueraria* starches had **significantly higher amylose** and **smaller particles** (Shi et al. 2025).
 
-> **Kuzu and mochi as opposites.** Mochi is nearly pure amylopectin and makes a sticky, stretchy mass. Kuzu starch, at around a quarter amylose, makes a **clear, viscous paste** valued for transparency and stability (He et al. 2025). Together with agar (Chapter 12), these are three different routes to a Japanese confection's texture: a branched-starch mass, a high-amylose starch paste, and a seaweed polysaccharide gel.
+> **Kuzu and mochi as opposites.** Mochi is nearly pure amylopectin and makes a sticky, stretchy mass. Kuzu starch, at around a quarter amylose, makes a **clear, viscous paste** valued for transparency and stability (He et al. 2025). Together with [agar](https://en.wikipedia.org/wiki/Agar) (Chapter 12), these are three different routes to a Japanese confection's texture: a branched-starch mass, a high-amylose starch paste, and a seaweed polysaccharide gel.
 
 > **What the sources do not cover.** Popular sources make many claims about how to cook kuzu (how to dissolve it, how long to stir, which kuzu is "genuine"). The research papers used here are on Chinese-grown cultivars and laboratory pastes, and they do not test Japanese kitchen practice. This handbook reports only their measured properties.
 

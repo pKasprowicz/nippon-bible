@@ -1,6 +1,6 @@
 # 5. Mirin, Vinegar and Sake: Sweetness, Sourness and Alcohol
 
-Chapters 3 and 4 showed kōji making salt-based seasonings. This chapter covers the other three brewed liquids in the Japanese kitchen. **Mirin** is a sweet seasoning made by kōji enzymes working in alcohol, with no yeast. **Rice vinegar** is made by a two-stage fermentation that turns rice into sake and the sake into acetic acid. **Sake** is the alcoholic drink at the start of both. Each one does more than add a taste: mirin changes how food holds together, and vinegar changes the texture of rice.
+Chapters 3 and 4 showed [kōji](https://en.wikipedia.org/wiki/K%C5%8Dji_%28food%29) making salt-based seasonings. This chapter covers the other three brewed liquids in the Japanese kitchen. **[Mirin](https://en.wikipedia.org/wiki/Mirin)** is a sweet seasoning made by kōji enzymes working in alcohol, with no [yeast](https://en.wikipedia.org/wiki/Yeast). **[Rice vinegar](https://en.wikipedia.org/wiki/Rice_vinegar)** is made by a two-stage fermentation that turns rice into [sake](https://en.wikipedia.org/wiki/Sake) and the sake into [acetic acid](https://en.wikipedia.org/wiki/Acetic_acid). **Sake** is the alcoholic drink at the start of both. Each one does more than add a taste: mirin changes how food holds together, and vinegar changes the texture of rice.
 
 ## 5.1 Mirin
 
@@ -11,22 +11,22 @@ Chapters 3 and 4 showed kōji making salt-based seasonings. This chapter covers 
 
 ### What mirin is, legally and chemically
 
-Ito's review of mirin brewing begins with the legal definition. Under Japan's **Liquor Tax Law**, mirin must have an **extract content of 40% or more** and an **alcohol content below 15%**. The main component of that extract is **sugar** (Ito 2021). Yamashita gives the sugar more precisely: mirin contains about **40–50% glucose** (Yamashita 2021).
+Ito's review of mirin brewing begins with the legal definition. Under Japan's **Liquor Tax Law**, mirin must have an **extract content of 40% or more** and an **alcohol content below 15%**. The main component of that extract is **sugar** (Ito 2021). Yamashita gives the sugar more precisely: mirin contains about **40–50% [glucose](https://en.wikipedia.org/wiki/Glucose)** (Yamashita 2021).
 
 ### History
 
-Ito writes that mirin originated in China and reached Japan during the **Muromachi and Warring States periods**. It was first a drink and came into use for cooking in the **Edo period** (Ito 2021). MAFF gives two competing theories of its origin. One traces it to *nerizake*, a sweet sake drunk in the early Muromachi period. The other traces it to a Ming-dynasty Chinese mead written 蜜淋. MAFF adds that mirin's use as a seasoning grew once a method for making high-sugar mirin from *shōchū* was established in the Edo period (MAFF, *Soy sauce, miso, other seasonings*).
+Ito writes that mirin originated in China and reached Japan during the **Muromachi and Warring States periods**. It was first a drink and came into use for cooking in the **[Edo](https://en.wikipedia.org/wiki/Edo_period) period** (Ito 2021). [MAFF](https://en.wikipedia.org/wiki/Ministry_of_Agriculture,_Forestry_and_Fisheries_%28Japan%29) gives two competing theories of its origin. One traces it to *nerizake*, a sweet sake drunk in the early Muromachi period. The other traces it to a Ming-dynasty Chinese mead written 蜜淋. MAFF adds that mirin's use as a seasoning grew once a method for making high-sugar mirin from *[shōchū](https://en.wikipedia.org/wiki/Sh%C5%8Dch%C5%AB)* was established in the Edo period (MAFF, *[Soy sauce](https://en.wikipedia.org/wiki/Soy_sauce), [miso](https://en.wikipedia.org/wiki/Miso), other seasonings*).
 
 ### How it is made
 
-The raw materials are **glutinous rice**, **rice kōji** and ***shōchū*** (distilled spirit) (Ito 2021; MAFF). Ito gives the proportions:
+The raw materials are **[glutinous rice](https://en.wikipedia.org/wiki/Glutinous_rice)**, **rice kōji** and ***shōchū*** (distilled spirit) (Ito 2021; MAFF). Ito gives the proportions:
 
 - **Kōji ratio** (kōji rice weight ÷ total rice weight): **10–15%** w/w.
 - **Alcohol ratio** (alcohol volume ÷ total rice weight): **60–70%** v/w.
 
-The key point is what does **not** happen. Unlike other alcoholic beverages, the mirin mash is **not fermented by yeast** (Ito 2021). The alcohol is added as shōchū from the start. In the mash, the kōji's starch- and protein-digesting enzymes break the gelatinised starch and the protein of the steamed glutinous rice down into smaller molecules **in the presence of alcohol**. This happens through saccharification and ageing (Ito 2021). MAFF gives the conditions: **saccharification and ageing at 20–30 °C for 40–60 days**, then pressing, sedimentation (***orisage***) and filtration, followed by **several months** of storage to complete the brewing (MAFF).
+The key point is what does **not** happen. Unlike other alcoholic beverages, the mirin mash is **not fermented by yeast** (Ito 2021). The alcohol is added as shōchū from the start. In the mash, the kōji's starch- and protein-digesting enzymes break the [gelatinised](https://en.wikipedia.org/wiki/Starch_gelatinization) [starch](https://en.wikipedia.org/wiki/Starch) and the protein of the steamed glutinous rice down into smaller molecules **in the presence of alcohol**. This happens through saccharification and ageing (Ito 2021). MAFF gives the conditions: **saccharification and ageing at 20–30 °C for 40–60 days**, then pressing, sedimentation (***orisage***) and filtration, followed by **several months** of storage to complete the brewing (MAFF).
 
-The kōji has to suit this task. It needs high saccharifying and protease activity, because amino acids also contribute to mirin's taste. Strains with high **tyrosinase** activity are avoided, because a bright colour is wanted (Yamashita 2021).
+The kōji has to suit this task. It needs high saccharifying and [protease](https://en.wikipedia.org/wiki/Protease) activity, because [amino acids](https://en.wikipedia.org/wiki/Amino_acid) also contribute to mirin's taste. Strains with high **[tyrosinase](https://en.wikipedia.org/wiki/Tyrosinase)** activity are avoided, because a bright colour is wanted (Yamashita 2021).
 
 > **Why this matters to the cook.** Because the mould's enzymes work in alcohol without yeast, the sugar they release is not fermented away. It accumulates to the 40% or more required by law. The alcohol keeps the mash from spoiling over its weeks of saccharification. This is why mirin is both very sweet and alcoholic.
 
@@ -45,7 +45,7 @@ MAFF gives a similar list (MAFF):
 - it **keeps cooked food from falling apart**;
 - it **removes fishy smells**.
 
-Ito also notes reports of antioxidant activity and of an inhibitory effect on blood-pressure increase, both derived from the **aminocarbonyl (Maillard) reaction** (Ito 2021). These reports concern products of the reaction in mirin, not proven health effects of eating mirin, and this handbook makes no further claim.
+Ito also notes reports of antioxidant activity and of an inhibitory effect on blood-pressure increase, both derived from the **aminocarbonyl ([Maillard](https://en.wikipedia.org/wiki/Maillard_reaction)) reaction** (Ito 2021). These reports concern products of the reaction in mirin, not proven health effects of eating mirin, and this handbook makes no further claim.
 
 > **What the sources do not say.** Neither source explains the mechanism behind "preventing break-up" or "improving penetration". Popular explanations exist, but this handbook does not repeat them without a source. What can be said is that the effects are attributed to mirin's **sugar and alcohol** together (Ito 2021).
 
@@ -53,21 +53,26 @@ Ito also notes reports of antioxidant activity and of an inhibitory effect on bl
 
 ### Modern production: two fermentations
 
-In modern Japan, rice vinegar is made by a **two-stage fermentation** from steamed rice, rice kōji and water, using yeast and then acetic-acid bacteria (Yanagihara et al. 2024):
+In modern Japan, rice vinegar is made by a **two-stage fermentation** from steamed rice, rice kōji and water, using yeast and then [acetic-acid bacteria](https://en.wikipedia.org/wiki/Acetic_acid_bacteria) (Yanagihara et al. 2024):
 
 1. **Alcohol fermentation.** Kōji turns the rice starch into sugar, and yeast turns the sugar into alcohol, making sake.
 2. **Acetic fermentation.** Acetic-acid bacteria oxidise the alcohol to acetic acid.
 
+<figure class="diagram">
+<img src="img/mol-vinegar.svg" alt="Diagram: glucose turned by yeast into ethanol, which acetic-acid bacteria oxidise to acetic acid">
+<figcaption>The two fermentations of rice vinegar, as small molecules: sugar to alcohol (yeast), alcohol to acetic acid (acetic-acid bacteria) (Yanagihara et al. 2024). <span class="credit">Diagram drawn for this handbook with <a href="https://www.rdkit.org/">RDKit</a> from PubChem structure records: <a href="https://pubchem.ncbi.nlm.nih.gov/compound/79025">α-D-glucose</a>, <a href="https://pubchem.ncbi.nlm.nih.gov/compound/702">ethanol</a>, <a href="https://pubchem.ncbi.nlm.nih.gov/compound/176">acetic acid</a>.</span></figcaption>
+</figure>
+
 There are two production methods (Yanagihara et al. 2024):
 
-- **Static surface fermentation**, the traditional method. A crêpe-like film (***pellicle***) of acetic-acid bacteria floats on the surface of the sake. Ethanol is converted into acetic acid over about **one month**.
+- **Static surface fermentation**, the traditional method. A crêpe-like film (***pellicle***) of acetic-acid bacteria floats on the surface of the sake. [Ethanol](https://en.wikipedia.org/wiki/Ethanol) is converted into acetic acid over about **one month**.
 - **Submerged fermentation**, the modern industrial method.
 
 MAFF describes the same principle: sake is made from rice, then the "mother of vinegar" (the film of acetic-acid bacteria) is allowed to form on it so that acetic fermentation takes place (MAFF).
 
 ### Kasu vinegar and sushi
 
-**Kasu vinegar** (粕酢) is made from **sake lees** (*sake-kasu*), the by-product of sake brewing. The lees are aged for a set period, water is added, and the mother of vinegar is inoculated for **static fermentation** (MAFF). MAFF links its rise to the late Edo period. It was cheaper than rice vinegar, and its flavour suited the newly popular **Edo-style sushi** (MAFF).
+**Kasu vinegar** (粕酢) is made from **[sake lees](https://en.wikipedia.org/wiki/Sake_kasu)** (*sake-kasu*), the by-product of sake brewing. The lees are aged for a set period, water is added, and the mother of vinegar is inoculated for **static fermentation** (MAFF). MAFF links its rise to the late Edo period. It was cheaper than rice vinegar, and its flavour suited the newly popular **Edo-style [sushi](https://en.wikipedia.org/wiki/Sushi)** (MAFF).
 
 ### Kurozu: the amber vinegar
 
@@ -79,9 +84,9 @@ Yanagihara and colleagues report a historical finding. Vinegar-making is believe
 
 The authors reproduced the methods from Edo-period books, including ***Honchō shokkan*** (1697). They found that the low-water recipes produce a **lactic-acid ferment** without acetic fermentation. Their reproduction of the *Honchō shokkan* method, which they call "Honcho", gave these results (Yanagihara et al. 2024):
 
-- about **2% lactic acid**, the source of its sourness, and very little acetic acid (0.188 g per 100 mL);
-- **more than twice the free amino acids** of kurozu, with more glutamic acid;
-- in taste-sensor analysis, **weaker acidity but stronger umami** than commercial rice vinegar.
+- about **2% [lactic acid](https://en.wikipedia.org/wiki/Lactic_acid)**, the source of its sourness, and very little acetic acid (0.188 g per 100 mL);
+- **more than twice the free amino acids** of kurozu, with more [glutamic acid](https://en.wikipedia.org/wiki/Glutamic_acid);
+- in taste-sensor analysis, **weaker acidity but stronger [umami](https://en.wikipedia.org/wiki/Umami)** than commercial rice vinegar.
 
 The authors conclude that vinegar before the Edo period may have been a seasoning that added **umami and a gentle sourness**, closer to soy sauce in function than to modern vinegar (Yanagihara et al. 2024).
 
@@ -99,7 +104,7 @@ Acetic acid is volatile, and cooks often assume that boiling vinegar drives its 
 Odahara and colleagues measured how the parts of sushi vinegar (*sushi-zu*) affect the texture of cooked rice. The vinegar was added immediately after cooking, and the rice was tested before and after overnight storage at **4 °C**. Their test solutions were 3% (w/v) acetic acid, 10% salt and 50% sugars. They found (Odahara et al. 2004):
 
 - **acetic acid increased stickiness**, both before and after cold storage, compared with adding water;
-- **sugars increased surface hardness** after cold storage. **Fructose** did so most among sucrose, glucose, fructose and maltose;
+- **sugars increased surface hardness** after cold storage. **[Fructose](https://en.wikipedia.org/wiki/Fructose)** did so most among [sucrose](https://en.wikipedia.org/wiki/Sucrose), glucose, fructose and [maltose](https://en.wikipedia.org/wiki/Maltose);
 - in mixtures, **high concentrations of sucrose or fructose reduced the stickiness** caused by acetic acid.
 
 They also found that measuring single grains was more reproducible than measuring 10 g of rice in bulk (Odahara et al. 2004). Chapter 9, on rice, returns to stickiness and what causes it.
