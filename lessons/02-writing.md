@@ -105,6 +105,9 @@ understood with an English word, try saying it the katakana way.
 Kanji are **ideas, not sounds**. You don't need the readings to use them.
 Matching the shape on a sign is enough.
 
+> **Want to learn them properly?** The interactive [Kanji course](../kanji/00-start.md) teaches the
+> 95 kanji you'll see most on signs, by place, with their meanings, readings and daily review.
+
 ### Building blocks (pictograms)
 
 | Kanji | Meaning | Memory hook |

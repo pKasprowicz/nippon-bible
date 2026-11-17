@@ -4,6 +4,22 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.9.0] - 2026-11-17
+
+### Added
+- **Kanji course**: a start page, 8 units organised by place, real-world signs with a final test, and a daily review with free play
+  - The 95 kanji most often met on signs: numbers and prices, entrances and directions, stations and trains, restaurants and food, shops and money, opening hours and days, toilets/onsen/hotels, and safety and rules
+  - About 120 real sign words (出口, 改札, 定食, 税込, 営業中, 男湯, 禁煙, 非常口…) with the place you'd see them
+  - Meaning *and* reading: new question modes "what does this mean?" and "find the kanji", alongside reading, listening and typing; checkpoints ask both
+  - Memory aids built from each kanji's parts; cards show the meaning, the main reading and the other readings; any correct reading is accepted when typing, with a note on the most common one
+  - Sign-word hints show each kanji's meaning
+- A fourth home-page tile for the Kanji course (four columns on wide screens, two on medium, one on phones); kanji progress is included in Sync progress
+
+### Changed
+- The exercise engine supports meanings, multiple readings and kana audio for kanji
+- The content check validates the kanji course (unit order applies to kanji; sign words may contain any kana) and reports characters missing from a course's data more clearly
+- The deploy check also requires the `kanji/` folder
+
 ## [1.8.0] - 2026-11-17
 
 ### Added
@@ -132,6 +148,7 @@ First public release of the Japanese survival course for European travellers.
 - Git flow branching model (see `CONTRIBUTING.md`)
 - GitHub Actions: Pages deployment from `main`, and a GitHub release for each `v*` tag
 
+[1.9.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.9.0
 [1.8.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.8.0
 [1.7.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.7.0
 [1.6.1]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.6.1

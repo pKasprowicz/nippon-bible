@@ -4,7 +4,8 @@
   var GROUPS = [
     { id: 'course', title: 'Japan guide' },
     { id: 'hiragana', title: 'Hiragana course' },
-    { id: 'katakana', title: 'Katakana course' }
+    { id: 'katakana', title: 'Katakana course' },
+    { id: 'kanji', title: 'Kanji course' }
   ];
   var LESSONS = [
     { id: 'guide', file: 'lessons/00-guide.md', group: 'course', title: 'Overview', label: '★' },
@@ -37,7 +38,18 @@
     { id: 'katakana-6', file: 'katakana/06-dakuten.md', group: 'katakana', title: '゛ and ゜: ガ, パ…' },
     { id: 'katakana-7', file: 'katakana/07-combinations.md', group: 'katakana', title: 'ッ, キャ, ティ, ファ…' },
     { id: 'katakana-8', file: 'katakana/08-real-world.md', group: 'katakana', title: 'Real-world reading & final test' },
-    { id: 'katakana-review', file: 'katakana/09-review.md', group: 'katakana', title: 'Daily review', label: '↻' }
+    { id: 'katakana-review', file: 'katakana/09-review.md', group: 'katakana', title: 'Daily review', label: '↻' },
+    { id: 'kanji', file: 'kanji/00-start.md', group: 'kanji', title: 'Start here', label: '★' },
+    { id: 'kanji-1', file: 'kanji/01-numbers.md', group: 'kanji', title: 'Numbers and prices' },
+    { id: 'kanji-2', file: 'kanji/02-directions.md', group: 'kanji', title: 'Entrances and directions' },
+    { id: 'kanji-3', file: 'kanji/03-trains.md', group: 'kanji', title: 'Stations and trains' },
+    { id: 'kanji-4', file: 'kanji/04-food.md', group: 'kanji', title: 'Restaurants and food' },
+    { id: 'kanji-5', file: 'kanji/05-shops.md', group: 'kanji', title: 'Shops and money' },
+    { id: 'kanji-6', file: 'kanji/06-hours.md', group: 'kanji', title: 'Opening hours and days' },
+    { id: 'kanji-7', file: 'kanji/07-toilets-onsen.md', group: 'kanji', title: 'Toilets, onsen and hotels' },
+    { id: 'kanji-8', file: 'kanji/08-safety.md', group: 'kanji', title: 'Safety and rules' },
+    { id: 'kanji-9', file: 'kanji/09-real-world.md', group: 'kanji', title: 'Real-world signs & final test' },
+    { id: 'kanji-review', file: 'kanji/10-review.md', group: 'kanji', title: 'Daily review', label: '↻' }
   ];
   // Number lessons within their group unless they have their own label.
   GROUPS.forEach(function (g) {
@@ -252,7 +264,8 @@
     wrapTables(article);
     markSpeakable(article);
     var lesson = LESSONS.filter(function (l) { return l.id === pageKey; })[0];
-    if (window.NBKana) window.NBKana.mount(article, pageKey, lesson && lesson.group === 'katakana' ? 'katakana' : 'hiragana');
+    var script = lesson && (lesson.group === 'katakana' || lesson.group === 'kanji') ? lesson.group : 'hiragana';
+    if (window.NBKana) window.NBKana.mount(article, pageKey, script);
     return article;
   }
   function lessonFooter(id) {
@@ -283,7 +296,7 @@
       return el('a', { 'class': 'pager-card ' + dir + ' home', href: '#/', rel: dir }, [
         el('span', { 'class': 'pager-dir', text: dir === 'prev' ? '← Previous' : 'Next →' }),
         el('span', { 'class': 'pager-title', text: 'Home' }),
-        el('span', { 'class': 'pager-meta', text: dir === 'prev' ? 'All three courses' : 'You\'ve reached the end. Back to all three courses' })
+        el('span', { 'class': 'pager-meta', text: dir === 'prev' ? 'All four courses' : 'You\'ve reached the end. Back to all four courses' })
       ]);
     }
     var crossing = target.group !== from.group;
@@ -515,7 +528,7 @@
   function kanaTile(id, glyph, title, desc, examples) {
     var g = groupProgress(id), sum = window.NBKana ? window.NBKana.summary(id) : null;
     var label = sum && sum.learned
-      ? sum.learned + ' of ' + sum.total + ' characters learned · ' + sum.mastered + ' mastered' + (sum.due ? ' · ' + sum.due + ' review' + (sum.due > 1 ? 's' : '') + ' due' : '')
+      ? sum.learned + ' of ' + sum.total + (id === 'kanji' ? ' kanji' : ' characters') + ' learned · ' + sum.mastered + ' mastered' + (sum.due ? ' · ' + sum.due + ' review' + (sum.due > 1 ? 's' : '') + ' due' : '')
       : g.done + ' of ' + g.total + ' units completed';
     var started = (sum && sum.learned) || g.done;
     return tile({
@@ -531,7 +544,7 @@
       el('header', { 'class': 'home-hero' }, [
         el('p', { 'class': 'home-hero-kicker' }, [el('span', { lang: 'ja', text: '日本へようこそ' }), ' · welcome to Japan']),
         el('h1', { text: 'Japanese for your trip' }),
-        el('p', { 'class': 'home-lead', text: 'Three ways in. Get the practical know-how for travelling in Japan, then learn to read the two kana scripts you\'ll see on every sign, menu and station board.' })
+        el('p', { 'class': 'home-lead', text: 'Four ways in. Get the practical know-how for travelling in Japan, then learn to read the scripts on every sign, menu and station board: hiragana, katakana and the most common kanji.' })
       ]),
       el('div', { 'class': 'home-tiles' }, [
         tile({
@@ -542,13 +555,15 @@
           cta: !guide.done ? 'Open the guide' : guide.next ? 'Continue: lesson ' + guide.next.label : 'Revise the cheat sheet'
         }),
         kanaTile('hiragana', 'あ', 'Hiragana course', 'The native script: grammar, food words, station names and the ゆ on onsen curtains.', 'えき · すし · ありがとう'),
-        kanaTile('katakana', 'ア', 'Katakana course', 'The script for foreign words. Menus, shops and signs are full of them, and you already know most of the words.', 'ホテル · コーヒー · タクシー')
+        kanaTile('katakana', 'ア', 'Katakana course', 'The script for foreign words. Menus, shops and signs are full of them, and you already know most of the words.', 'ホテル · コーヒー · タクシー'),
+        kanaTile('kanji', '漢', 'Kanji course', 'The 95 kanji on signs in stations, restaurants, shops, toilets and onsen: what they mean and how to read them.', '出口 · 駅 · 禁煙')
       ]),
       el('p', { 'class': 'home-foot' }, [
         'Tip: tap any Japanese text to hear it. Quick practice: ',
         el('a', { href: '#/drill', text: 'flashcard drill' }), ' · ',
         el('a', { href: '#/hiragana-review', text: 'hiragana review' }), ' · ',
-        el('a', { href: '#/katakana-review', text: 'katakana review' }),
+        el('a', { href: '#/katakana-review', text: 'katakana review' }), ' · ',
+        el('a', { href: '#/kanji-review', text: 'kanji review' }),
         '. Using two devices? ', el('a', { href: '#/progress', text: 'Sync your progress' }), '.'
       ])
     ]);
@@ -671,7 +686,8 @@
     return el('ul', { 'class': 'sync-list' }, [
       el('li', { text: completed + ' of ' + LESSONS.length + ' pages completed' }),
       el('li', { text: kana('Hiragana', desc.hira) }),
-      el('li', { text: kana('Katakana', desc.kata) })
+      el('li', { text: kana('Katakana', desc.kata) }),
+      el('li', { text: kana('Kanji', desc.kanji).replace(' characters', ' kanji').replace(' character', ' kanji') })
     ]);
   }
   function showProgress(importCode) {
@@ -730,7 +746,8 @@
               el('ul', { 'class': 'sync-list' }, [
                 el('li', { text: r.lessons + ' page' + (r.lessons === 1 ? '' : 's') + ' newly marked complete' }),
                 el('li', { text: 'Hiragana: ' + r.hira.added + ' added, ' + r.hira.updated + ' updated, ' + r.hira.kept + ' kept (newer here)' }),
-                el('li', { text: 'Katakana: ' + r.kata.added + ' added, ' + r.kata.updated + ' updated, ' + r.kata.kept + ' kept (newer here)' })
+                el('li', { text: 'Katakana: ' + r.kata.added + ' added, ' + r.kata.updated + ' updated, ' + r.kata.kept + ' kept (newer here)' }),
+                el('li', { text: 'Kanji: ' + r.kanji.added + ' added, ' + r.kanji.updated + ' updated, ' + r.kanji.kept + ' kept (newer here)' })
               ]),
               el('a', { 'class': 'btn', href: '#/', text: 'Go to the home page →' })
             ]));
