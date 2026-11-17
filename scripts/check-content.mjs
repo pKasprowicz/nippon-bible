@@ -120,6 +120,13 @@ if (existsSync('cuisine/img')) {
   for (const f of readdirSync('cuisine/img')) if (!usedImages.has(`cuisine/img/${f}`)) fail(`cuisine/img/${f} is not used by any page`);
 }
 
+// 4b. Installable offline app: manifest icons exist; the service worker can be stamped at deploy.
+const manifest = JSON.parse(readFileSync('manifest.webmanifest', 'utf8'));
+for (const icon of manifest.icons || []) if (!existsSync(icon.src)) fail(`manifest.webmanifest: icon ${icon.src} is missing`);
+if (!(manifest.icons || []).some((i) => /maskable/.test(i.purpose || ''))) fail('manifest.webmanifest: needs a maskable icon for Android');
+if (!readFileSync('sw.js', 'utf8').includes("'__BUILD__'")) fail("sw.js: the BUILD = '__BUILD__' placeholder is missing (the deploy stamps it)");
+if (!readFileSync('index.html', 'utf8').includes('rel="manifest"')) fail('index.html: the manifest link is missing');
+
 // 5. VERSION is semver and has a CHANGELOG entry.
 const version = readFileSync('VERSION', 'utf8').trim();
 if (!/^\d+\.\d+\.\d+$/.test(version)) fail(`VERSION '${version}' is not x.y.z`);
