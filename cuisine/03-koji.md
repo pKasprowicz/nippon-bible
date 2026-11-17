@@ -1,6 +1,6 @@
 # 3. Kōji: The Mould Behind the Seasonings
 
-Soy sauce, miso, mirin, sake, rice vinegar, *amazake* and *shio-kōji* all start the same way: a cooked grain or bean is covered in the mould *Aspergillus* and left to grow on it. The result, ***kōji***, is the shared engine of Japanese seasoning. Chapter 1 showed that umami needs *free* glutamate and that protein-bound glutamate is tasteless. Kōji is the tool that frees it, and that also turns starch into sugar. This chapter explains what kōji is, how it is grown, and how the grower's choices of temperature, moisture and time decide which enzymes it makes, and so how the finished seasoning tastes.
+[Soy sauce](https://en.wikipedia.org/wiki/Soy_sauce), [miso](https://en.wikipedia.org/wiki/Miso), [mirin](https://en.wikipedia.org/wiki/Mirin), [sake](https://en.wikipedia.org/wiki/Sake), [rice vinegar](https://en.wikipedia.org/wiki/Rice_vinegar), *[amazake](https://en.wikipedia.org/wiki/Amazake)* and *shio-kōji* all start the same way: a cooked grain or bean is covered in the mould *[Aspergillus](https://en.wikipedia.org/wiki/Aspergillus)* and left to grow on it. The result, ***[kōji](https://en.wikipedia.org/wiki/K%C5%8Dji_%28food%29)***, is the shared engine of Japanese seasoning. Chapter 1 showed that [umami](https://en.wikipedia.org/wiki/Umami) needs *free* [glutamate](https://en.wikipedia.org/wiki/Glutamic_acid) and that protein-bound glutamate is tasteless. Kōji is the tool that frees it, and that also turns [starch](https://en.wikipedia.org/wiki/Starch) into sugar. This chapter explains what kōji is, how it is grown, and how the grower's choices of temperature, moisture and time decide which enzymes it makes, and so how the finished seasoning tastes.
 
 <figure>
 <img src="img/koji-rice.jpg" alt="Grains of rice covered in a fine white coating of kōji mould">
@@ -9,11 +9,11 @@ Soy sauce, miso, mirin, sake, rice vinegar, *amazake* and *shio-kōji* all start
 
 ## 3.1 One word, two meanings
 
-Machida and colleagues point out that the word *kōji* means both the **material** (grain fermented by the mould in solid form) and the **microorganism** itself, the kōji mould *Aspergillus oryzae* (Machida et al. 2008). The double meaning goes back to a time when people made kōji without knowing it was the work of a microorganism.
+Machida and colleagues point out that the word *kōji* means both the **material** (grain fermented by the mould in solid form) and the **microorganism** itself, the kōji mould *[Aspergillus oryzae](https://en.wikipedia.org/wiki/Aspergillus_oryzae)* (Machida et al. 2008). The double meaning goes back to a time when people made kōji without knowing it was the work of a microorganism.
 
 Some historical markers from the same review (Machida et al. 2008):
 
-- Growing mould on solid grain, called **solid-state cultivation**, is thought to have originated in China 3,000–2,000 years ago, and to have been brought to Japan during the **Yayoi period** (10th century BCE to 3rd century CE).
+- Growing mould on solid grain, called **solid-state cultivation**, is thought to have originated in China 3,000–2,000 years ago, and to have been brought to Japan during the **[Yayoi](https://en.wikipedia.org/wiki/Yayoi_period) period** (10th century BCE to 3rd century CE).
 - Mould starters (spores) were sold commercially from the **13th–15th centuries**.
 - Spores were kept alive and free of contamination by storing them in paper bags layered with **ash from burned hardwood leaves**. It is now known that the ash makes the conditions **alkaline**, which keeps other microorganisms out. Spore starter for sake brewers is called ***moyashi***.
 
@@ -24,18 +24,18 @@ Yamashita's review lists the main species and their jobs (Yamashita 2021):
 | Species | Main use | Why |
 |---|---|---|
 | *Aspergillus oryzae* | The most widely used, in all fields | High saccharifying (starch-to-sugar) activity |
-| *A. sojae* | Mainly soy sauce | Its **low** amylase activity is an advantage: it uses less starch while growing |
-| *A. luchuensis* | Mainly *shōchū* (distilled spirit) | Makes a lot of citric acid, which suppresses bacteria during fermentation |
+| *A. sojae* | Mainly soy sauce | Its **low** [amylase](https://en.wikipedia.org/wiki/Amylase) activity is an advantage: it uses less starch while growing |
+| *A. luchuensis* | Mainly *[shōchū](https://en.wikipedia.org/wiki/Sh%C5%8Dch%C5%AB)* (distilled spirit) | Makes a lot of citric acid, which suppresses bacteria during fermentation |
 
 *A. oryzae* is closely related to *A. flavus*, which produces aflatoxin, one of the most potent natural carcinogens. Machida and colleagues report that *A. oryzae* has no record of producing aflatoxin or any other carcinogenic metabolite. Fermented foods made with *A. oryzae* and *A. sojae* have been shown to be aflatoxin-free. The aflatoxin-related genes that *A. oryzae* carries were not expressed even under conditions that favour aflatoxin production in *A. flavus*. Industrial uses of *A. oryzae* are listed as **Generally Recognized as Safe (GRAS)** by the US Food and Drug Administration (Machida et al. 2008).
 
 ## 3.3 What kōji makes: an enzyme toolbox
 
-The mould grows on the surface of the grain. Its hyphae (thread-like filaments) push into the grain and secrete enzymes from their tips. Yamashita calls kōji "a treasure trove of enzymes" because it makes a whole complex of them at once: **amylases** (starch to sugar), **proteases** (protein to peptides and amino acids), **cellulase** and **lipase** (Yamashita 2021). Yamashita stresses an important difference from industrial fermentation. An amino-acid or organic-acid factory aims to make one substance efficiently. A kōji food is judged on **all** its breakdown products together (Yamashita 2021):
+The mould grows on the surface of the grain. Its hyphae (thread-like filaments) push into the grain and secrete enzymes from their tips. Yamashita calls kōji "a treasure trove of enzymes" because it makes a whole complex of them at once: **amylases** (starch to sugar), **[proteases](https://en.wikipedia.org/wiki/Protease)** (protein to peptides and [amino acids](https://en.wikipedia.org/wiki/Amino_acid)), **cellulase** and **lipase** (Yamashita 2021). Yamashita stresses an important difference from industrial fermentation. An amino-acid or organic-acid factory aims to make one substance efficiently. A kōji food is judged on **all** its breakdown products together (Yamashita 2021):
 
-- glucose and amino acids directly shape taste;
-- the **aminocarbonyl (Maillard) reaction** during storage, and oxidation, shape colour;
-- the same sugars and amino acids feed the **yeasts and lactic-acid bacteria** that take over later;
+- [glucose](https://en.wikipedia.org/wiki/Glucose) and amino acids directly shape taste;
+- the **aminocarbonyl ([Maillard](https://en.wikipedia.org/wiki/Maillard_reaction)) reaction** during storage, and oxidation, shape colour;
+- the same sugars and amino acids feed the **[yeasts](https://en.wikipedia.org/wiki/Yeast) and [lactic-acid bacteria](https://en.wikipedia.org/wiki/Lactic_acid_bacteria)** that take over later;
 - even the mould's network of hyphae affects the **texture** of miso.
 
 ## 3.4 Growing kōji: the hour-by-hour technique
@@ -44,7 +44,7 @@ Kusumoto and colleagues describe how rice kōji is made for miso, including the 
 
 ### Preparing the grain
 
-Rice is selected, soaked, then **steamed with near-saturated steam for 40–60 minutes**. This fully converts its raw starch (β-starch) into gelatinised starch (α-starch) (Kusumoto et al. 2021). Gelatinisation is not optional. In thoroughly cooked rice, the hyphae dig into the grain by breaking down its starch. In **undercooked** rice, where gelatinisation is incomplete, the hyphal tips cannot advance and the mould grows only on the surface. Too few enzymes are then made, and the miso does not mature properly (Kusumoto et al. 2021). The Japanese term for hyphae penetrating the grain is ***hazekomi***.
+Rice is selected, soaked, then **steamed with near-saturated steam for 40–60 minutes**. This fully converts its raw starch (β-starch) into [gelatinised](https://en.wikipedia.org/wiki/Starch_gelatinization) starch (α-starch) (Kusumoto et al. 2021). Gelatinisation is not optional. In thoroughly cooked rice, the hyphae dig into the grain by breaking down its starch. In **undercooked** rice, where gelatinisation is incomplete, the hyphal tips cannot advance and the mould grows only on the surface. Too few enzymes are then made, and the miso does not mature properly (Kusumoto et al. 2021). The Japanese term for hyphae penetrating the grain is ***hazekomi***.
 
 ### The tray method, step by step
 
@@ -61,7 +61,7 @@ Yamashita gives a general cultivation time for kōji of **40–45 hours**. Left 
 
 ### Why the grower fights the heat
 
-As the hyphae spread, heat production, oxygen use and carbon-dioxide output all rise sharply. Healthy growth needs more ventilation, a lower temperature and removal of CO₂. Keeping the temperature low early on also suppresses unwanted bacteria such as *Bacillus subtilis* (Kusumoto et al. 2021). The kneading, mixing and tray-shifting steps are all ways of managing this heat by hand. Modern mechanical kōji rooms do the same job automatically (Kusumoto et al. 2021).
+As the hyphae spread, heat production, oxygen use and carbon-dioxide output all rise sharply. Healthy growth needs more ventilation, a lower temperature and removal of [CO₂](https://en.wikipedia.org/wiki/Carbon_dioxide). Keeping the temperature low early on also suppresses unwanted bacteria such as *[Bacillus subtilis](https://en.wikipedia.org/wiki/Bacillus_subtilis)* (Kusumoto et al. 2021). The kneading, mixing and tray-shifting steps are all ways of managing this heat by hand. Modern mechanical kōji rooms do the same job automatically (Kusumoto et al. 2021).
 
 ## 3.5 Steering the enzymes with temperature
 
@@ -72,9 +72,9 @@ Kōji is not one fixed product. The grower chooses the temperature to favour the
 | **Sweet miso** | Amylases, which turn starch into glucose and oligosaccharides | Relatively high, **35–38 °C** |
 | **Salty miso** | Proteases, which turn protein into the amino acids and peptides behind umami | **30 °C or below** |
 
-Sweet miso also uses **more kōji** relative to soybeans (Kusumoto et al. 2021). Chapter 4 follows these choices into the finished pastes.
+Sweet miso also uses **more kōji** relative to [soybeans](https://en.wikipedia.org/wiki/Soybean) (Kusumoto et al. 2021). Chapter 4 follows these choices into the finished pastes.
 
-Soy sauce is steered differently. Wheat is roasted and crushed, and the roasted wheat flour coats the cooked soybeans, lowering the moisture on their surface. This guards against contamination by *Bacillus* while the mould grows. To produce sauces rich in amino acids, especially glutamic acid, brewers choose strains of *A. oryzae* and *A. sojae* with **high protease and glutaminase** activity (Yamashita 2021).
+Soy sauce is steered differently. Wheat is roasted and crushed, and the roasted [wheat flour](https://en.wikipedia.org/wiki/Wheat_flour) coats the cooked soybeans, lowering the moisture on their surface. This guards against contamination by *Bacillus* while the mould grows. To produce sauces rich in amino acids, especially glutamic acid, brewers choose strains of *A. oryzae* and *A. sojae* with **high protease and [glutaminase](https://en.wikipedia.org/wiki/Glutaminase)** activity (Yamashita 2021).
 
 ## 3.6 Spore starter: kōji grown for spores
 
@@ -91,7 +91,7 @@ Yamashita's review shows how one technique branches into many foods (Yamashita 2
 - **Sake and shōchū** use ***parallel double fermentation***: kōji turns starch into sugar while yeast turns sugar into alcohol, both at once in the same vessel. Beer and whisky do these steps separately, using malt. Sake kōji has to be balanced: rice broken down too far adds off-flavours.
 - **Soy sauce:** see Chapter 4. Tamari is made mostly from soybeans, *shiro* (white) soy sauce mainly from wheat.
 - **Miso:** see Chapter 4.
-- **Mirin** contains about **40–50% glucose**. Its kōji needs high saccharifying and protease activity. Strains with high **tyrosinase** activity are unsuitable, because a bright colour is wanted. See Chapter 5.
+- **Mirin** contains about **40–50% glucose**. Its kōji needs high saccharifying and protease activity. Strains with high **[tyrosinase](https://en.wikipedia.org/wiki/Tyrosinase)** activity are unsuitable, because a bright colour is wanted. See Chapter 5.
 - **Amazake** is a sweet drink made by adding water to rice kōji and holding it at about **55 °C** for several hours up to 20 hours. It needs kōji with high saccharifying activity.
 - **Shio-kōji** ("salt kōji") is kōji mixed with salt and water and fermented at room temperature for **7–10 days**. It contains fewer sugars than other seasonings. Its notable feature is a high level of **active kōji enzymes**: meat soaked in it becomes more tender and gains umami.
 

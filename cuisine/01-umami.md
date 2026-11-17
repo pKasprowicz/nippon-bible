@@ -6,46 +6,51 @@ Every technique in this handbook builds on one idea: a Japanese cook layers savo
 
 ## 1.1 A taste found in a pot of kelp stock
 
-In 1908 Kikunae Ikeda, a professor of physical chemistry at the University of Tokyo, set out to identify what gives kombu (dried kelp) stock its taste. He extracted 12 kg of dried kombu with water. Under acidic conditions, crystals of glutamic acid formed, and neutralising them with sodium hydroxide gave 30 g of monosodium glutamate (MSG). Ikeda called the taste of this substance *umami*. The taste is produced by the glutamate anion: the potassium and calcium salts of glutamic acid are umami too (Kurihara 2015).
+In 1908 [Kikunae Ikeda](https://en.wikipedia.org/wiki/Kikunae_Ikeda), a professor of physical chemistry at the University of Tokyo, set out to identify what gives [kombu](https://en.wikipedia.org/wiki/Kombu) (dried kelp) stock its taste. He extracted 12 kg of dried kombu with water. Under acidic conditions, crystals of [glutamic acid](https://en.wikipedia.org/wiki/Glutamic_acid) formed, and neutralising them with sodium hydroxide gave 30 g of [monosodium glutamate](https://en.wikipedia.org/wiki/Monosodium_glutamate) (MSG). Ikeda called the taste of this substance *[umami](https://en.wikipedia.org/wiki/Umami)*. The taste is produced by the glutamate anion: the potassium and calcium salts of glutamic acid are umami too (Kurihara 2015).
 
 Two more umami substances followed, both from Japanese ingredients:
 
-- In **1913**, Ikeda's pupil Shintaro Kodama identified **5′-inosinate (IMP)** as the active principle of dried bonito, the *katsuobushi* of Chapter 2 (Kurihara 2015).
-- In **1957**, Akira Kuninaka showed that **5′-guanylate (GMP)** also tastes of umami. It was later identified as the umami component of shiitake mushrooms (Kurihara 2015).
+- In **1913**, Ikeda's pupil Shintaro Kodama identified **5′-inosinate (IMP)** as the active principle of dried bonito, the *[katsuobushi](https://en.wikipedia.org/wiki/Katsuobushi)* of Chapter 2 (Kurihara 2015).
+- In **1957**, Akira Kuninaka showed that **5′-guanylate (GMP)** also tastes of umami. It was later identified as the umami component of [shiitake](https://en.wikipedia.org/wiki/Shiitake) mushrooms (Kurihara 2015).
 
-These discoveries took a long time to gain acceptance abroad. Kurihara notes that umami substances on their own have a rather weak taste, so in Europe and America they were long regarded as "flavour enhancers" rather than the source of a taste in their own right. Umami was internationally recognised as a fifth basic taste only in the late twentieth century (Kurihara 2015). The Umami Information Center, a body promoting umami research, dates this acceptance to the 1980s (Umami Information Center, *What is Dashi?*).
+<figure class="diagram">
+<img src="img/mol-umami.svg" alt="Skeletal formulas of L-glutamic acid, inosinic acid and guanylic acid">
+<figcaption>The three umami substances. Glutamic acid is an amino acid; inosinic and guanylic acid are nucleotides, each a ring-shaped base joined to a sugar (ribose) that carries a phosphate group. The two nucleotides differ only in their base. The names ending in <em>-ate</em> (glutamate, inosinate, guanylate) refer to the ionised forms of these acids. <span class="credit">Diagram drawn for this handbook with <a href="https://www.rdkit.org/">RDKit</a> from PubChem structure records: <a href="https://pubchem.ncbi.nlm.nih.gov/compound/33032">L-glutamic acid</a>, <a href="https://pubchem.ncbi.nlm.nih.gov/compound/135398640">inosinic acid</a>, <a href="https://pubchem.ncbi.nlm.nih.gov/compound/135398631">guanylic acid</a>.</span></figcaption>
+</figure>
+
+These discoveries took a long time to gain acceptance abroad. Kurihara notes that umami substances on their own have a rather weak taste, so in Europe and America they were long regarded as "flavour enhancers" rather than the source of a taste in their own right. Umami was internationally recognised as a fifth basic taste only in the late twentieth century (Kurihara 2015). The Umami Information Center, a body promoting umami research, dates this acceptance to the 1980s (Umami Information Center, *What is [Dashi](https://en.wikipedia.org/wiki/Dashi)?*).
 
 Psychophysical work by Shizuko Yamaguchi placed umami outside the "tetrahedron" formed by sweet, sour, salty and bitter. In other words, no combination of the four older tastes reproduces it (Kurihara 2015).
 
 ## 1.2 How the tongue detects umami
 
-Kurihara's review lists several receptor candidates for umami: the heterodimer **T1R1 + T1R3**, and the metabotropic glutamate receptors **mGluR4** and **mGluR1**. Of these, only T1R1 + T1R3 shows the *synergism* described in the next section (Kurihara 2015). For a cook, the practical point is that the receptor which responds to glutamate also responds to the 5′-nucleotides, and the two kinds of molecule boost each other at that receptor.
+Kurihara's review lists several receptor candidates for umami: the heterodimer **[T1R1](https://en.wikipedia.org/wiki/TAS1R1) + [T1R3](https://en.wikipedia.org/wiki/TAS1R3)**, and the metabotropic glutamate receptors **[mGluR4](https://en.wikipedia.org/wiki/Metabotropic_glutamate_receptor_4)** and **[mGluR1](https://en.wikipedia.org/wiki/Metabotropic_glutamate_receptor_1)**. Of these, only T1R1 + T1R3 shows the *synergism* described in the next section (Kurihara 2015). For a cook, the practical point is that the receptor which responds to glutamate also responds to the 5′-nucleotides, and the two kinds of molecule boost each other at that receptor.
 
 ## 1.3 Synergy: why stocks combine kelp and fish
 
 The central fact of Japanese stock-making is a measurable multiplication. When glutamate and IMP (or GMP) are tasted together, the umami is far stronger than the sum of the two alone:
 
-| Measurement | Response to glutamate + nucleotide, relative to glutamate alone |
+| Measurement | Response to glutamate + [nucleotide](https://en.wikipedia.org/wiki/Nucleotide), relative to glutamate alone |
 |---|---|
 | Rat taste-nerve response | about **1.7×** |
 | Human sensory intensity | about **8×** |
 
 *Source: Kurihara 2015.*
 
-Kurihara concludes that "umami taste induced by the synergism is a main umami taste in human". This synergy was exploited empirically long before anyone measured it. A classic dashi joins kombu, which supplies glutamate, with dried bonito, which supplies inosinate. The cooks who first paired them were combining the two halves of a synergistic pair (Kurihara 2015).
+Kurihara concludes that "umami taste induced by the synergism is a main umami taste in human". This synergy was exploited empirically long before anyone measured it. A classic dashi joins kombu, which supplies glutamate, with dried bonito, which supplies [inosinate](https://en.wikipedia.org/wiki/Inosinic_acid). The cooks who first paired them were combining the two halves of a synergistic pair (Kurihara 2015).
 
-The Umami Information Center reports measurements of dashi from Kyoto *ryōtei* (high-end traditional restaurants). There, kombu-only dashi contained glutamate as its sole umami substance, while *ichiban dashi* (kombu plus katsuobushi) contained glutamate and inosinate in roughly equal amounts. It also states that synergy is strongest when the two are present in almost equal amounts (Umami Information Center, *What is Dashi?*). Keep that ratio in mind for Chapter 2: the proportions of kelp and fish in a professional recipe are not arbitrary.
+The Umami Information Center reports measurements of dashi from Kyoto *[ryōtei](https://en.wikipedia.org/wiki/Ry%C5%8Dtei)* (high-end traditional restaurants). There, kombu-only dashi contained glutamate as its sole umami substance, while *ichiban dashi* (kombu plus katsuobushi) contained glutamate and inosinate in roughly equal amounts. It also states that synergy is strongest when the two are present in almost equal amounts (Umami Information Center, *What is Dashi?*). Keep that ratio in mind for Chapter 2: the proportions of kelp and fish in a professional recipe are not arbitrary.
 
 > **A conflicting measurement.** Not every study of dashi finds a measurable synergy. In a sensory study of Rishiri-kombu stock, Matsumoto and colleagues found that nucleotides increased during extraction, but they "did not recognize" a multiplying effect between the nucleotides and glutamate (Matsumoto et al. 1989). Their stock was made from kombu alone, which carries only small amounts of nucleotides. So the result does not contradict the synergy between glutamate and the large amount of IMP that katsuobushi adds. It does warn against assuming that any trace of nucleotide multiplies the umami.
 
 ## 1.4 Where umami comes from: free versus bound glutamate
 
-Glutamate is one of the most common amino acids in food proteins. Kurihara gives contents of 21–35% for casein (milk), gluten (wheat), glycinin (soybean) and myosin (muscle). Bound inside a protein, however, it is **tasteless**. Only *free* glutamate reaches the receptor. Proteins release free glutamate when they are broken down, which is exactly what happens during fermentation (Kurihara 2015).
+Glutamate is one of the most common [amino acids](https://en.wikipedia.org/wiki/Amino_acid) in food proteins. Kurihara gives contents of 21–35% for casein (milk), [gluten](https://en.wikipedia.org/wiki/Gluten) (wheat), glycinin ([soybean](https://en.wikipedia.org/wiki/Soybean)) and [myosin](https://en.wikipedia.org/wiki/Myosin) (muscle). Bound inside a protein, however, it is **tasteless**. Only *free* glutamate reaches the receptor. Proteins release free glutamate when they are broken down, which is exactly what happens during fermentation (Kurihara 2015).
 
 This one fact links the first part of the handbook together:
 
 - **Drying and maturing** concentrate free glutamate and nucleotides (kombu, katsuobushi, dried shiitake).
-- **Kōji fermentation** uses mould enzymes to cut soybean and wheat proteins into free amino acids, turning tasteless protein into the glutamate of soy sauce and miso (Chapters 3 and 4).
+- **[Kōji](https://en.wikipedia.org/wiki/K%C5%8Dji_%28food%29) fermentation** uses mould enzymes to cut soybean and wheat proteins into free amino acids, turning tasteless protein into the glutamate of [soy sauce](https://en.wikipedia.org/wiki/Soy_sauce) and [miso](https://en.wikipedia.org/wiki/Miso) (Chapters 3 and 4).
 - Free glutamate is **stable to heating**, so it survives long cooking (Kurihara 2015).
 
 ## 1.5 How much umami is in an ingredient
@@ -71,8 +76,8 @@ Kurihara compiles typical contents of free umami substances in foods. The ranges
 
 | Food | IMP | Food | IMP |
 |---|---|---|---|
-| Dried bonito (katsuobushi) | 470–800 | Dried sardine (niboshi) | 350–800 |
-| Yellowtail | 410–470 | Sardine | 420 |
+| Dried bonito (katsuobushi) | 470–800 | Dried sardine ([niboshi](https://en.wikipedia.org/wiki/Niboshi)) | 350–800 |
+| [Yellowtail](https://en.wikipedia.org/wiki/Japanese_amberjack) | 410–470 | Sardine | 420 |
 | Sea bream | 180–400 | Tuna | 250–360 |
 | Chicken | 230 | Pork | 230 |
 | Beef | 80 | | |
@@ -88,7 +93,7 @@ Kurihara compiles typical contents of free umami substances in foods. The ranges
 
 *All three tables: Kurihara 2015, Table 1.*
 
-Read the tables as a map of the Japanese pantry. Kombu stands at the top of the glutamate column. The two dried fish of the dashi tradition, katsuobushi and niboshi, top the inosinate column. Dried shiitake tops the guanylate column. Kurihara also notes that 5′-IMP is found only in animal foods (Kurihara 2015). This is why the purely vegetable *shōjin* stock of Chapter 2 relies on shiitake's GMP, not IMP, as kombu's synergistic partner.
+Read the tables as a map of the Japanese pantry. Kombu stands at the top of the glutamate column. The two dried fish of the dashi tradition, katsuobushi and niboshi, top the inosinate column. Dried shiitake tops the [guanylate](https://en.wikipedia.org/wiki/Guanosine_monophosphate) column. Kurihara also notes that 5′-IMP is found only in animal foods (Kurihara 2015). This is why the purely vegetable *shōjin* stock of Chapter 2 relies on shiitake's GMP, not IMP, as kombu's synergistic partner.
 
 ## 1.6 Nucleotides are made after harvest, not just present
 
@@ -96,16 +101,16 @@ Glutamate is largely present in the raw ingredient. The 5′-nucleotides, by con
 
 ### Inosinate in fish
 
-After an animal dies, the energy molecule ATP in its muscle is broken down: ATP → AMP → **IMP** (Kurihara 2015). Production begins at the moment of killing and proceeds slowly. In yellowtail, IMP reaches its maximum about **10 hours after killing**, so, as Kurihara puts it, the fish "is not delicious just after killing but becomes delicious about 10 hours after killing". IMP is not easily broken down by heating, so once formed it survives cooking (Kurihara 2015). The chapter on raw fish follows the same breakdown chain past IMP, where it becomes a measure of freshness.
+After an animal dies, the energy molecule [ATP](https://en.wikipedia.org/wiki/Adenosine_triphosphate) in its muscle is broken down: ATP → [AMP](https://en.wikipedia.org/wiki/Adenosine_monophosphate) → **IMP** (Kurihara 2015). Chapter 6 draws the full chain molecule by molecule. Production begins at the moment of killing and proceeds slowly. In yellowtail, IMP reaches its maximum about **10 hours after killing**, so, as Kurihara puts it, the fish "is not delicious just after killing but becomes delicious about 10 hours after killing". IMP is not easily broken down by heating, so once formed it survives cooking (Kurihara 2015). The chapter on raw fish follows the same breakdown chain past IMP, where it becomes a measure of freshness.
 
 ### Guanylate in shiitake
 
-Raw shiitake contains little GMP, while dried shiitake contains much more. In living cells, RNA and the enzyme **ribonuclease** are kept apart. When the cells die and break, the two meet and GMP is produced from the RNA (Kurihara 2015). Two enzymes pull in opposite directions (Kurihara 2015):
+Raw shiitake contains little GMP, while dried shiitake contains much more. In living cells, [RNA](https://en.wikipedia.org/wiki/RNA) and the enzyme **[ribonuclease](https://en.wikipedia.org/wiki/Ribonuclease)** are kept apart. When the cells die and break, the two meet and GMP is produced from the RNA (Kurihara 2015). Two enzymes pull in opposite directions (Kurihara 2015):
 
 | Enzyme | What it does to GMP | Optimum temperature |
 |---|---|---|
 | Ribonuclease | **Makes** GMP from RNA | 60–70 °C |
-| Nucleotidase | **Destroys** GMP (to guanosine, which is not umami) | 45–50 °C |
+| [Nucleotidase](https://en.wikipedia.org/wiki/Nucleotidase) | **Destroys** GMP (to guanosine, which is not umami) | 45–50 °C |
 
 The cooking rule follows directly. Rehydrate dried shiitake in **cold** water, because at room temperature the nucleotidase degrades the GMP. Then, during cooking, raise the temperature **quickly to 60–70 °C**, the window where GMP-making outpaces GMP-destroying (Kurihara 2015).
 

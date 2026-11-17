@@ -1,6 +1,6 @@
 # 9. Rice: Starch, Water and Stickiness
 
-Rice is eaten in Japan as whole cooked grains, and its quality is judged by texture: how soft, how sticky, how glossy, and how well it keeps when it cools. All of these come down to **starch**: what kind of starch the grain holds, how it takes up water, and what leaks out of the grain into the cooking water. This chapter explains that chemistry, then follows it into three Japanese uses: table rice, kōji rice (Chapter 3) and sushi rice.
+Rice is eaten in Japan as whole cooked grains, and its quality is judged by texture: how soft, how sticky, how glossy, and how well it keeps when it cools. All of these come down to **[starch](https://en.wikipedia.org/wiki/Starch)**: what kind of starch the grain holds, how it takes up water, and what leaks out of the grain into the cooking water. This chapter explains that chemistry, then follows it into three Japanese uses: table rice, [kōji](https://en.wikipedia.org/wiki/K%C5%8Dji_%28food%29) rice (Chapter 3) and [sushi](https://en.wikipedia.org/wiki/Sushi) rice.
 
 <figure>
 <img src="img/onigiri.jpg" alt="Two triangular rice balls wrapped in strips of nori on a plate">
@@ -9,18 +9,23 @@ Rice is eaten in Japan as whole cooked grains, and its quality is judged by text
 
 ## 9.1 Rice in Japan
 
-MAFF states that rice-eating culture in Japan dates back to the **Jōmon or Yayoi** era, and that rice is eaten both as steamed rice and processed into rice cakes and dumplings (MAFF, *Grain products*). Li and colleagues point out that rice is the only major cereal usually eaten as whole grains after cooking, and that cooking methods differ by region. South and East Asians typically cook rice in a rice cooker with a measured amount of water (the **absorption method**). Elsewhere, rice is often boiled in excess water, which is then drained (Li et al. 2017).
+[MAFF](https://en.wikipedia.org/wiki/Ministry_of_Agriculture,_Forestry_and_Fisheries_%28Japan%29) states that rice-eating culture in Japan dates back to the **[Jōmon](https://en.wikipedia.org/wiki/J%C5%8Dmon_period) or [Yayoi](https://en.wikipedia.org/wiki/Yayoi_period)** era, and that rice is eaten both as steamed rice and processed into rice cakes and dumplings (MAFF, *Grain products*). Li and colleagues point out that rice is the only major cereal usually eaten as whole grains after cooking, and that cooking methods differ by region. South and East Asians typically cook rice in a rice cooker with a measured amount of water (the **absorption method**). Elsewhere, rice is often boiled in excess water, which is then drained (Li et al. 2017).
 
 ## 9.2 Two starches: amylose and amylopectin
 
-Rice starch is made of two kinds of glucose polymer (Li et al. 2017; Nakamura et al. 2021):
+Rice starch is made of two kinds of [glucose](https://en.wikipedia.org/wiki/Glucose) polymer (Li et al. 2017; Nakamura et al. 2021):
 
-| | **Amylose** | **Amylopectin** |
+| | **[Amylose](https://en.wikipedia.org/wiki/Amylose)** | **[Amylopectin](https://en.wikipedia.org/wiki/Amylopectin)** |
 |---|---|---|
 | Structure | Mostly linear (α-1,4 links), with a few long branches | Highly branched (α-1,4 and α-1,6 links), with a vast number of short branches |
 | Molecular weight | about 10⁵–10⁶ | about 10⁷–10⁸ |
 
-The proportion of amylose is the most widely used predictor of how cooked rice behaves. Nakamura and colleagues give the standard classes of **apparent amylose content (AAC)**, measured by the iodine method (Nakamura et al. 2021):
+<figure class="diagram">
+<img src="img/mol-starch.svg" alt="Skeletal formulas of maltose and isomaltose showing the two glucose-to-glucose links, above schematic chains of linear amylose and branched amylopectin">
+<figcaption>The two links in rice starch. Both starches are chains of glucose. An α-1,4 link joins carbon 1 of one glucose to carbon 4 of the next and builds the chain; an α-1,6 link to carbon 6 starts a branch. Maltose and isomaltose are the smallest molecules carrying each link (Li et al. 2017; Nakamura et al. 2021). <span class="credit">Diagram drawn for this handbook with <a href="https://www.rdkit.org/">RDKit</a> from PubChem structure records: <a href="https://pubchem.ncbi.nlm.nih.gov/compound/439186">maltose</a>, <a href="https://pubchem.ncbi.nlm.nih.gov/compound/439193">isomaltose</a>.</span></figcaption>
+</figure>
+
+The proportion of amylose is the most widely used predictor of how cooked rice behaves. Nakamura and colleagues give the standard classes of **apparent amylose content (AAC)**, measured by the [iodine](https://en.wikipedia.org/wiki/Iodine%E2%80%93starch_test) method (Nakamura et al. 2021):
 
 | Class | Apparent amylose content |
 |---|---|
@@ -38,12 +43,12 @@ During cooking, some starch **leaches** out of the grains into the water and ont
 
 ### Koshihikari against a less sticky rice
 
-Hanashiro and colleagues compared **Koshihikari**, known for its sticky grains, with **Hoshiyutaka**, known for less sticky ones, and with the waxy rice **Hiyokumochi** (Hanashiro et al. 2004):
+Hanashiro and colleagues compared **[Koshihikari](https://en.wikipedia.org/wiki/Koshihikari)**, known for its sticky grains, with **Hoshiyutaka**, known for less sticky ones, and with the waxy rice **Hiyokumochi** (Hanashiro et al. 2004):
 
 - The amount of material leached **increased with the temperature** at which it was collected. At 85 °C, it was **0.9%** (Hiyokumochi), **0.8%** (Koshihikari) and **1.3%** (Hoshiyutaka) of the rice weight.
 - More than **93%** of the leached material was carbohydrate, mostly starch-derived.
 - The **amylose** share of the leachate was **1%** (Hiyokumochi), **9%** (Koshihikari) and **21%** (Hoshiyutaka).
-- In a swap experiment, they replaced Koshihikari's leached liquid with Hoshiyutaka's. Koshihikari's adhesiveness **fell from 334 to 173 erg**.
+- In a swap experiment, they replaced Koshihikari's leached liquid with Hoshiyutaka's. Koshihikari's [adhesiveness](https://en.wikipedia.org/wiki/Adhesion) **fell from 334 to 173 erg**.
 
 They concluded that **the more small amylose molecules there are in the leachate, the less sticky the cooked grains** (Hanashiro et al. 2004). Note that the less sticky rice actually leached **more** material. The difference lies in what the leachate is made of, not how much there is.
 
@@ -59,7 +64,7 @@ Li and colleagues analysed the leachate of several cultivars molecularly. Rice w
   - a **larger share of short amylopectin chains** in the leachate;
   - a **larger molecular size** of the leached amylopectin.
 
-Their explanation is drawn from polymer physics. Highly branched molecules crowd and interpenetrate, which restricts their movement and gives them a higher viscous resistance than linear molecules. More branching and larger leached amylopectin molecules therefore mean a "stickier" surface film between grains. Amylose, by contrast, acts more like a **diluent** in terms of viscosity (Li et al. 2017). The authors suggest that the small amylopectin molecules sit loosely at the edges of the starch's internal structures, and are released once heating destroys its crystalline order (Li et al. 2017).
+Their explanation is drawn from polymer physics. Highly branched molecules crowd and interpenetrate, which restricts their movement and gives them a higher viscous resistance than linear molecules. More branching and larger leached amylopectin molecules therefore mean a "stickier" surface film between grains. Amylose, by contrast, acts more like a **diluent** in terms of [viscosity](https://en.wikipedia.org/wiki/Viscosity) (Li et al. 2017). The authors suggest that the small amylopectin molecules sit loosely at the edges of the starch's internal structures, and are released once heating destroys its crystalline order (Li et al. 2017).
 
 > **Technique consequence.** The stickiness that sushi and Japanese table rice need is a **surface property**. It comes from branched starch released onto the grain surface during cooking. Li and colleagues note that stickiness between grains is "the key requirement for sushi" (Li et al. 2017). The swap experiment shows that the cooking water carries much of the effect: replacing the leachate halved Koshihikari's adhesiveness (Hanashiro et al. 2004).
 
@@ -75,11 +80,11 @@ This is not a household recipe. It shows that **water ratio** and **soaking** ar
 
 ### Why full cooking matters: the kōji lesson
 
-Chapter 3 gave a sharp example of what incomplete cooking does. For kōji, rice is steamed with near-saturated steam for **40–60 minutes** to convert its raw (β) starch completely into gelatinised (α) starch. In **undercooked** rice, the mould's hyphae cannot penetrate the grain, and kōji fails (Kusumoto et al. 2021). Thorough steaming is what lets the hyphae digest their way into the grain (Kusumoto et al. 2021).
+Chapter 3 gave a sharp example of what incomplete cooking does. For kōji, rice is steamed with near-saturated steam for **40–60 minutes** to convert its raw (β) starch completely into [gelatinised](https://en.wikipedia.org/wiki/Starch_gelatinization) (α) starch. In **undercooked** rice, the mould's hyphae cannot penetrate the grain, and kōji fails (Kusumoto et al. 2021). Thorough steaming is what lets the hyphae digest their way into the grain (Kusumoto et al. 2021).
 
 ## 9.5 Cooling: retrogradation
 
-Cooked rice hardens as it cools and is stored. This is **retrogradation**: the gelatinised starch partly re-orders itself. Nakamura and colleagues measure it with a staling test. Cooked rice is stored at **6 °C for 24 hours**, and its hardness is compared with that of the same rice held at 25 °C for 2 hours. They call the ratio the **degree of retrogradation** (Nakamura et al. 2021).
+Cooked rice hardens as it cools and is stored. This is **[retrogradation](https://en.wikipedia.org/wiki/Retrogradation_%28starch%29)**: the gelatinised starch partly re-orders itself. Nakamura and colleagues measure it with a staling test. Cooked rice is stored at **6 °C for 24 hours**, and its hardness is compared with that of the same rice held at 25 °C for 2 hours. They call the ratio the **degree of retrogradation** (Nakamura et al. 2021).
 
 Their review of earlier work notes (Nakamura et al. 2021):
 
@@ -93,11 +98,11 @@ Their own contribution is a fast instrument test. A viscosity profile measured a
 
 Sushi rice (*sushi-meshi*) is cooked rice seasoned with sushi vinegar. Chapter 5 described Odahara and colleagues' study of how each part of sushi vinegar affects the rice. Added right after cooking and tested before and after a night at 4 °C (Odahara et al. 2004):
 
-- **Acetic acid made the rice stickier** than plain water did, both fresh and after cold storage.
-- **Sugars made the grain surface harder** after cold storage, **fructose** most of all.
-- **High levels of sucrose or fructose reduced** the stickiness caused by the acetic acid.
+- **[Acetic acid](https://en.wikipedia.org/wiki/Acetic_acid) made the rice stickier** than plain water did, both fresh and after cold storage.
+- **Sugars made the grain surface harder** after cold storage, **[fructose](https://en.wikipedia.org/wiki/Fructose)** most of all.
+- **High levels of [sucrose](https://en.wikipedia.org/wiki/Sucrose) or fructose reduced** the stickiness caused by the acetic acid.
 
-So sushi vinegar is not just a flavour. Its acid and its sugar pull the texture in **opposite directions**, and their balance sets how the rice behaves. Koda and Matsumoto's kombu study (Chapter 2) adds a related detail: tasters preferred a **dilute-umami** kombu stock for seasoning sushi rice (Koda and Matsumoto).
+So sushi vinegar is not just a flavour. Its acid and its sugar pull the texture in **opposite directions**, and their balance sets how the rice behaves. Koda and Matsumoto's [kombu](https://en.wikipedia.org/wiki/Kombu) study (Chapter 2) adds a related detail: tasters preferred a **dilute-umami** kombu stock for seasoning sushi rice (Koda and Matsumoto).
 
 ## 9.7 Check yourself
 

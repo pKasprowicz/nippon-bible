@@ -265,7 +265,15 @@
         return;
       }
       if (/^#[^\/]/.test(href)) { a.setAttribute('href', '#/' + pageKey + '/' + href.slice(1)); return; }
-      if (/^https?:/.test(href)) { a.target = '_blank'; a.rel = 'noopener'; }
+      if (/^https?:/.test(href)) {
+        a.target = '_blank'; a.rel = 'noopener';
+        // Encyclopedia links in the cuisine handbook are further reading, not sources: style them apart.
+        var ref = href.match(/^https:\/\/(en\.wikipedia\.org\/wiki\/|pubchem\.ncbi\.nlm\.nih\.gov\/compound\/)/);
+        if (ref && !a.closest('figcaption')) {
+          a.className = 'ref-link';
+          a.title = (/wikipedia/.test(ref[1]) ? 'Wikipedia: ' + decodeURIComponent(href.split('/wiki/')[1]).replace(/_/g, ' ') : 'PubChem') + ' (opens in a new tab)';
+        }
+      }
     });
   }
   // Images in Markdown are written relative to the .md file; the page itself lives at the site root.
@@ -274,6 +282,12 @@
       var src = img.getAttribute('src');
       if (!/^(https?:|data:|\/)/.test(src)) img.setAttribute('src', resolvePath(file, src));
       img.loading = 'lazy'; img.decoding = 'async';
+      // Molecule diagrams are wide and detailed: on a phone, a tap opens them full size.
+      var fig = img.parentNode;
+      if (fig && fig.classList && fig.classList.contains('diagram')) {
+        var link = el('a', { href: img.getAttribute('src'), target: '_blank', rel: 'noopener', title: 'Open the diagram full size' });
+        fig.insertBefore(link, img); link.appendChild(img);
+      }
     });
   }
   function wrapTables(root) {

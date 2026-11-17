@@ -52,8 +52,10 @@ self.addEventListener('fetch', (event) => {
 
   event.respondWith((async () => {
     const cache = await caches.open(CACHE);
-    // The site routes by #hash, so every page load is index.html.
-    if (req.mode === 'navigate') {
+    // The site routes by #hash, so every page load is index.html,
+    // except a file opened directly, such as a diagram opened full size.
+    const isFile = /\.[a-z0-9]+$/i.test(url.pathname) && !/\/index\.html$/.test(url.pathname);
+    if (req.mode === 'navigate' && !isFile) {
       return (await cache.match('index.html')) || fetch(req);
     }
     const hit = await cache.match(req, { ignoreSearch: true });

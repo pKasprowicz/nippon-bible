@@ -569,6 +569,12 @@ kbd { font-family: var(--font-mono); font-size: 12px; border: 1px solid var(--li
 }
 .content figcaption { margin-top: 8px; font-size: 13.5px; line-height: 1.5; color: var(--ink-soft); }
 .content figcaption .credit { display: block; margin-top: 2px; font-size: 12.5px; }
+/* Molecule diagrams are drawn on white so they read the same in light and dark themes. */
+.content figure.diagram img { width: 100%; max-height: none; background: #fff; }
+/* Further-reading links to Wikipedia and PubChem: lighter than citations, marked as leaving the site. */
+.content a.ref-link { color: inherit; text-decoration-style: dotted; text-decoration-color: var(--accent); }
+.content a.ref-link::after { content: "\2197"; font-size: 0.7em; vertical-align: super; margin-left: 1px; color: var(--accent); }
+.content a.ref-link:hover { color: var(--accent); }
 
 /* Install & offline */
 .offline-status { margin: 4px 0 0; font-weight: 600; }

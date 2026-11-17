@@ -78,4 +78,18 @@ All images are reproduced unchanged except for resizing and conversion to JPEG. 
 | `kanten-bars.jpg` | [12](12-an-wagashi.md) | Hugh M. Smith, <em>Seaweed Industries of Japan</em>, Bulletin of the Bureau of Fisheries vol. 24 (1905) | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:FMIB_41724_Kanten%2C_or_Seaweed_Isinglass_-_Bar_or_%27Square%27_Kanten.jpeg) |
 | `mochi-pounding.jpg` | [13](13-mochi-starches.md) | Chris 73 | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Making_mochi_with_an_Usu_and_Kine.jpg) |
 
+## Molecule diagrams
+
+The structural diagrams were drawn for this handbook. Atom connectivity and stereochemistry come from the records of **PubChem**, the open chemistry database of the US National Library of Medicine ([pubchem.ncbi.nlm.nih.gov](https://pubchem.ncbi.nlm.nih.gov/), accessed 17 November 2026). They were laid out with the open-source cheminformatics toolkit [RDKit](https://www.rdkit.org/). The chemistry each diagram illustrates is cited in its caption; the diagrams add no claims of their own beyond the structures.
+
+| Diagram | Chapter | Molecules (PubChem record) |
+|---|---|---|
+| `mol-umami.svg` | [1](01-umami.md) | [L-glutamic acid](https://pubchem.ncbi.nlm.nih.gov/compound/33032) (CID 33032), [inosinic acid](https://pubchem.ncbi.nlm.nih.gov/compound/135398640) (CID 135398640), [guanylic acid](https://pubchem.ncbi.nlm.nih.gov/compound/135398631) (CID 135398631) |
+| `mol-glutamine.svg` | [4](04-shoyu-miso.md) | [L-glutamine](https://pubchem.ncbi.nlm.nih.gov/compound/5961) (CID 5961), [L-glutamic acid](https://pubchem.ncbi.nlm.nih.gov/compound/33032) (CID 33032), [L-pyroglutamic acid](https://pubchem.ncbi.nlm.nih.gov/compound/7405) (CID 7405) |
+| `mol-vinegar.svg` | [5](05-mirin-vinegar.md) | [α-D-glucose](https://pubchem.ncbi.nlm.nih.gov/compound/79025) (CID 79025), [ethanol](https://pubchem.ncbi.nlm.nih.gov/compound/702) (CID 702), [acetic acid](https://pubchem.ncbi.nlm.nih.gov/compound/176) (CID 176) |
+| `mol-atp-breakdown.svg` | [6](06-raw-fish.md) | [ATP](https://pubchem.ncbi.nlm.nih.gov/compound/5957) (CID 5957), [ADP](https://pubchem.ncbi.nlm.nih.gov/compound/6022) (CID 6022), [AMP](https://pubchem.ncbi.nlm.nih.gov/compound/6083) (CID 6083), [IMP](https://pubchem.ncbi.nlm.nih.gov/compound/135398640) (CID 135398640), [inosine](https://pubchem.ncbi.nlm.nih.gov/compound/135398641) (CID 135398641), [hypoxanthine](https://pubchem.ncbi.nlm.nih.gov/compound/135398638) (CID 135398638) |
+| `mol-starch.svg` | [9](09-rice.md) | [maltose](https://pubchem.ncbi.nlm.nih.gov/compound/439186) (CID 439186), [isomaltose](https://pubchem.ncbi.nlm.nih.gov/compound/439193) (CID 439193) |
+| `mol-gdl.svg` | [11](11-tofu.md) | [glucono-δ-lactone](https://pubchem.ncbi.nlm.nih.gov/compound/7027) (CID 7027), [gluconic acid](https://pubchem.ncbi.nlm.nih.gov/compound/10690) (CID 10690) |
+| `mol-agarobiose.svg` | [12](12-an-wagashi.md) | [agarobiose](https://pubchem.ncbi.nlm.nih.gov/compound/54758703) (CID 54758703) |
+
 ➡️ Back to the [handbook start page](00-start.md)

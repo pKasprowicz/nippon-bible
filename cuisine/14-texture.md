@@ -1,6 +1,6 @@
 # 14. The Language of Texture
 
-Every chapter of this handbook has ended up talking about texture: elastic pre-rigor fish, a dry gluten crust, sticky leached amylopectin, swelling udon starch, a calcium-bridged tofu gel, intact bean cells in a sugar–agar matrix. Japanese has an unusually large vocabulary for describing these sensations, and much of it is **onomatopoeic**: words that imitate sounds or that symbolise a sensation through sound. This final chapter presents what research has found about that vocabulary, so that a reader can understand how Japanese cooks and eaters **name** the textures this handbook has explained.
+Every chapter of this handbook has ended up talking about texture: elastic pre-rigor fish, a dry [gluten](https://en.wikipedia.org/wiki/Gluten) crust, sticky leached [amylopectin](https://en.wikipedia.org/wiki/Amylopectin), swelling [udon](https://en.wikipedia.org/wiki/Udon) [starch](https://en.wikipedia.org/wiki/Starch), a calcium-bridged [tofu](https://en.wikipedia.org/wiki/Tofu) gel, intact bean cells in a sugar–[agar](https://en.wikipedia.org/wiki/Agar) matrix. Japanese has an unusually large vocabulary for describing these sensations, and much of it is **[onomatopoeic](https://en.wikipedia.org/wiki/Japanese_sound_symbolism)**: words that imitate sounds or that symbolise a sensation through sound. This final chapter presents what research has found about that vocabulary, so that a reader can understand how Japanese cooks and eaters **name** the textures this handbook has explained.
 
 ## 14.1 Why Japanese has so many texture words
 
@@ -59,19 +59,19 @@ Hanada analysed which words went with which foods and extracted **15 dimensions*
 |---|---|---|---|
 | 1 | Smoothness and sound of **slurping noodles** | ramen, udon | *zuruzuru*, *churuchuru* (slippery feel and sound in slurping), *surusuru* (smooth and slippery) |
 | 2 | **Fluffiness, crumbliness, dryness** of breads | white bread, bean-jam bun, doughnut | *fuwafuwa*, *fukafuka* (soft and fluffy), *pasapasa*, *bosoboso* (dry and crumbly) |
-| 3 | **Adhesiveness** | fermented soybeans (*nattō*) | *nebaneba* (sticky, adhesive, viscous), *nurunuru* (slimy and slippery), *betobeto* (sticky) |
+| 3 | **[Adhesiveness](https://en.wikipedia.org/wiki/Adhesion)** | fermented [soybeans](https://en.wikipedia.org/wiki/Soybean) (*[nattō](https://en.wikipedia.org/wiki/Natto)*) | *nebaneba* (sticky, adhesive, viscous), *nurunuru* (slimy and slippery), *betobeto* (sticky) |
 | 4 | **Popping and juiciness** of round fruit and vegetables | cherry tomato, grapes | *puchiQ*, *puchi* (sound and feel of popping) |
-| 5 | **Soft elasticity and smoothness of gels** | jelly, **tofu**, ***chawanmushi*** (savoury egg custard) | *purupuru* (soft, elastic, wobbly), *tsuruN*, *tsururi* (smooth and slippery) |
+| 5 | **Soft [elasticity](https://en.wikipedia.org/wiki/Elasticity_%28physics%29) and smoothness of gels** | jelly, **tofu**, ***chawanmushi*** (savoury egg custard) | *purupuru* (soft, elastic, wobbly), *tsuruN*, *tsururi* (smooth and slippery) |
 | 6 | **Wateriness, creaminess, coldness** | ice cream | *hiNyari* (cold), *dorodoro* (thick and viscous) |
-| 7 | **Bendability of sticky foods** | gummy sweets, caramels, ***yōkan*** | *neQtori* (sticky and viscous), *gunyagunya*, *guniguni* (flexible and limp) |
+| 7 | **Bendability of sticky foods** | gummy sweets, caramels, ***[yōkan](https://en.wikipedia.org/wiki/Y%C5%8Dkan)*** | *neQtori* (sticky and viscous), *gunyagunya*, *guniguni* (flexible and limp) |
 | 8 | **Crispness and crunchiness of snacks** (and, at the other end, hot crumbly foods) | rice crackers, crisps; *opposite end:* sweet potato, roast salmon | *paripori*, *baribari*, *zakuzaku*; *opposite end:* *hokuhoku* (hot), *hokohoko* (soft, hot, crumbly) |
 | 9 | **Crispness of fruit** | watermelon, apple, melon | *shakiQ*, *sharishari* (crisp), *zakuQ* (crunchy) |
-| 10 | **Elasticity** | ***daifuku*** (mochi with bean paste), pizza, **cooked rice** | *nobinobi* (stretchy), *mochimochi* (sticky, elastic, chewy) |
+| 10 | **Elasticity** | ***[daifuku](https://en.wikipedia.org/wiki/Daifuku)*** ([mochi](https://en.wikipedia.org/wiki/Mochi) with bean paste), pizza, **cooked rice** | *nobinobi* (stretchy), *mochimochi* (sticky, elastic, chewy) |
 | 11 | Texture specific to **lemon** | lemon | — |
 | 12 | **Crunchiness of vegetables** | lettuce, celery, dried daikon strips | *shakishaki* (crisp feel and sound in biting), *jakijaki*, *koriQ* (crunchy) |
 | 13 | **Snapping of rod-shaped foods** | pretzel, cucumber, asparagus | *pokiQ*, *pakiQ*, *pakipaki* (sound and feel of snapping) |
 | 14 | **Sizzle**: heat and oiliness | *okonomiyaki*, sausage, *kakuni* (braised pork) | *jū-jū* (sizzling), *AtsuAtsu* (hot), *koQteri* (thick and oily), *hafuhafu* (breathing in to cool hot food) |
-| 15 | Texture of **pickled plum** (*umeboshi*) | pickled plum | *shiwashiwa* (wrinkly), *guchagucha* (pulpy) |
+| 15 | Texture of **pickled plum** (*[umeboshi](https://en.wikipedia.org/wiki/Umeboshi)*) | pickled plum | *shiwashiwa* (wrinkly), *guchagucha* (pulpy) |
 
 ### What the dimensions show
 

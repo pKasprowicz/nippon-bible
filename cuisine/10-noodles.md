@@ -1,6 +1,6 @@
 # 10. Noodles: Udon and Soba
 
-Japan's two traditional noodles sit at opposite ends of a technical problem. **Udon** is made from wheat, and its texture depends on how gluten and starch work together. **Soba** is made from buckwheat, which has **no gluten at all**, so the noodle has to hold together some other way. This chapter explains both, and ends with what happens to a noodle in the pot and in the minutes after it leaves the pot.
+Japan's two traditional noodles sit at opposite ends of a technical problem. **[Udon](https://en.wikipedia.org/wiki/Udon)** is made from wheat, and its texture depends on how [gluten](https://en.wikipedia.org/wiki/Gluten) and [starch](https://en.wikipedia.org/wiki/Starch) work together. **[Soba](https://en.wikipedia.org/wiki/Soba)** is made from [buckwheat](https://en.wikipedia.org/wiki/Buckwheat), which has **no gluten at all**, so the noodle has to hold together some other way. This chapter explains both, and ends with what happens to a noodle in the pot and in the minutes after it leaves the pot.
 
 <figure>
 <img src="img/udon-making.jpg" alt="Hands rolling out a large sheet of udon dough with a long wooden rolling pin">
@@ -9,18 +9,18 @@ Japan's two traditional noodles sit at opposite ends of a technical problem. **U
 
 ## 10.1 History and definitions
 
-MAFF says the origin of udon and soba is unknown, but that the culture of eating them is said to have arisen in the **Edo era**. A method for making buckwheat noodles called *sobakiri* is described in the Edo-period cookbook *Ryōri monogatari*, which suggests soba noodles existed before that (MAFF, *Grain products*). MAFF's regional-cuisine page adds that buckwheat had long been eaten as flour or grain, in kneaded form. At the beginning of the Edo period, soba noodles were served in **temples**, and they were later sold alongside udon in Edo (MAFF, *Soba*).
+[MAFF](https://en.wikipedia.org/wiki/Ministry_of_Agriculture,_Forestry_and_Fisheries_%28Japan%29) says the origin of udon and soba is unknown, but that the culture of eating them is said to have arisen in the **[Edo](https://en.wikipedia.org/wiki/Edo_period) era**. A method for making buckwheat noodles called *sobakiri* is described in the Edo-period cookbook *Ryōri monogatari*, which suggests soba noodles existed before that (MAFF, *Grain products*). MAFF's regional-cuisine page adds that buckwheat had long been eaten as flour or grain, in kneaded form. At the beginning of the Edo period, soba noodles were served in **temples**, and they were later sold alongside udon in Edo (MAFF, *Soba*).
 
 MAFF's definitions (MAFF, *Grain products*):
 
-- **Udon**: noodles made by adding **salt water to wheat flour** and kneading. Variants include *hiyamugi* (thin), *hiramen* or *kishimen* (flat) and *sōmen* (very fine).
+- **Udon**: noodles made by adding **salt water to [wheat flour](https://en.wikipedia.org/wiki/Wheat_flour)** and kneading. Variants include *[hiyamugi](https://en.wikipedia.org/wiki/Hiyamugi)* (thin), *hiramen* or *kishimen* (flat) and *[sōmen](https://en.wikipedia.org/wiki/S%C5%8Dmen)* (very fine).
 - **Soba**: noodles made by kneading **buckwheat flour, water and binding agents such as wheat flour and eggs**. The kneaded mass before shaping is called *sobagaki*. The colour of soba comes from the buckwheat used. MAFF divides it into **sarashina** soba (light-coloured, light flavour) and **yabu** soba (dark-coloured, strong flavour).
 
 ## 10.2 Udon: gluten, starch and salt
 
 ### The official sizes
 
-Japan Agricultural Standards (JAS) distinguish the dried wheat noodles by **diameter** (MAFF, *Grain products*):
+[Japan Agricultural Standards](https://en.wikipedia.org/wiki/Japanese_Agricultural_Standard) (JAS) distinguish the dried wheat noodles by **diameter** (MAFF, *Grain products*):
 
 | Dried noodle | JAS size |
 |---|---|
@@ -35,10 +35,10 @@ Japan Agricultural Standards (JAS) distinguish the dried wheat noodles by **diam
 Pokharel and colleagues summarise the requirements for udon, a Japanese-type **white salted noodle** (Pokharel et al. 2023):
 
 - The key ingredients are **wheat flour, salt and water**. White salted noodles are defined by the **absence** of the alkaline salts used in yellow alkaline noodles such as ramen.
-- Udon is made from white wheat varieties with **8–10% protein** and **low amylose**, about **22%** of total starch.
+- Udon is made from white wheat varieties with **8–10% protein** and **low [amylose](https://en.wikipedia.org/wiki/Amylose)**, about **22%** of total starch.
 - Good udon has a strand diameter of **2.0–3.9 mm**, a **bright, creamy white** colour when cooked, high water absorption, resistance to boiling, and a **soft, elastic, smooth** texture described as ***mochi-mochi***.
-- Suitable wheat is reported to grow only in **Japan and Australia**. Japan buys much of its udon wheat from Western Australia, whose varieties resemble the Japanese cultivar **Norin 61**. Their **partially waxy starch** gives a high viscosity peak and high swelling volume when gelatinised, which good udon requires.
-- In the dough, **gliadins** give viscosity and **glutenins** give elasticity. **Starch acts as a filler** in the gluten network. A low gelatinisation temperature shortens cooking time.
+- Suitable wheat is reported to grow only in **Japan and Australia**. Japan buys much of its udon wheat from Western Australia, whose varieties resemble the Japanese cultivar **Norin 61**. Their **partially waxy starch** gives a high [viscosity](https://en.wikipedia.org/wiki/Viscosity) peak and high swelling volume when [gelatinised](https://en.wikipedia.org/wiki/Starch_gelatinization), which good udon requires.
+- In the dough, **[gliadins](https://en.wikipedia.org/wiki/Gliadin)** give viscosity and **[glutenins](https://en.wikipedia.org/wiki/Glutenin)** give [elasticity](https://en.wikipedia.org/wiki/Elasticity_%28physics%29). **Starch acts as a filler** in the gluten network. A low gelatinisation temperature shortens cooking time.
 
 > **Technique consequence.** Udon's prized *mochi-mochi* softness comes largely from its **starch**: a low-amylose, partially waxy starch that swells strongly. Chapter 9 showed the same link in rice, where lower amylose went with softer, stickier grains. The gluten network gives the elastic "spring". Neither alone makes udon.
 
@@ -54,7 +54,7 @@ Suzuki and colleagues explain the central difficulty (Suzuki et al. 2020):
 
 - **Unlike wheat flour, buckwheat flour contains no gluten.** The strength and handling of buckwheat dough and noodles, including their resistance to cracking, are therefore not as good as wheat's.
 - Japanese noodle makers **sometimes mix wheat flour into buckwheat flour** to strengthen the dough. The proportion of wheat ranges from **very low** to **moderate** in soba shops, and is **sometimes over 70%** in dried noodles.
-- Buckwheat flour has about **12–13% protein**, more than rice (6.1%) or barley (7%). Its main proteins are **salt-soluble globulins**, not gluten-forming proteins. Earlier work suggests protein may be an important factor in the mechanical properties of buckwheat noodles.
+- Buckwheat flour has about **12–13% protein**, more than rice (6.1%) or barley (7%). Its main proteins are **salt-soluble [globulins](https://en.wikipedia.org/wiki/Globulin)**, not gluten-forming proteins. Earlier work suggests protein may be an important factor in the mechanical properties of buckwheat noodles.
 - Buckwheat starch makes up to **75%** of the dry weight of the groats, with typically **20–30% amylose**.
 
 ### Flour from different parts of the seed
@@ -71,7 +71,7 @@ The name of the inner flour, *sarashina*, is also the name MAFF gives to pale, l
 
 Suzuki and colleagues stress that, in Japan, **the freshness of buckwheat flour is very important to noodle makers, because it deteriorates quickly** (Suzuki et al. 2020):
 
-- Deterioration is caused mainly by **lipid breakdown and oxidation**, driven by the enzymes of the **lipoxygenase pathway**. Free fatty acids accumulate, and peroxides and carbonyl compounds increase.
+- Deterioration is caused mainly by **[lipid](https://en.wikipedia.org/wiki/Lipid) breakdown and oxidation**, driven by the enzymes of the **[lipoxygenase](https://en.wikipedia.org/wiki/Lipoxygenase) pathway**. [Free fatty acids](https://en.wikipedia.org/wiki/Fatty_acid) accumulate, and [peroxides](https://en.wikipedia.org/wiki/Peroxide) and carbonyl compounds increase.
 - Deterioration was **faster at 20 °C than at 5 °C**.
 - **Bitterness** in buckwheat flour increases with storage temperature.
 - Japanese millers, distributors, noodle makers and some consumers **value a green colour** in the seed. Getting it requires early harvest, which lowers yield.
@@ -80,7 +80,7 @@ Suzuki and colleagues stress that, in Japan, **the freshness of buckwheat flour 
 
 ## 10.4 In the pot: water moves in, then keeps moving
 
-Maeda and colleagues used **magnetic resonance imaging (MRI)** to watch water move inside **two soba** (*marunuki* and *sarashina*) and **one udon-type wheat noodle** during boiling and during holding after boiling (Maeda et al. 2009).
+Maeda and colleagues used **[magnetic resonance imaging](https://en.wikipedia.org/wiki/Magnetic_resonance_imaging) (MRI)** to watch water move inside **two soba** (*marunuki* and *sarashina*) and **one udon-type wheat noodle** during boiling and during holding after boiling (Maeda et al. 2009).
 
 Their framing of good texture:
 
@@ -90,7 +90,7 @@ Their framing of good texture:
 
 Their measurements:
 
-| Phase | Apparent water diffusion coefficient | Comparison |
+| Phase | Apparent water [diffusion coefficient](https://en.wikipedia.org/wiki/Mass_diffusivity) | Comparison |
 |---|---|---|
 | During boiling | 4–7 × 10⁻⁶ cm²/s | **Higher** in soba than in wheat noodles |
 | Holding after boiling (30–120 min) | 2–3 × 10⁻⁷ cm²/s, constant | Lower in soba than in wheat noodles |
