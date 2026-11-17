@@ -1,21 +1,21 @@
 # 8. Marinating with Kōji: Enzymes as a Cooking Tool
 
-Chapters 3 to 5 showed kōji enzymes working on grain and beans inside a brewery. This chapter brings them into the kitchen. A marinade of ***shio-kōji*** (salted kōji) or other kōji seasonings is not just a flavouring. It carries **active enzymes** that keep working on the meat or fish they cover. The research on this is young, and the chapter reports exactly what has and has not been measured.
+Chapters 3 to 5 showed [kōji](https://en.wikipedia.org/wiki/K%C5%8Dji_%28food%29) enzymes working on grain and beans inside a brewery. This chapter brings them into the kitchen. A marinade of ***shio-kōji*** (salted kōji) or other kōji seasonings is not just a flavouring. It carries **active enzymes** that keep working on the meat or fish they cover. The research on this is young, and the chapter reports exactly what has and has not been measured.
 
 ## 8.1 What shio-kōji is
 
-Yamashita describes shio-kōji as kōji mixed with salt and water and fermented at room temperature for **7–10 days**. It has grown in popularity over the past decade. It contains fewer sugars than other seasonings, but its glucose, amino acids and salt make it an effective seasoning. Its most notable feature is that it is **rich in active kōji enzymes**, so meat soaked in it becomes **tender** and gains **umami** (Yamashita 2021).
+Yamashita describes shio-kōji as kōji mixed with salt and water and fermented at room temperature for **7–10 days**. It has grown in popularity over the past decade. It contains fewer sugars than other seasonings, but its [glucose](https://en.wikipedia.org/wiki/Glucose), [amino acids](https://en.wikipedia.org/wiki/Amino_acid) and salt make it an effective seasoning. Its most notable feature is that it is **rich in active kōji enzymes**, so meat soaked in it becomes **tender** and gains **[umami](https://en.wikipedia.org/wiki/Umami)** (Yamashita 2021).
 
-Chien and colleagues give a technical description: shio-kōji comes from a **two-stage fermentation**. A grain such as rice is first inoculated with *Aspergillus oryzae* for **solid-state** fermentation (the kōji), and then blended with salt water for **liquid-state** fermentation. *A. oryzae* secretes highly active hydrolytic enzymes, **amylases and proteases**, which break carbohydrates, proteins, lipids and nucleic acids into small molecules such as glucose, amino acids, esters and nucleotides. According to the same source, this both adds flavour and **hydrolyses and softens muscle fibres**. Shio-kōji spread from Japan to Taiwan, where it is commonly used to marinate fish, and is reported to reduce fishy odour and increase umami and sweetness (Chien et al. 2026).
+Chien and colleagues give a technical description: shio-kōji comes from a **two-stage fermentation**. A grain such as rice is first inoculated with *[Aspergillus oryzae](https://en.wikipedia.org/wiki/Aspergillus_oryzae)* for **solid-state** fermentation (the kōji), and then blended with salt water for **liquid-state** fermentation. *A. oryzae* secretes highly active hydrolytic enzymes, **[amylases](https://en.wikipedia.org/wiki/Amylase) and [proteases](https://en.wikipedia.org/wiki/Protease)**, which break carbohydrates, proteins, [lipids](https://en.wikipedia.org/wiki/Lipid) and nucleic acids into small molecules such as glucose, amino acids, esters and [nucleotides](https://en.wikipedia.org/wiki/Nucleotide). According to the same source, this both adds flavour and **hydrolyses and softens muscle fibres**. Shio-kōji spread from Japan to Taiwan, where it is commonly used to marinate fish, and is reported to reduce fishy odour and increase umami and sweetness (Chien et al. 2026).
 
 ## 8.2 The evidence on meat
 
 Chien and colleagues summarise earlier studies of kōji seasonings on meat (Chien et al. 2026):
 
-- **Venison** treated with miso or shio-kōji had **lower cooking loss** and **lower puncture stress**, with a significant improvement in tenderness (Hiemori-Kondo et al. 2022).
-- Soy sauce containing rice kōji tenderised **chicken breast** (Kim et al. 2014).
+- **Venison** treated with [miso](https://en.wikipedia.org/wiki/Miso) or shio-kōji had **lower cooking loss** and **lower puncture stress**, with a significant improvement in tenderness (Hiemori-Kondo et al. 2022).
+- [Soy sauce](https://en.wikipedia.org/wiki/Soy_sauce) containing rice kōji tenderised **chicken breast** (Kim et al. 2014).
 - In **smoked duck**, proteases from shio-kōji **hydrolysed the myofibrils** and softened the meat. Water-holding capacity also improved, which the authors attributed to shio-kōji promoting a protein network (Shen et al. 2019).
-- **Pork** marinated in shio-kōji had **two to three times** the free amino acids and glutamic acid of unmarinated controls. Cooking loss was suppressed and juiciness preserved (Abe et al. 2018).
+- **Pork** marinated in shio-kōji had **two to three times** the free amino acids and [glutamic acid](https://en.wikipedia.org/wiki/Glutamic_acid) of unmarinated controls. Cooking loss was suppressed and juiciness preserved (Abe et al. 2018).
 
 The pork result links directly to Chapter 1. Kōji proteases release **free glutamate** from protein inside the meat itself, so the marinade adds umami not only by coating the surface but by changing the meat's own chemistry.
 
@@ -25,8 +25,8 @@ Jeong and colleagues cured chicken breast with four treatments, each tumbled und
 
 - **GC:** a commercial curing agent, at 4% w/w;
 - **FR:** *A. oryzae* grown on **rice**, at 5% w/w;
-- **FS:** *A. oryzae* grown on **soybean**, at 5% w/w;
-- **BS:** *Bacillus subtilis* grown on soybean, at 5% w/w (the authors group this with the kōji treatments, although the organism is a bacterium, not the kōji mould);
+- **FS:** *A. oryzae* grown on **[soybean](https://en.wikipedia.org/wiki/Soybean)**, at 5% w/w;
+- **BS:** *[Bacillus subtilis](https://en.wikipedia.org/wiki/Bacillus_subtilis)* grown on soybean, at 5% w/w (the authors group this with the kōji treatments, although the organism is a bacterium, not the kōji mould);
 - **C:** uncured control.
 
 Results (Jeong et al. 2023):
@@ -71,7 +71,7 @@ Drawing on Chapters 1, 3 and 4:
 
 1. **Proteases cut muscle proteins.** This softens the texture (Jeong et al. 2023; Chien et al. 2026) and releases **free amino acids, including glutamate**, which add umami (Abe et al. 2018, cited in Chien et al. 2026).
 2. **Amylases make sugars** from the grain in the kōji, contributing sweetness (Chien et al. 2026; Yamashita 2021).
-3. **Salt** seasons, and in Jeong and colleagues' study the kōji-cured breasts **swelled** more during curing. The authors link such swelling to greater electrostatic repulsion between muscle filaments and to the breakdown of myosin filaments (Jeong et al. 2023).
+3. **Salt** seasons, and in Jeong and colleagues' study the kōji-cured breasts **swelled** more during curing. The authors link such swelling to greater electrostatic repulsion between muscle filaments and to the breakdown of [myosin](https://en.wikipedia.org/wiki/Myosin) filaments (Jeong et al. 2023).
 4. **The enzymes stay active** in a shio-kōji that has not been heated (Yamashita 2021). This makes it different from a sauce: it is a reagent, and its effect depends on time and temperature.
 
 ## 8.5 Check yourself

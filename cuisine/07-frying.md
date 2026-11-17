@@ -1,6 +1,6 @@
 # 7. Frying: Batter, Crust and Oil
 
-*Tempura* is the Japanese dish best known abroad for its texture: a thin, dry, crisp coating around food that stays moist inside. This chapter explains how such a crust forms, why it goes soggy, and where the oil in fried food comes from. It relies on food-science studies of tempura-style batters and on an imaging study of oil uptake. These studies were carried out in Europe on squid, courgette and plain dough, not in Japanese kitchens, so their findings are mechanisms rather than rules of tempura practice. Where traditional Japanese practice makes claims the sources do not test, the chapter says so.
+*[Tempura](https://en.wikipedia.org/wiki/Tempura)* is the Japanese dish best known abroad for its texture: a thin, dry, crisp coating around food that stays moist inside. This chapter explains how such a crust forms, why it goes soggy, and where the oil in fried food comes from. It relies on food-science studies of tempura-style batters and on an imaging study of oil uptake. These studies were carried out in Europe on squid, courgette and plain dough, not in Japanese kitchens, so their findings are mechanisms rather than rules of tempura practice. Where traditional Japanese practice makes claims the sources do not test, the chapter says so.
 
 <figure>
 <img src="img/tempura-set.jpg" alt="A tempura set meal: tempura with rice, miso soup, dipping sauce and tea">
@@ -9,9 +9,9 @@
 
 ## 7.1 What deep-frying does
 
-Martínez-Pineda and colleagues define deep-frying as cooking by **immersion in oil or fat above the boiling point of water**. Heat and mass move at the same time: water and dissolved substances leave the food while oil enters it. The result is the texture people want from fried food, **a dry, crisp crust around a tender interior**. **Maillard reactions** in the crust give its typical flavour and colour (Martínez-Pineda et al. 2020).
+Martínez-Pineda and colleagues define deep-frying as cooking by **immersion in oil or fat above the boiling point of water**. Heat and mass move at the same time: water and dissolved substances leave the food while oil enters it. The result is the texture people want from fried food, **a dry, crisp crust around a tender interior**. **[Maillard](https://en.wikipedia.org/wiki/Maillard_reaction) reactions** in the crust give its typical flavour and colour (Martínez-Pineda et al. 2020).
 
-A **batter** is a liquid dough into which food is dipped before frying. It acts as a **barrier against moisture loss**. A tempura batter is "basically" **flour and water**, but other ingredients are often added: starches, egg, proteins such as gluten, seasonings, gums and raising agents (Martínez-Pineda et al. 2020).
+A **batter** is a liquid dough into which food is dipped before frying. It acts as a **barrier against moisture loss**. A tempura batter is "basically" **flour and water**, but other ingredients are often added: starches, egg, proteins such as [gluten](https://en.wikipedia.org/wiki/Gluten), seasonings, gums and raising agents (Martínez-Pineda et al. 2020).
 
 ## 7.2 Gluten: from bread crust to tempura
 
@@ -29,7 +29,7 @@ Tempura-coated foods are crisp **right after frying** because a **mostly dehydra
 
 ### Replacing water with alcohol
 
-Carvalho and Ruiz-Carrascal fried squid rings in four batters: water only, or water partly replaced by **ethanol**, each with or without **CO₂ infusion**. They tested them right after frying and after **48 hours** in the refrigerator followed by oven reheating (Carvalho and Ruiz-Carrascal 2018):
+Carvalho and Ruiz-Carrascal fried squid rings in four batters: water only, or water partly replaced by **[ethanol](https://en.wikipedia.org/wiki/Ethanol)**, each with or without **[CO₂](https://en.wikipedia.org/wiki/Carbon_dioxide) infusion**. They tested them right after frying and after **48 hours** in the refrigerator followed by oven reheating (Carvalho and Ruiz-Carrascal 2018):
 
 - Ethanol gave **less moisture and more fat** in the fried coating, whether or not CO₂ was used.
 - Ethanol batters measured as **crisper** in instrumental tests, with a lower maximum breaking force.
@@ -38,12 +38,12 @@ Carvalho and Ruiz-Carrascal fried squid rings in four batters: water only, or wa
 
 ### Courgette: thickness, time and three batters
 
-Martínez-Pineda and colleagues fried battered courgette (zucchini) at **170 °C**. Their standard batter was 80 g wheat flour, 125 mL mineral water at **15 °C**, 1 g salt and 1 g sugar, mixed for 45 seconds. Slices were dipped for 10 seconds and drained for 8 seconds before frying (Martínez-Pineda et al. 2020). They compared:
+Martínez-Pineda and colleagues fried battered courgette (zucchini) at **170 °C**. Their standard batter was 80 g [wheat flour](https://en.wikipedia.org/wiki/Wheat_flour), 125 mL mineral water at **15 °C**, 1 g salt and 1 g sugar, mixed for 45 seconds. Slices were dipped for 10 seconds and drained for 8 seconds before frying (Martínez-Pineda et al. 2020). They compared:
 
 | Batter | Change from standard | Result |
 |---|---|---|
 | **Standard** (SB) | — | 17.8% oil |
-| **Maltodextrin** (MB) | 20 g of the flour replaced by maltodextrin | More intense **golden-brown** colour, **lower viscosity** and less batter picked up, slightly less oil (**15.8%**) |
+| **Maltodextrin** (MB) | 20 g of the flour replaced by maltodextrin | More intense **golden-brown** colour, **lower [viscosity](https://en.wikipedia.org/wiki/Viscosity)** and less batter picked up, slightly less oil (**15.8%**) |
 | **Ethanol** (EB) | Part of the flour replaced by **cornflour**, part of the water by **ethanol** (50 g), plus **baking powder** | The **crispiest** coating, rougher and more stable over time, but less moisture and **more than double the oil (36.9%)** |
 
 They also found (Martínez-Pineda et al. 2020):
@@ -54,7 +54,7 @@ They also found (Martínez-Pineda et al. 2020):
 
 ### The trade-off
 
-Both studies point to the same tension. **The drier and more porous the crust, the crisper it is, and the more oil it can hold.** In the courgette study, the ethanol–cornflour–baking-powder batter was the crispiest and the oiliest. The authors explain this through the **porosity** and larger surface gaps that the ethanol, raising agent and corn starch create (Martínez-Pineda et al. 2020).
+Both studies point to the same tension. **The drier and more porous the crust, the crisper it is, and the more oil it can hold.** In the courgette study, the ethanol–cornflour–baking-powder batter was the crispiest and the oiliest. The authors explain this through the **porosity** and larger surface gaps that the ethanol, raising agent and corn [starch](https://en.wikipedia.org/wiki/Starch) create (Martínez-Pineda et al. 2020).
 
 ## 7.4 Where the oil goes in: during frying or after?
 

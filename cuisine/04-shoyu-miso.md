@@ -1,6 +1,6 @@
 # 4. Soy Sauce and Miso: Fermentation in Salt
 
-Soy sauce (*shōyu*) and miso are the two great salted ferments of Japanese cooking. Both begin with the kōji of Chapter 3 and both mature in salt for months. They differ in what the maker steers towards. Soy sauce is pressed into a clear liquid of aroma, colour and dissolved umami. Miso stays a paste, and its colour, sweetness and saltiness are set by the ratio of kōji to soybeans, the salt level and the length of ageing. This chapter follows both processes stage by stage and ends with the classification tables that tell a cook which miso or soy sauce they have in hand.
+[Soy sauce](https://en.wikipedia.org/wiki/Soy_sauce) (*shōyu*) and [miso](https://en.wikipedia.org/wiki/Miso) are the two great salted ferments of Japanese cooking. Both begin with the [kōji](https://en.wikipedia.org/wiki/K%C5%8Dji_%28food%29) of Chapter 3 and both mature in salt for months. They differ in what the maker steers towards. Soy sauce is pressed into a clear liquid of aroma, colour and dissolved [umami](https://en.wikipedia.org/wiki/Umami). Miso stays a paste, and its colour, sweetness and saltiness are set by the ratio of kōji to [soybeans](https://en.wikipedia.org/wiki/Soybean), the salt level and the length of ageing. This chapter follows both processes stage by stage and ends with the classification tables that tell a cook which miso or soy sauce they have in hand.
 
 <figure>
 <img src="img/miso-storehouse.jpg" alt="Inside an old wooden miso storehouse, with a tall wooden vat in the doorway">
@@ -9,7 +9,7 @@ Soy sauce (*shōyu*) and miso are the two great salted ferments of Japanese cook
 
 ## 4.1 A short history
 
-The Ministry of Agriculture, Forestry and Fisheries (MAFF) gives this outline (MAFF, *Soy sauce, miso, other seasonings*):
+The [Ministry of Agriculture, Forestry and Fisheries](https://en.wikipedia.org/wiki/Ministry_of_Agriculture,_Forestry_and_Fisheries_%28Japan%29) (MAFF) gives this outline (MAFF, *Soy sauce, miso, other seasonings*):
 
 - Around the **7th century**, a method of harvesting large amounts of salt from salt fields on sandy beaches was established. Salt's use as a preservative made fermented foods such as miso and soy sauce possible.
 - One theory holds that **miso** came to Japan in **666 CE** from Goguryeo, a kingdom on the Korean peninsula. Early forms appear in the 8th-century *Shōsō-in* documents and in the 10th-century dictionary *Wamyō ruijushō*. In medieval Japan, as soybean production grew, miso-making spread from temples to villages and homes.
@@ -22,7 +22,7 @@ The standard Japanese brewing method is called ***honjōzō*** ("genuine brewing
 ### Stage 1: treating the raw materials
 
 - **Soybeans** are moistened and **cooked under steam pressure** to denature their proteins, which makes them easier for enzymes to digest (Ito and Matsuyama 2021).
-- **Wheat** is **roasted at 160–180 °C** and crushed (Ito and Matsuyama 2021). Yamashita adds the reason: the roasted wheat flour lowers the moisture on the soybeans' surface, which protects against *Bacillus* contamination during kōji growth (Yamashita 2021).
+- **Wheat** is **roasted at 160–180 °C** and crushed (Ito and Matsuyama 2021). Yamashita adds the reason: the roasted [wheat flour](https://en.wikipedia.org/wiki/Wheat_flour) lowers the moisture on the soybeans' surface, which protects against *Bacillus* contamination during kōji growth (Yamashita 2021).
 - Soybeans and wheat are mixed in **roughly equal amounts** (Ito and Matsuyama 2021).
 
 ### Stage 2: kōji
@@ -31,25 +31,25 @@ The mixture is inoculated with a pure culture of kōji mould and incubated **for
 
 The traits a brewer wants in a soy-sauce mould are (Ito and Matsuyama 2021):
 
-1. high production of enzymes, especially **proteases, glutaminase and macerating enzymes**;
+1. high production of enzymes, especially **[proteases](https://en.wikipedia.org/wiki/Protease), [glutaminase](https://en.wikipedia.org/wiki/Glutaminase) and macerating enzymes**;
 2. short stalks and good spore production;
 3. fast growth and plenty of mycelium;
-4. **low starch consumption** during growth;
+4. **low [starch](https://en.wikipedia.org/wiki/Starch) consumption** during growth;
 5. genetic stability;
 6. no aflatoxin, and little or no other mycotoxin.
 
-No single strain has all of these. Strains are therefore improved by mutagenesis. For example, an X-ray mutant of *A. sojae* produced twice the protease of its parent, and a UV-mutated strain with more glutaminase gave moromi with more glutamate (Ito and Matsuyama 2021).
+No single strain has all of these. Strains are therefore improved by mutagenesis. For example, an X-ray mutant of *A. sojae* produced twice the protease of its parent, and a UV-mutated strain with more glutaminase gave moromi with more [glutamate](https://en.wikipedia.org/wiki/Glutamic_acid) (Ito and Matsuyama 2021).
 
 ### Stage 3: *moromi* fermentation, a relay of three organisms
 
-The kōji is mixed into a concentrated **22–23% salt solution**, forming the mash called ***moromi***. It is traditionally fermented for **6–8 months**. The final salt content of soy sauce is about **17–18%**, which stops non-salt-tolerant microorganisms from growing. The kōji mould itself dies soon after brining. Its enzymes carry on breaking down the raw materials into amino acids and sugars (Ito and Matsuyama 2021).
+The kōji is mixed into a concentrated **22–23% salt solution**, forming the mash called ***moromi***. It is traditionally fermented for **6–8 months**. The final salt content of soy sauce is about **17–18%**, which stops non-salt-tolerant microorganisms from growing. The kōji mould itself dies soon after brining. Its enzymes carry on breaking down the raw materials into [amino acids](https://en.wikipedia.org/wiki/Amino_acid) and sugars (Ito and Matsuyama 2021).
 
 Three groups of organisms then work **in sequence**, in what the authors call *multiple parallel fermentation* (Ito and Matsuyama 2021):
 
 | Order | Organism | What it does |
 |---|---|---|
-| 1 | **Halophilic lactic-acid bacteria**, *Tetragenococcus halophilus* | Grow best at 5–10% salt. Turn glucose from wheat starch into **lactic acid**, and citric acid from soybeans into **acetic acid**. The moromi becomes slightly acidic, giving soy sauce a faint sourness. |
-| 2 | **Main fermenting yeast**, *Zygosaccharomyces rouxii* | Produces **2–4% ethanol**, a little glycerol, and key aroma compounds including **HEMF** and **methionol**. At 18% salt it can grow only between pH 4.0 and 5.0, so it needs the acid made by the bacteria first. |
+| 1 | **Halophilic [lactic-acid bacteria](https://en.wikipedia.org/wiki/Lactic_acid_bacteria)**, *[Tetragenococcus halophilus](https://en.wikipedia.org/wiki/Tetragenococcus_halophilus)* | Grow best at 5–10% salt. Turn [glucose](https://en.wikipedia.org/wiki/Glucose) from wheat starch into **[lactic acid](https://en.wikipedia.org/wiki/Lactic_acid)**, and citric acid from soybeans into **[acetic acid](https://en.wikipedia.org/wiki/Acetic_acid)**. The moromi becomes slightly acidic, giving soy sauce a faint sourness. |
+| 2 | **Main fermenting [yeast](https://en.wikipedia.org/wiki/Yeast)**, *[Zygosaccharomyces rouxii](https://en.wikipedia.org/wiki/Zygosaccharomyces_rouxii)* | Produces **2–4% [ethanol](https://en.wikipedia.org/wiki/Ethanol)**, a little glycerol, and key aroma compounds including **HEMF** and **[methionol](https://en.wikipedia.org/wiki/Methionol)**. At 18% salt it can grow only between pH 4.0 and 5.0, so it needs the acid made by the bacteria first. |
 | 3 | **Late-maturation yeasts**, *Candida versatilis* and *C. etchellsii* | Remain active late in ripening. *C. versatilis* forms aroma compounds such as **4-ethylguaiacol** from phenolic compounds that come from wheat lignin. |
 
 The bacterium was first isolated from soy-sauce moromi in **1907**, as *Pediococcus soyae*, and reclassified as *Tetragenococcus halophilus* in **1990**. These microbes traditionally entered the mash from the kōji, the vessels and the brewery itself. Today, selected strains with good fermentation performance are widely added deliberately (Ito and Matsuyama 2021).
@@ -61,18 +61,23 @@ The bacterium was first isolated from soy-sauce moromi in **1907**, as *Pediococ
 Ito and Matsuyama describe three pathways by which kōji enzymes produce glutamate from soybean and wheat protein (Ito and Matsuyama 2021):
 
 - **A. Direct release.** Proteases cut proteins into peptides, and peptidases cut those into amino acids, glutamate among them.
-- **B. Glutaminase.** Free **glutamine** released from the proteins is converted into glutamate by the mould's glutaminases.
+- **B. Glutaminase.** Free **[glutamine](https://en.wikipedia.org/wiki/Glutamine)** released from the proteins is converted into glutamate by the mould's glutaminases.
 - **C. Peptidoglutaminase.** Glutamine at the end of a peptide chain is converted into glutamate *before* release, then freed by peptidases.
 
-Timing decides the yield. Early moromi is near neutral (**pH 6–7**), and that is when the glutaminases, which prefer a high pH and tolerate salt poorly, work best. Free glutamine that is not converted in time turns, without any enzyme, into **pyroglutamate**, which is not umami. Glutamine does this much more readily than glutamate. As lactic and acetic acids accumulate and the pH falls, acid-loving carboxypeptidases take over and continue releasing glutamate from peptides whose ends were already converted (Ito and Matsuyama 2021). This is why brewers choose strains with high glutaminase activity (Yamashita 2021).
+Timing decides the yield. Early moromi is near neutral (**pH 6–7**), and that is when the glutaminases, which prefer a high pH and tolerate salt poorly, work best. Free glutamine that is not converted in time turns, without any enzyme, into **[pyroglutamate](https://en.wikipedia.org/wiki/Pyroglutamic_acid)**, which is not umami. Glutamine does this much more readily than glutamate. As lactic and acetic acids accumulate and the pH falls, acid-loving [carboxypeptidases](https://en.wikipedia.org/wiki/Carboxypeptidase) take over and continue releasing glutamate from peptides whose ends were already converted (Ito and Matsuyama 2021). This is why brewers choose strains with high glutaminase activity (Yamashita 2021).
+
+<figure class="diagram">
+<img src="img/mol-glutamine.svg" alt="Diagram: glutamine converted by glutaminase to glutamic acid, or closing without an enzyme into the ring of pyroglutamic acid">
+<figcaption>The race in early moromi. Glutaminase turns the amide group of glutamine into the carboxyl group of glutamic acid. Left unconverted, glutamine closes into a ring and becomes pyroglutamic acid, which is not umami (Ito and Matsuyama 2021). <span class="credit">Diagram drawn for this handbook with <a href="https://www.rdkit.org/">RDKit</a> from PubChem structure records: <a href="https://pubchem.ncbi.nlm.nih.gov/compound/5961">L-glutamine</a>, <a href="https://pubchem.ncbi.nlm.nih.gov/compound/33032">L-glutamic acid</a>, <a href="https://pubchem.ncbi.nlm.nih.gov/compound/7405">L-pyroglutamic acid</a>.</span></figcaption>
+</figure>
 
 ### Colour and aroma
 
-During ageing, sugars such as glucose react with the amino acids, through **Maillard reactions**, to form Amadori compounds. These are responsible for soy sauce's **colour, mildness and umami**. Nearly **300 aroma compounds** have been identified in soy sauce, most of them formed during fermentation and ageing (Ito and Matsuyama 2021).
+During ageing, sugars such as glucose react with the amino acids, through **[Maillard](https://en.wikipedia.org/wiki/Maillard_reaction) reactions**, to form Amadori compounds. These are responsible for soy sauce's **colour, mildness and umami**. Nearly **300 aroma compounds** have been identified in soy sauce, most of them formed during fermentation and ageing (Ito and Matsuyama 2021).
 
 ### Stages 4 and 5: pressing and refining
 
-The aged moromi is wrapped in square cloths, stacked and pressed. The liquid that comes out is **raw soy sauce**. It is then **heated**, for pasteurisation and to inactivate enzymes. Heating makes the denatured enzymes and other particles coagulate and settle, and it speeds up the chemical reactions that complete the flavour. Only the clear upper part is taken as the final product (Ito and Matsuyama 2021). The authors give a total brewing time of about **six months**. Their moromi stage is 6–8 months, and MAFF gives about eight months for *koikuchi* soy sauce (MAFF), so the total varies by maker and type.
+The aged moromi is wrapped in square cloths, stacked and pressed. The liquid that comes out is **raw soy sauce**. It is then **heated**, for pasteurisation and to inactivate enzymes. Heating makes the [denatured](https://en.wikipedia.org/wiki/Denaturation_%28biochemistry%29) enzymes and other particles coagulate and settle, and it speeds up the chemical reactions that complete the flavour. Only the clear upper part is taken as the final product (Ito and Matsuyama 2021). The authors give a total brewing time of about **six months**. Their moromi stage is 6–8 months, and MAFF gives about eight months for *koikuchi* soy sauce (MAFF), so the total varies by maker and type.
 
 ## 4.3 The five types of soy sauce
 
@@ -81,9 +86,9 @@ MAFF classifies commercial soy sauce into five types (MAFF, *Soy sauce, miso, ot
 | Type | How it is made | Character and use | Region |
 |---|---|---|---|
 | ***Koikuchi*** (dark) | Equal soybeans and wheat. Kōji in brine. About **8 months** of fermentation and ageing. | At least **80%** of production. Rich aroma. Effective at masking fishy or gamey smells. | All of Japan, especially the east |
-| ***Usukuchi*** (light-coloured) | Soybeans and wheat. **Amazake** is added for mildness. Wheat is **roasted lightly**, and **more salt** is used to slow fermentation and ageing, both to keep the colour pale. | Developed in Kansai for *Kamigata* cooking, which aims to keep ingredients' own colour and flavour | Kansai |
-| ***Tamari*** | Mostly soybeans with a little wheat. Crushed soybeans are formed into **miso-kōji balls** and fermented in a **small amount of brine**. Ages longer than koikuchi. | Rich and distinctive. Used for sashimi, *kabayaki* (glazed grilled eel), rice crackers, *tsukudani*, noodle soups. | Tōkai (Aichi, Gifu, Mie) |
-| ***Saishikomi*** ("re-brewed") | Equal soybeans and wheat, but **raw soy sauce (*kiage*) is used instead of brine**. Ages **1.5–2 years or longer**. | Slightly lower salt, but rich in taste and colour, and viscous. For sushi, eel sauce, sashimi. | Yamaguchi, San'in to Kyūshū |
+| ***Usukuchi*** (light-coloured) | Soybeans and wheat. **[Amazake](https://en.wikipedia.org/wiki/Amazake)** is added for mildness. Wheat is **roasted lightly**, and **more salt** is used to slow fermentation and ageing, both to keep the colour pale. | Developed in [Kansai](https://en.wikipedia.org/wiki/Kansai_region) for *Kamigata* cooking, which aims to keep ingredients' own colour and flavour | Kansai |
+| ***Tamari*** | Mostly soybeans with a little wheat. Crushed soybeans are formed into **miso-kōji balls** and fermented in a **small amount of brine**. Ages longer than koikuchi. | Rich and distinctive. Used for [sashimi](https://en.wikipedia.org/wiki/Sashimi), *kabayaki* (glazed grilled eel), rice crackers, *tsukudani*, noodle soups. | Tōkai (Aichi, Gifu, Mie) |
+| ***Saishikomi*** ("re-brewed") | Equal soybeans and wheat, but **raw soy sauce (*kiage*) is used instead of brine**. Ages **1.5–2 years or longer**. | Slightly lower salt, but rich in taste and colour, and viscous. For [sushi](https://en.wikipedia.org/wiki/Sushi), eel sauce, sashimi. | Yamaguchi, San'in to Kyūshū |
 | ***Shiro*** (white) | **Mostly wheat.** (The English MAFF page prints the wheat-to-soybean ratio as "09時01分", a spreadsheet time-format error for 9:1. Yamashita 2021 independently describes shiro soy sauce as made "mainly with wheat".) About **3 months**. Colouring steps skipped or kept brief. | Paler than usukuchi. Less umami, light-bodied, with kōji aroma and sweetness standing out. | Mainly Aichi |
 
 Yamashita confirms the two extremes: tamari is a dark soy sauce made from soybeans only, and *shiro* soy sauce is made mainly from wheat (Yamashita 2021).
@@ -114,11 +119,11 @@ Kusumoto and colleagues describe the process as follows (Kusumoto et al. 2021):
    - let in air, because the yeast needs oxygen to grow (it does not grow without air, although the alcohol it makes affects flavour);
    - release the heat of fermentation.
 
-MAFF summarises the biochemistry. Salt suppresses unwanted bacteria. The kōji's amylases turn rice starch into sugar, and its proteases turn soybean protein into amino acids, giving miso its rich umami. Lactic-acid bacteria then make lactic acid from the sugar, and yeast grows and makes ethanol (MAFF).
+MAFF summarises the biochemistry. Salt suppresses unwanted bacteria. The kōji's [amylases](https://en.wikipedia.org/wiki/Amylase) turn rice starch into sugar, and its proteases turn soybean protein into amino acids, giving miso its rich umami. Lactic-acid bacteria then make lactic acid from the sugar, and yeast grows and makes ethanol (MAFF).
 
 ### Enzymatic miso: sweet and quick
 
-Two styles mature through **kōji enzymes alone**, without a long microbial fermentation: white sweet miso, such as **Kyoto white miso** (*saikyō*-style), and red sweet miso, such as **Edo sweet miso**. They use a high proportion of kōji, contain only **5–7% salt**, and are matured in **a few days at about 50 °C** (Kusumoto et al. 2021). Yamashita gives the parallel description: kōji at **twice the amount of soybeans**, saccharified at **50–55 °C for several hours**, about **5% salt**, and a light colour (Yamashita 2021). The principle is the one from Chapter 3: hold the kōji's enzymes at a temperature where they work and the microbes do not.
+Two styles mature through **kōji enzymes alone**, without a long microbial fermentation: white sweet miso, such as **Kyoto white miso** (*saikyō*-style), and red sweet miso, such as **[Edo](https://en.wikipedia.org/wiki/Edo_period) sweet miso**. They use a high proportion of kōji, contain only **5–7% salt**, and are matured in **a few days at about 50 °C** (Kusumoto et al. 2021). Yamashita gives the parallel description: kōji at **twice the amount of soybeans**, saccharified at **50–55 °C for several hours**, about **5% salt**, and a light colour (Yamashita 2021). The principle is the one from Chapter 3: hold the kōji's enzymes at a temperature where they work and the microbes do not.
 
 ### Barley and soybean miso
 
@@ -127,7 +132,7 @@ Two styles mature through **kōji enzymes alone**, without a long microbial ferm
 
 ### Colour, aroma and texture
 
-- The **Maillard reaction** between amino compounds and sugars produces brown polymers called **melanoidins**. It colours miso and creates aroma compounds. Over **200 aroma compounds** have been found in rice miso (Kusumoto et al. 2021).
+- The **Maillard reaction** between amino compounds and sugars produces brown polymers called **[melanoidins](https://en.wikipedia.org/wiki/Melanoidin)**. It colours miso and creates aroma compounds. Over **200 aroma compounds** have been found in rice miso (Kusumoto et al. 2021).
 - **HEMF** gives a sweet, caramel-like aroma. In rice miso it is absent right after mixing, rises during maturation and falls again late in maturation. **4-Ethylguaiacol** distinguishes misos made with different kōji. HEMF and **methionol** are made by the yeast. Together, the levels of these three compounds seem to determine miso's aroma (Kusumoto et al. 2021).
 - MAFF notes that **colour depends on the length of ageing** (MAFF).
 - Miso is a paste, so it does not need as much protein broken down as soy sauce does. Yamashita gives figures of about **60%** of miso protein dissolved and about **25%** broken down. Too much breakdown makes miso **too soft**, causes colour changes in storage and lowers its quality (Yamashita 2021).
@@ -142,7 +147,7 @@ MAFF reproduces this classification from the *Encyclopedia of Traditional Japane
 | | Red | 12–20 | 5–7 | Tokyo |
 | Rice miso, ***amakuchi*** (mildly salty) | Light | 8–15 | 7–12 | Shizuoka, Kyūshū |
 | | Red | 10–15 | 11–13 | Tokushima and others |
-| Rice miso, ***karakuchi*** (salty) | Light | 5–10 | 11–13 | Kantō, Kōshin'etsu, Hokuriku and across Japan |
+| Rice miso, ***karakuchi*** (salty) | Light | 5–10 | 11–13 | [Kantō](https://en.wikipedia.org/wiki/Kant%C5%8D_region), Kōshin'etsu, Hokuriku and across Japan |
 | | Red | 5–10 | 11–13 | Kantō, Kōshin'etsu, Tōhoku and across Japan |
 | Barley miso | *Amakuchi* | 15–25 | 9–11 | Kyūshū, Chūgoku (Sea of Japan side) |
 | | *Karakuchi* | 8–15 | 11–13 | Kyūshū, Shikoku, northern Kantō |
