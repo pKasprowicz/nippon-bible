@@ -23,7 +23,8 @@ No previous knowledge needed. Plan on about **10 short sessions** of 30–45 min
 | 10 | [Cheat sheet & self-test](10-cheat-sheet.md) | Revise in 5 minutes; check what you've learned |
 
 Want to read Japanese script properly? After the guide, take the interactive
-[Hiragana course](../hiragana/00-start.md) and [Katakana course](../katakana/00-start.md).
+[Hiragana course](../hiragana/00-start.md), [Katakana course](../katakana/00-start.md) and
+[Kanji course](../kanji/00-start.md).
 
 ## Suggested 10-day plan
 

@@ -214,6 +214,7 @@ modes: see,listen,type
 - **Daily review**, 5 minutes, for the next month: [open it](09-review.md).
 - **Katakana hunt in Japan:** every day, read five katakana words from menus, packaging or signs, and guess the original word before you look it up.
 - **Both scripts together:** a lot of signs mix hiragana and katakana, like タクシーのりば (taxi rank). If you haven't yet, take the [Hiragana course](../hiragana/00-start.md).
+- **Next step:** the [Kanji course](../kanji/00-start.md) teaches the 95 kanji on signs, like 出口 (exit) and 禁煙 (no smoking).
 
 🎌 *O-tsukaresama deshita!* Well done.
 

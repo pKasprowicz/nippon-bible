@@ -9,14 +9,14 @@
 (function () {
   'use strict';
 
-  var KEYS = { done: 'nb-done', hira: 'nb-hira', kata: 'nb-kata' };
+  var KEYS = { done: 'nb-done', hira: 'nb-hira', kata: 'nb-kata', kanji: 'nb-kanji' };
   var FORMAT = 2;
 
   function read(key, fallback) {
     try { var v = localStorage.getItem(key); return v === null ? fallback : JSON.parse(v); } catch (e) { return fallback; }
   }
   function write(key, value) { localStorage.setItem(key, JSON.stringify(value)); }
-  function kanaData(script) { return script === 'kata' ? window.NB_KATA : window.NB_KANA; }
+  function kanaData(script) { return script === 'kata' ? window.NB_KATA : script === 'kanji' ? window.NB_KANJI : window.NB_KANA; }
 
   /* ---------- compact form: drops fields that can be rebuilt from the course data ---------- */
   function slimStore(st) {
@@ -49,7 +49,7 @@
     return {
       app: 'nippon-bible', v: FORMAT, at: Date.now(),
       done: Object.keys(done).filter(function (k) { return done[k]; }),
-      h: slimStore(read(KEYS.hira, null)), k: slimStore(read(KEYS.kata, null))
+      h: slimStore(read(KEYS.hira, null)), k: slimStore(read(KEYS.kata, null)), c: slimStore(read(KEYS.kanji, null))
     };
   }
 
@@ -111,7 +111,7 @@
   function validate(obj) {
     if (!obj || obj.app !== 'nippon-bible' || typeof obj.v !== 'number') throw friendly('This isn\'t a Nippon Bible progress link or file.');
     if (obj.v > FORMAT) throw friendly('This progress comes from a newer version of the site. Reload this page and try again.');
-    return { at: obj.at || 0, done: Array.isArray(obj.done) ? obj.done : [], hira: fullStore(obj.h, 'hira'), kata: fullStore(obj.k, 'kata') };
+    return { at: obj.at || 0, done: Array.isArray(obj.done) ? obj.done : [], hira: fullStore(obj.h, 'hira'), kata: fullStore(obj.k, 'kata'), kanji: fullStore(obj.c, 'kanji') };
   }
   // Files hold readable JSON in the same compact shape.
   function parseFile(text) {
@@ -152,17 +152,19 @@
     return out;
   }
   function apply(data) {
-    var report = { lessons: 0, hira: { added: 0, updated: 0, kept: 0 }, kata: { added: 0, updated: 0, kept: 0 } };
+    var report = { lessons: 0, hira: { added: 0, updated: 0, kept: 0 }, kata: { added: 0, updated: 0, kept: 0 }, kanji: { added: 0, updated: 0, kept: 0 } };
     var done = read(KEYS.done, {});
     data.done.forEach(function (id) { if (!done[id]) { done[id] = true; report.lessons++; } });
     var hira = mergeStore(read(KEYS.hira, null), data.hira, report.hira);
     var kata = mergeStore(read(KEYS.kata, null), data.kata, report.kata);
+    var kanji = mergeStore(read(KEYS.kanji, null), data.kanji, report.kanji);
     // Write everything or nothing: storage can be full or blocked.
-    var backup = { done: localStorage.getItem(KEYS.done), hira: localStorage.getItem(KEYS.hira), kata: localStorage.getItem(KEYS.kata) };
+    var backup = { done: localStorage.getItem(KEYS.done), hira: localStorage.getItem(KEYS.hira), kata: localStorage.getItem(KEYS.kata), kanji: localStorage.getItem(KEYS.kanji) };
     try {
       write(KEYS.done, done);
       if (hira) write(KEYS.hira, hira);
       if (kata) write(KEYS.kata, kata);
+      if (kanji) write(KEYS.kanji, kanji);
     } catch (e) {
       Object.keys(backup).forEach(function (k) {
         try { if (backup[k] === null) localStorage.removeItem(KEYS[k]); else localStorage.setItem(KEYS[k], backup[k]); } catch (ignore) { /* nothing more to do */ }
@@ -184,7 +186,7 @@
         mastered: ids.filter(function (id) { return id.slice(0, 2) === 'k:' && st.srs[id].box >= 5; }).length
       };
     }
-    return { at: data.at, done: data.done, hira: kana(data.hira), kata: kana(data.kata) };
+    return { at: data.at, done: data.done, hira: kana(data.hira), kata: kana(data.kata), kanji: kana(data.kanji) };
   }
   function current() { return validate(collect()); }
 
