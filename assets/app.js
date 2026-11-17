@@ -581,6 +581,19 @@
       cta: !g.done ? 'Open the handbook' : g.next ? 'Continue: chapter ' + g.next.label : 'Browse the glossary'
     });
   }
+  function homeOffline() {
+    var line = el('p', { 'class': 'home-foot home-offline' });
+    function refresh() {
+      line.replaceChildren(
+        el('span', { 'class': offline.ready ? 'ok' : '', text: offlineStatusText() }), ' · ',
+        offline.installEvent && !isStandalone()
+          ? el('button', { 'class': 'link-btn', type: 'button', text: 'Install the app', onclick: installApp })
+          : el('a', { href: '#/offline', text: isStandalone() ? 'About the app' : 'Install the app and use it offline' })
+      );
+    }
+    refresh(); onOfflineChange(refresh);
+    return line;
+  }
   function showHome() {
     var guide = groupProgress('course');
     var article = el('article', { 'class': 'home' }, [
@@ -609,7 +622,8 @@
         el('a', { href: '#/katakana-review', text: 'katakana review' }), ' · ',
         el('a', { href: '#/kanji-review', text: 'kanji review' }),
         '. Using two devices? ', el('a', { href: '#/progress', text: 'Sync your progress' }), '.'
-      ])
+      ]),
+      homeOffline()
     ]);
     markSpeakable(article.querySelector('.home-hero'));
     content.replaceChildren(el('div', { 'class': 'page' }, [article]));
@@ -855,6 +869,107 @@
     return Promise.resolve();
   }
 
+  /* ---------- offline app: service worker, install, updates ---------- */
+  var offline = { supported: 'serviceWorker' in navigator && location.protocol !== 'file:', ready: false, installEvent: null, listeners: [] };
+  function offlineChanged() { offline.listeners.forEach(function (fn) { fn(); }); }
+  function onOfflineChange(fn) { offline.listeners.push(fn); }
+  function isStandalone() {
+    return (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || navigator.standalone === true;
+  }
+  function showUpdate(worker) {
+    if (document.getElementById('updateBar')) return;
+    var bar = el('div', { 'class': 'update-bar', id: 'updateBar', role: 'status' }, [
+      el('span', { text: 'A new version of Nippon Bible is ready.' }),
+      el('button', { 'class': 'btn primary', type: 'button', text: 'Reload', onclick: function () { worker.postMessage('skipWaiting'); } }),
+      el('button', { 'class': 'icon-btn', type: 'button', 'aria-label': 'Later', text: '×', onclick: function () { bar.remove(); } })
+    ]);
+    document.body.appendChild(bar);
+  }
+  if (offline.supported) {
+    var hadController = !!navigator.serviceWorker.controller;
+    navigator.serviceWorker.addEventListener('controllerchange', function () {
+      if (hadController) location.reload();
+      hadController = true;
+    });
+    navigator.serviceWorker.register('sw.js').then(function (reg) {
+      function watch(w) {
+        if (!w) return;
+        w.addEventListener('statechange', function () { if (w.state === 'installed' && navigator.serviceWorker.controller) showUpdate(w); });
+      }
+      if (reg.waiting && navigator.serviceWorker.controller) showUpdate(reg.waiting);
+      watch(reg.installing);
+      reg.addEventListener('updatefound', function () { watch(reg.installing); });
+      // Look for a new release whenever the app comes back to the foreground.
+      document.addEventListener('visibilitychange', function () { if (!document.hidden) reg.update().catch(function () {}); });
+    }).catch(function () { /* offline support unavailable; the site still works online */ });
+    navigator.serviceWorker.ready.then(function () { offline.ready = true; offlineChanged(); });
+  }
+  window.addEventListener('beforeinstallprompt', function (e) { e.preventDefault(); offline.installEvent = e; offlineChanged(); });
+  window.addEventListener('appinstalled', function () {
+    offline.installEvent = null; offlineChanged();
+    toast('Installed. Open Nippon Bible from your home screen or app drawer.');
+  });
+  function installApp() {
+    var e = offline.installEvent;
+    if (!e) return;
+    e.prompt();
+    (e.userChoice || Promise.resolve()).then(function () { offline.installEvent = null; offlineChanged(); });
+  }
+  function offlineStatusText() {
+    if (!offline.supported) return 'This browser can\'t save the course for offline use.';
+    return offline.ready ? '✓ Saved on this device: works offline' : 'Saving the course for offline use…';
+  }
+
+  function showOffline() {
+    var article = el('article', { 'class': 'sync offline' });
+    content.replaceChildren(el('div', { 'class': 'page' }, [article]));
+    rendered = null;
+    document.title = 'Install & offline · Nippon Bible';
+    var status = el('p', { 'class': 'offline-status' });
+    var details = el('p', { 'class': 'sync-status' });
+    var installBox = el('div', { 'class': 'offline-install' });
+    function refresh() {
+      status.textContent = offlineStatusText();
+      status.classList.toggle('ok', offline.ready);
+      installBox.replaceChildren();
+      if (isStandalone()) installBox.appendChild(el('p', { text: '✓ You\'re using the installed app.' }));
+      else if (offline.installEvent) installBox.appendChild(el('button', { 'class': 'btn primary', type: 'button', text: 'Install the app', onclick: installApp }));
+      else installBox.appendChild(el('p', { text: 'In Chrome, open the ⋮ menu and choose "Install app" or "Add to Home screen".' }));
+    }
+    refresh(); onOfflineChange(refresh);
+    if (offline.supported) {
+      navigator.serviceWorker.ready.then(function () { return fetch('precache.json').then(function (r) { return r.json(); }); }).then(function (m) {
+        details.textContent = m.files.length + ' files saved, version ' + m.version + '. Updates download automatically when you\'re online.';
+      }).catch(function () {});
+    }
+    article.append(
+      el('h1', { text: 'Install & use offline' }),
+      el('p', { text: 'The whole site (every lesson, course, game, quiz and the cuisine handbook with its photos) is saved on your device the first time you open it. After that it works with no connection: on the plane, on the subway, or with no roaming data.' }),
+      el('section', { 'class': 'sync-box' }, [el('h2', { text: 'On this device' }), status, details]),
+      el('section', { 'class': 'sync-box' }, [
+        el('h2', { text: 'Android' }),
+        el('p', { text: 'Install it as an app: it gets its own icon in your launcher and app drawer and opens full screen, like any other app.' }),
+        installBox,
+        el('p', {}, ['Your progress stays with the app on this phone. To bring progress from another device, use ', el('a', { href: '#/progress', text: 'Sync progress' }), '.'])
+      ]),
+      el('section', { 'class': 'sync-box' }, [
+        el('h2', { text: 'iPhone and iPad' }),
+        el('p', { text: 'In Safari, tap Share, then "Add to Home Screen". Open the course from that icon: Safari can clear saved websites that you don\'t visit for a week, but home-screen apps keep their data.' }),
+        el('p', {}, ['The home-screen app keeps its own progress, separate from Safari. Move your progress across with ', el('a', { href: '#/progress', text: 'Sync progress' }), '.'])
+      ]),
+      el('section', { 'class': 'sync-box' }, [
+        el('h2', { text: 'Audio without a connection' }),
+        el('p', { text: 'Tap-to-listen uses your phone\'s own text-to-speech, so it can work offline if a Japanese voice is installed.' }),
+        el('ul', { 'class': 'sync-list' }, [
+          el('li', { text: 'Android: Settings › Accessibility › Text-to-speech output › the engine\'s settings › Install voice data › Japanese. Menu names vary by phone.' }),
+          el('li', { text: 'iPhone: Settings › Accessibility › Spoken Content › Voices › Japanese.' })
+        ]),
+        el('p', { text: 'Test it before you travel: switch on airplane mode and tap any Japanese text.' })
+      ])
+    );
+    return Promise.resolve();
+  }
+
   function showDrill() {
     return fetchText('lessons/02-writing.md').then(function (md) {
       decks = decks || parseDecks(md);
@@ -876,7 +991,7 @@
     var r = parts[0], section = '';
     try { section = decodeURIComponent(parts.slice(1).join('/')); } catch (e) { section = ''; }
     if (ALIASES[r]) { location.replace('#/' + ALIASES[r] + (section ? '/' + section : '')); return; }
-    var special = r === 'drill' || r === 'progress' || r === 'import';
+    var special = r === 'drill' || r === 'progress' || r === 'import' || r === 'offline';
     if (r && !special && !LESSONS.some(function (l) { return l.id === r; })) { r = ''; section = ''; }
     var key = special ? r : (r || 'home');
     if (!special && key !== 'home' && key === rendered) { scrollToSection(section, true); return; }
@@ -884,7 +999,7 @@
     if ('speechSynthesis' in window) speechSynthesis.cancel();
     if (spyHandler) { window.removeEventListener('scroll', spyHandler); spyHandler = null; }
     rendered = null;
-    var p = r === 'drill' ? showDrill() : r === 'progress' ? showProgress()
+    var p = r === 'drill' ? showDrill() : r === 'progress' ? showProgress() : r === 'offline' ? showOffline()
       : r === 'import' ? showProgress(parts.slice(1).join('/')) : r ? showPage(r) : showHome();
     p.then(function () {
       if (section) jumpWhenSettled(section);

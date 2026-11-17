@@ -14,6 +14,11 @@ Japanese for European travellers, in five parts:
 tap-to-listen audio for all Japanese text, the interactive exercises, progress tracking
 and a flashcard drill. On GitHub, the kana courses' exercises show as plain text.
 
+**Use it offline, as an app:** the website saves itself on your device the first time you open it,
+then works with no connection. On Android, choose *Install app* in Chrome's ⋮ menu (or the
+*Install the app* link on the home page) to get a launcher icon; on iPhone, use Safari's
+*Share › Add to Home Screen*. See *Install & offline* in the site's menu.
+
 No previous knowledge needed. Japanese is given as **script · romaji · meaning**, e.g.
 `駅 · eki · station`, with Hepburn romaji (a macron marks a long vowel: **ō** = "oo").
 

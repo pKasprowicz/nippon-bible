@@ -4,6 +4,19 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+- **Use it offline, as an app**: the whole site (every lesson, course, game, quiz and the cuisine handbook with its photos, about 3 MB) is saved on the device on the first visit and then works with no connection
+  - Installable on Android: Chrome turns it into an app with its own launcher icon that opens full screen; an *Install the app* button appears where Chrome offers it. On iPhone and iPad: *Add to Home Screen*
+  - New releases download in the background; a *Reload* bar switches to the new version, and the old copy is removed
+  - New *Install & offline* page (menu and home page): offline status, install steps for Android and iPhone, and how to get Japanese text-to-speech working without a connection
+  - The home page shows whether the course is saved for offline use
+
+### Changed
+- The deploy lists every published file for offline saving and gives each release's service worker a content hash
+- The content check verifies the app manifest, its icons and the service-worker build placeholder
+
 ## [1.10.0] - 2026-11-17
 
 ### Added
