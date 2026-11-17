@@ -11,7 +11,7 @@ const fail = (msg) => errors.push(msg);
 const app = readFileSync('assets/app.js', 'utf8');
 const entries = [...app.matchAll(/\{ id: '([^']+)', file: '([^']+)'/g)].map((m) => ({ id: m[1], file: m[2] }));
 const registered = entries.map((e) => e.file);
-const pageFiles = ['lessons', 'hiragana', 'katakana', 'kanji'].flatMap((dir) =>
+const pageFiles = ['lessons', 'hiragana', 'katakana', 'kanji', 'cuisine'].flatMap((dir) =>
   readdirSync(dir).filter((f) => f.endsWith('.md')).map((f) => `${dir}/${f}`));
 for (const e of entries) if (!existsSync(e.file)) fail(`assets/app.js lists '${e.id}' but ${e.file} is missing`);
 for (const f of pageFiles) if (!registered.includes(f)) fail(`${f} is not listed in LESSONS in assets/app.js`);
@@ -89,6 +89,35 @@ for (const [course, [dataFile, global]] of Object.entries(COURSES)) {
       }
     }
   }
+}
+
+// 4. Cuisine handbook: cited chapters, well-formed quizzes, every image present and credited.
+const CUISINE = pageFiles.filter((f) => f.startsWith('cuisine/'));
+const credits = readFileSync('cuisine/16-sources.md', 'utf8');
+const usedImages = new Set();
+for (const file of CUISINE) {
+  const text = readFileSync(file, 'utf8');
+  const chapter = /\/(0[1-9]|1[0-4])-/.test(file);
+  if (chapter && !text.includes('## Sources for this chapter')) fail(`${file}: missing "## Sources for this chapter"`);
+  if (chapter && !text.includes('```quiz')) fail(`${file}: missing the self-check quiz`);
+  if (text.includes('<!-- figure')) fail(`${file}: figure placeholder left in the text`);
+  for (const [, body] of text.matchAll(/```quiz\n([\s\S]*?)```/g)) {
+    blocks++;
+    for (const q of body.split(/^\? /m).slice(1)) {
+      const correct = q.split('\n').filter((l) => /^- .*\*\s*$/.test(l)).length;
+      if (correct !== 1) fail(`${file}: quiz question "${q.split('\n')[0].slice(0, 50)}" needs exactly one answer marked *`);
+    }
+  }
+  for (const [, src] of text.matchAll(/<img[^>]*\ssrc="([^"]+)"/g)) {
+    const target = normalize(join(dirname(file), src));
+    usedImages.add(target);
+    if (!existsSync(target)) fail(`${file}: image '${src}' is missing`);
+    if (!credits.includes(src.split('/').pop())) fail(`${file}: image '${src}' has no entry in cuisine/16-sources.md`);
+  }
+  for (const m of text.matchAll(/<img(?![^>]*\salt="[^"]+")[^>]*>/g)) fail(`${file}: image without alt text: ${m[0].slice(0, 60)}`);
+}
+if (existsSync('cuisine/img')) {
+  for (const f of readdirSync('cuisine/img')) if (!usedImages.has(`cuisine/img/${f}`)) fail(`cuisine/img/${f} is not used by any page`);
 }
 
 // 5. VERSION is semver and has a CHANGELOG entry.
