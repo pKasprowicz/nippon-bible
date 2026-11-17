@@ -42,7 +42,7 @@ modes: type,listen,type
 
 ## Start over
 
-Progress is stored only in this browser. Resetting deletes your katakana review deck, game
+Progress is stored only in this browser (use [Sync progress](#/progress) to copy it to another device). Resetting deletes your katakana review deck, game
 stats, best scores and streak on this device (your hiragana progress is kept).
 
 ```reset

@@ -60,7 +60,7 @@ Three things are new for katakana:
 - **Tap any Japanese text** to hear it. If you hear nothing, your device may need a Japanese voice.
 - **Keyboard:** <kbd>1</kbd>–<kbd>4</kbd> to answer, <kbd>Enter</kbd> to continue, <kbd>R</kbd> to replay a sound.
 - **Typing answers:** type the *Japanese* reading, not the English word: コーヒー is **kōhī** (or *koohii*, *kohi*), not "coffee".
-- Your katakana progress is saved **in this browser only**, separately from hiragana.
+- Your katakana progress is saved **in this browser only**, separately from hiragana. To continue on another device, use [Sync progress](#/progress) on the website.
 
 ## 5. Try it now: how much can you guess?
 

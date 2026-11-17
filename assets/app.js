@@ -548,7 +548,8 @@
         'Tip: tap any Japanese text to hear it. Quick practice: ',
         el('a', { href: '#/drill', text: 'flashcard drill' }), ' · ',
         el('a', { href: '#/hiragana-review', text: 'hiragana review' }), ' · ',
-        el('a', { href: '#/katakana-review', text: 'katakana review' })
+        el('a', { href: '#/katakana-review', text: 'katakana review' }),
+        '. Using two devices? ', el('a', { href: '#/progress', text: 'Sync your progress' }), '.'
       ])
     ]);
     markSpeakable(article.querySelector('.home-hero'));
@@ -660,6 +661,139 @@
     else if (e.key === '2' && drill.revealed) grade(true);
     else if ((e.key === 'l' || e.key === 'L') && drill.card) speak(drill.card.front.split(/\s*[\/·]\s*/)[0]);
   });
+  /* ---------- progress transfer between devices ---------- */
+  function syncSummaryList(desc) {
+    var completed = desc.done.filter(function (id) { return LESSONS.some(function (l) { return l.id === id; }); }).length;
+    function n(x, word) { return x + ' ' + word + (x === 1 ? '' : 's'); }
+    function kana(name, k) {
+      return name + ': ' + (k.chars ? n(k.chars, 'character') + (k.mastered ? ' (' + k.mastered + ' mastered)' : '') + (k.words ? ', ' + n(k.words, 'word') : '') : 'not started');
+    }
+    return el('ul', { 'class': 'sync-list' }, [
+      el('li', { text: completed + ' of ' + LESSONS.length + ' pages completed' }),
+      el('li', { text: kana('Hiragana', desc.hira) }),
+      el('li', { text: kana('Katakana', desc.kata) })
+    ]);
+  }
+  function showProgress(importCode) {
+    var P = window.NBProgress;
+    var article = el('article', { 'class': 'sync' });
+    content.replaceChildren(el('div', { 'class': 'page' }, [article]));
+    rendered = null;
+    document.title = 'Sync progress · Nippon Bible';
+    if (!P) { article.appendChild(el('p', { text: 'Progress transfer isn\'t available in this browser.' })); return Promise.resolve(); }
+
+    var here = P.describe(P.current());
+    var linkBox = el('textarea', { 'class': 'sync-code', readonly: true, rows: '3', 'aria-label': 'Transfer link', hidden: true });
+    var sendStatus = el('p', { 'class': 'sync-status', 'aria-live': 'polite' });
+    var preview = el('div', { 'class': 'sync-preview', 'aria-live': 'polite' });
+    var pasteBox = el('textarea', { 'class': 'sync-code', rows: '3', placeholder: 'Paste a transfer link here', 'aria-label': 'Paste a transfer link or code' });
+    var fileInput = el('input', { type: 'file', accept: '.json,application/json,text/plain', 'class': 'sync-file', 'aria-label': 'Open a progress file' });
+
+    function makeLink() {
+      return P.encode(P.collect()).then(function (code) { return location.href.split('#')[0] + '#/import/' + code; });
+    }
+    function showLink(link) { linkBox.value = link; linkBox.hidden = false; }
+    var copyBtn = el('button', { 'class': 'btn primary', type: 'button', text: 'Copy transfer link', onclick: function () {
+      makeLink().then(function (link) {
+        showLink(link);
+        var done = function () { sendStatus.textContent = 'Link copied (' + link.length.toLocaleString() + ' characters). Paste it into a message or note to yourself, then open it on your other device.'; };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(link).then(done, function () { linkBox.select(); sendStatus.textContent = 'Copy the link below by hand (your browser blocked automatic copying).'; });
+        } else { linkBox.select(); sendStatus.textContent = 'Copy the link below by hand.'; }
+      }).catch(function (e) { sendStatus.textContent = 'Couldn\'t create the link: ' + e.message; });
+    } });
+    var shareBtn = navigator.share ? el('button', { 'class': 'btn', type: 'button', text: 'Share…', onclick: function () {
+      makeLink().then(function (link) {
+        showLink(link);
+        return navigator.share({ title: 'My Nippon Bible progress', text: 'Open this link on your other device to continue where you left off.', url: link });
+      }).then(function () { sendStatus.textContent = 'Shared. Open the link on your other device.'; }, function (e) { if (e && e.name !== 'AbortError') sendStatus.textContent = 'Sharing didn\'t work. Use "Copy transfer link" instead.'; });
+    } }) : null;
+    var fileBtn = el('button', { 'class': 'btn', type: 'button', text: 'Download progress file', onclick: function () {
+      var blob = new Blob([JSON.stringify(P.collect())], { type: 'application/json' });
+      var a = el('a', { href: URL.createObjectURL(blob), download: 'nippon-bible-progress-' + new Date().toISOString().slice(0, 10) + '.json' });
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function () { URL.revokeObjectURL(a.href); }, 2000);
+      sendStatus.textContent = 'File downloaded. Move it to your other device (email, cloud drive, AirDrop…) and open it below.';
+    } });
+
+    function showPreview(promise) {
+      preview.replaceChildren(el('p', { 'class': 'sync-status', text: 'Reading…' }));
+      promise.then(function (data) {
+        var d = P.describe(data);
+        var mergeBtn = el('button', { 'class': 'btn primary', type: 'button', text: 'Merge into this device', onclick: function () {
+          try {
+            var r = P.apply(data);
+            done = load('nb-done', {}); buildNav(); setCurrent('progress');
+            var changes = r.lessons + r.hira.added + r.hira.updated + r.kata.added + r.kata.updated;
+            preview.replaceChildren(el('div', { 'class': 'sync-result' }, [
+              el('p', { 'class': 'hw-win', text: changes ? '✓ Progress merged.' : '✓ Nothing new: this device was already up to date.' }),
+              el('ul', { 'class': 'sync-list' }, [
+                el('li', { text: r.lessons + ' page' + (r.lessons === 1 ? '' : 's') + ' newly marked complete' }),
+                el('li', { text: 'Hiragana: ' + r.hira.added + ' added, ' + r.hira.updated + ' updated, ' + r.hira.kept + ' kept (newer here)' }),
+                el('li', { text: 'Katakana: ' + r.kata.added + ' added, ' + r.kata.updated + ' updated, ' + r.kata.kept + ' kept (newer here)' })
+              ]),
+              el('a', { 'class': 'btn', href: '#/', text: 'Go to the home page →' })
+            ]));
+            summaryBox.replaceChildren(syncSummaryList(P.describe(P.current())));
+          } catch (e) { preview.replaceChildren(el('p', { 'class': 'sync-error', text: e.message })); }
+        } });
+        preview.replaceChildren(el('div', { 'class': 'sync-incoming' }, [
+          el('p', {}, [el('strong', { text: 'Progress from ' + (d.at ? new Date(d.at).toLocaleString([], { dateStyle: 'medium', timeStyle: 'short' }) : 'another device') + ':' })]),
+          syncSummaryList(d),
+          el('p', { 'class': 'hw-note', text: 'Merging keeps the best of both devices. Nothing on this device is lost.' }),
+          el('div', { 'class': 'hw-actions' }, [mergeBtn, el('button', { 'class': 'btn', type: 'button', text: 'Cancel', onclick: function () { preview.replaceChildren(); } })])
+        ]));
+        preview.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      }).catch(function (e) { preview.replaceChildren(el('p', { 'class': 'sync-error', text: e.message })); });
+    }
+    fileInput.addEventListener('change', function () {
+      var f = fileInput.files && fileInput.files[0];
+      if (!f) return;
+      if (f.size > 2e6) { preview.replaceChildren(el('p', { 'class': 'sync-error', text: 'That file is too large to be a progress file.' })); return; }
+      showPreview(f.text().then(P.parseFile));
+      fileInput.value = '';
+    });
+    var summaryBox = el('div', {}, [syncSummaryList(here)]);
+
+    article.append(
+      el('h1', { text: 'Sync progress' }),
+      el('p', { 'class': 'home-lead', text: 'Your progress is saved in this browser only. To continue on another device, move it with a transfer link or a file. Nothing is uploaded: the progress travels inside the link itself.' }),
+      el('section', { 'class': 'sync-box' }, [el('h2', { text: 'On this device' }), summaryBox]),
+      el('section', { 'class': 'sync-box' }, [
+        el('h2', { text: 'Send to another device' }),
+        el('div', { 'class': 'hw-actions' }, [copyBtn, shareBtn, fileBtn]),
+        sendStatus, linkBox,
+        el('p', { 'class': 'hw-note', text: 'Send the link to yourself by email, a notes app or a messenger. It holds no personal data, just your learning progress, but anyone who opens it can see that progress.' })
+      ]),
+      el('section', { 'class': 'sync-box' }, [
+        el('h2', { text: 'Receive from another device' }),
+        el('p', { text: 'Open the transfer link on this device, or paste it here:' }),
+        pasteBox,
+        el('div', { 'class': 'hw-actions' }, [
+          el('button', { 'class': 'btn primary', type: 'button', text: 'Preview', onclick: function () { showPreview(P.decode(pasteBox.value)); } }),
+          el('label', { 'class': 'btn sync-file-label' }, ['Open a progress file', fileInput])
+        ]),
+        preview
+      ]),
+      el('section', { 'class': 'sync-box' }, [
+        el('h2', { text: 'How merging works' }),
+        el('ul', { 'class': 'sync-list' }, [
+          el('li', { text: 'A lesson or unit completed on either device counts as completed.' }),
+          el('li', { text: 'For each review item, the copy you practised most recently wins, so your review schedule stays right.' }),
+          el('li', { text: 'Game proficiency keeps the record with more answers; best scores keep the higher one; streak days are combined.' }),
+          el('li', { text: 'Your theme and flashcard deck choices stay per device.' })
+        ])
+      ])
+    );
+    if (importCode) {
+      // Keep the code out of the address bar and history once it's been read.
+      try { history.replaceState(null, '', '#/progress'); } catch (e) { /* ignore */ }
+      setCurrent('progress');
+      showPreview(P.decode('#/import/' + importCode));
+    }
+    return Promise.resolve();
+  }
+
   function showDrill() {
     return fetchText('lessons/02-writing.md').then(function (md) {
       decks = decks || parseDecks(md);
@@ -681,14 +815,16 @@
     var r = parts[0], section = '';
     try { section = decodeURIComponent(parts.slice(1).join('/')); } catch (e) { section = ''; }
     if (ALIASES[r]) { location.replace('#/' + ALIASES[r] + (section ? '/' + section : '')); return; }
-    if (r && r !== 'drill' && !LESSONS.some(function (l) { return l.id === r; })) { r = ''; section = ''; }
-    var key = r === 'drill' ? 'drill' : (r || 'home');
-    if (key !== 'drill' && key !== 'home' && key === rendered) { scrollToSection(section, true); return; }
+    var special = r === 'drill' || r === 'progress' || r === 'import';
+    if (r && !special && !LESSONS.some(function (l) { return l.id === r; })) { r = ''; section = ''; }
+    var key = special ? r : (r || 'home');
+    if (!special && key !== 'home' && key === rendered) { scrollToSection(section, true); return; }
     setCurrent(r);
     if ('speechSynthesis' in window) speechSynthesis.cancel();
     if (spyHandler) { window.removeEventListener('scroll', spyHandler); spyHandler = null; }
     rendered = null;
-    var p = r === 'drill' ? showDrill() : r ? showPage(r) : showHome();
+    var p = r === 'drill' ? showDrill() : r === 'progress' ? showProgress()
+      : r === 'import' ? showProgress(parts.slice(1).join('/')) : r ? showPage(r) : showHome();
     p.then(function () {
       if (section) jumpWhenSettled(section);
       else window.scrollTo(0, 0);

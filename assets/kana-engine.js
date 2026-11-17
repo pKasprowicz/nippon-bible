@@ -20,7 +20,7 @@
       s.srs = s.srs || {}; s.best = s.best || {}; s.days = s.days || [];
       return s;
     }
-    function saveState(s) { try { localStorage.setItem(STORE, JSON.stringify(s)); } catch (e) { /* ignore */ } }
+    function saveState(s) { s.v = 2; try { localStorage.setItem(STORE, JSON.stringify(s)); } catch (e) { /* ignore */ } }
     function today() { var d = new Date(); return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate(); }
     function markPractised(s) { if (s.days.indexOf(today()) < 0) { s.days.push(today()); s.days = s.days.slice(-400); } }
     function streak(s) {
@@ -117,7 +117,8 @@
       var s = loadState(), added = 0;
       items.forEach(function (it) {
         if (s.srs[it.id]) return;
-        s.srs[it.id] = { t: it.t, k: it.k, r: it.r, m: it.m || '', box: 1, due: Date.now() + DAY, n: 0, lapses: 0 };
+        // last: when this item last changed. Progress transfer uses it to keep the newer copy.
+        s.srs[it.id] = { t: it.t, k: it.k, r: it.r, m: it.m || '', box: 1, due: Date.now() + DAY, n: 0, lapses: 0, last: Date.now() };
         added++;
       });
       markPractised(s);
@@ -128,6 +129,7 @@
       var s = loadState(), it = s.srs[id];
       if (!it) return;
       it.n++;
+      it.last = Date.now();
       if (!ok) { it.box = 1; it.lapses++; it.due = Date.now(); }
       else if (lapsedThisSession) { it.due = Date.now() + DAY; }
       else { it.box = Math.min(INTERVAL_DAYS.length - 1, it.box + 1); it.due = Date.now() + INTERVAL_DAYS[it.box] * DAY; }

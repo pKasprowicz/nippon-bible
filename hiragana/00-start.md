@@ -63,7 +63,7 @@ Do **one unit per day**, and start each day with the **Daily review**. If you mi
   speech settings). Listening exercises switch to reading exercises when no voice is available.
 - **Keyboard:** <kbd>1</kbd>–<kbd>4</kbd> to answer, <kbd>Enter</kbd> to continue, <kbd>R</kbd> to replay a sound.
 - **Typing answers:** any common spelling works: *shi* or *si*, *tsu* or *tu*, *fu* or *hu*.
-- Your progress is saved **in this browser only**. Nothing is sent anywhere.
+- Your progress is saved **in this browser only**. Nothing is sent anywhere. Using a phone and a laptop? Move your progress with [Sync progress](#/progress) on the website.
 
 ## 5. Try it now: how much can you guess?
 
