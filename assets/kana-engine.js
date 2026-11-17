@@ -67,7 +67,10 @@
       });
       return out;
     }
-    function info(k) { return D.byChar[k]; }
+    // Kanji sign words mix in hiragana/katakana (止まれ, 生ビール): fall back to the kana tables.
+    function info(k) { return D.byChar[k] || (D.hasMeaning && ((window.NB_KANA && window.NB_KANA.byChar[k]) || (window.NB_KATA && window.NB_KATA.byChar[k]))); }
+    var KANJI_RE = /[\u3400-\u9fff\u3005]/;
+    function sayOf(e) { return e.say || e.k; } // kanji are spoken from their kana reading
 
     // Kana → reading parts, for hints ("こ ko · ん n · に ni …").
     function parts(word) {
@@ -299,23 +302,31 @@
         .concat(shuffle(pool.filter(function (k) { return k !== entry.k; })));
       var chosen = [entry], seen = {};
       seen[entry.r] = true; seen[entry.k] = true;
+      if (entry.meaning) seen['m:' + entry.meaning] = true;
       cands.forEach(function (k) {
         var e = info(k);
-        // Never offer two options with the same reading (お/を are both "o", じ/ぢ both "ji").
-        if (!e || chosen.length >= 4 || seen[e.k] || seen[e.r]) return;
-        seen[e.k] = true; seen[e.r] = true; chosen.push(e);
+        // Never offer two options with the same reading (お/を are both "o", じ/ぢ both "ji"),
+        // or, for kanji, the same meaning.
+        if (!e || chosen.length >= 4 || seen[e.k] || seen[e.r] || (e.meaning && seen['m:' + e.meaning])) return;
+        seen[e.k] = true; seen[e.r] = true; if (e.meaning) seen['m:' + e.meaning] = true;
+        chosen.push(e);
       });
       return shuffle(chosen).map(function (e) {
+        if (field === 'm') return { label: e.meaning, value: e.k, chosenLabel: '"' + e.meaning + '" (' + e.k + ')' };
         return field === 'r'
           ? { label: e.r, value: e.k, chosenLabel: e.r + ' (' + e.k + ')' }
-          : { label: e.k, value: e.k, lang: 'ja', chosenLabel: e.k + ' (' + e.r + ')' };
+          : { label: e.k, value: e.k, lang: 'ja', chosenLabel: e.k + ' (' + e.r + (e.meaning ? ', ' + e.meaning : '') + ')' };
       });
     }
     function mnemonicNode(k, chosen) {
       var e = info(k), box = el('div', { 'class': 'hw-explain' });
-      box.appendChild(el('p', {}, [el('span', { 'class': 'hw-mini-kana', lang: 'ja', text: e.k }), ' ', el('strong', { text: e.r }), ' · ' + e.m]));
+      function line(x) {
+        return el('p', {}, [el('span', { 'class': 'hw-mini-kana', lang: 'ja', text: x.k }), ' ', el('strong', { text: x.r }),
+          x.meaning ? ' "' + x.meaning + '"' : '', ' · ' + x.m]);
+      }
+      box.appendChild(line(e));
       var c = chosen && info(chosen);
-      if (c && c.k !== e.k) box.appendChild(el('p', {}, [el('span', { 'class': 'hw-mini-kana', lang: 'ja', text: c.k }), ' ', el('strong', { text: c.r }), ' · ' + c.m]));
+      if (c && c.k !== e.k) box.appendChild(line(c));
       return box;
     }
     function bigKana(k) { return el('div', { 'class': 'hw-big', lang: 'ja', text: k }); }
@@ -326,9 +337,17 @@
     function kanaQuestion(k, mode, pool) {
       var e = info(k);
       if (mode === 'listen' && !hasJaVoice()) mode = 'pick';
-      var q = { id: 'k:' + k, k: k, answerValue: k, audio: k, answerLabel: '<span lang="ja">' + k + '</span> = ' + e.r };
+      var q = { id: 'k:' + k, k: k, answerValue: k, audio: sayOf(e),
+        answerLabel: '<span lang="ja">' + k + '</span> = ' + e.r + (e.meaning ? ' · "' + e.meaning + '"' : '') };
       q.explain = function () { return mnemonicNode(k, q.lastChoice); };
-      if (mode === 'see') {
+      if ((mode === 'meaning' || mode === 'find') && !e.meaning) mode = mode === 'meaning' ? 'see' : 'pick';
+      if (mode === 'meaning') {
+        q.prompt = function () { return el('div', {}, [el('p', { 'class': 'hw-ask', text: 'What does this mean?' }), bigKana(k)]); };
+        q.options = kanaOptions(e, pool, 'm');
+      } else if (mode === 'find') {
+        q.prompt = function () { return el('div', {}, [el('p', { 'class': 'hw-ask', text: 'Which kanji means…' }), el('div', { 'class': 'hw-big hw-meaning', text: e.meaning })]); };
+        q.options = kanaOptions(e, pool, 'k');
+      } else if (mode === 'see') {
         q.prompt = function () { return el('div', {}, [el('p', { 'class': 'hw-ask', text: 'How do you read this?' }), bigKana(k)]); };
         q.options = kanaOptions(e, pool, 'r');
       } else if (mode === 'pick') {
@@ -336,12 +355,12 @@
         q.options = kanaOptions(e, pool, 'k');
         q.audioOnCorrect = true;
       } else if (mode === 'listen') {
-        q.prompt = function () { return el('div', {}, [el('p', { 'class': 'hw-ask', text: 'Listen. Which character do you hear?' }), listenButton(k)]); };
+        q.prompt = function () { return el('div', {}, [el('p', { 'class': 'hw-ask', text: 'Listen. Which character do you hear?' }), listenButton(sayOf(e))]); };
         q.options = kanaOptions(e, pool, 'k');
         q.autoplay = true;
       } else { // type
         q.prompt = function () { return el('div', {}, [el('p', { 'class': 'hw-ask', text: 'Type the reading.' }), bigKana(k)]); };
-        q.placeholder = 'e.g. ka';
+        q.placeholder = e.meaning ? 'e.g. eki' : 'e.g. ka';
       }
       q.check = function (v) {
         if (q.options) { q.lastChoice = v; return { ok: v === k }; }
@@ -349,9 +368,23 @@
         // Extra katakana sounds (ティ ti, ファ fa…) must be typed exactly: "chi" is チ, not ティ.
         var ok = e.set === 'extended' ? plain === e.r
           : norm(v) === norm(e.r) || ((k === 'ん' || k === 'ン') && /^n+$/.test(plain));
+        // Kanji have several readings: any listed one counts, with the main one shown.
+        if (!ok && e.alt && e.alt.length) {
+          var alt = e.alt.filter(function (a) { return norm(v, true) === norm(a, true); })[0];
+          if (alt) return { ok: true, note: 'Yes, ' + alt + ' is one reading. On signs you\'ll most often meet ' + e.r + (e.alt.length ? ' (others: ' + e.alt.join(', ') + ')' : '') + '.' };
+        }
+        if (ok && e.alt && e.alt.length) return { ok: true, note: 'Other readings: ' + e.alt.join(', ') + '.' };
         return { ok: ok };
       };
       return q;
+    }
+    // Hint / explanation: kana show their sound; kanji show their meaning (their reading in a
+    // word often differs from the reading on their own, so the meaning is the helpful clue).
+    function breakdown(word) {
+      return parts(word).map(function (p) {
+        var e = info(p.k);
+        return '<span lang="ja">' + p.k + '</span>&nbsp;' + (e && e.meaning ? '"' + e.meaning + '"' : p.r);
+      }).join(' · ');
     }
     function wordQuestion(w, mode, all) {
       var q = { id: 'w:' + w.k, answerValue: w.k, audio: w.k, pauseOnCorrect: true,
@@ -359,13 +392,13 @@
       if (mode === 'meaning') {
         // Loanwords: sound the word out, then recognise the meaning.
         q.prompt = function () {
-          return el('div', {}, [el('p', { 'class': 'hw-ask', text: 'Sound it out. What does it mean?' }), el('div', { 'class': 'hw-big hw-word', lang: 'ja', text: w.k })]);
+          return el('div', {}, [el('p', { 'class': 'hw-ask', text: (w.context ? w.context + ' · ' : '') + (KANJI_RE.test(w.k) ? 'What does this sign mean?' : 'Sound it out. What does it mean?') }), el('div', { 'class': 'hw-big hw-word', lang: 'ja', text: w.k })]);
         };
         var pool = shuffle(all.filter(function (o) { return o.k !== w.k && o.m !== w.m; }));
         q.options = shuffle([w].concat(pool.slice(0, 3))).map(function (o) { return { label: o.m, value: o.k, chosenLabel: o.m + ' (' + o.k + ')' }; });
         q.check = function (v) { return { ok: v === w.k }; };
         q.answerLabel = '<span lang="ja">' + w.k + '</span> · <strong>' + w.r + '</strong> = ' + w.m;
-        q.explain = function () { return el('p', { 'class': 'hw-explain', html: 'Character by character: ' + parts(w.k).map(function (p) { return '<span lang="ja">' + p.k + '</span>&nbsp;' + p.r; }).join(' · ') }); };
+        q.explain = function () { return el('p', { 'class': 'hw-explain', html: 'Character by character: ' + breakdown(w.k) }); };
         q.pauseOnCorrect = false;
         return q;
       }
@@ -387,16 +420,14 @@
         ]);
       };
       q.placeholder = 'type the reading…';
-      q.hint = function () {
-        return parts(w.k).map(function (p) { return '<span lang="ja">' + p.k + '</span>&nbsp;' + p.r; }).join(' · ');
-      };
+      q.hint = function () { return breakdown(w.k); };
       q.check = function (v) {
         if (v === '\u0000') return { ok: false };
         if (norm(v, true) === norm(w.r, true)) {
           var strict = norm(v) === norm(w.r);
           return { ok: true, note: strict ? null : 'Mind the long vowel or the double letter: ' + w.r + '.' };
         }
-        if (norm(v, true) === norm(literalRomaji(w.k), true)) {
+        if (!KANJI_RE.test(w.k) && norm(v, true) === norm(literalRomaji(w.k), true)) {
           return { ok: true, note: 'You read every character right. In this word it is pronounced ' + w.r + '.' };
         }
         return { ok: false };
@@ -455,9 +486,11 @@
       var ks = splitKana(block.cfg.kana);
       var root = el('div', { 'class': 'hw-cards' }, ks.map(function (k) {
         var e = info(k);
-        return el('button', { 'class': 'hw-card', type: 'button', title: 'Listen', onclick: function () { ctx.speak(k); } }, [
+        return el('button', { 'class': 'hw-card' + (e.meaning ? ' hw-card-kanji' : ''), type: 'button', title: 'Listen', onclick: function () { ctx.speak(sayOf(e)); } }, [
           el('span', { 'class': 'hw-card-kana', lang: 'ja', text: k }),
+          e.meaning ? el('span', { 'class': 'hw-card-meaning', text: e.meaning }) : null,
           el('span', { 'class': 'hw-card-r', text: e.r }),
+          e.alt && e.alt.length ? el('span', { 'class': 'hw-card-alt', text: 'also: ' + e.alt.join(', ') }) : null,
           el('span', { 'class': 'hw-card-m', text: e.m }),
           el('span', { 'class': 'hw-card-play', 'aria-hidden': 'true', text: '🔊' })
         ]);
@@ -473,7 +506,7 @@
       var timer = c.timer ? Number(c.timer) : 0;
       var count = Number(c.count) || Math.max(10, Math.min(24, targets.length * 2 + Math.ceil(mix.length / 2)));
       var pool = targets.concat(mix);
-      var labels = { see: 'read', pick: 'find', listen: 'listen', type: 'type' };
+      var labels = { see: 'read', pick: 'find', listen: 'listen', type: 'type', meaning: 'meaning', find: 'find the kanji' };
       var title = c.title || (c.checkpoint ? 'Checkpoint' : timer ? 'Speed round' : 'Practice');
       var desc = c.checkpoint
         ? count + ' mixed questions, no hints. Score 90% or more to master this unit.'
@@ -614,9 +647,14 @@
         qs = shuffle(qs).map(function (x, i) {
           var e = info(x.k);
           return {
-            id: 'c' + i + x.k, k: x.k, answerValue: x.k, audio: x.k, answerLabel: '<span lang="ja">' + x.k + '</span> = ' + e.r,
-            prompt: function () { return el('div', {}, [el('p', { 'class': 'hw-ask', text: 'Which one is…' }), el('div', { 'class': 'hw-big hw-roman', text: e.r })]); },
-            options: shuffle([x.p.a, x.p.b]).map(function (k) { return { label: k, value: k, lang: 'ja', chosenLabel: k + ' (' + info(k).r + ')' }; }),
+            id: 'c' + i + x.k, k: x.k, answerValue: x.k, audio: sayOf(e),
+            answerLabel: '<span lang="ja">' + x.k + '</span> = ' + e.r + (e.meaning ? ' · "' + e.meaning + '"' : ''),
+            prompt: function () {
+              return e.meaning
+                ? el('div', {}, [el('p', { 'class': 'hw-ask', text: 'Which one means…' }), el('div', { 'class': 'hw-big hw-meaning', text: e.meaning })])
+                : el('div', {}, [el('p', { 'class': 'hw-ask', text: 'Which one is…' }), el('div', { 'class': 'hw-big hw-roman', text: e.r })]);
+            },
+            options: shuffle([x.p.a, x.p.b]).map(function (k) { var o = info(k); return { label: k, value: k, lang: 'ja', chosenLabel: k + ' (' + (o.meaning || o.r) + ')' }; }),
             check: function (v) { return { ok: v === x.k }; },
             explain: x.p.cue ? el('p', { 'class': 'hw-explain', text: x.p.cue }) : mnemonicNode(x.k)
           };
@@ -874,9 +912,9 @@
         if (!k) return el('span', { 'class': 'hw-cell empty', 'aria-hidden': 'true' });
         var item = s.srs['k:' + k], e = info(k);
         return el('button', { 'class': 'hw-cell ' + strengthClass(item), type: 'button', lang: 'ja', title: e.r, onclick: function () {
-          ctx.speak(k);
+          ctx.speak(sayOf(e));
           var when = item ? (item.due <= Date.now() ? 'review due now' : 'next review in ' + Math.max(1, Math.round((item.due - Date.now()) / DAY)) + ' day(s)') : 'not learned yet';
-          detail.replaceChildren(el('span', { 'class': 'hw-mini-kana', lang: 'ja', text: k }), ' ', el('strong', { text: e.r }), ' · ' + e.m + ' (' + when + ')');
+          detail.replaceChildren(el('span', { 'class': 'hw-mini-kana', lang: 'ja', text: k }), ' ', el('strong', { text: e.r }), (e.meaning ? ' "' + e.meaning + '"' : '') + ' · ' + e.m + ' (' + when + ')');
         } }, [k]);
       }
       function render() {
@@ -919,7 +957,8 @@
         var e = info(item.k);
         if (!e) return null;
         // Weak items are recognised; strong items must be recalled (harder = more durable).
-        var mode = item.box <= 1 ? pick(['see', 'listen']) : item.box <= 2 ? pick(['see', 'listen', 'type']) : pick(['type', 'type', 'listen']);
+        var RM = D.reviewModes || { weak: ['see', 'listen'], mid: ['see', 'listen', 'type'], strong: ['type', 'type', 'listen'] };
+        var mode = item.box <= 1 ? pick(RM.weak) : item.box <= 2 ? pick(RM.mid) : pick(RM.strong);
         var pool = D.list.filter(function (o) { return o.unit === e.unit; }).map(function (o) { return o.k; });
         var kq = kanaQuestion(item.k, mode, pool);
         kq.id = id; return kq;
@@ -999,9 +1038,9 @@
   var engines = {};
   function engine(script) {
     if (!engines[script]) {
-      var data = script === 'katakana' ? window.NB_KATA : window.NB_KANA;
+      var data = script === 'katakana' ? window.NB_KATA : script === 'kanji' ? window.NB_KANJI : window.NB_KANA;
       if (!data) return null;
-      engines[script] = createEngine(data, script === 'katakana' ? 'nb-kata' : 'nb-hira');
+      engines[script] = createEngine(data, script === 'katakana' ? 'nb-kata' : script === 'kanji' ? 'nb-kanji' : 'nb-hira');
     }
     return engines[script];
   }

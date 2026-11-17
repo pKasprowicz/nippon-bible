@@ -62,7 +62,7 @@ python3 -m http.server 8000
 ## Content conventions
 
 - The Japan guide lives in `lessons/NN-name.md` (`00-guide.md` is its overview), and the kana courses in
-  `hiragana/NN-name.md` and `katakana/NN-name.md`. Register
+  `hiragana/NN-name.md`, `katakana/NN-name.md` and `kanji/NN-name.md`. Register
   every page in `LESSONS` in `assets/app.js` (id, file, group, title).
 - Use `##` for a lesson's main sections and `###` for subsections. The site builds each lesson's
   contents navigation from them, so keep headings short. To link to a section, use the GitHub
@@ -73,7 +73,7 @@ python3 -m http.server 8000
 
 ## Progress and sync
 
-All progress is in `localStorage`: `nb-done` (completed pages), `nb-hira` and `nb-kata` (review deck, game stats,
+All progress is in `localStorage`: `nb-done` (completed pages), `nb-hira`, `nb-kata` and `nb-kanji` (review deck, game stats,
 best scores, streak days; format `v: 2`), plus per-device preferences `nb-theme` and `nb-deck`.
 `assets/progress.js` packs the first three into a compact, deflate-compressed, base64url code for transfer links
 (`#/import/<code>`) and files, and merges imports. If you add a field to saved progress, add it to the
@@ -82,9 +82,11 @@ compact form and the merge rules there too, and bump the format version if old c
 ## Kana course exercises
 
 Character data (readings, memory aids, look-alikes, which unit teaches what, the grid layout)
-lives in `assets/hiragana-data.js` and `assets/katakana-data.js`. The exercise engine,
-`assets/kana-engine.js`, runs one instance per script, so each course keeps its own progress
-(`nb-hira` / `nb-kata` in localStorage). The site picks the engine from the page's group in
+lives in `assets/hiragana-data.js`, `assets/katakana-data.js` and `assets/kanji-data.js`. The exercise
+engine, `assets/kana-engine.js`, runs one instance per script, so each course keeps its own progress
+(`nb-hira` / `nb-kata` / `nb-kanji` in localStorage). Kanji entries also carry a `meaning`, other
+accepted readings (`alt`) and a kana reading for audio (`say`); that enables the `meaning` and `find`
+question modes. In the kanji course, the unit-order check applies to kanji only: sign words may contain any kana. The site picks the engine from the page's group in
 `LESSONS`. The home page (three tiles) is built in `showHome()` in `assets/app.js`. Pages embed exercises
 as fenced code blocks, which the website turns into interactive widgets (on GitHub they show as
 plain text):
@@ -92,7 +94,7 @@ plain text):
 | Block | Content | Purpose |
 |-------|---------|---------|
 | ` ```cards ` | `kana: かきくけこ` | Character cards with memory aid and audio |
-| ` ```practice ` | `kana:` targets, `mix:` earlier characters, `modes: see,pick,listen,type`, `count:`, optional `timer: 60` (speed round), `checkpoint: yes` (90% marks the unit complete), `title:` | Kana drill; adds the targets to the daily review |
+| ` ```practice ` | `kana:` targets, `mix:` earlier characters, `modes: see,pick,listen,type` (kanji also `meaning`, `find`), `count:`, optional `timer: 60` (speed round), `checkpoint: yes` (90% marks the unit complete), `title:` | Kana drill; adds the targets to the daily review |
 | ` ```words ` | rows `kana \| romaji \| meaning \| optional context`, optional `mode: listen` or `mode: meaning` (pick the meaning; needs 4+ words), `title:` | Read (type), listen-and-choose, or guess-the-meaning for real words |
 | ` ```station ` | rows `kana \| romaji \| kanji \| prev \| next`, optional `color:` | Read a station sign |
 | ` ```contrast ` | rows `き さ \| cue` | Look-alike discrimination |
