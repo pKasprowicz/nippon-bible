@@ -4,6 +4,25 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+- **Japanese cuisine handbook**, a fifth part of the site: a start page, 14 long-form chapters, a glossary, and a page of sources and image credits
+  - Part I, foundations and seasonings: umami chemistry, dashi, kōji, soy sauce and miso, mirin, vinegar and sake
+  - Part II, core techniques: raw fish (rigor, *ikejime*, the K value, *Anisakis* and freezing), frying and batter, marinating with kōji
+  - Part III, staples: rice, udon and soba, tofu
+  - Part IV, sweets and texture: bean paste, agar and yōkan; mochi and kuzu starch; Japanese texture vocabulary
+  - Every fact is cited from peer-reviewed research, official bodies (MAFF, EFSA) or producers' educational and technical bodies. Disagreements between sources are shown, and gaps in the evidence are named instead of filled
+  - A self-check quiz at the end of every chapter
+  - Freely licensed photos (public domain, CC0, CC BY, CC BY-SA), stored in the repository, each credited in its caption and on the credits page
+- A fifth, full-width home-page tile for the handbook, with chapters-read progress
+- A link from the Food & dishes lesson to the handbook
+
+### Changed
+- The content check covers the handbook: every chapter needs a source list and a quiz, each quiz question needs exactly one correct answer, and every image must exist, have alt text, be used, and be credited
+- The deploy check also requires the `cuisine/img/` folder
+- Pages can show figures: Markdown image paths are resolved relative to the page
+
 ## [1.9.0] - 2026-11-17
 
 ### Added

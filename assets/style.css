@@ -14,6 +14,7 @@
   --tile-hira: #2f5f9e;
   --tile-kata: #2f7d4f;
   --tile-kanji: #7b4b94;
+  --tile-cuisine: #94530f;
   --shadow: 0 1px 2px rgba(40, 30, 20, .06), 0 6px 24px rgba(40, 30, 20, .06);
   --radius: 14px;
   --sidebar-w: 268px;
@@ -27,14 +28,14 @@
     --bg: #15130f; --surface: #1e1b17; --surface-2: #27231e; --ink: #efe8dd; --ink-soft: #b2a898;
     --line: #36302a; --accent: #e5594c; --accent-ink: #1a0c0a; --accent-soft: #3a201c; --good: #6cc48f;
     --code-bg: #24201b; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 24px rgba(0,0,0,.25); color-scheme: dark;
-    --tile-guide: #e5594c; --tile-hira: #6f9fe0; --tile-kata: #6cc48f; --tile-kanji: #c39be0;
+    --tile-guide: #e5594c; --tile-hira: #6f9fe0; --tile-kata: #6cc48f; --tile-kanji: #c39be0; --tile-cuisine: #e3a35a;
   }
 }
 :root[data-theme="dark"] {
   --bg: #15130f; --surface: #1e1b17; --surface-2: #27231e; --ink: #efe8dd; --ink-soft: #b2a898;
   --line: #36302a; --accent: #e5594c; --accent-ink: #1a0c0a; --accent-soft: #3a201c; --good: #6cc48f;
   --code-bg: #24201b; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 24px rgba(0,0,0,.25); color-scheme: dark;
-    --tile-guide: #e5594c; --tile-hira: #6f9fe0; --tile-kata: #6cc48f; --tile-kanji: #c39be0;
+    --tile-guide: #e5594c; --tile-hira: #6f9fe0; --tile-kata: #6cc48f; --tile-kanji: #c39be0; --tile-cuisine: #e3a35a;
 }
 
 * { box-sizing: border-box; }
@@ -203,6 +204,15 @@ details[open] summary { border-bottom: 1px solid var(--line); margin-bottom: 8px
 .home-tile.tile-hiragana { --tile: var(--tile-hira); }
 .home-tile.tile-katakana { --tile: var(--tile-kata); }
 .home-tile.tile-kanji { --tile: var(--tile-kanji); }
+.home-tile.tile-cuisine { --tile: var(--tile-cuisine); grid-column: 1 / -1; min-height: 0; }
+@media (min-width: 721px) {
+  .home-tile.tile-cuisine { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 26px; align-content: start; }
+  .tile-cuisine .home-glyph { grid-row: 1 / span 7; margin-bottom: 0; }
+  .tile-cuisine > :not(.home-glyph) { grid-column: 2; }
+  .tile-cuisine .home-desc { max-width: 72ch; }
+  .tile-cuisine .home-cta { justify-self: start; }
+  .tile-cuisine .home-progress { max-width: 520px; }
+}
 .home-tile::before {
   content: ""; position: absolute; inset: 0 0 auto 0; height: 6px; background: var(--tile);
 }
@@ -550,3 +560,12 @@ kbd { font-family: var(--font-mono); font-size: 12px; border: 1px solid var(--li
   .content th, .content td { padding: 8px 10px; font-size: 14px; }
 }
 @media (prefers-reduced-motion: reduce) { .sidebar { transition: none; } }
+
+/* Figures (cuisine handbook) */
+.content figure { margin: 22px 0 26px; }
+.content figure img {
+  display: block; width: auto; max-width: 100%; height: auto; max-height: min(70vh, 640px); margin: 0 auto;
+  border-radius: 14px; border: 1px solid var(--line);
+}
+.content figcaption { margin-top: 8px; font-size: 13.5px; line-height: 1.5; color: var(--ink-soft); }
+.content figcaption .credit { display: block; margin-top: 2px; font-size: 12.5px; }

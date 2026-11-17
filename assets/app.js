@@ -5,7 +5,8 @@
     { id: 'course', title: 'Japan guide' },
     { id: 'hiragana', title: 'Hiragana course' },
     { id: 'katakana', title: 'Katakana course' },
-    { id: 'kanji', title: 'Kanji course' }
+    { id: 'kanji', title: 'Kanji course' },
+    { id: 'cuisine', title: 'Cuisine handbook' }
   ];
   var LESSONS = [
     { id: 'guide', file: 'lessons/00-guide.md', group: 'course', title: 'Overview', label: '★' },
@@ -49,7 +50,24 @@
     { id: 'kanji-7', file: 'kanji/07-toilets-onsen.md', group: 'kanji', title: 'Toilets, onsen and hotels' },
     { id: 'kanji-8', file: 'kanji/08-safety.md', group: 'kanji', title: 'Safety and rules' },
     { id: 'kanji-9', file: 'kanji/09-real-world.md', group: 'kanji', title: 'Real-world signs & final test' },
-    { id: 'kanji-review', file: 'kanji/10-review.md', group: 'kanji', title: 'Daily review', label: '↻' }
+    { id: 'kanji-review', file: 'kanji/10-review.md', group: 'kanji', title: 'Daily review', label: '↻' },
+    { id: 'cuisine', file: 'cuisine/00-start.md', group: 'cuisine', title: 'Start here', label: '★' },
+    { id: 'cuisine-1', file: 'cuisine/01-umami.md', group: 'cuisine', title: 'Umami' },
+    { id: 'cuisine-2', file: 'cuisine/02-dashi.md', group: 'cuisine', title: 'Dashi' },
+    { id: 'cuisine-3', file: 'cuisine/03-koji.md', group: 'cuisine', title: 'Kōji' },
+    { id: 'cuisine-4', file: 'cuisine/04-shoyu-miso.md', group: 'cuisine', title: 'Soy sauce and miso' },
+    { id: 'cuisine-5', file: 'cuisine/05-mirin-vinegar.md', group: 'cuisine', title: 'Mirin, vinegar and sake' },
+    { id: 'cuisine-6', file: 'cuisine/06-raw-fish.md', group: 'cuisine', title: 'Raw fish' },
+    { id: 'cuisine-7', file: 'cuisine/07-frying.md', group: 'cuisine', title: 'Frying' },
+    { id: 'cuisine-8', file: 'cuisine/08-koji-marinades.md', group: 'cuisine', title: 'Marinating with kōji' },
+    { id: 'cuisine-9', file: 'cuisine/09-rice.md', group: 'cuisine', title: 'Rice' },
+    { id: 'cuisine-10', file: 'cuisine/10-noodles.md', group: 'cuisine', title: 'Noodles' },
+    { id: 'cuisine-11', file: 'cuisine/11-tofu.md', group: 'cuisine', title: 'Tofu' },
+    { id: 'cuisine-12', file: 'cuisine/12-an-wagashi.md', group: 'cuisine', title: 'Bean paste, agar and yōkan' },
+    { id: 'cuisine-13', file: 'cuisine/13-mochi-starches.md', group: 'cuisine', title: 'Mochi and starch gels' },
+    { id: 'cuisine-14', file: 'cuisine/14-texture.md', group: 'cuisine', title: 'The language of texture' },
+    { id: 'cuisine-glossary', file: 'cuisine/15-glossary.md', group: 'cuisine', title: 'Glossary', label: 'A–Z', kind: 'Glossary' },
+    { id: 'cuisine-sources', file: 'cuisine/16-sources.md', group: 'cuisine', title: 'Sources and image credits', label: '§', kind: 'Sources' }
   ];
   // Number lessons within their group unless they have their own label.
   GROUPS.forEach(function (g) {
@@ -250,6 +268,14 @@
       if (/^https?:/.test(href)) { a.target = '_blank'; a.rel = 'noopener'; }
     });
   }
+  // Images in Markdown are written relative to the .md file; the page itself lives at the site root.
+  function rewriteImages(root, file) {
+    root.querySelectorAll('img[src]').forEach(function (img) {
+      var src = img.getAttribute('src');
+      if (!/^(https?:|data:|\/)/.test(src)) img.setAttribute('src', resolvePath(file, src));
+      img.loading = 'lazy'; img.decoding = 'async';
+    });
+  }
   function wrapTables(root) {
     root.querySelectorAll('table').forEach(function (t) {
       var wrap = el('div', { 'class': 'table-wrap' });
@@ -261,6 +287,7 @@
     var article = el('article');
     article.innerHTML = marked.parse(md, { gfm: true });
     rewriteLinks(article, pageKey, file);
+    rewriteImages(article, file);
     wrapTables(article);
     markSpeakable(article);
     var lesson = LESSONS.filter(function (l) { return l.id === pageKey; })[0];
@@ -272,7 +299,11 @@
     var i = LESSONS.findIndex(function (l) { return l.id === id; });
     var next = LESSONS[i + 1] && LESSONS[i + 1].group === LESSONS[i].group ? LESSONS[i + 1] : null;
     var btn = el('button', { 'class': 'btn' + (done[id] ? ' done' : ''), type: 'button' });
-    function label() { btn.textContent = done[id] ? '✓ Completed' : 'Mark lesson as completed'; btn.className = 'btn' + (done[id] ? ' done' : ''); }
+    var reading = id.indexOf('cuisine') === 0;
+    function label() {
+      btn.textContent = done[id] ? (reading ? '✓ Read' : '✓ Completed') : (reading ? 'Mark chapter as read' : 'Mark lesson as completed');
+      btn.className = 'btn' + (done[id] ? ' done' : '');
+    }
     label();
     btn.addEventListener('click', function () {
       done[id] = !done[id]; save('nb-done', done); label(); buildNav(); setCurrent(id);
@@ -280,12 +311,13 @@
     return el('div', {}, [el('div', { 'class': 'lesson-foot' }, [btn]), pager(id)]);
   }
 
-  /* ---------- previous / next in content order (guide → hiragana → katakana) ---------- */
+  /* ---------- previous / next in content order (guide → hiragana → katakana → kanji → cuisine) ---------- */
   function groupTitle(g) { return (GROUPS.filter(function (x) { return x.id === g; })[0] || {}).title || ''; }
   function pageKind(l) {
+    if (l.kind) return l.kind;
     if (l.label === '★') return l.group === 'course' ? 'Overview' : 'Start here';
     if (l.label === '↻') return 'Daily review';
-    return (l.group === 'course' ? 'Lesson ' : 'Unit ') + l.label;
+    return (l.group === 'course' ? 'Lesson ' : l.group === 'cuisine' ? 'Chapter ' : 'Unit ') + l.label;
   }
   function neighbours(id) {
     var i = LESSONS.findIndex(function (l) { return l.id === id; });
@@ -296,7 +328,7 @@
       return el('a', { 'class': 'pager-card ' + dir + ' home', href: '#/', rel: dir }, [
         el('span', { 'class': 'pager-dir', text: dir === 'prev' ? '← Previous' : 'Next →' }),
         el('span', { 'class': 'pager-title', text: 'Home' }),
-        el('span', { 'class': 'pager-meta', text: dir === 'prev' ? 'All four courses' : 'You\'ve reached the end. Back to all four courses' })
+        el('span', { 'class': 'pager-meta', text: dir === 'prev' ? 'All five sections' : 'You\'ve reached the end. Back to all five sections' })
       ]);
     }
     var crossing = target.group !== from.group;
@@ -304,7 +336,7 @@
       el('span', { 'class': 'pager-dir', text: dir === 'prev' ? '← Previous' : 'Next →' }),
       el('span', { 'class': 'pager-title', text: crossing ? groupTitle(target.group) : target.title }),
       el('span', { 'class': 'pager-meta', text: crossing
-        ? (dir === 'prev' ? 'Previous course · ' : 'Next course · ') + (pageKind(target) === target.title ? target.title : pageKind(target) + ': ' + target.title)
+        ? (dir === 'prev' ? 'Previous section · ' : 'Next section · ') + (pageKind(target) === target.title ? target.title : pageKind(target) + ': ' + target.title)
         : groupTitle(target.group) + ' · ' + pageKind(target) })
     ]);
   }
@@ -503,9 +535,9 @@
     });
   }
 
-  /* ---------- home: three tiles ---------- */
+  /* ---------- home: five tiles ---------- */
   function groupProgress(group) {
-    var pages = LESSONS.filter(function (l) { return l.group === group && l.label !== '★' && l.label !== '↻'; });
+    var pages = LESSONS.filter(function (l) { return l.group === group && l.label !== '★' && l.label !== '↻' && !l.kind; });
     var doneCount = pages.filter(function (l) { return done[l.id]; }).length;
     var next = pages.filter(function (l) { return !done[l.id]; })[0];
     return { total: pages.length, done: doneCount, next: next };
@@ -538,13 +570,24 @@
       cta: !started ? 'Start learning' : g.next ? 'Continue: unit ' + g.next.label : 'Review and play'
     });
   }
+  function cuisineTile() {
+    var g = groupProgress('cuisine');
+    return tile({
+      id: 'cuisine', glyph: '食', kicker: 'Technique handbook', title: 'Japanese cuisine',
+      desc: 'How Japanese food gets its taste and texture: umami and dashi, kōji and fermented seasonings, raw fish, frying, rice, noodles, tofu, wagashi and mochi. Long-form chapters built only on cited research and official sources.',
+      examples: '出汁 · 麹 · 味噌 · 豆腐',
+      href: !g.done ? '#/cuisine' : g.next ? '#/' + g.next.id : '#/cuisine-glossary',
+      value: g.done, total: g.total, progressLabel: g.done + ' of ' + g.total + ' chapters read',
+      cta: !g.done ? 'Open the handbook' : g.next ? 'Continue: chapter ' + g.next.label : 'Browse the glossary'
+    });
+  }
   function showHome() {
     var guide = groupProgress('course');
     var article = el('article', { 'class': 'home' }, [
       el('header', { 'class': 'home-hero' }, [
         el('p', { 'class': 'home-hero-kicker' }, [el('span', { lang: 'ja', text: '日本へようこそ' }), ' · welcome to Japan']),
         el('h1', { text: 'Japanese for your trip' }),
-        el('p', { 'class': 'home-lead', text: 'Four ways in. Get the practical know-how for travelling in Japan, then learn to read the scripts on every sign, menu and station board: hiragana, katakana and the most common kanji.' })
+        el('p', { 'class': 'home-lead', text: 'Five ways in. Get the practical know-how for travelling in Japan, learn to read the scripts on every sign, menu and station board, then go deeper into how Japanese food is made.' })
       ]),
       el('div', { 'class': 'home-tiles' }, [
         tile({
@@ -556,7 +599,8 @@
         }),
         kanaTile('hiragana', 'あ', 'Hiragana course', 'The native script: grammar, food words, station names and the ゆ on onsen curtains.', 'えき · すし · ありがとう'),
         kanaTile('katakana', 'ア', 'Katakana course', 'The script for foreign words. Menus, shops and signs are full of them, and you already know most of the words.', 'ホテル · コーヒー · タクシー'),
-        kanaTile('kanji', '漢', 'Kanji course', 'The 95 kanji on signs in stations, restaurants, shops, toilets and onsen: what they mean and how to read them.', '出口 · 駅 · 禁煙')
+        kanaTile('kanji', '漢', 'Kanji course', 'The 95 kanji on signs in stations, restaurants, shops, toilets and onsen: what they mean and how to read them.', '出口 · 駅 · 禁煙'),
+        cuisineTile()
       ]),
       el('p', { 'class': 'home-foot' }, [
         'Tip: tap any Japanese text to hear it. Quick practice: ',
