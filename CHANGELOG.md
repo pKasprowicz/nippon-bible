@@ -4,7 +4,7 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [1.12.0] - 2026-11-17
 
 ### Added
 - **Molecule diagrams in the cuisine handbook**: seven structural diagrams drawn from PubChem records, each with a cited caption and the relevant group highlighted
