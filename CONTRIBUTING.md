@@ -96,6 +96,21 @@ The handbook lives in `cuisine/NN-name.md` (`00-start.md`, chapters `01`–`14`,
   Then add the image to the **Image credits** table in `16-sources.md`. `scripts/check-content.mjs`
   fails if an image is missing, unused, without alt text, or not credited.
 
+## Offline app (PWA)
+
+The site is an installable web app that works offline:
+
+- `manifest.webmanifest` and `assets/icons/` make it installable (Android Chrome turns it into an app
+  with a launcher icon; iOS uses *Add to Home Screen*).
+- `sw.js` is a service worker. On install it saves every file listed in `precache.json`, then serves
+  the site from that cache; Google Fonts are cached as they are used.
+- The deploy runs `node scripts/build-offline.mjs _site`, which writes `precache.json` (every published
+  file) and stamps `BUILD = '__BUILD__'` in `sw.js` with a hash of the content. Any content change gives
+  a new service worker; it downloads the new version in the background and the page shows a
+  *Reload* bar. Keep the placeholder in `sw.js`, and don't commit `precache.json`.
+- New files and folders are picked up automatically. To try it locally, copy the published files to a
+  folder, run the script on that folder and serve it (service workers need `localhost` or HTTPS).
+
 ## Progress and sync
 
 All progress is in `localStorage`: `nb-done` (completed pages), `nb-hira`, `nb-kata` and `nb-kanji` (review deck, game stats,
