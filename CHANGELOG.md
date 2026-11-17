@@ -4,7 +4,7 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [1.11.0] - 2026-11-17
 
 ### Added
 - **Use it offline, as an app**: the whole site (every lesson, course, game, quiz and the cuisine handbook with its photos, about 3 MB) is saved on the device on the first visit and then works with no connection
