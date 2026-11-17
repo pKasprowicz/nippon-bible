@@ -71,6 +71,31 @@ python3 -m http.server 8000
 - The flashcard drill reads the kana chart and the `| Sign | Reading | Meaning |` tables in
   `lessons/02-writing.md`. Keep that table format if you edit them.
 
+## Cuisine handbook
+
+The handbook lives in `cuisine/NN-name.md` (`00-start.md`, chapters `01`–`14`, `15-glossary.md`,
+`16-sources.md`). Its rules are stricter than the language courses':
+
+- **Only checked sources.** Every factual statement needs a citation, such as `(Kurihara 2015)`, to a
+  source in the chapter's `## Sources for this chapter` list. Use peer-reviewed research
+  (J-STAGE, PubMed Central, journals), official bodies (MAFF, EFSA…) or producers' technical and
+  educational bodies. Don't cite Wikipedia, blogs or recipe sites. If a source is only an abstract,
+  say so in the list. Add new sources to `16-sources.md` too.
+- **Don't fill gaps.** When the sources disagree, give both. When they say nothing, say so.
+- **Each chapter ends** with a ` ```quiz ` block (one answer marked `*` per question) and its source list.
+- **Images** go in `cuisine/img/` and must be public domain, CC0, CC BY or CC BY-SA. Write them as HTML
+  so the caption can carry the credit:
+
+  ```html
+  <figure>
+  <img src="img/kombu-drying.jpg" alt="What the photo shows">
+  <figcaption>Caption. <span class="credit">Photo: Author, <a href="…">CC BY-SA 4.0</a>, via <a href="…">Wikimedia Commons</a>.</span></figcaption>
+  </figure>
+  ```
+
+  Then add the image to the **Image credits** table in `16-sources.md`. `scripts/check-content.mjs`
+  fails if an image is missing, unused, without alt text, or not credited.
+
 ## Progress and sync
 
 All progress is in `localStorage`: `nb-done` (completed pages), `nb-hira`, `nb-kata` and `nb-kanji` (review deck, game stats,

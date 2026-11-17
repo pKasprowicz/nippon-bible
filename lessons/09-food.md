@@ -744,4 +744,8 @@ take the waiter outside and point: *Kore o kudasai* (this one, please).
 
 </details>
 
+Want to know *how* these dishes get their taste and texture? The
+[Japanese cuisine handbook](../cuisine/00-start.md) explains dashi, kōji, soy sauce, miso,
+rice, noodles, tofu and wagashi in depth, with sources.
+
 ➡️ Next: [Lesson 10: Cheat sheet & self-test](10-cheat-sheet.md)
