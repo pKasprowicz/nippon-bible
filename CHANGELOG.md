@@ -4,6 +4,18 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.8.0] - 2026-11-17
+
+### Added
+- **Sync progress** page (sidebar and home page): move your progress between devices without an account or server
+  - Send it as a transfer link (copy or the phone share sheet) or as a downloaded file; receive it by opening the link, pasting it, or opening the file
+  - The progress travels inside the link's `#` fragment, which browsers never send to a server, so nothing is uploaded anywhere
+  - A preview shows what the link contains before anything changes; importing merges with this device's progress. Completed pages: done on either device counts. Review items: the most recently practised copy wins. Game stats: more answers wins. Best scores: higher wins. Streak days: combined
+  - Damaged or cut-off links, and files from a newer version, get a clear message instead of a failed import
+
+### Changed
+- Review items now record when they were last practised (`last`), and saved progress carries a format version (`v: 2`). Older progress keeps working.
+
 ## [1.7.0] - 2026-11-16
 
 ### Added
@@ -120,6 +132,7 @@ First public release of the Japanese survival course for European travellers.
 - Git flow branching model (see `CONTRIBUTING.md`)
 - GitHub Actions: Pages deployment from `main`, and a GitHub release for each `v*` tag
 
+[1.8.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.8.0
 [1.7.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.7.0
 [1.6.1]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.6.1
 [1.6.0]: https://github.com/pKasprowicz/nippon-bible/releases/tag/v1.6.0

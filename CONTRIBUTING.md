@@ -71,6 +71,14 @@ python3 -m http.server 8000
 - The flashcard drill reads the kana chart and the `| Sign | Reading | Meaning |` tables in
   `lessons/02-writing.md`. Keep that table format if you edit them.
 
+## Progress and sync
+
+All progress is in `localStorage`: `nb-done` (completed pages), `nb-hira` and `nb-kata` (review deck, game stats,
+best scores, streak days; format `v: 2`), plus per-device preferences `nb-theme` and `nb-deck`.
+`assets/progress.js` packs the first three into a compact, deflate-compressed, base64url code for transfer links
+(`#/import/<code>`) and files, and merges imports. If you add a field to saved progress, add it to the
+compact form and the merge rules there too, and bump the format version if old codes can't express it.
+
 ## Kana course exercises
 
 Character data (readings, memory aids, look-alikes, which unit teaches what, the grid layout)

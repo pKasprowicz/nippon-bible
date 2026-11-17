@@ -49,7 +49,7 @@ modes: type,listen,type
 
 ## Start over
 
-Progress is stored only in this browser. Resetting deletes your review deck, best scores
+Progress is stored only in this browser (use [Sync progress](#/progress) to copy it to another device). Resetting deletes your review deck, best scores
 and streak on this device.
 
 ```reset

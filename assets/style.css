@@ -429,6 +429,23 @@ details[open] summary { border-bottom: 1px solid var(--line); margin-bottom: 8px
 .ja.speaking { background: var(--accent); color: var(--accent-ink); text-decoration: none; }
 
 /* Lesson footer */
+/* Sync progress page */
+.sync-box { margin: 22px 0; padding: 18px 20px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface-2); }
+.content .sync-box h2 { margin: 0 0 10px; padding: 0; border: 0; font-size: 21px; }
+.sync-list { margin: 6px 0; padding-left: 1.2em; }
+.sync-code {
+  display: block; width: 100%; margin-top: 10px; padding: 10px 12px; border: 1.5px solid var(--line); border-radius: 12px;
+  background: var(--surface); color: var(--ink); font: 13px/1.4 var(--font-mono); resize: vertical; word-break: break-all;
+}
+.sync-code[hidden] { display: none; }
+.sync-status { margin: 10px 0 0; font-size: 15px; }
+.sync-status:empty { display: none; }
+.sync-error { margin: 10px 0 0; color: var(--accent); font-weight: 600; }
+.sync-incoming, .sync-result { margin-top: 14px; padding: 14px 16px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); }
+.sync-file-label { position: relative; overflow: hidden; }
+.sync-file { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+.sync-file:focus-visible + * , .sync-file-label:focus-within { outline: 2px solid var(--accent); outline-offset: 2px; }
+
 /* Previous / next */
 .pager-top {
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 14px;
