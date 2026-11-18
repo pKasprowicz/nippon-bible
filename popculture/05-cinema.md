@@ -171,7 +171,7 @@ Japanese films then won back their home audience. In 2006, Japanese films earned
 | 2022 (Academy Awards) | *Drive My Car* | Best International Feature Film (Eiren, n.d.-b) |
 | 2024 (Academy Awards) | *Godzilla Minus One* | Best Visual Effects (Chapter 6) (Eiren, n.d.-b) |
 
-**Hamaguchi's table readings.** *Drive My Car* contains a strange rehearsal scene. An international cast sits around a table reading a play in several languages, flatly, without expression (*bō-yomi*), and knocking on the table after each line. The actor Yamauchi Kenji explains it as Hamaguchi's trademark ***hon-yomi*** (script reading). Hamaguchi developed the method while making *[Happy Hour](https://en.wikipedia.org/wiki/Happy_Hour_(2015_film))*, modelled on the "Italian method" of reading recorded in a film about [Jean Renoir](https://en.wikipedia.org/wiki/Jean_Renoir)'s direction of actors (Yamauchi 2022).
+**Hamaguchi's table readings.** *Drive My Car* contains a strange rehearsal scene. An international cast sits around a table reading a play in several languages, flatly, without expression (*bō-yomi*), and knocking on the table after each line. The actor Yamauchi Kenji explains it as Hamaguchi's trademark ***hon-yomi*** (script reading). Hamaguchi developed the method while making *[Happy Hour](https://en.wikipedia.org/wiki/Happy_Hour_(2015_Japanese_film))*, modelled on the "Italian method" of reading recorded in a film about [Jean Renoir](https://en.wikipedia.org/wiki/Jean_Renoir)'s direction of actors (Yamauchi 2022).
 
 ### *Kokuhō*: an ambitious live-action hit
 

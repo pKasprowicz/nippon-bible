@@ -68,7 +68,7 @@ He also notes a habit that sounds very modern: medieval court women who read pic
 
 Mass entertainment on paper needed things the medieval world lacked: a buying public, money and a distribution network. These arrived in the [Edo period](https://en.wikipedia.org/wiki/Edo_period) (1603–1868), as Kyoto, Osaka and then Edo grew into great commercial cities (Hosogaya 2019).
 
-- **The first illustrated commercial book.** In the early seventeenth century, the Kyoto merchant Suminokura Soan financed the *[Saga-bon](https://en.wikipedia.org/wiki/Saga-bon)*. These were luxurious printed editions of the classics, with type based on [Hon'ami Kōetsu](https://en.wikipedia.org/wiki/Hon%27ami_K%C5%8Detsu)'s calligraphy. The Saga-bon *Ise monogatari* was the first in the series to include woodblock illustrations. It was reprinted so often that the printers switched from movable type to cheaper whole-page woodblocks.
+- **The first illustrated commercial book.** In the early seventeenth century, the Kyoto merchant Suminokura Soan financed the *Saga-bon*. These were luxurious printed editions of the classics, with type based on [Hon'ami Kōetsu](https://en.wikipedia.org/wiki/Hon%27ami_K%C5%8Detsu)'s calligraphy. The Saga-bon *Ise monogatari* was the first in the series to include woodblock illustrations. It was reprinted so often that the printers switched from movable type to cheaper whole-page woodblocks.
 - **Toba-e books.** From the 1720s, first in Kyoto, books made entirely of humorous drawings sold enormously all over Japan. Their figures had faces reduced to dots and lines and absurdly long arms and legs. The name *toba-e* ("Toba pictures") honours Toba Sōjō, and until the Meiji period it was a more common word than *manga* for this kind of drawing. The French caricaturist [Georges Bigot](https://en.wikipedia.org/wiki/Georges_Ferdinand_Bigot), who worked in Meiji Japan, even called his magazine *TOBAE*.
 - **Characters before manga.** Ōtsu-e, hand-painted souvenir pictures sold to travellers near Kyoto, featured humorous monkeys and oni. At the end of the seventeenth century, the puppet-theatre hero Kinpira became a popular subject with his own bold drawing style (Hosogaya 2019).
 
@@ -76,7 +76,7 @@ Mass entertainment on paper needed things the medieval world lacked: a buying pu
 
 The most manga-like books of the Edo period were the ***[kibyōshi](https://en.wikipedia.org/wiki/Kiby%C5%8Dshi)*** ("yellow covers"). They were satirical stories for adults in which text and picture worked together on every page. The genre grew out of *akahon* ("red books"), illustrated stories for children, and suddenly raised them to an adult level (Hosogaya 2019).
 
-- The book that started the boom was *[Kinkin sensei eiga no yume](https://en.wikipedia.org/wiki/Kinkin_sensei_eiga_no_yume)* by [Koikawa Harumachi](https://en.wikipedia.org/wiki/Koikawa_Harumachi), who wrote the text and drew the pictures. Its nonsense gags come from the interplay of text and image. It has no panels and no balloons, but Hosogaya calls it a work that "can be called a gag manga of the Edo period".
+- The book that started the boom was *Kinkin sensei eiga no yume* by Koikawa Harumachi, who wrote the text and drew the pictures. Its nonsense gags come from the interplay of text and image. It has no panels and no balloons, but Hosogaya calls it a work that "can be called a gag manga of the Edo period".
 - The publisher [Tsutaya Jūzaburō](https://en.wikipedia.org/wiki/Tsutaya_J%C5%ABzabur%C5%8D) used popular writers such as [Santō Kyōden](https://en.wikipedia.org/wiki/Sant%C5%8D_Ky%C5%8Dden). Kyōden also drew under the name Kitao Masanobu and invented the characters *zendama* and *akudama*, a "good spirit" and an "evil spirit" who steer the human heart. They became a craze.
 - **Censorship ended the boom.** The books began to carry criticism of the shogunate, and some authors were samurai. The authorities cracked down, and publishers and print artists were severely punished (Hosogaya 2019).
 
@@ -118,7 +118,7 @@ The Met's set of all fifteen volumes is dated 1814–78. The first volume appear
 
 Hosogaya argues that Hokusai's real link to modern manga lies elsewhere: in his roughly **1,400 illustrated books**. In them he invented ways to draw what the eye cannot see (Hosogaya 2019):
 
-- **Explosions and flashes of light**, drawn as radiating lines, for example in [Takizawa Bakin](https://en.wikipedia.org/wiki/Kyokutei_Bakin)'s novel *[Chinsetsu yumiharizuki](https://en.wikipedia.org/wiki/Chinsetsu_Yumiharizuki)*.
+- **Explosions and flashes of light**, drawn as radiating lines, for example in [Takizawa Bakin](https://en.wikipedia.org/wiki/Kyokutei_Bakin)'s novel *Chinsetsu yumiharizuki*.
 - **Ghosts and other things that should not exist**, given form purely through line.
 - **Bloody battles and spectacular action** (Hosogaya 2019).
 
@@ -160,7 +160,7 @@ For comparison, Hosogaya traces the Western line (Hosogaya 2019):
 - [Wilhelm Busch](https://en.wikipedia.org/wiki/Wilhelm_Busch)'s *[Max und Moritz](https://en.wikipedia.org/wiki/Max_and_Moritz)* in Germany.
 - The American newspaper strip, above all *[The Yellow Kid](https://en.wikipedia.org/wiki/The_Yellow_Kid)*, which had everything modern manga has: panels, speech balloons, a popular character, serialisation in mass media and merchandising.
 
-In Japan, [Okamoto Ippei](https://en.wikipedia.org/wiki/Ippei_Okamoto) of the *Asahi* newspaper set the style of *manga manbun*, illustrated humorous reportage. He organised cartoonists' associations and events, raised their social standing and, by one account, was better known than the prime minister. After the 1923 earthquake, Asō Yutaka's newspaper strip *Nonki na tōsan* ("Easygoing Dad") and the children's strip *Shō-chan no bōken* ("The Adventures of Shō-chan") became hits, with films, stage versions and merchandise. Both characters were modelled on *Bringing Up Father*, an American strip by George McManus that ran in translation in Japanese newspapers. "The start of Japanese panel manga took place under Western influence" (Hosogaya 2019).
+In Japan, [Okamoto Ippei](https://en.wikipedia.org/wiki/Okamoto_Ippei) of the *Asahi* newspaper set the style of *manga manbun*, illustrated humorous reportage. He organised cartoonists' associations and events, raised their social standing and, by one account, was better known than the prime minister. After the 1923 earthquake, Asō Yutaka's newspaper strip *Nonki na tōsan* ("Easygoing Dad") and the children's strip *Shō-chan no bōken* ("The Adventures of Shō-chan") became hits, with films, stage versions and merchandise. Both characters were modelled on *Bringing Up Father*, an American strip by George McManus that ran in translation in Japanese newspapers. "The start of Japanese panel manga took place under Western influence" (Hosogaya 2019).
 
 ## 1.7 Norakuro, and what Tezuka changed
 

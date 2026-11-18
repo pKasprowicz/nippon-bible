@@ -31,7 +31,7 @@ Japanese terms used in this handbook. The chapter where each is explained is giv
 | ***madoguchi*** | "Window": a committee member's area of business | 3 |
 | ***manga eiga*** | "Manga film": the prewar word for animated film | 3 |
 | ***[media mix](https://en.wikipedia.org/wiki/Media_mix)*** | Linking manga, anime, games and goods around one work | 3, 7 |
-| ***[seisaku iinkai](https://en.wikipedia.org/wiki/Production_committee)*** | Production committee | 3, 5 |
+| ***seisaku iinkai*** | Production committee | 3, 5 |
 | ***[tokusatsu](https://en.wikipedia.org/wiki/Tokusatsu)*** | Special effects; special-effects films and TV | 6 |
 | ***utsushi-e*** | Japanese magic-lantern show, from 1803 | 5 |
 

@@ -52,7 +52,7 @@ Television animation tied manga, anime and merchandise together. Rimmer describe
 
 ## 3.4 How an anime series is financed today
 
-Most television anime today is financed by a ***[production committee](https://en.wikipedia.org/wiki/Production_committee)*** (*seisaku iinkai*). Yoshimi Aki studied the system through published research and an interview with a producer at a major publisher (Yoshimi 2023):
+Most television anime today is financed by a ***production committee*** (*seisaku iinkai*). Yoshimi Aki studied the system through published research and an interview with a producer at a major publisher (Yoshimi 2023):
 
 - **Legal form.** A production committee is a **voluntary partnership** (*nin'i kumiai*) under Article 668 of Japan's Civil Code. Several investors raise the money to make one work and **share its copyright**. Revenue from the finished work is divided according to each member's share of the investment.
 - **Members.** Investors typically include publishers, animation studios, video companies, music companies, game companies, toy companies and advertising agencies. Publishers are often involved because much anime adapts a manga or novel, and the publisher manages the original author's rights.
