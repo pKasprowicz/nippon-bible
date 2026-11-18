@@ -6,7 +6,8 @@
     { id: 'hiragana', title: 'Hiragana course' },
     { id: 'katakana', title: 'Katakana course' },
     { id: 'kanji', title: 'Kanji course' },
-    { id: 'cuisine', title: 'Cuisine handbook' }
+    { id: 'cuisine', title: 'Cuisine handbook' },
+    { id: 'folklore', title: 'Folklore handbook' }
   ];
   var LESSONS = [
     { id: 'guide', file: 'lessons/00-guide.md', group: 'course', title: 'Overview', label: '★' },
@@ -67,7 +68,23 @@
     { id: 'cuisine-13', file: 'cuisine/13-mochi-starches.md', group: 'cuisine', title: 'Mochi and starch gels' },
     { id: 'cuisine-14', file: 'cuisine/14-texture.md', group: 'cuisine', title: 'The language of texture' },
     { id: 'cuisine-glossary', file: 'cuisine/15-glossary.md', group: 'cuisine', title: 'Glossary', label: 'A–Z', kind: 'Glossary' },
-    { id: 'cuisine-sources', file: 'cuisine/16-sources.md', group: 'cuisine', title: 'Sources and image credits', label: '§', kind: 'Sources' }
+    { id: 'cuisine-sources', file: 'cuisine/16-sources.md', group: 'cuisine', title: 'Sources and image credits', label: '§', kind: 'Sources' },
+    { id: 'folklore', file: 'folklore/00-start.md', group: 'folklore', title: 'Start here', label: '★' },
+    { id: 'folklore-1', file: 'folklore/01-kami.md', group: 'folklore', title: 'Kami and the word “Shinto”' },
+    { id: 'folklore-2', file: 'folklore/02-myths.md', group: 'folklore', title: 'Myths and the Land of Yomi' },
+    { id: 'folklore-3', file: 'folklore/03-purity.md', group: 'folklore', title: 'Pollution and purification' },
+    { id: 'folklore-4', file: 'folklore/04-kami-buddhas.md', group: 'folklore', title: 'Kami and buddhas together' },
+    { id: 'folklore-5', file: 'folklore/05-separation.md', group: 'folklore', title: 'The separation of 1868' },
+    { id: 'folklore-6', file: 'folklore/06-ancestors.md', group: 'folklore', title: 'Ancestors, Bon and the afterlife' },
+    { id: 'folklore-7', file: 'folklore/07-vengeful.md', group: 'folklore', title: 'Vengeful spirits' },
+    { id: 'folklore-8', file: 'folklore/08-yurei.md', group: 'folklore', title: 'How the yūrei took shape' },
+    { id: 'folklore-9', file: 'folklore/09-ghost-types.md', group: 'folklore', title: 'A field guide to ghosts' },
+    { id: 'folklore-10', file: 'folklore/10-yokai.md', group: 'folklore', title: 'What a yōkai is' },
+    { id: 'folklore-11', file: 'folklore/11-night-parade.md', group: 'folklore', title: 'Night parades and tool spirits' },
+    { id: 'folklore-12', file: 'folklore/12-bestiary.md', group: 'folklore', title: 'A yōkai bestiary' },
+    { id: 'folklore-13', file: 'folklore/13-yokai-today.md', group: 'folklore', title: 'Yōkai in modern Japan' },
+    { id: 'folklore-glossary', file: 'folklore/14-glossary.md', group: 'folklore', title: 'Glossary', label: 'A–Z', kind: 'Glossary' },
+    { id: 'folklore-sources', file: 'folklore/15-sources.md', group: 'folklore', title: 'Sources and image credits', label: '§', kind: 'Sources' }
   ];
   // Number lessons within their group unless they have their own label.
   GROUPS.forEach(function (g) {
@@ -313,7 +330,7 @@
     var i = LESSONS.findIndex(function (l) { return l.id === id; });
     var next = LESSONS[i + 1] && LESSONS[i + 1].group === LESSONS[i].group ? LESSONS[i + 1] : null;
     var btn = el('button', { 'class': 'btn' + (done[id] ? ' done' : ''), type: 'button' });
-    var reading = id.indexOf('cuisine') === 0;
+    var reading = id.indexOf('cuisine') === 0 || id.indexOf('folklore') === 0;
     function label() {
       btn.textContent = done[id] ? (reading ? '✓ Read' : '✓ Completed') : (reading ? 'Mark chapter as read' : 'Mark lesson as completed');
       btn.className = 'btn' + (done[id] ? ' done' : '');
@@ -325,13 +342,13 @@
     return el('div', {}, [el('div', { 'class': 'lesson-foot' }, [btn]), pager(id)]);
   }
 
-  /* ---------- previous / next in content order (guide → hiragana → katakana → kanji → cuisine) ---------- */
+  /* ---------- previous / next in content order (guide → hiragana → katakana → kanji → cuisine → folklore) ---------- */
   function groupTitle(g) { return (GROUPS.filter(function (x) { return x.id === g; })[0] || {}).title || ''; }
   function pageKind(l) {
     if (l.kind) return l.kind;
     if (l.label === '★') return l.group === 'course' ? 'Overview' : 'Start here';
     if (l.label === '↻') return 'Daily review';
-    return (l.group === 'course' ? 'Lesson ' : l.group === 'cuisine' ? 'Chapter ' : 'Unit ') + l.label;
+    return (l.group === 'course' ? 'Lesson ' : (l.group === 'cuisine' || l.group === 'folklore') ? 'Chapter ' : 'Unit ') + l.label;
   }
   function neighbours(id) {
     var i = LESSONS.findIndex(function (l) { return l.id === id; });
@@ -342,7 +359,7 @@
       return el('a', { 'class': 'pager-card ' + dir + ' home', href: '#/', rel: dir }, [
         el('span', { 'class': 'pager-dir', text: dir === 'prev' ? '← Previous' : 'Next →' }),
         el('span', { 'class': 'pager-title', text: 'Home' }),
-        el('span', { 'class': 'pager-meta', text: dir === 'prev' ? 'All five sections' : 'You\'ve reached the end. Back to all five sections' })
+        el('span', { 'class': 'pager-meta', text: dir === 'prev' ? 'All six sections' : 'You\'ve reached the end. Back to all six sections' })
       ]);
     }
     var crossing = target.group !== from.group;
@@ -549,7 +566,7 @@
     });
   }
 
-  /* ---------- home: five tiles ---------- */
+  /* ---------- home: six tiles ---------- */
   function groupProgress(group) {
     var pages = LESSONS.filter(function (l) { return l.group === group && l.label !== '★' && l.label !== '↻' && !l.kind; });
     var doneCount = pages.filter(function (l) { return done[l.id]; }).length;
@@ -595,6 +612,17 @@
       cta: !g.done ? 'Open the handbook' : g.next ? 'Continue: chapter ' + g.next.label : 'Browse the glossary'
     });
   }
+  function folkloreTile() {
+    var g = groupProgress('folklore');
+    return tile({
+      id: 'folklore', glyph: '妖', kicker: 'Folklore handbook', title: 'Kami, ghosts and yōkai',
+      desc: 'Shinto and its kami, how they merged with the buddhas and were torn apart in 1868, the dead and the ancestors, the many kinds of Japanese ghost and where they come from, and a separate part on yōkai. Long-form chapters built on cited scholarship and old texts, illustrated with woodblock prints, painted scrolls and diagrams.',
+      examples: '神 · 幽霊 · 妖怪 · 河童',
+      href: !g.done ? '#/folklore' : g.next ? '#/' + g.next.id : '#/folklore-glossary',
+      value: g.done, total: g.total, progressLabel: g.done + ' of ' + g.total + ' chapters read',
+      cta: !g.done ? 'Open the handbook' : g.next ? 'Continue: chapter ' + g.next.label : 'Browse the glossary'
+    });
+  }
   function homeOffline() {
     var line = el('p', { 'class': 'home-foot home-offline' });
     function refresh() {
@@ -614,7 +642,7 @@
       el('header', { 'class': 'home-hero' }, [
         el('p', { 'class': 'home-hero-kicker' }, [el('span', { lang: 'ja', text: '日本へようこそ' }), ' · welcome to Japan']),
         el('h1', { text: 'Japanese for your trip' }),
-        el('p', { 'class': 'home-lead', text: 'Five ways in. Get the practical know-how for travelling in Japan, learn to read the scripts on every sign, menu and station board, then go deeper into how Japanese food is made.' })
+        el('p', { 'class': 'home-lead', text: 'Six ways in. Get the practical know-how for travelling in Japan, learn to read the scripts on every sign, menu and station board, then go deeper into how Japanese food is made and into the kami, ghosts and yōkai of Japanese belief.' })
       ]),
       el('div', { 'class': 'home-tiles' }, [
         tile({
@@ -627,7 +655,8 @@
         kanaTile('hiragana', 'あ', 'Hiragana course', 'The native script: grammar, food words, station names and the ゆ on onsen curtains.', 'えき · すし · ありがとう'),
         kanaTile('katakana', 'ア', 'Katakana course', 'The script for foreign words. Menus, shops and signs are full of them, and you already know most of the words.', 'ホテル · コーヒー · タクシー'),
         kanaTile('kanji', '漢', 'Kanji course', 'The 95 kanji on signs in stations, restaurants, shops, toilets and onsen: what they mean and how to read them.', '出口 · 駅 · 禁煙'),
-        cuisineTile()
+        cuisineTile(),
+        folkloreTile()
       ]),
       el('p', { 'class': 'home-foot' }, [
         'Tip: tap any Japanese text to hear it. Quick practice: ',
@@ -958,7 +987,7 @@
     }
     article.append(
       el('h1', { text: 'Install & use offline' }),
-      el('p', { text: 'The whole site (every lesson, course, game, quiz and the cuisine handbook with its photos) is saved on your device the first time you open it. After that it works with no connection: on the plane, on the subway, or with no roaming data.' }),
+      el('p', { text: 'The whole site (every lesson, course, game, quiz and both handbooks with their pictures) is saved on your device the first time you open it. After that it works with no connection: on the plane, on the subway, or with no roaming data.' }),
       el('section', { 'class': 'sync-box' }, [el('h2', { text: 'On this device' }), status, details]),
       el('section', { 'class': 'sync-box' }, [
         el('h2', { text: 'Android' }),
