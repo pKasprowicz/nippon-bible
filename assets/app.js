@@ -7,7 +7,8 @@
     { id: 'katakana', title: 'Katakana course' },
     { id: 'kanji', title: 'Kanji course' },
     { id: 'cuisine', title: 'Cuisine handbook' },
-    { id: 'folklore', title: 'Folklore handbook' }
+    { id: 'folklore', title: 'Folklore handbook' },
+    { id: 'popculture', title: 'Pop culture handbook' }
   ];
   var LESSONS = [
     { id: 'guide', file: 'lessons/00-guide.md', group: 'course', title: 'Overview', label: '★' },
@@ -84,7 +85,24 @@
     { id: 'folklore-12', file: 'folklore/12-bestiary.md', group: 'folklore', title: 'A yōkai bestiary' },
     { id: 'folklore-13', file: 'folklore/13-yokai-today.md', group: 'folklore', title: 'Yōkai in modern Japan' },
     { id: 'folklore-glossary', file: 'folklore/14-glossary.md', group: 'folklore', title: 'Glossary', label: 'A–Z', kind: 'Glossary' },
-    { id: 'folklore-sources', file: 'folklore/15-sources.md', group: 'folklore', title: 'Sources and image credits', label: '§', kind: 'Sources' }
+    { id: 'folklore-sources', file: 'folklore/15-sources.md', group: 'folklore', title: 'Sources and image credits', label: '§', kind: 'Sources' },
+    { id: 'popculture', file: 'popculture/00-start.md', group: 'popculture', title: 'Start here', label: '★' },
+    { id: 'popculture-1', file: 'popculture/01-edo-roots.md', group: 'popculture', title: 'Before manga: scrolls, books and prints' },
+    { id: 'popculture-2', file: 'popculture/02-manga.md', group: 'popculture', title: 'Manga' },
+    { id: 'popculture-3', file: 'popculture/03-anime.md', group: 'popculture', title: 'Anime' },
+    { id: 'popculture-4', file: 'popculture/04-shorthand.md', group: 'popculture', title: 'Symbols and stock voices' },
+    { id: 'popculture-5', file: 'popculture/05-cinema.md', group: 'popculture', title: 'Cinema beyond monsters' },
+    { id: 'popculture-6', file: 'popculture/06-kaiju.md', group: 'popculture', title: 'Monsters and special effects' },
+    { id: 'popculture-7', file: 'popculture/07-games.md', group: 'popculture', title: 'Video games' },
+    { id: 'popculture-8', file: 'popculture/08-music.md', group: 'popculture', title: 'Music' },
+    { id: 'popculture-9', file: 'popculture/09-kawaii.md', group: 'popculture', title: 'Kawaii and character culture' },
+    { id: 'popculture-10', file: 'popculture/10-otaku.md', group: 'popculture', title: 'Otaku and fandom' },
+    { id: 'popculture-11', file: 'popculture/11-sacred.md', group: 'popculture', title: 'Pop culture, religion and folklore' },
+    { id: 'popculture-12', file: 'popculture/12-cool-japan.md', group: 'popculture', title: 'Cool Japan' },
+    { id: 'popculture-13', file: 'popculture/13-travel.md', group: 'popculture', title: 'A traveller’s guide' },
+    { id: 'popculture-14', file: 'popculture/14-language.md', group: 'popculture', title: 'Language for fans' },
+    { id: 'popculture-glossary', file: 'popculture/15-glossary.md', group: 'popculture', title: 'Glossary', label: 'A–Z', kind: 'Glossary' },
+    { id: 'popculture-sources', file: 'popculture/16-sources.md', group: 'popculture', title: 'Sources and image credits', label: '§', kind: 'Sources' }
   ];
   // Number lessons within their group unless they have their own label.
   GROUPS.forEach(function (g) {
@@ -330,7 +348,7 @@
     var i = LESSONS.findIndex(function (l) { return l.id === id; });
     var next = LESSONS[i + 1] && LESSONS[i + 1].group === LESSONS[i].group ? LESSONS[i + 1] : null;
     var btn = el('button', { 'class': 'btn' + (done[id] ? ' done' : ''), type: 'button' });
-    var reading = id.indexOf('cuisine') === 0 || id.indexOf('folklore') === 0;
+    var reading = id.indexOf('cuisine') === 0 || id.indexOf('folklore') === 0 || id.indexOf('popculture') === 0;
     function label() {
       btn.textContent = done[id] ? (reading ? '✓ Read' : '✓ Completed') : (reading ? 'Mark chapter as read' : 'Mark lesson as completed');
       btn.className = 'btn' + (done[id] ? ' done' : '');
@@ -342,13 +360,13 @@
     return el('div', {}, [el('div', { 'class': 'lesson-foot' }, [btn]), pager(id)]);
   }
 
-  /* ---------- previous / next in content order (guide → hiragana → katakana → kanji → cuisine → folklore) ---------- */
+  /* ---------- previous / next in content order (guide → hiragana → katakana → kanji → cuisine → folklore → pop culture) ---------- */
   function groupTitle(g) { return (GROUPS.filter(function (x) { return x.id === g; })[0] || {}).title || ''; }
   function pageKind(l) {
     if (l.kind) return l.kind;
     if (l.label === '★') return l.group === 'course' ? 'Overview' : 'Start here';
     if (l.label === '↻') return 'Daily review';
-    return (l.group === 'course' ? 'Lesson ' : (l.group === 'cuisine' || l.group === 'folklore') ? 'Chapter ' : 'Unit ') + l.label;
+    return (l.group === 'course' ? 'Lesson ' : (l.group === 'cuisine' || l.group === 'folklore' || l.group === 'popculture') ? 'Chapter ' : 'Unit ') + l.label;
   }
   function neighbours(id) {
     var i = LESSONS.findIndex(function (l) { return l.id === id; });
@@ -359,7 +377,7 @@
       return el('a', { 'class': 'pager-card ' + dir + ' home', href: '#/', rel: dir }, [
         el('span', { 'class': 'pager-dir', text: dir === 'prev' ? '← Previous' : 'Next →' }),
         el('span', { 'class': 'pager-title', text: 'Home' }),
-        el('span', { 'class': 'pager-meta', text: dir === 'prev' ? 'All six sections' : 'You\'ve reached the end. Back to all six sections' })
+        el('span', { 'class': 'pager-meta', text: dir === 'prev' ? 'All seven sections' : 'You\'ve reached the end. Back to all seven sections' })
       ]);
     }
     var crossing = target.group !== from.group;
@@ -566,7 +584,7 @@
     });
   }
 
-  /* ---------- home: six tiles ---------- */
+  /* ---------- home: seven tiles ---------- */
   function groupProgress(group) {
     var pages = LESSONS.filter(function (l) { return l.group === group && l.label !== '★' && l.label !== '↻' && !l.kind; });
     var doneCount = pages.filter(function (l) { return done[l.id]; }).length;
@@ -623,6 +641,17 @@
       cta: !g.done ? 'Open the handbook' : g.next ? 'Continue: chapter ' + g.next.label : 'Browse the glossary'
     });
   }
+  function popcultureTile() {
+    var g = groupProgress('popculture');
+    return tile({
+      id: 'popculture', glyph: '漫', kicker: 'Pop culture handbook', title: 'Manga, anime and beyond',
+      desc: 'From twelfth-century picture scrolls to manga and anime, the golden age of Japanese cinema, Godzilla, video games, enka and idols, kawaii, fandom and Cool Japan, with a traveller’s guide and the Japanese of fiction. Long-form chapters built on cited scholarship and official data, illustrated with public-domain prints, photographs and diagrams.',
+      examples: '漫画 · アニメ · 怪獣 · かわいい',
+      href: !g.done ? '#/popculture' : g.next ? '#/' + g.next.id : '#/popculture-glossary',
+      value: g.done, total: g.total, progressLabel: g.done + ' of ' + g.total + ' chapters read',
+      cta: !g.done ? 'Open the handbook' : g.next ? 'Continue: chapter ' + g.next.label : 'Browse the glossary'
+    });
+  }
   function homeOffline() {
     var line = el('p', { 'class': 'home-foot home-offline' });
     function refresh() {
@@ -642,7 +671,7 @@
       el('header', { 'class': 'home-hero' }, [
         el('p', { 'class': 'home-hero-kicker' }, [el('span', { lang: 'ja', text: '日本へようこそ' }), ' · welcome to Japan']),
         el('h1', { text: 'Japanese for your trip' }),
-        el('p', { 'class': 'home-lead', text: 'Six ways in. Get the practical know-how for travelling in Japan, learn to read the scripts on every sign, menu and station board, then go deeper into how Japanese food is made and into the kami, ghosts and yōkai of Japanese belief.' })
+        el('p', { 'class': 'home-lead', text: 'Seven ways in. Get the practical know-how for travelling in Japan, learn to read the scripts on every sign, menu and station board, then go deeper into how Japanese food is made, into the kami, ghosts and yōkai of Japanese belief, and into manga, anime, film and the rest of Japanese pop culture.' })
       ]),
       el('div', { 'class': 'home-tiles' }, [
         tile({
@@ -656,7 +685,8 @@
         kanaTile('katakana', 'ア', 'Katakana course', 'The script for foreign words. Menus, shops and signs are full of them, and you already know most of the words.', 'ホテル · コーヒー · タクシー'),
         kanaTile('kanji', '漢', 'Kanji course', 'The 95 kanji on signs in stations, restaurants, shops, toilets and onsen: what they mean and how to read them.', '出口 · 駅 · 禁煙'),
         cuisineTile(),
-        folkloreTile()
+        folkloreTile(),
+        popcultureTile()
       ]),
       el('p', { 'class': 'home-foot' }, [
         'Tip: tap any Japanese text to hear it. Quick practice: ',
@@ -987,7 +1017,7 @@
     }
     article.append(
       el('h1', { text: 'Install & use offline' }),
-      el('p', { text: 'The whole site (every lesson, course, game, quiz and both handbooks with their pictures) is saved on your device the first time you open it. After that it works with no connection: on the plane, on the subway, or with no roaming data.' }),
+      el('p', { text: 'The whole site (every lesson, course, game, quiz and all three handbooks with their pictures) is saved on your device the first time you open it. After that it works with no connection: on the plane, on the subway, or with no roaming data.' }),
       el('section', { 'class': 'sync-box' }, [el('h2', { text: 'On this device' }), status, details]),
       el('section', { 'class': 'sync-box' }, [
         el('h2', { text: 'Android' }),
