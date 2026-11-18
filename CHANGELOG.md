@@ -4,6 +4,22 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.14.0] - 2026-11-18
+
+### Added
+- **Pop culture handbook: manga, anime and beyond**, a seventh part of the course: 14 long-form chapters, a glossary and a sources page
+  - Pictures that tell stories: picture scrolls, the *Chōjū-giga*, Edo picture books and Hokusai, and how *manga* got its modern meaning; manga, the weekly magazine system and paperback volumes; anime from "trick films" and Tōei Dōga to *Astro Boy*, the production committee and the 2024 market; manga marks and role language (*yakuwarigo*)
+  - Screens and stages: cinema from the *benshi* and the six studios to Mizoguchi, Ozu, Kurosawa, the new wave, ghost films and J-horror, Kore-eda, Hamaguchi and *Kokuhō*; *Godzilla*, Tsuburaya and the physics of miniatures; video games from hanafuda to the Famicom and the Japanese RPG; enka's political origins, idols, city pop and Hatsune Miku
+  - Fans and society: kawaii and local mascots, Comiket and Akihabara, cosplay, anime pilgrimage and folklore in pop culture, Cool Japan
+  - A traveller's guide with dated official rules (Ghibli Museum, National Film Archive, Comic Market 109) and a chapter on the Japanese of fiction for learners
+  - Built only on cited sources: scholarship (J-STAGE, Nichibunken, *Japanese Journal of Religious Studies*, *Electronic Journal of Contemporary Japanese Studies*) and official data (National Film Archive of Japan, Eiren, Association of Japanese Animations, Cabinet Office, Comic Market Committee, Festival de Cannes)
+  - 32 public-domain and freely licensed pictures and nine explanatory diagrams; no manga panels, anime stills, game screens or character designs
+  - A seventh home-page tile and menu group; the handbook is saved for offline use like the rest of the course
+
+### Changed
+- The content check and the deploy check cover the pop culture handbook
+- Long links in source lists wrap instead of widening the page on phones
+
 ## [1.13.0] - 2026-11-18
 
 ### Added
