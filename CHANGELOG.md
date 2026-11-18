@@ -4,6 +4,20 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+- **Folklore handbook: kami, ghosts and yōkai**, a sixth part of the course: 13 long-form chapters, a glossary and a sources page
+  - Part I, kami and buddhas: what kami are and why "Shinto" is a slippery word; the Kojiki, the Nihon shoki and the Land of Yomi; pollution and purification; the thousand-year combination of kami and buddhas (*honji suijaku*); the separation of 1868
+  - Part II, the dead: ancestors, Bon and the six realms; vengeful spirits (*onryō*, *goryō*) from the first goryō ceremony of 863 to Sugawara no Michizane, Retired Emperor Sutoku and the drowned Heike; how the white-robed, footless yūrei was shaped in the Edo period; a field guide to the kinds of ghost and how each comes into being
+  - Part III, yōkai: definitions and the kami–yōkai continuum; night parades and tool spirits (*tsukumogami*); a bestiary of oni, tengu, foxes, tanuki, kappa, mermaids and prophetic beasts; "Doctor Monster", the 1960s yōkai boom, *kamikakushi* and Amabie in the pandemic
+  - Built only on cited sources: peer-reviewed scholarship (Nanzan Institute for Religion and Culture, Nichibunken, J-STAGE), Lafcadio Hearn's public-domain books as primary texts, and the Agency for Cultural Affairs' religious statistics
+  - About 35 public-domain and freely licensed pictures (woodblock prints, scrolls, Sekien's catalogues, photographs) and seven explanatory diagrams; Wikipedia links for further reading
+  - A sixth home-page tile and menu group; the handbook is saved for offline use like the rest of the course
+
+### Changed
+- The content check covers both handbooks: cited chapters, quizzes, credited images and no Wikipedia in source lists
+
 ## [1.12.0] - 2026-11-17
 
 ### Added
