@@ -11,7 +11,7 @@ const fail = (msg) => errors.push(msg);
 const app = readFileSync('assets/app.js', 'utf8');
 const entries = [...app.matchAll(/\{ id: '([^']+)', file: '([^']+)'/g)].map((m) => ({ id: m[1], file: m[2] }));
 const registered = entries.map((e) => e.file);
-const pageFiles = ['lessons', 'hiragana', 'katakana', 'kanji', 'cuisine', 'folklore'].flatMap((dir) =>
+const pageFiles = ['lessons', 'hiragana', 'katakana', 'kanji', 'cuisine', 'folklore', 'popculture'].flatMap((dir) =>
   readdirSync(dir).filter((f) => f.endsWith('.md')).map((f) => `${dir}/${f}`));
 for (const e of entries) if (!existsSync(e.file)) fail(`assets/app.js lists '${e.id}' but ${e.file} is missing`);
 for (const f of pageFiles) if (!registered.includes(f)) fail(`${f} is not listed in LESSONS in assets/app.js`);
@@ -91,10 +91,11 @@ for (const [course, [dataFile, global]] of Object.entries(COURSES)) {
   }
 }
 
-// 4. Handbooks (cuisine, folklore): cited chapters, well-formed quizzes, every image present and credited.
+// 4. Handbooks (cuisine, folklore, pop culture): cited chapters, well-formed quizzes, every image present and credited.
 const HANDBOOKS = [
   { dir: 'cuisine', sources: 'cuisine/16-sources.md', chapter: /\/(0[1-9]|1[0-4])-/ },
   { dir: 'folklore', sources: 'folklore/15-sources.md', chapter: /\/(0[1-9]|1[0-3])-/ },
+  { dir: 'popculture', sources: 'popculture/16-sources.md', chapter: /\/(0[1-9]|1[0-4])-/ },
 ];
 for (const hb of HANDBOOKS) {
   const credits = readFileSync(hb.sources, 'utf8');
