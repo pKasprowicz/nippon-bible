@@ -237,25 +237,46 @@
   }
 
   /* ---------- navigation ---------- */
+  // Each course and handbook is a collapsible group. Opening a page expands its own group
+  // and collapses the rest; the reader can open or close any group in between.
+  var navOpen = {}, navRoute = null;
+  var CHEVRON = '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+  function showNavGroup(id, open) {
+    navOpen[id] = open;
+    var btn = navList.querySelector('.nav-group[data-group="' + id + '"]');
+    if (!btn) return;
+    btn.setAttribute('aria-expanded', String(open));
+    document.getElementById(btn.getAttribute('aria-controls')).hidden = !open;
+  }
   function buildNav() {
     navList.innerHTML = '';
     navList.appendChild(el('li', {}, [el('a', { 'class': 'nav-link', href: '#/', 'data-route': '' }, [
       el('span', { 'class': 'nav-num', 'aria-hidden': 'true', text: '⌂' }), el('span', { text: 'Home' })
     ])]));
     GROUPS.forEach(function (g) {
-      navList.appendChild(el('li', { 'class': 'nav-group', role: 'presentation', text: g.title }));
-      LESSONS.filter(function (l) { return l.group === g.id; }).forEach(function (l) {
-        navList.appendChild(el('li', {}, [el('a', {
+      var sub = el('ol', { 'class': 'nav-sub', id: 'nav-' + g.id }, LESSONS.filter(function (l) { return l.group === g.id; }).map(function (l) {
+        return el('li', {}, [el('a', {
           'class': 'nav-link' + (done[l.id] ? ' done' : '') + (l.group === 'hiragana' ? ' nav-hira' : ''), href: '#/' + l.id, 'data-route': l.id
         }, [
           el('span', { 'class': 'nav-num', 'aria-hidden': 'true', text: done[l.id] ? '✓' : l.label }),
           el('span', { text: l.title }),
           done[l.id] ? el('span', { 'class': 'sr-only', style: 'position:absolute;left:-9999px', text: ' (completed)' }) : null
-        ])]));
-      });
+        ])]);
+      }));
+      sub.hidden = !navOpen[g.id];
+      var btn = el('button', {
+        type: 'button', 'class': 'nav-group', 'data-group': g.id, 'aria-controls': sub.id, 'aria-expanded': String(!!navOpen[g.id]),
+        onclick: function () { showNavGroup(g.id, !navOpen[g.id]); }
+      }, [el('span', { text: g.title }), el('span', { 'class': 'nav-chevron', 'aria-hidden': 'true', html: CHEVRON })]);
+      navList.appendChild(el('li', { 'class': 'nav-section' }, [btn, sub]));
     });
   }
   function setCurrent(route) {
+    if (route !== navRoute) {
+      navRoute = route;
+      var here = LESSONS.filter(function (l) { return l.id === route; })[0];
+      GROUPS.forEach(function (g) { showNavGroup(g.id, !!here && here.group === g.id); });
+    }
     document.querySelectorAll('.nav-link').forEach(function (a) {
       if (a.getAttribute('data-route') === route) a.setAttribute('aria-current', 'page');
       else a.removeAttribute('aria-current');
