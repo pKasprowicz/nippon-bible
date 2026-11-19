@@ -4,6 +4,19 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.15.0] - 2026-11-19
+
+### Added
+- **Search the whole guide**: the magnifier in the top bar (or the `/` key) searches every lesson, course and handbook at once
+  - Works in English, romaji, kana and kanji; ignores capitals and accents, so *ramen* finds *rāmen*
+  - Each result shows where it comes from, the section heading and an excerpt with the matches highlighted, and opens that exact section
+  - Filter the results by course or handbook; move through them with the arrow keys; Back returns to your results
+  - The search index is saved with the rest of the site, so search works offline
+
+### Changed
+- The side menu's courses and handbooks are collapsible groups: opening a page expands its own group and collapses the others
+- The content check also builds the search index and checks that every page is indexed
+
 ## [1.14.0] - 2026-11-18
 
 ### Added
