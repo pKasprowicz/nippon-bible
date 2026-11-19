@@ -3,6 +3,7 @@
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { dirname, join, normalize } from 'node:path';
 import vm from 'node:vm';
+import { buildSearchIndex } from './build-search.mjs';
 
 const errors = [];
 const fail = (msg) => errors.push(msg);
@@ -139,7 +140,14 @@ if (!(manifest.icons || []).some((i) => /maskable/.test(i.purpose || ''))) fail(
 if (!readFileSync('sw.js', 'utf8').includes("'__BUILD__'")) fail("sw.js: the BUILD = '__BUILD__' placeholder is missing (the deploy stamps it)");
 if (!readFileSync('index.html', 'utf8').includes('rel="manifest"')) fail('index.html: the manifest link is missing');
 
-// 5. VERSION is semver and has a CHANGELOG entry.
+// 5. The search index builds, covers every page, and links each section to a unique heading.
+const searchSections = buildSearchIndex();
+for (const e of entries) if (!searchSections.some(([page]) => page === e.id)) fail(`search index: no text found for '${e.id}'`);
+const sectionKeys = searchSections.map(([page, slug]) => page + '/' + slug);
+for (const k of sectionKeys) if (sectionKeys.indexOf(k) !== sectionKeys.lastIndexOf(k)) fail(`search index: two sections share the link #/${k}`);
+for (const [page, slug, heading] of searchSections) if (slug && !heading.trim()) fail(`search index: empty heading at #/${page}/${slug}`);
+
+// 6. VERSION is semver and has a CHANGELOG entry.
 const version = readFileSync('VERSION', 'utf8').trim();
 if (!/^\d+\.\d+\.\d+$/.test(version)) fail(`VERSION '${version}' is not x.y.z`);
 if (!readFileSync('CHANGELOG.md', 'utf8').includes(`## [${version}]`)) fail(`CHANGELOG.md has no section for ${version}`);

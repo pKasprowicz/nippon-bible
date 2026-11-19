@@ -21,6 +21,10 @@ then works with no connection. On Android, choose *Install app* in Chrome's ⋮ 
 *Install the app* link on the home page) to get a launcher icon; on iPhone, use Safari's
 *Share › Add to Home Screen*. See *Install & offline* in the site's menu.
 
+**Search everything:** the magnifier in the site's top bar (or the `/` key) searches every lesson,
+course and handbook at once, in English, romaji, kana or kanji, and opens the matching section.
+It works offline too.
+
 No previous knowledge needed. Japanese is given as **script · romaji · meaning**, e.g.
 `駅 · eki · station`, with Hepburn romaji (a macron marks a long vowel: **ō** = "oo").
 

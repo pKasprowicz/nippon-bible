@@ -145,6 +145,22 @@ The site is an installable web app that works offline:
 - New files and folders are picked up automatically. To try it locally, copy the published files to a
   folder, run the script on that folder and serve it (service workers need `localhost` or HTTPS).
 
+## Search
+
+The search page (`#/search/<query>`, in `assets/app.js`) scans `search-index.json`, which the deploy
+builds with `node scripts/build-search.mjs _site`:
+
+- Every page in `LESSONS` is rendered with the site's own `marked` and split at its `##`/`###`
+  headings, with the same heading slugs as the app, so each result opens its section.
+- The contents of `words`, `station` and `contrast` blocks are indexed; quizzes, drills and games are not.
+- The search is a plain substring match that ignores case and Latin accents (*ramen* finds *rāmen*),
+  so kana and kanji need no word splitting. Every word typed must appear; headings rank first, and
+  the sources pages last.
+- New pages are indexed automatically. `scripts/check-content.mjs` checks that every page has
+  indexed text and that no two sections share a link.
+- To try it locally, run `node scripts/build-search.mjs .` and serve the folder. Don't commit
+  `search-index.json`.
+
 ## Progress and sync
 
 All progress is in `localStorage`: `nb-done` (completed pages), `nb-hira`, `nb-kata` and `nb-kanji` (review deck, game stats,
