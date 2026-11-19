@@ -1059,12 +1059,180 @@
   }
 
   /* ---------- router ---------- */
+  /* ---------- full-text search ---------- */
+  // A plain substring scan over search-index.json, which the deploy builds with
+  // scripts/build-search.mjs. Substrings need no word splitting, so English, rōmaji,
+  // kana and kanji all work the same way.
+  var SEARCH_MAX = 60;
+  var searchData = null;
+  // Lower case without Latin accents (rāmen → ramen), keeping kana voicing marks (が ≠ か).
+  function fold(s) { return s.normalize('NFKD').replace(/[̀-ͯ]/g, '').normalize('NFC').toLowerCase(); }
+  function loadSearch() {
+    if (searchData) return Promise.resolve(searchData);
+    return fetch('search-index.json', { cache: 'no-cache' }).then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    }).then(function (json) {
+      var byId = {};
+      LESSONS.forEach(function (l) { byId[l.id] = l; });
+      searchData = json.sections.filter(function (s) { return byId[s[0]]; }).map(function (s) {
+        var l = byId[s[0]];
+        return { lesson: l, slug: s[1], heading: s[2], text: s[3], h: fold(s[2]), t: fold(s[3]), p: fold(l.title) };
+      });
+      return searchData;
+    });
+  }
+  function searchTerms(query) {
+    return fold(query).trim().split(/\s+/).filter(function (w, i, all) { return w && all.indexOf(w) === i; });
+  }
+  function countIn(hay, needle) {
+    var n = 0, i = hay.indexOf(needle);
+    while (i !== -1 && n < 10) { n++; i = hay.indexOf(needle, i + needle.length); }
+    return n;
+  }
+  // Every term must appear. Headings weigh most, then the page title, then how often
+  // the body mentions a term; the bibliographies sink to the bottom.
+  function runSearch(data, query) {
+    var terms = searchTerms(query), phrase = terms.join(' ');
+    if (!terms.length) return [];
+    var hits = [];
+    data.forEach(function (d) {
+      var score = 0;
+      for (var i = 0; i < terms.length; i++) {
+        var w = terms[i], inHeading = d.h.indexOf(w) !== -1, inPage = d.p.indexOf(w) !== -1, n = countIn(d.t, w);
+        if (!inHeading && !inPage && !n) return;
+        score += (inHeading ? 20 : 0) + (inPage ? 6 : 0) + n;
+      }
+      if (terms.length > 1 && (d.h.indexOf(phrase) !== -1 || d.t.indexOf(phrase) !== -1)) score += 15;
+      if (/-sources$/.test(d.lesson.id)) score /= 5;
+      hits.push({ d: d, score: score });
+    });
+    return hits.sort(function (a, b) { return b.score - a.score; });
+  }
+  // Text with the matched terms wrapped in <mark>; with `room`, only a window of about
+  // that many characters around the first match, cut at spaces.
+  function highlighted(text, terms, room) {
+    var folded = '', from = [];   // from[i]: index in `text` of folded character i
+    for (var i = 0; i < text.length;) {
+      var ch = String.fromCodePoint(text.codePointAt(i));
+      var f = ch.charCodeAt(0) < 128 ? ch.toLowerCase() : fold(ch);
+      for (var k = 0; k < f.length; k++) { folded += f[k]; from.push(i); }
+      i += ch.length;
+    }
+    from.push(text.length);
+    var ranges = [];
+    terms.forEach(function (w) {
+      for (var p = folded.indexOf(w); p !== -1; p = folded.indexOf(w, p + w.length)) ranges.push([from[p], from[p + w.length]]);
+    });
+    ranges.sort(function (a, b) { return a[0] - b[0]; });
+    var start = 0, end = text.length;
+    if (room && text.length > room) {
+      start = ranges.length ? Math.max(0, ranges[0][0] - Math.round(room / 4)) : 0;
+      end = Math.min(text.length, start + room);
+      if (start > 0) { var sp = text.indexOf(' ', start); if (sp !== -1 && sp < start + 15) start = sp + 1; }
+      if (end < text.length) { var ep = text.lastIndexOf(' ', end); if (ep > end - 15) end = ep; }
+    }
+    var nodes = [start > 0 ? '…' : ''], at = start;
+    ranges.forEach(function (r) {
+      var a = Math.max(r[0], at), b = Math.min(r[1], end);
+      if (b <= a) return;
+      nodes.push(text.slice(at, a), el('mark', { text: text.slice(a, b) }));
+      at = b;
+    });
+    nodes.push(text.slice(at, end), end < text.length ? '…' : '');
+    return nodes.filter(function (n) { return n !== ''; });
+  }
+  function showSearch(query) {
+    document.title = 'Search · Nippon Bible';
+    var input = el('input', {
+      type: 'search', 'class': 'search-input', id: 'searchInput', placeholder: 'English, rōmaji, kana or kanji',
+      'aria-label': 'Search the whole guide', autocomplete: 'off', autocapitalize: 'off', spellcheck: 'false', enterkeyhint: 'search'
+    });
+    input.value = query;
+    var filters = el('div', { 'class': 'search-filters', role: 'group', 'aria-label': 'Show results from' });
+    var status = el('p', { 'class': 'search-status', role: 'status' });
+    var list = el('ol', { 'class': 'search-results' });
+    var article = el('article', { 'class': 'search' }, [
+      el('h1', { text: 'Search' }),
+      el('form', { 'class': 'search-form', role: 'search', onsubmit: function (e) { e.preventDefault(); input.blur(); } }, [
+        input
+      ]),
+      filters, status, list
+    ]);
+    content.replaceChildren(el('div', { 'class': 'page' }, [article]));
+    window.scrollTo(0, 0);
+    if (!query) input.focus();
+    status.textContent = 'Loading the search index…';
+
+    var group = '', hits = [], timer;
+    function example(q) {
+      return el('button', { type: 'button', 'class': 'search-example', text: q, onclick: function () { input.value = q; update(); input.focus(); } });
+    }
+    function renderHits() {
+      var terms = searchTerms(input.value);
+      var shown = hits.filter(function (h) { return !group || h.d.lesson.group === group; });
+      list.replaceChildren.apply(list, shown.slice(0, SEARCH_MAX).map(function (h) {
+        var l = h.d.lesson;
+        return el('li', {}, [el('a', { 'class': 'search-hit', href: '#/' + l.id + (h.d.slug ? '/' + h.d.slug : '') }, [
+          el('span', { 'class': 'search-where', text: groupTitle(l.group) + ' · ' + pageKind(l) + ' · ' + l.title }),
+          el('span', { 'class': 'search-heading' }, highlighted(h.d.heading, terms)),
+          h.d.text ? el('span', { 'class': 'search-snippet' }, highlighted(h.d.text, terms, 200)) : null
+        ])]);
+      }));
+      status.textContent = !shown.length ? '' : shown.length > SEARCH_MAX
+        ? 'The best ' + SEARCH_MAX + ' of ' + shown.length + ' sections.'
+        : shown.length + (shown.length === 1 ? ' section.' : ' sections.');
+    }
+    function renderFilters() {
+      var counts = {};
+      hits.forEach(function (h) { counts[h.d.lesson.group] = (counts[h.d.lesson.group] || 0) + 1; });
+      var groups = GROUPS.filter(function (g) { return counts[g.id]; });
+      if (!counts[group]) group = '';
+      if (groups.length < 2) { filters.replaceChildren(); return; }
+      function chip(id, label, n) {
+        return el('button', { type: 'button', 'class': 'search-chip', 'aria-pressed': String(group === id),
+          onclick: function () { group = id; renderFilters(); renderHits(); } }, [label + ' ', el('span', { 'class': 'search-count', text: String(n) })]);
+      }
+      filters.replaceChildren.apply(filters, [chip('', 'All', hits.length)].concat(groups.map(function (g) { return chip(g.id, g.title, counts[g.id]); })));
+    }
+    function update() {
+      var q = input.value.trim();
+      history.replaceState(null, '', '#/search' + (q ? '/' + encodeURIComponent(q) : ''));
+      hits = q ? runSearch(searchData, q) : [];
+      renderFilters(); renderHits();
+      if (!q) status.replaceChildren('Search every lesson, course and handbook. Try: ', example('ramen'), ' ', example('駅'), ' ', example('kitsune'), ' ', example('onsen tattoo'));
+      else if (!hits.length) status.textContent = 'Nothing found for “' + q + '”. Check the spelling, or try fewer words.';
+    }
+    input.addEventListener('input', function () { clearTimeout(timer); timer = setTimeout(update, 120); });
+    // Arrow keys move between the box and the results.
+    article.addEventListener('keydown', function (e) {
+      if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+      var links = [].slice.call(list.querySelectorAll('a'));
+      var i = links.indexOf(document.activeElement);
+      if (e.target === input && e.key === 'ArrowDown' && links.length) { e.preventDefault(); links[0].focus(); }
+      else if (i !== -1) { e.preventDefault(); (e.key === 'ArrowDown' ? links[i + 1] || links[i] : links[i - 1] || input).focus(); }
+    });
+    return loadSearch().then(update, function (err) {
+      status.textContent = 'The search index could not be loaded (' + (err.message || err) + '). Try again when you\'re online.';
+    });
+  }
+  document.getElementById('searchBtn').addEventListener('click', function () {
+    var box = document.getElementById('searchInput');
+    if (box) box.focus(); else location.hash = '#/search';
+  });
+  // "/" opens search from anywhere except a text field.
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== '/' || e.ctrlKey || e.metaKey || e.altKey || e.target.closest('input, textarea, select, [contenteditable]')) return;
+    e.preventDefault();
+    document.getElementById('searchBtn').click();
+  });
+
   function route() {
     var parts = location.hash.replace(/^#\/?/, '').split('/');
     var r = parts[0], section = '';
     try { section = decodeURIComponent(parts.slice(1).join('/')); } catch (e) { section = ''; }
     if (ALIASES[r]) { location.replace('#/' + ALIASES[r] + (section ? '/' + section : '')); return; }
-    var special = r === 'drill' || r === 'progress' || r === 'import' || r === 'offline';
+    var special = r === 'drill' || r === 'progress' || r === 'import' || r === 'offline' || r === 'search';
     if (r && !special && !LESSONS.some(function (l) { return l.id === r; })) { r = ''; section = ''; }
     var key = special ? r : (r || 'home');
     if (!special && key !== 'home' && key === rendered) { scrollToSection(section, true); return; }
@@ -1072,9 +1240,10 @@
     if ('speechSynthesis' in window) speechSynthesis.cancel();
     if (spyHandler) { window.removeEventListener('scroll', spyHandler); spyHandler = null; }
     rendered = null;
-    var p = r === 'drill' ? showDrill() : r === 'progress' ? showProgress() : r === 'offline' ? showOffline()
+    var p = r === 'search' ? showSearch(section) : r === 'drill' ? showDrill() : r === 'progress' ? showProgress() : r === 'offline' ? showOffline()
       : r === 'import' ? showProgress(parts.slice(1).join('/')) : r ? showPage(r) : showHome();
     p.then(function () {
+      if (r === 'search') return;   // showSearch handles focus and scrolling
       if (section) jumpWhenSettled(section);
       else window.scrollTo(0, 0);
       if (!section) content.focus({ preventScroll: true });
