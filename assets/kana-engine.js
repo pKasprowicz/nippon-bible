@@ -230,7 +230,10 @@
           var ex = typeof current.explain === 'function' ? current.explain(res) : current.explain;
           fb.appendChild(typeof ex === 'string' ? el('p', { 'class': 'hw-explain', text: ex }) : ex);
         }
-        if (current.audioOnCorrect !== false && current.audio) ctx.speak(current.audio);
+        // After a miss, play the right answer. After a correct answer, replay only where the
+        // question wants it: a listening question has just been heard, and a late echo of it
+        // could overlap the next question's sound.
+        if (current.audio && (!res.ok || current.audioOnCorrect !== false)) ctx.speak(current.audio);
         if (res.ok && !opts.timer && !current.pauseOnCorrect) {
           setTimeout(function () { if (answered && queue[pos] === current) { pos++; next(); } }, opts.advanceMs || (opts.fast ? 450 : 1100));
         } else if (opts.timer) {
@@ -242,6 +245,9 @@
         }
       }
       function render(q) {
+        // Drop speech still queued from the previous question (its answer replay), so it
+        // can't come out over this one.
+        if ('speechSynthesis' in window && (speechSynthesis.speaking || speechSynthesis.pending)) speechSynthesis.cancel();
         var promptBox = el('div', { 'class': 'hw-prompt' }, [q.prompt()]);
         var answerBox;
         if (q.options) {
@@ -266,9 +272,21 @@
         }
         stage.replaceChildren(promptBox, answerBox, el('div', { 'class': 'hw-feedback', 'aria-live': 'polite' }));
         shownAt = performance.now();
-        if (q.audio && q.autoplay) setTimeout(function () { ctx.speak(q.audio); }, 150);
+        if (q.audio && q.autoplay) speakWhenQuiet(q.audio, function () { return !stopped && current === q && !answered; });
         var focusTarget = stage.querySelector('.hw-input') || stage;
         focusTarget.focus({ preventScroll: true });
+      }
+      // Speech engines (Android especially) can start an utterance late, or finish one that
+      // was cancelled; waiting for silence keeps the previous answer from playing over a new
+      // question. Gives up waiting after 2.5 s.
+      function speakWhenQuiet(text, stillWanted) {
+        var waited = 0;
+        (function tryNow() {
+          if (!stillWanted()) return;
+          var busy = 'speechSynthesis' in window && (speechSynthesis.speaking || speechSynthesis.pending);
+          if (busy && waited < 2500) { waited += 100; setTimeout(tryNow, 100); return; }
+          ctx.speak(text);
+        })();
       }
       onKey = function (e) {
         if (e.target.classList && e.target.classList.contains('hw-input') && !answered) return;
@@ -358,6 +376,7 @@
         q.prompt = function () { return el('div', {}, [el('p', { 'class': 'hw-ask', text: 'Listen. Which character do you hear?' }), listenButton(sayOf(e))]); };
         q.options = kanaOptions(e, pool, 'k');
         q.autoplay = true;
+        q.audioOnCorrect = false;
       } else { // type
         q.prompt = function () { return el('div', {}, [el('p', { 'class': 'hw-ask', text: 'Type the reading.' }), bigKana(k)]); };
         q.placeholder = e.meaning ? 'e.g. eki' : 'e.g. ka';
@@ -409,6 +428,7 @@
         others.sort(function (a, b) { return Math.abs(splitKana(a.k).length - splitKana(w.k).length) - Math.abs(splitKana(b.k).length - splitKana(w.k).length); });
         q.options = shuffle([w].concat(others.slice(0, 3))).map(function (o) { return { label: o.k, value: o.k, lang: 'ja', chosenLabel: o.k + ' (' + o.r + ')' }; });
         q.autoplay = true;
+        q.audioOnCorrect = false;
         q.check = function (v) { return { ok: v === w.k }; };
         q.pauseOnCorrect = false;
         return q;
