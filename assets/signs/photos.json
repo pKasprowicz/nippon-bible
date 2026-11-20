@@ -297,6 +297,20 @@
    "source": "https://commons.wikimedia.org/wiki/File:%E5%A4%A7%E9%9B%A8%E5%86%A0%E6%B0%B4%E6%B3%A8%E6%84%8F.jpg"
   },
   {
+   "file": "refrain-from-talking.jpg",
+   "w": 500,
+   "h": 667,
+   "kind": "warnings",
+   "title": "Please refrain from talking",
+   "ja": "会話をお控えください",
+   "note": "Kaiwa o o-hikae kudasai: please refrain from talking. A polite request in a lift, with the English below.",
+   "place": "KITTE, Tokyo",
+   "date": "2022",
+   "author": "Syced",
+   "license": "CC0",
+   "source": "https://commons.wikimedia.org/wiki/File:%22Please_refrain_from_talking%22_in_elevator_in_Kitte%2C_Tokyo.jpg"
+  },
+  {
    "file": "climbers-registration.jpg",
    "w": 500,
    "h": 375,
@@ -365,6 +379,20 @@
    "author": "Shin-Nippori",
    "license": "Public domain",
    "source": "https://commons.wikimedia.org/wiki/File:Tsunohazu.jpg"
+  },
+  {
+   "file": "toilet-cleaning-note.jpg",
+   "w": 500,
+   "h": 281,
+   "kind": "notices",
+   "title": "Toilet cleaning notice",
+   "ja": "いつもきれいにご利用いただきありがとうございます。",
+   "note": "“Thank you for always keeping it clean.” Above, a fill-in form says when this toilet (お手洗い) was last cleaned and by whom, written in by hand. Posted by Tsushima City (対馬市).",
+   "place": "Tsushima, Nagasaki",
+   "date": "2017",
+   "author": "girakku",
+   "license": "CC0",
+   "source": "https://commons.wikimedia.org/wiki/File:%E3%81%8A%E6%89%8B%E6%B4%97%E3%81%84_%E3%82%AD%E3%83%A9%E3%83%AA_%E6%8E%83%E9%99%A4%E3%82%92%E8%A1%8C%E3%81%84%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82_%E5%AF%BE%E9%A6%AC%E5%B8%82_(28406150928).jpg"
   },
   {
    "file": "koenji-shopping-street.jpg",
@@ -507,6 +535,20 @@
    "source": "https://commons.wikimedia.org/wiki/File:%E8%87%AA%E8%B2%A9%E6%A9%9F%E3%82%B3%E3%83%BC%E3%83%8A%E3%83%BC.jpg"
   },
   {
+   "file": "oden-restaurant-sign.jpg",
+   "w": 500,
+   "h": 281,
+   "kind": "shops",
+   "title": "Oden restaurant sign",
+   "ja": "金沢おでん 一品料理 勝一",
+   "note": "Kanazawa-style oden and ippin ryōri, à-la-carte dishes; 勝一 is the restaurant’s name.",
+   "place": "Japan",
+   "date": "2024",
+   "author": "経済特区",
+   "license": "CC0",
+   "source": "https://commons.wikimedia.org/wiki/File:%E9%87%91%E6%B2%A2%E3%81%8A%E3%81%A7%E3%82%93%E5%8B%9D%E4%B8%8020241030_04.jpg"
+  },
+  {
    "file": "shrine-name-pillar.jpg",
    "w": 500,
    "h": 333,
@@ -533,6 +575,34 @@
    "author": "RED COMET J. P.",
    "license": "CC0",
    "source": "https://commons.wikimedia.org/wiki/File:%E5%A4%A9%E6%A9%8B%E7%AB%8B%EF%BC%88%E9%A3%9B%E9%BE%8D%E8%A6%B3%EF%BC%89.jpg"
+  },
+  {
+   "file": "garden-name-board.jpg",
+   "w": 500,
+   "h": 375,
+   "kind": "places",
+   "title": "Garden name board",
+   "ja": "肥後細川庭園",
+   "note": "Higo Hosokawa teien: the Higo-Hosokawa Garden, brushed on wood at the gate. 庭園 (teien) is a landscape garden.",
+   "place": "Tokyo",
+   "date": "2022",
+   "author": "Syced",
+   "license": "CC0",
+   "source": "https://commons.wikimedia.org/wiki/File:Walk_near_Higo-Hosokawa_garden_3.jpg"
+  },
+  {
+   "file": "matanozoki-sign.jpg",
+   "w": 500,
+   "h": 375,
+   "kind": "places",
+   "title": "Birthplace of matanozoki",
+   "ja": "股のぞき発祥の地",
+   "note": "Matanozoki hasshō no chi: the birthplace of matanozoki, literally “peeking between your legs”, the way visitors look at Amanohashidate. The arrow points to Kasamatsu Park (傘松公園), about three minutes on foot (徒歩約3分).",
+   "place": "Miyazu, Kyoto Prefecture",
+   "date": "2024",
+   "author": "RED COMET J. P.",
+   "license": "CC0",
+   "source": "https://commons.wikimedia.org/wiki/File:%E3%80%8C%E8%82%A1%E3%81%AE%E3%81%9E%E3%81%8D%E7%99%BA%E7%A5%A5%E3%81%AE%E5%9C%B0%E3%80%8D%E3%81%AE%E6%A1%88%E5%86%85%E6%9D%BF%EF%BC%88%E5%82%98%E6%9D%BE%E5%85%AC%E5%9C%92%EF%BC%89.jpg"
   },
   {
    "file": "obama-travel-poster.jpg",
