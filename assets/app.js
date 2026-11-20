@@ -405,28 +405,31 @@
         ])]);
       }));
     }
-    var dialog = el('dialog', { 'class': 'lightbox', 'aria-label': 'Photo' });
-    var at = 0;
+    // The bar is built once so keyboard focus survives moving between photos; only the
+    // position, picture and caption change.
+    var at = 0, pos = el('span', { 'class': 'lightbox-pos' }), figure = el('figure');
+    var dialog = el('dialog', { 'class': 'lightbox', 'aria-label': 'Photo' }, [
+      el('div', { 'class': 'lightbox-bar' }, [
+        pos,
+        el('button', { type: 'button', 'class': 'icon-btn', 'aria-label': 'Previous photo', text: '‹', onclick: function () { show(at - 1); } }),
+        el('button', { type: 'button', 'class': 'icon-btn', 'aria-label': 'Next photo', text: '›', onclick: function () { show(at + 1); } }),
+        el('button', { type: 'button', 'class': 'icon-btn lightbox-close', 'aria-label': 'Close', text: '✕', onclick: function () { dialog.close(); } })
+      ]),
+      figure
+    ]);
     function show(i) {
       at = (i + shown.length) % shown.length;
       var p = shown[at];
-      dialog.replaceChildren(
-        el('div', { 'class': 'lightbox-bar' }, [
-          el('span', { 'class': 'lightbox-pos', text: (at + 1) + ' / ' + shown.length }),
-          el('button', { type: 'button', 'class': 'icon-btn', 'aria-label': 'Previous photo', text: '‹', onclick: function () { show(at - 1); } }),
-          el('button', { type: 'button', 'class': 'icon-btn', 'aria-label': 'Next photo', text: '›', onclick: function () { show(at + 1); } }),
-          el('button', { type: 'button', 'class': 'icon-btn lightbox-close', 'aria-label': 'Close', text: '✕', onclick: function () { dialog.close(); } })
-        ]),
-        el('figure', {}, [
-          el('img', { src: GALLERY_DIR + p.file, alt: p.title, width: String(p.w), height: String(p.h) }),
-          el('figcaption', {}, [
-            el('strong', { text: p.title }),
-            p.ja ? el('span', { 'class': 'lightbox-ja' }, [el('span', { 'class': 'ja', lang: 'ja', tabindex: '0', text: p.ja })]) : null,
-            p.note ? el('span', { text: p.note }) : null,
-            el('span', { 'class': 'lightbox-credit' }, [
-              [p.place, p.date].filter(Boolean).join(', ') + '. Photo: ' + p.author + ', ' + p.license + ' (',
-              el('a', { href: p.source, target: '_blank', rel: 'noopener', text: 'Wikimedia Commons' }), ').'
-            ])
+      pos.textContent = (at + 1) + ' / ' + shown.length;
+      figure.replaceChildren(
+        el('img', { src: GALLERY_DIR + p.file, alt: p.title, width: String(p.w), height: String(p.h) }),
+        el('figcaption', {}, [
+          el('strong', { text: p.title }),
+          p.ja ? el('span', { 'class': 'lightbox-ja' }, [el('span', { 'class': 'ja', lang: 'ja', tabindex: '0', text: p.ja })]) : null,
+          p.note ? el('span', { text: p.note }) : null,
+          el('span', { 'class': 'lightbox-credit' }, [
+            [p.place, p.date].filter(Boolean).join(', ') + '. Photo: ' + p.author + ', ' + p.license + ' (',
+            el('a', { href: p.source, target: '_blank', rel: 'noopener', text: 'Wikimedia Commons' }), ').'
           ])
         ])
       );
