@@ -4,7 +4,7 @@ Japan is covered in writing: station boards and platform signs, warnings and hou
 
 Tap a photo to see it full size with its caption; use the arrow keys or the ‹ › buttons to move between photos. Tap the Japanese text in a caption to hear it.
 
-Every photo here is in the **public domain** or released under **CC0** by its photographer on Wikimedia Commons; each caption names the photographer and links to the original file.
+Every picture here is in the **public domain** or released under **CC0** on Wikimedia Commons: photographs released by their photographers, plus a few pre-war adverts and posters that are now public domain. Each caption gives the credit and links to the original file.
 
 ```gallery
 ```

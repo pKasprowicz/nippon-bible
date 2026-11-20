@@ -428,7 +428,7 @@
           p.ja ? el('span', { 'class': 'lightbox-ja' }, [el('span', { 'class': 'ja', lang: 'ja', tabindex: '0', text: p.ja })]) : null,
           p.note ? el('span', { text: p.note }) : null,
           el('span', { 'class': 'lightbox-credit' }, [
-            [p.place, p.date].filter(Boolean).join(', ') + '. Photo: ' + p.author + ', ' + p.license + ' (',
+            [p.place, p.date].filter(Boolean).join(', ') + (p.kind === 'adverts' ? '. Published by ' : '. Photo: ') + p.author + ', ' + p.license + ' (',
             el('a', { href: p.source, target: '_blank', rel: 'noopener', text: 'Wikimedia Commons' }), ').'
           ])
         ])
