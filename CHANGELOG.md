@@ -4,6 +4,11 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.16.1] - 2026-11-21
+
+### Fixed
+- Listening exercises (hiragana, katakana and kanji courses) could play the previous answer's sound over a new question, so you heard a different character from the one being asked. This happened mostly on phones, where speech starts late. Now a correct answer to a listening question isn't replayed, a new question clears any queued sound, and its own sound waits until earlier speech has finished.
+
 ## [1.16.0] - 2026-11-20
 
 ### Added
