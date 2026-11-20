@@ -12,7 +12,7 @@ const fail = (msg) => errors.push(msg);
 const app = readFileSync('assets/app.js', 'utf8');
 const entries = [...app.matchAll(/\{ id: '([^']+)', file: '([^']+)'/g)].map((m) => ({ id: m[1], file: m[2] }));
 const registered = entries.map((e) => e.file);
-const pageFiles = ['lessons', 'hiragana', 'katakana', 'kanji', 'cuisine', 'folklore', 'popculture'].flatMap((dir) =>
+const pageFiles = ['lessons', 'hiragana', 'katakana', 'kanji', 'cuisine', 'folklore', 'popculture', 'signs'].flatMap((dir) =>
   readdirSync(dir).filter((f) => f.endsWith('.md')).map((f) => `${dir}/${f}`));
 for (const e of entries) if (!existsSync(e.file)) fail(`assets/app.js lists '${e.id}' but ${e.file} is missing`);
 for (const f of pageFiles) if (!registered.includes(f)) fail(`${f} is not listed in LESSONS in assets/app.js`);
@@ -146,6 +146,26 @@ for (const e of entries) if (!searchSections.some(([page]) => page === e.id)) fa
 const sectionKeys = searchSections.map(([page, slug]) => page + '/' + slug);
 for (const k of sectionKeys) if (sectionKeys.indexOf(k) !== sectionKeys.lastIndexOf(k)) fail(`search index: two sections share the link #/${k}`);
 for (const [page, slug, heading] of searchSections) if (slug && !heading.trim()) fail(`search index: empty heading at #/${page}/${slug}`);
+
+// 5b. Photo gallery: every photo is public domain or CC0, credited, and present in both sizes.
+{
+  const dir = 'assets/signs/';
+  const { kinds, photos } = JSON.parse(readFileSync(dir + 'photos.json', 'utf8'));
+  const kindIds = kinds.map((k) => k.id);
+  for (const p of photos) {
+    const where = `${dir}photos.json: ${p.file}`;
+    for (const f of ['file', 'title', 'kind', 'author', 'license', 'source', 'w', 'h']) if (!p[f]) fail(`${where}: missing '${f}'`);
+    if (!['CC0', 'Public domain'].includes(p.license)) fail(`${where}: license '${p.license}' is not public domain or CC0`);
+    if (!kindIds.includes(p.kind)) fail(`${where}: unknown kind '${p.kind}'`);
+    if (!/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/.test(p.source || '')) fail(`${where}: source must be a Wikimedia Commons file page`);
+    if (!existsSync(dir + p.file)) fail(`${where}: the photo is missing`);
+    if (!existsSync(dir + 'thumbs/' + p.file)) fail(`${where}: the thumbnail is missing`);
+  }
+  const listed = new Set(photos.map((p) => p.file));
+  if (listed.size !== photos.length) fail(`${dir}photos.json: a photo is listed twice`);
+  for (const f of readdirSync(dir).filter((f) => f.endsWith('.jpg'))) if (!listed.has(f)) fail(`${dir}${f} is not listed in photos.json`);
+  for (const f of readdirSync(dir + 'thumbs')) if (!listed.has(f)) fail(`${dir}thumbs/${f} is not listed in photos.json`);
+}
 
 // 6. VERSION is semver and has a CHANGELOG entry.
 const version = readFileSync('VERSION', 'utf8').trim();
