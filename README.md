@@ -1,6 +1,6 @@
 # Nippon Bible
 
-Japanese for European travellers, in seven parts:
+Japanese for European travellers, in eight parts:
 
 | Part | What it is | Start |
 |------|-----------|-------|
@@ -11,6 +11,7 @@ Japanese for European travellers, in seven parts:
 | **Japanese cuisine handbook** | 14 long-form chapters on how Japanese food is made: umami and dashi, kōji, soy sauce, miso, mirin and vinegar, raw fish, frying, kōji marinades, rice, noodles, tofu, bean paste and agar, mochi and starches, and texture vocabulary. Every fact is cited from research papers or official bodies; freely licensed photos, molecule diagrams and Wikipedia links for further reading; a quiz per chapter and a glossary | [Start here](cuisine/00-start.md) |
 | **Folklore handbook: kami, ghosts and yōkai** | 13 long-form chapters on Japanese belief: kami and the word "Shinto", the myths and the Land of Yomi, pollution and purification, a thousand years of kami and buddhas together and their separation in 1868, ancestors and Bon, vengeful spirits, how the white-robed yūrei took shape, a field guide to the kinds of ghost, and a separate part on yōkai: definitions, night parades and tool spirits, a bestiary, and yōkai in modern Japan. Cited from peer-reviewed scholarship, public-domain primary texts and official statistics; woodblock prints, scrolls, photographs and explanatory diagrams; a quiz per chapter and a glossary | [Start here](folklore/00-start.md) |
 | **Pop culture handbook: manga, anime and beyond** | 14 long-form chapters: picture scrolls, Edo picture books and how *manga* got its name; manga and the weekly magazine system; anime and the production committee; manga symbols and role language; cinema from the golden age to Kore-eda, Hamaguchi and *Kokuhō*; Godzilla and special effects; video games; enka, idols, city pop and Hatsune Miku; kawaii and local mascots; Comiket, Akihabara and cosplay; anime pilgrimage and folklore in pop culture; Cool Japan; a traveller's guide with dated official rules; and the Japanese of fiction for learners. Cited from scholarship and official data; public-domain prints, photographs and diagrams, but no copyrighted characters; a quiz per chapter and a glossary | [Start here](popculture/00-start.md) |
+| **Signs in the wild: photo gallery** | Photographs of Japanese text in public space (station boards, warnings and house rules, notices, street signs, shop signs and product labels) with the main text, a translation and a credit for each. Every photo is public domain or CC0 | [Gallery](signs/00-gallery.md) |
 
 **Read it online:** <https://pkasprowicz.github.io/nippon-bible/>. The website adds
 tap-to-listen audio for all Japanese text, the interactive exercises, progress tracking

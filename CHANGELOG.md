@@ -4,6 +4,20 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.16.0] - 2026-11-20
+
+### Added
+- **Signs in the wild: photo gallery**, an eighth part of the course: 43 photographs of Japanese text in public space
+  - Station boards and train and bus displays, warnings and house rules, notices, street and route signs, shop signs and product labels, shrine and sightseeing signs, and two pre-war adverts, with a filter for each kind
+  - Each caption gives the main Japanese text, its reading and meaning, the place and date, and a credit; tap the Japanese to hear it
+  - Tap a photo to enlarge it, then browse with ‹ › or the arrow keys
+  - Every picture is public domain or CC0 on Wikimedia Commons; no copyrighted artwork, characters or mascots
+  - The photos and their details are kept in `assets/signs/` so later lessons can reuse them
+  - An eighth home-page tile and menu group; the gallery is saved for offline use like the rest of the course
+
+### Changed
+- The content check covers the gallery: licences, credits, sources and that every photo is present
+
 ## [1.15.0] - 2026-11-19
 
 ### Added

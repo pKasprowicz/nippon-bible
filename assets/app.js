@@ -8,7 +8,8 @@
     { id: 'kanji', title: 'Kanji course' },
     { id: 'cuisine', title: 'Cuisine handbook' },
     { id: 'folklore', title: 'Folklore handbook' },
-    { id: 'popculture', title: 'Pop culture handbook' }
+    { id: 'popculture', title: 'Pop culture handbook' },
+    { id: 'signs', title: 'Signs in the wild' }
   ];
   var LESSONS = [
     { id: 'guide', file: 'lessons/00-guide.md', group: 'course', title: 'Overview', label: '★' },
@@ -102,7 +103,8 @@
     { id: 'popculture-13', file: 'popculture/13-travel.md', group: 'popculture', title: 'A traveller’s guide' },
     { id: 'popculture-14', file: 'popculture/14-language.md', group: 'popculture', title: 'Language for fans' },
     { id: 'popculture-glossary', file: 'popculture/15-glossary.md', group: 'popculture', title: 'Glossary', label: 'A–Z', kind: 'Glossary' },
-    { id: 'popculture-sources', file: 'popculture/16-sources.md', group: 'popculture', title: 'Sources and image credits', label: '§', kind: 'Sources' }
+    { id: 'popculture-sources', file: 'popculture/16-sources.md', group: 'popculture', title: 'Sources and image credits', label: '§', kind: 'Sources' },
+    { id: 'signs', file: 'signs/00-gallery.md', group: 'signs', title: 'Photo gallery', label: '▦', kind: 'Gallery' }
   ];
   // Number lessons within their group unless they have their own label.
   GROUPS.forEach(function (g) {
@@ -360,11 +362,89 @@
     rewriteImages(article, file);
     wrapTables(article);
     markSpeakable(article);
+    mountGalleries(article);
     var lesson = LESSONS.filter(function (l) { return l.id === pageKey; })[0];
     var script = lesson && (lesson.group === 'katakana' || lesson.group === 'kanji') ? lesson.group : 'hiragana';
     if (window.NBKana) window.NBKana.mount(article, pageKey, script);
     return article;
   }
+  /* ---------- photo gallery (```gallery blocks) ---------- */
+  // Renders assets/signs/photos.json as a filterable grid; a photo opens full size in a
+  // dialog with its caption and credit. Every photo is public domain or CC0.
+  var GALLERY_DIR = 'assets/signs/';
+  function mountGalleries(article) {
+    article.querySelectorAll('pre > code.language-gallery').forEach(function (code) {
+      var box = el('div', { 'class': 'gallery' }, [el('p', { 'class': 'loading', text: 'Loading photos…' })]);
+      code.parentNode.replaceWith(box);
+      fetchText(GALLERY_DIR + 'photos.json').then(function (t) { buildGallery(box, JSON.parse(t)); }).catch(function (err) {
+        box.replaceChildren(el('p', { 'class': 'hw-error', text: 'The photos could not be loaded (' + (err.message || err) + ').' }));
+      });
+    });
+  }
+  function buildGallery(box, data) {
+    var photos = data.photos, kind = '', shown = photos;
+    var chips = el('div', { 'class': 'search-filters gallery-filters', role: 'group', 'aria-label': 'Show photos of' });
+    var grid = el('ul', { 'class': 'gallery-grid' });
+    function renderChips() {
+      var counts = {};
+      photos.forEach(function (p) { counts[p.kind] = (counts[p.kind] || 0) + 1; });
+      function chip(id, label, n) {
+        return el('button', { type: 'button', 'class': 'search-chip', 'aria-pressed': String(kind === id),
+          onclick: function () { kind = id; renderChips(); renderGrid(); } }, [label + ' ', el('span', { 'class': 'search-count', text: String(n) })]);
+      }
+      chips.replaceChildren.apply(chips, [chip('', 'All', photos.length)].concat(data.kinds.filter(function (k) { return counts[k.id]; }).map(function (k) {
+        return chip(k.id, k.title, counts[k.id]);
+      })));
+    }
+    function renderGrid() {
+      shown = photos.filter(function (p) { return !kind || p.kind === kind; });
+      grid.replaceChildren.apply(grid, shown.map(function (p, i) {
+        return el('li', {}, [el('button', { type: 'button', 'class': 'gallery-item', onclick: function () { open(i); } }, [
+          el('img', { src: GALLERY_DIR + 'thumbs/' + p.file, alt: p.title, loading: 'lazy', width: '400', height: '300' }),
+          el('span', { 'class': 'gallery-title', text: p.title })
+        ])]);
+      }));
+    }
+    // The bar is built once so keyboard focus survives moving between photos; only the
+    // position, picture and caption change.
+    var at = 0, pos = el('span', { 'class': 'lightbox-pos' }), figure = el('figure');
+    var dialog = el('dialog', { 'class': 'lightbox', 'aria-label': 'Photo' }, [
+      el('div', { 'class': 'lightbox-bar' }, [
+        pos,
+        el('button', { type: 'button', 'class': 'icon-btn', 'aria-label': 'Previous photo', text: '‹', onclick: function () { show(at - 1); } }),
+        el('button', { type: 'button', 'class': 'icon-btn', 'aria-label': 'Next photo', text: '›', onclick: function () { show(at + 1); } }),
+        el('button', { type: 'button', 'class': 'icon-btn lightbox-close', 'aria-label': 'Close', text: '✕', onclick: function () { dialog.close(); } })
+      ]),
+      figure
+    ]);
+    function show(i) {
+      at = (i + shown.length) % shown.length;
+      var p = shown[at];
+      pos.textContent = (at + 1) + ' / ' + shown.length;
+      figure.replaceChildren(
+        el('img', { src: GALLERY_DIR + p.file, alt: p.title, width: String(p.w), height: String(p.h) }),
+        el('figcaption', {}, [
+          el('strong', { text: p.title }),
+          p.ja ? el('span', { 'class': 'lightbox-ja' }, [el('span', { 'class': 'ja', lang: 'ja', tabindex: '0', text: p.ja })]) : null,
+          p.note ? el('span', { text: p.note }) : null,
+          el('span', { 'class': 'lightbox-credit' }, [
+            [p.place, p.date].filter(Boolean).join(', ') + (p.kind === 'adverts' ? '. Published by ' : '. Photo: ') + p.author + ', ' + p.license + ' (',
+            el('a', { href: p.source, target: '_blank', rel: 'noopener', text: 'Wikimedia Commons' }), ').'
+          ])
+        ])
+      );
+    }
+    function open(i) { show(i); dialog.showModal(); }
+    dialog.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { e.preventDefault(); show(at - 1); }
+      else if (e.key === 'ArrowRight') { e.preventDefault(); show(at + 1); }
+    });
+    // A click on the backdrop (outside the photo and caption) closes the dialog.
+    dialog.addEventListener('click', function (e) { if (e.target === dialog) dialog.close(); });
+    renderChips(); renderGrid();
+    box.replaceChildren(chips, grid, dialog);
+  }
+
   function lessonFooter(id) {
     var i = LESSONS.findIndex(function (l) { return l.id === id; });
     var next = LESSONS[i + 1] && LESSONS[i + 1].group === LESSONS[i].group ? LESSONS[i + 1] : null;
@@ -378,7 +458,8 @@
     btn.addEventListener('click', function () {
       done[id] = !done[id]; save('nb-done', done); label(); buildNav(); setCurrent(id);
     });
-    return el('div', {}, [el('div', { 'class': 'lesson-foot' }, [btn]), pager(id)]);
+    // A gallery has nothing to complete: it only gets the pager.
+    return el('div', {}, [LESSONS[i].kind === 'Gallery' ? null : el('div', { 'class': 'lesson-foot' }, [btn]), pager(id)]);
   }
 
   /* ---------- previous / next in content order (guide → hiragana → katakana → kanji → cuisine → folklore → pop culture) ---------- */
@@ -605,7 +686,7 @@
     });
   }
 
-  /* ---------- home: seven tiles ---------- */
+  /* ---------- home: eight tiles ---------- */
   function groupProgress(group) {
     var pages = LESSONS.filter(function (l) { return l.group === group && l.label !== '★' && l.label !== '↻' && !l.kind; });
     var doneCount = pages.filter(function (l) { return done[l.id]; }).length;
@@ -620,10 +701,10 @@
       el('span', { 'class': 'home-title', text: opts.title }),
       el('span', { 'class': 'home-desc', text: opts.desc }),
       el('span', { 'class': 'home-examples', lang: 'ja', text: opts.examples }),
-      el('span', { 'class': 'home-progress' }, [
+      opts.progressLabel ? el('span', { 'class': 'home-progress' }, [
         el('span', { 'class': 'home-bar', role: 'img', 'aria-label': opts.progressLabel }, [el('span', { style: 'width:' + pct + '%' })]),
         el('span', { 'class': 'home-progress-text', text: opts.progressLabel })
-      ]),
+      ]) : null,
       el('span', { 'class': 'home-cta', text: opts.cta + ' →' })
     ]);
   }
@@ -673,6 +754,13 @@
       cta: !g.done ? 'Open the handbook' : g.next ? 'Continue: chapter ' + g.next.label : 'Browse the glossary'
     });
   }
+  function signsTile() {
+    return tile({
+      id: 'signs', glyph: '看', kicker: 'Photo gallery', title: 'Signs in the wild',
+      desc: 'Real Japanese text in public space: station boards, warnings and notices, shop signs and noren, posters and road signs. Public-domain photos to practise reading on.',
+      examples: '出口 · 注意 · 営業中 · 止まれ', href: '#/signs', cta: 'Open the gallery'
+    });
+  }
   function homeOffline() {
     var line = el('p', { 'class': 'home-foot home-offline' });
     function refresh() {
@@ -692,7 +780,7 @@
       el('header', { 'class': 'home-hero' }, [
         el('p', { 'class': 'home-hero-kicker' }, [el('span', { lang: 'ja', text: '日本へようこそ' }), ' · welcome to Japan']),
         el('h1', { text: 'Japanese for your trip' }),
-        el('p', { 'class': 'home-lead', text: 'Seven ways in. Get the practical know-how for travelling in Japan, learn to read the scripts on every sign, menu and station board, then go deeper into how Japanese food is made, into the kami, ghosts and yōkai of Japanese belief, and into manga, anime, film and the rest of Japanese pop culture.' })
+        el('p', { 'class': 'home-lead', text: 'Eight ways in. Get the practical know-how for travelling in Japan, learn to read the scripts on every sign, menu and station board, then go deeper into how Japanese food is made, into the kami, ghosts and yōkai of Japanese belief, and into manga, anime, film and the rest of Japanese pop culture. Then try your reading on photos of real signs.' })
       ]),
       el('div', { 'class': 'home-tiles' }, [
         tile({
@@ -707,7 +795,8 @@
         kanaTile('kanji', '漢', 'Kanji course', 'The 95 kanji on signs in stations, restaurants, shops, toilets and onsen: what they mean and how to read them.', '出口 · 駅 · 禁煙'),
         cuisineTile(),
         folkloreTile(),
-        popcultureTile()
+        popcultureTile(),
+        signsTile()
       ]),
       el('p', { 'class': 'home-foot' }, [
         'Tip: tap any Japanese text to hear it. Quick practice: ',
