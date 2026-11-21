@@ -4,6 +4,12 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.18.2] - 2026-11-21
+
+### Fixed
+- Saving the site for offline use could fail and start over: it fetched all ~1,850 files at once, and a single file the server briefly refused (HTTP 503) discarded the whole download, which also kept some devices on an old version. Files are now fetched eight at a time, each retried up to three times, and an interrupted download resumes where it stopped.
+- A change to the offline code alone now also counts as a new version.
+
 ## [1.18.1] - 2026-11-21
 
 ### Fixed

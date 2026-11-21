@@ -24,6 +24,8 @@ for (const f of files) {
   hashes[f] = createHash('sha256').update(data).digest('hex').slice(0, 12);
   hash.update(f + '\0').update(data);
 }
+// The service worker's own code counts too, so a change to sw.js alone still makes a new build.
+hash.update('sw.js\0').update(readFileSync(join(root, 'sw.js')));
 const build = hash.digest('hex').slice(0, 12);
 const version = readFileSync(join(root, 'VERSION'), 'utf8').trim();
 writeFileSync(join(root, 'precache.json'), JSON.stringify({ version, build, files, hashes }, null, 1) + '\n');
