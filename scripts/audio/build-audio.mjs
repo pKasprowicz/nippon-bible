@@ -25,7 +25,12 @@ const ROOT = fileURLToPath(new URL('../..', import.meta.url));
 const OUT = ROOT + 'assets/audio/';
 const DIC = '/var/lib/mecab/dic/open-jtalk/naist-jdic';
 const VOICE = fileURLToPath(new URL('voice/takumi_normal.htsvoice', import.meta.url));
-const POSTFILTER = '0.4';      // Open JTalk's postfilter: clearer, less muffled formants
+// Open JTalk's postfilter makes the voice clearer, but on some phrases it goes unstable and
+// the waveform clips at full scale (heard as distortion). Each clip is re-rendered with a
+// gentler setting until its raw output stays well below full scale.
+const POSTFILTERS = ['0.4', '0.2', '0.0'];
+const TARGET_LUFS = -16;        // every clip gets one gain to this loudness (EBU R128)…
+const MAX_PEAK = -1.5;          // …unless that would push its true peak above -1.5 dBTP
 const LEAD = 0.15, TAIL = 0.40; // seconds kept before and after the speech: phones and
                                 // Bluetooth headsets swallow the first moments of a sound,
                                 // and the voice needs its natural fade-out
@@ -151,24 +156,40 @@ function phonemes(trace) {
 }
 const flatPhonemes = (ps) => ps.map((p) => (p === 'cl' ? 'q' : p === 'N' ? 'N' : p.toLowerCase())).join('');
 
+// Peak of a 16-bit PCM WAV written by open_jtalk (44-byte header).
+function wavPeak(file) {
+  const b = readFileSync(file); let peak = 0;
+  for (let i = 44; i + 1 < b.length; i += 2) { const v = Math.abs(b.readInt16LE(i)); if (v > peak) peak = v; }
+  return peak;
+}
+let softened = 0;
 function synth(text) {
   const tmp = OUT + '.tmp';
-  const r = spawnSync('open_jtalk', ['-x', DIC, '-m', VOICE, '-r', RATE, '-b', POSTFILTER, '-ow', tmp + '.wav', '-ot', tmp + '.trace'], { input: synthText(text) + '\n' });
+  let r;
+  for (const pf of POSTFILTERS) {
+    r = spawnSync('open_jtalk', ['-x', DIC, '-m', VOICE, '-r', RATE, '-b', pf, '-ow', tmp + '.wav', '-ot', tmp + '.trace'], { input: synthText(text) + '\n' });
+    if (r.status !== 0) break;
+    if (wavPeak(tmp + '.wav') < 30000) break;                  // stable: no clipping
+    if (pf !== POSTFILTERS[POSTFILTERS.length - 1]) softened++;
+  }
   // Marks with no sound of their own (゛, ゜, っ, ー alone) can't be synthesised: no clip.
   if (r.status !== 0) { if (/No phoneme|cannot be synthesized/.test(r.stderr)) return { ps: [] }; throw new Error('open_jtalk failed for ' + text + ': ' + r.stderr); }
   const trace = readFileSync(tmp + '.trace', 'utf8');
   const ps = phonemes(trace);
   if (!ps.length) return { ps };  // nothing to say (っ, ー on their own)
   // Keep LEAD before the first and TAIL after the last speech sound (from the phoneme timings),
-  // raise the whole clip by one gain to a -1.5 dB peak (no compression), fade the edges, and
-  // encode a 48 kbps / 24 kHz mono MP3.
+  // give the whole clip one gain to TARGET_LUFS (capped by MAX_PEAK; no compression), fade the
+  // edges, and encode a 48 kbps / 24 kHz mono MP3.
   const file = createHash('sha1').update(text).digest('hex').slice(0, 12) + '.mp3';
   const times = [...trace.matchAll(/^(\d+) (\d+) [^\^]+\^[^-]+-([^+]+)\+/gm)].filter((m) => m[3] !== 'sil' && m[3] !== 'pau');
   const total = Number(spawnSync('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', tmp + '.wav']).stdout.toString());
   const start = Math.max(0, Number(times[0][1]) / 1e7 - LEAD);
   const end = Math.min(total, Number(times[times.length - 1][2]) / 1e7 + TAIL);
-  const vd = spawnSync('ffmpeg', ['-hide_banner', '-i', tmp + '.wav', '-af', `atrim=${start}:${end},volumedetect`, '-f', 'null', '-']).stderr.toString();
-  const gain = -1.5 - Number((vd.match(/max_volume: (-?[\d.]+) dB/) || [0, -1.5])[1]);
+  const m = spawnSync('ffmpeg', ['-hide_banner', '-i', tmp + '.wav', '-af', `atrim=${start}:${end},ebur128=peak=true`, '-f', 'null', '-']).stderr.toString();
+  const summary = m.slice(m.lastIndexOf('Summary:'));
+  const lufs = Number((summary.match(/I:\s+(-?[\d.]+) LUFS/) || [0, -23])[1]);
+  const peak = Number((summary.match(/Peak:\s+(-?[\d.]+) dBFS/) || [0, -6])[1]);
+  const gain = Math.min(TARGET_LUFS - lufs, MAX_PEAK - peak);
   const dur = end - start;
   const f = spawnSync('ffmpeg', ['-loglevel', 'error', '-y', '-i', tmp + '.wav', '-af',
     `atrim=${start}:${end},asetpts=PTS-STARTPTS,volume=${gain.toFixed(2)}dB,afade=t=in:d=0.01,afade=t=out:st=${Math.max(0, dur - 0.12).toFixed(3)}:d=0.12`,
@@ -209,4 +230,4 @@ writeFileSync(indexFile, JSON.stringify({
   clips
 }, null, 0) + '\n');
 if (reportFile) writeFileSync(reportFile, report.join('\n') + '\n');
-console.log(`audio: ${Object.keys(clips).length} clips (${made} new or changed, ${reused} unchanged), ${mismatches} differ from the course romaji`);
+console.log(`audio: ${Object.keys(clips).length} clips, ${softened} re-rendered with a gentler postfilter, ${mismatches} differ from the course romaji`);
