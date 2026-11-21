@@ -170,8 +170,6 @@
   var clips = null;
   fetch('assets/audio/index.json').then(function (r) { return r.ok ? r.json() : null; })
     .then(function (j) { clips = j && j.clips; }).catch(function () {});
-  var player = new Audio();
-  player.preload = 'auto';
   var speakingNode = null;
   function clipFor(text) { var k = text.replace(/[〜～]/g, '').trim(); return clips && clips[k] ? 'assets/audio/' + clips[k] : null; }
   function markSpeaking(node) {
@@ -180,27 +178,60 @@
     if (node) node.classList.add('speaking');
   }
   function doneSpeaking() { if (speakingNode) speakingNode.classList.remove('speaking'); speakingNode = null; }
-  player.addEventListener('ended', function () {
-    doneSpeaking();
-    // Let go of the finished clip, so no download stays open (see releaseAudio).
-    if (player.paused) { player.removeAttribute('src'); try { player.load(); } catch (e) { /* ignore */ } }
-  });
-  player.addEventListener('pause', doneSpeaking);
-  // iOS only lets a page start sound after a tap. Play (silently) once on the first tap so
-  // listening questions can start their sound by themselves later.
+
+  // Clips play through Web Audio: decoded once and kept (the last 60), so a clip starts at
+  // once and the exercises can prepare the next question's sound in advance. Fetching a whole
+  // file also avoids audio elements' range requests and the downloads they can leave open.
+  var AC = window.AudioContext || window.webkitAudioContext;
+  var actx = null, decoded = new Map(), playing = null, pendingPlay = 0, playSeq = 0;
+  function audioCtx() { if (!actx && AC) { try { actx = new AC(); } catch (e) { actx = null; } } return actx; }
+  function loadClip(src) {
+    var c = audioCtx();
+    if (!c) return Promise.reject(new Error('no Web Audio'));
+    if (decoded.has(src)) { var hit = decoded.get(src); decoded.delete(src); decoded.set(src, hit); return hit; }
+    var p = fetch(src).then(function (r) {
+      if (!r.ok) throw new Error(src + ': HTTP ' + r.status);
+      return r.arrayBuffer();
+    }).then(function (buf) {
+      return new Promise(function (ok, fail) { c.decodeAudioData(buf, ok, fail); });   // callback form: older Safari
+    });
+    p.catch(function () { decoded.delete(src); });
+    decoded.set(src, p);
+    while (decoded.size > 60) decoded.delete(decoded.keys().next().value);
+    return p;
+  }
+  function preloadSpeech(text) { var src = clipFor(text); if (src) loadClip(src).catch(function () {}); }
+  function stopClip() {
+    playSeq++; pendingPlay = 0;
+    if (playing) { var s = playing; playing = null; try { s.stop(); } catch (e) { /* already ended */ } }
+  }
+  function playClip(src, node) {
+    var c = audioCtx(), seq = ++playSeq;
+    if (!c) return Promise.reject(new Error('no Web Audio'));
+    if (c.state === 'suspended') c.resume();
+    pendingPlay = seq;
+    return loadClip(src).then(function (buffer) {
+      if (seq !== playSeq) return;           // a newer sound (or a stop) came first
+      pendingPlay = 0;
+      var source = c.createBufferSource();
+      source.buffer = buffer;
+      source.connect(c.destination);
+      source.onended = function () { if (playing === source) { playing = null; doneSpeaking(); } };
+      playing = source;
+      markSpeaking(node);
+      source.start();
+    }, function (err) { if (seq === playSeq) pendingPlay = 0; throw err; });
+  }
+  // iOS (and other browsers) only let a page start sound after a tap: resume the audio
+  // context and play a silent instant during the first one.
   function unlockAudio() {
-    document.removeEventListener('pointerdown', unlockAudio, true);
-    document.removeEventListener('keydown', unlockAudio, true);
-    if (!player.src && clips) {
-      var any = Object.keys(clips)[0];
-      if (!any) return;
-      var src = 'assets/audio/' + clips[any];
-      player.muted = true; player.src = src;
-      player.play().then(function () {
-        if (player.src.indexOf(src) >= 0 && player.muted) { player.pause(); player.removeAttribute('src'); try { player.load(); } catch (e) { /* ignore */ } }
-        player.muted = false;
-      })
-        .catch(function () { player.muted = false; });
+    var c = audioCtx();
+    if (!c) return;
+    if (c.state === 'suspended') c.resume();
+    try { var s = c.createBufferSource(); s.buffer = c.createBuffer(1, 1, 22050); s.connect(c.destination); s.start(0); } catch (e) { /* ignore */ }
+    if (c.state === 'running') {
+      document.removeEventListener('pointerdown', unlockAudio, true);
+      document.removeEventListener('keydown', unlockAudio, true);
     }
   }
   document.addEventListener('pointerdown', unlockAudio, true);
@@ -217,31 +248,22 @@
     speechSynthesis.addEventListener('voiceschanged', pickVoice);
   }
   function stopSpeech() {
-    if (!player.paused) player.pause();
+    stopClip(); doneSpeaking();
     if ('speechSynthesis' in window && (speechSynthesis.speaking || speechSynthesis.pending)) speechSynthesis.cancel();
   }
   function speechBusy() {
-    return !player.paused || ('speechSynthesis' in window && (speechSynthesis.speaking || speechSynthesis.pending));
+    return !!playing || !!pendingPlay || ('speechSynthesis' in window && (speechSynthesis.speaking || speechSynthesis.pending));
   }
   function canSay(text) { return !!clipFor(text) || !!jaVoice; }
-  // An audio element can keep its download from the service worker open after playing, and a
-  // browser won't switch to a new app version while the old one is still serving a request:
-  // drop the source before asking the new version to take over.
-  function releaseAudio() {
-    stopSpeech();
-    player.removeAttribute('src');
-    try { player.load(); } catch (e) { /* ignore */ }
-  }
+  // Stop any sound before a new app version takes over.
+  function releaseAudio() { stopSpeech(); }
   function activate(worker) { releaseAudio(); worker.postMessage('skipWaiting'); }
   var voiceWarned = false;
   function speak(text, node) {
     var clip = clipFor(text);
     if (clip) {
       stopSpeech();
-      player.muted = false;
-      player.src = clip;
-      markSpeaking(node);
-      player.play().catch(function () { doneSpeaking(); speakWithVoice(text, node); });
+      playClip(clip, node).catch(function () { doneSpeaking(); speakWithVoice(text, node); });
       return;
     }
     speakWithVoice(text, node);
@@ -298,6 +320,7 @@
   if (window.NBKana) {
     window.NBKana.init({
       speak: function (text) { speak(text); },
+      preload: preloadSpeech,
       canSay: canSay,
       busy: speechBusy,
       stop: stopSpeech,
