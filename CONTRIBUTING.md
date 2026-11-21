@@ -192,8 +192,12 @@ The site is an installable web app that works offline:
   versions too, as it isn't in their cache). It unregisters the service worker, deletes the
   `nb-…` caches and reloads the newest version; progress in `localStorage` is kept. Use it when a
   browser is stuck on an old version.
-- Before a new version takes over, the page releases its audio element: a clip still loaded can
-  keep a request open in the old service worker, and activation waits for it.
+- Clips play through Web Audio (`playClip` in `assets/app.js`): each is fetched whole, decoded once
+  and kept (the last 60), so it starts at once; the exercises preload the current and next
+  question's sound (`ctx.preload`). An `<audio>` element was avoided on purpose: its range
+  requests and lingering downloads delayed playback and blocked new versions from activating.
+- After a correct answer the exercises wait for the answer's sound to finish (at most 4 s more,
+  1.5 s in speed rounds) before showing the next question, so it isn't cut off.
 - New files and folders are picked up automatically. To try it locally, copy the published files to a
   folder, run the script on that folder and serve it (service workers need `localhost` or HTTPS).
 
