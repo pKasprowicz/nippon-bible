@@ -4,6 +4,16 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.18.1] - 2026-11-21
+
+### Fixed
+- New versions didn't install while the site was open once you had played any recording: the Reload button did nothing, and some browsers (such as Samsung Internet, which keeps pages alive in the background) stayed on the old version. Updates now switch over straight away.
+
+### Added
+- **Updates** on the *Install & offline* page: the version on this device and the newest one, with *Check for updates* and *Reset and reload*.
+- A "Version … is available" bar when a newer version exists that your browser hasn't picked up.
+- `reset.html`: open it to delete the saved copy of the site and load the newest version, keeping your progress. Works even from an older version that is stuck.
+
 ## [1.18.0] - 2026-11-21
 
 ### Changed

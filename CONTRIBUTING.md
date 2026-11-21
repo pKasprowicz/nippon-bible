@@ -184,6 +184,16 @@ The site is an installable web app that works offline:
   app is in use the page shows a *Reload* bar; an update still waiting at the next start-up is
   applied straight away. The page also checks for updates every 30 minutes and when brought back
   to the foreground. Keep the placeholder in `sw.js`, and don't commit `precache.json`.
+- The *Install & offline* page shows the device's version and the server's (fetched with `?fresh=`,
+  which the service worker always sends to the network), with *Check for updates* and *Reset and
+  reload*. When the app sees a newer version on the server that the browser hasn't installed, it
+  offers it with an update bar.
+- `reset.html` is a standalone page the service worker always fetches from the network (older
+  versions too, as it isn't in their cache). It unregisters the service worker, deletes the
+  `nb-…` caches and reloads the newest version; progress in `localStorage` is kept. Use it when a
+  browser is stuck on an old version.
+- Before a new version takes over, the page releases its audio element: a clip still loaded can
+  keep a request open in the old service worker, and activation waits for it.
 - New files and folders are picked up automatically. To try it locally, copy the published files to a
   folder, run the script on that folder and serve it (service workers need `localhost` or HTTPS).
 

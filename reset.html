@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Reset · Nippon Bible</title>
+<style>
+  :root { --bg: #f7f3ec; --ink: #1d1b17; --soft: #6b645a; --card: #fffdf8; --line: #e4dccd; --accent: #bc2c22; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #15130f; --ink: #f1ece3; --soft: #a39b8f; --card: #1f1c17; --line: #38332b; --accent: #e5594c; } }
+  body { margin: 0; padding: 32px 16px; background: var(--bg); color: var(--ink); font: 16px/1.5 system-ui, sans-serif; }
+  main { max-width: 560px; margin: 0 auto; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 22px 24px; }
+  h1 { margin: 0 0 8px; font-size: 24px; } p, li { color: var(--soft); } .ok { color: var(--ink); }
+  a.btn { display: inline-block; margin-top: 10px; padding: 10px 18px; border-radius: 10px; background: var(--accent); color: #fff; text-decoration: none; font-weight: 600; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Resetting Nippon Bible</h1>
+  <p>This removes the copy of the site saved on this device and loads the newest version from the server. Your progress is kept.</p>
+  <ul id="log"></ul>
+  <a class="btn" id="go" href="./" hidden>Open Nippon Bible</a>
+</main>
+<script>
+  // Always served from the network (the app's service worker lets it through), so it can repair
+  // a saved copy that won't update: unregister the service worker, delete its caches (nb-…),
+  // then open the site again past every cache. Progress lives in localStorage and is untouched.
+  (async function () {
+    var log = document.getElementById('log');
+    function say(t, ok) { var li = document.createElement('li'); li.textContent = t; if (ok) li.className = 'ok'; log.appendChild(li); }
+    try {
+      if ('serviceWorker' in navigator) {
+        var regs = await navigator.serviceWorker.getRegistrations();
+        for (var i = 0; i < regs.length; i++) await regs[i].unregister();
+        say(regs.length ? 'Stopped the offline app (' + regs.length + ').' : 'No offline app was installed.', true);
+      }
+      if (window.caches) {
+        var keys = (await caches.keys()).filter(function (k) { return k.indexOf('nb-') === 0; });
+        for (var j = 0; j < keys.length; j++) await caches.delete(keys[j]);
+        say(keys.length ? 'Deleted the saved copy (' + keys.length + ' store' + (keys.length > 1 ? 's' : '') + ').' : 'No saved copy found.', true);
+      }
+      if (navigator.storage && navigator.storage.estimate) {
+        var est = await navigator.storage.estimate();
+        say('Storage available to the site: ' + Math.round((est.quota || 0) / 1048576) + ' MB.');
+      }
+      say('Loading the newest version…', true);
+      var go = document.getElementById('go');
+      go.href = './?fresh=' + Date.now(); go.hidden = false;
+      setTimeout(function () { location.replace(go.href); }, 1500);
+    } catch (e) {
+      say('Something went wrong: ' + e.message + '. Clear this site\'s data in the browser settings instead.');
+    }
+  })();
+</script>
+</body>
+</html>

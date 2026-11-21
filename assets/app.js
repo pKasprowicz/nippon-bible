@@ -180,7 +180,11 @@
     if (node) node.classList.add('speaking');
   }
   function doneSpeaking() { if (speakingNode) speakingNode.classList.remove('speaking'); speakingNode = null; }
-  player.addEventListener('ended', doneSpeaking);
+  player.addEventListener('ended', function () {
+    doneSpeaking();
+    // Let go of the finished clip, so no download stays open (see releaseAudio).
+    if (player.paused) { player.removeAttribute('src'); try { player.load(); } catch (e) { /* ignore */ } }
+  });
   player.addEventListener('pause', doneSpeaking);
   // iOS only lets a page start sound after a tap. Play (silently) once on the first tap so
   // listening questions can start their sound by themselves later.
@@ -192,7 +196,10 @@
       if (!any) return;
       var src = 'assets/audio/' + clips[any];
       player.muted = true; player.src = src;
-      player.play().then(function () { if (player.src.indexOf(src) >= 0 && player.muted) { player.pause(); } player.muted = false; })
+      player.play().then(function () {
+        if (player.src.indexOf(src) >= 0 && player.muted) { player.pause(); player.removeAttribute('src'); try { player.load(); } catch (e) { /* ignore */ } }
+        player.muted = false;
+      })
         .catch(function () { player.muted = false; });
     }
   }
@@ -217,6 +224,15 @@
     return !player.paused || ('speechSynthesis' in window && (speechSynthesis.speaking || speechSynthesis.pending));
   }
   function canSay(text) { return !!clipFor(text) || !!jaVoice; }
+  // An audio element can keep its download from the service worker open after playing, and a
+  // browser won't switch to a new app version while the old one is still serving a request:
+  // drop the source before asking the new version to take over.
+  function releaseAudio() {
+    stopSpeech();
+    player.removeAttribute('src');
+    try { player.load(); } catch (e) { /* ignore */ }
+  }
+  function activate(worker) { releaseAudio(); worker.postMessage('skipWaiting'); }
   var voiceWarned = false;
   function speak(text, node) {
     var clip = clipFor(text);
@@ -1120,7 +1136,60 @@
     if (document.getElementById('updateBar')) return;
     var bar = el('div', { 'class': 'update-bar', id: 'updateBar', role: 'status' }, [
       el('span', { text: 'A new version of Nippon Bible is ready.' }),
-      el('button', { 'class': 'btn primary', type: 'button', text: 'Reload', onclick: function () { worker.postMessage('skipWaiting'); } }),
+      // Ask whichever version is waiting now: the one this bar was made for may have been
+      // replaced by a later download, and a discarded worker ignores the message.
+      el('button', { 'class': 'btn primary', type: 'button', text: 'Reload', onclick: function () {
+        navigator.serviceWorker.getRegistration().then(function (reg) {
+          var w = (reg && reg.waiting) || worker;
+          if (w) activate(w); else location.reload();
+        });
+      } }),
+      el('button', { 'class': 'icon-btn', type: 'button', 'aria-label': 'Later', text: '×', onclick: function () { bar.remove(); } })
+    ]);
+    document.body.appendChild(bar);
+  }
+  // Updates: the version this device runs (from the saved copy) and the newest one on the
+  // server (asked for with ?fresh=, which the service worker sends to the network).
+  var running = { version: null };
+  function latestVersion() {
+    return fetch('VERSION?fresh=' + Date.now(), { cache: 'no-store' }).then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.text();
+    }).then(function (t) { return t.trim(); });
+  }
+  function newer(a, b) {   // is version a newer than b?
+    var x = a.split('.').map(Number), y = b.split('.').map(Number);
+    for (var i = 0; i < 3; i++) if ((x[i] || 0) !== (y[i] || 0)) return (x[i] || 0) > (y[i] || 0);
+    return false;
+  }
+  // Ask the service worker to fetch the new release and switch to it. If the browser doesn't
+  // manage within 60 s (some keep the old copy), fall back to resetting the saved copy.
+  function updateNow(say) {
+    say = say || function () {};
+    if (!offline.supported) { location.reload(); return; }
+    navigator.serviceWorker.getRegistration().then(function (reg) {
+      if (!reg) { location.replace('./?fresh=' + Date.now()); return; }
+      if (reg.waiting) { activate(reg.waiting); return; }
+      say('Downloading the new version…');
+      var gaveUp = setTimeout(function () { say('The browser didn\'t update; resetting the saved copy…'); location.href = 'reset.html'; }, 60000);
+      function follow(w) {
+        if (!w) return;
+        w.addEventListener('statechange', function () {
+          if (w.state === 'installed') { clearTimeout(gaveUp); activate(w); }
+          if (w.state === 'redundant') { clearTimeout(gaveUp); say('The download failed; resetting the saved copy…'); location.href = 'reset.html'; }
+        });
+      }
+      reg.addEventListener('updatefound', function () { follow(reg.installing); });
+      follow(reg.installing);
+      reg.update().catch(function () { clearTimeout(gaveUp); say('Could not reach the server. Check your connection and try again.'); });
+    });
+  }
+  function showNewerBar(version) {
+    if (document.getElementById('updateBar')) return;
+    var msg = el('span', { text: 'Version ' + version + ' is available.' });
+    var bar = el('div', { 'class': 'update-bar', id: 'updateBar', role: 'status' }, [
+      msg,
+      el('button', { 'class': 'btn primary', type: 'button', text: 'Update', onclick: function () { updateNow(function (t) { msg.textContent = t; }); } }),
       el('button', { 'class': 'icon-btn', type: 'button', 'aria-label': 'Later', text: '×', onclick: function () { bar.remove(); } })
     ]);
     document.body.appendChild(bar);
@@ -1139,7 +1208,7 @@
       // An update downloaded during an earlier visit is applied straight away at start-up,
       // before the reader is in the middle of anything; one that arrives later asks first.
       if (reg.waiting && navigator.serviceWorker.controller) {
-        if (performance.now() < 15000) reg.waiting.postMessage('skipWaiting'); else showUpdate(reg.waiting);
+        if (performance.now() < 15000) activate(reg.waiting); else showUpdate(reg.waiting);
       }
       watch(reg.installing);
       reg.addEventListener('updatefound', function () { watch(reg.installing); });
@@ -1167,6 +1236,35 @@
     return offline.ready ? '✓ Saved on this device: works offline' : 'Saving the course for offline use…';
   }
 
+  function updatesBox() {
+    var line = el('p', { 'class': 'sync-status', text: 'This device: ' + (running.version ? 'v' + running.version : '…') + ' · checking the latest version…' });
+    var note = el('p', { 'class': 'sync-status' });
+    function check() {
+      line.textContent = 'This device: ' + (running.version ? 'v' + running.version : '?') + ' · checking the latest version…';
+      latestVersion().then(function (latest) {
+        var behind = running.version && newer(latest, running.version);
+        line.textContent = 'This device: v' + running.version + ' · latest: v' + latest + (behind ? ' · an update is available' : ' · up to date');
+      }).catch(function () { line.textContent = 'This device: v' + running.version + ' · can\'t reach the server to check (offline?)'; });
+    }
+    check();
+    return el('section', { 'class': 'sync-box' }, [
+      el('h2', { text: 'Updates' }),
+      line,
+      el('div', { 'class': 'hw-actions' }, [
+        el('button', { 'class': 'btn primary', type: 'button', text: 'Check for updates', onclick: function () {
+          note.textContent = 'Checking…';
+          latestVersion().then(function (latest) {
+            check();
+            if (running.version && newer(latest, running.version)) updateNow(function (t) { note.textContent = t; });
+            else note.textContent = 'You have the latest version.';
+          }).catch(function () { note.textContent = 'Could not reach the server. Check your connection and try again.'; });
+        } }),
+        el('a', { 'class': 'btn', href: 'reset.html', text: 'Reset and reload' })
+      ]),
+      note,
+      el('p', { 'class': 'sync-status', text: '"Reset and reload" deletes the saved copy of the site and downloads the newest one again. Your progress stays. If an old version ever gets stuck, you can also open pkasprowicz.github.io/nippon-bible/reset.html directly.' })
+    ]);
+  }
   function showOffline() {
     var article = el('article', { 'class': 'sync offline' });
     content.replaceChildren(el('div', { 'class': 'page' }, [article]));
@@ -1193,6 +1291,7 @@
       el('h1', { text: 'Install & use offline' }),
       el('p', { text: 'The whole site (every lesson, course, game, quiz and handbook, with their pictures and recorded audio) is saved on your device the first time you open it. After that it works with no connection: on the plane, on the subway, or with no roaming data.' }),
       el('section', { 'class': 'sync-box' }, [el('h2', { text: 'On this device' }), status, details]),
+      updatesBox(),
       el('section', { 'class': 'sync-box' }, [
         el('h2', { text: 'Android' }),
         el('p', { text: 'Install it as an app: it gets its own icon in your launcher and app drawer and opens full screen, like any other app.' }),
@@ -1432,5 +1531,13 @@
   buildNav();
   window.addEventListener('hashchange', route);
   route();
-  fetchText('VERSION').then(function (v) { document.getElementById('version').textContent = 'v' + v.trim(); }).catch(function () {});
+  fetchText('VERSION').then(function (v) {
+    running.version = v.trim();
+    document.getElementById('version').textContent = 'v' + running.version;
+    // A newer release on the server that this browser hasn't picked up (some, such as Samsung
+    // Internet, are slow to): offer it. Waits a little so a normal background update can win.
+    if (navigator.onLine) setTimeout(function () {
+      latestVersion().then(function (latest) { if (newer(latest, running.version)) showNewerBar(latest); }).catch(function () {});
+    }, 8000);
+  }).catch(function () {});
 })();
