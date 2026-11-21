@@ -3,9 +3,9 @@
 //
 //   node scripts/audio/build-audio.mjs [--pages id,id,…] [--report file]
 //
-// Needs open_jtalk, its NAIST-JDIC dictionary, the NIT ATR503 M001 voice and ffmpeg
-// (Debian/Ubuntu: apt-get install open-jtalk open-jtalk-mecab-naist-jdic
-// hts-voice-nitech-jp-atr503-m001 ffmpeg). Writes assets/audio/<hash>.mp3 and
+// Needs open_jtalk, its NAIST-JDIC dictionary and ffmpeg (Debian/Ubuntu: apt-get install
+// open-jtalk open-jtalk-mecab-naist-jdic ffmpeg). The voice, HTS voice "Takumi" from the
+// MMDAgent project (CC BY 3.0), is kept in scripts/audio/voice/ with its licence. Writes assets/audio/<hash>.mp3 and
 // assets/audio/index.json ({ text → file }), and reuses clips whose text is unchanged.
 // The app looks a phrase up in the index and falls back to the browser's voice without it.
 //
@@ -24,7 +24,11 @@ import { pagesFromApp } from '../build-search.mjs';
 const ROOT = fileURLToPath(new URL('../..', import.meta.url));
 const OUT = ROOT + 'assets/audio/';
 const DIC = '/var/lib/mecab/dic/open-jtalk/naist-jdic';
-const VOICE = '/usr/share/hts-voice/nitech-jp-atr503-m001/nitech_jp_atr503_m001.htsvoice';
+const VOICE = fileURLToPath(new URL('voice/takumi_normal.htsvoice', import.meta.url));
+const POSTFILTER = '0.4';      // Open JTalk's postfilter: clearer, less muffled formants
+const LEAD = 0.15, TAIL = 0.40; // seconds kept before and after the speech: phones and
+                                // Bluetooth headsets swallow the first moments of a sound,
+                                // and the voice needs its natural fade-out
 const RATE = '0.9';            // a little slower than normal speech, for learners
 const { marked } = createRequire(import.meta.url)(ROOT + 'assets/vendor/marked.min.js');
 
@@ -149,17 +153,26 @@ const flatPhonemes = (ps) => ps.map((p) => (p === 'cl' ? 'q' : p === 'N' ? 'N' :
 
 function synth(text) {
   const tmp = OUT + '.tmp';
-  const r = spawnSync('open_jtalk', ['-x', DIC, '-m', VOICE, '-r', RATE, '-ow', tmp + '.wav', '-ot', tmp + '.trace'], { input: synthText(text) + '\n' });
+  const r = spawnSync('open_jtalk', ['-x', DIC, '-m', VOICE, '-r', RATE, '-b', POSTFILTER, '-ow', tmp + '.wav', '-ot', tmp + '.trace'], { input: synthText(text) + '\n' });
   // Marks with no sound of their own (゛, ゜, っ, ー alone) can't be synthesised: no clip.
   if (r.status !== 0) { if (/No phoneme|cannot be synthesized/.test(r.stderr)) return { ps: [] }; throw new Error('open_jtalk failed for ' + text + ': ' + r.stderr); }
   const trace = readFileSync(tmp + '.trace', 'utf8');
   const ps = phonemes(trace);
   if (!ps.length) return { ps };  // nothing to say (っ, ー on their own)
-  // Trim the silence Open JTalk adds, keep 60 ms either side, and encode a small mono MP3.
+  // Keep LEAD before the first and TAIL after the last speech sound (from the phoneme timings),
+  // raise the whole clip by one gain to a -1.5 dB peak (no compression), fade the edges, and
+  // encode a 48 kbps / 24 kHz mono MP3.
   const file = createHash('sha1').update(text).digest('hex').slice(0, 12) + '.mp3';
+  const times = [...trace.matchAll(/^(\d+) (\d+) [^\^]+\^[^-]+-([^+]+)\+/gm)].filter((m) => m[3] !== 'sil' && m[3] !== 'pau');
+  const total = Number(spawnSync('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', tmp + '.wav']).stdout.toString());
+  const start = Math.max(0, Number(times[0][1]) / 1e7 - LEAD);
+  const end = Math.min(total, Number(times[times.length - 1][2]) / 1e7 + TAIL);
+  const vd = spawnSync('ffmpeg', ['-hide_banner', '-i', tmp + '.wav', '-af', `atrim=${start}:${end},volumedetect`, '-f', 'null', '-']).stderr.toString();
+  const gain = -1.5 - Number((vd.match(/max_volume: (-?[\d.]+) dB/) || [0, -1.5])[1]);
+  const dur = end - start;
   const f = spawnSync('ffmpeg', ['-loglevel', 'error', '-y', '-i', tmp + '.wav', '-af',
-    'silenceremove=start_periods=1:start_threshold=-55dB,areverse,silenceremove=start_periods=1:start_threshold=-55dB,areverse,adelay=60,apad=pad_dur=0.06,loudnorm=I=-18:TP=-2',
-    '-ac', '1', '-ar', '22050', '-c:a', 'libmp3lame', '-b:a', '32k', OUT + file]);
+    `atrim=${start}:${end},asetpts=PTS-STARTPTS,volume=${gain.toFixed(2)}dB,afade=t=in:d=0.01,afade=t=out:st=${Math.max(0, dur - 0.12).toFixed(3)}:d=0.12`,
+    '-ac', '1', '-ar', '24000', '-c:a', 'libmp3lame', '-b:a', '48k', '-compression_level', '0', '-map_metadata', '-1', '-write_xing', '1', OUT + file]);
   if (f.status !== 0) throw new Error('ffmpeg failed for ' + text + ': ' + f.stderr);
   return { file, ps, reading: (trace.match(/^[^,\n]+,[^\n]*$/gm) || []).map((l) => l.split(',')[9] || l.split(',')[0]).join('') };
 }
@@ -192,7 +205,7 @@ if (!onlyPages) {
   for (const f of readdirSync(OUT)) if (f.endsWith('.mp3') && !used.has(f)) unlinkSync(OUT + f);
 }
 writeFileSync(indexFile, JSON.stringify({
-  voice: 'Open JTalk with the HTS voice NIT ATR503 M001 (Nagoya Institute of Technology, CC BY 3.0)',
+  voice: 'Open JTalk with the HTS voice "Takumi" (MMDAgent project, Nagoya Institute of Technology, CC BY 3.0)',
   clips
 }, null, 0) + '\n');
 if (reportFile) writeFileSync(reportFile, report.join('\n') + '\n');
