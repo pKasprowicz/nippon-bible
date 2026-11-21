@@ -164,6 +164,41 @@
   }
 
   /* ---------- speech ---------- */
+  // Recorded clips (assets/audio, made by scripts/audio/build-audio.mjs with Open JTalk) give
+  // every device the same voice, offline. A phrase without a clip uses the browser's own
+  // Japanese voice, if it has one.
+  var clips = null;
+  fetch('assets/audio/index.json').then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (j) { clips = j && j.clips; }).catch(function () {});
+  var player = new Audio();
+  player.preload = 'auto';
+  var speakingNode = null;
+  function clipFor(text) { var k = text.replace(/[〜～]/g, '').trim(); return clips && clips[k] ? 'assets/audio/' + clips[k] : null; }
+  function markSpeaking(node) {
+    document.querySelectorAll('.ja.speaking').forEach(function (n) { n.classList.remove('speaking'); });
+    speakingNode = node || null;
+    if (node) node.classList.add('speaking');
+  }
+  function doneSpeaking() { if (speakingNode) speakingNode.classList.remove('speaking'); speakingNode = null; }
+  player.addEventListener('ended', doneSpeaking);
+  player.addEventListener('pause', doneSpeaking);
+  // iOS only lets a page start sound after a tap. Play (silently) once on the first tap so
+  // listening questions can start their sound by themselves later.
+  function unlockAudio() {
+    document.removeEventListener('pointerdown', unlockAudio, true);
+    document.removeEventListener('keydown', unlockAudio, true);
+    if (!player.src && clips) {
+      var any = Object.keys(clips)[0];
+      if (!any) return;
+      var src = 'assets/audio/' + clips[any];
+      player.muted = true; player.src = src;
+      player.play().then(function () { if (player.src.indexOf(src) >= 0 && player.muted) { player.pause(); } player.muted = false; })
+        .catch(function () { player.muted = false; });
+    }
+  }
+  document.addEventListener('pointerdown', unlockAudio, true);
+  document.addEventListener('keydown', unlockAudio, true);
+
   var jaVoice = null;
   function pickVoice() {
     if (!('speechSynthesis' in window)) return;
@@ -174,8 +209,28 @@
     pickVoice();
     speechSynthesis.addEventListener('voiceschanged', pickVoice);
   }
+  function stopSpeech() {
+    if (!player.paused) player.pause();
+    if ('speechSynthesis' in window && (speechSynthesis.speaking || speechSynthesis.pending)) speechSynthesis.cancel();
+  }
+  function speechBusy() {
+    return !player.paused || ('speechSynthesis' in window && (speechSynthesis.speaking || speechSynthesis.pending));
+  }
+  function canSay(text) { return !!clipFor(text) || !!jaVoice; }
   var voiceWarned = false;
   function speak(text, node) {
+    var clip = clipFor(text);
+    if (clip) {
+      stopSpeech();
+      player.muted = false;
+      player.src = clip;
+      markSpeaking(node);
+      player.play().catch(function () { doneSpeaking(); speakWithVoice(text, node); });
+      return;
+    }
+    speakWithVoice(text, node);
+  }
+  function speakWithVoice(text, node) {
     if (!('speechSynthesis' in window)) {
       if (!voiceWarned) toast('Speech is not supported in this browser.');
       voiceWarned = true; return;
@@ -187,8 +242,7 @@
     u.lang = 'ja-JP'; u.rate = 0.85;
     if (jaVoice) u.voice = jaVoice;
     if (node) {
-      document.querySelectorAll('.ja.speaking').forEach(function (n) { n.classList.remove('speaking'); });
-      node.classList.add('speaking');
+      markSpeaking(node);
       u.onend = u.onerror = function () { node.classList.remove('speaking'); };
     }
     speechSynthesis.speak(u);
@@ -228,6 +282,9 @@
   if (window.NBKana) {
     window.NBKana.init({
       speak: function (text) { speak(text); },
+      canSay: canSay,
+      busy: speechBusy,
+      stop: stopSpeech,
       toast: toast,
       markDone: function (id) {
         if (done[id]) return;
@@ -1134,7 +1191,7 @@
     }
     article.append(
       el('h1', { text: 'Install & use offline' }),
-      el('p', { text: 'The whole site (every lesson, course, game, quiz and all three handbooks with their pictures) is saved on your device the first time you open it. After that it works with no connection: on the plane, on the subway, or with no roaming data.' }),
+      el('p', { text: 'The whole site (every lesson, course, game, quiz and handbook, with their pictures and recorded audio) is saved on your device the first time you open it. After that it works with no connection: on the plane, on the subway, or with no roaming data.' }),
       el('section', { 'class': 'sync-box' }, [el('h2', { text: 'On this device' }), status, details]),
       el('section', { 'class': 'sync-box' }, [
         el('h2', { text: 'Android' }),
@@ -1149,12 +1206,14 @@
       ]),
       el('section', { 'class': 'sync-box' }, [
         el('h2', { text: 'Audio without a connection' }),
-        el('p', { text: 'Tap-to-listen uses your phone\'s own text-to-speech, so it can work offline if a Japanese voice is installed.' }),
+        el('p', { text: 'The Japanese you can tap to hear is recorded and saved with the rest of the site, so it plays the same on every device, also offline. Anything without a recording uses your phone\'s own text-to-speech, which needs a Japanese voice installed:' }),
         el('ul', { 'class': 'sync-list' }, [
           el('li', { text: 'Android: Settings › Accessibility › Text-to-speech output › the engine\'s settings › Install voice data › Japanese. Menu names vary by phone.' }),
           el('li', { text: 'iPhone: Settings › Accessibility › Spoken Content › Voices › Japanese.' })
         ]),
-        el('p', { text: 'Test it before you travel: switch on airplane mode and tap any Japanese text.' })
+        el('p', { 'class': 'sync-status' }, ['Recordings made with ', el('a', { href: 'https://open-jtalk.sourceforge.net/', text: 'Open JTalk' }),
+          ' and the HTS voice "NIT ATR503 M001" © Nagoya Institute of Technology, licensed under ',
+          el('a', { href: 'https://creativecommons.org/licenses/by/3.0/', text: 'CC BY 3.0' }), '.'])
       ])
     );
     return Promise.resolve();
@@ -1354,7 +1413,7 @@
     var key = special ? r : (r || 'home');
     if (!special && key !== 'home' && key === rendered) { scrollToSection(section, true); return; }
     setCurrent(r);
-    if ('speechSynthesis' in window) speechSynthesis.cancel();
+    stopSpeech();
     if (spyHandler) { window.removeEventListener('scroll', spyHandler); spyHandler = null; }
     rendered = null;
     var p = r === 'search' ? showSearch(section) : r === 'drill' ? showDrill() : r === 'progress' ? showProgress() : r === 'offline' ? showOffline()

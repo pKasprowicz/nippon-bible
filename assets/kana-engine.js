@@ -110,10 +110,8 @@
       if (loose) s = s.replace(/ou/g, 'o').replace(/([aiueo])\1+/g, '$1');
       return s;
     }
-    function hasJaVoice() {
-      if (!('speechSynthesis' in window)) return false;
-      return speechSynthesis.getVoices().some(function (v) { return /^ja/i.test(v.lang); });
-    }
+    // Listening needs a recorded clip of the text or a Japanese browser voice.
+    function canSay(text) { return ctx.canSay ? ctx.canSay(text) : false; }
 
     /* ---------- spaced repetition ---------- */
     function enroll(items) {
@@ -247,7 +245,7 @@
       function render(q) {
         // Drop speech still queued from the previous question (its answer replay), so it
         // can't come out over this one.
-        if ('speechSynthesis' in window && (speechSynthesis.speaking || speechSynthesis.pending)) speechSynthesis.cancel();
+        if (ctx.busy && ctx.busy()) ctx.stop();
         var promptBox = el('div', { 'class': 'hw-prompt' }, [q.prompt()]);
         var answerBox;
         if (q.options) {
@@ -283,7 +281,7 @@
         var waited = 0;
         (function tryNow() {
           if (!stillWanted()) return;
-          var busy = 'speechSynthesis' in window && (speechSynthesis.speaking || speechSynthesis.pending);
+          var busy = ctx.busy ? ctx.busy() : false;
           if (busy && waited < 2500) { waited += 100; setTimeout(tryNow, 100); return; }
           ctx.speak(text);
         })();
@@ -354,7 +352,7 @@
     }
     function kanaQuestion(k, mode, pool) {
       var e = info(k);
-      if (mode === 'listen' && !hasJaVoice()) mode = 'pick';
+      if (mode === 'listen' && !canSay(sayOf(e))) mode = 'pick';
       var q = { id: 'k:' + k, k: k, answerValue: k, audio: sayOf(e),
         answerLabel: '<span lang="ja">' + k + '</span> = ' + e.r + (e.meaning ? ' · "' + e.meaning + '"' : '') };
       q.explain = function () { return mnemonicNode(k, q.lastChoice); };
@@ -421,7 +419,7 @@
         q.pauseOnCorrect = false;
         return q;
       }
-      if (mode === 'listen' && hasJaVoice()) {
+      if (mode === 'listen' && canSay(w.k)) {
         q.prompt = function () { return el('div', {}, [el('p', { 'class': 'hw-ask', text: 'Listen. Which word do you hear?' }), listenButton(w.k)]); };
         var others = shuffle(all.filter(function (o) { return o.k !== w.k; }));
         // Prefer words of similar length: those are the hard, useful contrasts.
