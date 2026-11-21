@@ -51,6 +51,8 @@ function isRomaji(r) { const f = flatRomaji(r); return f.length > 0 && SYLLABLES
 // ---------- collect phrases (text exactly as the app passes it to speak()) ----------
 const app = readFileSync(ROOT + 'assets/app.js', 'utf8');
 const JA_RUN = new RegExp(app.match(/var JA_RUN = \/(.*)\/g;/)[1], 'g');
+const JA = '[々぀-ヿ㐀-䶿一-鿿～〜]';
+const LAT = "[A-Za-zĀĪŪĒŌāīūēō'’-]";
 const clean = (t) => t.replace(/[〜～]/g, '').trim();
 const phrases = new Map();   // text → { where }
 const hints = new Map();     // text → Set of romaji readings given by the course
@@ -83,7 +85,9 @@ for (const page of pagesFromApp()) {
     }
   }
   // Readings given in the text: "**駅** · eki · station", "精算 (seisan)", "| 駅 | eki |".
-  const HINT = new RegExp('(' + JA_RUN.source + ')[*_]*\\s*(?:·|\\(|\\|)\\s*[*_]*([A-Za-zĀĪŪĒŌāīūēō][A-Za-zĀĪŪĒŌāīūēō\'’ -]*?)\\s*(?=[*_·)|,;:.]|$)', 'gm');
+  // (Japanese words joined only by an explicit separator, so the pattern can't backtrack
+  // through every way of splitting a long run.)
+  const HINT = new RegExp('(' + JA + '+(?:[、。 ]' + JA + '+)*)[*_]* ?(?:·|\\(|\\|) ?[*_]*(' + LAT + '+(?: ' + LAT + '+)*)(?=[*_·)|,;:. ]|$)', 'gm');
   for (const m of md.matchAll(HINT)) hint(m[1], m[2]);
   // Page text: each text node outside links, buttons and code, as markSpeakable() sees it.
   const html = marked.parse(md.replace(/^```[\s\S]*?^```/gm, ''), { gfm: true });
