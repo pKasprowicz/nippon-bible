@@ -4,6 +4,11 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.18.3] - 2026-11-21
+
+### Fixed
+- Opening *Install & offline* directly (for example after reloading on it) showed "This device: vnull · up to date": the Updates panel now waits until it knows which version the device runs.
+
 ## [1.18.2] - 2026-11-21
 
 ### Fixed
