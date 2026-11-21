@@ -142,6 +142,29 @@ and `date` are optional. Use only photos that are public domain or CC0 on Wikime
 could be someone else's copyright. Transcribe only text you can read clearly in the photo.
 `scripts/check-content.mjs` checks licences, credits and that every file is listed and present.
 
+## Recorded audio
+
+Tap-to-listen and the listening exercises play recordings from `assets/audio/` (`index.json` maps
+each phrase, exactly as the app speaks it, to an MP3). A phrase without a recording falls back to the
+browser's own Japanese voice. After changing Japanese text, re-record:
+
+```sh
+sudo apt-get install open-jtalk open-jtalk-mecab-naist-jdic hts-voice-nitech-jp-atr503-m001 ffmpeg
+node scripts/audio/build-audio.mjs --report audio-report.txt
+```
+
+- The script collects every phrase the app can speak (tap-to-listen text on all pages except the
+  sources, the kana and kanji course data, word and station lists) and records it with Open JTalk
+  and the NIT ATR503 M001 voice (CC BY 3.0; the credit is in README and on the Install & offline page).
+- Single kana are recorded in katakana, so は and へ aren't read as the particles "wa" and "e".
+  Single kanji, and lists of them, are read as `assets/kanji-data.js` teaches them.
+- `scripts/audio/readings.json` gives the right reading where Open JTalk's is wrong (menu words,
+  sound changes such as タラバ蟹 *tarabagani*); `_skip` lists phrases with no reliable reading.
+- The report lists every phrase whose pronunciation differs from the romaji the course gives
+  (`DIFF`), and kanji phrases with no romaji to compare (`KANJI`). Check both before committing;
+  fix wrong readings in `readings.json`.
+- `scripts/check-content.mjs` checks that every clip in `index.json` exists and no MP3 is unused.
+
 ## Offline app (PWA)
 
 The site is an installable web app that works offline:

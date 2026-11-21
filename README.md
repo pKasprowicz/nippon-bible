@@ -14,8 +14,8 @@ Japanese for European travellers, in eight parts:
 | **Signs in the wild: photo gallery** | Photographs of Japanese text in public space (station boards, warnings and house rules, notices, street signs, shop signs and product labels) with the main text, a translation and a credit for each. Every photo is public domain or CC0 | [Gallery](signs/00-gallery.md) |
 
 **Read it online:** <https://pkasprowicz.github.io/nippon-bible/>. The website adds
-tap-to-listen audio for all Japanese text, the interactive exercises, progress tracking
-and a flashcard drill. On GitHub, the kana courses' exercises show as plain text.
+tap-to-listen audio for all Japanese text (recorded, so it sounds the same on every device and
+works offline), the interactive exercises, progress tracking and a flashcard drill. On GitHub, the kana courses' exercises show as plain text.
 
 **Use it offline, as an app:** the website saves itself on your device the first time you open it,
 then works with no connection. On Android, choose *Install app* in Chrome's ⋮ menu (or the
@@ -30,3 +30,9 @@ No previous knowledge needed. Japanese is given as **script · romaji · meaning
 `駅 · eki · station`, with Hepburn romaji (a macron marks a long vowel: **ō** = "oo").
 
 Contributing: see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Audio credit
+
+The recorded Japanese audio in `assets/audio/` was made with [Open JTalk](https://open-jtalk.sourceforge.net/)
+and the HTS voice "NIT ATR503 M001" © Nagoya Institute of Technology, licensed under
+[CC BY 3.0](https://creativecommons.org/licenses/by/3.0/).
