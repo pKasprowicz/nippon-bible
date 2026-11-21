@@ -156,11 +156,18 @@ function phonemes(trace) {
 }
 const flatPhonemes = (ps) => ps.map((p) => (p === 'cl' ? 'q' : p === 'N' ? 'N' : p.toLowerCase())).join('');
 
-// Peak of a 16-bit PCM WAV written by open_jtalk (44-byte header).
-function wavPeak(file) {
-  const b = readFileSync(file); let peak = 0;
-  for (let i = 44; i + 1 < b.length; i += 2) { const v = Math.abs(b.readInt16LE(i)); if (v > peak) peak = v; }
-  return peak;
+// Is a 16-bit PCM WAV written by open_jtalk (44-byte header) free of postfilter spikes?
+// Normal speech from this voice peaks at 2,000–7,000, 7–10 dB above its RMS; an unstable
+// render spikes far higher (16,000 up to clipping at 32,767) and 14 dB or more above it.
+function stable(file) {
+  const b = readFileSync(file); let peak = 0, sum = 0, n = 0;
+  for (let i = 44; i + 1 < b.length; i += 2) {
+    const v = Math.abs(b.readInt16LE(i));
+    if (v > peak) peak = v;
+    if (v > 300) { sum += v * v; n++; }
+  }
+  const rms = n ? Math.sqrt(sum / n) : 1;
+  return peak < 12000 && 20 * Math.log10(Math.max(peak, 1) / rms) < 12;
 }
 let softened = 0;
 function synth(text) {
@@ -169,7 +176,7 @@ function synth(text) {
   for (const pf of POSTFILTERS) {
     r = spawnSync('open_jtalk', ['-x', DIC, '-m', VOICE, '-r', RATE, '-b', pf, '-ow', tmp + '.wav', '-ot', tmp + '.trace'], { input: synthText(text) + '\n' });
     if (r.status !== 0) break;
-    if (wavPeak(tmp + '.wav') < 30000) break;                  // stable: no clipping
+    if (stable(tmp + '.wav')) break;
     if (pf !== POSTFILTERS[POSTFILTERS.length - 1]) softened++;
   }
   // Marks with no sound of their own (゛, ゜, っ, ー alone) can't be synthesised: no clip.
