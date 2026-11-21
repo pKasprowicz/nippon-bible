@@ -4,6 +4,16 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.16.2] - 2026-11-21
+
+### Changed
+- New versions reach your device much faster:
+  - an update now downloads only the files that changed, instead of the whole site;
+  - an update that's waiting when you open the app is applied straight away; one that arrives while you're using it still asks with the Reload bar;
+  - the app checks for a new version every 30 minutes while it's open, as well as when you come back to it;
+  - changed files are requested in a way that gets past GitHub's 10-minute server cache.
+- The first update after this release still downloads the whole site once.
+
 ## [1.16.1] - 2026-11-21
 
 ### Fixed
