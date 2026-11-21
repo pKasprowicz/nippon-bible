@@ -1151,6 +1151,8 @@
   // Updates: the version this device runs (from the saved copy) and the newest one on the
   // server (asked for with ?fresh=, which the service worker sends to the network).
   var running = { version: null };
+  // The version this device runs, read from the saved copy; the Updates panel waits for it.
+  running.ready = fetchText('VERSION').then(function (v) { running.version = v.trim(); });
   function latestVersion() {
     return fetch('VERSION?fresh=' + Date.now(), { cache: 'no-store' }).then(function (r) {
       if (!r.ok) throw new Error('HTTP ' + r.status);
@@ -1240,8 +1242,9 @@
     var line = el('p', { 'class': 'sync-status', text: 'This device: ' + (running.version ? 'v' + running.version : '…') + ' · checking the latest version…' });
     var note = el('p', { 'class': 'sync-status' });
     function check() {
-      line.textContent = 'This device: ' + (running.version ? 'v' + running.version : '?') + ' · checking the latest version…';
-      latestVersion().then(function (latest) {
+      line.textContent = 'This device: ' + (running.version ? 'v' + running.version : '…') + ' · checking the latest version…';
+      Promise.all([latestVersion(), running.ready]).then(function (r) {
+        var latest = r[0];
         var behind = running.version && newer(latest, running.version);
         line.textContent = 'This device: v' + running.version + ' · latest: v' + latest + (behind ? ' · an update is available' : ' · up to date');
       }).catch(function () { line.textContent = 'This device: v' + running.version + ' · can\'t reach the server to check (offline?)'; });
@@ -1253,7 +1256,8 @@
       el('div', { 'class': 'hw-actions' }, [
         el('button', { 'class': 'btn primary', type: 'button', text: 'Check for updates', onclick: function () {
           note.textContent = 'Checking…';
-          latestVersion().then(function (latest) {
+          Promise.all([latestVersion(), running.ready]).then(function (r) {
+            var latest = r[0];
             check();
             if (running.version && newer(latest, running.version)) updateNow(function (t) { note.textContent = t; });
             else note.textContent = 'You have the latest version.';
@@ -1531,8 +1535,7 @@
   buildNav();
   window.addEventListener('hashchange', route);
   route();
-  fetchText('VERSION').then(function (v) {
-    running.version = v.trim();
+  running.ready.then(function () {
     document.getElementById('version').textContent = 'v' + running.version;
     // A newer release on the server that this browser hasn't picked up (some, such as Samsung
     // Internet, are slow to): offer it. Waits a little so a normal background update can win.
