@@ -4,6 +4,11 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.18.5] - 2026-11-22
+
+### Fixed
+- Recordings had uneven volume, and some sounded distorted. The voice engine's clarity filter sometimes produced spikes (distortion) that also made those clips quieter. All recordings are re-made: a clip that spikes is re-recorded with a gentler filter, and every clip is set to the same perceived loudness (−16 LUFS), without compression and with no clipping.
+
 ## [1.18.4] - 2026-11-21
 
 ### Fixed
