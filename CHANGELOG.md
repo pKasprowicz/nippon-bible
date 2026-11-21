@@ -4,6 +4,15 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.18.0] - 2026-11-21
+
+### Changed
+- **Clearer recorded voice.** All 1,544 recordings are redone with the HTS voice "Takumi" (MMDAgent project, Nagoya Institute of Technology, CC BY 3.0):
+  - words no longer sound cut off: each clip keeps a short lead-in, so phones and Bluetooth headphones don't swallow the start, and the voice fades out naturally instead of stopping dead
+  - the voice keeps its natural rise and fall (no loudness compression), with clearer consonants and better audio quality
+  - readings and pronunciation fixes are unchanged
+- The recordings now take 14 MB (the offline download is about 28 MB in total); installed apps download the new recordings once
+
 ## [1.17.2] - 2026-11-21
 
 ### Fixed
