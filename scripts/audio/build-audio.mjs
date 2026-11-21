@@ -33,17 +33,38 @@ const opt = (name) => { const i = args.indexOf(name); return i >= 0 ? args[i + 1
 const onlyPages = opt('--pages') ? opt('--pages').split(',') : null;
 const reportFile = opt('--report');
 
+// Romaji → the same flat form as Open JTalk's phonemes, for comparison.
+function flatRomaji(r) {
+  return r.toLowerCase().normalize('NFC').replace(/’/g, "'")
+    .replace(/ā/g, 'aa').replace(/ī/g, 'ii').replace(/ū/g, 'uu').replace(/ē/g, 'ee').replace(/ō/g, 'oo')
+    .replace(/\(.*?\)/g, '')
+    .replace(/n(?=[\s'-]|$)/g, 'N').replace(/[^a-zN]/g, '')
+    .replace(/tch/g, 'qch').replace(/([kstpgzdbcfhjmr])\1/g, 'q$1')
+    .replace(/n(?=[^aiueoy]|$)/g, 'N')
+    .replace(/^wo$/, 'o');
+}
+// えい and おう are said as long vowels (ee, oo); spelling differences, not errors.
+const sameSound = (a) => a.replace(/ei/g, 'ee').replace(/ou/g, 'oo');
+const SYLLABLES = /^(?:[aiueo]|N|q(?=[kstpgzdbcfhjmr])|(?:ch|sh|ts|ky|gy|ny|hy|my|ry|by|py|[kgsztdnhbpmyrwfj])[aiueo])+$/;
+function isRomaji(r) { const f = flatRomaji(r); return f.length > 0 && SYLLABLES.test(f); }
+
 // ---------- collect phrases (text exactly as the app passes it to speak()) ----------
 const app = readFileSync(ROOT + 'assets/app.js', 'utf8');
 const JA_RUN = new RegExp(app.match(/var JA_RUN = \/(.*)\/g;/)[1], 'g');
 const clean = (t) => t.replace(/[〜～]/g, '').trim();
-const phrases = new Map();   // text → { romaji?, where }
+const phrases = new Map();   // text → { where }
+const hints = new Map();     // text → Set of romaji readings given by the course
+function hint(text, romaji) {
+  const t = clean(text);
+  if (!t || !romaji || !isRomaji(romaji)) return;
+  if (!hints.has(t)) hints.set(t, new Set());
+  hints.get(t).add(romaji.trim());
+}
 function add(text, romaji, where) {
   const t = clean(text);
   if (!t || /^[ー・、。]+$/.test(t)) return;
-  const cur = phrases.get(t);
-  if (!cur) phrases.set(t, { romaji: romaji || null, where });
-  else if (!cur.romaji && romaji) cur.romaji = romaji;
+  if (!phrases.has(t)) phrases.set(t, { where });
+  hint(t, romaji);
 }
 const ENT = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ' };
 const decode = (s) => s.replace(/&(#x[0-9a-f]+|#\d+|\w+);/gi, (m, e) =>
@@ -61,6 +82,9 @@ for (const page of pagesFromApp()) {
       JA_RUN.lastIndex = 0;
     }
   }
+  // Readings given in the text: "**駅** · eki · station", "精算 (seisan)", "| 駅 | eki |".
+  const HINT = new RegExp('(' + JA_RUN.source + ')[*_]*\\s*(?:·|\\(|\\|)\\s*[*_]*([A-Za-zĀĪŪĒŌāīūēō][A-Za-zĀĪŪĒŌāīūēō\'’ -]*?)\\s*(?=[*_·)|,;:.]|$)', 'gm');
+  for (const m of md.matchAll(HINT)) hint(m[1], m[2]);
   // Page text: each text node outside links, buttons and code, as markSpeakable() sees it.
   const html = marked.parse(md.replace(/^```[\s\S]*?^```/gm, ''), { gfm: true });
   let skip = 0;
@@ -84,26 +108,19 @@ for (const [name, data] of Object.entries(courses)) {
 }
 
 // ---------- synthesis ----------
+const READINGS = JSON.parse(readFileSync(new URL('readings.json', import.meta.url), 'utf8'));
 const SMALL = 'ゃゅょャュョぁぃぅぇぉァィゥェォ';
 const toKata = (s) => s.replace(/[ぁ-ゖ]/g, (c) => String.fromCharCode(c.charCodeAt(0) + 0x60));
 // One character (or one character + small ゃ/ゅ/ょ) is said in katakana: on its own, Open
 // JTalk reads は and へ as the particles "wa" and "e"; ハ and ヘ are always "ha" and "he".
 function synthText(t) {
+  if (READINGS[t]) return READINGS[t];
   const chars = [...t];
   const single = chars.length === 1 || (chars.length === 2 && SMALL.includes(chars[1]));
   return single && /^[ぁ-ゖ]+$/.test(t) ? toKata(t) : t;
 }
 function phonemes(trace) {
   return [...trace.matchAll(/^\d+ \d+ [^\^]+\^([^-]+)-([^+]+)\+/gm)].map((m) => m[2]).filter((p) => p !== 'sil' && p !== 'pau');
-}
-// Romaji → the same flat form as Open JTalk's phonemes, for comparison.
-function flatRomaji(r) {
-  return r.toLowerCase().normalize('NFC')
-    .replace(/ā/g, 'aa').replace(/ī/g, 'ii').replace(/ū/g, 'uu').replace(/ē/g, 'ee').replace(/ō/g, 'oo')
-    .replace(/\(.*?\)/g, '').replace(/[^a-z']/g, '')
-    .replace(/tch/g, 'qch').replace(/([kstpgzdbcfhjmr])\1/g, 'q$1')
-    .replace(/n'/g, 'N').replace(/n(?=[^aiueoy]|$)/g, 'N').replace(/'/g, '')
-    .replace(/^wo$/, 'o');
 }
 const flatPhonemes = (ps) => ps.map((p) => (p === 'cl' ? 'q' : p === 'N' ? 'N' : p.toLowerCase())).join('');
 
@@ -119,7 +136,7 @@ function synth(text) {
   const file = createHash('sha1').update(text).digest('hex').slice(0, 12) + '.mp3';
   const f = spawnSync('ffmpeg', ['-loglevel', 'error', '-y', '-i', tmp + '.wav', '-af',
     'silenceremove=start_periods=1:start_threshold=-55dB,areverse,silenceremove=start_periods=1:start_threshold=-55dB,areverse,adelay=60,apad=pad_dur=0.06,loudnorm=I=-18:TP=-2',
-    '-ac', '1', '-ar', '22050', '-c:a', 'libmp3lame', '-b:a', '40k', OUT + file]);
+    '-ac', '1', '-ar', '22050', '-c:a', 'libmp3lame', '-b:a', '32k', OUT + file]);
   if (f.status !== 0) throw new Error('ffmpeg failed for ' + text + ': ' + f.stderr);
   return { file, ps, reading: (trace.match(/^[^,\n]+,[^\n]*$/gm) || []).map((l) => l.split(',')[9] || l.split(',')[0]).join('') };
 }
@@ -136,9 +153,10 @@ for (const [text, info] of [...phrases].sort((a, b) => a[0].localeCompare(b[0], 
   if (old[text] === res.file) reused++; else made++;
   clips[text] = res.file;
   const said = flatPhonemes(res.ps);
-  if (info.romaji) {
-    const want = flatRomaji(info.romaji);
-    if (want !== said) { mismatches++; report.push(`DIFF  ${text}  course: ${info.romaji} (${want})  voice: ${said}  [${info.where}]`); }
+  const given = hints.get(text);
+  if (given) {
+    const wants = [...given].map(flatRomaji);
+    if (!wants.some((w) => sameSound(w) === sameSound(said))) { mismatches++; report.push(`DIFF  ${text}  course: ${[...given].join(' / ')}  voice: ${said}  [${info.where}]`); }
   } else if (/[㐀-鿿々]/.test(text)) {
     report.push(`KANJI ${text}  voice: ${said}  [${info.where}]`);
   }
