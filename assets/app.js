@@ -1191,7 +1191,7 @@
     }
     article.append(
       el('h1', { text: 'Install & use offline' }),
-      el('p', { text: 'The whole site (every lesson, course, game, quiz and all three handbooks with their pictures) is saved on your device the first time you open it. After that it works with no connection: on the plane, on the subway, or with no roaming data.' }),
+      el('p', { text: 'The whole site (every lesson, course, game, quiz and handbook, with their pictures and recorded audio) is saved on your device the first time you open it. After that it works with no connection: on the plane, on the subway, or with no roaming data.' }),
       el('section', { 'class': 'sync-box' }, [el('h2', { text: 'On this device' }), status, details]),
       el('section', { 'class': 'sync-box' }, [
         el('h2', { text: 'Android' }),
@@ -1206,12 +1206,14 @@
       ]),
       el('section', { 'class': 'sync-box' }, [
         el('h2', { text: 'Audio without a connection' }),
-        el('p', { text: 'Tap-to-listen uses your phone\'s own text-to-speech, so it can work offline if a Japanese voice is installed.' }),
+        el('p', { text: 'The Japanese you can tap to hear is recorded and saved with the rest of the site, so it plays the same on every device, also offline. Anything without a recording uses your phone\'s own text-to-speech, which needs a Japanese voice installed:' }),
         el('ul', { 'class': 'sync-list' }, [
           el('li', { text: 'Android: Settings › Accessibility › Text-to-speech output › the engine\'s settings › Install voice data › Japanese. Menu names vary by phone.' }),
           el('li', { text: 'iPhone: Settings › Accessibility › Spoken Content › Voices › Japanese.' })
         ]),
-        el('p', { text: 'Test it before you travel: switch on airplane mode and tap any Japanese text.' })
+        el('p', { 'class': 'sync-status' }, ['Recordings made with ', el('a', { href: 'https://open-jtalk.sourceforge.net/', text: 'Open JTalk' }),
+          ' and the HTS voice "NIT ATR503 M001" © Nagoya Institute of Technology, licensed under ',
+          el('a', { href: 'https://creativecommons.org/licenses/by/3.0/', text: 'CC BY 3.0' }), '.'])
       ])
     );
     return Promise.resolve();

@@ -74,7 +74,10 @@ const decode = (s) => s.replace(/&(#x[0-9a-f]+|#\d+|\w+);/gi, (m, e) =>
 
 for (const page of pagesFromApp()) {
   if (onlyPages && !onlyPages.includes(page.id)) continue;
-  const md = readFileSync(ROOT + page.file, 'utf8');
+  // Bibliographies (paper titles, authors' names) are not spoken: names in particular have
+  // readings no engine can guess.
+  if (/-sources\.md$|\/\d+-sources\.md$/.test(page.file) || /sources/.test(page.id)) continue;
+  const md = readFileSync(ROOT + page.file, 'utf8').replace(/^#{2,3} Sources\b[\s\S]*?(?=^## |(?![\s\S]))/gm, '');
   // Word and station lists: "kana | romaji | …".
   for (const [, kind, body] of md.matchAll(/^```(\w+)[^\n]*\n([\s\S]*?)^```/gm)) {
     if (kind !== 'words' && kind !== 'station') continue;
@@ -89,6 +92,8 @@ for (const page of pagesFromApp()) {
   // through every way of splitting a long run.)
   const HINT = new RegExp('(' + JA + '+(?:[、。 ]' + JA + '+)*)[*_]* ?(?:·|\\(|\\|) ?[*_]*(' + LAT + '+(?: ' + LAT + '+)*)(?=[*_·)|,;:. ]|$)', 'gm');
   for (const m of md.matchAll(HINT)) hint(m[1], m[2]);
+  const HINT_BEFORE = new RegExp('[*_]+(' + LAT + '+(?: ' + LAT + '+)*)[*_]+ \\(?(' + JA + '+)\\)?', 'g');
+  for (const m of md.matchAll(HINT_BEFORE)) hint(m[2], m[1]);
   // Page text: each text node outside links, buttons and code, as markSpeakable() sees it.
   const html = marked.parse(md.replace(/^```[\s\S]*?^```/gm, ''), { gfm: true });
   let skip = 0;
@@ -113,12 +118,24 @@ for (const [name, data] of Object.entries(courses)) {
 
 // ---------- synthesis ----------
 const READINGS = JSON.parse(readFileSync(new URL('readings.json', import.meta.url), 'utf8'));
+const SKIP = new Set(READINGS._skip || []);
+// A kanji on its own (or a list of single kanji, as in the kanji lessons) is read the way the
+// kanji course teaches it; out of context Open JTalk often picks another reading (空 sora
+// instead of aki on a toilet door).
+const KANJI = sandbox.NB_KANJI.byChar;
+function kanjiList(t) {
+  const parts = t.split(/[\s・/]+/).filter(Boolean);
+  if (!parts.length || !parts.every((c) => [...c].length === 1 && KANJI[c] && KANJI[c].say)) return null;
+  return parts.map((c) => KANJI[c].say).join('、');
+}
 const SMALL = 'ゃゅょャュョぁぃぅぇぉァィゥェォ';
 const toKata = (s) => s.replace(/[ぁ-ゖ]/g, (c) => String.fromCharCode(c.charCodeAt(0) + 0x60));
 // One character (or one character + small ゃ/ゅ/ょ) is said in katakana: on its own, Open
 // JTalk reads は and へ as the particles "wa" and "e"; ハ and ヘ are always "ha" and "he".
 function synthText(t) {
-  if (READINGS[t]) return READINGS[t];
+  if (READINGS[t] && t[0] !== '_') return READINGS[t];
+  const list = kanjiList(t);
+  if (list) return list;
   const chars = [...t];
   const single = chars.length === 1 || (chars.length === 2 && SMALL.includes(chars[1]));
   return single && /^[ぁ-ゖ]+$/.test(t) ? toKata(t) : t;
@@ -152,6 +169,7 @@ const clips = onlyPages ? { ...old } : {};
 const report = [];
 let made = 0, reused = 0, mismatches = 0;
 for (const [text, info] of [...phrases].sort((a, b) => a[0].localeCompare(b[0], 'ja'))) {
+  if (SKIP.has(text)) { report.push(`SKIP  ${text}  (no reliable reading: listed in readings.json _skip)`); continue; }
   const res = synth(text);
   if (!res.file) { report.push(`SKIP  ${text}  (nothing to pronounce)`); continue; }
   if (old[text] === res.file) reused++; else made++;

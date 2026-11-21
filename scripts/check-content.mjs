@@ -167,6 +167,15 @@ for (const [page, slug, heading] of searchSections) if (slug && !heading.trim())
   for (const f of readdirSync(dir + 'thumbs')) if (!listed.has(f)) fail(`${dir}thumbs/${f} is not listed in photos.json`);
 }
 
+// 5c. Recorded audio: every clip listed exists, every MP3 is listed.
+{
+  const dir = 'assets/audio/';
+  const { clips } = JSON.parse(readFileSync(dir + 'index.json', 'utf8'));
+  const files = new Set(Object.values(clips));
+  for (const f of files) if (!existsSync(dir + f)) fail(`${dir}index.json lists ${f}, which is missing`);
+  for (const f of readdirSync(dir).filter((x) => x.endsWith('.mp3'))) if (!files.has(f)) fail(`${dir}${f} is not listed in index.json`);
+}
+
 // 6. VERSION is semver and has a CHANGELOG entry.
 const version = readFileSync('VERSION', 'utf8').trim();
 if (!/^\d+\.\d+\.\d+$/.test(version)) fail(`VERSION '${version}' is not x.y.z`);
