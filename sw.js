@@ -29,17 +29,33 @@ self.addEventListener('install', (event) => {
     const hashes = list.hashes || {};
     const cache = await caches.open(CACHE);
     const prev = await previousRelease();
-    await Promise.all(list.files.map(async (f) => {
-      const h = hashes[f];
-      if (prev && h && prev.hashes[f] === h) {
-        const old = await prev.cache.match(f);
-        if (old) { await cache.put(f, old); return; }
+    // A few files at a time, each retried: with ~1,850 files at once GitHub Pages answers some
+    // with 503, and one failure would discard the whole install. Files already stored by an
+    // interrupted install of this same build are kept, so a retry resumes where it stopped.
+    const queue = list.files.slice();
+    async function fetchFresh(url) {
+      for (let attempt = 0; ; attempt++) {
+        try {
+          const r = await fetch(new Request(url, { cache: 'reload' }));
+          if (r.ok) return r;
+          if (attempt >= 3 || r.status < 500) throw new Error(url + ': HTTP ' + r.status);
+        } catch (e) { if (attempt >= 3) throw e; }
+        await new Promise((ok) => setTimeout(ok, 500 * 2 ** attempt));
       }
-      // Changed or new: ask for this exact version, past both the browser and CDN caches.
-      const fresh = await fetch(new Request(h ? f + '?v=' + h : f, { cache: 'reload' }));
-      if (!fresh.ok) throw new Error(f + ': HTTP ' + fresh.status);
-      await cache.put(f, fresh);
-    }));
+    }
+    async function worker() {
+      for (let f; (f = queue.shift()) !== undefined;) {
+        if (await cache.match(f)) continue;
+        const h = hashes[f];
+        if (prev && h && prev.hashes[f] === h) {
+          const old = await prev.cache.match(f);
+          if (old) { await cache.put(f, old); continue; }
+        }
+        // Changed or new: ask for this exact version, past both the browser and CDN caches.
+        await cache.put(f, await fetchFresh(h ? f + '?v=' + h : f));
+      }
+    }
+    await Promise.all(Array.from({ length: 8 }, worker));
     await cache.put('precache.json', res);
     // The very first install takes over at once; later ones wait for the page's go-ahead.
     if (!self.registration.active) await self.skipWaiting();
