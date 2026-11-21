@@ -4,6 +4,11 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.17.2] - 2026-11-21
+
+### Fixed
+- Recorded audio still didn't play offline or in the installed app after 1.17.1. GitHub's server marks files as varying by compression, and audio players ask for files differently from the page, so the offline copy never found the recordings. It now ignores that header when looking files up.
+
 ## [1.17.1] - 2026-11-21
 
 ### Fixed
