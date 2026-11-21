@@ -4,6 +4,12 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.18.4] - 2026-11-21
+
+### Fixed
+- Sounds started late, because each recording was loaded only when it was needed. Recordings are now kept ready, and each question's sound (and the next one's) is prepared in advance, so it starts at once.
+- Sounds were cut off when the next question appeared. After a correct answer the next question now waits until the sound has finished.
+
 ## [1.18.3] - 2026-11-21
 
 ### Fixed
