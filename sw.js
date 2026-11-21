@@ -83,9 +83,12 @@ self.addEventListener('fetch', (event) => {
     // except a file opened directly, such as a diagram opened full size.
     const isFile = /\.[a-z0-9]+$/i.test(url.pathname) && !/\/index\.html$/.test(url.pathname);
     if (req.mode === 'navigate' && !isFile) {
-      return (await cache.match('index.html')) || fetch(req);
+      return (await cache.match('index.html', { ignoreVary: true })) || fetch(req);
     }
-    const hit = await cache.match(req, { ignoreSearch: true });
+    // ignoreVary: GitHub Pages sends "Vary: Accept-Encoding", and audio elements send a
+    // different Accept-Encoding from the fetch that stored the file, so without it their
+    // requests never match the cache and fail offline.
+    const hit = await cache.match(req, { ignoreSearch: true, ignoreVary: true });
     // Audio and video ask for byte ranges; Chrome refuses a whole-file answer from the cache
     // ("source not supported"), so cut the requested range out of the cached file.
     if (hit && req.headers.has('range')) return rangeOf(hit, req.headers.get('range'));
