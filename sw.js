@@ -1,18 +1,45 @@
 // Offline support: saves the whole site on first visit and serves it from the cache.
 // The deploy stamps BUILD with a hash of every file (scripts/build-offline.mjs), so each
-// release installs a fresh cache in the background; the page then offers a reload.
+// release installs a fresh cache in the background; the page then switches to it.
+// precache.json lists every file with a hash of its contents: an update copies unchanged
+// files from the previous cache and downloads only the files that changed.
 const BUILD = '__BUILD__';
 const CACHE = 'nb-site-' + BUILD;
 const FONTS = 'nb-fonts';
 const FONT_HOSTS = ['fonts.googleapis.com', 'fonts.gstatic.com'];
 
+// The most recent complete earlier cache (a complete install ends by storing precache.json).
+async function previousRelease() {
+  for (const key of (await caches.keys()).reverse()) {
+    if (!key.startsWith('nb-site-') || key === CACHE) continue;
+    const cache = await caches.open(key);
+    const manifest = await cache.match('precache.json');
+    if (!manifest) continue;
+    try { return { cache, hashes: (await manifest.json()).hashes || {} }; } catch (e) { /* unreadable: skip */ }
+  }
+  return null;
+}
+
 self.addEventListener('install', (event) => {
   event.waitUntil((async () => {
-    const res = await fetch('precache.json', { cache: 'no-store' });
+    // A unique address gets past GitHub Pages' CDN, which caches files for up to 10 minutes.
+    const res = await fetch('precache.json?build=' + BUILD + '&t=' + Date.now(), { cache: 'no-store' });
+    if (!res.ok) throw new Error('precache.json: HTTP ' + res.status);
     const list = await res.clone().json();
+    const hashes = list.hashes || {};
     const cache = await caches.open(CACHE);
-    // Fetch past the HTTP cache so a new release never stores a stale copy.
-    await cache.addAll(list.files.map((f) => new Request(f, { cache: 'reload' })));
+    const prev = await previousRelease();
+    await Promise.all(list.files.map(async (f) => {
+      const h = hashes[f];
+      if (prev && h && prev.hashes[f] === h) {
+        const old = await prev.cache.match(f);
+        if (old) { await cache.put(f, old); return; }
+      }
+      // Changed or new: ask for this exact version, past both the browser and CDN caches.
+      const fresh = await fetch(new Request(h ? f + '?v=' + h : f, { cache: 'reload' }));
+      if (!fresh.ok) throw new Error(f + ': HTTP ' + fresh.status);
+      await cache.put(f, fresh);
+    }));
     await cache.put('precache.json', res);
     // The very first install takes over at once; later ones wait for the page's go-ahead.
     if (!self.registration.active) await self.skipWaiting();

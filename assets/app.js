@@ -1079,11 +1079,18 @@
         if (!w) return;
         w.addEventListener('statechange', function () { if (w.state === 'installed' && navigator.serviceWorker.controller) showUpdate(w); });
       }
-      if (reg.waiting && navigator.serviceWorker.controller) showUpdate(reg.waiting);
+      // An update downloaded during an earlier visit is applied straight away at start-up,
+      // before the reader is in the middle of anything; one that arrives later asks first.
+      if (reg.waiting && navigator.serviceWorker.controller) {
+        if (performance.now() < 15000) reg.waiting.postMessage('skipWaiting'); else showUpdate(reg.waiting);
+      }
       watch(reg.installing);
       reg.addEventListener('updatefound', function () { watch(reg.installing); });
-      // Look for a new release whenever the app comes back to the foreground.
-      document.addEventListener('visibilitychange', function () { if (!document.hidden) reg.update().catch(function () {}); });
+      // Look for a new release whenever the app comes back to the foreground, and every
+      // 30 minutes while it stays open.
+      function check() { if (!document.hidden) reg.update().catch(function () {}); }
+      document.addEventListener('visibilitychange', check);
+      setInterval(check, 30 * 60 * 1000);
     }).catch(function () { /* offline support unavailable; the site still works online */ });
     navigator.serviceWorker.ready.then(function () { offline.ready = true; offlineChanged(); });
   }
