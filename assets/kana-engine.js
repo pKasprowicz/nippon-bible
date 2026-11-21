@@ -184,6 +184,8 @@
         if (pos >= queue.length) { finish(); return; }
         current = queue[pos]; answered = false;
         render(current);
+        // Have this question's and the next one's sound decoded before they're needed.
+        if (ctx.preload) [queue[pos], queue[pos + 1]].forEach(function (x) { if (x && x.audio) ctx.preload(x.audio); });
         updateStatus();
       }
       function respond(input, chosenLabel) {
@@ -233,14 +235,24 @@
         // could overlap the next question's sound.
         if (current.audio && (!res.ok || current.audioOnCorrect !== false)) ctx.speak(current.audio);
         if (res.ok && !opts.timer && !current.pauseOnCorrect) {
-          setTimeout(function () { if (answered && queue[pos] === current) { pos++; next(); } }, opts.advanceMs || (opts.fast ? 450 : 1100));
+          advanceAfter(opts.advanceMs || (opts.fast ? 450 : 1100), 4000);
         } else if (opts.timer) {
-          setTimeout(function () { pos++; next(); }, res.ok ? 250 : 900);
+          advanceAfter(res.ok ? 250 : 900, 1500);
         } else {
           var cont = el('button', { 'class': 'btn primary hw-continue', type: 'button', text: 'Continue →', onclick: function () { pos++; next(); } });
           fb.appendChild(el('div', { 'class': 'hw-actions' }, [cont]));
           cont.focus({ preventScroll: true });
         }
+      }
+      // Move on after at least minMs, but let the answer's sound finish first (waiting at
+      // most maxWait more): the next question would otherwise cut it off.
+      function advanceAfter(minMs, maxWait) {
+        var q = current, until = Date.now() + minMs + maxWait;
+        setTimeout(function tick() {
+          if (stopped || !answered || queue[pos] !== q) return;
+          if (ctx.busy && ctx.busy() && Date.now() < until) { setTimeout(tick, 100); return; }
+          pos++; next();
+        }, minMs);
       }
       function render(q) {
         // Drop speech still queued from the previous question (its answer replay), so it
