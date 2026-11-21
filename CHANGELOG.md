@@ -4,6 +4,11 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.17.1] - 2026-11-21
+
+### Fixed
+- Recorded audio didn't play when the site was used offline or as an installed app: the device's own voice was used instead. The offline copy now answers the byte-range requests that audio players make, so the recordings play everywhere.
+
 ## [1.17.0] - 2026-11-21
 
 ### Added
