@@ -1212,7 +1212,7 @@
           el('li', { text: 'iPhone: Settings › Accessibility › Spoken Content › Voices › Japanese.' })
         ]),
         el('p', { 'class': 'sync-status' }, ['Recordings made with ', el('a', { href: 'https://open-jtalk.sourceforge.net/', text: 'Open JTalk' }),
-          ' and the HTS voice "NIT ATR503 M001" © Nagoya Institute of Technology, licensed under ',
+          ' and the HTS voice "Takumi" from the MMDAgent project, © 2017–2018 Nagoya Institute of Technology, licensed under ',
           el('a', { href: 'https://creativecommons.org/licenses/by/3.0/', text: 'CC BY 3.0' }), '.'])
       ])
     );

@@ -149,13 +149,16 @@ each phrase, exactly as the app speaks it, to an MP3). A phrase without a record
 browser's own Japanese voice. After changing Japanese text, re-record:
 
 ```sh
-sudo apt-get install open-jtalk open-jtalk-mecab-naist-jdic hts-voice-nitech-jp-atr503-m001 ffmpeg
+sudo apt-get install open-jtalk open-jtalk-mecab-naist-jdic ffmpeg
 node scripts/audio/build-audio.mjs --report audio-report.txt
 ```
 
 - The script collects every phrase the app can speak (tap-to-listen text on all pages except the
   sources, the kana and kanji course data, word and station lists) and records it with Open JTalk
-  and the NIT ATR503 M001 voice (CC BY 3.0; the credit is in README and on the Install & offline page).
+  and the HTS voice "Takumi" from the MMDAgent project, kept with its licence in `scripts/audio/voice/`
+  (CC BY 3.0; the credit is in README and on the Install & offline page). Each clip keeps 0.15 s before
+  and 0.4 s after the speech, so phones don't swallow the start and the voice fades out naturally; it
+  gets one even gain (peak −1.5 dB, no compression) and is encoded as 48 kbps / 24 kHz mono MP3.
 - Single kana are recorded in katakana, so は and へ aren't read as the particles "wa" and "e".
   Single kanji, and lists of them, are read as `assets/kanji-data.js` teaches them.
 - `scripts/audio/readings.json` gives the right reading where Open JTalk's is wrong (menu words,
