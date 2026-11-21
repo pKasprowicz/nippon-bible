@@ -95,7 +95,8 @@ for (const page of pagesFromApp()) {
   const HINT_BEFORE = new RegExp('[*_]+(' + LAT + '+(?: ' + LAT + '+)*)[*_]+ \\(?(' + JA + '+)\\)?', 'g');
   for (const m of md.matchAll(HINT_BEFORE)) hint(m[2], m[1]);
   // Page text: each text node outside links, buttons and code, as markSpeakable() sees it.
-  const html = marked.parse(md.replace(/^```[\s\S]*?^```/gm, ''), { gfm: true });
+  // Image credits (photographers' user names) are not spoken either.
+  const html = marked.parse(md.replace(/^```[\s\S]*?^```/gm, ''), { gfm: true }).replace(/<span class="credit">[\s\S]*?<\/span>/g, '');
   let skip = 0;
   for (const part of html.split(/(<[^>]+>)/)) {
     if (part.startsWith('<')) {
@@ -126,7 +127,8 @@ const KANJI = sandbox.NB_KANJI.byChar;
 function kanjiList(t) {
   const parts = t.split(/[\s・/]+/).filter(Boolean);
   if (!parts.length || !parts.every((c) => [...c].length === 1 && KANJI[c] && KANJI[c].say)) return null;
-  return parts.map((c) => KANJI[c].say).join('、');
+  // In katakana, so a reading such as はち isn't taken for the particle は ("wachi").
+  return parts.map((c) => toKata(KANJI[c].say)).join('、');
 }
 const SMALL = 'ゃゅょャュョぁぃぅぇぉァィゥェォ';
 const toKata = (s) => s.replace(/[ぁ-ゖ]/g, (c) => String.fromCharCode(c.charCodeAt(0) + 0x60));

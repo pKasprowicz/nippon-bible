@@ -1,6 +1,8 @@
 {
   "_comment": "Phrase → the kana Open JTalk should read, where its own reading is wrong for the course. Checked against the romaji the course gives for each phrase. Single kanji not listed here are read as the kanji course teaches them (assets/kanji-data.js).",
-  "_skip": ["蜜淋"],
+  "_skip": [
+    "蜜淋"
+  ],
   "引": "ひく",
   "日本": "にほん",
   "語": "ご",
@@ -12,7 +14,7 @@
   "辛い": "からい",
   "次発": "じはつ",
   "生食用": "なましょくよう",
-  "二八": "にはち",
+  "二八": "ニハチ",
   "タラバ蟹": "たらばがに",
   "越前蟹": "えちぜんがに",
   "松葉蟹": "まつばがに",
@@ -40,5 +42,7 @@
   "練り切り": "ねりきり",
   "新亡": "しんもう",
   "御霊": "ごりょう",
-  "付喪神": "つくもがみ"
+  "付喪神": "つくもがみ",
+  "変化": "へんげ",
+  "松誉巌的": "しょうよごんてき"
 }
