@@ -34,5 +34,5 @@ Contributing: see [CONTRIBUTING.md](CONTRIBUTING.md).
 ## Audio credit
 
 The recorded Japanese audio in `assets/audio/` was made with [Open JTalk](https://open-jtalk.sourceforge.net/)
-and the HTS voice "NIT ATR503 M001" © Nagoya Institute of Technology, licensed under
+and the HTS voice "Takumi" from the [MMDAgent](https://www.mmdagent.jp/) project, © 2017–2018 Nagoya Institute of Technology, licensed under
 [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/).
