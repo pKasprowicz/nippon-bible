@@ -76,6 +76,12 @@ self.addEventListener('fetch', (event) => {
   }
 
   if (url.origin !== self.location.origin) return;
+  // "?fresh=…" asks the server, not the saved copy: the page uses it to see whether a newer
+  // release exists. reset.html always comes from the server, so it can repair a stuck copy.
+  if (url.searchParams.has('fresh') || /\/reset\.html$/.test(url.pathname)) {
+    event.respondWith(fetch(new Request(req, { cache: 'no-store' })));
+    return;
+  }
 
   event.respondWith((async () => {
     const cache = await caches.open(CACHE);
