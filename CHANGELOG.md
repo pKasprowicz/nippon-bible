@@ -4,6 +4,19 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.17.0] - 2026-11-21
+
+### Added
+- **Recorded Japanese audio, the same on every device.** Tap-to-listen and the listening exercises now play recordings instead of your browser's speech engine:
+  - 1,544 phrases from every lesson, course and handbook, recorded with Open JTalk and the HTS voice "NIT ATR503 M001" (Nagoya Institute of Technology, CC BY 3.0)
+  - Works offline, and the listening exercises now also work on phones and computers with no Japanese voice installed
+  - Pronunciation checked against the course's romaji; single characters are no longer read as particles (は as "wa", へ as "e"), and menu words such as 白湯 *paitan* and タラバ蟹 *tarabagani* have their proper readings
+  - Anything without a recording still uses your device's voice
+
+### Changed
+- The offline download is about 7 MB larger
+- The content check verifies that every recording is present
+
 ## [1.16.2] - 2026-11-21
 
 ### Changed
