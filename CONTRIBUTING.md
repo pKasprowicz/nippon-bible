@@ -151,9 +151,13 @@ The site is an installable web app that works offline:
 - `sw.js` is a service worker. On install it saves every file listed in `precache.json`, then serves
   the site from that cache; Google Fonts are cached as they are used.
 - The deploy runs `node scripts/build-offline.mjs _site`, which writes `precache.json` (every published
-  file) and stamps `BUILD = '__BUILD__'` in `sw.js` with a hash of the content. Any content change gives
-  a new service worker; it downloads the new version in the background and the page shows a
-  *Reload* bar. Keep the placeholder in `sw.js`, and don't commit `precache.json`.
+  file with a hash of its contents) and stamps `BUILD = '__BUILD__'` in `sw.js` with a hash of the whole
+  site. An update copies unchanged files from the previous cache and downloads only changed files,
+  each from `file?v=<hash>` so the CDN can't hand out an old copy. Any content change gives
+  a new service worker; it downloads the new version in the background. If it finishes while the
+  app is in use the page shows a *Reload* bar; an update still waiting at the next start-up is
+  applied straight away. The page also checks for updates every 30 minutes and when brought back
+  to the foreground. Keep the placeholder in `sw.js`, and don't commit `precache.json`.
 - New files and folders are picked up automatically. To try it locally, copy the published files to a
   folder, run the script on that folder and serve it (service workers need `localhost` or HTTPS).
 
