@@ -86,6 +86,27 @@ self.addEventListener('fetch', (event) => {
       return (await cache.match('index.html')) || fetch(req);
     }
     const hit = await cache.match(req, { ignoreSearch: true });
+    // Audio and video ask for byte ranges; Chrome refuses a whole-file answer from the cache
+    // ("source not supported"), so cut the requested range out of the cached file.
+    if (hit && req.headers.has('range')) return rangeOf(hit, req.headers.get('range'));
     return hit || fetch(req);
   })());
 });
+
+async function rangeOf(res, header) {
+  const buf = await res.arrayBuffer();
+  const m = /^bytes=(\d*)-(\d*)$/.exec(header.trim());
+  const size = buf.byteLength;
+  let start = m && m[1] !== '' ? Number(m[1]) : NaN, end = m && m[2] !== '' ? Number(m[2]) : size - 1;
+  if (m && m[1] === '' && m[2] !== '') { start = Math.max(0, size - Number(m[2])); end = size - 1; } // bytes=-500
+  if (!m || Number.isNaN(start) || start >= size || end < start) {
+    return new Response(null, { status: 416, statusText: 'Range Not Satisfiable', headers: { 'Content-Range': `bytes */${size}` } });
+  }
+  end = Math.min(end, size - 1);
+  const body = buf.slice(start, end + 1);
+  const headers = new Headers(res.headers);
+  headers.set('Content-Range', `bytes ${start}-${end}/${size}`);
+  headers.set('Content-Length', String(body.byteLength));
+  headers.set('Accept-Ranges', 'bytes');
+  return new Response(body, { status: 206, statusText: 'Partial Content', headers });
+}
