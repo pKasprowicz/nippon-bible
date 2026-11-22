@@ -340,14 +340,282 @@
       n.parentNode.replaceChild(frag, n);
     });
   }
+  /* ---------- term pop-ups ---------- */
+  // assets/terms.json (built by scripts/build-terms.mjs) says what a tapped word, substance,
+  // linked name or citation means. Tapping Japanese text opens its pop-up and plays it; inside
+  // exercises (.hw) a tap only plays, so a pop-up never gives an answer away.
+  var TERMS = null, termsLoading = null, pop = null, popAnchor = null;
+  function loadTerms() {
+    if (!termsLoading) termsLoading = fetch('assets/terms.json').then(function (r) { return r.ok ? r.json() : null; })
+      .catch(function () { return null; }).then(function (t) { TERMS = t; return t; });
+    return termsLoading;
+  }
+  var roKey = function (s) { return s.replace(/[“”"]/g, '').replace(/\s+/g, ' ').trim().toLowerCase(); };
+  function wordsFor(text) {
+    if (!TERMS) return [];
+    text = text.trim();
+    if (TERMS.ja[text] !== undefined) return [TERMS.e[TERMS.ja[text]]];
+    var seen = {}, out = [];
+    text.split(/[\s、。・]+/).forEach(function (tok) {
+      var i = TERMS.ja[tok];
+      if (i !== undefined && !seen[i]) { seen[i] = 1; out.push(TERMS.e[i]); }
+    });
+    // A run of kana with no entry of its own (あいうえお): show its characters.
+    if (!out.length && /^[぀-ヿー]{2,8}$/.test(text)) Array.from(text).forEach(function (ch) {
+      var i = TERMS.ja[ch];
+      if (i !== undefined && !seen[i]) { seen[i] = 1; out.push(TERMS.e[i]); }
+    });
+    return out;
+  }
+  function lessonById(id) { return LESSONS.filter(function (l) { return l.id === id; })[0]; }
+  function groupTitle(g) { var x = GROUPS.filter(function (y) { return y.id === g; })[0]; return x ? x.title : ''; }
+  function pageLink(id, label) {
+    var l = lessonById(id);
+    return l ? el('a', { href: '#/' + id, text: label || (groupTitle(l.group) + ': ' + l.title), onclick: closePop }) : null;
+  }
+  function extLink(url, label) { return el('a', { href: url, target: '_blank', rel: 'noopener', 'class': 'pop-ext', text: label }); }
+  function wikiLabel(url) {
+    var lang = url.match(/^https:\/\/(\w+)\.wikipedia/);
+    return 'Wikipedia' + (lang && lang[1] !== 'en' ? ' (' + lang[1].toUpperCase() + ')' : '') + ': ' + decodeURIComponent(url.split('/wiki/')[1] || '').replace(/_/g, ' ');
+  }
+  function formula(f) {
+    var span = el('span', { 'class': 'pop-formula' });
+    f.split(/(\d+)/).forEach(function (part, i) { if (part) span.appendChild(i % 2 ? el('sub', { text: part }) : document.createTextNode(part)); });
+    return span;
+  }
+  function playButton(text) {
+    return el('button', { type: 'button', 'class': 'pop-play', 'aria-label': 'Play ' + text, title: 'Listen', text: '▶',
+      onclick: function (ev) { ev.stopPropagation(); speak(text, ev.currentTarget); } });
+  }
+  function popTag(text) { return el('p', { 'class': 'pop-tag', text: text }); }
+  function linksRow(items) {
+    items = items.filter(Boolean);
+    return items.length ? el('p', { 'class': 'pop-links' }, items) : null;
+  }
+  function wordBlock(e, here) {
+    var head = el('p', { 'class': 'pop-head' }, [
+      e.ja ? el('span', { 'class': 'pop-ja', lang: 'ja', text: e.ja }) : null,
+      e.kana && e.kana !== e.ja ? el('span', { 'class': 'pop-kana', lang: 'ja', text: e.kana }) : null,
+      e.ro ? el('em', { 'class': 'pop-ro', text: e.ro }) : null,
+      e.ja ? playButton(e.ja) : null
+    ]);
+    var links = [];
+    if (e.url) links.push(extLink(e.url, '↗ ' + wikiLabel(e.url)));
+    if (e.gl && e.gl !== here) links.push(pageLink(e.gl, 'Glossary'));
+    if (e.page && e.page !== here && e.page !== e.gl) links.push(pageLink(e.page, 'Explained in: ' + (lessonById(e.page) || {}).title));
+    return el('div', { 'class': 'pop-entry' }, [
+      head,
+      e.en ? el('p', { 'class': 'pop-en', text: e.en }) : null,
+      e.jaName && !e.ja ? el('p', { 'class': 'pop-ja-name' }, ['Japanese: ', el('span', { lang: 'ja', text: e.jaName })]) : null,
+      e.alt && e.alt.length ? el('p', { 'class': 'pop-note', text: 'Also read: ' + e.alt.join(', ') }) : null,
+      e.note ? el('p', { 'class': 'pop-note', text: e.note }) : null,
+      linksRow(links)
+    ]);
+  }
+  function substanceView(e, here) {
+    var where = (e.pages || []).filter(function (id) { return id !== here; }).slice(0, 6).map(function (id) { return pageLink(id); });
+    return [
+      popTag('Substance'),
+      el('p', { 'class': 'pop-title', text: e.en }),
+      e.pl ? el('p', { 'class': 'pop-pl' }, ['Polish: ', el('strong', { lang: 'pl', text: e.pl })]) : null,
+      e.formula || e.iupac ? el('p', { 'class': 'pop-note' }, [e.formula ? formula(e.formula) : null, e.formula && e.iupac ? ' · ' : '', e.iupac ? el('span', { 'class': 'pop-iupac', text: 'IUPAC: ' + e.iupac }) : null]) : null,
+      e.abstract ? el('p', { 'class': 'pop-abstract', text: e.abstract }) : null,
+      e.abstractSrc ? el('p', { 'class': 'pop-src' }, ['Source: ', e.cid ? extLink('https://pubchem.ncbi.nlm.nih.gov/compound/' + e.cid, e.abstractSrc) : e.abstractSrc]) : null,
+      linksRow([e.url ? extLink(e.url, '↗ Wikipedia (EN)') : null, e.plUrl ? extLink(e.plUrl, '↗ Wikipedia (PL)') : null]),
+      where.length ? el('div', { 'class': 'pop-where' }, [el('span', { text: 'Also in: ' })].concat(where.map(function (a, i) { return el('span', {}, [i ? ' · ' : '', a]); }))) : null
+    ];
+  }
+  var TYPE_LABEL = { person: 'Person', place: 'Place', work: 'Work', organisation: 'Organisation', event: 'Event', topic: 'Topic' };
+  function contextSentence(anchor) {
+    var block = anchor.closest('p, li, td, figcaption, blockquote');
+    if (!block) return '';
+    var text = block.textContent.replace(/\s+/g, ' ').trim(), at = text.indexOf(anchor.textContent);
+    var sentences = text.split(/(?<=[.!?])\s+(?=[A-Z"“(*])/), pos = 0;
+    for (var i = 0; i < sentences.length; i++) {
+      if (at >= pos && at < pos + sentences[i].length + 1) return sentences[i].length > 260 ? sentences[i].slice(0, 257) + '…' : sentences[i];
+      pos += sentences[i].length + 1;
+    }
+    return '';
+  }
+  function entityView(e, anchor) {
+    var ctx = contextSentence(anchor);
+    return [
+      popTag(TYPE_LABEL[e.type] || 'Topic'),
+      el('p', { 'class': 'pop-title', text: e.en }),
+      e.jaName ? el('p', { 'class': 'pop-ja-name' }, [el('span', { lang: 'ja', 'class': 'pop-ja', text: e.jaName })]) : null,
+      ctx ? el('p', { 'class': 'pop-context' }, [el('span', { 'class': 'pop-src', text: 'On this page: ' }), ctx]) : null,
+      linksRow([extLink(e.url, '↗ ' + wikiLabel(e.url) + ' (further reading)')])
+    ];
+  }
+  function citeView(key, c, group) {
+    var ref = el('p', { 'class': 'pop-ref' });
+    ref.innerHTML = marked.parseInline(c.ref);
+    ref.querySelectorAll('a').forEach(function (a) { a.target = '_blank'; a.rel = 'noopener'; });
+    return [
+      popTag('Source'),
+      el('p', { 'class': 'pop-title', text: key }),
+      ref,
+      c.ch ? el('p', { 'class': 'pop-src', text: 'Cited in: ' + c.ch }) : null,
+      linksRow([pageLink(group + '-sources', 'All sources of this handbook')])
+    ];
+  }
+  function chapterView(l, href) {
+    var body = el('p', { 'class': 'pop-abstract', text: 'Loading…' });
+    fetchText(l.file).then(function (md) {
+      var para = md.replace(/^```[\s\S]*?^```/gm, '').split(/\n\s*\n/).map(function (b) { return b.trim(); })
+        .filter(function (b) { return b && !/^(#|<|\||>|-|\d+\.|!\[)/.test(b); })[0] || '';
+      var tmp = el('div'); tmp.innerHTML = marked.parseInline(para);
+      var t = tmp.textContent.replace(/\s+/g, ' ').trim();
+      body.textContent = t.length > 320 ? t.slice(0, 317) + '…' : t;
+    }).catch(function () { body.textContent = ''; });
+    return [
+      popTag(groupTitle(l.group) + (l.label && /^\d+$/.test(l.label) ? ' · ' + (l.group === 'course' ? 'Lesson ' : 'Chapter ') + l.label : '')),
+      el('p', { 'class': 'pop-title', text: l.title }),
+      body,
+      el('p', { 'class': 'pop-links' }, [el('a', { 'class': 'btn primary pop-open', href: href, text: 'Open', onclick: closePop })])
+    ];
+  }
+  function closePop() {
+    if (pop) { pop.remove(); pop = null; }
+    if (popAnchor) { popAnchor.classList.remove('pop-open-anchor'); popAnchor.setAttribute('aria-expanded', 'false'); popAnchor = null; }
+  }
+  function openPop(anchor, children, label) {
+    closePop();
+    pop = el('div', { 'class': 'term-pop', role: 'dialog', 'aria-label': label || 'Details', tabindex: '-1' }, [
+      el('button', { type: 'button', 'class': 'pop-x', 'aria-label': 'Close', text: '×', onclick: closePop })
+    ].concat(children.filter(Boolean)));
+    document.body.appendChild(pop);
+    popAnchor = anchor; anchor.classList.add('pop-open-anchor'); anchor.setAttribute('aria-expanded', 'true');
+    if (window.matchMedia('(max-width: 640px)').matches) pop.classList.add('sheet');
+    else {
+      var r = anchor.getBoundingClientRect(), w = pop.offsetWidth, h = pop.offsetHeight;
+      var left = Math.min(Math.max(8, r.left), window.innerWidth - w - 8);
+      var top = r.bottom + 8 + h > window.innerHeight && r.top - 8 - h > 0 ? r.top - 8 - h : r.bottom + 8;
+      pop.style.left = (left + window.scrollX) + 'px'; pop.style.top = (top + window.scrollY) + 'px';
+    }
+    pop.focus({ preventScroll: true });
+  }
+  function popupsOff(node) { return !!node.closest('.hw, .search-page, .home, .term-pop, nav, .sidebar'); }
+  function openTermFor(t) {
+    var here = rendered;
+    if (t.classList.contains('ja')) {
+      speak(t.textContent, t);
+      if (popupsOff(t)) return;
+      loadTerms().then(function () {
+        var found = wordsFor(t.textContent);
+        if (found.length) openPop(t, found.map(function (e) { return wordBlock(e, here); }), t.textContent);
+      });
+      return;
+    }
+    if (t.dataset.term !== undefined) {
+      var e = TERMS.e[+t.dataset.term];
+      openPop(t, e.k === 'substance' ? substanceView(e, here) : e.k === 'entity' ? entityView(e, t) : [wordBlock(e, here)], t.textContent);
+      return;
+    }
+    if (t.dataset.cite) {
+      var l = lessonById(here), c = TERMS.cites[l.group][t.dataset.cite];
+      if (c) openPop(t, citeView(t.dataset.cite, c, l.group), 'Source: ' + t.dataset.cite);
+      return;
+    }
+    if (t.classList.contains('xref')) {
+      var id = t.getAttribute('href').slice(2).split('/')[0], cl = lessonById(id);
+      if (cl) openPop(t, chapterView(cl, t.getAttribute('href')), cl.title);
+    }
+  }
   document.addEventListener('click', function (e) {
-    var t = e.target.closest('.ja');
-    if (t) speak(t.textContent, t);
+    var t = e.target.closest('.ja, [data-term], [data-cite], a.xref');
+    if (!t) { if (pop && !e.target.closest('.term-pop')) closePop(); return; }
+    if (t.closest('.term-pop')) { if (t.classList.contains('ja')) speak(t.textContent, t); return; }
+    if (t.tagName === 'A' && (e.ctrlKey || e.metaKey || e.shiftKey)) return;
+    e.preventDefault();
+    if (popAnchor === t) { closePop(); return; }
+    openTermFor(t);
   });
   document.addEventListener('keydown', function (e) {
-    var t = e.target.closest && e.target.closest('.ja');
-    if (t && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); speak(t.textContent, t); }
+    if (e.key === 'Escape' && pop) { var a = popAnchor; closePop(); if (a) a.focus(); return; }
+    var t = e.target.closest && e.target.closest('.ja, [data-term], [data-cite]');
+    if (t && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openTermFor(t); }
   });
+  window.addEventListener('hashchange', closePop);
+  window.addEventListener('resize', function () { if (pop && !pop.classList.contains('sheet')) closePop(); });
+
+  // Mark what on a rendered page has a pop-up.
+  var SKIP_DECOR = 'a, code, pre, .ja, .hw, h1, .pop, [data-term], [data-cite], figure.diagram';
+  function textNodes(root, test) {
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) { return n.parentNode.closest(SKIP_DECOR) || !test(n.nodeValue) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT; }
+    });
+    var out = []; while (walker.nextNode()) out.push(walker.currentNode); return out;
+  }
+  function wrapMatches(node, re, make) {
+    var text = node.nodeValue, frag = document.createDocumentFragment(), last = 0, any = false;
+    text.replace(re, function () {
+      var m = arguments[0], idx = arguments[arguments.length - 2], span = make.apply(null, arguments);
+      if (!span) return m;
+      if (idx > last) frag.appendChild(document.createTextNode(text.slice(last, idx)));
+      frag.appendChild(span); last = idx + m.length; any = true; return m;
+    });
+    if (!any) return;
+    if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+    node.parentNode.replaceChild(frag, node);
+  }
+  function termSpan(text, i, cls) { return el('span', { 'class': cls || 'term', 'data-term': String(i), role: 'button', tabindex: '0', 'aria-haspopup': 'dialog', text: text }); }
+  var subRe = null;
+  function decorateTerms(article, pageKey) {
+    var lesson = lessonById(pageKey);
+    if (!lesson || lesson.kind === 'Sources') return;
+    loadTerms().then(function (T) {
+      if (!T || !article.isConnected && !article.parentNode) return;
+      // Romaji and glossary terms in italics or bold.
+      article.querySelectorAll('em, strong').forEach(function (n) {
+        if (n.closest(SKIP_DECOR) || n.querySelector('.ja, a, em, strong')) return;
+        var i = T.ro[roKey(n.textContent)];
+        if (i !== undefined) { n.classList.add('term'); n.dataset.term = i; n.setAttribute('role', 'button'); n.tabIndex = 0; n.setAttribute('aria-haspopup', 'dialog'); }
+      });
+      // Encyclopedia links: a pop-up first, with the link inside it.
+      article.querySelectorAll('a.ref-link').forEach(function (a) {
+        var i = T.url[a.getAttribute('href')];
+        if (i !== undefined) { a.dataset.term = i; a.classList.add('term-link'); a.setAttribute('aria-haspopup', 'dialog'); a.removeAttribute('title'); }
+      });
+      // Chapter links inside the text (not the "Next" line).
+      article.querySelectorAll('a[href^="#/"]').forEach(function (a) {
+        var id = a.getAttribute('href').slice(2).split('/')[0], p = a.closest('p, li, td');
+        if (!lessonById(id) || id === pageKey || a.closest('.pager, .lesson-footer, nav, .hw') || (p && /^\s*➡/.test(p.textContent))) return;
+        a.classList.add('xref'); a.setAttribute('aria-haspopup', 'dialog');
+      });
+      // Substances named in plain text.
+      if (!subRe) {
+        var lower = Object.keys(T.sub).filter(function (k) { return !/^[A-Z]{2,}$/.test(k); }).sort(function (a, b) { return b.length - a.length; });
+        var caps = Object.keys(T.sub).filter(function (k) { return /^[A-Z]{2,}$/.test(k); });
+        var esc = function (k) { return k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); };
+        subRe = [new RegExp('\\b(' + lower.map(esc).join('|') + ')\\b', 'gi'), new RegExp('\\b(' + caps.map(esc).join('|') + ')\\b', 'g')];
+      }
+      subRe.forEach(function (re) {
+        textNodes(article, function (v) { re.lastIndex = 0; return re.test(v); }).forEach(function (n) {
+          wrapMatches(n, re, function (m) { var i = T.sub[/^[A-Z]{2,}$/.test(m) ? m : m.toLowerCase()]; return i === undefined ? null : termSpan(m, i, 'term term-sub'); });
+        });
+      });
+      // Citations: "(Author 2019; Other 2020a)".
+      var cites = T.cites[lesson.group];
+      if (cites) {
+        textNodes(article, function (v) { return /\([^()]*(\d{4}[a-z]?|n\.d\.)/.test(v); }).forEach(function (n) {
+          wrapMatches(n, /\(([^()]*?(?:\d{4}[a-z]?|n\.d\.[^();]*)[^()]*)\)/g, function (m, inner) {
+            var parts = inner.split(/;\s*/), author = '', any = false, span = el('span', { 'class': 'cite-group' }, ['(']);
+            parts.forEach(function (part, k) {
+              var key = part.trim();
+              if (/^(\d{4}[a-z]?|n\.d\.(-\w)?)$/.test(key) && author) key = author + ' ' + key;
+              var a = key.match(/^(.*?)(?:,)? (?:\d{4}[a-z]?|n\.d\.)/); if (a) author = a[1];
+              if (k) span.appendChild(document.createTextNode('; '));
+              if (cites[key]) { any = true; span.appendChild(el('span', { 'class': 'cite', 'data-cite': key, role: 'button', tabindex: '0', 'aria-haspopup': 'dialog', text: part.trim() })); }
+              else span.appendChild(document.createTextNode(part));
+            });
+            span.appendChild(document.createTextNode(')'));
+            return any ? span : null;
+          });
+        });
+      }
+    });
+  }
 
   /* ---------- hiragana course hooks ---------- */
   if (window.NBKana) {
@@ -491,6 +759,7 @@
     rewriteImages(article, file);
     wrapTables(article);
     markSpeakable(article);
+    decorateTerms(article, pageKey);
     mountGalleries(article);
     var lesson = LESSONS.filter(function (l) { return l.id === pageKey; })[0];
     var script = lesson && (lesson.group === 'katakana' || lesson.group === 'kanji') ? lesson.group : 'hiragana';

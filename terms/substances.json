@@ -1,0 +1,1012 @@
+[
+ {
+  "en": "Glutamic acid (glutamate)",
+  "alias": [
+   "glutamate",
+   "glutamic acid",
+   "glutamates"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Glutamic_acid",
+  "cid": 33032,
+  "iupac": "(2S)-2-aminopentanedioic acid",
+  "formula": "C5H9NO4",
+  "abstract": "L-glutamic acid is an optically active form of glutamic acid having L-configuration. It has a role as a ferroptosis inducer, a neurotransmitter, a micronutrient, a nutraceutical, a mouse metabolite and an Escherichia coli metabolite.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Kwas glutaminowy",
+  "plUrl": "https://pl.wikipedia.org/wiki/Kwas_glutaminowy"
+ },
+ {
+  "en": "Monosodium glutamate (MSG)",
+  "alias": [
+   "monosodium glutamate",
+   "MSG"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Monosodium_glutamate",
+  "cid": 23689119,
+  "iupac": "sodium;(4S)-4-amino-5-hydroxy-5-oxopentanoate;hydrate",
+  "formula": "C5H10NNaO5",
+  "abstract": "Monosodium L-glutamate hydrate is an organic molecular entity. It contains a L-glutamate(1-).",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Glutaminian sodu",
+  "plUrl": "https://pl.wikipedia.org/wiki/Glutaminian_sodu"
+ },
+ {
+  "en": "Inosinic acid (inosinate, IMP)",
+  "alias": [
+   "inosinate",
+   "inosinic acid",
+   "IMP"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Inosinic_acid",
+  "cid": 135398640,
+  "iupac": "[(2R,3S,4R,5R)-3,4-dihydroxy-5-(6-oxo-1H-purin-9-yl)oxolan-2-yl]methyl dihydrogen phosphate",
+  "formula": "C10H13N4O8P",
+  "abstract": "IMP is a purine ribonucleoside 5'-monophosphate having hypoxanthine as the nucleobase. It has a role as a mouse metabolite, an Escherichia coli metabolite and a human metabolite.",
+  "abstractSrc": "PubChem / ChEBI"
+ },
+ {
+  "en": "Guanylic acid (guanylate, GMP)",
+  "alias": [
+   "guanylate",
+   "guanosine monophosphate",
+   "GMP"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Guanosine_monophosphate",
+  "cid": 135398631,
+  "iupac": "[(2R,3S,4R,5R)-5-(2-amino-6-oxo-1H-purin-9-yl)-3,4-dihydroxyoxolan-2-yl]methyl dihydrogen phosphate",
+  "formula": "C10H14N5O8P",
+  "abstract": "Guanosine 5'-monophosphate is a purine ribonucleoside 5'-monophosphate having guanine as the nucleobase. It has a role as a metabolite, a biomarker, a mouse metabolite and an Escherichia coli metabolite.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Guanozyno-5′-monofosforan",
+  "plUrl": "https://pl.wikipedia.org/wiki/Guanozyno-5%E2%80%B2-monofosforan"
+ },
+ {
+  "en": "Adenosine monophosphate (AMP)",
+  "alias": [
+   "adenosine monophosphate",
+   "AMP"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Adenosine_monophosphate",
+  "cid": 6083,
+  "iupac": "[(2R,3S,4R,5R)-5-(6-aminopurin-9-yl)-3,4-dihydroxyoxolan-2-yl]methyl dihydrogen phosphate",
+  "formula": "C10H14N5O7P",
+  "abstract": "Adenosine 5'-monophosphate is a purine ribonucleoside 5'-monophosphate having adenine as the nucleobase. It has a role as a cofactor, a micronutrient, a nutraceutical, an EC 3.1.3.1 (alkaline phosphatase) inhibitor, an EC 3.1.3.11 (fructose-bisphosphatase) inhibitor, an adenosine A1 receptor agonist and a fundamental metabolite.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Adenozyno-5′-monofosforan",
+  "plUrl": "https://pl.wikipedia.org/wiki/Adenozyno-5%E2%80%B2-monofosforan"
+ },
+ {
+  "en": "Adenosine diphosphate (ADP)",
+  "alias": [
+   "adenosine diphosphate",
+   "ADP"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Adenosine_diphosphate",
+  "cid": 6022,
+  "iupac": "[(2R,3S,4R,5R)-5-(6-aminopurin-9-yl)-3,4-dihydroxyoxolan-2-yl]methyl phosphono hydrogen phosphate",
+  "formula": "C10H15N5O10P2",
+  "abstract": "ADP is a purine ribonucleoside 5'-diphosphate having adenine as the nucleobase. It has a role as a human metabolite and a fundamental metabolite.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Adenozyno-5′-difosforan",
+  "plUrl": "https://pl.wikipedia.org/wiki/Adenozyno-5%E2%80%B2-difosforan"
+ },
+ {
+  "en": "Adenosine triphosphate (ATP)",
+  "alias": [
+   "adenosine triphosphate",
+   "ATP"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Adenosine_triphosphate",
+  "cid": 5957,
+  "iupac": "[[(2R,3S,4R,5R)-5-(6-aminopurin-9-yl)-3,4-dihydroxyoxolan-2-yl]methoxy-hydroxyphosphoryl] phosphono hydrogen phosphate",
+  "formula": "C10H16N5O13P3",
+  "abstract": "ATP is an adenosine 5'-phosphate in which the 5'-phosphate is a triphosphate group. It is involved in the transportation of chemical energy during metabolic pathways.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Adenozyno-5′-trifosforan",
+  "plUrl": "https://pl.wikipedia.org/wiki/Adenozyno-5%E2%80%B2-trifosforan"
+ },
+ {
+  "en": "Inosine",
+  "alias": [
+   "inosine"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Inosine",
+  "cid": 135398641,
+  "iupac": "9-[(2R,3R,4S,5R)-3,4-dihydroxy-5-(hydroxymethyl)oxolan-2-yl]-1H-purin-6-one",
+  "formula": "C10H12N4O5",
+  "abstract": "Inosine is a purine nucleoside in which hypoxanthine is attached to ribofuranose via a beta-N9-glycosidic bond. It has a role as a mouse metabolite, a Saccharomyces cerevisiae metabolite, an Escherichia coli metabolite and a human metabolite.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Inozyna",
+  "plUrl": "https://pl.wikipedia.org/wiki/Inozyna"
+ },
+ {
+  "en": "Hypoxanthine",
+  "alias": [
+   "hypoxanthine"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Hypoxanthine",
+  "cid": 135398638,
+  "iupac": "1,7-dihydropurin-6-one",
+  "formula": "C5H4N4O",
+  "abstract": "Hypoxanthine is a purine nucleobase that consists of purine bearing an oxo substituent at position 6. It has a role as a fundamental metabolite.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Hipoksantyna",
+  "plUrl": "https://pl.wikipedia.org/wiki/Hipoksantyna"
+ },
+ {
+  "en": "Glutamine",
+  "alias": [
+   "glutamine"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Glutamine",
+  "cid": 5961,
+  "iupac": "(2S)-2,5-diamino-5-oxopentanoic acid",
+  "formula": "C5H10N2O3",
+  "abstract": "L-glutamine is an optically active form of glutamine having L-configuration. It has a role as a micronutrient, a nutraceutical, an EC 1.14.13.39 (nitric oxide synthase) inhibitor, a mouse metabolite, a Saccharomyces cerevisiae metabolite, an Escherichia coli metabolite and a human metabolite.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Glutamina",
+  "plUrl": "https://pl.wikipedia.org/wiki/Glutamina"
+ },
+ {
+  "en": "Pyroglutamic acid",
+  "alias": [
+   "pyroglutamic acid"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Pyroglutamic_acid",
+  "cid": 7405,
+  "iupac": "(2S)-5-oxopyrrolidine-2-carboxylic acid",
+  "formula": "C5H7NO3",
+  "abstract": "5-oxo-L-proline is an optically active form of 5-oxoproline having L-configuration. It has a role as an algal metabolite.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Kwas piroglutaminowy",
+  "plUrl": "https://pl.wikipedia.org/wiki/Kwas_piroglutaminowy"
+ },
+ {
+  "en": "Lactic acid",
+  "alias": [
+   "lactic acid"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Lactic_acid",
+  "cid": 612,
+  "iupac": "2-hydroxypropanoic acid",
+  "formula": "C3H6O3",
+  "abstract": "2-hydroxypropanoic acid is a 2-hydroxy monocarboxylic acid that is propanoic acid in which one of the alpha-hydrogens is replaced by a hydroxy group. It has a role as a Daphnia magna metabolite and an algal metabolite.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Kwas mlekowy",
+  "plUrl": "https://pl.wikipedia.org/wiki/Kwas_mlekowy"
+ },
+ {
+  "en": "Acetic acid",
+  "alias": [
+   "acetic acid"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Acetic_acid",
+  "cid": 176,
+  "iupac": "acetic acid",
+  "formula": "C2H4O2",
+  "abstract": "Acetic acid is a simple monocarboxylic acid containing two carbons. It has a role as a protic solvent, a food acidity regulator, an antimicrobial food preservative and a Daphnia magna metabolite.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Kwas octowy",
+  "plUrl": "https://pl.wikipedia.org/wiki/Kwas_octowy"
+ },
+ {
+  "en": "Citric acid",
+  "alias": [
+   "citric acid"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Citric_acid",
+  "cid": 311,
+  "iupac": "2-hydroxypropane-1,2,3-tricarboxylic acid",
+  "formula": "C6H8O7",
+  "abstract": "Citric acid is a tricarboxylic acid that is propane-1,2,3-tricarboxylic acid bearing a hydroxy substituent at position 2. It is an important metabolite in the pathway of all aerobic organisms.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Kwas cytrynowy",
+  "plUrl": "https://pl.wikipedia.org/wiki/Kwas_cytrynowy"
+ },
+ {
+  "en": "Gluconic acid",
+  "alias": [
+   "gluconic acid"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Gluconic_acid",
+  "cid": 10690,
+  "iupac": "(2R,3S,4R,5R)-2,3,4,5,6-pentahydroxyhexanoic acid",
+  "formula": "C6H12O7",
+  "abstract": "D-gluconic acid is a gluconic acid having D-configuration. It has a role as a chelator and a Penicillium metabolite.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Kwas glukonowy",
+  "plUrl": "https://pl.wikipedia.org/wiki/Kwas_glukonowy"
+ },
+ {
+  "en": "Glucono-δ-lactone (GDL)",
+  "alias": [
+   "glucono-δ-lactone",
+   "GDL"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Glucono-δ-lactone",
+  "cid": 7027,
+  "iupac": "(3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-one",
+  "formula": "C6H10O6",
+  "abstract": "D-glucono-1,5-lactone is an aldono-1,5-lactone obtained from D-gluconic acid. It has a role as an animal metabolite and a mouse metabolite.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Glukonolakton",
+  "plUrl": "https://pl.wikipedia.org/wiki/Glukonolakton"
+ },
+ {
+  "en": "Phytic acid",
+  "alias": [
+   "phytic acid"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Phytic_acid",
+  "cid": 890,
+  "iupac": "(2,3,4,5,6-pentaphosphonooxycyclohexyl) dihydrogen phosphate",
+  "formula": "C6H18O24P6",
+  "abstract": "Myo-inositol hexakisphosphate is a myo-inositol hexakisphosphate in which each hydroxy group of myo-inositol is monophosphorylated. It has a role as a cofactor, an antineoplastic agent, an iron chelator, a signalling molecule, a mouse metabolite and an Escherichia coli metabolite.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Kwas fitowy",
+  "plUrl": "https://pl.wikipedia.org/wiki/Kwas_fitowy"
+ },
+ {
+  "en": "Tannic acid",
+  "alias": [
+   "tannic acid"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Tannic_acid",
+  "cid": 16129778,
+  "iupac": "[2,3-dihydroxy-5-[[(2R,3R,4S,5R,6S)-3,4,5,6-tetrakis[[3,4-dihydroxy-5-(3,4,5-trihydroxybenzoyl)oxybenzoyl]oxy]oxan-2-yl]methoxycarbonyl]phenyl] 3,4,5-trihydroxybenzoate",
+  "formula": "C76H52O46",
+  "abstract": "Chinese gallotannin is a tannin.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Kwas taninowy",
+  "plUrl": "https://pl.wikipedia.org/wiki/Kwas_taninowy"
+ },
+ {
+  "en": "Methionol",
+  "alias": [
+   "methionol"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Methionol",
+  "cid": 10448,
+  "iupac": "3-methylsulfanylpropan-1-ol",
+  "formula": "C4H10OS",
+  "abstract": "3-methylthiopropanol is an alkyl sulfide that is propan-1-ol substituted by a methylsulfanyl group at position 3. It is a volatile compound found in wines and produced during fermentation.",
+  "abstractSrc": "PubChem / ChEBI"
+ },
+ {
+  "en": "Ethanol",
+  "alias": [
+   "ethanol"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Ethanol",
+  "cid": 702,
+  "iupac": "ethanol",
+  "formula": "C2H6O",
+  "abstract": "Ethanol is a primary alcohol that is ethane in which one of the hydrogens is substituted by a hydroxy group. It has a role as a central nervous system depressant, an antiseptic drug, a disinfectant, a polar solvent, a teratogenic agent, a neurotoxin, a NMDA receptor antagonist, a protein kinase C agonist, a mouse metabolite, a Saccharomyces cerevisiae metabolite, an Escherichia coli metabolite and a human metabolite.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Etanol",
+  "plUrl": "https://pl.wikipedia.org/wiki/Etanol"
+ },
+ {
+  "en": "Glucose",
+  "alias": [
+   "glucose"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Glucose",
+  "cid": 5793,
+  "iupac": "(3R,4S,5S,6R)-6-(hydroxymethyl)oxane-2,3,4,5-tetrol",
+  "formula": "C6H12O6",
+  "abstract": "D-glucopyranose is a glucopyranose having D-configuration. It has a role as a mouse metabolite, a Saccharomyces cerevisiae metabolite, an Escherichia coli metabolite and a human metabolite.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Glukoza",
+  "plUrl": "https://pl.wikipedia.org/wiki/Glukoza"
+ },
+ {
+  "en": "Fructose",
+  "alias": [
+   "fructose"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Fructose",
+  "cid": 2723872,
+  "iupac": "(3S,4R,5R)-2-(hydroxymethyl)oxane-2,3,4,5-tetrol",
+  "formula": "C6H12O6",
+  "abstract": "D-fructopyranose is a fructopyranose having D-configuration. It has a role as a sweetening agent.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Fruktoza",
+  "plUrl": "https://pl.wikipedia.org/wiki/Fruktoza"
+ },
+ {
+  "en": "Sucrose",
+  "alias": [
+   "sucrose"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Sucrose",
+  "cid": 5988,
+  "iupac": "(2R,3R,4S,5S,6R)-2-[(2S,3S,4S,5R)-3,4-dihydroxy-2,5-bis(hydroxymethyl)oxolan-2-yl]oxy-6-(hydroxymethyl)oxane-3,4,5-triol",
+  "formula": "C12H22O11",
+  "abstract": "Sucrose is a glycosyl glycoside formed by glucose and fructose units joined by an acetal oxygen bridge from hemiacetal of glucose to the hemiketal of the fructose. It has a role as an osmolyte, a sweetening agent, a mouse metabolite, a Saccharomyces cerevisiae metabolite, an Escherichia coli metabolite, a human metabolite and an algal metabolite.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Sacharoza",
+  "plUrl": "https://pl.wikipedia.org/wiki/Sacharoza"
+ },
+ {
+  "en": "Maltose",
+  "alias": [
+   "maltose"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Maltose",
+  "cid": 439186,
+  "iupac": "(2R,3S,4S,5R,6R)-2-(hydroxymethyl)-6-[(2R,3S,4R,5R)-4,5,6-trihydroxy-2-(hydroxymethyl)oxan-3-yl]oxyoxane-3,4,5-triol",
+  "formula": "C12H22O11",
+  "abstract": "Maltose is a glycosylglucose consisting of two D-glucopyranose units connected by an alpha-(14)-linkage. It has a role as a sweetening agent, a mouse metabolite, a Saccharomyces cerevisiae metabolite, an Escherichia coli metabolite and a human metabolite.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Maltoza",
+  "plUrl": "https://pl.wikipedia.org/wiki/Maltoza"
+ },
+ {
+  "en": "Phosphocreatine",
+  "alias": [
+   "phosphocreatine"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Phosphocreatine",
+  "cid": 9548602,
+  "iupac": "2-[methyl-[(E)-N'-phosphonocarbamimidoyl]amino]acetic acid",
+  "formula": "C4H10N3O5P",
+  "abstract": "N-phosphocreatine is a phosphoamino acid consisting of creatine having a phospho group attached at the primary nitrogen of the guanidino group. It has a role as a mouse metabolite and a human metabolite.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Fosfokreatyna",
+  "plUrl": "https://pl.wikipedia.org/wiki/Fosfokreatyna"
+ },
+ {
+  "en": "Carbon dioxide",
+  "alias": [
+   "carbon dioxide"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Carbon_dioxide",
+  "cid": 280,
+  "iupac": "carbon dioxide",
+  "formula": "CO2",
+  "abstract": "Carbon dioxide is a one-carbon compound with formula CO2 in which the carbon is attached to each oxygen atom by a double bond. A colourless, odourless gas under normal conditions, it is produced during respiration by all animals, fungi and microorganisms that depend directly or indirectly on living or decaying plants for food.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Dwutlenek węgla",
+  "plUrl": "https://pl.wikipedia.org/wiki/Dwutlenek_w%C4%99gla"
+ },
+ {
+  "en": "Magnesium chloride",
+  "alias": [
+   "magnesium chloride"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Magnesium_chloride",
+  "cid": 5360315,
+  "iupac": "magnesium dichloride",
+  "formula": "Cl2Mg",
+  "abstract": "Magnesium dichloride is a magnesium salt comprising of two chlorine atoms bound to a magnesium atom. It has a role as a NMR chemical shift reference compound.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Chlorek magnezu",
+  "plUrl": "https://pl.wikipedia.org/wiki/Chlorek_magnezu"
+ },
+ {
+  "en": "Magnesium sulfate",
+  "alias": [
+   "magnesium sulfate"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Magnesium_sulfate",
+  "cid": 24083,
+  "iupac": "magnesium sulfate",
+  "formula": "MgO4S",
+  "abstract": "Magnesium sulfate is a magnesium salt having sulfate as the counterion. It has a role as a fertilizer, an analgesic, a cardiovascular drug, an anticonvulsant, an anti-arrhythmia drug, a calcium channel blocker, an anaesthetic and a tocolytic agent.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Siarczan magnezu",
+  "plUrl": "https://pl.wikipedia.org/wiki/Siarczan_magnezu"
+ },
+ {
+  "en": "Calcium sulfate",
+  "alias": [
+   "calcium sulfate"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Calcium_sulfate",
+  "cid": 24497,
+  "iupac": "calcium sulfate",
+  "formula": "CaO4S",
+  "abstract": "Calcium sulfate is an inorganic calcium salt and a calcium salt.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Siarczan wapnia",
+  "plUrl": "https://pl.wikipedia.org/wiki/Siarczan_wapnia"
+ },
+ {
+  "en": "Sodium hydrogen carbonate",
+  "alias": [
+   "sodium hydrogen carbonate"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Sodium_bicarbonate",
+  "cid": 516892,
+  "iupac": "sodium hydrogen carbonate",
+  "formula": "CHNaO3",
+  "abstract": "Sodium hydrogencarbonate is an organic sodium salt and a one-carbon compound. It has a role as an antacid and a food anticaking agent.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Wodorowęglan sodu",
+  "plUrl": "https://pl.wikipedia.org/wiki/Wodorow%C4%99glan_sodu"
+ },
+ {
+  "en": "Metaboric acid",
+  "alias": [
+   "metaboric acid"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Metaboric_acid",
+  "cid": 11966299,
+  "iupac": "[boronooxy(hydroxy)boranyl]oxyboronic acid",
+  "formula": "B3H5O7",
+  "abstract": "Metaboric acid is a member of boric acids.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Kwas metaborowy",
+  "plUrl": "https://pl.wikipedia.org/wiki/Kwas_metaborowy"
+ },
+ {
+  "en": "Metasilicic acid",
+  "alias": [
+   "metasilicic acid"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Silicic_acid",
+  "cid": 14768,
+  "iupac": "dihydroxy(oxo)silane",
+  "formula": "H2O3Si",
+  "pl": "Kwasy krzemowe",
+  "plUrl": "https://pl.wikipedia.org/wiki/Kwasy_krzemowe"
+ },
+ {
+  "en": "Metarsenious acid",
+  "alias": [
+   "metarsenious acid"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Arsenous_acid",
+  "cid": 545,
+  "iupac": "arsorous acid",
+  "formula": "AsH3O3",
+  "abstract": "Arsenous acid is an arsenic oxoacid consisting of three hydroxy groups attached to a central arsenic atom. It is a conjugate acid of an arsenite(1-).",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Kwas arsenawy",
+  "plUrl": "https://pl.wikipedia.org/wiki/Kwas_arsenawy"
+ },
+ {
+  "en": "Hydrogen arsenate ion",
+  "alias": [
+   "hydrogen arsenate"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Arsenate",
+  "cid": 233,
+  "iupac": "hydrogen arsorate",
+  "formula": "AsHO4-2",
+  "abstract": "Arsenate(2-) is an arsenate ion resulting from the removal of two protons from arsenic acid. It is a conjugate base of an arsenate(1-).",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Arseniany",
+  "plUrl": "https://pl.wikipedia.org/wiki/Arseniany"
+ },
+ {
+  "en": "Bromide ion",
+  "alias": [
+   "bromide"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Bromide",
+  "cid": 259,
+  "iupac": "bromide",
+  "formula": "Br-",
+  "abstract": "Bromide is a halide anion and a monoatomic bromine. It is a conjugate base of a hydrogen bromide.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Bromki",
+  "plUrl": "https://pl.wikipedia.org/wiki/Bromki"
+ },
+ {
+  "en": "Iodide ion",
+  "alias": [
+   "iodide"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Iodide",
+  "cid": 30165,
+  "iupac": "iodide",
+  "formula": "I-",
+  "abstract": "Iodide is a halide anion and a monoatomic iodine. It has a role as a human metabolite.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Jodki",
+  "plUrl": "https://pl.wikipedia.org/wiki/Jodki"
+ },
+ {
+  "en": "Fluoride ion",
+  "alias": [
+   "fluoride"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Fluoride",
+  "cid": 28179,
+  "iupac": "fluoride",
+  "formula": "F-",
+  "abstract": "Fluoride is a halide anion and a monoatomic fluorine. It is a conjugate base of a hydrogen fluoride.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Fluorki",
+  "plUrl": "https://pl.wikipedia.org/wiki/Fluorki"
+ },
+ {
+  "en": "Chloride ion",
+  "alias": [
+   "chloride"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Chloride",
+  "cid": 312,
+  "iupac": "chloride",
+  "formula": "Cl-",
+  "abstract": "Chloride is a halide anion formed when chlorine picks up an electron to form an an anion. It has a role as a cofactor, an Escherichia coli metabolite and a human metabolite.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Chlorki",
+  "plUrl": "https://pl.wikipedia.org/wiki/Chlorki"
+ },
+ {
+  "en": "Sulfate ion",
+  "alias": [
+   "sulfate",
+   "sulphate"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Sulfate",
+  "cid": 1117,
+  "iupac": "sulfate",
+  "formula": "O4S-2",
+  "abstract": "Sulfate is a sulfur oxoanion obtained by deprotonation of both OH groups of sulfuric acid. It has a role as a cofactor, a Saccharomyces cerevisiae metabolite and a human metabolite.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Siarczany",
+  "plUrl": "https://pl.wikipedia.org/wiki/Siarczany"
+ },
+ {
+  "en": "Hydrogen ion",
+  "alias": [
+   "hydrogen ion"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Hydron_(chemistry)",
+  "cid": 1038,
+  "iupac": "hydron",
+  "formula": "H+",
+  "abstract": "Hydron is the general name for the hydrogen nucleus, to be used without regard to the hydrogen nuclear mass (either for hydrogen in its natural abundance or where it is not desired to distinguish between the isotopes). It is a monoatomic monocation, a monoatomic hydrogen, a member of atomic nucleus and a monovalent inorganic cation.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Jon wodorowy",
+  "plUrl": "https://pl.wikipedia.org/wiki/Jon_wodorowy"
+ },
+ {
+  "en": "Sulfur",
+  "alias": [
+   "sulphur",
+   "sulfur"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Sulfur",
+  "cid": 5362487,
+  "iupac": "sulfane",
+  "formula": "S",
+  "pl": "Siarka",
+  "plUrl": "https://pl.wikipedia.org/wiki/Siarka"
+ },
+ {
+  "en": "Radon",
+  "alias": [
+   "radon"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Radon",
+  "cid": 24857,
+  "iupac": "radon",
+  "formula": "Rn",
+  "abstract": "Radon(0) is a monoatomic radon that has an oxidation state of zero.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Radon",
+  "plUrl": "https://pl.wikipedia.org/wiki/Radon"
+ },
+ {
+  "en": "Radium",
+  "alias": [
+   "radium"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Radium",
+  "cid": 6328144,
+  "iupac": "radium",
+  "formula": "Ra",
+  "abstract": "Radium atom is an alkaline earth metal atom.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Rad (pierwiastek)",
+  "plUrl": "https://pl.wikipedia.org/wiki/Rad_%28pierwiastek%29"
+ },
+ {
+  "en": "Lithium",
+  "alias": [
+   "lithium"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Lithium",
+  "cid": 3028194,
+  "iupac": "lithium",
+  "formula": "Li",
+  "abstract": "Lithium atom is an alkali metal atom.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Lit",
+  "plUrl": "https://pl.wikipedia.org/wiki/Lit"
+ },
+ {
+  "en": "Strontium",
+  "alias": [
+   "strontium"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Strontium",
+  "cid": 5359327,
+  "iupac": "strontium",
+  "formula": "Sr",
+  "abstract": "Strontium atom is an alkaline earth metal atom.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Stront",
+  "plUrl": "https://pl.wikipedia.org/wiki/Stront"
+ },
+ {
+  "en": "Barium",
+  "alias": [
+   "barium"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Barium",
+  "cid": 5355457,
+  "iupac": "barium",
+  "formula": "Ba",
+  "abstract": "Barium(0) is an elemental barium.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Bar (pierwiastek)",
+  "plUrl": "https://pl.wikipedia.org/wiki/Bar_%28pierwiastek%29"
+ },
+ {
+  "en": "Manganese",
+  "alias": [
+   "manganese"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Manganese",
+  "cid": 23930,
+  "iupac": "manganese",
+  "formula": "Mn",
+  "abstract": "Manganese atom is a manganese group element atom. It has a role as a micronutrient and an Escherichia coli metabolite.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Mangan",
+  "plUrl": "https://pl.wikipedia.org/wiki/Mangan"
+ },
+ {
+  "en": "Magnesium",
+  "alias": [
+   "magnesium"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Magnesium",
+  "cid": 5462224,
+  "iupac": "magnesium",
+  "formula": "Mg",
+  "abstract": "Magnesium atom is an alkaline earth metal atom. It has a role as a macronutrient.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Magnez",
+  "plUrl": "https://pl.wikipedia.org/wiki/Magnez"
+ },
+ {
+  "en": "Calcium",
+  "alias": [
+   "calcium"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Calcium",
+  "cid": 5460341,
+  "iupac": "calcium",
+  "formula": "Ca",
+  "abstract": "Calcium atom is an alkaline earth metal atom. It has a role as a macronutrient.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Wapń",
+  "plUrl": "https://pl.wikipedia.org/wiki/Wap%C5%84"
+ },
+ {
+  "en": "Sodium",
+  "alias": [
+   "sodium"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Sodium",
+  "cid": 5360545,
+  "iupac": "sodium",
+  "formula": "Na",
+  "abstract": "Sodium atom is an alkali metal atom. It has a role as a macronutrient and a Saccharomyces cerevisiae metabolite.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Sód",
+  "plUrl": "https://pl.wikipedia.org/wiki/S%C3%B3d"
+ },
+ {
+  "en": "Potassium",
+  "alias": [
+   "potassium"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Potassium",
+  "cid": 5462222,
+  "iupac": "potassium",
+  "formula": "K",
+  "abstract": "Potassium atom is an alkali metal atom. It has a role as a macronutrient and a Saccharomyces cerevisiae metabolite.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Potas",
+  "plUrl": "https://pl.wikipedia.org/wiki/Potas"
+ },
+ {
+  "en": "Aluminium",
+  "alias": [
+   "aluminium"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Aluminium",
+  "cid": 5359268,
+  "iupac": "aluminum",
+  "formula": "Al",
+  "abstract": "Aluminium(0) is an elemental aluminium.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Glin",
+  "plUrl": "https://pl.wikipedia.org/wiki/Glin"
+ },
+ {
+  "en": "Copper",
+  "alias": [
+   "copper"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Copper",
+  "cid": 23978,
+  "iupac": "copper",
+  "formula": "Cu",
+  "abstract": "Copper atom is a copper group element atom and a metal allergen. It has a role as a micronutrient and an Escherichia coli metabolite.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Miedź",
+  "plUrl": "https://pl.wikipedia.org/wiki/Mied%C5%BA"
+ },
+ {
+  "en": "Sarin",
+  "alias": [
+   "sarin"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Sarin",
+  "cid": 7871,
+  "iupac": "2-[fluoro(methyl)phosphoryl]oxypropane",
+  "formula": "C4H10FO2P",
+  "abstract": "Isopropyl methylphosphonofluoridate is a phosphinic ester that is the isopropyl ester of methylphosphonofluoridic acid. It is a fluorine molecular entity and a phosphinic ester.",
+  "abstractSrc": "PubChem / ChEBI",
+  "pl": "Sarin",
+  "plUrl": "https://pl.wikipedia.org/wiki/Sarin"
+ },
+ {
+  "en": "Isoflavones",
+  "alias": [
+   "isoflavone",
+   "isoflavones"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Isoflavone",
+  "cid": 72304,
+  "iupac": "3-phenylchromen-4-one",
+  "formula": "C15H10O2",
+  "abstract": "Isoflavone is a simplest member of the class of isoflavones that is 4H-chromen-4-one in which the hydrogen at position 3 is replaced by a phenyl group.",
+  "abstractSrc": "PubChem / ChEBI"
+ },
+ {
+  "en": "Polyphenols",
+  "alias": [
+   "polyphenol",
+   "polyphenols"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Polyphenol",
+  "pl": "Polifenole",
+  "plUrl": "https://pl.wikipedia.org/wiki/Polifenole"
+ },
+ {
+  "en": "Anthocyanins",
+  "alias": [
+   "anthocyanin",
+   "anthocyanins"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Anthocyanin",
+  "pl": "Antocyjany",
+  "plUrl": "https://pl.wikipedia.org/wiki/Antocyjany"
+ },
+ {
+  "en": "Proanthocyanidins",
+  "alias": [
+   "proanthocyanidin",
+   "proanthocyanidins"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Proanthocyanidin"
+ },
+ {
+  "en": "Melanoidins",
+  "alias": [
+   "melanoidin",
+   "melanoidins"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Melanoidin",
+  "pl": "Melanoidyna",
+  "plUrl": "https://pl.wikipedia.org/wiki/Melanoidyna"
+ },
+ {
+  "en": "Fatty acids",
+  "alias": [
+   "fatty acid",
+   "fatty acids"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Fatty_acid",
+  "pl": "Kwasy tłuszczowe",
+  "plUrl": "https://pl.wikipedia.org/wiki/Kwasy_t%C5%82uszczowe"
+ },
+ {
+  "en": "Peroxides",
+  "alias": [
+   "peroxide",
+   "peroxides"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Peroxide",
+  "pl": "Nadtlenki",
+  "plUrl": "https://pl.wikipedia.org/wiki/Nadtlenki"
+ },
+ {
+  "en": "Starch",
+  "alias": [
+   "starch"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Starch",
+  "pl": "Skrobia",
+  "plUrl": "https://pl.wikipedia.org/wiki/Skrobia"
+ },
+ {
+  "en": "Amylose",
+  "alias": [
+   "amylose"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Amylose",
+  "pl": "Amyloza",
+  "plUrl": "https://pl.wikipedia.org/wiki/Amyloza"
+ },
+ {
+  "en": "Amylopectin",
+  "alias": [
+   "amylopectin"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Amylopectin",
+  "pl": "Amylopektyna",
+  "plUrl": "https://pl.wikipedia.org/wiki/Amylopektyna"
+ },
+ {
+  "en": "Glycogen",
+  "alias": [
+   "glycogen"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Glycogen",
+  "pl": "Glikogen",
+  "plUrl": "https://pl.wikipedia.org/wiki/Glikogen"
+ },
+ {
+  "en": "Agarose",
+  "alias": [
+   "agarose"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Agarose",
+  "pl": "Agaroza",
+  "plUrl": "https://pl.wikipedia.org/wiki/Agaroza"
+ },
+ {
+  "en": "Agaropectin",
+  "alias": [
+   "agaropectin"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Agaropectin"
+ },
+ {
+  "en": "Gluten",
+  "alias": [
+   "gluten"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Gluten",
+  "pl": "Gluten",
+  "plUrl": "https://pl.wikipedia.org/wiki/Gluten"
+ },
+ {
+  "en": "Gliadin",
+  "alias": [
+   "gliadin"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Gliadin"
+ },
+ {
+  "en": "Glutenin",
+  "alias": [
+   "glutenin"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Glutenin"
+ },
+ {
+  "en": "Globulins",
+  "alias": [
+   "globulin",
+   "globulins"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Globulin",
+  "pl": "Globuliny",
+  "plUrl": "https://pl.wikipedia.org/wiki/Globuliny"
+ },
+ {
+  "en": "Myosin",
+  "alias": [
+   "myosin"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Myosin",
+  "pl": "Miozyna",
+  "plUrl": "https://pl.wikipedia.org/wiki/Miozyna"
+ },
+ {
+  "en": "Actin",
+  "alias": [
+   "actin"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Actin",
+  "pl": "Aktyna",
+  "plUrl": "https://pl.wikipedia.org/wiki/Aktyna"
+ },
+ {
+  "en": "Amylase",
+  "alias": [
+   "amylase",
+   "amylases"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Amylase",
+  "pl": "Amylazy",
+  "plUrl": "https://pl.wikipedia.org/wiki/Amylazy"
+ },
+ {
+  "en": "Protease",
+  "alias": [
+   "protease",
+   "proteases"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Protease",
+  "pl": "Proteazy",
+  "plUrl": "https://pl.wikipedia.org/wiki/Proteazy"
+ },
+ {
+  "en": "Glutaminase",
+  "alias": [
+   "glutaminase"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Glutaminase",
+  "pl": "Glutaminaza",
+  "plUrl": "https://pl.wikipedia.org/wiki/Glutaminaza"
+ },
+ {
+  "en": "Ribonuclease",
+  "alias": [
+   "ribonuclease",
+   "ribonucleases"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Ribonuclease",
+  "pl": "Rybonukleazy",
+  "plUrl": "https://pl.wikipedia.org/wiki/Rybonukleazy"
+ },
+ {
+  "en": "Nucleotidase",
+  "alias": [
+   "nucleotidase",
+   "nucleotidases"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Nucleotidase"
+ },
+ {
+  "en": "Carboxypeptidase",
+  "alias": [
+   "carboxypeptidase",
+   "carboxypeptidases"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Carboxypeptidase",
+  "pl": "Karboksypeptydaza",
+  "plUrl": "https://pl.wikipedia.org/wiki/Karboksypeptydaza"
+ },
+ {
+  "en": "Lipoxygenase",
+  "alias": [
+   "lipoxygenase"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Lipoxygenase",
+  "pl": "Lipooksygenaza",
+  "plUrl": "https://pl.wikipedia.org/wiki/Lipooksygenaza"
+ },
+ {
+  "en": "Tyrosinase",
+  "alias": [
+   "tyrosinase"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Tyrosinase",
+  "pl": "Tyrozynaza",
+  "plUrl": "https://pl.wikipedia.org/wiki/Tyrozynaza"
+ }
+]

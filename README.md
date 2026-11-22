@@ -28,6 +28,10 @@ then works with no connection. On Android, choose *Install app* in Chrome's ⋮ 
 course and handbook at once, in English, romaji, kana or kanji, and opens the matching section.
 It works offline too.
 
+**Tap to look up:** tap any Japanese word or phrase to hear it and see its reading and meaning;
+tap a romaji term, a chemical substance (English and Polish name, formula and a PubChem abstract),
+a linked name, a citation such as *(Kurihara 2015)* or a chapter link for a short pop-up.
+
 No previous knowledge needed. Japanese is given as **script · romaji · meaning**, e.g.
 `駅 · eki · station`, with Hepburn romaji (a macron marks a long vowel: **ō** = "oo").
 

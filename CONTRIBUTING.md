@@ -224,6 +224,31 @@ The site is an installable web app that works offline:
 - New files and folders are picked up automatically. To try it locally, copy the published files to a
   folder, run the script on that folder and serve it (service workers need `localhost` or HTTPS).
 
+## Pop-ups
+
+Tapping Japanese text, a romaji term in italics or bold, a substance, an encyclopedia link, a
+citation or a chapter link opens a pop-up. `scripts/build-terms.mjs` builds their dictionary,
+`assets/terms.json`, at deploy (`node scripts/build-terms.mjs` builds it locally). It reads:
+
+- **the pages:** vocabulary tables, ```` ```words ```` and ```` ```station ```` blocks, glossaries,
+  `漢字 (*romaji*, meaning)` and `**漢字 · romaji · meaning**` glosses, and the Japanese titles and
+  author names in source lists, which carry their English in brackets;
+- **the kana and kanji course data** (`assets/*-data.js`);
+- **`terms/words.tsv`**, hand-written entries (Japanese, kana reading, romaji, meaning, optional link)
+  for everything the pages don't explain in a form the script can read;
+- **`terms/substances.json`**, made by `scripts/terms/fetch-substances.py` from
+  `terms/substances-src.json`: PubChem's IUPAC name, formula and ChEBI description, and the Polish
+  Wikipedia title. Proteins and mixtures have no PubChem record; their abstract, in
+  `terms/substances-notes.json`, is written from the cuisine handbook and says so;
+- **`terms/entities.json`**, made by `scripts/terms/fetch-entities.py`: for every English Wikipedia link,
+  the Japanese article title and a type (person, place, work, …). Wikipedia stays further reading:
+  the pop-up shows the sentence from the page that mentions the name, not Wikipedia's text;
+- **the sources pages**, for citations.
+
+`node scripts/build-terms.mjs --report missing.json` lists Japanese text with no entry;
+`scripts/check-content.mjs` fails if any is left. Add new words to `terms/words.tsv`. Text inside
+exercises gets no pop-up (it would give the answer away); tapping it only plays it.
+
 ## Search
 
 The search page (`#/search/<query>`, in `assets/app.js`) scans `search-index.json`, which the deploy
