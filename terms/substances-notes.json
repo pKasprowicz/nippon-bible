@@ -1,0 +1,127 @@
+{
+ "Starch": {
+  "abstract": "The main carbohydrate of rice, wheat and other grains, made of two kinds of glucose chain: amylose and amylopectin. Cooking with water makes it swell and gel; on cooling it slowly re-hardens (staling).",
+  "abstractSrc": "Cuisine handbook, chapters 9–10 and 13"
+ },
+ "Amylose": {
+  "abstract": "The linear form of starch: glucose units joined in long, mostly unbranched chains. Rice with more amylose cooks firmer and less sticky.",
+  "abstractSrc": "Cuisine handbook, chapter 9"
+ },
+ "Amylopectin": {
+  "abstract": "The branched form of starch. Glutinous rice, used for mochi, is almost pure amylopectin; the length of its chains affects how fast mochi hardens.",
+  "abstractSrc": "Cuisine handbook, chapters 9 and 13"
+ },
+ "Glycogen": {
+  "abstract": "The storage carbohydrate of animal muscle. After a fish dies its muscle breaks glycogen down, using up ATP and producing lactic acid, so the pH falls.",
+  "abstractSrc": "Cuisine handbook, chapter 6"
+ },
+ "Agarose": {
+  "abstract": "The neutral, gelling fraction of agar (kanten). It forms physical gels held together only by hydrogen bonds between its chains.",
+  "abstractSrc": "Cuisine handbook, chapter 12"
+ },
+ "Agaropectin": {
+  "abstract": "The sulfated, non-gelling fraction of agar (kanten); like agarose, a polymer of agarobiose.",
+  "abstractSrc": "Cuisine handbook, chapter 12",
+  "pl": "Agaropektyna"
+ },
+ "Gluten": {
+  "abstract": "The protein network that forms when wheat flour is mixed with water, built from gliadins and glutenins. Buckwheat has none, so soba dough needs other binders.",
+  "abstractSrc": "Cuisine handbook, chapters 8 and 10"
+ },
+ "Gliadin": {
+  "abstract": "One of the two wheat proteins that form gluten; in dough, gliadins give viscosity.",
+  "abstractSrc": "Cuisine handbook, chapter 10",
+  "pl": "Gliadyna"
+ },
+ "Glutenin": {
+  "abstract": "One of the two wheat proteins that form gluten; in dough, glutenins give elasticity.",
+  "abstractSrc": "Cuisine handbook, chapter 10",
+  "pl": "Glutenina"
+ },
+ "Globulins": {
+  "abstract": "Salt-soluble proteins; the main proteins of buckwheat, which do not form gluten.",
+  "abstractSrc": "Cuisine handbook, chapter 10"
+ },
+ "Myosin": {
+  "abstract": "A contractile muscle protein. When ATP runs low after death it binds to actin; enzymes later break down its heavy chain, softening the flesh.",
+  "abstractSrc": "Cuisine handbook, chapter 6"
+ },
+ "Actin": {
+  "abstract": "A contractile muscle protein that binds to myosin when ATP runs out after death (rigor).",
+  "abstractSrc": "Cuisine handbook, chapter 6"
+ },
+ "Amylase": {
+  "abstract": "Enzymes that break starch into sugars such as glucose and oligosaccharides. Kōji mould produces them in large amounts.",
+  "abstractSrc": "Cuisine handbook, chapter 3"
+ },
+ "Protease": {
+  "abstract": "Enzymes that break proteins into peptides and amino acids, releasing the glutamate behind umami. Kōji mould produces them in large amounts.",
+  "abstractSrc": "Cuisine handbook, chapters 3–4"
+ },
+ "Glutaminase": {
+  "abstract": "An enzyme that turns glutamine into glutamate. Kōji strains with high glutaminase give soy sauce mash with more glutamate.",
+  "abstractSrc": "Cuisine handbook, chapters 3–4"
+ },
+ "Ribonuclease": {
+  "abstract": "An enzyme that breaks down RNA. In shiitake it releases the umami nucleotide GMP, working best at 60–70 °C.",
+  "abstractSrc": "Cuisine handbook, chapter 1"
+ },
+ "Nucleotidase": {
+  "abstract": "An enzyme that destroys GMP, turning it into guanosine, which is not umami; in shiitake it works best at 45–50 °C.",
+  "abstractSrc": "Cuisine handbook, chapter 1",
+  "pl": "Nukleotydaza"
+ },
+ "Carboxypeptidase": {
+  "abstract": "Enzymes that cut amino acids from the ends of peptides. In soy sauce mash, acid-loving carboxypeptidases keep releasing glutamate as the pH falls.",
+  "abstractSrc": "Cuisine handbook, chapter 4"
+ },
+ "Lipoxygenase": {
+  "abstract": "Enzymes that oxidise fats; the lipoxygenase pathway drives the deterioration of stored buckwheat flour.",
+  "abstractSrc": "Cuisine handbook, chapter 10"
+ },
+ "Tyrosinase": {
+  "abstract": "An enzyme that makes brown pigments. Kōji strains with high tyrosinase activity are avoided where a bright colour is wanted.",
+  "abstractSrc": "Cuisine handbook, chapters 3 and 5",
+  "pl": "Tyrozynaza"
+ },
+ "Polyphenols": {
+  "abstract": "A large class of plant compounds. Water-soluble polyphenols in adzuki bean skins would turn bean paste brown, so the cooking water is discarded.",
+  "abstractSrc": "Cuisine handbook, chapter 12"
+ },
+ "Anthocyanins": {
+  "abstract": "Water-soluble plant pigments (red, purple, blue). The purple pigments of adzuki beans are different: almost insoluble in water.",
+  "abstractSrc": "Cuisine handbook, chapter 12"
+ },
+ "Proanthocyanidins": {
+  "abstract": "Colourless polyphenols, abundant in adzuki bean seed coats, that oxidise to yellow-brown compounds.",
+  "abstractSrc": "Cuisine handbook, chapter 12",
+  "pl": "Proantocyjanidyny"
+ },
+ "Melanoidins": {
+  "abstract": "Brown polymers produced by the Maillard reaction between amino compounds and sugars; they give soy sauce and miso their colour.",
+  "abstractSrc": "Cuisine handbook, chapter 4"
+ },
+ "Fatty acids": {
+  "abstract": "The building blocks of fats. Free fatty acids accumulate as stored buckwheat flour deteriorates.",
+  "abstractSrc": "Cuisine handbook, chapter 10"
+ },
+ "Peroxides": {
+  "abstract": "Oxidation products of fats; they increase as stored buckwheat flour deteriorates.",
+  "abstractSrc": "Cuisine handbook, chapter 10"
+ },
+ "Inosinic acid (inosinate, IMP)": {
+  "pl": "Kwas inozynowy"
+ },
+ "Methionol": {
+  "pl": "Metionol"
+ },
+ "Hydrogen ion": {
+  "pl": "Kation wodorowy"
+ },
+ "Manganese": {
+  "pl": "Mangan"
+ },
+ "Isoflavones": {
+  "pl": "Izoflawony"
+ }
+}

@@ -1,0 +1,676 @@
+[
+ {
+  "en": "Glutamic acid (glutamate)",
+  "q": "glutamic acid",
+  "wiki": "https://en.wikipedia.org/wiki/Glutamic_acid",
+  "alias": [
+   "glutamate",
+   "glutamic acid",
+   "glutamates"
+  ]
+ },
+ {
+  "en": "Monosodium glutamate (MSG)",
+  "q": "monosodium glutamate",
+  "wiki": "https://en.wikipedia.org/wiki/Monosodium_glutamate",
+  "alias": [
+   "monosodium glutamate",
+   "MSG"
+  ]
+ },
+ {
+  "en": "Inosinic acid (inosinate, IMP)",
+  "q": "inosinic acid",
+  "wiki": "https://en.wikipedia.org/wiki/Inosinic_acid",
+  "alias": [
+   "inosinate",
+   "inosinic acid",
+   "IMP"
+  ]
+ },
+ {
+  "en": "Guanylic acid (guanylate, GMP)",
+  "q": "guanosine monophosphate",
+  "wiki": "https://en.wikipedia.org/wiki/Guanosine_monophosphate",
+  "alias": [
+   "guanylate",
+   "guanosine monophosphate",
+   "GMP"
+  ]
+ },
+ {
+  "en": "Adenosine monophosphate (AMP)",
+  "q": "adenosine monophosphate",
+  "wiki": "https://en.wikipedia.org/wiki/Adenosine_monophosphate",
+  "alias": [
+   "adenosine monophosphate",
+   "AMP"
+  ]
+ },
+ {
+  "en": "Adenosine diphosphate (ADP)",
+  "q": "adenosine diphosphate",
+  "wiki": "https://en.wikipedia.org/wiki/Adenosine_diphosphate",
+  "alias": [
+   "adenosine diphosphate",
+   "ADP"
+  ]
+ },
+ {
+  "en": "Adenosine triphosphate (ATP)",
+  "q": "adenosine triphosphate",
+  "wiki": "https://en.wikipedia.org/wiki/Adenosine_triphosphate",
+  "alias": [
+   "adenosine triphosphate",
+   "ATP"
+  ]
+ },
+ {
+  "en": "Inosine",
+  "q": "inosine",
+  "wiki": "https://en.wikipedia.org/wiki/Inosine",
+  "alias": [
+   "inosine"
+  ]
+ },
+ {
+  "en": "Hypoxanthine",
+  "q": "hypoxanthine",
+  "wiki": "https://en.wikipedia.org/wiki/Hypoxanthine",
+  "alias": [
+   "hypoxanthine"
+  ]
+ },
+ {
+  "en": "Glutamine",
+  "q": "glutamine",
+  "wiki": "https://en.wikipedia.org/wiki/Glutamine",
+  "alias": [
+   "glutamine"
+  ]
+ },
+ {
+  "en": "Pyroglutamic acid",
+  "q": "pyroglutamic acid",
+  "wiki": "https://en.wikipedia.org/wiki/Pyroglutamic_acid",
+  "alias": [
+   "pyroglutamic acid"
+  ]
+ },
+ {
+  "en": "Lactic acid",
+  "q": "lactic acid",
+  "wiki": "https://en.wikipedia.org/wiki/Lactic_acid",
+  "alias": [
+   "lactic acid"
+  ]
+ },
+ {
+  "en": "Acetic acid",
+  "q": "acetic acid",
+  "wiki": "https://en.wikipedia.org/wiki/Acetic_acid",
+  "alias": [
+   "acetic acid"
+  ]
+ },
+ {
+  "en": "Citric acid",
+  "q": "citric acid",
+  "wiki": "https://en.wikipedia.org/wiki/Citric_acid",
+  "alias": [
+   "citric acid"
+  ]
+ },
+ {
+  "en": "Gluconic acid",
+  "q": "gluconic acid",
+  "wiki": "https://en.wikipedia.org/wiki/Gluconic_acid",
+  "alias": [
+   "gluconic acid"
+  ]
+ },
+ {
+  "en": "Glucono-δ-lactone (GDL)",
+  "q": "glucono-delta-lactone",
+  "wiki": "https://en.wikipedia.org/wiki/Glucono-δ-lactone",
+  "alias": [
+   "glucono-δ-lactone",
+   "GDL"
+  ]
+ },
+ {
+  "en": "Phytic acid",
+  "q": "phytic acid",
+  "wiki": "https://en.wikipedia.org/wiki/Phytic_acid",
+  "alias": [
+   "phytic acid"
+  ]
+ },
+ {
+  "en": "Tannic acid",
+  "q": "tannic acid",
+  "wiki": "https://en.wikipedia.org/wiki/Tannic_acid",
+  "alias": [
+   "tannic acid"
+  ]
+ },
+ {
+  "en": "Methionol",
+  "q": "methionol",
+  "wiki": "https://en.wikipedia.org/wiki/Methionol",
+  "alias": [
+   "methionol"
+  ]
+ },
+ {
+  "en": "Ethanol",
+  "q": "ethanol",
+  "wiki": "https://en.wikipedia.org/wiki/Ethanol",
+  "alias": [
+   "ethanol"
+  ]
+ },
+ {
+  "en": "Glucose",
+  "q": "glucose",
+  "wiki": "https://en.wikipedia.org/wiki/Glucose",
+  "alias": [
+   "glucose"
+  ]
+ },
+ {
+  "en": "Fructose",
+  "q": "fructose",
+  "wiki": "https://en.wikipedia.org/wiki/Fructose",
+  "alias": [
+   "fructose"
+  ]
+ },
+ {
+  "en": "Sucrose",
+  "q": "sucrose",
+  "wiki": "https://en.wikipedia.org/wiki/Sucrose",
+  "alias": [
+   "sucrose"
+  ]
+ },
+ {
+  "en": "Maltose",
+  "q": "maltose",
+  "wiki": "https://en.wikipedia.org/wiki/Maltose",
+  "alias": [
+   "maltose"
+  ]
+ },
+ {
+  "en": "Phosphocreatine",
+  "q": "phosphocreatine",
+  "wiki": "https://en.wikipedia.org/wiki/Phosphocreatine",
+  "alias": [
+   "phosphocreatine"
+  ]
+ },
+ {
+  "en": "Carbon dioxide",
+  "q": "carbon dioxide",
+  "wiki": "https://en.wikipedia.org/wiki/Carbon_dioxide",
+  "alias": [
+   "carbon dioxide"
+  ]
+ },
+ {
+  "en": "Magnesium chloride",
+  "q": "magnesium chloride",
+  "wiki": "https://en.wikipedia.org/wiki/Magnesium_chloride",
+  "alias": [
+   "magnesium chloride"
+  ]
+ },
+ {
+  "en": "Magnesium sulfate",
+  "q": "magnesium sulfate",
+  "wiki": "https://en.wikipedia.org/wiki/Magnesium_sulfate",
+  "alias": [
+   "magnesium sulfate"
+  ]
+ },
+ {
+  "en": "Calcium sulfate",
+  "q": "calcium sulfate",
+  "wiki": "https://en.wikipedia.org/wiki/Calcium_sulfate",
+  "alias": [
+   "calcium sulfate"
+  ]
+ },
+ {
+  "en": "Sodium hydrogen carbonate",
+  "q": "sodium bicarbonate",
+  "wiki": "https://en.wikipedia.org/wiki/Sodium_bicarbonate",
+  "alias": [
+   "sodium hydrogen carbonate"
+  ]
+ },
+ {
+  "en": "Metaboric acid",
+  "q": "metaboric acid",
+  "wiki": "https://en.wikipedia.org/wiki/Metaboric_acid",
+  "alias": [
+   "metaboric acid"
+  ]
+ },
+ {
+  "en": "Metasilicic acid",
+  "q": "metasilicic acid",
+  "wiki": "https://en.wikipedia.org/wiki/Silicic_acid",
+  "alias": [
+   "metasilicic acid"
+  ]
+ },
+ {
+  "en": "Metarsenious acid",
+  "q": "arsenous acid",
+  "wiki": "https://en.wikipedia.org/wiki/Arsenous_acid",
+  "alias": [
+   "metarsenious acid"
+  ]
+ },
+ {
+  "en": "Hydrogen arsenate ion",
+  "q": "hydrogen arsenate",
+  "wiki": "https://en.wikipedia.org/wiki/Arsenate",
+  "alias": [
+   "hydrogen arsenate"
+  ]
+ },
+ {
+  "en": "Bromide ion",
+  "q": "bromide",
+  "wiki": "https://en.wikipedia.org/wiki/Bromide",
+  "alias": [
+   "bromide"
+  ]
+ },
+ {
+  "en": "Iodide ion",
+  "q": "iodide",
+  "wiki": "https://en.wikipedia.org/wiki/Iodide",
+  "alias": [
+   "iodide"
+  ]
+ },
+ {
+  "en": "Fluoride ion",
+  "q": "fluoride",
+  "wiki": "https://en.wikipedia.org/wiki/Fluoride",
+  "alias": [
+   "fluoride"
+  ]
+ },
+ {
+  "en": "Chloride ion",
+  "q": "chloride",
+  "wiki": "https://en.wikipedia.org/wiki/Chloride",
+  "alias": [
+   "chloride"
+  ]
+ },
+ {
+  "en": "Sulfate ion",
+  "q": "sulfate",
+  "wiki": "https://en.wikipedia.org/wiki/Sulfate",
+  "alias": [
+   "sulfate",
+   "sulphate"
+  ]
+ },
+ {
+  "en": "Hydrogen ion",
+  "q": "hydron",
+  "wiki": "https://en.wikipedia.org/wiki/Hydron_(chemistry)",
+  "alias": [
+   "hydrogen ion"
+  ]
+ },
+ {
+  "en": "Sulfur",
+  "q": "sulfur",
+  "wiki": "https://en.wikipedia.org/wiki/Sulfur",
+  "alias": [
+   "sulphur",
+   "sulfur"
+  ]
+ },
+ {
+  "en": "Radon",
+  "q": "radon",
+  "wiki": "https://en.wikipedia.org/wiki/Radon",
+  "alias": [
+   "radon"
+  ]
+ },
+ {
+  "en": "Radium",
+  "q": "radium",
+  "wiki": "https://en.wikipedia.org/wiki/Radium",
+  "alias": [
+   "radium"
+  ]
+ },
+ {
+  "en": "Lithium",
+  "q": "lithium",
+  "wiki": "https://en.wikipedia.org/wiki/Lithium",
+  "alias": [
+   "lithium"
+  ]
+ },
+ {
+  "en": "Strontium",
+  "q": "strontium",
+  "wiki": "https://en.wikipedia.org/wiki/Strontium",
+  "alias": [
+   "strontium"
+  ]
+ },
+ {
+  "en": "Barium",
+  "q": "barium",
+  "wiki": "https://en.wikipedia.org/wiki/Barium",
+  "alias": [
+   "barium"
+  ]
+ },
+ {
+  "en": "Manganese",
+  "q": "manganese",
+  "wiki": "https://en.wikipedia.org/wiki/Manganese",
+  "alias": [
+   "manganese"
+  ]
+ },
+ {
+  "en": "Magnesium",
+  "q": "magnesium",
+  "wiki": "https://en.wikipedia.org/wiki/Magnesium",
+  "alias": [
+   "magnesium"
+  ]
+ },
+ {
+  "en": "Calcium",
+  "q": "calcium",
+  "wiki": "https://en.wikipedia.org/wiki/Calcium",
+  "alias": [
+   "calcium"
+  ]
+ },
+ {
+  "en": "Sodium",
+  "q": "sodium",
+  "wiki": "https://en.wikipedia.org/wiki/Sodium",
+  "alias": [
+   "sodium"
+  ]
+ },
+ {
+  "en": "Potassium",
+  "q": "potassium",
+  "wiki": "https://en.wikipedia.org/wiki/Potassium",
+  "alias": [
+   "potassium"
+  ]
+ },
+ {
+  "en": "Aluminium",
+  "q": "aluminum",
+  "wiki": "https://en.wikipedia.org/wiki/Aluminium",
+  "alias": [
+   "aluminium"
+  ]
+ },
+ {
+  "en": "Copper",
+  "q": "copper",
+  "wiki": "https://en.wikipedia.org/wiki/Copper",
+  "alias": [
+   "copper"
+  ]
+ },
+ {
+  "en": "Sarin",
+  "q": "sarin",
+  "wiki": "https://en.wikipedia.org/wiki/Sarin",
+  "alias": [
+   "sarin"
+  ]
+ },
+ {
+  "en": "Isoflavones",
+  "q": "isoflavone",
+  "wiki": "https://en.wikipedia.org/wiki/Isoflavone",
+  "alias": [
+   "isoflavone",
+   "isoflavones"
+  ]
+ },
+ {
+  "en": "Polyphenols",
+  "q": null,
+  "wiki": "https://en.wikipedia.org/wiki/Polyphenol",
+  "alias": [
+   "polyphenol",
+   "polyphenols"
+  ]
+ },
+ {
+  "en": "Anthocyanins",
+  "q": null,
+  "wiki": "https://en.wikipedia.org/wiki/Anthocyanin",
+  "alias": [
+   "anthocyanin",
+   "anthocyanins"
+  ]
+ },
+ {
+  "en": "Proanthocyanidins",
+  "q": null,
+  "wiki": "https://en.wikipedia.org/wiki/Proanthocyanidin",
+  "alias": [
+   "proanthocyanidin",
+   "proanthocyanidins"
+  ]
+ },
+ {
+  "en": "Melanoidins",
+  "q": null,
+  "wiki": "https://en.wikipedia.org/wiki/Melanoidin",
+  "alias": [
+   "melanoidin",
+   "melanoidins"
+  ]
+ },
+ {
+  "en": "Fatty acids",
+  "q": null,
+  "wiki": "https://en.wikipedia.org/wiki/Fatty_acid",
+  "alias": [
+   "fatty acid",
+   "fatty acids"
+  ]
+ },
+ {
+  "en": "Peroxides",
+  "q": null,
+  "wiki": "https://en.wikipedia.org/wiki/Peroxide",
+  "alias": [
+   "peroxide",
+   "peroxides"
+  ]
+ },
+ {
+  "en": "Starch",
+  "q": null,
+  "wiki": "https://en.wikipedia.org/wiki/Starch",
+  "alias": [
+   "starch"
+  ]
+ },
+ {
+  "en": "Amylose",
+  "q": null,
+  "wiki": "https://en.wikipedia.org/wiki/Amylose",
+  "alias": [
+   "amylose"
+  ]
+ },
+ {
+  "en": "Amylopectin",
+  "q": null,
+  "wiki": "https://en.wikipedia.org/wiki/Amylopectin",
+  "alias": [
+   "amylopectin"
+  ]
+ },
+ {
+  "en": "Glycogen",
+  "q": null,
+  "wiki": "https://en.wikipedia.org/wiki/Glycogen",
+  "alias": [
+   "glycogen"
+  ]
+ },
+ {
+  "en": "Agarose",
+  "q": null,
+  "wiki": "https://en.wikipedia.org/wiki/Agarose",
+  "alias": [
+   "agarose"
+  ]
+ },
+ {
+  "en": "Agaropectin",
+  "q": null,
+  "wiki": "https://en.wikipedia.org/wiki/Agaropectin",
+  "alias": [
+   "agaropectin"
+  ]
+ },
+ {
+  "en": "Gluten",
+  "q": null,
+  "wiki": "https://en.wikipedia.org/wiki/Gluten",
+  "alias": [
+   "gluten"
+  ]
+ },
+ {
+  "en": "Gliadin",
+  "q": null,
+  "wiki": "https://en.wikipedia.org/wiki/Gliadin",
+  "alias": [
+   "gliadin"
+  ]
+ },
+ {
+  "en": "Glutenin",
+  "q": null,
+  "wiki": "https://en.wikipedia.org/wiki/Glutenin",
+  "alias": [
+   "glutenin"
+  ]
+ },
+ {
+  "en": "Globulins",
+  "q": null,
+  "wiki": "https://en.wikipedia.org/wiki/Globulin",
+  "alias": [
+   "globulin",
+   "globulins"
+  ]
+ },
+ {
+  "en": "Myosin",
+  "q": null,
+  "wiki": "https://en.wikipedia.org/wiki/Myosin",
+  "alias": [
+   "myosin"
+  ]
+ },
+ {
+  "en": "Actin",
+  "q": null,
+  "wiki": "https://en.wikipedia.org/wiki/Actin",
+  "alias": [
+   "actin"
+  ]
+ },
+ {
+  "en": "Amylase",
+  "q": null,
+  "wiki": "https://en.wikipedia.org/wiki/Amylase",
+  "alias": [
+   "amylase",
+   "amylases"
+  ]
+ },
+ {
+  "en": "Protease",
+  "q": null,
+  "wiki": "https://en.wikipedia.org/wiki/Protease",
+  "alias": [
+   "protease",
+   "proteases"
+  ]
+ },
+ {
+  "en": "Glutaminase",
+  "q": null,
+  "wiki": "https://en.wikipedia.org/wiki/Glutaminase",
+  "alias": [
+   "glutaminase"
+  ]
+ },
+ {
+  "en": "Ribonuclease",
+  "q": null,
+  "wiki": "https://en.wikipedia.org/wiki/Ribonuclease",
+  "alias": [
+   "ribonuclease",
+   "ribonucleases"
+  ]
+ },
+ {
+  "en": "Nucleotidase",
+  "q": null,
+  "wiki": "https://en.wikipedia.org/wiki/Nucleotidase",
+  "alias": [
+   "nucleotidase",
+   "nucleotidases"
+  ]
+ },
+ {
+  "en": "Carboxypeptidase",
+  "q": null,
+  "wiki": "https://en.wikipedia.org/wiki/Carboxypeptidase",
+  "alias": [
+   "carboxypeptidase",
+   "carboxypeptidases"
+  ]
+ },
+ {
+  "en": "Lipoxygenase",
+  "q": null,
+  "wiki": "https://en.wikipedia.org/wiki/Lipoxygenase",
+  "alias": [
+   "lipoxygenase"
+  ]
+ },
+ {
+  "en": "Tyrosinase",
+  "q": null,
+  "wiki": "https://en.wikipedia.org/wiki/Tyrosinase",
+  "alias": [
+   "tyrosinase"
+  ]
+ }
+]
