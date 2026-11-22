@@ -931,7 +931,7 @@
       el('header', { 'class': 'home-hero' }, [
         el('p', { 'class': 'home-hero-kicker' }, [el('span', { lang: 'ja', text: '日本へようこそ' }), ' · welcome to Japan']),
         el('h1', { text: 'Japanese for your trip' }),
-        el('p', { 'class': 'home-lead', text: 'Ten ways in. Get the practical know-how for travelling in Japan, learn to read the scripts on every sign, menu and station board, then go deeper into how Japanese food is made, into the kami, ghosts and yōkai of Japanese belief, into manga, anime, film and the rest of Japanese pop culture, into hot springs and bathhouses, and into Japan's railways. Then try your reading on photos of real signs.' })
+        el('p', { 'class': 'home-lead', text: 'Ten ways in. Get the practical know-how for travelling in Japan, learn to read the scripts on every sign, menu and station board, then go deeper into how Japanese food is made, into the kami, ghosts and yōkai of Japanese belief, into manga, anime, film and the rest of Japanese pop culture, into hot springs and bathhouses, and into Japan’s railways. Then try your reading on photos of real signs.' })
       ]),
       el('div', { 'class': 'home-tiles' }, [
         tile({
