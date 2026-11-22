@@ -4,6 +4,17 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.20.0] - 2026-11-22
+
+### Added
+- **Tap to look up.** Tapping something in the text opens a small pop-up (a bottom sheet on phones):
+  - **Japanese words and phrases:** the original writing, kana reading, romaji, meaning and a replay button, plus a link to Wikipedia, the glossary or the explaining chapter where there is one. The word still plays at once; in quizzes and exercises a tap only plays it.
+  - **Romaji terms** in italics or bold: the same word pop-up.
+  - **Chemical substances:** English and Polish name, formula, IUPAC name, a PubChem abstract, links to the English and Polish Wikipedia, and the other chapters that mention it.
+  - **Linked names:** people, places, works and more, with the Japanese name, the sentence on the page that mentions it, and the Wikipedia link as further reading.
+  - **Citations** such as "(Kurihara 2015)": the full reference and the chapters that cite it.
+  - **Chapter links:** the chapter's title and first paragraph, with an Open button.
+
 ## [1.19.0] - 2026-11-22
 
 ### Added

@@ -23,13 +23,17 @@ jobs:
         # Publish every tracked file except CI and tooling, so new content folders deploy automatically.
         run: |
           mkdir _site
-          git ls-files -z | grep -zvE '^(\.github|scripts)/' | xargs -0 cp --parents -t _site
+          git ls-files -z | grep -zvE '^(\.github|scripts|terms)/' | xargs -0 cp --parents -t _site
           test -f _site/index.html && test -d _site/lessons && test -d _site/hiragana && test -d _site/katakana && test -d _site/kanji && test -d _site/cuisine/img && test -d _site/folklore/img && test -d _site/popculture/img && test -d _site/bathing/img && test -d _site/railways/img && test -f _site/assets/signs/photos.json
           find _site -type f | wc -l
       - name: Build the search index
         run: |
           node scripts/build-search.mjs _site
           test -s _site/search-index.json
+      - name: Build the pop-up dictionary
+        run: |
+          node scripts/build-terms.mjs _site
+          test -s _site/assets/terms.json
       - name: Prepare offline app (precache list and service-worker build stamp)
         run: |
           node scripts/build-offline.mjs _site

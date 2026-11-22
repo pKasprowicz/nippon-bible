@@ -1,0 +1,4556 @@
+[
+ {
+  "url": "https://en.wikipedia.org/wiki/Umami",
+  "title": "Umami",
+  "text": "umami",
+  "ja": "うま味",
+  "pl": "Umami",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kikunae_Ikeda",
+  "title": "Kikunae Ikeda",
+  "text": "Kikunae Ikeda",
+  "ja": "池田菊苗",
+  "pl": "Kikunae Ikeda",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kombu",
+  "title": "Kombu",
+  "text": "kombu",
+  "ja": "コンブ",
+  "pl": "Kombu",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Glutamic_acid",
+  "title": "Glutamic acid",
+  "text": "glutamic acid",
+  "ja": "グルタミン酸",
+  "pl": "Kwas glutaminowy",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Monosodium_glutamate",
+  "title": "Monosodium glutamate",
+  "text": "monosodium glutamate",
+  "ja": "グルタミン酸ナトリウム",
+  "pl": "Glutaminian sodu",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Katsuobushi",
+  "title": "Katsuobushi",
+  "text": "katsuobushi",
+  "ja": "鰹節",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Shiitake",
+  "title": "Shiitake",
+  "text": "shiitake",
+  "ja": "シイタケ",
+  "pl": "Twardnik japoński",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Dashi",
+  "title": "Dashi",
+  "text": "Dashi",
+  "ja": "出汁",
+  "pl": "Dashi",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/TAS1R1",
+  "title": "TAS1R1",
+  "text": "T1R1",
+  "ja": null,
+  "pl": null,
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/TAS1R3",
+  "title": "TAS1R3",
+  "text": "T1R3",
+  "ja": null,
+  "pl": null,
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Metabotropic_glutamate_receptor_4",
+  "title": "Metabotropic glutamate receptor 4",
+  "text": "mGluR4",
+  "ja": null,
+  "pl": null,
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Metabotropic_glutamate_receptor_1",
+  "title": "Metabotropic glutamate receptor 1",
+  "text": "mGluR1",
+  "ja": null,
+  "pl": null,
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Nucleotide",
+  "title": "Nucleotide",
+  "text": "nucleotide",
+  "ja": "ヌクレオチド",
+  "pl": "Nukleotydy",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Inosinic_acid",
+  "title": "Inosinic acid",
+  "text": "inosinate",
+  "ja": "イノシン酸",
+  "pl": null,
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Ry%C5%8Dtei",
+  "title": "Ryōtei",
+  "text": "ryōtei",
+  "ja": "料亭",
+  "pl": "Ryōtei",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Amino_acid",
+  "title": "Amino acid",
+  "text": "amino acids",
+  "ja": "アミノ酸",
+  "pl": "Aminokwasy",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Gluten",
+  "title": "Gluten",
+  "text": "gluten",
+  "ja": "グルテン",
+  "pl": "Gluten",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Soybean",
+  "title": "Soybean",
+  "text": "soybean",
+  "ja": "ダイズ",
+  "pl": "Soja warzywna",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Myosin",
+  "title": "Myosin",
+  "text": "myosin",
+  "ja": "ミオシン",
+  "pl": "Miozyna",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/K%C5%8Dji_%28food%29",
+  "title": "Kōji (food)",
+  "text": "Kōji",
+  "ja": "麹",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Soy_sauce",
+  "title": "Soy sauce",
+  "text": "soy sauce",
+  "ja": "醤油",
+  "pl": "Sos sojowy",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Miso",
+  "title": "Miso",
+  "text": "miso",
+  "ja": "味噌",
+  "pl": "Miso",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Niboshi",
+  "title": "Niboshi",
+  "text": "niboshi",
+  "ja": "煮干し",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Japanese_amberjack",
+  "title": "Japanese amberjack",
+  "text": "Yellowtail",
+  "ja": "ブリ",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Guanosine_monophosphate",
+  "title": "Guanosine monophosphate",
+  "text": "guanylate",
+  "ja": "グアニル酸",
+  "pl": "Guanozyno-5′-monofosforan",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Adenosine_triphosphate",
+  "title": "Adenosine triphosphate",
+  "text": "ATP",
+  "ja": "アデノシン三リン酸",
+  "pl": "Adenozyno-5′-trifosforan",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Adenosine_monophosphate",
+  "title": "Adenosine monophosphate",
+  "text": "AMP",
+  "ja": "アデニル酸",
+  "pl": "Adenozyno-5′-monofosforan",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/RNA",
+  "title": "RNA",
+  "text": "RNA",
+  "ja": "リボ核酸",
+  "pl": "Kwasy rybonukleinowe",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Ribonuclease",
+  "title": "Ribonuclease",
+  "text": "ribonuclease",
+  "ja": "リボヌクレアーゼ",
+  "pl": "Rybonukleazy",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Nucleotidase",
+  "title": "Nucleotidase",
+  "text": "Nucleotidase",
+  "ja": "ヌクレオチダーゼ",
+  "pl": null,
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/J%C5%8Dmon_period",
+  "title": "Jōmon period",
+  "text": "Jōmon",
+  "ja": "縄文時代",
+  "pl": "Jōmon",
+  "type": "event",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Sushi",
+  "title": "Sushi",
+  "text": "sushi",
+  "ja": "寿司",
+  "pl": "Sushi",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Skipjack_tuna",
+  "title": "Skipjack tuna",
+  "text": "skipjack tuna",
+  "ja": "カツオ",
+  "pl": "Bonito (ryba)",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Aspergillus",
+  "title": "Aspergillus",
+  "text": "Aspergillus",
+  "ja": "コウジカビ",
+  "pl": "Aspergillus",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kansai_region",
+  "title": "Kansai region",
+  "text": "Kansai",
+  "ja": "近畿地方",
+  "pl": "Region Kinki",
+  "type": "place",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Mirin",
+  "title": "Mirin",
+  "text": "mirin",
+  "ja": "みりん",
+  "pl": "Mirin",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Sake",
+  "title": "Sake",
+  "text": "sake",
+  "ja": "日本酒",
+  "pl": "Sake",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Rice_vinegar",
+  "title": "Rice vinegar",
+  "text": "rice vinegar",
+  "ja": "米酢",
+  "pl": "Ocet ryżowy",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Amazake",
+  "title": "Amazake",
+  "text": "amazake",
+  "ja": "甘酒",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Starch",
+  "title": "Starch",
+  "text": "starch",
+  "ja": "デンプン",
+  "pl": "Skrobia",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Aspergillus_oryzae",
+  "title": "Aspergillus oryzae",
+  "text": "Aspergillus oryzae",
+  "ja": "ニホンコウジカビ",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Yayoi_period",
+  "title": "Yayoi period",
+  "text": "Yayoi",
+  "ja": "弥生時代",
+  "pl": "Yayoi",
+  "type": "event",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Amylase",
+  "title": "Amylase",
+  "text": "amylase",
+  "ja": "アミラーゼ",
+  "pl": "Amylazy",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Sh%C5%8Dch%C5%AB",
+  "title": "Shōchū",
+  "text": "shōchū",
+  "ja": "焼酎",
+  "pl": "Shōchū (alkohol)",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Protease",
+  "title": "Protease",
+  "text": "proteases",
+  "ja": "プロテアーゼ",
+  "pl": "Proteazy",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Glucose",
+  "title": "Glucose",
+  "text": "glucose",
+  "ja": "グルコース",
+  "pl": "Glukoza",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Maillard_reaction",
+  "title": "Maillard reaction",
+  "text": "Maillard",
+  "ja": "メイラード反応",
+  "pl": "Reakcja Maillarda",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Yeast",
+  "title": "Yeast",
+  "text": "yeasts",
+  "ja": "酵母",
+  "pl": "Drożdże",
+  "type": "organisation",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Lactic_acid_bacteria",
+  "title": "Lactic acid bacteria",
+  "text": "lactic-acid bacteria",
+  "ja": "乳酸菌",
+  "pl": "Bakterie mlekowe",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Starch_gelatinization",
+  "title": "Starch gelatinization",
+  "text": "gelatinised",
+  "ja": null,
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Carbon_dioxide",
+  "title": "Carbon dioxide",
+  "text": "CO₂",
+  "ja": "二酸化炭素",
+  "pl": "Dwutlenek węgla",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Bacillus_subtilis",
+  "title": "Bacillus subtilis",
+  "text": "Bacillus subtilis",
+  "ja": "枯草菌",
+  "pl": "Laseczka sienna",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Wheat_flour",
+  "title": "Wheat flour",
+  "text": "wheat flour",
+  "ja": "小麦粉",
+  "pl": "Mąka pszenna",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Glutaminase",
+  "title": "Glutaminase",
+  "text": "glutaminase",
+  "ja": "グルタミナーゼ",
+  "pl": "Glutaminaza",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Tyrosinase",
+  "title": "Tyrosinase",
+  "text": "tyrosinase",
+  "ja": null,
+  "pl": "Tyrozynaza",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Ministry_of_Agriculture,_Forestry_and_Fisheries_%28Japan%29",
+  "title": "Ministry of Agriculture, Forestry and Fisheries (Japan)",
+  "text": "Ministry of Agriculture, Forestry and Fisheries",
+  "ja": "農林水産省",
+  "pl": null,
+  "type": "organisation",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Tetragenococcus_halophilus",
+  "title": "Tetragenococcus halophilus",
+  "text": "Tetragenococcus halophilus",
+  "ja": null,
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Lactic_acid",
+  "title": "Lactic acid",
+  "text": "lactic acid",
+  "ja": "乳酸",
+  "pl": "Kwas mlekowy",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Acetic_acid",
+  "title": "Acetic acid",
+  "text": "acetic acid",
+  "ja": "酢酸",
+  "pl": "Kwas octowy",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Zygosaccharomyces_rouxii",
+  "title": "Zygosaccharomyces rouxii",
+  "text": "Zygosaccharomyces rouxii",
+  "ja": null,
+  "pl": "Zygosaccharomyces rouxii",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Ethanol",
+  "title": "Ethanol",
+  "text": "ethanol",
+  "ja": "エタノール",
+  "pl": "Etanol",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Methionol",
+  "title": "Methionol",
+  "text": "methionol",
+  "ja": "メチオノール",
+  "pl": null,
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Glutamine",
+  "title": "Glutamine",
+  "text": "glutamine",
+  "ja": "グルタミン",
+  "pl": "Glutamina",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Pyroglutamic_acid",
+  "title": "Pyroglutamic acid",
+  "text": "pyroglutamate",
+  "ja": "ピログルタミン酸",
+  "pl": "Kwas piroglutaminowy",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Carboxypeptidase",
+  "title": "Carboxypeptidase",
+  "text": "carboxypeptidases",
+  "ja": null,
+  "pl": "Karboksypeptydaza",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Denaturation_%28biochemistry%29",
+  "title": "Denaturation (biochemistry)",
+  "text": "denatured",
+  "ja": "変性",
+  "pl": "Denaturacja białka",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Sashimi",
+  "title": "Sashimi",
+  "text": "sashimi",
+  "ja": "刺身",
+  "pl": "Sashimi",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Edo_period",
+  "title": "Edo period",
+  "text": "Edo",
+  "ja": "江戸時代",
+  "pl": "Edo (okres)",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Melanoidin",
+  "title": "Melanoidin",
+  "text": "melanoidins",
+  "ja": null,
+  "pl": "Melanoidyna",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kant%C5%8D_region",
+  "title": "Kantō region",
+  "text": "Kantō",
+  "ja": "関東地方",
+  "pl": "Region Kantō",
+  "type": "place",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Glutinous_rice",
+  "title": "Glutinous rice",
+  "text": "glutinous rice",
+  "ja": "もち米",
+  "pl": "Ryż kleisty",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Acetic_acid_bacteria",
+  "title": "Acetic acid bacteria",
+  "text": "acetic-acid bacteria",
+  "ja": null,
+  "pl": "Bakterie kwasu octowego",
+  "type": "organisation",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Sake_kasu",
+  "title": "Sake kasu",
+  "text": "sake lees",
+  "ja": "酒粕",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Fructose",
+  "title": "Fructose",
+  "text": "Fructose",
+  "ja": "フルクトース",
+  "pl": "Fruktoza",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Sucrose",
+  "title": "Sucrose",
+  "text": "sucrose",
+  "ja": "スクロース",
+  "pl": "Sacharoza",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Maltose",
+  "title": "Maltose",
+  "text": "maltose",
+  "ja": "マルトース",
+  "pl": "Maltoza",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Rigor_mortis",
+  "title": "Rigor mortis",
+  "text": "rigor mortis",
+  "ja": "死後硬直",
+  "pl": "Stężenie pośmiertne",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Glycogen",
+  "title": "Glycogen",
+  "text": "glycogen",
+  "ja": "グリコーゲン",
+  "pl": "Glikogen",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Phosphocreatine",
+  "title": "Phosphocreatine",
+  "text": "phosphocreatine",
+  "ja": "クレアチンリン酸",
+  "pl": "Fosfokreatyna",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Actin",
+  "title": "Actin",
+  "text": "actin",
+  "ja": "アクチン",
+  "pl": "Aktyna",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Pagrus_major",
+  "title": "Pagrus major",
+  "text": "red sea bream",
+  "ja": "マダイ",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Ikejime",
+  "title": "Ikejime",
+  "text": "ikejime",
+  "ja": "活け締め",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Adenosine_diphosphate",
+  "title": "Adenosine diphosphate",
+  "text": "ADP",
+  "ja": "アデノシン二リン酸",
+  "pl": "Adenozyno-5′-difosforan",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Inosine",
+  "title": "Inosine",
+  "text": "inosine",
+  "ja": "イノシン",
+  "pl": "Inozyna",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Hypoxanthine",
+  "title": "Hypoxanthine",
+  "text": "hypoxanthine",
+  "ja": "ヒポキサンチン",
+  "pl": "Hipoksantyna",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Anisakis",
+  "title": "Anisakis",
+  "text": "Anisakis",
+  "ja": "アニサキス",
+  "pl": "Anisakis",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Tempura",
+  "title": "Tempura",
+  "text": "Tempura",
+  "ja": "天ぷら",
+  "pl": "Tempura",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Viscosity",
+  "title": "Viscosity",
+  "text": "viscosity",
+  "ja": "粘度",
+  "pl": "Lepkość",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Lipid",
+  "title": "Lipid",
+  "text": "lipids",
+  "ja": "脂質",
+  "pl": "Lipidy",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Amylose",
+  "title": "Amylose",
+  "text": "Amylose",
+  "ja": "アミロース",
+  "pl": "Amyloza",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Amylopectin",
+  "title": "Amylopectin",
+  "text": "Amylopectin",
+  "ja": "アミロペクチン",
+  "pl": "Amylopektyna",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Iodine%E2%80%93starch_test",
+  "title": "Iodine–starch test",
+  "text": "iodine",
+  "ja": null,
+  "pl": "Próba jodowa",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Koshihikari",
+  "title": "Koshihikari",
+  "text": "Koshihikari",
+  "ja": "コシヒカリ",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Adhesion",
+  "title": "Adhesion",
+  "text": "adhesiveness",
+  "ja": "接着",
+  "pl": "Adhezja",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Retrogradation_%28starch%29",
+  "title": "Retrogradation (starch)",
+  "text": "retrogradation",
+  "ja": null,
+  "pl": "Retrogradacja skrobi",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Udon",
+  "title": "Udon",
+  "text": "Udon",
+  "ja": "うどん",
+  "pl": "Udon",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Soba",
+  "title": "Soba",
+  "text": "Soba",
+  "ja": "蕎麦",
+  "pl": "Soba (makaron)",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Buckwheat",
+  "title": "Buckwheat",
+  "text": "buckwheat",
+  "ja": "ソバ",
+  "pl": "Gryka zwyczajna",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Hiyamugi",
+  "title": "Hiyamugi",
+  "text": "hiyamugi",
+  "ja": "ひやむぎ",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/S%C5%8Dmen",
+  "title": "Sōmen",
+  "text": "sōmen",
+  "ja": "素麺",
+  "pl": "Sōmen",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Japanese_Agricultural_Standard",
+  "title": "Japanese Agricultural Standard",
+  "text": "Japan Agricultural Standards",
+  "ja": "日本農林規格",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Gliadin",
+  "title": "Gliadin",
+  "text": "gliadins",
+  "ja": "グリアジン",
+  "pl": null,
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Glutenin",
+  "title": "Glutenin",
+  "text": "glutenins",
+  "ja": "グルテニン",
+  "pl": null,
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Elasticity_%28physics%29",
+  "title": "Elasticity (physics)",
+  "text": "elasticity",
+  "ja": "弾性",
+  "pl": "Sprężystość",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Globulin",
+  "title": "Globulin",
+  "text": "globulins",
+  "ja": "グロブリン",
+  "pl": "Globuliny",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Lipoxygenase",
+  "title": "Lipoxygenase",
+  "text": "lipoxygenase",
+  "ja": "リポキシゲナーゼ",
+  "pl": "Lipooksygenaza",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Fatty_acid",
+  "title": "Fatty acid",
+  "text": "Free fatty acids",
+  "ja": "脂肪酸",
+  "pl": "Kwasy tłuszczowe",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Peroxide",
+  "title": "Peroxide",
+  "text": "peroxides",
+  "ja": "過酸化物",
+  "pl": "Nadtlenki",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Magnetic_resonance_imaging",
+  "title": "Magnetic resonance imaging",
+  "text": "magnetic resonance imaging",
+  "ja": "核磁気共鳴画像法",
+  "pl": "Obrazowanie metodą rezonansu magnetycznego",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Mass_diffusivity",
+  "title": "Mass diffusivity",
+  "text": "diffusion coefficient",
+  "ja": null,
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Tofu",
+  "title": "Tofu",
+  "text": "Tofu",
+  "ja": "豆腐",
+  "pl": "Tofu",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Soy_milk",
+  "title": "Soy milk",
+  "text": "soy milk",
+  "ja": "豆乳",
+  "pl": "Napój sojowy",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Nara_period",
+  "title": "Nara period",
+  "text": "Nara",
+  "ja": "奈良時代",
+  "pl": "Nara (okres)",
+  "type": "event",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Okara_%28food%29",
+  "title": "Okara (food)",
+  "text": "okara",
+  "ja": "おから",
+  "pl": "Okara (produkt spożywczy)",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Bittern_%28salt%29",
+  "title": "Bittern (salt)",
+  "text": "nigari",
+  "ja": "にがり",
+  "pl": "Nigari",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Calcium_sulfate",
+  "title": "Calcium sulfate",
+  "text": "calcium sulfate",
+  "ja": "硫酸カルシウム",
+  "pl": "Siarczan wapnia",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Glucono-%CE%B4-lactone",
+  "title": "Glucono-δ-lactone",
+  "text": "Glucono-δ-lactone",
+  "ja": "グルコノラクトン",
+  "pl": "Glukonolakton",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Magnesium_chloride",
+  "title": "Magnesium chloride",
+  "text": "magnesium chloride",
+  "ja": "塩化マグネシウム",
+  "pl": "Chlorek magnezu",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Magnesium_sulfate",
+  "title": "Magnesium sulfate",
+  "text": "magnesium sulfate",
+  "ja": "硫酸マグネシウム",
+  "pl": "Siarczan magnezu",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Isoflavone",
+  "title": "Isoflavone",
+  "text": "isoflavone",
+  "ja": "イソフラボン",
+  "pl": null,
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Gluconic_acid",
+  "title": "Gluconic acid",
+  "text": "gluconic acid",
+  "ja": "グルコン酸",
+  "pl": "Kwas glukonowy",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Hydrophobic_effect",
+  "title": "Hydrophobic effect",
+  "text": "hydrophobic",
+  "ja": "疎水効果",
+  "pl": "Oddziaływania hydrofobowe",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Hydrogen_bond",
+  "title": "Hydrogen bond",
+  "text": "hydrogen bonds",
+  "ja": "水素結合",
+  "pl": "Wiązanie wodorowe",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Phytic_acid",
+  "title": "Phytic acid",
+  "text": "phytic acid",
+  "ja": "フィチン酸",
+  "pl": "Kwas fitowy",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Abura-age",
+  "title": "Abura-age",
+  "text": "Aburaage",
+  "ja": "油揚げ",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Koya-dofu",
+  "title": "Koya-dofu",
+  "text": "kōya-dōfu",
+  "ja": "高野豆腐",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Freeze_drying",
+  "title": "Freeze drying",
+  "text": "freeze-dried",
+  "ja": "フリーズドライ",
+  "pl": "Liofilizacja",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Tofu_skin",
+  "title": "Tofu skin",
+  "text": "Yuba",
+  "ja": "ゆば",
+  "pl": "Yuba (soja)",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Wagashi",
+  "title": "Wagashi",
+  "text": "wagashi",
+  "ja": "和菓子",
+  "pl": "Wagashi",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Red_bean_paste",
+  "title": "Red bean paste",
+  "text": "an",
+  "ja": "小豆餡",
+  "pl": "Anko",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Adzuki_bean",
+  "title": "Adzuki bean",
+  "text": "adzuki",
+  "ja": "アズキ",
+  "pl": "Fasola adzuki",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Agar",
+  "title": "Agar",
+  "text": "agar",
+  "ja": "寒天",
+  "pl": "Agar-agar",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Y%C5%8Dkan",
+  "title": "Yōkan",
+  "text": "yōkan",
+  "ja": "羊羹",
+  "pl": "Yōkan",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Anthocyanin",
+  "title": "Anthocyanin",
+  "text": "anthocyanins",
+  "ja": "アントシアニン",
+  "pl": "Antocyjany",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Proanthocyanidin",
+  "title": "Proanthocyanidin",
+  "text": "proanthocyanidins",
+  "ja": "プロアントシアニジン",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Polyphenol",
+  "title": "Polyphenol",
+  "text": "polyphenols",
+  "ja": "ポリフェノール",
+  "pl": "Polifenole",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/European_Food_Safety_Authority",
+  "title": "European Food Safety Authority",
+  "text": "European Food Safety Authority",
+  "ja": "欧州食品安全機関",
+  "pl": "Europejski Urząd ds. Bezpieczeństwa Żywności",
+  "type": "organisation",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Gelidium",
+  "title": "Gelidium",
+  "text": "Gelidium",
+  "ja": null,
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Gracilaria",
+  "title": "Gracilaria",
+  "text": "Gracilaria",
+  "ja": null,
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Agarose",
+  "title": "Agarose",
+  "text": "agarose",
+  "ja": "アガロース",
+  "pl": "Agaroza",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Agaropectin",
+  "title": "Agaropectin",
+  "text": "agaropectin",
+  "ja": null,
+  "pl": null,
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Hysteresis",
+  "title": "Hysteresis",
+  "text": "hysteresis",
+  "ja": "ヒステリシス",
+  "pl": "Histereza",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Tannic_acid",
+  "title": "Tannic acid",
+  "text": "Tannic acid",
+  "ja": "タンニン酸",
+  "pl": "Kwas taninowy",
+  "type": "substance",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Locust_bean_gum",
+  "title": "Locust bean gum",
+  "text": "locust bean gum",
+  "ja": null,
+  "pl": "Guma karobowa",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Syneresis_%28chemistry%29",
+  "title": "Syneresis (chemistry)",
+  "text": "syneresis",
+  "ja": null,
+  "pl": "Synereza (chemia)",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Mochi",
+  "title": "Mochi",
+  "text": "Mochi",
+  "ja": "餅",
+  "pl": "Mochi",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kudzu",
+  "title": "Kudzu",
+  "text": "kuzu",
+  "ja": null,
+  "pl": null,
+  "type": "organisation",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kiritanpo",
+  "title": "Kiritanpo",
+  "text": "kiritanpo",
+  "ja": "きりたんぽ",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Daifuku",
+  "title": "Daifuku",
+  "text": "Daifuku",
+  "ja": "大福",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Japanese_sound_symbolism",
+  "title": "Japanese sound symbolism",
+  "text": "onomatopoeic",
+  "ja": "音象徴#日本語の音象徴",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Natto",
+  "title": "Natto",
+  "text": "nattō",
+  "ja": "納豆",
+  "pl": "Natto",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Umeboshi",
+  "title": "Umeboshi",
+  "text": "umeboshi",
+  "ja": "梅干し",
+  "pl": "Umeboshi",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kami",
+  "title": "Kami",
+  "text": "kami",
+  "ja": "神 (神道)",
+  "pl": "Kami (mitologia japońska)",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Shinto",
+  "title": "Shinto",
+  "text": "Shinto",
+  "ja": "神道",
+  "pl": "Shintō",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Motoori_Norinaga",
+  "title": "Motoori Norinaga",
+  "text": "Motoori Norinaga",
+  "ja": "本居宣長",
+  "pl": "Norinaga Motoori",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kokugakuin_University",
+  "title": "Kokugakuin University",
+  "text": "Kokugakuin University",
+  "ja": "國學院大學",
+  "pl": null,
+  "type": "organisation",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/State_Shinto",
+  "title": "State Shinto",
+  "text": "State Shinto",
+  "ja": "国家神道",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kamakura_period",
+  "title": "Kamakura period",
+  "text": "Kamakura period",
+  "ja": "鎌倉時代",
+  "pl": null,
+  "type": "event",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Meiji_era",
+  "title": "Meiji era",
+  "text": "Meiji period",
+  "ja": "明治",
+  "pl": "Meiji (okres)",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Nihon_Shoki",
+  "title": "Nihon Shoki",
+  "text": "Nihon shoki",
+  "ja": "日本書紀",
+  "pl": "Nihon-shoki",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kojiki",
+  "title": "Kojiki",
+  "text": "Kojiki",
+  "ja": "古事記",
+  "pl": "Kojiki",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/%C5%8Cmiwa_Shrine",
+  "title": "Ōmiwa Shrine",
+  "text": "Ōmiwa Shrine",
+  "ja": "大神神社",
+  "pl": null,
+  "type": "place",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/%C5%8Cmononushi",
+  "title": "Ōmononushi",
+  "text": "Ōmononushi",
+  "ja": "大物主",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Agency_for_Cultural_Affairs",
+  "title": "Agency for Cultural Affairs",
+  "text": "Agency for Cultural Affairs",
+  "ja": "文化庁",
+  "pl": null,
+  "type": "organisation",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Hatsum%C5%8Dde",
+  "title": "Hatsumōde",
+  "text": "hatsumōde",
+  "ja": "初詣",
+  "pl": "Hatsumōde",
+  "type": "place",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Hieda_no_Are",
+  "title": "Hieda no Are",
+  "text": "Hieda no Are",
+  "ja": "稗田阿礼",
+  "pl": null,
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Emperor_Tenmu",
+  "title": "Emperor Tenmu",
+  "text": "Emperor Tenmu",
+  "ja": "天武天皇",
+  "pl": "Tenmu",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Empress_Genmei",
+  "title": "Empress Genmei",
+  "text": "Empress Genmei",
+  "ja": "元明天皇",
+  "pl": "Gemmei",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Fudoki",
+  "title": "Fudoki",
+  "text": "Fudoki",
+  "ja": "風土記",
+  "pl": "Fudoki",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Izanagi",
+  "title": "Izanagi",
+  "text": "Izanagi",
+  "ja": "イザナギ",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Izanami",
+  "title": "Izanami",
+  "text": "Izanami",
+  "ja": "イザナミ",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Amaterasu",
+  "title": "Amaterasu",
+  "text": "Amaterasu",
+  "ja": "天照大神",
+  "pl": "Amaterasu",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Yomi",
+  "title": "Yomi",
+  "text": "Yomi",
+  "ja": "黄泉",
+  "pl": "Yomi",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Takamagahara",
+  "title": "Takamagahara",
+  "text": "Takamanohara",
+  "ja": "高天原",
+  "pl": "Takamagahara",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Yomotsu_Hirasaka",
+  "title": "Yomotsu Hirasaka",
+  "text": "Yomotsu Hirasaka",
+  "ja": "黄泉比良坂",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kegare",
+  "title": "Kegare",
+  "text": "kegare",
+  "ja": "穢れ",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Amano-Iwato",
+  "title": "Amano-Iwato",
+  "text": "Heavenly Cave",
+  "ja": "天岩戸",
+  "pl": "Amanoiwato",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Susanoo-no-Mikoto",
+  "title": "Susanoo-no-Mikoto",
+  "text": "Susanowo",
+  "ja": "スサノオ",
+  "pl": "Susanoo",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Ame-no-Uzume",
+  "title": "Ame-no-Uzume",
+  "text": "Ame-no-Uzume",
+  "ja": "アメノウズメ",
+  "pl": "Amenouzume",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Yamata_no_Orochi",
+  "title": "Yamata no Orochi",
+  "text": "Yamata no Orochi",
+  "ja": "ヤマタノオロチ",
+  "pl": "Yamata no Orochi",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Y%C5%8Dkai",
+  "title": "Yōkai",
+  "text": "yōkai",
+  "ja": "妖怪",
+  "pl": "Yōkai",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Heian_period",
+  "title": "Heian period",
+  "text": "Heian period",
+  "ja": "平安時代",
+  "pl": "Heian",
+  "type": "event",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Smallpox",
+  "title": "Smallpox",
+  "text": "smallpox",
+  "ja": "天然痘",
+  "pl": "Ospa prawdziwa",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Shugend%C5%8D",
+  "title": "Shugendō",
+  "text": "Shugendō",
+  "ja": "修験道",
+  "pl": "Shugendō",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Shimenawa",
+  "title": "Shimenawa",
+  "text": "shimenawa",
+  "ja": "注連縄",
+  "pl": "Shimenawa",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kagura",
+  "title": "Kagura",
+  "text": "kagura",
+  "ja": "神楽",
+  "pl": "Kagura",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/%C5%8Charae_no_Kotoba",
+  "title": "Ōharae no Kotoba",
+  "text": "Ōharae",
+  "ja": "大祓詞",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Ofuda",
+  "title": "Ofuda",
+  "text": "o-fuda",
+  "ja": "神札",
+  "pl": "O-fuda",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Daruma_doll",
+  "title": "Daruma doll",
+  "text": "daruma",
+  "ja": "だるま",
+  "pl": "Daruma (lalka)",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Ise_Shrine",
+  "title": "Ise Shrine",
+  "text": "Ise Jingū",
+  "ja": "伊勢神宮",
+  "pl": "Ise-jingū",
+  "type": "place",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Omamori",
+  "title": "Omamori",
+  "text": "o-mamori",
+  "ja": "お守り",
+  "pl": "O-mamori",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Shinbutsu-sh%C5%ABg%C5%8D",
+  "title": "Shinbutsu-shūgō",
+  "text": "shinbutsu shūgō",
+  "ja": "神仏習合",
+  "pl": "Synkretyzm shintō-buddyjski",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Honji_suijaku",
+  "title": "Honji suijaku",
+  "text": "honji suijaku",
+  "ja": "本地垂迹",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Hachiman",
+  "title": "Hachiman",
+  "text": "Hachiman",
+  "ja": "八幡神",
+  "pl": "Hachiman",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Amit%C4%81bha",
+  "title": "Amitābha",
+  "text": "Amida",
+  "ja": "阿弥陀如来",
+  "pl": "Amitabha",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Vairocana",
+  "title": "Vairocana",
+  "text": "Dainichi Nyorai",
+  "ja": "大日如来",
+  "pl": "Wajroczana",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kasuga-taisha",
+  "title": "Kasuga-taisha",
+  "text": "Kasuga",
+  "ja": "春日大社",
+  "pl": "Kasuga Taisha",
+  "type": "place",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Pure_Land_Buddhism",
+  "title": "Pure Land Buddhism",
+  "text": "Pure Land",
+  "ja": "浄土教",
+  "pl": "Szkoła Czystej Krainy",
+  "type": "organisation",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Iwashimizu_Hachimang%C5%AB",
+  "title": "Iwashimizu Hachimangū",
+  "text": "Iwashimizu Hachiman",
+  "ja": "石清水八幡宮",
+  "pl": "Iwashimizu Hachimangū",
+  "type": "place",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Itsukushima_Shrine",
+  "title": "Itsukushima Shrine",
+  "text": "Itsukushima",
+  "ja": "厳島神社",
+  "pl": "Itsukushima-jinja",
+  "type": "place",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Guanyin",
+  "title": "Guanyin",
+  "text": "Kannon",
+  "ja": null,
+  "pl": "Guanyin",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Bhaisajyaguru",
+  "title": "Bhaisajyaguru",
+  "text": "Yakushi",
+  "ja": "薬師如来",
+  "pl": "Bhajszadźja",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Maitreya",
+  "title": "Maitreya",
+  "text": "Miroku",
+  "ja": "弥勒菩薩",
+  "pl": "Budda Maitreja",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/K%E1%B9%A3itigarbha",
+  "title": "Kṣitigarbha",
+  "text": "Jizō",
+  "ja": "地蔵菩薩",
+  "pl": "Ksitigarbha",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Yamabushi",
+  "title": "Yamabushi",
+  "text": "yamabushi",
+  "ja": "山伏",
+  "pl": "Yamabushi",
+  "type": "place",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Yasaka_Shrine",
+  "title": "Yasaka Shrine",
+  "text": "Gion",
+  "ja": "八坂神社",
+  "pl": "Yasaka-jinja",
+  "type": "place",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/K%C5%8Dfuku-ji",
+  "title": "Kōfuku-ji",
+  "text": "Kōfuku-ji",
+  "ja": "興福寺",
+  "pl": "Kōfuku-ji",
+  "type": "place",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/East_Asian_Yog%C4%81c%C4%81ra",
+  "title": "East Asian Yogācāra",
+  "text": "Hossō",
+  "ja": "法相宗",
+  "pl": "Faxiang",
+  "type": "organisation",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Tendai",
+  "title": "Tendai",
+  "text": "Tendai",
+  "ja": null,
+  "pl": "Tendai",
+  "type": "organisation",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Enryaku-ji",
+  "title": "Enryaku-ji",
+  "text": "Enryaku-ji",
+  "ja": "延暦寺",
+  "pl": "Enryaku-ji",
+  "type": "place",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Gozu_Tenn%C5%8D",
+  "title": "Gozu Tennō",
+  "text": "Gozu Tennō",
+  "ja": "牛頭天王",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Inari_%C5%8Ckami",
+  "title": "Inari Ōkami",
+  "text": "Inari",
+  "ja": "稲荷神",
+  "pl": "Inari (bóstwo)",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Fushimi_Inari-taisha",
+  "title": "Fushimi Inari-taisha",
+  "text": "Fushimi Inari Taisha",
+  "ja": "伏見稲荷大社",
+  "pl": "Fushimi Inari-taisha",
+  "type": "place",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Toyokawa_Inari",
+  "title": "Toyokawa Inari",
+  "text": "Toyokawa Inari",
+  "ja": "豊川稲荷",
+  "pl": null,
+  "type": "place",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/S%C5%8Dt%C5%8D",
+  "title": "Sōtō",
+  "text": "Sōtō Zen",
+  "ja": "曹洞宗#日本における曹洞宗",
+  "pl": "Sōtō",
+  "type": "organisation",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Nichiren_Buddhism",
+  "title": "Nichiren Buddhism",
+  "text": "Nichiren",
+  "ja": null,
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Gongen",
+  "title": "Gongen",
+  "text": "gongen",
+  "ja": "権現",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Shinbutsu_bunri",
+  "title": "Shinbutsu bunri",
+  "text": "shinbutsu bunri",
+  "ja": "神仏分離",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Mount_Haguro",
+  "title": "Mount Haguro",
+  "text": "Hagurosan",
+  "ja": "羽黒山 (山形県)",
+  "pl": null,
+  "type": "place",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Three_Mountains_of_Dewa",
+  "title": "Three Mountains of Dewa",
+  "text": "Dewa Sanzan",
+  "ja": "出羽三山",
+  "pl": "Góry Dewa",
+  "type": "place",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Mount_Miwa",
+  "title": "Mount Miwa",
+  "text": "Mt. Miwa",
+  "ja": "三輪山",
+  "pl": null,
+  "type": "place",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/%C5%8Ckuninushi",
+  "title": "Ōkuninushi",
+  "text": "Ōkuninushi",
+  "ja": "大国主",
+  "pl": "Ōkuninushi",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Haibutsu_kishaku",
+  "title": "Haibutsu kishaku",
+  "text": "haibutsu kishaku",
+  "ja": "廃仏毀釈",
+  "pl": "Haibutsu-kishaku",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Emperor_Antoku",
+  "title": "Emperor Antoku",
+  "text": "Emperor Antoku",
+  "ja": "安徳天皇",
+  "pl": "Antoku",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Akama_Shrine",
+  "title": "Akama Shrine",
+  "text": "Akama Jingū",
+  "ja": "赤間神宮",
+  "pl": null,
+  "type": "place",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Spirit_tablet",
+  "title": "Spirit tablet",
+  "text": "ihai",
+  "ja": "位牌",
+  "pl": "Tabliczka przodka",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kunio_Yanagita",
+  "title": "Kunio Yanagita",
+  "text": "Yanagita Kunio",
+  "ja": "柳田國男",
+  "pl": "Kunio Yanagita",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Obon",
+  "title": "Obon",
+  "text": "Bon",
+  "ja": "お盆",
+  "pl": "O-bon",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Segaki",
+  "title": "Segaki",
+  "text": "Segaki",
+  "ja": "施餓鬼",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Lafcadio_Hearn",
+  "title": "Lafcadio Hearn",
+  "text": "Lafcadio Hearn",
+  "ja": "小泉八雲",
+  "pl": "Lafcadio Hearn",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Six_Paths",
+  "title": "Six Paths",
+  "text": "six realms",
+  "ja": "六道",
+  "pl": "Sześć światów",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Diyu",
+  "title": "Diyu",
+  "text": "Ten Kings of Hell",
+  "ja": null,
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Yama_%28Buddhism%29",
+  "title": "Yama (Buddhism)",
+  "text": "Enma",
+  "ja": "閻魔",
+  "pl": null,
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Ono_no_Takamura",
+  "title": "Ono no Takamura",
+  "text": "Ono no Takamura",
+  "ja": "小野篁",
+  "pl": null,
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Shingon_Buddhism",
+  "title": "Shingon Buddhism",
+  "text": "Shingon",
+  "ja": "真言宗",
+  "pl": "Shingon",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Muromachi_period",
+  "title": "Muromachi period",
+  "text": "Muromachi period",
+  "ja": "室町時代",
+  "pl": "Muromachi (okres)",
+  "type": "event",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Onry%C5%8D",
+  "title": "Onryō",
+  "text": "Onryō",
+  "ja": "怨霊",
+  "pl": "Onryō",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Gory%C5%8D",
+  "title": "Goryō",
+  "text": "Goryō",
+  "ja": "御霊信仰",
+  "pl": "Goryō",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Sugawara_no_Michizane",
+  "title": "Sugawara no Michizane",
+  "text": "Sugawara no Michizane",
+  "ja": "菅原道真",
+  "pl": "Michizane Sugawara",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Tenjin_%28kami%29",
+  "title": "Tenjin (kami)",
+  "text": "Tenjin",
+  "ja": "天満大自在天神",
+  "pl": "Tenjin",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kitano_Tenmang%C5%AB",
+  "title": "Kitano Tenmangū",
+  "text": "Kitano Tenjin engi",
+  "ja": "北野天満宮",
+  "pl": null,
+  "type": "place",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Oni",
+  "title": "Oni",
+  "text": "oni",
+  "ja": "鬼",
+  "pl": "Oni",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Taira_no_Masakado",
+  "title": "Taira no Masakado",
+  "text": "Taira no Masakado",
+  "ja": "平将門",
+  "pl": null,
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Emperor_Sutoku",
+  "title": "Emperor Sutoku",
+  "text": "Sutoku",
+  "ja": "崇徳天皇",
+  "pl": "Sutoku",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/H%C5%8Dgen_rebellion",
+  "title": "Hōgen rebellion",
+  "text": "Hōgen Rebellion",
+  "ja": "保元の乱",
+  "pl": "Zamieszki ery Hōgen",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Senzai_Wakash%C5%AB",
+  "title": "Senzai Wakashū",
+  "text": "Senzai wakashū",
+  "ja": "千載和歌集",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Emperor_Go-Shirakawa",
+  "title": "Emperor Go-Shirakawa",
+  "text": "Go-Shirakawa",
+  "ja": "後白河天皇",
+  "pl": "Go-Shirakawa",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Fujiwara_no_Shunzei",
+  "title": "Fujiwara no Shunzei",
+  "text": "Fujiwara no Shunzei",
+  "ja": "藤原俊成",
+  "pl": "Shunzei Fujiwara",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Battle_of_Dan-no-ura",
+  "title": "Battle of Dan-no-ura",
+  "text": "Dan-no-ura",
+  "ja": "壇ノ浦の戦い",
+  "pl": "Bitwa w zatoce Dan-no-Ura",
+  "type": "event",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Heikegani",
+  "title": "Heikegani",
+  "text": "Heike crabs",
+  "ja": "ヘイケガニ",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Yasukuni_Shrine",
+  "title": "Yasukuni Shrine",
+  "text": "Yasukuni Shrine",
+  "ja": "靖国神社",
+  "pl": "Yasukuni-jinja",
+  "type": "place",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Y%C5%ABrei",
+  "title": "Yūrei",
+  "text": "yūrei",
+  "ja": "幽霊",
+  "pl": "Yūrei",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Noh",
+  "title": "Noh",
+  "text": "Noh",
+  "ja": "能",
+  "pl": "Nō",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Zeami_Motokiyo",
+  "title": "Zeami Motokiyo",
+  "text": "Zeami",
+  "ja": "世阿弥",
+  "pl": "Motokiyo Zeami",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Funa_Benkei",
+  "title": "Funa Benkei",
+  "text": "Funa Benkei",
+  "ja": "船弁慶",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kaidan",
+  "title": "Kaidan",
+  "text": "kaidan",
+  "ja": "怪談",
+  "pl": "Kaidan",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/International_Research_Center_for_Japanese_Studies",
+  "title": "International Research Center for Japanese Studies",
+  "text": "Nichibunken",
+  "ja": "国際日本文化研究センター",
+  "pl": null,
+  "type": "organisation",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Asai_Ry%C5%8Di",
+  "title": "Asai Ryōi",
+  "text": "Asai Ryōi",
+  "ja": "浅井了意",
+  "pl": "Ryōi Asai",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Japanese_raccoon_dog",
+  "title": "Japanese raccoon dog",
+  "text": "tanuki",
+  "ja": null,
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Mujina",
+  "title": "Mujina",
+  "text": "mujina",
+  "ja": "ムジナ",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Botan_D%C5%8Dr%C5%8D",
+  "title": "Botan Dōrō",
+  "text": "Botan-dōrō",
+  "ja": "牡丹灯籠",
+  "pl": null,
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/San'y%C5%ABtei_Ench%C5%8D",
+  "title": "San'yūtei Enchō",
+  "text": "Enchō",
+  "ja": "三遊亭圓朝",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Ikiry%C5%8D",
+  "title": "Ikiryō",
+  "text": "Ikiryō",
+  "ja": "生霊",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Shiry%C5%8D",
+  "title": "Shiryō",
+  "text": "Shiryō",
+  "ja": "死霊",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Preta",
+  "title": "Preta",
+  "text": "Gaki",
+  "ja": "プレータ",
+  "pl": "Preta",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Jikininki",
+  "title": "Jikininki",
+  "text": "Jikininki",
+  "ja": "食人鬼 (小説)",
+  "pl": null,
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Mus%C5%8D_Soseki",
+  "title": "Musō Soseki",
+  "text": "Musō Kokushi",
+  "ja": "夢窓疎石",
+  "pl": "Soseki Musō",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Yo-kai_Watch",
+  "title": "Yo-kai Watch",
+  "text": "Jibanyan",
+  "ja": "妖怪ウォッチ",
+  "pl": "Yo-kai Watch",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Obake",
+  "title": "Obake",
+  "text": "obake",
+  "ja": "お化け",
+  "pl": "Obake",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kappa_%28folklore%29",
+  "title": "Kappa (folklore)",
+  "text": "kappa",
+  "ja": "河童",
+  "pl": "Kappa (demon)",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kokugaku",
+  "title": "Kokugaku",
+  "text": "kokugaku",
+  "ja": "国学",
+  "pl": null,
+  "type": "event",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Hirata_Atsutane",
+  "title": "Hirata Atsutane",
+  "text": "Hirata Atsutane",
+  "ja": "平田篤胤",
+  "pl": "Atsutane Hirata",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Tengu",
+  "title": "Tengu",
+  "text": "tengu",
+  "ja": "天狗",
+  "pl": "Tengu",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Azukiarai",
+  "title": "Azukiarai",
+  "text": "azuki-arai",
+  "ja": "小豆洗い",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Nishiki-e",
+  "title": "Nishiki-e",
+  "text": "nishiki-e",
+  "ja": "錦絵",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Inro",
+  "title": "Inro",
+  "text": "inrō",
+  "ja": "印籠",
+  "pl": "Inrō",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Netsuke",
+  "title": "Netsuke",
+  "text": "netsuke",
+  "ja": "根付",
+  "pl": "Netsuke",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Shigeru_Mizuki",
+  "title": "Shigeru Mizuki",
+  "text": "Mizuki Shigeru",
+  "ja": "水木しげる",
+  "pl": null,
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Hyakki_Yagy%C5%8D",
+  "title": "Hyakki Yagyō",
+  "text": "hyakki yagyō",
+  "ja": "百鬼夜行",
+  "pl": "Hyakki-yakō",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Tsukumogami",
+  "title": "Tsukumogami",
+  "text": "Tsukumogami",
+  "ja": "付喪神",
+  "pl": "Tsukumogami",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Setsubun",
+  "title": "Setsubun",
+  "text": "setsubun",
+  "ja": "節分",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Otogi-z%C5%8Dshi",
+  "title": "Otogi-zōshi",
+  "text": "otogizōshi",
+  "ja": "御伽草子",
+  "pl": "Otogizōshi",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/%C5%8Ckagami",
+  "title": "Ōkagami",
+  "text": "Ōkagami",
+  "ja": "大鏡",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Konjaku_Monogatarish%C5%AB",
+  "title": "Konjaku Monogatarishū",
+  "text": "Konjaku monogatari",
+  "ja": "今昔物語集",
+  "pl": "Konjaku monogatari",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Toriyama_Sekien",
+  "title": "Toriyama Sekien",
+  "text": "Toriyama Sekien",
+  "ja": "鳥山石燕",
+  "pl": "Sekien Toriyama",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Shuten-d%C5%8Dji",
+  "title": "Shuten-dōji",
+  "text": "Shuten-dōji",
+  "ja": "酒呑童子",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Minamoto_no_Yorimitsu",
+  "title": "Minamoto no Yorimitsu",
+  "text": "Minamoto no Yorimitsu",
+  "ja": "源頼光",
+  "pl": null,
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Spirit_away",
+  "title": "Spirit away",
+  "text": "kamikakushi",
+  "ja": "神隠し",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/The_Tale_of_the_Heike",
+  "title": "The Tale of the Heike",
+  "text": "Heike monogatari",
+  "ja": "平家物語",
+  "pl": "Heike monogatari",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kitsune",
+  "title": "Kitsune",
+  "text": "kitsune",
+  "ja": "日本の文化における狐",
+  "pl": "Kitsune",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Tamamo-no-Mae",
+  "title": "Tamamo-no-Mae",
+  "text": "Tamamo no mae",
+  "ja": "玉藻前",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Sessho-seki",
+  "title": "Sessho-seki",
+  "text": "Sesshōseki",
+  "ja": "殺生石",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Utagawa_Kuniyoshi",
+  "title": "Utagawa Kuniyoshi",
+  "text": "Utagawa Kuniyoshi",
+  "ja": "歌川国芳",
+  "pl": "Kuniyoshi Utagawa",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Sumo",
+  "title": "Sumo",
+  "text": "Sumo",
+  "ja": "相撲",
+  "pl": "Sumo",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Nomi_no_Sukune",
+  "title": "Nomi no Sukune",
+  "text": "Nomi no Sukune",
+  "ja": "野見宿禰",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kwaidan:_Stories_and_Studies_of_Strange_Things",
+  "title": "Kwaidan: Stories and Studies of Strange Things",
+  "text": "Kwaidan",
+  "ja": "怪談 (小泉八雲)",
+  "pl": null,
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Yuki-onna",
+  "title": "Yuki-onna",
+  "text": "Yuki-onna",
+  "ja": "雪女",
+  "pl": "Yuki-onna",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Rokurokubi",
+  "title": "Rokurokubi",
+  "text": "Rokuro-kubi",
+  "ja": "ろくろ首",
+  "pl": "Rokurokubi",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Fujiwara_no_Hidesato",
+  "title": "Fujiwara no Hidesato",
+  "text": "Tawara no Tōta",
+  "ja": "藤原秀郷",
+  "pl": null,
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kashima_Shrine",
+  "title": "Kashima Shrine",
+  "text": "Kashima Jingū",
+  "ja": "鹿島神宮",
+  "pl": null,
+  "type": "place",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Ningyo",
+  "title": "Ningyo",
+  "text": "ningyo",
+  "ja": "人魚",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Empress_Suiko",
+  "title": "Empress Suiko",
+  "text": "Empress Suiko",
+  "ja": "推古天皇",
+  "pl": "Suiko",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Prince_Sh%C5%8Dtoku",
+  "title": "Prince Shōtoku",
+  "text": "Prince Shōtoku",
+  "ja": "聖徳太子",
+  "pl": "Shōtoku (książę)",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Amabie",
+  "title": "Amabie",
+  "text": "Amabie",
+  "ja": "アマビエ",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kudan_%28y%C5%8Dkai%29",
+  "title": "Kudan (yōkai)",
+  "text": "kudan",
+  "ja": "件",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Cholera",
+  "title": "Cholera",
+  "text": "cholera",
+  "ja": "コレラ",
+  "pl": "Cholera",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Bai_Ze",
+  "title": "Bai Ze",
+  "text": "hakutaku",
+  "ja": "白沢 (瑞獣)",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Shikigami",
+  "title": "Shikigami",
+  "text": "shikigami",
+  "ja": "式神",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Onmy%C5%8Dji",
+  "title": "Onmyōji",
+  "text": "onmyōji",
+  "ja": "陰陽師",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Inoue_Enry%C5%8D",
+  "title": "Inoue Enryō",
+  "text": "Inoue Enryō",
+  "ja": "井上円了",
+  "pl": "Enryō Inoue",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Toyo_University",
+  "title": "Toyo University",
+  "text": "Tōyō University",
+  "ja": "東洋大学",
+  "pl": null,
+  "type": "organisation",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Hayao_Miyazaki",
+  "title": "Hayao Miyazaki",
+  "text": "Miyazaki Hayao",
+  "ja": "宮崎駿",
+  "pl": "Hayao Miyazaki",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Spirited_Away",
+  "title": "Spirited Away",
+  "text": "Spirited Away",
+  "ja": "千と千尋の神隠し",
+  "pl": "Spirited Away: W krainie bogów",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/GeGeGe_no_Kitar%C5%8D",
+  "title": "GeGeGe no Kitarō",
+  "text": "Gegege no Kitarō",
+  "ja": "ゲゲゲの鬼太郎",
+  "pl": null,
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Japanese_newspapers",
+  "title": "Japanese newspapers",
+  "text": "kawaraban",
+  "ja": "日本の新聞",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Emakimono",
+  "title": "Emakimono",
+  "text": "emakimono",
+  "ja": "絵巻物",
+  "pl": "Emaki-mono",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Genji_Monogatari_Emaki",
+  "title": "Genji Monogatari Emaki",
+  "text": "Genji monogatari emaki",
+  "ja": "源氏物語絵巻",
+  "pl": null,
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Shigisan-engi",
+  "title": "Shigisan Engi Emaki",
+  "text": "Shigisan engi emaki",
+  "ja": "信貴山縁起",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Ban_Dainagon_Ekotoba",
+  "title": "Ban Dainagon Ekotoba",
+  "text": "Ban Dainagon ekotoba",
+  "ja": "伴大納言絵詞",
+  "pl": null,
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Ch%C5%8Dj%C5%AB-jinbutsu-giga",
+  "title": "Chōjū-jinbutsu-giga",
+  "text": "Chōjū jinbutsu giga",
+  "ja": "鳥獣人物戯画",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Toba_S%C5%8Dj%C5%8D",
+  "title": "Toba Sōjō",
+  "text": "Toba Sōjō",
+  "ja": "覚猷",
+  "pl": "Toba Sōjō",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Hon%27ami_K%C5%8Detsu",
+  "title": "Hon'ami Kōetsu",
+  "text": "Hon'ami Kōetsu",
+  "ja": "本阿弥光悦",
+  "pl": "Kōetsu Hon’ami",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Georges_Ferdinand_Bigot",
+  "title": "Georges Ferdinand Bigot",
+  "text": "Georges Bigot",
+  "ja": "ジョルジュ・ビゴー",
+  "pl": null,
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kiby%C5%8Dshi",
+  "title": "Kibyōshi",
+  "text": "kibyōshi",
+  "ja": "黄表紙",
+  "pl": null,
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Tsutaya_J%C5%ABzabur%C5%8D",
+  "title": "Tsutaya Jūzaburō",
+  "text": "Tsutaya Jūzaburō",
+  "ja": "蔦屋重三郎",
+  "pl": null,
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Sant%C5%8D_Ky%C5%8Dden",
+  "title": "Santō Kyōden",
+  "text": "Santō Kyōden",
+  "ja": "山東京伝",
+  "pl": null,
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Ukiyo-e",
+  "title": "Ukiyo-e",
+  "text": "Ukiyo-e",
+  "ja": "浮世絵",
+  "pl": "Ukiyo-e",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/T%C5%8Dsh%C5%ABsai_Sharaku",
+  "title": "Sharaku",
+  "text": "Tōshūsai Sharaku",
+  "ja": "東洲斎写楽",
+  "pl": "Sharaku",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Hokusai",
+  "title": "Hokusai",
+  "text": "Katsushika Hokusai",
+  "ja": "葛飾北斎",
+  "pl": "Hokusai Katsushika",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Hokusai_Manga",
+  "title": "Hokusai Manga",
+  "text": "Hokusai manga",
+  "ja": "北斎漫画",
+  "pl": null,
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kyokutei_Bakin",
+  "title": "Takizawa Bakin",
+  "text": "Takizawa Bakin",
+  "ja": "曲亭馬琴",
+  "pl": "Bakin Kyokutei",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Charles_Wirgman",
+  "title": "Charles Wirgman",
+  "text": "Charles Wirgman",
+  "ja": "チャールズ・ワーグマン",
+  "pl": null,
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Miyatake_Gaikotsu",
+  "title": "Miyatake Gaikotsu",
+  "text": "Miyatake Gaikotsu",
+  "ja": "宮武外骨",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kitazawa_Rakuten",
+  "title": "Kitazawa Rakuten",
+  "text": "Kitazawa Rakuten",
+  "ja": "北澤楽天",
+  "pl": "Rakuten Kitazawa",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Tokyo_Puck",
+  "title": "Tokyo Puck",
+  "text": "Tokyo Puck",
+  "ja": "東京パック",
+  "pl": null,
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kawanabe_Ky%C5%8Dsai",
+  "title": "Kawanabe Kyōsai",
+  "text": "Kawanabe Kyōsai",
+  "ja": "河鍋暁斎",
+  "pl": null,
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Rodolphe_T%C3%B6pffer",
+  "title": "Rodolphe Töpffer",
+  "text": "Rodolphe Töpffer",
+  "ja": "ロドルフ・テプフェール",
+  "pl": "Rodolphe Töpffer",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Wilhelm_Busch",
+  "title": "Wilhelm Busch",
+  "text": "Wilhelm Busch",
+  "ja": "ヴィルヘルム・ブッシュ",
+  "pl": "Wilhelm Busch",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Max_and_Moritz",
+  "title": "Max and Moritz",
+  "text": "Max und Moritz",
+  "ja": "マックスとモーリッツ",
+  "pl": null,
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/The_Yellow_Kid",
+  "title": "The Yellow Kid",
+  "text": "The Yellow Kid",
+  "ja": "イエロー・キッド",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Okamoto_Ippei",
+  "title": "Okamoto Ippei",
+  "text": "Okamoto Ippei",
+  "ja": "岡本一平",
+  "pl": null,
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Felix_the_Cat",
+  "title": "Felix the Cat",
+  "text": "Felix the Cat",
+  "ja": "フィリックス・ザ・キャット",
+  "pl": "Kot Feliks",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Suih%C5%8D_Tagawa",
+  "title": "Suihō Tagawa",
+  "text": "Tagawa Suihō",
+  "ja": "田河水泡",
+  "pl": null,
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Norakuro",
+  "title": "Norakuro",
+  "text": "Norakuro",
+  "ja": "のらくろ",
+  "pl": null,
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Sh%C5%8Dnen_Club",
+  "title": "Shōnen Club",
+  "text": "Shōnen kurabu",
+  "ja": "少年倶楽部",
+  "pl": null,
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Osamu_Tezuka",
+  "title": "Osamu Tezuka",
+  "text": "Tezuka Osamu",
+  "ja": "手塚治虫",
+  "pl": "Osamu Tezuka",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kashihon",
+  "title": "Kashi-hon",
+  "text": "kashihon",
+  "ja": "貸本",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kamishibai",
+  "title": "Kamishibai",
+  "text": "kamishibai",
+  "ja": "紙芝居",
+  "pl": "Kamishibai",
+  "type": "place",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Gekiga",
+  "title": "Gekiga",
+  "text": "gekiga",
+  "ja": "劇画",
+  "pl": "Gekiga",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Garo_(magazine)",
+  "title": "Garo (magazine)",
+  "text": "Garo",
+  "ja": "ガロ (雑誌)",
+  "pl": null,
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Astro_Boy",
+  "title": "Astro Boy",
+  "text": "Astro Boy",
+  "ja": "鉄腕アトム",
+  "pl": "Tetsuwan Atom",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Weekly_Sh%C5%8Dnen_Magazine",
+  "title": "Weekly Shōnen Magazine",
+  "text": "Weekly Shōnen Magazine",
+  "ja": "週刊少年マガジン",
+  "pl": "Shūkan Shōnen Magazine",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Weekly_Sh%C5%8Dnen_Sunday",
+  "title": "Weekly Shōnen Sunday",
+  "text": "Weekly Shōnen Sunday",
+  "ja": "週刊少年サンデー",
+  "pl": "Shūkan Shōnen Sunday",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Weekly_Sh%C5%8Dnen_Jump",
+  "title": "Weekly Shōnen Jump",
+  "text": "Weekly Shōnen Jump",
+  "ja": "週刊少年ジャンプ",
+  "pl": "Shūkan Shōnen Jump",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Tank%C5%8Dbon",
+  "title": "Tankōbon",
+  "text": "tankōbon",
+  "ja": "単行本",
+  "pl": "Tankōbon",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Sh%C5%8Dnen_manga",
+  "title": "Shōnen manga",
+  "text": "Shōnen",
+  "ja": "少年漫画",
+  "pl": "Shōnen-manga",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Sh%C5%8Djo_manga",
+  "title": "Shōjo manga",
+  "text": "Shōjo",
+  "ja": "少女漫画",
+  "pl": "Shōjo-manga",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Seinen_manga",
+  "title": "Seinen manga",
+  "text": "Seinen",
+  "ja": "青年漫画",
+  "pl": "Seinen-manga",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Josei_manga",
+  "title": "Josei manga",
+  "text": "Josei",
+  "ja": "女性漫画",
+  "pl": "Josei-manga",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Year_24_Group",
+  "title": "Year 24 Group",
+  "text": "Year 24 Group",
+  "ja": "24年組",
+  "pl": null,
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Moto_Hagio",
+  "title": "Moto Hagio",
+  "text": "Hagio Moto",
+  "ja": "萩尾望都",
+  "pl": "Moto Hagio",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Keiko_Takemiya",
+  "title": "Keiko Takemiya",
+  "text": "Takemiya Keiko",
+  "ja": "竹宮惠子",
+  "pl": "Keiko Takemiya",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Machiko_Hasegawa",
+  "title": "Machiko Hasegawa",
+  "text": "Hasegawa Machiko",
+  "ja": "長谷川町子",
+  "pl": "Machiko Hasegawa",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Aum_Shinrikyo",
+  "title": "Aum Shinrikyo",
+  "text": "Aum Shinrikyō",
+  "ja": "オウム真理教",
+  "pl": "Aum Shinrikyō",
+  "type": "organisation",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Saint_Young_Men",
+  "title": "Saint Young Men",
+  "text": "Saint Young Men",
+  "ja": "聖☆おにいさん",
+  "pl": "Saint onii-san",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/%C3%89mile_Cohl",
+  "title": "Émile Cohl",
+  "text": "Émile Cohl",
+  "ja": "エミール・コール",
+  "pl": "Émile Cohl",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kenz%C5%8D_Masaoka",
+  "title": "Kenzō Masaoka",
+  "text": "Masaoka Kenzō",
+  "ja": "政岡憲三",
+  "pl": null,
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/National_Film_Archive_of_Japan",
+  "title": "National Film Archive of Japan",
+  "text": "National Film Archive of Japan",
+  "ja": "国立映画アーカイブ",
+  "pl": null,
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Jun%27ichi_K%C5%8Duchi",
+  "title": "Jun'ichi Kōuchi",
+  "text": "Kōuchi Jun'ichi",
+  "ja": "幸内純一",
+  "pl": null,
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Namakura_Gatana",
+  "title": "The Dull Sword",
+  "text": "Namakura gatana",
+  "ja": "塙凹内名刀之巻",
+  "pl": null,
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Nobur%C5%8D_%C5%8Cfuji",
+  "title": "Noburō Ōfuji",
+  "text": "Ōfuji Noburō",
+  "ja": "大藤信郎",
+  "pl": null,
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Toei_Animation",
+  "title": "Toei Animation",
+  "text": "Tōei Dōga",
+  "ja": "東映アニメーション",
+  "pl": "Toei Animation",
+  "type": "organisation",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/The_Tale_of_the_White_Serpent",
+  "title": "Legend of the White Snake",
+  "text": "Hakujaden",
+  "ja": "白蛇伝",
+  "pl": "Legenda o Białym Wężu",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Mushi_Production",
+  "title": "Mushi Production",
+  "text": "Mushi Production",
+  "ja": "虫プロダクション",
+  "pl": "Mushi Production",
+  "type": "organisation",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Astro_Boy_(1963_TV_series)",
+  "title": "Astro Boy (1963 TV series)",
+  "text": "Tetsuwan Atomu",
+  "ja": "鉄腕アトム (アニメ第1作)",
+  "pl": null,
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Limited_animation",
+  "title": "Limited animation",
+  "text": "Limited animation",
+  "ja": "リミテッド・アニメーション",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Media_mix",
+  "title": "Media franchise",
+  "text": "media mix",
+  "ja": "メディア・フランチャイズ",
+  "pl": "Franczyza (media)",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Studio_Ghibli",
+  "title": "Studio Ghibli",
+  "text": "Studio Ghibli",
+  "ja": "スタジオジブリ",
+  "pl": "Studio Ghibli",
+  "type": "organisation",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Pom_Poko",
+  "title": "Pom Poko",
+  "text": "Pom Poko",
+  "ja": "平成狸合戦ぽんぽこ",
+  "pl": "Szopy w natarciu",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Isao_Takahata",
+  "title": "Isao Takahata",
+  "text": "Takahata Isao",
+  "ja": "高畑勲",
+  "pl": "Isao Takahata",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Princess_Mononoke",
+  "title": "Princess Mononoke",
+  "text": "Princess Mononoke",
+  "ja": "もののけ姫",
+  "pl": "Księżniczka Mononoke",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/The_Boy_and_the_Heron",
+  "title": "The Boy and the Heron",
+  "text": "The Boy and the Heron",
+  "ja": "君たちはどう生きるか (映画)",
+  "pl": "Chłopiec i czapla",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Ghibli_Museum",
+  "title": "Ghibli Museum",
+  "text": "Ghibli Museum",
+  "ja": "三鷹の森ジブリ美術館",
+  "pl": "Muzeum Ghibli",
+  "type": "organisation",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Makoto_Shinkai",
+  "title": "Makoto Shinkai",
+  "text": "Shinkai Makoto",
+  "ja": "新海誠",
+  "pl": "Makoto Shinkai",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Voices_of_a_Distant_Star",
+  "title": "Voices of a Distant Star",
+  "text": "Voices of a Distant Star",
+  "ja": "ほしのこえ",
+  "pl": "Głosy z odległej gwiazdy",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/5_Centimeters_per_Second",
+  "title": "5 Centimeters per Second",
+  "text": "5 Centimeters per Second",
+  "ja": "秒速5センチメートル",
+  "pl": "5 centymetrów na sekundę",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Your_Name",
+  "title": "Your Name",
+  "text": "Your Name",
+  "ja": "君の名は。",
+  "pl": "Twoje imię",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Mamoru_Oshii",
+  "title": "Mamoru Oshii",
+  "text": "Oshii Mamoru",
+  "ja": "押井守",
+  "pl": "Mamoru Oshii",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Satoshi_Kon",
+  "title": "Satoshi Kon",
+  "text": "Kon Satoshi",
+  "ja": "今敏",
+  "pl": "Satoshi Kon",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Benshi",
+  "title": "Benshi",
+  "text": "benshi",
+  "ja": "活動弁士",
+  "pl": "Benshi",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/1923_Great_Kant%C5%8D_earthquake",
+  "title": "Great Kantō Earthquake",
+  "text": "1923 earthquake",
+  "ja": "関東地震",
+  "pl": "Trzęsienie ziemi w Kantō (1923)",
+  "type": "event",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Teinosuke_Kinugasa",
+  "title": "Teinosuke Kinugasa",
+  "text": "Kinugasa Teinosuke",
+  "ja": "衣笠貞之助",
+  "pl": "Teinosuke Kinugasa",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/A_Page_of_Madness",
+  "title": "A Page of Madness",
+  "text": "A Page of Madness",
+  "ja": "狂つた一頁",
+  "pl": null,
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kenji_Mizoguchi",
+  "title": "Kenji Mizoguchi",
+  "text": "Mizoguchi Kenji",
+  "ja": "溝口健二",
+  "pl": "Kenji Mizoguchi",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Sisters_of_the_Gion",
+  "title": "Sisters of the Gion",
+  "text": "Sisters of the Gion",
+  "ja": "祇園の姉妹",
+  "pl": null,
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Nikkatsu",
+  "title": "Nikkatsu",
+  "text": "Nikkatsu",
+  "ja": "日活",
+  "pl": null,
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Toho",
+  "title": "Toho",
+  "text": "Tōhō",
+  "ja": "東宝",
+  "pl": "Tōhō",
+  "type": "organisation",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Toei_Company",
+  "title": "Toei Company",
+  "text": "Tōei",
+  "ja": "東映",
+  "pl": "Toei Company",
+  "type": "organisation",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Shochiku",
+  "title": "Shochiku",
+  "text": "Shōchiku",
+  "ja": "松竹",
+  "pl": "Shōchiku",
+  "type": "organisation",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Daiei_Film",
+  "title": "Daiei Film",
+  "text": "Daiei",
+  "ja": "大映",
+  "pl": null,
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Carmen_Comes_Home",
+  "title": "Carmen Comes Home",
+  "text": "Carmen Comes Home",
+  "ja": "カルメン故郷に帰る",
+  "pl": null,
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Keisuke_Kinoshita",
+  "title": "Keisuke Kinoshita",
+  "text": "Kinoshita Keisuke",
+  "ja": "木下惠介",
+  "pl": null,
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Rashomon",
+  "title": "Rashomon",
+  "text": "Rashomon",
+  "ja": "羅生門 (1950年の映画)",
+  "pl": "Rashōmon (film)",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Akira_Kurosawa",
+  "title": "Akira Kurosawa",
+  "text": "Kurosawa Akira",
+  "ja": "黒澤明",
+  "pl": "Akira Kurosawa",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Dersu_Uzala_(1975_film)",
+  "title": "Dersu Uzala (1975 film)",
+  "text": "Dersu Uzala",
+  "ja": "デルス・ウザーラ (1975年の映画)",
+  "pl": "Dersu Uzała (film 1975)",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kagemusha",
+  "title": "Kagemusha",
+  "text": "Kagemusha",
+  "ja": "影武者 (映画)",
+  "pl": "Sobowtór (film 1980)",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Stray_Dog_(film)",
+  "title": "Stray Dog (film)",
+  "text": "Stray Dog",
+  "ja": "野良犬 (1949年の映画)",
+  "pl": "Zbłąkany pies",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Throne_of_Blood",
+  "title": "Throne of Blood",
+  "text": "Throne of Blood",
+  "ja": "蜘蛛巣城",
+  "pl": "Tron we krwi",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Dreams_(1990_film)",
+  "title": "Dreams (1990 film)",
+  "text": "Dreams",
+  "ja": "夢 (映画)",
+  "pl": "Sny (film 1990)",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Shinobu_Hashimoto",
+  "title": "Shinobu Hashimoto",
+  "text": "Hashimoto Shinobu",
+  "ja": "橋本忍",
+  "pl": "Shinobu Hashimoto",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Ikiru",
+  "title": "Ikiru",
+  "text": "Ikiru",
+  "ja": "生きる (映画)",
+  "pl": "Piętno śmierci",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Seven_Samurai",
+  "title": "Seven Samurai",
+  "text": "Seven Samurai",
+  "ja": "七人の侍",
+  "pl": "Siedmiu samurajów",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Osaka_Elegy",
+  "title": "Osaka Elegy",
+  "text": "Osaka Elegy",
+  "ja": "浪華悲歌",
+  "pl": "Elegia Naniwy",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/The_Story_of_the_Last_Chrysanthemums",
+  "title": "The Story of the Last Chrysanthemums",
+  "text": "The Story of the Last Chrysanthemums",
+  "ja": "残菊物語",
+  "pl": null,
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/The_47_Ronin_(1941_film)",
+  "title": "The 47 Ronin (1941 film)",
+  "text": "The 47 Ronin",
+  "ja": null,
+  "pl": null,
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/The_Life_of_Oharu",
+  "title": "The Life of Oharu",
+  "text": "The Life of Oharu",
+  "ja": "西鶴一代女",
+  "pl": null,
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Ugetsu",
+  "title": "Ugetsu",
+  "text": "Ugetsu",
+  "ja": "雨月物語 (映画)",
+  "pl": "Opowieści księżycowe",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Sansho_the_Bailiff",
+  "title": "Sansho the Bailiff",
+  "text": "Sansho the Bailiff",
+  "ja": "山椒大夫 (映画)",
+  "pl": "Zarządca Sanshō",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Theo_Angelopoulos",
+  "title": "Theo Angelopoulos",
+  "text": "Theo Angelopoulos",
+  "ja": "テオ・アンゲロプロス",
+  "pl": "Teo Angelopoulos",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Andrei_Tarkovsky",
+  "title": "Andrei Tarkovsky",
+  "text": "Andrei Tarkovsky",
+  "ja": "アンドレイ・タルコフスキー",
+  "pl": "Andriej Tarkowski",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kazuo_Miyagawa",
+  "title": "Kazuo Miyagawa",
+  "text": "Miyagawa Kazuo",
+  "ja": "宮川一夫",
+  "pl": null,
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Fumio_Hayasaka",
+  "title": "Fumio Hayasaka",
+  "text": "Hayasaka Fumio",
+  "ja": "早坂文雄",
+  "pl": "Fumio Hayasaka",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Yasujir%C5%8D_Ozu",
+  "title": "Yasujirō Ozu",
+  "text": "Ozu Yasujirō",
+  "ja": "小津安二郎",
+  "pl": "Yasujirō Ozu",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Tokyo_Story",
+  "title": "Tokyo Story",
+  "text": "Tokyo Story",
+  "ja": "東京物語",
+  "pl": "Tokijska opowieść",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Passing_Fancy",
+  "title": "Passing Fancy",
+  "text": "Passing Fancy",
+  "ja": "出来ごころ",
+  "pl": null,
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Gate_of_Hell_(film)",
+  "title": "Gate of Hell (film)",
+  "text": "Gate of Hell",
+  "ja": "地獄門",
+  "pl": "Wrota piekieł",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Samurai_I:_Musashi_Miyamoto",
+  "title": "Samurai I: Musashi Miyamoto",
+  "text": "Samurai I: Musashi Miyamoto",
+  "ja": "宮本武蔵 (1954年の映画)",
+  "pl": "Samuraj (film 1954)",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/The_Ballad_of_Narayama_(1958_film)",
+  "title": "The Ballad of Narayama (1958 film)",
+  "text": "The Ballad of Narayama",
+  "ja": "楢山節考 (1958年の映画)",
+  "pl": "Ballada o Narayamie (film 1958)",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Mikio_Naruse",
+  "title": "Mikio Naruse",
+  "text": "Naruse Mikio",
+  "ja": "成瀬巳喜男",
+  "pl": "Mikio Naruse",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Nagisa_%C5%8Cshima",
+  "title": "Nagisa Ōshima",
+  "text": "Ōshima Nagisa",
+  "ja": "大島渚",
+  "pl": "Nagisa Ōshima",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Sh%C5%8Dhei_Imamura",
+  "title": "Shōhei Imamura",
+  "text": "Imamura Shōhei",
+  "ja": "今村昌平",
+  "pl": "Shōhei Imamura",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/The_Eel_(film)",
+  "title": "The Eel (film)",
+  "text": "The Eel",
+  "ja": "うなぎ (映画)",
+  "pl": "Węgorz (film)",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Yotsuya_Kaidan",
+  "title": "Yotsuya Kaidan",
+  "text": "Yotsuya kaidan",
+  "ja": "四谷怪談",
+  "pl": "Tōkaidō Yotsuya kaidan",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Japanese_horror",
+  "title": "Japanese horror",
+  "text": "J-horror",
+  "ja": "日本のホラー",
+  "pl": "Japoński horror",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Takashi_Miike",
+  "title": "Takashi Miike",
+  "text": "Miike Takashi",
+  "ja": "三池崇史",
+  "pl": "Takashi Miike",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Audition_(1999_film)",
+  "title": "Audition (1999 film)",
+  "text": "Audition",
+  "ja": "オーディション (映画)",
+  "pl": "Gra wstępna (film)",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Departures_(2008_film)",
+  "title": "Departures (2008 film)",
+  "text": "Departures",
+  "ja": "おくりびと",
+  "pl": "Pożegnania (film 2008)",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Shoplifters_(film)",
+  "title": "Shoplifters (film)",
+  "text": "Shoplifters",
+  "ja": "万引き家族",
+  "pl": "Złodziejaszki",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Hirokazu_Kore-eda",
+  "title": "Hirokazu Kore-eda",
+  "text": "Kore-eda Hirokazu",
+  "ja": "是枝裕和",
+  "pl": "Hirokazu Koreeda",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Drive_My_Car_(film)",
+  "title": "Drive My Car (film)",
+  "text": "Drive My Car",
+  "ja": "ドライブ・マイ・カー (映画)",
+  "pl": "Drive My Car (film)",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Ry%C5%ABsuke_Hamaguchi",
+  "title": "Ryusuke Hamaguchi",
+  "text": "Hamaguchi Ryūsuke",
+  "ja": "濱口竜介",
+  "pl": "Ryūsuke Hamaguchi",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Happy_Hour_(2015_Japanese_film)",
+  "title": "Happy Hour (2015 Japanese film)",
+  "text": "Happy Hour",
+  "ja": "ハッピーアワー (映画)",
+  "pl": null,
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Jean_Renoir",
+  "title": "Jean Renoir",
+  "text": "Jean Renoir",
+  "ja": "ジャン・ルノワール",
+  "pl": "Jean Renoir",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kokuho_(film)",
+  "title": "Kokuho (film)",
+  "text": "Kokuhō",
+  "ja": "国宝 (映画)",
+  "pl": null,
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Godzilla_(1954_film)",
+  "title": "Godzilla (1954 film)",
+  "text": "Gojira",
+  "ja": "ゴジラ (1954年の映画)",
+  "pl": "Godzilla (film 1954)",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Ishir%C5%8D_Honda",
+  "title": "Ishirō Honda",
+  "text": "Honda Ishirō",
+  "ja": "本多猪四郎",
+  "pl": "Ishirō Honda",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Daigo_Fukury%C5%AB_Maru",
+  "title": "Daigo Fukuryū Maru",
+  "text": "Lucky Dragon No. 5",
+  "ja": "第五福竜丸",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Bikini_Atoll",
+  "title": "Bikini Atoll",
+  "text": "Bikini Atoll",
+  "ja": "ビキニ環礁",
+  "pl": "Bikini (atol)",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Eiji_Tsuburaya",
+  "title": "Eiji Tsuburaya",
+  "text": "Tsuburaya Eiji",
+  "ja": "円谷英二",
+  "pl": "Eiji Tsuburaya",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Tsuburaya_Productions",
+  "title": "Tsuburaya Productions",
+  "text": "Tsuburaya Productions",
+  "ja": "円谷プロダクション",
+  "pl": "Tsuburaya Productions",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Rodan_(film)",
+  "title": "Rodan (film)",
+  "text": "Rodan",
+  "ja": "空の大怪獣 ラドン",
+  "pl": "Rodan – ptak śmierci",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kamen_Rider",
+  "title": "Kamen Rider",
+  "text": "Kamen Rider",
+  "ja": "仮面ライダーシリーズ",
+  "pl": "Kamen Rider",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Super_Sentai",
+  "title": "Super Sentai",
+  "text": "Super Sentai",
+  "ja": "スーパー戦隊シリーズ",
+  "pl": "Super Sentai",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Shin_Godzilla",
+  "title": "Shin Godzilla",
+  "text": "Shin Godzilla",
+  "ja": "シン・ゴジラ",
+  "pl": "Shin Godzilla",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Hideaki_Anno",
+  "title": "Hideaki Anno",
+  "text": "Anno Hideaki",
+  "ja": "庵野秀明",
+  "pl": "Hideaki Anno",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Godzilla_Minus_One",
+  "title": "Godzilla Minus One",
+  "text": "Godzilla Minus One",
+  "ja": "ゴジラ-1.0",
+  "pl": "Godzilla Minus One",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Takashi_Yamazaki",
+  "title": "Takashi Yamazaki",
+  "text": "Yamazaki Takashi",
+  "ja": "山崎貴",
+  "pl": "Takashi Yamazaki",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Nintendo",
+  "title": "Nintendo",
+  "text": "Nintendo",
+  "ja": "任天堂",
+  "pl": "Nintendo",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Hanafuda",
+  "title": "Hanafuda",
+  "text": "hanafuda",
+  "ja": "花札",
+  "pl": "Hanafuda",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Nintendo_Entertainment_System",
+  "title": "Nintendo Entertainment System",
+  "text": "Family Computer",
+  "ja": "ファミリーコンピュータ",
+  "pl": "Nintendo Entertainment System",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Space_Invaders",
+  "title": "Space Invaders",
+  "text": "Space Invaders",
+  "ja": "スペースインベーダー",
+  "pl": "Space Invaders",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Matsuya_(department_store)",
+  "title": "Matsuya (department store)",
+  "text": "Matsuya",
+  "ja": "松屋 (百貨店)",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Dragon_Quest",
+  "title": "Dragon Quest",
+  "text": "Dragon Quest",
+  "ja": "ドラゴンクエストシリーズ",
+  "pl": "Dragon Quest",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Final_Fantasy",
+  "title": "Final Fantasy",
+  "text": "Final Fantasy",
+  "ja": "ファイナルファンタジーシリーズ",
+  "pl": "Final Fantasy",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Yuji_Horii",
+  "title": "Yuji Horii",
+  "text": "Horii Yūji",
+  "ja": "堀井雄二",
+  "pl": "Yūji Horii",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Enka",
+  "title": "Enka",
+  "text": "enka",
+  "ja": "演歌",
+  "pl": "Enka",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Freedom_and_People%27s_Rights_Movement",
+  "title": "Freedom and People's Rights Movement",
+  "text": "Freedom and People's Rights Movement",
+  "ja": "自由民権運動",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Japanese_idol",
+  "title": "Japanese idol",
+  "text": "idols",
+  "ja": "アイドル",
+  "pl": "Idol (japońska popkultura)",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/AKB48",
+  "title": "AKB48",
+  "text": "AKB48",
+  "ja": "AKB48",
+  "pl": "AKB48",
+  "type": "organisation",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/City_pop",
+  "title": "City pop",
+  "text": "City pop",
+  "ja": "シティ・ポップ",
+  "pl": "City pop",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Hatsune_Miku",
+  "title": "Hatsune Miku",
+  "text": "Hatsune Miku",
+  "ja": "初音ミク",
+  "pl": "Hatsune Miku",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Vocaloid",
+  "title": "Vocaloid",
+  "text": "VOCALOID",
+  "ja": "VOCALOID",
+  "pl": "Vocaloid",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/The_Pillow_Book",
+  "title": "The Pillow Book",
+  "text": "The Pillow Book",
+  "ja": "枕草子",
+  "pl": "Zapiski spod wezgłowia",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Takehisa_Yumeji",
+  "title": "Yumeji Takehisa",
+  "text": "Takehisa Yumeji",
+  "ja": "竹久夢二",
+  "pl": "Yumeji Takehisa",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Jun%27ichi_Nakahara",
+  "title": "Jun'ichi Nakahara",
+  "text": "Nakahara Jun'ichi",
+  "ja": "中原淳一",
+  "pl": null,
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Yuru-chara",
+  "title": "Yuru-kyara",
+  "text": "yuru-kyara",
+  "ja": "ゆるキャラ",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Hikonyan",
+  "title": "Hikonyan",
+  "text": "Hikonyan",
+  "ja": "ひこにゃん",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Hikone_Castle",
+  "title": "Hikone Castle",
+  "text": "Hikone Castle",
+  "ja": "彦根城",
+  "pl": "Zamek Hikone",
+  "type": "place",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kumamon",
+  "title": "Kumamon",
+  "text": "Kumamon",
+  "ja": "くまモン",
+  "pl": "Kumamon",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Comiket",
+  "title": "Comiket",
+  "text": "Comic Market",
+  "ja": "コミックマーケット",
+  "pl": "Comiket",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Akihabara",
+  "title": "Akihabara",
+  "text": "Akihabara",
+  "ja": "秋葉原",
+  "pl": "Akihabara",
+  "type": "place",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Cosplay",
+  "title": "Cosplay",
+  "text": "Cosplay",
+  "ja": "コスプレ",
+  "pl": "Cosplay",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Washinomiya_Shrine",
+  "title": "Washinomiya Shrine",
+  "text": "Washinomiya Shrine",
+  "ja": "鷲宮神社",
+  "pl": null,
+  "type": "place",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Lucky_Star_(manga)",
+  "title": "Lucky Star (manga)",
+  "text": "Lucky Star",
+  "ja": "らき☆すた",
+  "pl": "Lucky Star (manga)",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Ema_(Shinto)",
+  "title": "Ema (Shinto)",
+  "text": "ema",
+  "ja": "絵馬",
+  "pl": "Ema (shintō)",
+  "type": "place",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba",
+  "title": "Demon Slayer: Kimetsu no Yaiba",
+  "text": "Demon Slayer: Kimetsu no Yaiba",
+  "ja": "鬼滅の刃",
+  "pl": "Miecz zabójcy demonów – Kimetsu no Yaiba",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Cool_Japan",
+  "title": "Cool Japan",
+  "text": "Japan's Gross National Cool",
+  "ja": "クールジャパン",
+  "pl": "Cool Japan",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Akutagawa_Prize",
+  "title": "Akutagawa Prize",
+  "text": "Akutagawa Prize",
+  "ja": "芥川龍之介賞",
+  "pl": "Nagroda im. Akutagawy",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kaiju",
+  "title": "Kaiju",
+  "text": "kaijū",
+  "ja": "怪獣",
+  "pl": "Kaijū",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Tokusatsu",
+  "title": "Tokusatsu",
+  "text": "tokusatsu",
+  "ja": "特撮映画",
+  "pl": "Tokusatsu",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/D%C5%8Djinshi",
+  "title": "Doujinshi",
+  "text": "dōjinshi",
+  "ja": "同人誌",
+  "pl": "Dōjinshi",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Kawaii",
+  "title": "Kawaii",
+  "text": "kawaii",
+  "ja": "可愛い",
+  "pl": "Kawaii",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Otaku",
+  "title": "Otaku",
+  "text": "otaku",
+  "ja": "おたく",
+  "pl": "Otaku",
+  "type": "work",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Mikoshi",
+  "title": "Mikoshi",
+  "text": "mikoshi",
+  "ja": "神輿",
+  "pl": "Mikoshi",
+  "type": "place",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Onsen",
+  "title": "Onsen",
+  "text": "Hot Springs Act",
+  "ja": "温泉",
+  "pl": "Onsen",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Empress_K%C5%8Dmy%C5%8D",
+  "title": "Empress Kōmyō",
+  "text": "Empress Kōmyō",
+  "ja": "光明皇后",
+  "pl": null,
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Matsudaira_Sadanobu",
+  "title": "Matsudaira Sadanobu",
+  "text": "Matsudaira Sadanobu",
+  "ja": "松平定信",
+  "pl": "Sadanobu Matsudaira",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Mizuno_Tadakuni",
+  "title": "Mizuno Tadakuni",
+  "text": "Mizuno Tadakuni",
+  "ja": "水野忠邦",
+  "pl": "Tadakuni Mizuno",
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Sent%C5%8D",
+  "title": "Sentō",
+  "text": "sentō",
+  "ja": "銭湯",
+  "pl": "Sentō",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Ryokan",
+  "title": "Ryokan",
+  "text": "ryokan",
+  "ja": "旅館",
+  "pl": "Ryokan",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Ichiz%C5%8D_Kobayashi",
+  "title": "Ichizō Kobayashi",
+  "text": "Kobayashi Ichizō",
+  "ja": "小林一三",
+  "pl": null,
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Noritsugu_Hayakawa",
+  "title": "Noritsugu Hayakawa",
+  "text": "Hayakawa Noritsugu",
+  "ja": "早川徳次 (東京地下鉄道)",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Japanese_National_Railways",
+  "title": "Japanese National Railways",
+  "text": "Kokutetsu",
+  "ja": "日本国有鉄道",
+  "pl": null,
+  "type": "person",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Japan_Railways_Group",
+  "title": "Japan Railways Group",
+  "text": "JR",
+  "ja": "JR",
+  "pl": "Japan Railways",
+  "type": "organisation",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Shinkansen",
+  "title": "Shinkansen",
+  "text": "shinkansen",
+  "ja": "新幹線",
+  "pl": "Shinkansen",
+  "type": "topic",
+  "missing": false
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Ekiben",
+  "title": "Ekiben",
+  "text": "ekiben",
+  "ja": "駅弁",
+  "pl": null,
+  "type": "topic",
+  "missing": false
+ }
+]
