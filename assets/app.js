@@ -9,6 +9,7 @@
     { id: 'cuisine', title: 'Cuisine handbook' },
     { id: 'folklore', title: 'Folklore handbook' },
     { id: 'popculture', title: 'Pop culture handbook' },
+    { id: 'bathing', title: 'Bathing handbook' },
     { id: 'signs', title: 'Signs in the wild' }
   ];
   var LESSONS = [
@@ -104,6 +105,21 @@
     { id: 'popculture-14', file: 'popculture/14-language.md', group: 'popculture', title: 'Language for fans' },
     { id: 'popculture-glossary', file: 'popculture/15-glossary.md', group: 'popculture', title: 'Glossary', label: 'A–Z', kind: 'Glossary' },
     { id: 'popculture-sources', file: 'popculture/16-sources.md', group: 'popculture', title: 'Sources and image credits', label: '§', kind: 'Sources' },
+    { id: 'bathing', file: 'bathing/00-start.md', group: 'bathing', title: 'Start here', label: '★' },
+    { id: 'bathing-1', file: 'bathing/01-definition.md', group: 'bathing', title: 'What counts as an onsen' },
+    { id: 'bathing-2', file: 'bathing/02-heat.md', group: 'bathing', title: 'Where the heat comes from' },
+    { id: 'bathing-3', file: 'bathing/03-label.md', group: 'bathing', title: 'Reading the label' },
+    { id: 'bathing-4', file: 'bathing/04-temples.md', group: 'bathing', title: 'Temple baths' },
+    { id: 'bathing-5', file: 'bathing/05-edo.md', group: 'bathing', title: 'The bathhouses of Edo' },
+    { id: 'bathing-6', file: 'bathing/06-sento.md', group: 'bathing', title: 'The sentō' },
+    { id: 'bathing-7', file: 'bathing/07-towns.md', group: 'bathing', title: 'Onsen towns and tōji' },
+    { id: 'bathing-8', file: 'bathing/08-ryokan.md', group: 'bathing', title: 'Staying at a ryokan' },
+    { id: 'bathing-9', file: 'bathing/09-etiquette.md', group: 'bathing', title: 'Bath etiquette' },
+    { id: 'bathing-10', file: 'bathing/10-tattoos.md', group: 'bathing', title: 'Tattoos' },
+    { id: 'bathing-11', file: 'bathing/11-health.md', group: 'bathing', title: 'Bathing safely' },
+    { id: 'bathing-12', file: 'bathing/12-language.md', group: 'bathing', title: 'Bath Japanese' },
+    { id: 'bathing-glossary', file: 'bathing/13-glossary.md', group: 'bathing', title: 'Glossary', label: 'A–Z', kind: 'Glossary' },
+    { id: 'bathing-sources', file: 'bathing/14-sources.md', group: 'bathing', title: 'Sources and image credits', label: '§', kind: 'Sources' },
     { id: 'signs', file: 'signs/00-gallery.md', group: 'signs', title: 'Photo gallery', label: '▦', kind: 'Gallery' }
   ];
   // Number lessons within their group unless they have their own label.
@@ -545,7 +561,7 @@
     var i = LESSONS.findIndex(function (l) { return l.id === id; });
     var next = LESSONS[i + 1] && LESSONS[i + 1].group === LESSONS[i].group ? LESSONS[i + 1] : null;
     var btn = el('button', { 'class': 'btn' + (done[id] ? ' done' : ''), type: 'button' });
-    var reading = id.indexOf('cuisine') === 0 || id.indexOf('folklore') === 0 || id.indexOf('popculture') === 0;
+    var reading = id.indexOf('cuisine') === 0 || id.indexOf('folklore') === 0 || id.indexOf('popculture') === 0 || id.indexOf('bathing') === 0;
     function label() {
       btn.textContent = done[id] ? (reading ? '✓ Read' : '✓ Completed') : (reading ? 'Mark chapter as read' : 'Mark lesson as completed');
       btn.className = 'btn' + (done[id] ? ' done' : '');
@@ -564,7 +580,7 @@
     if (l.kind) return l.kind;
     if (l.label === '★') return l.group === 'course' ? 'Overview' : 'Start here';
     if (l.label === '↻') return 'Daily review';
-    return (l.group === 'course' ? 'Lesson ' : (l.group === 'cuisine' || l.group === 'folklore' || l.group === 'popculture') ? 'Chapter ' : 'Unit ') + l.label;
+    return (l.group === 'course' ? 'Lesson ' : (l.group === 'cuisine' || l.group === 'folklore' || l.group === 'popculture' || l.group === 'bathing') ? 'Chapter ' : 'Unit ') + l.label;
   }
   function neighbours(id) {
     var i = LESSONS.findIndex(function (l) { return l.id === id; });
@@ -850,6 +866,17 @@
       cta: !g.done ? 'Open the handbook' : g.next ? 'Continue: chapter ' + g.next.label : 'Browse the glossary'
     });
   }
+  function bathingTile() {
+    var g = groupProgress('bathing');
+    return tile({
+      id: 'bathing', glyph: '湯', kicker: 'Bathing handbook', title: 'Hot springs and bathhouses',
+      desc: 'What the law counts as an onsen and where the heat comes from, how to read the spring label, temple baths, the bathhouses of Edo and the neighbourhood sentō, onsen towns, ryokan stays, etiquette, tattoos, official health advice and the Japanese at the door. Cited from laws, official data and scholarship.',
+      examples: '温泉 · 銭湯 · 男湯 · 女湯',
+      href: !g.done ? '#/bathing' : g.next ? '#/' + g.next.id : '#/bathing-glossary',
+      value: g.done, total: g.total, progressLabel: g.done + ' of ' + g.total + ' chapters read',
+      cta: !g.done ? 'Open the handbook' : g.next ? 'Continue: chapter ' + g.next.label : 'Browse the glossary'
+    });
+  }
   function signsTile() {
     return tile({
       id: 'signs', glyph: '看', kicker: 'Photo gallery', title: 'Signs in the wild',
@@ -876,7 +903,7 @@
       el('header', { 'class': 'home-hero' }, [
         el('p', { 'class': 'home-hero-kicker' }, [el('span', { lang: 'ja', text: '日本へようこそ' }), ' · welcome to Japan']),
         el('h1', { text: 'Japanese for your trip' }),
-        el('p', { 'class': 'home-lead', text: 'Eight ways in. Get the practical know-how for travelling in Japan, learn to read the scripts on every sign, menu and station board, then go deeper into how Japanese food is made, into the kami, ghosts and yōkai of Japanese belief, and into manga, anime, film and the rest of Japanese pop culture. Then try your reading on photos of real signs.' })
+        el('p', { 'class': 'home-lead', text: 'Nine ways in. Get the practical know-how for travelling in Japan, learn to read the scripts on every sign, menu and station board, then go deeper into how Japanese food is made, into the kami, ghosts and yōkai of Japanese belief, into manga, anime, film and the rest of Japanese pop culture, and into hot springs and bathhouses. Then try your reading on photos of real signs.' })
       ]),
       el('div', { 'class': 'home-tiles' }, [
         tile({
@@ -892,6 +919,7 @@
         cuisineTile(),
         folkloreTile(),
         popcultureTile(),
+        bathingTile(),
         signsTile()
       ]),
       el('p', { 'class': 'home-foot' }, [
