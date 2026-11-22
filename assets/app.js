@@ -10,6 +10,7 @@
     { id: 'folklore', title: 'Folklore handbook' },
     { id: 'popculture', title: 'Pop culture handbook' },
     { id: 'bathing', title: 'Bathing handbook' },
+    { id: 'railways', title: 'Railways handbook' },
     { id: 'signs', title: 'Signs in the wild' }
   ];
   var LESSONS = [
@@ -120,6 +121,22 @@
     { id: 'bathing-12', file: 'bathing/12-language.md', group: 'bathing', title: 'Bath Japanese' },
     { id: 'bathing-glossary', file: 'bathing/13-glossary.md', group: 'bathing', title: 'Glossary', label: 'A–Z', kind: 'Glossary' },
     { id: 'bathing-sources', file: 'bathing/14-sources.md', group: 'bathing', title: 'Sources and image credits', label: '§', kind: 'Sources' },
+    { id: 'railways', file: 'railways/00-start.md', group: 'railways', title: 'Start here', label: '★' },
+    { id: 'railways-1', file: 'railways/01-first-line.md', group: 'railways', title: 'The first railway' },
+    { id: 'railways-2', file: 'railways/02-national.md', group: 'railways', title: 'A national railway' },
+    { id: 'railways-3', file: 'railways/03-shinkansen.md', group: 'railways', title: 'The Shinkansen' },
+    { id: 'railways-4', file: 'railways/04-jnr-reform.md', group: 'railways', title: 'The break-up of JNR' },
+    { id: 'railways-5', file: 'railways/05-private.md', group: 'railways', title: 'Railways that built cities' },
+    { id: 'railways-6', file: 'railways/06-subways.md', group: 'railways', title: 'The subways of Tokyo and Osaka' },
+    { id: 'railways-7', file: 'railways/07-safety.md', group: 'railways', title: 'Safety and punctuality' },
+    { id: 'railways-8', file: 'railways/08-network.md', group: 'railways', title: 'The Shinkansen network today' },
+    { id: 'railways-9', file: 'railways/09-tickets.md', group: 'railways', title: 'Fares and tickets' },
+    { id: 'railways-10', file: 'railways/10-local-lines.md', group: 'railways', title: 'Local lines in trouble' },
+    { id: 'railways-11', file: 'railways/11-freight-night.md', group: 'railways', title: 'Freight and night trains' },
+    { id: 'railways-12', file: 'railways/12-ekiben.md', group: 'railways', title: 'Ekiben and station life' },
+    { id: 'railways-13', file: 'railways/13-language.md', group: 'railways', title: 'Railway Japanese' },
+    { id: 'railways-glossary', file: 'railways/14-glossary.md', group: 'railways', title: 'Glossary', label: 'A–Z', kind: 'Glossary' },
+    { id: 'railways-sources', file: 'railways/15-sources.md', group: 'railways', title: 'Sources and image credits', label: '§', kind: 'Sources' },
     { id: 'signs', file: 'signs/00-gallery.md', group: 'signs', title: 'Photo gallery', label: '▦', kind: 'Gallery' }
   ];
   // Number lessons within their group unless they have their own label.
@@ -561,7 +578,7 @@
     var i = LESSONS.findIndex(function (l) { return l.id === id; });
     var next = LESSONS[i + 1] && LESSONS[i + 1].group === LESSONS[i].group ? LESSONS[i + 1] : null;
     var btn = el('button', { 'class': 'btn' + (done[id] ? ' done' : ''), type: 'button' });
-    var reading = id.indexOf('cuisine') === 0 || id.indexOf('folklore') === 0 || id.indexOf('popculture') === 0 || id.indexOf('bathing') === 0;
+    var reading = id.indexOf('cuisine') === 0 || id.indexOf('folklore') === 0 || id.indexOf('popculture') === 0 || id.indexOf('bathing') === 0 || id.indexOf('railways') === 0;
     function label() {
       btn.textContent = done[id] ? (reading ? '✓ Read' : '✓ Completed') : (reading ? 'Mark chapter as read' : 'Mark lesson as completed');
       btn.className = 'btn' + (done[id] ? ' done' : '');
@@ -580,7 +597,7 @@
     if (l.kind) return l.kind;
     if (l.label === '★') return l.group === 'course' ? 'Overview' : 'Start here';
     if (l.label === '↻') return 'Daily review';
-    return (l.group === 'course' ? 'Lesson ' : (l.group === 'cuisine' || l.group === 'folklore' || l.group === 'popculture' || l.group === 'bathing') ? 'Chapter ' : 'Unit ') + l.label;
+    return (l.group === 'course' ? 'Lesson ' : (l.group === 'cuisine' || l.group === 'folklore' || l.group === 'popculture' || l.group === 'bathing' || l.group === 'railways') ? 'Chapter ' : 'Unit ') + l.label;
   }
   function neighbours(id) {
     var i = LESSONS.findIndex(function (l) { return l.id === id; });
@@ -877,6 +894,17 @@
       cta: !g.done ? 'Open the handbook' : g.next ? 'Continue: chapter ' + g.next.label : 'Browse the glossary'
     });
   }
+  function railwaysTile() {
+    var g = groupProgress('railways');
+    return tile({
+      id: 'railways', glyph: '鉄', kicker: 'Railways handbook', title: 'Trains and stations',
+      desc: 'From the first line of 1872 to the Shinkansen, the break-up of JNR, the private railways that built suburbs and the subways of Tokyo and Osaka; how safety, fares, IC cards and the Japan Rail Pass work; local lines, freight, night trains, ekiben and the Japanese of the station. Cited from official and company sources, with dated prices.',
+      examples: '新幹線 · 駅弁 · 特急 · 改札',
+      href: !g.done ? '#/railways' : g.next ? '#/' + g.next.id : '#/railways-glossary',
+      value: g.done, total: g.total, progressLabel: g.done + ' of ' + g.total + ' chapters read',
+      cta: !g.done ? 'Open the handbook' : g.next ? 'Continue: chapter ' + g.next.label : 'Browse the glossary'
+    });
+  }
   function signsTile() {
     return tile({
       id: 'signs', glyph: '看', kicker: 'Photo gallery', title: 'Signs in the wild',
@@ -903,7 +931,7 @@
       el('header', { 'class': 'home-hero' }, [
         el('p', { 'class': 'home-hero-kicker' }, [el('span', { lang: 'ja', text: '日本へようこそ' }), ' · welcome to Japan']),
         el('h1', { text: 'Japanese for your trip' }),
-        el('p', { 'class': 'home-lead', text: 'Nine ways in. Get the practical know-how for travelling in Japan, learn to read the scripts on every sign, menu and station board, then go deeper into how Japanese food is made, into the kami, ghosts and yōkai of Japanese belief, into manga, anime, film and the rest of Japanese pop culture, and into hot springs and bathhouses. Then try your reading on photos of real signs.' })
+        el('p', { 'class': 'home-lead', text: 'Ten ways in. Get the practical know-how for travelling in Japan, learn to read the scripts on every sign, menu and station board, then go deeper into how Japanese food is made, into the kami, ghosts and yōkai of Japanese belief, into manga, anime, film and the rest of Japanese pop culture, into hot springs and bathhouses, and into Japan’s railways. Then try your reading on photos of real signs.' })
       ]),
       el('div', { 'class': 'home-tiles' }, [
         tile({
@@ -920,6 +948,7 @@
         folkloreTile(),
         popcultureTile(),
         bathingTile(),
+        railwaysTile(),
         signsTile()
       ]),
       el('p', { 'class': 'home-foot' }, [
