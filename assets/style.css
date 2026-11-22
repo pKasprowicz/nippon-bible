@@ -18,6 +18,7 @@
   --tile-folklore: #5b4a8a;
   --tile-popculture: #a3385f;
   --tile-bathing: #1f6f8b;
+  --tile-railways: #2d5f9a;
   --tile-signs: #2f7d74;
   --shadow: 0 1px 2px rgba(40, 30, 20, .06), 0 6px 24px rgba(40, 30, 20, .06);
   --radius: 14px;
@@ -32,14 +33,14 @@
     --bg: #15130f; --surface: #1e1b17; --surface-2: #27231e; --ink: #efe8dd; --ink-soft: #b2a898;
     --line: #36302a; --accent: #e5594c; --accent-ink: #1a0c0a; --accent-soft: #3a201c; --good: #6cc48f;
     --code-bg: #24201b; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 24px rgba(0,0,0,.25); color-scheme: dark;
-    --tile-guide: #e5594c; --tile-hira: #6f9fe0; --tile-kata: #6cc48f; --tile-kanji: #c39be0; --tile-cuisine: #e3a35a; --tile-folklore: #a99ae0; --tile-popculture: #e88aab; --tile-bathing: #6fb8d6; --tile-signs: #6cc7bb;
+    --tile-guide: #e5594c; --tile-hira: #6f9fe0; --tile-kata: #6cc48f; --tile-kanji: #c39be0; --tile-cuisine: #e3a35a; --tile-folklore: #a99ae0; --tile-popculture: #e88aab; --tile-bathing: #6fb8d6; --tile-railways: #8fb0e0; --tile-signs: #6cc7bb;
   }
 }
 :root[data-theme="dark"] {
   --bg: #15130f; --surface: #1e1b17; --surface-2: #27231e; --ink: #efe8dd; --ink-soft: #b2a898;
   --line: #36302a; --accent: #e5594c; --accent-ink: #1a0c0a; --accent-soft: #3a201c; --good: #6cc48f;
   --code-bg: #24201b; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 24px rgba(0,0,0,.25); color-scheme: dark;
-    --tile-guide: #e5594c; --tile-hira: #6f9fe0; --tile-kata: #6cc48f; --tile-kanji: #c39be0; --tile-cuisine: #e3a35a; --tile-folklore: #a99ae0; --tile-popculture: #e88aab; --tile-bathing: #6fb8d6; --tile-signs: #6cc7bb;
+    --tile-guide: #e5594c; --tile-hira: #6f9fe0; --tile-kata: #6cc48f; --tile-kanji: #c39be0; --tile-cuisine: #e3a35a; --tile-folklore: #a99ae0; --tile-popculture: #e88aab; --tile-bathing: #6fb8d6; --tile-railways: #8fb0e0; --tile-signs: #6cc7bb;
 }
 
 * { box-sizing: border-box; }
@@ -212,14 +213,15 @@ details[open] summary { border-bottom: 1px solid var(--line); margin-bottom: 8px
 .home-tile.tile-folklore { --tile: var(--tile-folklore); grid-column: 1 / -1; min-height: 0; }
 .home-tile.tile-popculture { --tile: var(--tile-popculture); grid-column: 1 / -1; min-height: 0; }
 .home-tile.tile-bathing { --tile: var(--tile-bathing); grid-column: 1 / -1; min-height: 0; }
+.home-tile.tile-railways { --tile: var(--tile-railways); grid-column: 1 / -1; min-height: 0; }
 .home-tile.tile-signs { --tile: var(--tile-signs); grid-column: 1 / -1; min-height: 0; }
 @media (min-width: 721px) {
-  .home-tile.tile-cuisine, .home-tile.tile-folklore, .home-tile.tile-popculture, .home-tile.tile-bathing, .home-tile.tile-signs { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 26px; align-content: start; }
-  .tile-cuisine .home-glyph, .tile-folklore .home-glyph, .tile-popculture .home-glyph, .tile-bathing .home-glyph, .tile-signs .home-glyph { grid-row: 1 / span 7; margin-bottom: 0; }
-  .tile-cuisine > :not(.home-glyph), .tile-folklore > :not(.home-glyph), .tile-popculture > :not(.home-glyph), .tile-bathing > :not(.home-glyph), .tile-signs > :not(.home-glyph) { grid-column: 2; }
-  .tile-cuisine .home-desc, .tile-folklore .home-desc, .tile-popculture .home-desc, .tile-bathing .home-desc, .tile-signs .home-desc { max-width: 72ch; }
-  .tile-cuisine .home-cta, .tile-folklore .home-cta, .tile-popculture .home-cta, .tile-bathing .home-cta, .tile-signs .home-cta { justify-self: start; }
-  .tile-cuisine .home-progress, .tile-folklore .home-progress, .tile-popculture .home-progress, .tile-bathing .home-progress, .tile-signs .home-progress { max-width: 520px; }
+  .home-tile.tile-cuisine, .home-tile.tile-folklore, .home-tile.tile-popculture, .home-tile.tile-bathing, .home-tile.tile-railways, .home-tile.tile-signs { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 26px; align-content: start; }
+  .tile-cuisine .home-glyph, .tile-folklore .home-glyph, .tile-popculture .home-glyph, .tile-bathing .home-glyph, .tile-railways .home-glyph, .tile-signs .home-glyph { grid-row: 1 / span 7; margin-bottom: 0; }
+  .tile-cuisine > :not(.home-glyph), .tile-folklore > :not(.home-glyph), .tile-popculture > :not(.home-glyph), .tile-bathing > :not(.home-glyph), .tile-railways > :not(.home-glyph), .tile-signs > :not(.home-glyph) { grid-column: 2; }
+  .tile-cuisine .home-desc, .tile-folklore .home-desc, .tile-popculture .home-desc, .tile-bathing .home-desc, .tile-railways .home-desc, .tile-signs .home-desc { max-width: 72ch; }
+  .tile-cuisine .home-cta, .tile-folklore .home-cta, .tile-popculture .home-cta, .tile-bathing .home-cta, .tile-railways .home-cta, .tile-signs .home-cta { justify-self: start; }
+  .tile-cuisine .home-progress, .tile-folklore .home-progress, .tile-popculture .home-progress, .tile-bathing .home-progress, .tile-railways .home-progress, .tile-signs .home-progress { max-width: 520px; }
 }
 .home-tile::before {
   content: ""; position: absolute; inset: 0 0 auto 0; height: 6px; background: var(--tile);
