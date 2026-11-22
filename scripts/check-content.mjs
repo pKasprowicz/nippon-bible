@@ -178,6 +178,17 @@ for (const [page, slug, heading] of searchSections) if (slug && !heading.trim())
   for (const f of readdirSync(dir).filter((x) => x.endsWith('.mp3'))) if (!files.has(f)) fail(`${dir}${f} is not listed in index.json`);
 }
 
+// 5d. Pop-ups: every Japanese word on a reading page (outside exercises) has a dictionary entry,
+//     and the fetched substance and link data are present.
+{
+  const { execFileSync } = await import('node:child_process');
+  const tmp = (process.env.TMPDIR || '/tmp') + '/nb-terms-report.json';
+  execFileSync(process.execPath, ['scripts/build-terms.mjs', '--report', tmp]);
+  const miss = JSON.parse(readFileSync(tmp, 'utf8'));
+  for (const [text, page] of miss.ja) fail(`terms: no pop-up entry for 「${text}」 (${page}); add it to terms/words.tsv`);
+  for (const f of ['terms/substances.json', 'terms/entities.json']) if (!existsSync(f)) fail(`${f} is missing (run scripts/terms/fetch-*.py)`);
+}
+
 // 6. VERSION is semver and has a CHANGELOG entry.
 const version = readFileSync('VERSION', 'utf8').trim();
 if (!/^\d+\.\d+\.\d+$/.test(version)) fail(`VERSION '${version}' is not x.y.z`);

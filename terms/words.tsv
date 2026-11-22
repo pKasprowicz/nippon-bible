@@ -1,0 +1,831 @@
+# Japanese	kana reading	romaji	meaning	optional link — hand-written pop-up entries (see scripts/build-terms.mjs)
+# w1.py
+雨	あめ	ame	rain	
+犬	いぬ	inu	dog	
+海	うみ	umi	sea	
+です		desu	is, am, are (polite ending; the final u is often silent)	
+あります		arimasu	there is; I have (things)	
+すきやき		sukiyaki	sukiyaki, beef and vegetables simmered at the table	
+おじさん		ojisan	uncle; middle-aged man	
+おじいさん		ojīsan	grandfather; old man	
+しゅじん		shujin	husband (one's own)	
+しゅうじん		shūjin	prisoner	
+ふじ		Fuji	Fuji (Mount Fuji)	
+とうふ		tōfu	tofu, bean curd	
+つなみ		tsunami	tsunami, tidal wave	
+つくえ		tsukue	desk	
+じんじゃ		jinja	Shinto shrine	
+やま		yama	mountain	
+おっと		otto	husband	
+いっぽん		ippon	one (long, thin object)	
+ざっし		zasshi	magazine	
+しんぶん		shinbun	newspaper	
+カラオケ		karaoke	karaoke ("empty orchestra")	
+酒	さけ	sake	sake; alcohol in general	
+		sensei	teacher; doctor; master (also a title)	
+		karaoke	karaoke ("empty orchestra")	
+東京駅へ行きます	とうきょうえきへいきます	Tōkyō-eki e ikimasu	I'm going to Tokyo Station.	
+東京駅	とうきょうえき	Tōkyō-eki	Tokyo Station	
+行きます	いきます	ikimasu	go (polite)	
+漢字	かんじ	kanji	kanji, Chinese characters used in Japanese	
+ひらがな		hiragana	hiragana, the native rounded script	
+カタカナ		katakana	katakana, the angular script for foreign words	
+ー		chōon	long-vowel mark: makes the vowel before it long	
+゛		dakuten	voicing mark: か ka → が ga	
+゜		handakuten	p-mark: は ha → ぱ pa	
+ゃ		ya (small)	small ya: きゃ kya	
+ゅ		yu (small)	small yu: きゅ kyu	
+ょ		yo (small)	small yo: きょ kyo	
+ョ		yo (small)	small katakana yo: キョ kyo	
+っ		small tsu	small tsu: doubles the next consonant (きって kitte)	
+ッ		small tsu	small katakana tsu: doubles the next consonant (ベッド beddo)	
+ヴ		vu	vu, for the foreign v sound	
+地	ち	chi	ground, earth	
+鉄	てつ	tetsu	iron; railway	
+地下鉄	ちかてつ	chikatetsu	subway, underground railway	
+京	きょう	kyō	capital	
+氵	さんずい	sanzui	water radical (three drops)	
+林	はやし	hayashi	grove, small wood	
+森	もり	mori	forest	
+亻	にんべん	ninben	person radical	
+飠	しょくへん	shokuhen	food radical	
+飯	めし	meshi	meal; cooked rice	
+言	げん	gen	speech, word	
+訁	ごんべん	gonben	speech radical	
+語	ご	go	language	
+英語	えいご	eigo	English (language)	
+釒	かねへん	kanehen	metal radical	
+銀	ぎん	gin	silver	
+銀行	ぎんこう	ginkō	bank	
+艹	くさかんむり	kusakanmuri	grass (plant) radical	
+薬	くすり	kusuri	medicine	
+化粧室	けしょうしつ	keshōshitsu	toilet, restroom (polite)	
+喫煙所	きつえんじょ	kitsuenjo	smoking area	
+無料	むりょう	muryō	free of charge	
+有料	ゆうりょう	yūryō	paid, charged	
+小人	しょうにん	shōnin	child (on fare tables)	
+鶏	とり	tori	chicken	
+ご飯	ごはん	gohan	cooked rice; a meal	
+大盛	おおもり	ōmori	large portion	
+並	なみ	nami	regular portion	
+千二百八十円	せんにひゃくはちじゅうえん	sen nihyaku hachijū en	1,280 yen	
+万円	まんえん	man-en	ten thousand yen	
+祝	しゅく	shuku	public holiday (on opening-hours signs)	
+〜		kara	from …; on prices: "from"	
+円〜	えん〜	en kara	yen and up, from … yen	
+チャージ		chāji	top-up (adding money to an IC card)	
+番線	ばんせん	bansen	track number …	
+呼び出し	よびだし	yobidashi	call button (for staff)	
+神社	じんじゃ	jinja	Shinto shrine	
+寺	てら	tera	Buddhist temple	
+〜方面	ほうめん	hōmen	towards …, for … (direction)	
+各停	かくてい	kakutei	local train, stopping at every station	
+先発	せんぱつ	senpatsu	first (next) train to leave	
+次発	じはつ	jihatsu	the train after the next	
+精算機	せいさんき	seisanki	fare adjustment machine	
+有人改札	ゆうじんかいさつ	yūjin kaisatsu	staffed ticket gate	
+おしり		oshiri	bottom (toilet spray button)	
+ビデ		bide	bidet (front spray button)	
+流す	ながす	nagasu	flush	
+新宿行	しんじゅくゆき	Shinjuku-yuki	bound for Shinjuku	
+		ichi-man	ten thousand	
+		jū-man	a hundred thousand	
+一人	ひとり	hitori	one person	
+二人	ふたり	futari	two people	
+四人	よにん	yo-nin	four people	
+これ		kore	this (near me)	
+それ		sore	that (near you)	
+あれ		are	that (over there)	
+どれ		dore	which one?	
+あそこ		asoko	over there	
+この		kono	this …	
+その		sono	that …	
+あの		ano	that … over there	
+どの		dono	which …?	
+何時	なんじ	nan-ji	what time?	
+誰	だれ	dare	who?	
+名前	なまえ	namae	name	
+日本語	にほんご	nihongo	Japanese (language)	
+だめ		dame	no good; not allowed	
+お寺	おてら	o-tera	Buddhist temple	
+バス停	ばすてい	basu-tei	bus stop	
+地図	ちず	chizu	map	
+近い	ちかい	chikai	near	
+遠い	とおい	tōi	far	
+お茶	おちゃ	o-cha	tea (green tea)	
+お酒	おさけ	o-sake	sake; alcohol	
+野菜	やさい	yasai	vegetables	
+お会計	おかいけい	o-kaikei	the bill (in a restaurant)	
+お金	おかね	o-kane	money	
+袋	ふくろ	fukuro	bag	
+今	いま	ima	now	
+今日	きょう	kyō	today	
+明日	あした	ashita	tomorrow	
+半	はん	han	half; half past (the hour)	
+お〜		o-	polite prefix	
+ご〜		go-	polite prefix (on Chinese-origin words)	
+お水	おみず	o-mizu	water	
+どうも		dōmo	thanks (casual); hello	
+おはようございます		ohayō gozaimasu	good morning	
+こんばんは		konbanwa	good evening	
+おやすみなさい		oyasumi nasai	good night	
+よろしくお願いします	よろしくおねがいします	yoroshiku onegaishimasu	nice to meet you; please treat me kindly	
+ありがとうございました		arigatō gozaimashita	thank you (for what you did)	
+もう一度お願いします	もういちどおねがいします	mō ichido onegaishimasu	once more, please	
+書いてください	かいてください	kaite kudasai	please write it down	
+日本語が少しだけ	にほんごがすこしだけ	nihongo ga sukoshi dake	(I speak) only a little Japanese	
+いただきます		itadakimasu	said before eating ("I humbly receive")	
+ごちそうさまでした		gochisōsama deshita	said after eating ("it was a feast")	
+ありません		arimasen	there isn't; I don't have	
+人	じん	jin	person; -jin = person from (a country)	
+少々お待ちください	しょうしょうおまちください	shōshō omachi kudasai	please wait a moment	
+どうぞ		dōzo	please, go ahead; here you are	
+おしぼり		oshibori	hot or cold wet towel given in restaurants	
+信号	しんごう	shingō	traffic light	
+角	かど	kado	corner	
+歩いて	あるいて	aruite	on foot, walking	
+救急車	きゅうきゅうしゃ	kyūkyūsha	ambulance	
+具合が悪いです	ぐあいがわるいです	guai ga warui desu	I feel unwell	
+ここが痛いです	ここがいたいです	koko ga itai desu	it hurts here	
+財布	さいふ	saifu	wallet	
+スマホ		sumaho	smartphone	
+道に迷いました	みちにまよいました	michi ni mayoimashita	I am lost	
+迷惑をかけない	めいわくをかけない	meiwaku o kakenai	not to cause trouble to others	
+名刺	めいし	meishi	business card	
+検討します	けんとうします	kentō shimasu	I'll consider it (often a polite no)	
+玄関	げんかん	genkan	entrance hall where shoes come off	
+お土産	おみやげ	omiyage	souvenir gift brought back for others	
+お邪魔します	おじゃまします	o-jama shimasu	excuse me for intruding (entering a home)	
+お邪魔しました	おじゃましました	o-jama shimashita	thank you for having me (leaving a home)	
+乾杯	かんぱい	kanpai	cheers!	
+お任せ	おまかせ	omakase	chef's choice ("I leave it to you")	
+割り勘	わりかん	warikan	splitting the bill equally	
+マナーモード		manā mōdo	silent mode (on a phone)	
+手水舎	てみずや	temizuya	purification fountain at a shrine	
+貸切風呂	かしきりぶろ	kashikiri-buro	private bath booked by time slot	
+お通し	おとおし	otōshi	small compulsory starter (cover charge) at an izakaya	
+客引き	きゃくひき	kyakuhiki	street tout	
+宅急便	たっきゅうびん	takkyūbin	door-to-door luggage delivery	
+熱中症	ねっちゅうしょう	necchūshō	heatstroke	
+ざる		zaru	bamboo tray; cold noodles served on one	
+かけ		kake	noodles in hot broth	
+親子丼	おやこどん	oyakodon	chicken and egg on rice ("parent and child bowl")	
+三千円	さんぜんえん	san-zen en	3,000 yen	
+一万円	いちまんえん	ichi-man en	10,000 yen	
+あいうえお		a i u e o	the five vowels, in dictionary order	
+えきへ		eki e	to the station (へ is read e as a particle)	
+タクシーのりば		takushī noriba	taxi stand	
+おおさき		Ōsaki	Ōsaki (station)	
+とう		tō	tō (long ō)	
+かっこ		kakko	brackets; cool	
+くうこう		kūkō	airport	
+えい		ei	ei, read as a long ē	
+ええ		ē	yes (casual); long ē	
+せんせい		sensei	teacher; doctor	
+おう		ō	long ō, written おう	
+おお		ō	long ō, written おお (as in おおきい)	
+しんおおくぼ		Shin-Ōkubo	Shin-Ōkubo (station)	
+かんだ		Kanda	Kanda (station)	
+ゆうらくちょう		Yūrakuchō	Yūrakuchō (station)	
+まれ		mare	end of 止まれ tomare, "stop"	
+テス		tesu	part of テスト tesuto, "test"	
+ヒータ		hīta	part of ヒーター hītā, "heater"	
+ホテ		hote	part of ホテル hoteru, "hotel"	
+ストラン		sutoran	part of レストラン resutoran, "restaurant"	
+ホットコーヒー		hotto kōhī	hot coffee	
+番ホーム	ばんほーむ	-ban hōmu	platform number …	
+ャ		ya (small)	small katakana ya: キャ kya	
+ュ		yu (small)	small katakana yu: キュ kyu	
+ァ		a (small)	small katakana a: ファ fa	
+ィ		i (small)	small katakana i: ティ ti	
+ゥ		u (small)	small katakana u: トゥ tu	
+ェ		e (small)	small katakana e: シェ she	
+ォ		o (small)	small katakana o: フォ fo	
+ディズニー		dizunī	Disney	
+ファミリー		famirī	family	
+ウェブ		webu	web	
+シェフ		shefu	chef	
+チェック		chekku	check	
+三万円	さんまんえん	san-man en	30,000 yen	
+三百	さんびゃく	sanbyaku	300	
+六百	ろっぴゃく	roppyaku	600	
+八百	はっぴゃく	happyaku	800	
+三千	さんぜん	sanzen	3,000	
+八千	はっせん	hassen	8,000	
+百円ショップ	ひゃくえんしょっぷ	hyaku-en shoppu	100-yen shop	
+〜行き	ゆき	-yuki	bound for …	
+新宿行き	しんじゅくゆき	Shinjuku-yuki	bound for Shinjuku	
+食券機	しょっけんき	shokkenki	meal ticket machine	
+半額	はんがく	hangaku	half price	
+営業時間	えいぎょうじかん	eigyō jikan	opening hours	
+十時〜二十時	じゅうじからにじゅうじ	jū-ji kara ni-jū-ji	10:00 to 20:00	
+時間	じかん	jikan	time; hours	
+扌	てへん	tehen	hand radical	
+		dakuten	voicing mark ゛: か ka → が ga	
+		handakuten	p-mark ゜: は ha → ぱ pa	
+振り仮名	ふりがな	furigana	small kana printed beside kanji to show the reading	
+送り仮名	おくりがな	okurigana	kana written after a kanji for the word's ending	
+和製英語	わせいえいご	wasei-eigo	English made in Japan (words that look English but are Japanese coinages)	
+ケーキ		kēki	cake	
+テスト		tesuto	test	
+スキー		sukī	ski, skiing	
+ヒーター		hītā	heater	
+東口で	ひがしぐちで	higashiguchi de	at the east exit	
+入口	いりぐち	iriguchi	entrance	
+暖簾	のれん	noren	split curtain hung in a shop or bath entrance	
+# w2.py
+一汁三菜	いちじゅうさんさい	ichijū sansai	one soup, three dishes: the classic home-meal pattern	
+旬	しゅん	shun	the peak season of a food	
+一番出汁	いちばんだし	ichiban dashi	first stock, from fresh kelp and bonito flakes	
+二番出汁	にばんだし	niban dashi	second stock, from the used ingredients	
+醤油	しょうゆ	shōyu	soy sauce	
+濃口	こいくち	koikuchi	dark (standard) soy sauce	
+溜まり	たまり	tamari	tamari, soy sauce with little or no wheat	
+白	しろ	shiro	white; very pale soy sauce	
+白味噌	しろみそ	shiro miso	white miso: pale, sweet, briefly aged	
+赤味噌	あかみそ	aka miso	red miso: darker, saltier, aged longer	
+合わせ味噌	あわせみそ	awase miso	blended miso	
+豆味噌	まめみそ	mame miso	soybean-only miso	
+麦味噌	むぎみそ	mugi miso	barley miso	
+本みりん	ほんみりん	hon-mirin	true mirin (about 14% alcohol)	
+みりん風	みりんふう	mirin-fū	mirin-style seasoning (almost no alcohol)	
+塩麹	しおこうじ	shio-kōji	salted rice kōji, a seasoning	
+一味	いちみ	ichimi	ground red chilli	
+柚子	ゆず	yuzu	yuzu citrus	
+柚子胡椒	ゆずこしょう	yuzu koshō	yuzu and green chilli paste	
+梅干し	うめぼし	umeboshi	salted, pickled ume plum	
+ガリ		gari	pickled ginger served with sushi	
+紅生姜	べにしょうが	beni shōga	red pickled ginger	
+蒸らし	むらし	murashi	letting cooked rice steam with the lid on	
+酢飯	すめし	sumeshi	vinegared sushi rice	
+シャリ		shari	sushi rice (sushi-bar word)	
+寿司	すし	sushi	sushi	
+ネタ		neta	the topping of a piece of sushi	
+鉄火巻	てっかまき	tekkamaki	tuna roll	
+かっぱ巻	かっぱまき	kappamaki	cucumber roll	
+バッテラ		battera	Osaka-style pressed mackerel sushi	
+江戸前	えどまえ	Edomae	Tokyo-style ("in front of Edo") sushi	
+漬け	づけ	zuke	fish marinated in soy sauce	
+昆布締め	こぶじめ	kobujime	fish cured between sheets of kelp	
+締め	しめ	shime	curing (fish) with salt or vinegar; also the last dish	
+お任せ	おまかせ	omakase	chef's choice	
+赤身	あかみ	akami	lean red tuna	
+中トロ	ちゅうとろ	chūtoro	medium-fatty tuna	
+大トロ	おおとろ	ōtoro	fattiest tuna belly	
+ネギトロ		negitoro	minced fatty tuna with spring onion	
+鰤	ぶり	buri	yellowtail (adult)	
+はまち		hamachi	young yellowtail	
+寒鰤	かんぶり	kanburi	winter yellowtail, at its fattest	
+縁側	えんがわ	engawa	fin muscle of flatfish ("veranda")	
+蛸	たこ	tako	octopus	
+甘海老	あまえび	amaebi	sweet shrimp	
+車海老	くるまえび	kuruma ebi	Japanese tiger prawn	
+ツメ		tsume	sweet reduced sauce brushed on eel and conger sushi	
+回転寿司	かいてんずし	kaitenzushi	conveyor-belt sushi	
+丼	どんぶり	donburi	rice bowl with a topping	
+つゆだく		tsuyudaku	with extra sauce (on a rice bowl)	
+親子丼	おやこどん	oyakodon	chicken and egg on rice	
+うな重	うなじゅう	unajū	grilled eel on rice in a lacquered box	
+鰻丼	うなどん	unadon	grilled eel on rice in a bowl	
+鮭	さけ	sake	salmon	
+ツナマヨ		tsunamayo	tuna with mayonnaise	
+カツカレー		katsu karē	curry rice with a pork cutlet	
+オムライス		omuraisu	omelette over ketchup rice	
+洋食	ようしょく	yōshoku	Western-style dishes adapted in Japan	
+炒飯	チャーハン	chāhan	fried rice	
+お茶漬け	おちゃづけ	ochazuke	rice with tea or broth poured over	
+炊き込みご飯	たきこみごはん	takikomi gohan	rice cooked with seasonings and ingredients	
+釜飯	かまめし	kamameshi	rice cooked in a small iron pot	
+餅	もち	mochi	pounded glutinous-rice cake	
+お雑煮	おぞうに	ozōni	New Year soup with mochi	
+支那そば	しなそば	shina soba	old name for ramen	
+中華そば	ちゅうかそば	chūka soba	ramen ("Chinese noodles")	
+清湯	ちんたん	chintan	clear ramen broth	
+白湯	ぱいたん	paitan	cloudy, rich ramen broth	
+かん水	かんすい	kansui	alkaline water that gives ramen its springiness	
+香味油	こうみゆ	kōmiyu	aromatic oil added to ramen	
+もやし		moyashi	bean sprouts	
+コーン		kōn	sweetcorn	
+やわ		yawa	soft (noodle firmness)	
+スープ割り	すーぷわり	sūpu-wari	broth added to leftover dipping sauce	
+油そば	あぶらそば	abura soba	brothless ramen with oil and sauce	
+まぜそば		mazesoba	mixed brothless noodles	
+蕎麦	そば	soba	buckwheat noodles	
+二八	にはち	nihachi	soba of 80% buckwheat, 20% wheat	
+十割	じゅうわり	jūwari	100% buckwheat soba	
+ざるそば		zaru soba	cold soba on a bamboo tray, with nori	
+もりそば		mori soba	cold soba without nori	
+つゆ		tsuyu	noodle sauce or broth	
+蕎麦湯	そばゆ	sobayu	the water soba was cooked in, drunk with the sauce	
+かけそば		kake soba	soba in hot broth	
+年越しそば	としこしそば	toshikoshi soba	soba eaten on New Year's Eve	
+コシ		koshi	firm, springy bite of noodles	
+鍋焼きうどん	なべやきうどん	nabeyaki udon	udon cooked and served in a small pot	
+素麺	そうめん	sōmen	very thin wheat noodles	
+流しそうめん	ながしそうめん	nagashi sōmen	sōmen sent down a bamboo flume	
+焼きそば	やきそば	yakisoba	fried noodles	
+冷やし中華	ひやしちゅうか	hiyashi chūka	cold ramen noodles with toppings	
+煮	に	ni	simmered	
+煮込み	にこみ	nikomi	long-simmered stew	
+揚げ物	あげもの	agemono	deep-fried dishes	
+天ぷら	てんぷら	tenpura	tempura	
+天つゆ	てんつゆ	tentsuyu	tempura dipping sauce	
+かき揚げ	かきあげ	kakiage	mixed tempura fritter	
+パン粉	ぱんこ	panko	breadcrumbs	
+とんかつソース		tonkatsu sōsu	thick brown sauce for cutlets	
+豚汁	とんじる	tonjiru	pork and vegetable miso soup	
+チキンカツ		chikin katsu	chicken cutlet	
+唐揚げ	からあげ	karaage	Japanese fried chicken	
+片栗粉	かたくりこ	katakuriko	potato starch	
+串カツ	くしかつ	kushikatsu	battered and fried skewers	
+二度漬け禁止	にどづけきんし	nidozuke kinshi	no double-dipping	
+焼き物	やきもの	yakimono	grilled dishes; also pottery	
+焼き鳥	やきとり	yakitori	grilled chicken skewers	
+備長炭	びんちょうたん	binchōtan	hard white charcoal	
+もも		momo	thigh	
+ねぎま		negima	chicken and spring onion skewer	
+つくね		tsukune	chicken meatball	
+かわ		kawa	skin	
+ささみ		sasami	chicken breast tenderloin	
+せせり		seseri	chicken neck meat	
+砂肝	すなぎも	sunagimo	gizzard	
+ずり		zuri	gizzard (Kansai word)	
+レバー		rebā	liver	
+ハツ		hatsu	heart	
+ぼんじり		bonjiri	chicken tail	
+軟骨	なんこつ	nankotsu	cartilage	
+豚バラ	ぶたばら	buta bara	pork belly	
+椎茸	しいたけ	shiitake	shiitake mushroom	
+ししとう		shishitō	small green pepper	
+銀杏	ぎんなん	ginnan	ginkgo nuts	
+焼肉	やきにく	yakiniku	grill-your-own meat	
+和牛	わぎゅう	wagyū	Japanese beef breeds	
+神戸ビーフ	こうべびーふ	Kōbe bīfu	Kobe beef	
+鰻の蒲焼	うなぎのかばやき	unagi no kabayaki	grilled eel glazed with sauce	
+ひつまぶし		hitsumabushi	Nagoya-style eel on rice, eaten in three ways	
+土用の丑の日	どようのうしのひ	doyō no ushi no hi	midsummer day of the ox, when eel is eaten	
+照り焼き	てりやき	teriyaki	grilled with a sweet soy glaze	
+鰤の照り焼き	ぶりのてりやき	buri no teriyaki	teriyaki yellowtail	
+塩焼き	しおやき	shioyaki	salt-grilled	
+鰹のたたき	かつおのたたき	katsuo no tataki	seared skipjack tuna	
+鉄板焼き	てっぱんやき	teppanyaki	cooked on an iron griddle	
+お好み焼き	おこのみやき	okonomiyaki	savoury pancake with cabbage	
+お好みソース	おこのみそーす	okonomi sōsu	thick sweet sauce for okonomiyaki	
+もんじゃ焼き	もんじゃやき	monjayaki	runny Tokyo-style griddle dish	
+はがし		hagashi	small spatula for eating monjayaki	
+たこ焼き	たこやき	takoyaki	octopus balls	
+明石焼き	あかしやき	Akashiyaki	soft egg-rich octopus dumplings dipped in broth	
+餃子	ぎょうざ	gyōza	dumplings	
+焼き餃子	やきぎょうざ	yaki gyōza	pan-fried dumplings	
+羽根つき	はねつき	hanetsuki	with a crisp "wing" of batter	
+ラー油	らーゆ	rāyu	chilli oil	
+水餃子	すいぎょうざ	sui gyōza	boiled dumplings	
+鍋	なべ	nabe	hot pot	
+煮物	にもの	nimono	simmered dishes	
+雑炊	ぞうすい	zōsui	rice porridge made in the leftover hot-pot broth	
+すき焼き	すきやき	sukiyaki	beef simmered in sweet soy, dipped in raw egg	
+春菊	しゅんぎく	shungiku	edible chrysanthemum leaves	
+割下	わりした	warishita	sukiyaki cooking sauce	
+しゃぶしゃぶ		shabu-shabu	thin meat swished in hot broth	
+灰汁	あく	aku	scum (to skim off)	
+静岡おでん	しずおかおでん	Shizuoka oden	Shizuoka-style oden in dark broth	
+ちゃんこ鍋	ちゃんこなべ	chanko nabe	sumo wrestlers' hot pot	
+肉じゃが	にくじゃが	nikujaga	meat and potato stew	
+お吸い物	おすいもの	osuimono	clear soup	
+茶碗蒸し	ちゃわんむし	chawanmushi	savoury steamed egg custard	
+卵焼き	たまごやき	tamagoyaki	rolled omelette	
+だし巻き卵	だしまきたまご	dashimaki tamago	rolled omelette with dashi	
+納豆	なっとう	nattō	fermented soybeans	
+豆腐	とうふ	tōfu	tofu	
+冷奴	ひややっこ	hiyayakko	chilled tofu	
+揚げ出し豆腐	あげだしどうふ	agedashi dōfu	fried tofu in broth	
+油揚げ	あぶらあげ	aburaage	thin deep-fried tofu	
+厚揚げ	あつあげ	atsuage	thick deep-fried tofu	
+湯葉	ゆば	yuba	tofu skin	
+湯豆腐	ゆどうふ	yudōfu	tofu simmered in kelp broth	
+枝豆	えだまめ	edamame	green soybeans in the pod	
+てっさ		tessa	thin-sliced raw pufferfish (Osaka)	
+てっちり		tetchiri	pufferfish hot pot (Osaka)	
+ずわい蟹	ずわいがに	zuwaigani	snow crab	
+松葉蟹	まつばがに	matsubagani	snow crab from San'in	
+越前蟹	えちぜんがに	Echizengani	snow crab from Fukui	
+カキフライ		kaki furai	fried oysters	
+生食用	なましょくよう	namashokuyō	for eating raw	
+生姜焼き	しょうがやき	shōgayaki	pork fried with ginger	
+幕の内弁当	まくのうちべんとう	makunouchi bentō	boxed meal of rice and assorted side dishes	
+居酒屋	いざかや	izakaya	Japanese pub	
+お通し	おとおし	otōshi	small compulsory starter (cover charge)	
+飲み放題	のみほうだい	nomihōdai	all you can drink	
+食べ放題	たべほうだい	tabehōdai	all you can eat	
+懐石	かいせき	kaiseki	formal multi-course meal (originally for the tea ceremony)	
+会席	かいせき	kaiseki	banquet-style multi-course meal	
+先付	さきづけ	sakizuke	first appetiser of a kaiseki meal	
+八寸	はっすん	hassun	seasonal platter course	
+向付	むこうづけ	mukōzuke	sashimi course	
+炊き合わせ	たきあわせ	takiawase	simmered vegetables served together	
+焼物	やきもの	yakimono	grilled course	
+屋台	やたい	yatai	food stall	
+和菓子	わがし	wagashi	Japanese confectionery	
+あんこ		anko	sweet bean paste	
+小豆	あずき	azuki	adzuki beans	
+粒餡	つぶあん	tsubu-an	chunky bean paste	
+こし餡	こしあん	koshi-an	smooth bean paste	
+苺大福	いちごだいふく	ichigo daifuku	mochi filled with bean paste and strawberry	
+みたらし		mitarashi	dumplings in sweet soy glaze	
+花見団子	はなみだんご	hanami dango	three-colour dumplings for cherry-blossom viewing	
+どら焼き	どらやき	dorayaki	bean paste between two pancakes	
+たい焼き	たいやき	taiyaki	fish-shaped cake with filling	
+きな粉	きなこ	kinako	roasted soybean flour	
+羊羹	ようかん	yōkan	firm bean-paste jelly	
+宇治金時	うじきんとき	Uji kintoki	shaved ice with matcha syrup and sweet beans	
+茶筅	ちゃせん	chasen	bamboo tea whisk	
+日本酒	にほんしゅ	nihonshu	sake (Japanese rice wine)	
+精米歩合	せいまいぶあい	seimai buai	rice-polishing ratio	
+吟醸	ぎんじょう	ginjō	premium sake from rice polished to 60% or less	
+純米吟醸	じゅんまいぎんじょう	junmai ginjō	ginjō sake with no added alcohol	
+大吟醸	だいぎんじょう	daiginjō	top-grade sake from rice polished to 50% or less	
+純米大吟醸	じゅんまいだいぎんじょう	junmai daiginjō	daiginjō sake with no added alcohol	
+冷や	ひや	hiya	(sake) at room temperature or chilled	
+徳利	とっくり	tokkuri	sake flask	
+升	ます	masu	square wooden cup	
+焼酎	しょうちゅう	shōchū	distilled spirit	
+芋	いも	imo	sweet potato (shōchū)	
+麦	むぎ	mugi	barley (shōchū)	
+米	こめ	kome	rice	
+水割り	みずわり	mizuwari	with water	
+お湯割り	おゆわり	oyuwari	with hot water	
+泡盛	あわもり	awamori	Okinawan distilled spirit	
+古酒	くーすー	kūsū	aged awamori	
+チューハイ		chūhai	shōchū highball with fruit flavour	
+サワー		sawā	sour (fruit-flavoured highball)	
+レモンサワー		remon sawā	lemon sour	
+ハイボール		haibōru	whisky and soda	
+梅酒	うめしゅ	umeshu	plum liqueur	
+宇治	うじ	Uji	Uji, the tea town near Kyoto	
+食い倒れ	くいだおれ	kuidaore	eating until you drop (Osaka's motto)	
+ゴーヤーチャンプルー		gōyā chanpurū	Okinawan stir-fry with bitter melon	
+地元	じもと	jimoto	local	
+地鶏	じどり	jidori	local free-range chicken	
+特盛	とくもり	tokumori	extra-large portion	
+食品サンプル	しょくひんさんぷる	shokuhin sanpuru	plastic food models	
+特定原材料	とくていげんざいりょう	tokutei genzairyō	allergens that must be labelled	
+えび		ebi	shrimp	
+かに		kani	crab	
+くるみ		kurumi	walnut	
+小麦	こむぎ	komugi	wheat	
+乳	にゅう	nyū	milk (allergen label)	
+落花生	らっかせい	rakkasei	peanut	
+		saikyō miso	sweet white miso from Kyoto	
+		hatchō miso	dark soybean miso from Okazaki	
+		shimesaba	vinegar-cured mackerel	
+鰻	うなぎ	unagi	freshwater eel	
+七味	しちみ	shichimi	seven-spice chilli blend	
+		mayu	black garlic oil (ramen)	
+青のり	あおのり	aonori	green seaweed flakes	
+		soba-iri	contains buckwheat	
+		udon-iri	contains udon	
+てん茶	てんちゃ	tencha	leaf tea ground to make matcha	
+		bonito	skipjack tuna (katsuo)	
+# w3.py
+サフィル		Safiru	Safiru, photographer's user name (Wikimedia Commons)	
+蜜淋	みりん	mirin	"honey drip": a Ming-dynasty Chinese mead, one proposed origin of mirin	
+神経	しんけい	shinkei	nerve (as in 神経〆 shinkei-jime, killing fish by destroying the nerve cord)	
+精進	しょうじん	shōjin	Buddhist devotion; 精進料理 is vegetarian temple cooking	
+山出し	やまだし	yamadashi	kelp shipped straight from the harvest area	
+亀節	かめぶし	kame-bushi	katsuobushi from a small fish, one loin per side	
+雌節	めぶし	mebushi	belly-side katsuobushi	
+雄節	おぶし	obushi	back-side katsuobushi	
+本節	ほんぶし	honbushi	katsuobushi from a large fish, cut into four loins	
+中落ち	なかおち	nakaochi	meat scraped from the backbone	
+鮪節	まぐろぶし	magurobushi	dried tuna flakes	
+干瓢	かんぴょう	kanpyō	dried gourd strips	
+床	とこ	toko	bed (kōji-making bed)	
+盛り込み	もりこみ	morikomi	spreading the inoculated rice in trays	
+出麹	でこうじ	de-kōji	taking out the finished kōji	
+金山寺	きんざんじ	Kinzanji	Kinzanji miso, a chunky side-dish miso	
+蒲焼	かばやき	kabayaki	glazed and grilled (eel)	
+生揚げ	きあげ	kiage	raw pressed soy sauce, before heating	
+米味噌	こめみそ	kome-miso	rice miso	
+西京	さいきょう	saikyō	Kyoto-style (sweet white miso)	
+甘	あま	ama	sweet	
+田舎	いなか	inaka	countryside; country-style miso	
+練り酒	ねりざけ	nerizake	thick, sweet old-style sake	
+酒粕	さけかす	sake-kasu	sake lees	
+粕	かす	kasu	lees	
+すし酢	すしず	sushi-zu	sushi vinegar	
+真鯛	まだい	madai	red sea bream	
+〆鯖	しめさば	shime-saba	vinegar-cured mackerel	
+餅米	もちごめ	mochi-gome	glutinous rice	
+すし飯	すしめし	sushi-meshi	sushi rice	
+蕎麦切り	そばきり	sobakiri	buckwheat cut into noodles	
+平麺	ひらめん	hiramen	flat noodles	
+蕎麦がき	そばがき	sobagaki	buckwheat dumpling	
+藪	やぶ	Yabu	Yabu, a family of soba shops	
+手延べ	てのべ	tenobe	hand-stretched (noodles)	
+島豆腐	しまどうふ	shima-dōfu	firm Okinawan tofu	
+堅豆腐	かたどうふ	kata-dōfu	very firm tofu	
+凍み豆腐	しみどうふ	shimi-dōfu	freeze-dried tofu	
+凍り豆腐	こおりどうふ	kōri-dōfu	freeze-dried tofu	
+晒し餡	さらしあん	sarashi-an	dried bean-paste powder	
+生餡	なまあん	nama-an	unsweetened bean paste	
+切り餅	きりもち	kiri-mochi	square-cut mochi	
+のし餅	のしもち	noshi-mochi	flat slab of mochi	
+なまこ餅	なまこもち	namako-mochi	log-shaped mochi ("sea cucumber")	
+菱餅	ひしもち	hishi-mochi	diamond-shaped layered mochi	
+あられ		arare	small rice crackers	
+きび団子	きびだんご	kibi-dango	millet dumplings	
+角煮	かくに	kakuni	braised pork belly	
+サクサク		sakusaku	light and crisp	
+トロトロ		torotoro	melting, syrupy	
+ポリポリ		poripori	crunchy (small, hard)	
+シャキシャキ		shakishaki	crisp and fresh (vegetables)	
+ジュワジュワ		juwajuwa	juicy, oozing	
+パリパリ		paripari	thin and crisp	
+もちもち		mochimochi	soft, elastic, chewy	
+モサモサ		mosamosa	dry and crumbly in the mouth	
+ふわふわ		fuwafuwa	fluffy, airy	
+ぷるぷる		purupuru	wobbly, jelly-like	
+ザクザク		zakuzaku	chunky and crunchy	
+ねばねば		nebaneba	sticky, stringy	
+カリカリ		karikari	hard and crunchy	
+ホクホク		hokuhoku	hot, soft and floury	
+シャクシャク		shakushaku	crisp and juicy (fruit)	
+コリコリ		korikori	firm, crunchy (gristle)	
+ぷちぷち		puchipuchi	popping (roe)	
+パサパサ		pasapasa	dry, parched	
+ズルズル		zuruzuru	slurping	
+ちゅるちゅる		churuchuru	slippery (slurping noodles)	
+するする		surusuru	smooth, slipping down	
+ふかふか		fukafuka	soft and springy	
+ボソボソ		bosoboso	dry and crumbly	
+ぬるぬる		nurunuru	slimy	
+ベトベト		betobeto	sticky, tacky	
+ぷち		puchi	pop	
+ドロドロ		dorodoro	thick, muddy	
+ぐにゃぐにゃ		gunyagunya	limp, floppy	
+グニグニ		guniguni	rubbery	
+パリポリ		paripori	crisp and crunchy	
+バリバリ		baribari	hard and crackly	
+ほこほこ		hokohoko	warm and floury	
+シャリシャリ		sharishari	icy, grainy	
+のびのび		nobinobi	overcooked, soggy (noodles)	
+ジャキジャキ		jakijaki	coarse and crunchy	
+パキパキ		pakipaki	snapping	
+ジュージュー		jū-jū	sizzling	
+はふはふ		hafuhafu	blowing on hot food while eating	
+しわしわ		shiwashiwa	wrinkled	
+グチャグチャ		guchagucha	mushy, messy	
+神	かみ	kami	kami, deity	
+黄泉	よみ	Yomi	Yomi, the land of the dead	
+イワヲ		Iwawo	part of a photographer's user name (ivva イワヲ)	
+穢	けがれ	kegare	pollution, ritual impurity	
+気	き	ki	spirit, vital energy	
+枯れ	かれ	kare	withering (of ki)	
+神仏習合	しんぶつしゅうごう	shinbutsu shūgō	the combination of kami and buddhas	
+本地垂迹	ほんじすいじゃく	honji suijaku	"original ground, manifested trace": kami as local forms of buddhas	
+掬茶		Kikucha	photographer's user name (Wikimedia Commons)	
+権現	ごんげん	gongen	avatar: a buddha appearing as a kami	
+新亡	しんもう	shinmō	spirits of people who died in the preceding year (Shima, Mie)	
+怨霊	おんりょう	onryō	vengeful spirit	
+御霊	ごりょう	goryō	honoured (vengeful) spirit	
+怪異	かいい	kaii	strange phenomenon, mystery	
+妖怪伝承データベース	ようかいでんしょうでーたべーす	Yōkai Denshō Dētabēsu	Yōkai legends database (Nichibunken)	
+姑獲鳥	うぶめ	ubume	ubume, the ghost of a woman who died in childbirth	
+浄土無縁引導集	じょうどむえんいんどうしゅう	Jōdo muen indōshū	Pure Land guide for the unattached dead (1713)	
+松誉巌的	しょうよごんてき	Shōyo Gonteki	Shōyo Gonteki, Pure Land scholar-monk	
+真実	しんじつ	shinjitsu	true	
+変化	へんげ	henge	transformation; a shape-shifter	
+妄想	もうそう	mōsō	delusion	
+生霊	いきりょう	ikiryō	spirit of a living person	
+死霊	しりょう	shiryō	spirit of a dead person	
+餓鬼	がき	gaki	hungry ghost	
+無縁仏	むえんぼとけ	muenbotoke	dead with no one to care for them	
+子育て幽霊	こそだてゆうれい	kosodate yūrei	the ghost who raised her child	
+片袖幽霊	かたそでゆうれい	katasode yūrei	the ghost who left one sleeve	
+地縛霊	じばくれい	jibakurei	ghost bound to a place	
+浮遊霊	ふゆうれい	fuyūrei	wandering ghost	
+土佐光信	とさみつのぶ	Tosa Mitsunobu	Tosa Mitsunobu, painter (15th–16th c.)	
+幽冥	ゆうめい	yūmei	the hidden world	
+付喪神	つくもがみ	tsukumogami	spirits of old tools	
+器	き	ki	vessel, tool	
+天狗	てんぐ	tengu	tengu, mountain goblin	
+狐	きつね	kitsune	fox	
+歌川国芳	うたがわくによし	Utagawa Kuniyoshi	Utagawa Kuniyoshi, woodblock artist (1797–1861)	
+河童	かっぱ	kappa	kappa, river creature	
+人魚	にんぎょ	ningyo	mermaid, "human-fish"	
+妖怪博士	ようかいはかせ	yōkai hakase	"Doctor Yōkai" (Inoue Enryō)	
+神隠し	かみかくし	kamikakushi	spirited away	
+		harae	purification (Shinto)	
+		harai	purification (Shinto)	
+木霊	こだま	kotama	tree spirit	
+幸魂	さきみたま	sakimitama	the happy aspect of a kami	
+奇魂	くしみたま	kushimitama	the wondrous aspect of a kami	
+神道	しんとう	Shintō	Shinto	
+本覚	ほんがく	hongaku	original enlightenment	
+触穢	しょくえ	shokue	contagious pollution	
+気枯れ	けがれ	kega(re)	"withering of ki" (one etymology of kegare)	
+熊手	くまで	kumade	bamboo rake charm	
+お守り	おまもり	o-mamori	amulet	
+本地	ほんじ	honji	original ground (the buddha)	
+垂迹	すいじゃく	suijaku	manifested trace (the kami)	
+榊	さかき	sakaki	sakaki, sacred evergreen tree	
+本覚思想	ほんがくしそう	hongaku shisō	original-enlightenment thought	
+修験者	しゅげんじゃ	shugenja	mountain ascetic	
+お盆	おぼん	o-bon	Bon, the summer festival of the dead	
+仏	ほとけ	hotoke	buddha; the dead	
+初盆行事	はつぼんぎょうじ	hatsubon gyōji	rites of the first Bon after a death	
+六道の辻	ろくどうのつじ	rokudō no tsuji	the crossroads of the six realms	
+盂蘭盆	うらぼん	urabon	Ullambana, Bon	
+同族	どうぞく	dōzoku	extended family group	
+御霊会	ごりょうえ	goryō-e	festival to appease vengeful spirits	
+伎楽	ぎがく	gigaku	ancient masked dance	
+散楽	さんがく	sangaku	ancient acrobatic entertainment	
+怨魂	えんこん	enkon	resentful soul	
+風流	ふりゅう	furyū	showy festival dance	
+田楽	でんがく	dengaku	field music and dance	
+和歌	わか	waka	classical poem	
+鬼火	おにび	oni-bi	will-o'-the-wisp	
+旗本	はたもと	hatamoto	shogun's direct retainer	
+魔物	まもの	mamono	demon, evil thing	
+あやかし		ayakashi	supernatural apparition	
+お化け	おばけ	obake	ghost, monster	
+煤払い	すすはらい	susuharai	year-end soot sweeping	
+造化神	ぞうかしん	zōkashin	creator deity	
+供養	くよう	kuyō	memorial rite	
+鬼	おに	oni	ogre, demon	
+四天王	してんのう	shitennō	the Four Heavenly Kings	
+双六	すごろく	sugoroku	board game	
+山伏	やまぶし	yamabushi	mountain ascetic	
+人狐	にんこ	ninko	fox spirit possessing people	
+ひょうすべ		hyōsube	hyōsube, a kappa-like creature	
+ろくろ首	ろくろくび	rokuro-kubi	long-necked woman	
+鯰絵	なまずえ	namazu-e	catfish prints (after earthquakes)	
+お面	おめん	omen	mask	
+見世物	みせもの	misemono	sideshow	
+神社姫	じんじゃひめ	jinja-hime	jinja-hime, a prophesying fish-woman	
+白澤	はくたく	baize (hakutaku)	Baize, the all-knowing beast	
+式占	しきせん	shikisen	divination with a board	
+妖怪学	ようかいがく	yōkaigaku	yōkai studies	
+怪奇	かいき	kaiki	the bizarre, mystery	
+漫筆	まんぴつ	manpitsu	writing without any particular purpose	
+虫	むし	mushi	insect	
+少年	しょうねん	shōnen	boy	
+少女	しょうじょ	shōjo	girl	
+青年	せいねん	seinen	young man	
+女性	じょせい	josei	woman	
+あたし		atashi	I (casual, feminine)	
+わし		washi	I (old man in fiction)	
+おる		oru	be (Western / old-man speech)	
+いる		iru	be (standard)	
+わて		wate	I (old Kansai speech)	
+とる		toru	-ing (old-man speech, from -te oru)	
+でぇ		dē	rough sentence-ending (Edo townsman)	
+さよう		sayō	indeed (samurai speech)	
+拙者	せっしゃ	sessha	I (humble samurai speech)	
+わたくし		watakushi	I (very polite; ojōsama speech)	
+ですわよ		desu wa yo	it is, you know (ojōsama speech)	
+存じております	ぞんじております	zonjite orimasu	I know (humble)	
+あるよ		aru yo	"there is" (pseudo-Chinese role language in fiction)	
+ぼく		boku	I (boys, young men)	
+のさ		no sa	you see (casual ending)	
+おら		ora	I (rural speech)	
+んだ		nda	it's that … (casual; rural "yes")	
+ソレ		sore	that (written in katakana for a foreigner's accent)	
+チガイマース		chigaimāsu	"is wrong" in a stage-foreigner's accent	
+おれ		ore	I (rough, masculine)	
+きさま		kisama	you (insulting)	
+智子	ともこ	Tomoko	part of the name 山﨑智子 Yamazaki Tomoko (author)	
+寧生	やすお	Yasuo	part of the name 川﨑寧生 Kawasaki Yasuo (author)	
+映画の時代背景から発展させた日本理解のための活動			activities for understanding Japan developed from films' historical backgrounds (article title, Yamazaki 2018)	
+ゴジラ		Gojira	Godzilla	
+を動機付けとして			"… as motivation" (part of an article title, Yamazaki 2018)	
+かわいいがすぎる		kawaii ga sugiru	too cute!	
+のか		no ka	question ending (masculine)	
+わよ		wa yo	you know (feminine ending)	
+～わ		-wa	sentence-ending particle (feminine)	
+～わよ		-wa yo	sentence ending (feminine)	
+頭にくるわ	あたまにくるわ	atama ni kuru wa	that makes me so angry (feminine)	
+アホか		aho ka	are you an idiot? (Kansai)	
+マンガ		manga	manga (in katakana)	
+白描	はくびょう	hakubyō	ink line drawing	
+ヘタウマ		hetauma	"bad but good" drawing style	
+赤本	あかほん	akahon	"red books", cheap postwar manga	
+善玉	ぜんだま	zendama	good soul (figure)	
+悪玉	あくだま	akudama	bad soul (figure)	
+漫画漫文	まんがまんぶん	manga manbun	manga with essays	
+御伽草子	おとぎぞうし	otogi-zōshi	illustrated popular tales	
+駄菓子屋	だがしや	dagashi-ya	penny-sweet shop	
+漫画の神様	まんがのかみさま	manga no kamisama	"god of manga" (Tezuka Osamu)	
+ストーリー漫画	すとーりーまんが	sutōrī manga	story manga	
+新書	しんしょ	shinsho	pocket-book format	
+任意組合	にんいくみあい	nin'i kumiai	voluntary partnership	
+活動写真	かつどうしゃしん	katsudō shashin	"moving pictures" (early cinema)	
+股旅	またたび	matatabi	wandering-gambler genre	
+腹芸	はらげい	haragei	unspoken understanding ("belly art")	
+講談	こうだん	kōdan	storytelling art	
+怪猫映画	かいびょうえいが	kaibyō eiga	ghost-cat films	
+納涼映画	のうりょうえいが	nōryō eiga	summer chill films	
+棒読み	ぼうよみ	bō-yomi	flat reading	
+本読み	ほんよみ	hon-yomi	script reading	
+歌舞伎	かぶき	kabuki	kabuki theatre	
+特技監督	とくぎかんとく	tokugi kantoku	special-effects director	
+壮士	そうし	sōshi	political activist (Meiji)	
+唱歌	しょうか	shōka	school songs	
+アイドル		aidoru	idol (pop star)	
+日本人論	にほんじんろん	nihonjinron	theories of Japaneseness	
+かわゆし		kawayushi	pitiable; dear (classical origin of kawaii)	
+ギャル		gyaru	gal (fashion subculture)	
+ご当地キャラクター	ごとうちきゃらくたー	gotōchi kyarakutā	local mascot character	
+着ぐるみ	きぐるみ	kigurumi	full-body costume	
+聖地	せいち	seichi	sacred place; anime pilgrimage site	
+日輪刀	にちりんとう	nichirintō	sun-wheel sword (Demon Slayer)	
+お嬢様	おじょうさま	ojōsama	rich young lady (stock character)	
+怪談映画	かいだんえいが	kaidan eiga	ghost-story films	
+産業技術総合研究所	さんぎょうぎじゅつそうごうけんきゅうしょ	Sangyō Gijutsu Sōgō Kenkyūsho	National Institute of Advanced Industrial Science and Technology (AIST)	
+地質調査総合センター	ちしつちょうさそうごうせんたー	Chishitsu Chōsa Sōgō Sentā	Geological Survey of Japan	
+環自総発第	かんじそうはつだい		notice number prefix (Ministry of the Environment)	
+男女	だんじょ	danjo	men and women	
+天神湯	てんじんゆ	Tenjin-yu	Tenjin-yu (a sentō in Tokyo)	
+ウィキ太郎	うぃきたろう	WikiTaro	photographer's user name (Wikimedia Commons)	
+共同浴場	きょうどうよくじょう	kyōdō yokujō	communal bath	
+ブルーノ		Burūno	part of a photographer's user name (ブルーノ・プラス)	
+プラス		Purasu	part of a photographer's user name (ブルーノ・プラス)	
+そらみみ		Soramimi	photographer's user name (Wikimedia Commons)	
+ホテル営業	ほてるえいぎょう	hoteru eigyō	hotel business (part of 旅館・ホテル営業)	
+簡易宿所営業	かんいしゅくしょえいぎょう	kan'i shukusho eigyō	simple lodging business (guesthouses)	
+下宿営業	げしゅくえいぎょう	geshuku eigyō	boarding-house business	
+和洋室	わようしつ	wayōshitsu	room combining Japanese and Western style	
+タトゥーのある方のご利用をお断りしております		tatū no aru kata no go-riyō o okotowari shite orimasu	we decline use by people with tattoos	
+日本最古の温泉記号	にほんさいこのおんせんきごう	Nihon saiko no onsen kigō	Japan's oldest onsen symbol	
+万治四年の絵図より	まんじよねんのえずより	Manji yonen no ezu yori	from a map of Manji 4 (1661)	
+浴堂	よくどう	yokudō	temple bath hall	
+棟札	むなふだ	munafuda	ridge plaque recording a building's construction	
+銭湯風呂	せんとうぶろ	sentō-buro	"coin bath" (early bathhouse)	
+長屋	ながや	nagaya	row house, tenement	
+高座	たかざ	takaza	raised seat (Edo bathhouse attendant)	
+矢入る	やいる	ya-iru	shooting arrows (pun on yu-iru)	
+湯入る	ゆいる	yu-iru	entering the hot water	
+三助	さんすけ	sansuke	bathhouse back-washer	
+薬湯	やくとう	yakutō	medicinal bath	
+文	もん	mon	mon, Edo-period copper coin	
+両	りょう	ryō	ryō, Edo-period gold coin	
+唐破風	からはふ	karahafu	curved gable	
+健康ランド	けんこうらんど	kenkō rando	"health land" spa complex	
+スーパー銭湯	すーぱーせんとう	super sentō	large modern public bath	
+蒸し湯	むしゆ	mushi-yu	steam bath	
+時太鼓	ときだいこ	toki-daiko	time drum	
+新・湯治	しんとうじ	shin-tōji	"new tōji" curative stays	
+旅館・ホテル営業	りょかん・ほてるえいぎょう	ryokan-hoteru eigyō	ryokan and hotel business	
+畳	たたみ	tatami	straw floor mat	
+布団	ふとん	futon	bedding laid on the floor	
+下駄	げた	geta	wooden clogs	
+草履	ぞうり	zōri	sandals	
+座椅子	ざいす	zaisu	legless floor chair	
+小村大雲	おむらたいうん	Omura Taiun	Omura Taiun, painter (1883–1938)	
+国土交通省鉄道局	こくどこうつうしょうてつどうきょく	Kokudo Kōtsūshō Tetsudōkyoku	Railway Bureau, Ministry of Land, Infrastructure, Transport and Tourism	
+国土交通省	こくどこうつうしょう	Kokudo Kōtsūshō	Ministry of Land, Infrastructure, Transport and Tourism (MLIT)	
+幹線鉄道ネットワークの整備	かんせんてつどうねっとわーくのせいび		developing the trunk railway network (white-paper section)	
+大阪市電気局	おおさかしでんききょく	Ōsaka-shi Denkikyoku	Osaka City Electric Bureau	
+東京都交通局	とうきょうとこうつうきょく	Tōkyō-to Kōtsūkyoku	Bureau of Transportation, Tokyo Metropolitan Government	
+全国新幹線鉄道整備法	ぜんこくしんかんせんてつどうせいびほう	Zenkoku Shinkansen Tetsudō Seibi-hō	Nationwide Shinkansen Railway Development Act (1970)	
+普通弁当	ふつうべんとう	futsū bentō	ordinary bentō: rice and side dishes	
+特殊弁当	とくしゅべんとう	tokushu bentō	special bentō built around one ingredient	
+駅売弁当の変遷	えきうりべんとうのへんせん		the history of station lunch boxes (article title, Oda 1980)	
+ながさき		Nagasaki	Nagasaki (station name in hiragana)	
+長崎	ながさき	Nagasaki	Nagasaki	
+うらかみ		Urakami	Urakami (next station)	
+整備	せいび	seibi	development, construction	
+蒲鉾	かまぼこ	kamaboko	steamed fish cake	
+独活	うど	udo	udo, an edible mountain plant	
+お節	おせち	osechi	New Year food	
+焼売	しゅうまい	shūmai	steamed dumpling	
+
+# fixes
+檀徒	だんと	danto	temple members (registered parishioners of a Buddhist temple)	
+異時同図	いじどうず	iji dōzu	several moments in one picture	
+		shikkō-gaki	hungry ghosts "who devour corpses and cause pestilence"	
+		shinen-gaki	hungry ghosts "who appear by night as wandering fires"	
+		shin-ko-gaki	the Needle-mouthed hungry ghosts	
+食法餓鬼	じきほうがき	jiki-hō-gaki	"Doctrine-eater" hungry ghosts	
+		jiki-ketsu-gaki	blood-sucking hungry ghosts	
+鬼	き	gui	gui, the Chinese word for a ghost or demon (written 鬼)	
+品	ひん	hin	refinement (a dimension of speech characters)	
+格	かく	kaku	standing, authority (a dimension of speech characters)	
+怪我	けが	kega	wound, injury	
+		sōga	an Edo-period word for humorous pictures	
+		soga	an Edo-period word for humorous pictures	
+		ryakuga	an Edo-period word for humorous pictures	
+凍り餅	こおりもち	kōri-mochi	freeze-dried mochi	
+		shōrui	spirits of the dead (at Bon)	
+号	ごう	gō	number (in document numbers)	
+麦味噌	むぎみそ	mugi-miso	barley miso	
+豆味噌	まめみそ	mame-miso	soybean-only miso	
+子育て	こそだて	kosodate	child-rearing	
+片袖	かたそで	katasode	one sleeve	
+貸切風呂	かしきりぶろ	kashikiriburo	private bath booked by time slot	
+豆腐	とうふ	tofu	tofu, bean curd	
+コーヒー		kōhī	coffee	
+# more
+しんかんせん		shinkansen	Shinkansen, bullet train	
+おねがいします		onegaishimasu	please (I would like that)	
+山	やま	yama	mountain	

@@ -36,6 +36,8 @@ export const roLoose = (s) => roKey(s).normalize('NFD').replace(/[̀-ͯ]/g, '').
 // Does this look like Hepburn romaji (every word made of Japanese syllables)?
 export const isRomaji = (s) => plain(s).toLowerCase().split(/[\s-]+/).filter(Boolean).every((w) =>
   /^(?:(?:[kgsztdnhbpmrwfjv]|ch|sh|ts|ky|gy|ny|hy|by|py|my|ry|j)?(?:[aeiouāēīōū])|n'?|[kstpgdbcm](?=[kstpgdbcm]))+$/.test(w.replace(/'/g, '')));
+// A word split into syllables to show its rhythm ("su-mi-ma-se-n"): not a meaning.
+const SYLLABLES = /^[a-zāēīōū~']+(?:-[a-zāēīōū~']+){2,}$/;
 const firstUrl = (s) => (s.match(/\]\((https?:\/\/(?:[^()\s]|\([^()\s]*\))+)\)/) || [])[1];
 
 const entries = [];
@@ -62,6 +64,14 @@ function add(e, origin) {
 
 // 1. Hand-written and fetched data.
 for (const e of json('terms/words.json')) add({ k: e.k || 'word', ...e }, 'terms/words.json');
+// terms/words.tsv: one entry per line, tab-separated:  Japanese · kana reading (or empty) · romaji · meaning · optional link.
+// Lines starting with # are comments. Romaji-only entries leave the Japanese column empty only when there is no
+// Japanese spelling; otherwise give the usual one.
+if (existsSync(ROOT + 'terms/words.tsv')) for (const line of read('terms/words.tsv').split('\n')) {
+  if (!line.trim() || line.startsWith('#')) continue;
+  const [ja, kana, ro, en, url] = line.split('\t').map((x) => (x || '').trim());
+  add({ k: 'word', ja: ja || undefined, kana: kana || undefined, ro: ro || undefined, en, url: url || undefined }, 'terms/words.tsv');
+}
 const NOTES = existsSync(ROOT + 'terms/substances-notes.json') ? JSON.parse(read('terms/substances-notes.json')) : {};
 for (const e of json('terms/substances.json')) {
   const n = NOTES[e.en] || {};
@@ -132,14 +142,39 @@ for (const p of pages) {
     if (enCol < 0) enCol = cells.length - 1 > Math.max(jaCol, roCol) ? cells.length - 1 : -1;
     if (enCol < 0 || enCol === jaCol || enCol === roCol) continue;
     const en = plain(cells[enCol]).replace(/\s*\((?:Chapter|chapter) [^)]*\)\s*$/, '');
+    if (SYLLABLES.test(en)) continue; // a syllable column ("su-mi-ma-se-n"), not a meaning
+    // | 大人 / 小人 | otona / shōnin | adult / child |  and  | 肉 · 牛 | niku · gyū | meat · beef |
+    const sep = /\s+[/·]\s+/, jas = plain(cells[jaCol]).split(sep);
+    if (jas.length > 1 && roCol >= 0) {
+      const ros = plain(cells[roCol]).split(sep), ens = en.split(sep);
+      if (ros.length === jas.length && ens.length === jas.length) {
+        jas.forEach((j, n) => add({ k: 'word', ja: j, ro: ros[n], en: ens[n], ...ref }, p.file));
+        continue;
+      }
+    }
     add({ k: 'word', ja: plain(cells[jaCol]), ro: roCol >= 0 ? plain(cells[roCol]) : undefined, en, url: firstUrl(cells[jaCol]) || firstUrl(cells[roCol] || ''), ...ref }, p.file);
+  }
+  // Source lists: "Doi Tsutomu, Kawauchi Atsurō 土井勉・河内厚郎. 日本語の題名 (English title)."
+  for (const line of md.split('\n').filter((l) => /^(?:\d+\.|-) \*\*[^*]+\.\*\* /.test(l))) {
+    const t = line.replace(/^(?:\d+\.|-) \*\*[^*]+\.\*\* /, '');
+    const names = t.match(/^([A-ZĀ-Ž][^.]*?) ([々぀-ヿ㐀-䶿一-鿿][々぀-ヿ㐀-䶿一-鿿・]*)\./);
+    if (names) {
+      const ro = names[1].split(/,\s*| and /), ja = names[2].split('・');
+      if (ro.length === ja.length) ja.forEach((j, n) => add({ k: 'name', ja: j, ro: ro[n], en: ro[n] + ' (author)', ...ref }, p.file));
+    }
+    for (const m of plain(t).matchAll(/([々぀-ヿ㐀-䶿一-鿿「『（][^()]*?)\s\(([^()]*[A-Za-z][^()]*)\)/g)) {
+      const title = m[1].replace(/^.*?\.\s+(?=[々぀-ヿ㐀-䶿一-鿿「『])/, '').trim();
+      if (!/[々぀-ヿ㐀-䶿一-鿿]/.test(title) || title.length > 90) continue;
+      const i = add({ k: 'title', ja: title, en: m[2], ...ref }, p.file);
+      if (i !== null) for (const run of title.match(JA_RUN) || []) if (!byJa.has(run.trim())) byJa.set(run.trim(), i);
+    }
   }
   // Inline: 漢字 (*romaji*, meaning)  ·  ***romaji*** (漢字, "meaning")  ·  **romaji** (漢字)
   const text = body.replace(/^\|.*$/gm, '');
   const J = '([々぀-ヿ㐀-䶿一-鿿～〜][々぀-ヿ㐀-䶿一-鿿～〜・]*)';
   const R = '\\*{1,3}(?:\\[)?([A-Za-zĀ-ž\' -]{2,40}?)(?:\\]\\([^)]*\\))?\\*{1,3}';
   const G = '(?:,\\s*["“]?([^)"”]{2,80}?)["”]?)?';
-  const gloss = (g) => (g ? plain(g) : undefined);
+  const gloss = (g) => (g && !SYLLABLES.test(plain(g)) ? plain(g) : undefined);
   // **漢字 · romaji** (meaning)  or  **漢字 · romaji · meaning**
   for (const m of body.matchAll(/\*\*([々぀-ヿ㐀-䶿一-鿿～〜][^*·|]*?) · ([^*·|]+?)(?: · ([^*|]+?))?\*\*(?:\s*\(([^)]{2,80})\))?/g))
     if (JA_ONLY.test(m[1]) && isRomaji(m[2])) add({ k: 'word', ja: m[1].trim(), ro: m[2], en: gloss(m[3] || m[4]), ...ref }, p.file);
@@ -170,8 +205,8 @@ if (W.NB_KANJI) for (const e of W.NB_KANJI.list || []) {
 
 // 4. Entities: Wikipedia links that are not words or substances (terms/entities.json, fetched).
 for (const e of json('terms/entities.json')) {
-  if (byUrl.has(e.url)) { const x = entries[byUrl.get(e.url)]; if (!x.ja && e.ja && x.k !== 'substance') x.jaName = e.ja; continue; }
-  add({ k: 'entity', type: e.type === 'substance' ? 'topic' : e.type, en: e.title, ja: undefined, jaName: e.ja || undefined, url: e.url }, 'terms/entities.json');
+  if (byUrl.has(e.url)) { const x = entries[byUrl.get(e.url)]; if (!x.ja && e.ja && x.k !== 'substance') x.jaName = e.ja.replace(/\s*[(（][^)）]*[)）]$/, ''); continue; }
+  add({ k: 'entity', type: e.type === 'substance' ? 'topic' : e.type, en: e.title, ja: undefined, jaName: e.ja ? e.ja.replace(/\s*[(（][^)）]*[)）]$/, '') : undefined, url: e.url }, 'terms/entities.json');
 }
 
 // Where each substance appears, for "In this handbook" links.
