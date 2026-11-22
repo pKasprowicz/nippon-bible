@@ -26,7 +26,7 @@ The Ministry of the Environment's guidelines for analysing springs, revised in 2
 
 ## 3.2 Spring types
 
-A therapeutic spring (Chapter 1) is given a **泉質** (*sensitsu*, spring type). The guidelines name types in two ways (MoE 2014a):
+A therapeutic spring (Chapter 1) is given a **泉質** (*senshitsu*, spring type). The guidelines name types in two ways (MoE 2014a):
 
 - **By the main dissolved salt**, when the water carries at least 1,000 mg of dissolved substances per kilogram. The type is named after the main negative ion: **chloride spring** (塩化物泉), **hydrogen-carbonate spring** (炭酸水素塩泉) or **sulphate spring** (硫酸塩泉).
 - **Simple spring** (単純温泉, *tanjun onsen*): less than 1,000 mg of dissolved substances, but at least 25 °C. If its pH is 8.5 or more, it is an **alkaline simple spring**.

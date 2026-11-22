@@ -47,7 +47,7 @@ You can enjoy a Japanese bath without speaking a word. But reading a few charact
 
 | Japanese | Reading | Meaning |
 |---|---|---|
-| 泉質 | *sensitsu* | spring type (Chapter 3) |
+| 泉質 | *senshitsu* | spring type (Chapter 3) |
 | 源泉 | *gensen* | source, spring |
 | 単純温泉 | *tanjun onsen* | simple spring |
 | 硫黄泉 | *iōsen* | sulphur spring |

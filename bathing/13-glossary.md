@@ -8,7 +8,7 @@ Japanese terms used in this handbook. The chapter where each is explained is giv
 |---|---|---|
 | ***[onsen](https://en.wikipedia.org/wiki/Onsen)*** 温泉 | Hot spring; legally, spring water or gas at 25 °C or more, or with one of 19 substances | 1 |
 | ***ryōyōsen*** 療養泉 | Therapeutic spring, defined by a stricter list | 1, 3 |
-| ***sensitsu*** 泉質 | Spring type, such as chloride or sulphur spring | 3 |
+| ***senshitsu*** 泉質 | Spring type, such as chloride or sulphur spring | 3 |
 | ***tanjun onsen*** 単純温泉 | Simple spring: at least 25 °C, under 1,000 mg of dissolved substances per kg | 3 |
 | ***shinsō netsusui*** 深層熱水 | Deep hot water under plains, reached by deep wells | 2 |
 | ***kasui / kaon / junkan*** 加水・加温・循環 | Water added / heated / recirculated: compulsory notices since 2005 | 3 |
