@@ -4,6 +4,23 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.19.0] - 2026-11-22
+
+### Added
+- **Bathing handbook: onsen, sentō and ryokan** ("Hot springs and bathhouses" on the home page). It has 12 chapters in three parts:
+  - **hot springs:** the legal definition of an onsen, where the heat comes from, and how to read the spring label;
+  - **bathhouses:** temple baths, the bathhouses of Edo, and the sentō;
+  - **going:** onsen towns and *tōji*, ryokan, etiquette, tattoos, official health advice, and bath Japanese.
+
+  Every chapter has a quiz, and there is a glossary and a full sources page. It has 22 freely licensed photographs (with no bathers shown) and six diagrams.
+- **Railways handbook: from steam to Shinkansen** ("Trains and stations" on the home page). It has 13 chapters in three parts:
+  - **history:** the first line of 1872, nationalisation and JNR, the Shinkansen, the 1987 break-up of JNR, the private railways that built suburbs, and the subways of Tokyo and Osaka;
+  - **how it works:** safety and punctuality, the Shinkansen network today, fares, IC cards and the Japan Rail Pass, local lines, and freight and night trains;
+  - **travelling:** *ekiben*, and railway Japanese.
+
+  Prices and dates are given with the date of their source, and a travel disclaimer explains that they change. It has 26 public-domain or freely licensed pictures and seven diagrams.
+- Recordings for the Japanese in both handbooks, with corrected readings for spring types, bath words and railway terms.
+
 ## [1.18.5] - 2026-11-22
 
 ### Fixed
