@@ -4,6 +4,15 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.21.0] - 2026-11-24
+
+### Added
+- **Festivals and seasons handbook: the Japanese year.** 12 chapters, a glossary and a sources page:
+  - **The calendar:** the old lunisolar calendar and the switch of 1873, era names, the 24 solar terms, lucky days (*rokuyō*) and old month names; the national holidays, Golden Week and the 2026–2027 holiday table; the five *sekku*.
+  - **The year:** New Year and the first shrine visit; *setsubun* and the cherry blossom, with the Japan Meteorological Agency's dates by city; Bon, the UNESCO-listed *furyū-odori*, Kyoto's bonfires and fireworks; the harvest moon, the red leaves, Shichi-Go-San and New Year's Eve.
+  - **Matsuri:** what a shrine festival is, *mikoshi* and floats, the 37 float festivals on the UNESCO list; Gion, Tenjin, Kanda, Nebuta, Awa Odori and the Sapporo Snow Festival, with dates and a disclaimer; how to join in and stay safe in crowds; and festival Japanese.
+  - Cited from official sources and scholarship, with public-domain and freely licensed pictures, seven diagrams, a quiz per chapter, pop-ups and audio.
+
 ## [1.20.0] - 2026-11-22
 
 ### Added
