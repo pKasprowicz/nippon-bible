@@ -5,6 +5,7 @@
     { id: 'course', title: 'Japan guide' },
     { id: 'hiragana', title: 'Hiragana course' },
     { id: 'katakana', title: 'Katakana course' },
+    { id: 'kanatest', title: 'Kana test' },
     { id: 'kanji', title: 'Kanji course' },
     { id: 'cuisine', title: 'Cuisine handbook' },
     { id: 'folklore', title: 'Folklore handbook' },
@@ -47,6 +48,13 @@
     { id: 'katakana-7', file: 'katakana/07-combinations.md', group: 'katakana', title: 'ッ, キャ, ティ, ファ…' },
     { id: 'katakana-8', file: 'katakana/08-real-world.md', group: 'katakana', title: 'Real-world reading & final test' },
     { id: 'katakana-review', file: 'katakana/09-review.md', group: 'katakana', title: 'Daily review', label: '↻' },
+    { id: 'kanatest', file: 'kanatest/00-start.md', group: 'kanatest', title: 'Start here', label: '★' },
+    { id: 'kanatest-1', file: 'kanatest/01-basic.md', group: 'kanatest', title: 'The basic characters' },
+    { id: 'kanatest-2', file: 'kanatest/02-voiced.md', group: 'kanatest', title: 'Voiced sounds' },
+    { id: 'kanatest-3', file: 'kanatest/03-combos.md', group: 'kanatest', title: 'Combinations, small っ and ー' },
+    { id: 'kanatest-4', file: 'kanatest/04-words.md', group: 'kanatest', title: 'Real words' },
+    { id: 'kanatest-5', file: 'kanatest/05-lookalikes.md', group: 'kanatest', title: 'Look-alikes' },
+    { id: 'kanatest-6', file: 'kanatest/06-final.md', group: 'kanatest', title: 'Final exam' },
     { id: 'kanji', file: 'kanji/00-start.md', group: 'kanji', title: 'Start here', label: '★' },
     { id: 'kanji-1', file: 'kanji/01-numbers.md', group: 'kanji', title: 'Numbers and prices' },
     { id: 'kanji-2', file: 'kanji/02-directions.md', group: 'kanji', title: 'Entrances and directions' },
@@ -644,6 +652,8 @@
     });
   }
 
+  /* ---------- kana test hooks ---------- */
+  if (window.NBKanaTest) window.NBKanaTest.init({ speak: function (text) { speak(text); }, canSay: canSay });
   /* ---------- hiragana course hooks ---------- */
   if (window.NBKana) {
     window.NBKana.init({
@@ -792,6 +802,7 @@
     var lesson = LESSONS.filter(function (l) { return l.id === pageKey; })[0];
     var script = lesson && (lesson.group === 'katakana' || lesson.group === 'kanji') ? lesson.group : 'hiragana';
     if (window.NBKana) window.NBKana.mount(article, pageKey, script);
+    if (window.NBKanaTest) window.NBKanaTest.mount(article);
     return article;
   }
   /* ---------- picture dictionary (```picture blocks) ---------- */
@@ -1207,7 +1218,7 @@
     if (l.kind) return l.kind;
     if (l.label === '★') return l.group === 'course' ? 'Overview' : 'Start here';
     if (l.label === '↻') return 'Daily review';
-    return (l.group === 'course' ? 'Lesson ' : (l.group === 'cuisine' || l.group === 'folklore' || l.group === 'popculture' || l.group === 'bathing' || l.group === 'railways' || l.group === 'festivals') ? 'Chapter ' : l.group === 'pictures' ? 'Topic ' : 'Unit ') + l.label;
+    return (l.group === 'course' ? 'Lesson ' : (l.group === 'cuisine' || l.group === 'folklore' || l.group === 'popculture' || l.group === 'bathing' || l.group === 'railways' || l.group === 'festivals') ? 'Chapter ' : l.group === 'pictures' ? 'Topic ' : l.group === 'kanatest' ? 'Level ' : 'Unit ') + l.label;
   }
   function neighbours(id) {
     var i = LESSONS.findIndex(function (l) { return l.id === id; });
@@ -1537,6 +1548,16 @@
       cta: !g.done ? 'Open the pictures' : g.next ? 'Continue: topic ' + g.next.label : 'Practise again'
     });
   }
+  function kanatestTile() {
+    var g = groupProgress('kanatest');
+    return tile({
+      id: 'kanatest', glyph: 'あア', kicker: 'Tests only', title: 'Kana test',
+      desc: 'Hiragana and katakana together: reading, listening, twin pairs and look-alikes, in four levels and a final exam, with a report of your weakest characters.',
+      examples: 'シ · ツ · り · リ', href: g.done && g.next ? '#/' + g.next.id : '#/kanatest',
+      value: g.done, total: g.total, progressLabel: g.done + ' of ' + g.total + ' levels completed',
+      cta: !g.done ? 'Take a test' : g.next ? 'Continue: level ' + g.next.label : 'Retake the final exam'
+    });
+  }
   function signsTile() {
     return tile({
       id: 'signs', glyph: '看', kicker: 'Photo gallery', title: 'Signs in the wild',
@@ -1563,7 +1584,7 @@
       el('header', { 'class': 'home-hero' }, [
         el('p', { 'class': 'home-hero-kicker' }, [el('span', { lang: 'ja', text: '日本へようこそ' }), ' · welcome to Japan']),
         el('h1', { text: 'Japanese for your trip' }),
-        el('p', { 'class': 'home-lead', text: 'Twelve ways in. Get the practical know-how for travelling in Japan, learn to read the scripts on every sign, menu and station board, learn everyday words from pictures, then go deeper into how Japanese food is made, into the kami, ghosts and yōkai of Japanese belief, into manga, anime, film and the rest of Japanese pop culture, into hot springs and bathhouses, into Japan’s railways, and into the festivals and seasons of the Japanese year. Then try your reading on photos of real signs.' })
+        el('p', { 'class': 'home-lead', text: 'Thirteen ways in. Get the practical know-how for travelling in Japan, learn to read the scripts on every sign, menu and station board and test yourself on both kana, learn everyday words from pictures, then go deeper into how Japanese food is made, into the kami, ghosts and yōkai of Japanese belief, into manga, anime, film and the rest of Japanese pop culture, into hot springs and bathhouses, into Japan’s railways, and into the festivals and seasons of the Japanese year. Then try your reading on photos of real signs.' })
       ]),
       el('div', { 'class': 'home-tiles' }, [
         tile({
@@ -1575,6 +1596,7 @@
         }),
         kanaTile('hiragana', 'あ', 'Hiragana course', 'The native script: grammar, food words, station names and the ゆ on onsen curtains.', 'えき · すし · ありがとう'),
         kanaTile('katakana', 'ア', 'Katakana course', 'The script for foreign words. Menus, shops and signs are full of them, and you already know most of the words.', 'ホテル · コーヒー · タクシー'),
+        kanatestTile(),
         kanaTile('kanji', '漢', 'Kanji course', 'The 95 kanji on signs in stations, restaurants, shops, toilets and onsen: what they mean and how to read them.', '出口 · 駅 · 禁煙'),
         cuisineTile(),
         folkloreTile(),
