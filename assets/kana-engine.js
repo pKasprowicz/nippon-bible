@@ -1051,6 +1051,8 @@
 
     return {
       WIDGETS: WIDGETS, parseBlock: parseBlock, el: el,
+      // Adds items ({ id, t, k, r, m }) to this script's review deck; returns how many were new.
+      enroll: enroll,
       summary: function () {
         var s = loadState(), ids = Object.keys(s.srs).filter(function (id) { return id.slice(0, 2) === 'k:'; });
         return {
