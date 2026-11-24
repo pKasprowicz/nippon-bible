@@ -12,6 +12,7 @@
     { id: 'bathing', title: 'Bathing handbook' },
     { id: 'railways', title: 'Railways handbook' },
     { id: 'festivals', title: 'Festivals handbook' },
+    { id: 'pictures', title: 'Picture dictionary' },
     { id: 'signs', title: 'Signs in the wild' }
   ];
   var LESSONS = [
@@ -153,6 +154,16 @@
     { id: 'festivals-12', file: 'festivals/12-language.md', group: 'festivals', title: 'Festival and season Japanese' },
     { id: 'festivals-glossary', file: 'festivals/13-glossary.md', group: 'festivals', title: 'Glossary', label: 'A–Z', kind: 'Glossary' },
     { id: 'festivals-sources', file: 'festivals/14-sources.md', group: 'festivals', title: 'Sources and image credits', label: '§', kind: 'Sources' },
+    { id: 'pictures', file: 'pictures/00-start.md', group: 'pictures', title: 'Start here', label: '★' },
+    { id: 'pictures-1', file: 'pictures/01-places.md', group: 'pictures', title: 'Where things are and finding the way' },
+    { id: 'pictures-2', file: 'pictures/02-food.md', group: 'pictures', title: 'Food' },
+    { id: 'pictures-3', file: 'pictures/03-shops.md', group: 'pictures', title: 'Shops and restaurants' },
+    { id: 'pictures-4', file: 'pictures/04-stations-hotels.md', group: 'pictures', title: 'Stations and hotels' },
+    { id: 'pictures-5', file: 'pictures/05-body-pharmacy.md', group: 'pictures', title: 'The body and the pharmacy' },
+    { id: 'pictures-6', file: 'pictures/06-money.md', group: 'pictures', title: 'Money and counting' },
+    { id: 'pictures-7', file: 'pictures/07-time.md', group: 'pictures', title: 'Time and the week' },
+    { id: 'pictures-8', file: 'pictures/08-town.md', group: 'pictures', title: 'The town' },
+    { id: 'pictures-9', file: 'pictures/09-home.md', group: 'pictures', title: 'Rooms and the bath' },
     { id: 'signs', file: 'signs/00-gallery.md', group: 'signs', title: 'Photo gallery', label: '▦', kind: 'Gallery' }
   ];
   // Number lessons within their group unless they have their own label.
@@ -556,7 +567,7 @@
   window.addEventListener('resize', function () { if (pop && !pop.classList.contains('sheet')) closePop(); });
 
   // Mark what on a rendered page has a pop-up.
-  var SKIP_DECOR = 'a, code, pre, .ja, .hw, h1, .pop, [data-term], [data-cite], figure.diagram';
+  var SKIP_DECOR = 'a, code, pre, .ja, .hw, .pic, h1, .pop, [data-term], [data-cite], figure.diagram';
   function textNodes(root, test) {
     var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
       acceptNode: function (n) { return n.parentNode.closest(SKIP_DECOR) || !test(n.nodeValue) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT; }
@@ -777,10 +788,197 @@
     markSpeakable(article);
     decorateTerms(article, pageKey);
     mountGalleries(article);
+    mountPictures(article);
     var lesson = LESSONS.filter(function (l) { return l.id === pageKey; })[0];
     var script = lesson && (lesson.group === 'katakana' || lesson.group === 'kanji') ? lesson.group : 'hiragana';
     if (window.NBKana) window.NBKana.mount(article, pageKey, script);
     return article;
+  }
+  /* ---------- picture dictionary (```picture blocks) ---------- */
+  // A drawn scene (pictures/img/ID.svg) whose objects are tappable. Study mode shows the
+  // labels; "Find it" asks for a word and you tap the object; "Name it" points at an object and
+  // you pick the word. Words missed in a quiz go into the review deck of the kana or kanji course.
+  var PIC_DIR = 'pictures/', picData = null;
+  function loadPictures() {
+    if (!picData) picData = fetchText(PIC_DIR + 'scenes.json').then(JSON.parse);
+    return picData;
+  }
+  function picRomaji(on) {
+    if (on !== undefined) save('nb-pic-romaji', !!on);
+    var v = load('nb-pic-romaji', false);
+    document.querySelectorAll('.content').forEach(function (c) { c.classList.toggle('pic-noro', !v); });
+    return v;
+  }
+  function picDeck(word) {
+    if (/[一-鿿々]/.test(word)) return 'kanji';
+    if (/^[゠-ヿー・]+$/.test(word)) return 'katakana';
+    if (/^[぀-ゟー]+$/.test(word)) return 'hiragana';
+    return null; // e.g. "ATM": nothing to read
+  }
+  function picEnroll(items) {
+    var n = 0;
+    if (!window.NBKana) return 0;
+    items.forEach(function (i) {
+      var deck = picDeck(i.ja), eng = deck && window.NBKana.engine(deck);
+      if (eng && eng.enroll) n += eng.enroll([{ id: 'w:' + i.ja, t: 'w', k: i.ja, r: i.ro, m: i.en }]);
+    });
+    return n;
+  }
+  function mountPictures(article) {
+    article.querySelectorAll('pre > code.language-picture').forEach(function (code) {
+      var id = code.textContent.trim(), box = el('div', { 'class': 'pic' }, [el('p', { 'class': 'loading', text: 'Loading picture…' })]);
+      var nx = code.parentNode.nextElementSibling, tb = nx && (nx.tagName === 'TABLE' ? nx : nx.querySelector('table'));
+      if (tb) tb.classList.add('pic-words');
+      code.parentNode.replaceWith(box);
+      Promise.all([loadPictures(), fetchText(PIC_DIR + 'img/' + id + '.svg')]).then(function (r) {
+        if (!r[0][id]) throw new Error('unknown picture ' + id);
+        buildPicture(box, r[0][id], r[1]);
+      }).catch(function (err) {
+        box.replaceChildren(el('p', { 'class': 'hw-error', text: 'The picture could not be loaded (' + (err.message || err) + ').' }));
+      });
+    });
+    picRomaji();
+  }
+  function buildPicture(box, sc, svgText) {
+    var stage = el('div', { 'class': 'pic-stage' });
+    stage.innerHTML = svgText;
+    var svg = stage.querySelector('svg');
+    svg.setAttribute('class', 'pic-svg'); svg.setAttribute('focusable', 'false');
+    var byId = {}, groups = {}, tags = {};
+    sc.items.forEach(function (i) { byId[i.id] = i; });
+    var tagLayer = el('div', { 'class': 'pic-tags' });
+    stage.appendChild(tagLayer);
+    var caption = el('p', { 'class': 'pic-caption', 'aria-live': 'polite' });
+    var prompt = el('div', { 'class': 'pic-prompt', hidden: '' });
+    var mode = 'study', quiz = null;
+    function row(i) {
+      var tbl = box.nextElementSibling;
+      while (tbl && !tbl.querySelector('table') && tbl.tagName !== 'TABLE') tbl = tbl.nextElementSibling;
+      if (!tbl) return null;
+      return [].filter.call(tbl.querySelectorAll('tbody tr'), function (tr) { return tr.cells[0] && tr.cells[0].textContent.trim() === i.ja; })[0] || null;
+    }
+    function words(i) {
+      return [el('span', { 'class': 'pic-ja', lang: 'ja', text: i.ja }), ' ',
+        i.kana !== i.ja ? el('span', { 'class': 'pic-kana', lang: 'ja', text: i.kana }) : '', ' ',
+        el('span', { 'class': 'pic-ro', text: i.ro }), ' ', el('span', { 'class': 'pic-en', text: i.en })];
+    }
+    function clearMarks() {
+      stage.querySelectorAll('.on, .ok, .bad').forEach(function (n) { n.classList.remove('on', 'ok', 'bad'); });
+      box.parentNode && box.parentNode.querySelectorAll('tr.pic-row-on').forEach(function (tr) { tr.classList.remove('pic-row-on'); });
+    }
+    function show(i) {
+      clearMarks();
+      groups[i.id].classList.add('on'); tags[i.id].classList.add('on');
+      caption.replaceChildren.apply(caption, words(i));
+      var tr = row(i); if (tr) tr.classList.add('pic-row-on');
+      speak(i.ja);
+    }
+    // Tap targets: a transparent box behind each object, so thin shapes are easy to hit.
+    svg.querySelectorAll('.pic-item').forEach(function (gr) {
+      var i = byId[gr.getAttribute('data-id')]; if (!i) return;
+      groups[i.id] = gr;
+      gr.setAttribute('role', 'button'); gr.setAttribute('tabindex', '-1'); gr.setAttribute('aria-label', i.en);
+      gr.addEventListener('click', function () { tap(i); });
+      var t = el('button', { type: 'button', 'class': 'pic-tag', lang: 'ja', text: i.ja, style: 'left:' + (100 * i.tag[0] / sc.w) + '%;top:' + (100 * i.tag[1] / sc.h) + '%' });
+      t.addEventListener('click', function () { tap(i); });
+      tags[i.id] = t; tagLayer.appendChild(t);
+    });
+    requestAnimationFrame(function () {
+      Object.keys(groups).forEach(function (id) {
+        var gr = groups[id], b;
+        try { b = gr.getBBox(); } catch (e) { return; }
+        var r = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        r.setAttribute('x', b.x - 4); r.setAttribute('y', b.y - 4); r.setAttribute('width', b.width + 8); r.setAttribute('height', b.height + 8);
+        r.setAttribute('class', 'pic-hit');
+        gr.insertBefore(r, gr.firstChild);
+        gr.__c = [b.x + b.width / 2, b.y + b.height / 2];
+      });
+    });
+    function tap(i) {
+      if (mode === 'study') return show(i);
+      if (quiz && quiz.kind === 'find' && !quiz.locked) answerFind(i);
+    }
+    // ---------- quizzes ----------
+    function shuffle(a) { a = a.slice(); for (var k = a.length - 1; k > 0; k--) { var j = Math.floor(Math.random() * (k + 1)); var x = a[k]; a[k] = a[j]; a[j] = x; } return a; }
+    function startQuiz(kind) {
+      quiz = { kind: kind, queue: shuffle(sc.items), pos: 0, right: 0, missed: [], locked: false };
+      next();
+    }
+    function next() {
+      clearMarks(); caption.textContent = '';
+      var ring = stage.querySelector('.pic-ring'); if (ring) ring.remove();
+      if (quiz.pos >= quiz.queue.length) return finish();
+      var i = quiz.queue[quiz.pos], head = el('p', { 'class': 'pic-count', text: (quiz.pos + 1) + ' / ' + quiz.queue.length });
+      quiz.locked = false;
+      if (quiz.kind === 'find') {
+        prompt.replaceChildren(head, el('p', { 'class': 'pic-ask' }, ['Tap: ', el('span', { 'class': 'pic-ja', lang: 'ja', text: i.ja }), ' ', i.kana !== i.ja ? el('span', { 'class': 'pic-kana', lang: 'ja', text: '(' + i.kana + ')' }) : '', ' ', el('span', { 'class': 'pic-ro', text: i.ro })]),
+          el('button', { type: 'button', 'class': 'btn', text: '▶ Listen', onclick: function () { speak(i.ja); } }));
+        speak(i.ja);
+      } else {
+        var c = groups[i.id].__c || [sc.w / 2, sc.h / 2];
+        var ring = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        ring.setAttribute('cx', c[0]); ring.setAttribute('cy', c[1]); ring.setAttribute('r', Math.max(26, sc.w / 26)); ring.setAttribute('class', 'pic-ring');
+        svg.appendChild(ring);
+        groups[i.id].classList.add('on');
+        var pool = shuffle(sc.items.filter(function (o) { return o.id !== i.id && o.ja !== i.ja; })).slice(0, 3);
+        var opts = shuffle(pool.concat([i])).map(function (o) {
+          return el('button', { type: 'button', 'class': 'btn pic-opt', lang: 'ja', onclick: function () { answerName(i, o, this); } }, [o.ja, o.kana !== o.ja ? el('small', { text: ' ' + o.kana }) : '']);
+        });
+        prompt.replaceChildren(head, el('p', { 'class': 'pic-ask', text: 'What is this?' }), el('div', { 'class': 'pic-opts' }, opts));
+      }
+    }
+    function after(i, ok) {
+      quiz.locked = true;
+      if (ok) quiz.right++; else quiz.missed.push(i);
+      caption.replaceChildren.apply(caption, [ok ? '✓ ' : '✗ '].concat(words(i)));
+      speak(i.ja);
+      setTimeout(function () { quiz.pos++; next(); }, ok ? 900 : 2200);
+    }
+    function answerFind(t) {
+      var i = quiz.queue[quiz.pos], ok = t.id === i.id;
+      groups[i.id].classList.add(ok ? 'ok' : 'on');
+      if (!ok) groups[t.id].classList.add('bad');
+      after(i, ok);
+    }
+    function answerName(i, o, btn) {
+      if (quiz.locked) return;
+      var ok = o.id === i.id;
+      btn.classList.add(ok ? 'right' : 'wrong');
+      if (!ok) prompt.querySelectorAll('.pic-opt').forEach(function (b) { if (b.firstChild.nodeValue === i.ja) b.classList.add('right'); });
+      after(i, ok);
+    }
+    function finish() {
+      var added = picEnroll(quiz.missed), total = quiz.queue.length;
+      prompt.replaceChildren(
+        el('p', { 'class': 'hw-win', text: quiz.right + ' of ' + total + ' right' + (quiz.right === total ? '. 🎉' : '.') }),
+        quiz.missed.length ? el('p', { 'class': 'hw-note' }, ['To practise: ', el('span', { lang: 'ja', text: quiz.missed.map(function (i) { return i.ja; }).join('、') }),
+          added ? '. ' + added + ' word' + (added > 1 ? 's' : '') + ' added to your daily review (kana and kanji courses).' : '.']) : '',
+        el('div', { 'class': 'pic-opts' }, [
+          el('button', { type: 'button', 'class': 'btn primary', text: 'Again', onclick: function () { startQuiz(quiz.kind); } }),
+          el('button', { type: 'button', 'class': 'btn', text: 'Back to study', onclick: function () { setMode('study'); } })]));
+      quiz = null;
+    }
+    // ---------- toolbar ----------
+    var modes = [['study', 'Study'], ['find', 'Find it'], ['name', 'Name it']];
+    var seg = el('div', { 'class': 'pic-modes', role: 'group', 'aria-label': 'Mode' }, modes.map(function (m) {
+      return el('button', { type: 'button', 'class': 'chip', 'data-mode': m[0], text: m[1], onclick: function () { setMode(m[0]); } });
+    }));
+    var ro = el('label', { 'class': 'pic-toggle' }, [el('input', { type: 'checkbox', onchange: function () { picRomaji(this.checked); } }), ' Romaji']);
+    ro.firstChild.checked = picRomaji();
+    var addAll = el('button', { type: 'button', 'class': 'link-btn', text: 'Add all to my review', onclick: function () {
+      var n = picEnroll(sc.items); toast(n ? n + ' word' + (n > 1 ? 's' : '') + ' added to your daily review.' : 'These words are already in your review.');
+    } });
+    function setMode(m) {
+      mode = m; quiz = null; clearMarks(); caption.textContent = '';
+      var ring = stage.querySelector('.pic-ring'); if (ring) ring.remove();
+      box.classList.toggle('pic-quiz', m !== 'study');
+      seg.querySelectorAll('.chip').forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-mode') === m); b.setAttribute('aria-pressed', b.getAttribute('data-mode') === m); });
+      prompt.hidden = m === 'study';
+      if (m === 'study') caption.textContent = 'Tap anything in the picture to hear its name.';
+      else startQuiz(m);
+    }
+    box.replaceChildren(el('div', { 'class': 'pic-bar' }, [seg, ro, addAll]), prompt, stage, caption);
+    setMode('study');
   }
   /* ---------- photo gallery (```gallery blocks) ---------- */
   // Renders assets/signs/photos.json as a filterable grid; a photo opens full size in a
@@ -882,7 +1080,7 @@
     if (l.kind) return l.kind;
     if (l.label === '★') return l.group === 'course' ? 'Overview' : 'Start here';
     if (l.label === '↻') return 'Daily review';
-    return (l.group === 'course' ? 'Lesson ' : (l.group === 'cuisine' || l.group === 'folklore' || l.group === 'popculture' || l.group === 'bathing' || l.group === 'railways' || l.group === 'festivals') ? 'Chapter ' : 'Unit ') + l.label;
+    return (l.group === 'course' ? 'Lesson ' : (l.group === 'cuisine' || l.group === 'folklore' || l.group === 'popculture' || l.group === 'bathing' || l.group === 'railways' || l.group === 'festivals') ? 'Chapter ' : l.group === 'pictures' ? 'Topic ' : 'Unit ') + l.label;
   }
   function neighbours(id) {
     var i = LESSONS.findIndex(function (l) { return l.id === id; });
@@ -1201,6 +1399,17 @@
       cta: !g.done ? 'Open the handbook' : g.next ? 'Continue: chapter ' + g.next.label : 'Browse the glossary'
     });
   }
+  function picturesTile() {
+    var g = groupProgress('pictures');
+    return tile({
+      id: 'pictures', glyph: '絵', kicker: 'Picture dictionary', title: 'Words you can see',
+      desc: 'Drawn scenes to learn about 220 everyday words and 70 phrases: where things are and the way, food, shops and restaurants, stations and hotels, the body and the pharmacy, money and counting, time, the town, and rooms and the bath. Tap to hear, then test yourself with Find it and Name it; missed words join your daily review.',
+      examples: '右 · 箸 · 改札 · 薬局',
+      href: !g.done ? '#/pictures' : g.next ? '#/' + g.next.id : '#/pictures',
+      value: g.done, total: g.total, progressLabel: g.done + ' of ' + g.total + ' topics completed',
+      cta: !g.done ? 'Open the pictures' : g.next ? 'Continue: topic ' + g.next.label : 'Practise again'
+    });
+  }
   function signsTile() {
     return tile({
       id: 'signs', glyph: '看', kicker: 'Photo gallery', title: 'Signs in the wild',
@@ -1227,7 +1436,7 @@
       el('header', { 'class': 'home-hero' }, [
         el('p', { 'class': 'home-hero-kicker' }, [el('span', { lang: 'ja', text: '日本へようこそ' }), ' · welcome to Japan']),
         el('h1', { text: 'Japanese for your trip' }),
-        el('p', { 'class': 'home-lead', text: 'Eleven ways in. Get the practical know-how for travelling in Japan, learn to read the scripts on every sign, menu and station board, then go deeper into how Japanese food is made, into the kami, ghosts and yōkai of Japanese belief, into manga, anime, film and the rest of Japanese pop culture, into hot springs and bathhouses, into Japan’s railways, and into the festivals and seasons of the Japanese year. Then try your reading on photos of real signs.' })
+        el('p', { 'class': 'home-lead', text: 'Twelve ways in. Get the practical know-how for travelling in Japan, learn to read the scripts on every sign, menu and station board, learn everyday words from pictures, then go deeper into how Japanese food is made, into the kami, ghosts and yōkai of Japanese belief, into manga, anime, film and the rest of Japanese pop culture, into hot springs and bathhouses, into Japan’s railways, and into the festivals and seasons of the Japanese year. Then try your reading on photos of real signs.' })
       ]),
       el('div', { 'class': 'home-tiles' }, [
         tile({
@@ -1246,6 +1455,7 @@
         bathingTile(),
         railwaysTile(),
         festivalsTile(),
+        picturesTile(),
         signsTile()
       ]),
       el('p', { 'class': 'home-foot' }, [

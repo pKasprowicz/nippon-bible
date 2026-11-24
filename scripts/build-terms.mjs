@@ -152,7 +152,10 @@ for (const p of pages) {
         continue;
       }
     }
-    add({ k: 'word', ja: plain(cells[jaCol]), ro: roCol >= 0 ? plain(cells[roCol]) : undefined, en, url: firstUrl(cells[jaCol]) || firstUrl(cells[roCol] || ''), ...ref }, p.file);
+    // A "Kana" column (picture dictionary): the reading opens the same pop-up as the word.
+    const kanaCol = col(/^kana$/), kana = kanaCol >= 0 && kanaCol !== jaCol ? plain(cells[kanaCol]) : '';
+    const ix = add({ k: 'word', ja: plain(cells[jaCol]), kana: kana && kana !== plain(cells[jaCol]) ? kana : undefined, ro: roCol >= 0 ? plain(cells[roCol]) : undefined, en, url: firstUrl(cells[jaCol]) || firstUrl(cells[roCol] || ''), ...ref }, p.file);
+    if (ix !== null && kana) for (const k of kana.split(/\s+·\s+/)) if (!byJa.has(k)) byJa.set(k, ix);
   }
   // Source lists: "Doi Tsutomu, Kawauchi Atsurō 土井勉・河内厚郎. 日本語の題名 (English title)."
   for (const line of md.split('\n').filter((l) => /^(?:\d+\.|-) \*\*[^*]+\.\*\* /.test(l))) {
