@@ -840,14 +840,16 @@
     picRomaji();
   }
   function buildPicture(box, sc, svgText) {
-    var stage = el('div', { 'class': 'pic-stage' });
-    stage.innerHTML = svgText;
+    // The frame keeps the picture's shape, so the labels stay on their objects at any size.
+    var frame = el('div', { 'class': 'pic-frame', style: '--ar:' + (sc.w / sc.h).toFixed(4) });
+    var stage = el('div', { 'class': 'pic-stage' }, [frame]);
+    frame.innerHTML = svgText;
     var svg = stage.querySelector('svg');
     svg.setAttribute('class', 'pic-svg'); svg.setAttribute('focusable', 'false');
     var byId = {}, groups = {}, tags = {};
     sc.items.forEach(function (i) { byId[i.id] = i; });
     var tagLayer = el('div', { 'class': 'pic-tags' });
-    stage.appendChild(tagLayer);
+    frame.appendChild(tagLayer);
     var caption = el('p', { 'class': 'pic-caption', 'aria-live': 'polite' });
     var prompt = el('div', { 'class': 'pic-prompt', hidden: '' });
     var mode = 'study', quiz = null;
@@ -977,7 +979,37 @@
       if (m === 'study') caption.textContent = 'Tap anything in the picture to hear its name.';
       else startQuiz(m);
     }
-    box.replaceChildren(el('div', { 'class': 'pic-bar' }, [seg, ro, addAll]), prompt, stage, caption);
+    // Full screen: the picture fills the window (works everywhere, including iPhone); where the
+    // browser allows it, real full screen also hides the browser's own bars.
+    var fullBtn = el('button', { type: 'button', 'class': 'btn pic-full-btn', 'aria-pressed': 'false', title: 'Full screen (Esc to close)' });
+    function isFull() { return box.classList.contains('pic-full'); }
+    function setFull(on) {
+      if (on === isFull()) return;
+      box.classList.toggle('pic-full', on);
+      document.documentElement.classList.toggle('pic-lock', on);
+      fullBtn.textContent = on ? '✕ Close' : '⛶ Full screen';
+      fullBtn.setAttribute('aria-pressed', String(on));
+      var fsEl = document.fullscreenElement || document.webkitFullscreenElement;
+      if (on) {
+        var req = box.requestFullscreen || box.webkitRequestFullscreen;
+        if (req) { try { var r = req.call(box); if (r && r.catch) r.catch(function () {}); } catch (e) { /* overlay only */ } }
+        document.addEventListener('keydown', onKey);
+        fullBtn.focus();
+      } else {
+        if (fsEl) (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+        document.removeEventListener('keydown', onKey);
+      }
+    }
+    function onKey(e) { if (e.key === 'Escape') setFull(false); }
+    function onFsChange() { if (!(document.fullscreenElement || document.webkitFullscreenElement) && isFull()) setFull(false); }
+    document.addEventListener('fullscreenchange', onFsChange);
+    document.addEventListener('webkitfullscreenchange', onFsChange);
+    fullBtn.addEventListener('click', function () { setFull(!isFull()); });
+    fullBtn.textContent = '⛶ Full screen';
+    // Leaving the page closes it.
+    window.addEventListener('hashchange', function () { setFull(false); }, { once: true });
+    var hint = el('p', { 'class': 'pic-rotate-hint', text: '↻ Turn your phone sideways for a bigger picture.' });
+    box.replaceChildren(el('div', { 'class': 'pic-bar' }, [seg, ro, addAll, fullBtn]), prompt, stage, caption, hint);
     setMode('study');
   }
   /* ---------- photo gallery (```gallery blocks) ---------- */
