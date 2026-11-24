@@ -708,7 +708,18 @@ kbd { font-family: var(--font-mono); font-size: 12px; border: 1px solid var(--li
 .pic-modes { display: flex; gap: 6px; }
 .pic-toggle { font-size: 14px; color: var(--ink-soft); display: inline-flex; align-items: center; gap: 4px; cursor: pointer; }
 .pic-stage { position: relative; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); background: #fbf7ee; }
-.pic-frame { position: relative; }
+.pic-frame { position: relative; transform-origin: 0 0; }
+/* Zoom and pan: one finger scrolls the page until the picture is zoomed; then it moves the picture. */
+.pic-stage { touch-action: pan-x pan-y; }
+.pic-stage.pic-zoomed, .pic-full .pic-stage { touch-action: none; }
+.pic-stage.pic-zoomed { cursor: grab; }
+.pic-stage.pic-zoomed:active { cursor: grabbing; }
+.pic-zoom { position: absolute; right: 8px; bottom: 8px; z-index: 2; display: flex; flex-direction: column; gap: 6px; }
+.pic-zbtn {
+  width: 36px; height: 36px; border-radius: 50%; border: 1px solid #cfc6b6; background: rgba(255, 255, 255, .94); color: #222;
+  font: 700 20px/1 system-ui, sans-serif; cursor: pointer; box-shadow: 0 1px 4px rgba(0, 0, 0, .18); display: grid; place-items: center; padding: 0;
+}
+.pic-zbtn:disabled { opacity: .4; cursor: default; }
 .pic-full-btn { margin-left: auto; padding: 6px 12px; font-size: 14px; }
 /* Full screen: the widget covers the window; the picture is as large as fits, keeping its shape. */
 .pic.pic-full {
@@ -746,7 +757,7 @@ html.pic-lock, html.pic-lock body { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) { .pic-svg .pic-ring { animation: none; } }
 .pic-tags { position: absolute; inset: 0; pointer-events: none; }
 .pic-tag {
-  position: absolute; transform: translate(-50%, -50%); pointer-events: auto; white-space: nowrap;
+  position: absolute; transform: translate(-50%, -50%) scale(calc(1 / var(--z, 1))); pointer-events: auto; white-space: nowrap;
   font: 600 clamp(11px, 1.7vw, 15px)/1.2 var(--font-ja, inherit); padding: 2px 7px; border-radius: 999px;
   background: rgba(255, 255, 255, .92); color: #222; border: 1px solid #cfc6b6; box-shadow: 0 1px 3px rgba(0, 0, 0, .12); cursor: pointer;
 }
