@@ -12,7 +12,7 @@ const fail = (msg) => errors.push(msg);
 const app = readFileSync('assets/app.js', 'utf8');
 const entries = [...app.matchAll(/\{ id: '([^']+)', file: '([^']+)'/g)].map((m) => ({ id: m[1], file: m[2] }));
 const registered = entries.map((e) => e.file);
-const pageFiles = ['lessons', 'hiragana', 'katakana', 'kanji', 'cuisine', 'folklore', 'popculture', 'bathing', 'railways', 'festivals', 'signs'].flatMap((dir) =>
+const pageFiles = ['lessons', 'hiragana', 'katakana', 'kanji', 'cuisine', 'folklore', 'popculture', 'bathing', 'railways', 'festivals', 'pictures', 'signs'].flatMap((dir) =>
   readdirSync(dir).filter((f) => f.endsWith('.md')).map((f) => `${dir}/${f}`));
 for (const e of entries) if (!existsSync(e.file)) fail(`assets/app.js lists '${e.id}' but ${e.file} is missing`);
 for (const f of pageFiles) if (!registered.includes(f)) fail(`${f} is not listed in LESSONS in assets/app.js`);
@@ -134,6 +134,29 @@ for (const hb of HANDBOOKS) {
   if (existsSync(`${hb.dir}/img`)) {
     for (const f of readdirSync(`${hb.dir}/img`)) if (!usedImages.has(`${hb.dir}/img/${f}`)) fail(`${hb.dir}/img/${f} is not used by any page`);
   }
+}
+
+// 4c. Picture dictionary: every ```picture block names a scene with an SVG and a word table, and every
+// drawn object has a word (scripts/pictures/build.py writes all three).
+{
+  const scenes = JSON.parse(readFileSync('pictures/scenes.json', 'utf8'));
+  const used = new Set();
+  for (const file of pageFiles.filter((f) => f.startsWith('pictures/'))) {
+    const text = readFileSync(file, 'utf8');
+    for (const [, id] of text.matchAll(/```picture\n([\w-]+)\n```/g)) {
+      used.add(id);
+      if (!scenes[id]) { fail(`${file}: unknown picture '${id}'`); continue; }
+      if (!existsSync(`pictures/img/${id}.svg`)) fail(`${file}: pictures/img/${id}.svg is missing`);
+      if (!new RegExp(`<!-- words:${id} -->\\n\\| Japanese`).test(text)) fail(`${file}: picture '${id}' has no word table (run scripts/pictures/build.py)`);
+      const svg = existsSync(`pictures/img/${id}.svg`) ? readFileSync(`pictures/img/${id}.svg`, 'utf8') : '';
+      const drawn = [...svg.matchAll(/data-id="([^"]+)"/g)].map((m) => m[1]);
+      for (const it of scenes[id].items) {
+        if (!drawn.includes(it.id)) fail(`pictures/img/${id}.svg: no drawing for '${it.id}'`);
+        for (const k of ['ja', 'kana', 'ro', 'en']) if (!it[k]) fail(`pictures/scenes.json: ${id}/${it.id} has no ${k}`);
+      }
+    }
+  }
+  for (const id of Object.keys(scenes)) if (!used.has(id)) fail(`pictures/scenes.json: picture '${id}' is not used by any page`);
 }
 
 // 4b. Installable offline app: manifest icons exist; the service worker can be stamped at deploy.

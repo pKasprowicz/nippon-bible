@@ -1,0 +1,2530 @@
+{
+"positions": {
+"title": "位置",
+"en": "Where things are: the same box or table and a red ball in twelve positions",
+"w": 800,
+"h": 540,
+"items": [
+{
+"id": "ue",
+"ja": "上",
+"kana": "うえ",
+"ro": "ue",
+"en": "on, above",
+"tag": [
+106,
+162
+]
+},
+{
+"id": "shita",
+"ja": "下",
+"kana": "した",
+"ro": "shita",
+"en": "under, below",
+"tag": [
+302,
+162
+]
+},
+{
+"id": "naka",
+"ja": "中",
+"kana": "なか",
+"ro": "naka",
+"en": "inside, in",
+"tag": [
+498,
+162
+]
+},
+{
+"id": "soto",
+"ja": "外",
+"kana": "そと",
+"ro": "soto",
+"en": "outside",
+"tag": [
+694,
+162
+]
+},
+{
+"id": "mae",
+"ja": "前",
+"kana": "まえ",
+"ro": "mae",
+"en": "in front of",
+"tag": [
+106,
+338
+]
+},
+{
+"id": "ushiro",
+"ja": "後ろ",
+"kana": "うしろ",
+"ro": "ushiro",
+"en": "behind",
+"tag": [
+302,
+338
+]
+},
+{
+"id": "migi",
+"ja": "右",
+"kana": "みぎ",
+"ro": "migi",
+"en": "right (of)",
+"tag": [
+498,
+338
+]
+},
+{
+"id": "hidari",
+"ja": "左",
+"kana": "ひだり",
+"ro": "hidari",
+"en": "left (of)",
+"tag": [
+694,
+338
+]
+},
+{
+"id": "aida",
+"ja": "間",
+"kana": "あいだ",
+"ro": "aida",
+"en": "between",
+"tag": [
+106,
+514
+]
+},
+{
+"id": "yoko",
+"ja": "横",
+"kana": "よこ",
+"ro": "yoko",
+"en": "beside, next to",
+"tag": [
+302,
+514
+]
+},
+{
+"id": "chikaku",
+"ja": "近く",
+"kana": "ちかく",
+"ro": "chikaku",
+"en": "near",
+"tag": [
+498,
+514
+]
+},
+{
+"id": "tooku",
+"ja": "遠く",
+"kana": "とおく",
+"ro": "tōku",
+"en": "far (away)",
+"tag": [
+694,
+514
+]
+}
+]
+},
+"directions": {
+"title": "道案内",
+"en": "Finding the way: an intersection seen from above, with arrows for straight on, right, left and back, and a compass",
+"w": 800,
+"h": 560,
+"items": [
+{
+"id": "koosaten",
+"ja": "交差点",
+"kana": "こうさてん",
+"ro": "kōsaten",
+"en": "intersection, crossing",
+"tag": [
+400,
+262
+]
+},
+{
+"id": "oodanhodoo",
+"ja": "横断歩道",
+"kana": "おうだんほどう",
+"ro": "ōdan hodō",
+"en": "pedestrian crossing",
+"tag": [
+400,
+357
+]
+},
+{
+"id": "shingoo",
+"ja": "信号",
+"kana": "しんごう",
+"ro": "shingō",
+"en": "traffic light",
+"tag": [
+540,
+318
+]
+},
+{
+"id": "kado",
+"ja": "角",
+"kana": "かど",
+"ro": "kado",
+"en": "corner",
+"tag": [
+650,
+170
+]
+},
+{
+"id": "michi",
+"ja": "道",
+"kana": "みち",
+"ro": "michi",
+"en": "road, street, way",
+"tag": [
+150,
+300
+]
+},
+{
+"id": "massugu",
+"ja": "まっすぐ",
+"kana": "まっすぐ",
+"ro": "massugu",
+"en": "straight on",
+"tag": [
+430,
+92
+]
+},
+{
+"id": "migi-magaru",
+"ja": "右に曲がる",
+"kana": "みぎにまがる",
+"ro": "migi ni magaru",
+"en": "turn right",
+"tag": [
+640,
+250
+]
+},
+{
+"id": "hidari-magaru",
+"ja": "左に曲がる",
+"kana": "ひだりにまがる",
+"ro": "hidari ni magaru",
+"en": "turn left",
+"tag": [
+150,
+340
+]
+},
+{
+"id": "modoru",
+"ja": "戻る",
+"kana": "もどる",
+"ro": "modoru",
+"en": "go back",
+"tag": [
+560,
+520
+]
+},
+{
+"id": "kita",
+"ja": "北",
+"kana": "きた",
+"ro": "kita",
+"en": "north",
+"tag": [
+700,
+404
+]
+},
+{
+"id": "minami",
+"ja": "南",
+"kana": "みなみ",
+"ro": "minami",
+"en": "south",
+"tag": [
+700,
+540
+]
+},
+{
+"id": "higashi",
+"ja": "東",
+"kana": "ひがし",
+"ro": "higashi",
+"en": "east",
+"tag": [
+775,
+470
+]
+},
+{
+"id": "nishi",
+"ja": "西",
+"kana": "にし",
+"ro": "nishi",
+"en": "west",
+"tag": [
+625,
+470
+]
+}
+]
+},
+"teishoku": {
+"title": "定食",
+"en": "A set meal on a tray, seen from above",
+"w": 800,
+"h": 520,
+"items": [
+{
+"id": "obon",
+"ja": "お盆",
+"kana": "おぼん",
+"ro": "obon",
+"en": "tray",
+"tag": [
+390,
+80
+]
+},
+{
+"id": "chawan",
+"ja": "茶碗",
+"kana": "ちゃわん",
+"ro": "chawan",
+"en": "rice bowl",
+"tag": [
+150,
+270
+]
+},
+{
+"id": "gohan",
+"ja": "ご飯",
+"kana": "ごはん",
+"ro": "gohan",
+"en": "cooked rice; a meal",
+"tag": [
+240,
+330
+]
+},
+{
+"id": "misoshiru",
+"ja": "味噌汁",
+"kana": "みそしる",
+"ro": "misoshiru",
+"en": "miso soup",
+"tag": [
+420,
+254
+]
+},
+{
+"id": "sara",
+"ja": "皿",
+"kana": "さら",
+"ro": "sara",
+"en": "plate, dish",
+"tag": [
+360,
+170
+]
+},
+{
+"id": "yakizakana",
+"ja": "焼き魚",
+"kana": "やきざかな",
+"ro": "yakizakana",
+"en": "grilled fish",
+"tag": [
+510,
+118
+]
+},
+{
+"id": "tsukemono",
+"ja": "漬物",
+"kana": "つけもの",
+"ro": "tsukemono",
+"en": "pickles",
+"tag": [
+250,
+228
+]
+},
+{
+"id": "yunomi",
+"ja": "湯呑み",
+"kana": "ゆのみ",
+"ro": "yunomi",
+"en": "teacup",
+"tag": [
+590,
+392
+]
+},
+{
+"id": "ocha",
+"ja": "お茶",
+"kana": "おちゃ",
+"ro": "ocha",
+"en": "(green) tea",
+"tag": [
+590,
+330
+]
+},
+{
+"id": "hashioki",
+"ja": "箸置き",
+"kana": "はしおき",
+"ro": "hashioki",
+"en": "chopstick rest",
+"tag": [
+207,
+488
+]
+},
+{
+"id": "hashi",
+"ja": "箸",
+"kana": "はし",
+"ro": "hashi",
+"en": "chopsticks",
+"tag": [
+480,
+444
+]
+},
+{
+"id": "shooyu",
+"ja": "醤油",
+"kana": "しょうゆ",
+"ro": "shōyu",
+"en": "soy sauce",
+"tag": [
+723,
+330
+]
+},
+{
+"id": "oshibori",
+"ja": "おしぼり",
+"kana": "おしぼり",
+"ro": "oshibori",
+"en": "wet hand towel",
+"tag": [
+730,
+430
+]
+}
+]
+},
+"ramen": {
+"title": "ラーメン",
+"en": "A bowl of ramen seen from above, with its toppings",
+"w": 800,
+"h": 560,
+"items": [
+{
+"id": "donburi",
+"ja": "丼",
+"kana": "どんぶり",
+"ro": "donburi",
+"en": "large bowl",
+"tag": [
+400,
+36
+]
+},
+{
+"id": "suupu",
+"ja": "スープ",
+"kana": "スープ",
+"ro": "sūpu",
+"en": "soup, broth",
+"tag": [
+520,
+440
+]
+},
+{
+"id": "men",
+"ja": "麺",
+"kana": "めん",
+"ro": "men",
+"en": "noodles",
+"tag": [
+360,
+400
+]
+},
+{
+"id": "chaashuu",
+"ja": "チャーシュー",
+"kana": "チャーシュー",
+"ro": "chāshū",
+"en": "sliced roast pork",
+"tag": [
+300,
+140
+]
+},
+{
+"id": "nitamago",
+"ja": "煮卵",
+"kana": "にたまご",
+"ro": "nitamago",
+"en": "marinated soft-boiled egg",
+"tag": [
+575,
+245
+]
+},
+{
+"id": "negi",
+"ja": "ネギ",
+"kana": "ネギ",
+"ro": "negi",
+"en": "spring onion",
+"tag": [
+395,
+248
+]
+},
+{
+"id": "nori",
+"ja": "海苔",
+"kana": "のり",
+"ro": "nori",
+"en": "dried seaweed",
+"tag": [
+445,
+140
+]
+},
+{
+"id": "menma",
+"ja": "メンマ",
+"kana": "メンマ",
+"ro": "menma",
+"en": "seasoned bamboo shoots",
+"tag": [
+255,
+420
+]
+},
+{
+"id": "renge",
+"ja": "れんげ",
+"kana": "れんげ",
+"ro": "renge",
+"en": "Chinese soup spoon",
+"tag": [
+700,
+470
+]
+}
+]
+},
+"sushi": {
+"title": "寿司",
+"en": "A sushi counter: the chef, and pieces of sushi on a wooden board",
+"w": 800,
+"h": 520,
+"items": [
+{
+"id": "itamae",
+"ja": "板前",
+"kana": "いたまえ",
+"ro": "itamae",
+"en": "sushi chef",
+"tag": [
+480,
+70
+]
+},
+{
+"id": "kauntaa",
+"ja": "カウンター",
+"kana": "カウンター",
+"ro": "kauntā",
+"en": "counter",
+"tag": [
+100,
+490
+]
+},
+{
+"id": "geta",
+"ja": "下駄",
+"kana": "げた",
+"ro": "geta",
+"en": "wooden serving board",
+"tag": [
+350,
+470
+]
+},
+{
+"id": "maguro",
+"ja": "マグロ",
+"kana": "マグロ",
+"ro": "maguro",
+"en": "tuna",
+"tag": [
+150,
+322
+]
+},
+{
+"id": "saamon",
+"ja": "サーモン",
+"kana": "サーモン",
+"ro": "sāmon",
+"en": "salmon",
+"tag": [
+235,
+322
+]
+},
+{
+"id": "ebi",
+"ja": "エビ",
+"kana": "エビ",
+"ro": "ebi",
+"en": "shrimp, prawn",
+"tag": [
+320,
+322
+]
+},
+{
+"id": "ika",
+"ja": "イカ",
+"kana": "イカ",
+"ro": "ika",
+"en": "squid",
+"tag": [
+405,
+322
+]
+},
+{
+"id": "tamago",
+"ja": "玉子",
+"kana": "たまご",
+"ro": "tamago",
+"en": "sweet omelette",
+"tag": [
+490,
+322
+]
+},
+{
+"id": "ikura",
+"ja": "いくら",
+"kana": "いくら",
+"ro": "ikura",
+"en": "salmon roe",
+"tag": [
+568,
+322
+]
+},
+{
+"id": "gari",
+"ja": "ガリ",
+"kana": "ガリ",
+"ro": "gari",
+"en": "pickled ginger",
+"tag": [
+640,
+460
+]
+},
+{
+"id": "wasabi",
+"ja": "わさび",
+"kana": "わさび",
+"ro": "wasabi",
+"en": "wasabi",
+"tag": [
+716,
+430
+]
+},
+{
+"id": "shooyu-zara",
+"ja": "醤油皿",
+"kana": "しょうゆざら",
+"ro": "shōyu-zara",
+"en": "small dish for soy sauce",
+"tag": [
+720,
+322
+]
+}
+]
+},
+"tastes": {
+"title": "味",
+"en": "Tastes and temperatures: eight pictures",
+"w": 800,
+"h": 426,
+"items": [
+{
+"id": "amai",
+"ja": "甘い",
+"kana": "あまい",
+"ro": "amai",
+"en": "sweet",
+"tag": [
+106,
+190
+]
+},
+{
+"id": "karai",
+"ja": "辛い",
+"kana": "からい",
+"ro": "karai",
+"en": "hot, spicy",
+"tag": [
+302,
+190
+]
+},
+{
+"id": "shoppai",
+"ja": "しょっぱい",
+"kana": "しょっぱい",
+"ro": "shoppai",
+"en": "salty",
+"tag": [
+498,
+190
+]
+},
+{
+"id": "suppai",
+"ja": "酸っぱい",
+"kana": "すっぱい",
+"ro": "suppai",
+"en": "sour",
+"tag": [
+694,
+190
+]
+},
+{
+"id": "nigai",
+"ja": "苦い",
+"kana": "にがい",
+"ro": "nigai",
+"en": "bitter",
+"tag": [
+106,
+396
+]
+},
+{
+"id": "atsui",
+"ja": "熱い",
+"kana": "あつい",
+"ro": "atsui",
+"en": "hot (to the touch)",
+"tag": [
+302,
+396
+]
+},
+{
+"id": "tsumetai",
+"ja": "冷たい",
+"kana": "つめたい",
+"ro": "tsumetai",
+"en": "cold (to the touch)",
+"tag": [
+498,
+396
+]
+},
+{
+"id": "oishii",
+"ja": "おいしい",
+"kana": "おいしい",
+"ro": "oishii",
+"en": "delicious",
+"tag": [
+694,
+396
+]
+}
+]
+},
+"konbini": {
+"title": "コンビニ",
+"en": "Inside a convenience store: drinks, rice balls and boxed meals, the checkout and the shop assistant",
+"w": 800,
+"h": 540,
+"items": [
+{
+"id": "nomimono",
+"ja": "飲み物",
+"kana": "のみもの",
+"ro": "nomimono",
+"en": "drinks",
+"tag": [
+105,
+70
+]
+},
+{
+"id": "onigiri",
+"ja": "おにぎり",
+"kana": "おにぎり",
+"ro": "onigiri",
+"en": "rice ball",
+"tag": [
+320,
+210
+]
+},
+{
+"id": "obentoo",
+"ja": "お弁当",
+"kana": "おべんとう",
+"ro": "obentō",
+"en": "boxed meal",
+"tag": [
+320,
+440
+]
+},
+{
+"id": "tenin",
+"ja": "店員",
+"kana": "てんいん",
+"ro": "ten'in",
+"en": "shop assistant",
+"tag": [
+600,
+205
+]
+},
+{
+"id": "reji",
+"ja": "レジ",
+"kana": "レジ",
+"ro": "reji",
+"en": "checkout, till",
+"tag": [
+505,
+380
+]
+},
+{
+"id": "reshiito",
+"ja": "レシート",
+"kana": "レシート",
+"ro": "reshīto",
+"en": "receipt",
+"tag": [
+585,
+276
+]
+},
+{
+"id": "rejibukuro",
+"ja": "レジ袋",
+"kana": "レジぶくろ",
+"ro": "reji-bukuro",
+"en": "plastic shopping bag",
+"tag": [
+712,
+300
+]
+},
+{
+"id": "denshirenji",
+"ja": "電子レンジ",
+"kana": "でんしレンジ",
+"ro": "denshi renji",
+"en": "microwave oven",
+"tag": [
+710,
+130
+]
+},
+{
+"id": "gomibako",
+"ja": "ごみ箱",
+"kana": "ごみばこ",
+"ro": "gomibako",
+"en": "rubbish bin",
+"tag": [
+100,
+425
+]
+},
+{
+"id": "atm",
+"ja": "ATM",
+"kana": "エーティーエム",
+"ro": "ētīemu",
+"en": "cash machine",
+"tag": [
+310,
+40
+]
+}
+]
+},
+"restaurant": {
+"title": "飲食店",
+"en": "A restaurant: the curtain at the entrance, the meal-ticket machine, a table set with a menu and water, and the staff",
+"w": 800,
+"h": 540,
+"items": [
+{
+"id": "noren",
+"ja": "のれん",
+"kana": "のれん",
+"ro": "noren",
+"en": "shop curtain at the entrance",
+"tag": [
+88,
+130
+]
+},
+{
+"id": "shokkenki",
+"ja": "食券機",
+"kana": "しょっけんき",
+"ro": "shokkenki",
+"en": "meal-ticket machine",
+"tag": [
+240,
+140
+]
+},
+{
+"id": "teeburu",
+"ja": "テーブル",
+"kana": "テーブル",
+"ro": "tēburu",
+"en": "table",
+"tag": [
+510,
+470
+]
+},
+{
+"id": "isu",
+"ja": "椅子",
+"kana": "いす",
+"ro": "isu",
+"en": "chair",
+"tag": [
+690,
+230
+]
+},
+{
+"id": "menyuu",
+"ja": "メニュー",
+"kana": "メニュー",
+"ro": "menyū",
+"en": "menu",
+"tag": [
+440,
+280
+]
+},
+{
+"id": "ohiya",
+"ja": "お冷",
+"kana": "おひや",
+"ro": "ohiya",
+"en": "glass of (free) water",
+"tag": [
+534,
+270
+]
+},
+{
+"id": "oshibori",
+"ja": "おしぼり",
+"kana": "おしぼり",
+"ro": "oshibori",
+"en": "wet hand towel",
+"tag": [
+590,
+308
+]
+},
+{
+"id": "yobidashi",
+"ja": "呼び出しボタン",
+"kana": "よびだしボタン",
+"ro": "yobidashi botan",
+"en": "call button",
+"tag": [
+640,
+380
+]
+},
+{
+"id": "tenin2",
+"ja": "店員",
+"kana": "てんいん",
+"ro": "ten'in",
+"en": "member of staff",
+"tag": [
+335,
+245
+]
+},
+{
+"id": "okaikei",
+"ja": "お会計",
+"kana": "おかいけい",
+"ro": "okaikei",
+"en": "the bill, paying",
+"tag": [
+760,
+90
+]
+}
+]
+},
+"station": {
+"title": "駅",
+"en": "A station: ticket machines, ticket gates, the exit sign, and a train at the platform beyond",
+"w": 800,
+"h": 560,
+"items": [
+{
+"id": "densha",
+"ja": "電車",
+"kana": "でんしゃ",
+"ro": "densha",
+"en": "train",
+"tag": [
+520,
+40
+]
+},
+{
+"id": "hoomu",
+"ja": "ホーム",
+"kana": "ホーム",
+"ro": "hōmu",
+"en": "platform",
+"tag": [
+140,
+228
+]
+},
+{
+"id": "senro",
+"ja": "線路",
+"kana": "せんろ",
+"ro": "senro",
+"en": "railway track",
+"tag": [
+120,
+166
+]
+},
+{
+"id": "bansen",
+"ja": "1番線",
+"kana": "いちばんせん",
+"ro": "ichi-bansen",
+"en": "track 1, platform 1",
+"tag": [
+95,
+52
+]
+},
+{
+"id": "jikokuhyoo",
+"ja": "時刻表",
+"kana": "じこくひょう",
+"ro": "jikokuhyō",
+"en": "timetable",
+"tag": [
+95,
+430
+]
+},
+{
+"id": "kenbaiki",
+"ja": "券売機",
+"kana": "けんばいき",
+"ro": "kenbaiki",
+"en": "ticket machine",
+"tag": [
+250,
+270
+]
+},
+{
+"id": "kippu",
+"ja": "切符",
+"kana": "きっぷ",
+"ro": "kippu",
+"en": "ticket",
+"tag": [
+234,
+506
+]
+},
+{
+"id": "kaisatsu",
+"ja": "改札",
+"kana": "かいさつ",
+"ro": "kaisatsu",
+"en": "ticket gates",
+"tag": [
+540,
+500
+]
+},
+{
+"id": "ic",
+"ja": "ICカード",
+"kana": "アイシーカード",
+"ro": "aishī kādo",
+"en": "IC card (travel card)",
+"tag": [
+475,
+290
+]
+},
+{
+"id": "ekiin",
+"ja": "駅員",
+"kana": "えきいん",
+"ro": "ekiin",
+"en": "station staff",
+"tag": [
+730,
+286
+]
+},
+{
+"id": "deguchi",
+"ja": "出口",
+"kana": "でぐち",
+"ro": "deguchi",
+"en": "exit",
+"tag": [
+660,
+248
+]
+}
+]
+},
+"hotel": {
+"title": "ホテル",
+"en": "A hotel lobby: the front desk with a key, a passport and a bell, the luggage, stairs and the lift",
+"w": 800,
+"h": 540,
+"items": [
+{
+"id": "sutaffu",
+"ja": "スタッフ",
+"kana": "スタッフ",
+"ro": "sutaffu",
+"en": "staff",
+"tag": [
+410,
+200
+]
+},
+{
+"id": "furonto",
+"ja": "フロント",
+"kana": "フロント",
+"ro": "furonto",
+"en": "front desk, reception",
+"tag": [
+410,
+380
+]
+},
+{
+"id": "kagi",
+"ja": "鍵",
+"kana": "かぎ",
+"ro": "kagi",
+"en": "key",
+"tag": [
+290,
+255
+]
+},
+{
+"id": "pasupooto",
+"ja": "パスポート",
+"kana": "パスポート",
+"ro": "pasupōto",
+"en": "passport",
+"tag": [
+540,
+236
+]
+},
+{
+"id": "yobirin",
+"ja": "呼び鈴",
+"kana": "よびりん",
+"ro": "yobirin",
+"en": "desk bell",
+"tag": [
+452,
+256
+]
+},
+{
+"id": "nimotsu",
+"ja": "荷物",
+"kana": "にもつ",
+"ro": "nimotsu",
+"en": "luggage",
+"tag": [
+230,
+470
+]
+},
+{
+"id": "erebeetaa",
+"ja": "エレベーター",
+"kana": "エレベーター",
+"ro": "erebētā",
+"en": "lift, elevator",
+"tag": [
+695,
+130
+]
+},
+{
+"id": "kaidan",
+"ja": "階段",
+"kana": "かいだん",
+"ro": "kaidan",
+"en": "stairs",
+"tag": [
+60,
+240
+]
+},
+{
+"id": "hijooguchi",
+"ja": "非常口",
+"kana": "ひじょうぐち",
+"ro": "hijōguchi",
+"en": "emergency exit",
+"tag": [
+85,
+50
+]
+},
+{
+"id": "sofaa",
+"ja": "ソファー",
+"kana": "ソファー",
+"ro": "sofā",
+"en": "sofa",
+"tag": [
+430,
+496
+]
+}
+]
+},
+"body": {
+"title": "体",
+"en": "The human body, front view",
+"w": 600,
+"h": 620,
+"items": [
+{
+"id": "ashi",
+"ja": "足",
+"kana": "あし",
+"ro": "ashi",
+"en": "leg; foot",
+"tag": [
+210,
+560
+]
+},
+{
+"id": "hiza",
+"ja": "膝",
+"kana": "ひざ",
+"ro": "hiza",
+"en": "knee",
+"tag": [
+395,
+505
+]
+},
+{
+"id": "ude",
+"ja": "腕",
+"kana": "うで",
+"ro": "ude",
+"en": "arm",
+"tag": [
+150,
+270
+]
+},
+{
+"id": "te",
+"ja": "手",
+"kana": "て",
+"ro": "te",
+"en": "hand",
+"tag": [
+160,
+395
+]
+},
+{
+"id": "yubi",
+"ja": "指",
+"kana": "ゆび",
+"ro": "yubi",
+"en": "finger",
+"tag": [
+450,
+410
+]
+},
+{
+"id": "koshi",
+"ja": "腰",
+"kana": "こし",
+"ro": "koshi",
+"en": "hips; lower back",
+"tag": [
+450,
+440
+]
+},
+{
+"id": "onaka",
+"ja": "お腹",
+"kana": "おなか",
+"ro": "onaka",
+"en": "stomach, belly",
+"tag": [
+300,
+350
+]
+},
+{
+"id": "mune",
+"ja": "胸",
+"kana": "むね",
+"ro": "mune",
+"en": "chest",
+"tag": [
+300,
+252
+]
+},
+{
+"id": "kata",
+"ja": "肩",
+"kana": "かた",
+"ro": "kata",
+"en": "shoulder",
+"tag": [
+440,
+205
+]
+},
+{
+"id": "kubi",
+"ja": "首",
+"kana": "くび",
+"ro": "kubi",
+"en": "neck",
+"tag": [
+190,
+180
+]
+},
+{
+"id": "nodo",
+"ja": "喉",
+"kana": "のど",
+"ro": "nodo",
+"en": "throat",
+"tag": [
+300,
+214
+]
+},
+{
+"id": "mimi",
+"ja": "耳",
+"kana": "みみ",
+"ro": "mimi",
+"en": "ear",
+"tag": [
+420,
+110
+]
+},
+{
+"id": "kao",
+"ja": "顔",
+"kana": "かお",
+"ro": "kao",
+"en": "face",
+"tag": [
+160,
+120
+]
+},
+{
+"id": "atama",
+"ja": "頭",
+"kana": "あたま",
+"ro": "atama",
+"en": "head",
+"tag": [
+300,
+22
+]
+},
+{
+"id": "me",
+"ja": "目",
+"kana": "め",
+"ro": "me",
+"en": "eye",
+"tag": [
+440,
+70
+]
+},
+{
+"id": "hana",
+"ja": "鼻",
+"kana": "はな",
+"ro": "hana",
+"en": "nose",
+"tag": [
+440,
+132
+]
+},
+{
+"id": "kuchi",
+"ja": "口",
+"kana": "くち",
+"ro": "kuchi",
+"en": "mouth",
+"tag": [
+160,
+160
+]
+}
+]
+},
+"pharmacy": {
+"title": "薬局",
+"en": "A pharmacy: medicines on the shelves and the pharmacist at the counter",
+"w": 800,
+"h": 540,
+"items": [
+{
+"id": "kazegusuri",
+"ja": "風邪薬",
+"kana": "かぜぐすり",
+"ro": "kazegusuri",
+"en": "cold medicine",
+"tag": [
+90,
+60
+]
+},
+{
+"id": "zutsuuyaku",
+"ja": "頭痛薬",
+"kana": "ずつうやく",
+"ro": "zutsūyaku",
+"en": "headache medicine",
+"tag": [
+210,
+60
+]
+},
+{
+"id": "igusuri",
+"ja": "胃薬",
+"kana": "いぐすり",
+"ro": "igusuri",
+"en": "stomach medicine",
+"tag": [
+330,
+60
+]
+},
+{
+"id": "megusuri",
+"ja": "目薬",
+"kana": "めぐすり",
+"ro": "megusuri",
+"en": "eye drops",
+"tag": [
+430,
+74
+]
+},
+{
+"id": "bansookoo",
+"ja": "絆創膏",
+"kana": "ばんそうこう",
+"ro": "bansōkō",
+"en": "sticking plaster",
+"tag": [
+100,
+196
+]
+},
+{
+"id": "masuku",
+"ja": "マスク",
+"kana": "マスク",
+"ro": "masuku",
+"en": "face mask",
+"tag": [
+240,
+196
+]
+},
+{
+"id": "taionkei",
+"ja": "体温計",
+"kana": "たいおんけい",
+"ro": "taionkei",
+"en": "thermometer",
+"tag": [
+385,
+220
+]
+},
+{
+"id": "shippu",
+"ja": "湿布",
+"kana": "しっぷ",
+"ro": "shippu",
+"en": "medicated (pain-relief) patch",
+"tag": [
+130,
+425
+]
+},
+{
+"id": "yakuzaishi",
+"ja": "薬剤師",
+"kana": "やくざいし",
+"ro": "yakuzaishi",
+"en": "pharmacist",
+"tag": [
+640,
+205
+]
+},
+{
+"id": "kauntaa2",
+"ja": "カウンター",
+"kana": "カウンター",
+"ro": "kauntā",
+"en": "counter",
+"tag": [
+650,
+400
+]
+},
+{
+"id": "shohoosen",
+"ja": "処方箋",
+"kana": "しょほうせん",
+"ro": "shohōsen",
+"en": "prescription",
+"tag": [
+585,
+276
+]
+}
+]
+},
+"money": {
+"title": "お金",
+"en": "Japanese money: six coins, three notes, a wallet and a tray with change",
+"w": 800,
+"h": 500,
+"items": [
+{
+"id": "ichien",
+"ja": "1円玉",
+"kana": "いちえんだま",
+"ro": "ichien-dama",
+"en": "1-yen coin",
+"tag": [
+70,
+186
+]
+},
+{
+"id": "goen",
+"ja": "5円玉",
+"kana": "ごえんだま",
+"ro": "goen-dama",
+"en": "5-yen coin",
+"tag": [
+180,
+186
+]
+},
+{
+"id": "juuen",
+"ja": "10円玉",
+"kana": "じゅうえんだま",
+"ro": "jūen-dama",
+"en": "10-yen coin",
+"tag": [
+294,
+186
+]
+},
+{
+"id": "gojuuen",
+"ja": "50円玉",
+"kana": "ごじゅうえんだま",
+"ro": "gojūen-dama",
+"en": "50-yen coin",
+"tag": [
+411,
+186
+]
+},
+{
+"id": "hyakuen",
+"ja": "100円玉",
+"kana": "ひゃくえんだま",
+"ro": "hyakuen-dama",
+"en": "100-yen coin",
+"tag": [
+523,
+186
+]
+},
+{
+"id": "gohyakuen",
+"ja": "500円玉",
+"kana": "ごひゃくえんだま",
+"ro": "gohyakuen-dama",
+"en": "500-yen coin",
+"tag": [
+638,
+186
+]
+},
+{
+"id": "senensatsu",
+"ja": "千円札",
+"kana": "せんえんさつ",
+"ro": "sen'en-satsu",
+"en": "1,000-yen note",
+"tag": [
+140,
+372
+]
+},
+{
+"id": "gosenensatsu",
+"ja": "五千円札",
+"kana": "ごせんえんさつ",
+"ro": "gosen'en-satsu",
+"en": "5,000-yen note",
+"tag": [
+390,
+372
+]
+},
+{
+"id": "ichimanensatsu",
+"ja": "一万円札",
+"kana": "いちまんえんさつ",
+"ro": "ichiman'en-satsu",
+"en": "10,000-yen note",
+"tag": [
+640,
+372
+]
+},
+{
+"id": "saifu",
+"ja": "財布",
+"kana": "さいふ",
+"ro": "saifu",
+"en": "wallet, purse",
+"tag": [
+145,
+470
+]
+},
+{
+"id": "otsuri",
+"ja": "お釣り",
+"kana": "おつり",
+"ro": "otsuri",
+"en": "change (money given back)",
+"tag": [
+520,
+410
+]
+}
+]
+},
+"counters": {
+"title": "数え方",
+"en": "Counting things: what is counted with tsu, mai, hon, nin, hiki, satsu, dai and ko",
+"w": 800,
+"h": 426,
+"items": [
+{
+"id": "mittsu",
+"ja": "三つ",
+"kana": "みっつ",
+"ro": "mittsu",
+"en": "three (things)",
+"tag": [
+106,
+190
+]
+},
+{
+"id": "nimai",
+"ja": "二枚",
+"kana": "にまい",
+"ro": "nimai",
+"en": "two (flat things: tickets, sheets)",
+"tag": [
+302,
+190
+]
+},
+{
+"id": "sanbon",
+"ja": "三本",
+"kana": "さんぼん",
+"ro": "sanbon",
+"en": "three (long things: bottles, pens)",
+"tag": [
+498,
+190
+]
+},
+{
+"id": "futari",
+"ja": "二人",
+"kana": "ふたり",
+"ro": "futari",
+"en": "two people",
+"tag": [
+694,
+190
+]
+},
+{
+"id": "ippiki",
+"ja": "一匹",
+"kana": "いっぴき",
+"ro": "ippiki",
+"en": "one (small animal)",
+"tag": [
+106,
+396
+]
+},
+{
+"id": "nisatsu",
+"ja": "二冊",
+"kana": "にさつ",
+"ro": "nisatsu",
+"en": "two (books)",
+"tag": [
+302,
+396
+]
+},
+{
+"id": "ichidai",
+"ja": "一台",
+"kana": "いちだい",
+"ro": "ichidai",
+"en": "one (machine, vehicle)",
+"tag": [
+498,
+396
+]
+},
+{
+"id": "yonko",
+"ja": "四個",
+"kana": "よんこ",
+"ro": "yonko",
+"en": "four (small objects)",
+"tag": [
+694,
+396
+]
+}
+]
+},
+"clock": {
+"title": "時間",
+"en": "Telling the time: six clocks, a.m. and p.m., and the times of day",
+"w": 800,
+"h": 460,
+"items": [
+{
+"id": "ichiji",
+"ja": "一時",
+"kana": "いちじ",
+"ro": "ichiji",
+"en": "one o'clock",
+"tag": [
+75,
+174
+]
+},
+{
+"id": "yoji",
+"ja": "四時",
+"kana": "よじ",
+"ro": "yoji",
+"en": "four o'clock",
+"tag": [
+205,
+174
+]
+},
+{
+"id": "shichiji",
+"ja": "七時",
+"kana": "しちじ",
+"ro": "shichiji",
+"en": "seven o'clock",
+"tag": [
+335,
+174
+]
+},
+{
+"id": "kuji",
+"ja": "九時",
+"kana": "くじ",
+"ro": "kuji",
+"en": "nine o'clock",
+"tag": [
+465,
+174
+]
+},
+{
+"id": "sanjihan",
+"ja": "三時半",
+"kana": "さんじはん",
+"ro": "sanji han",
+"en": "half past three",
+"tag": [
+595,
+174
+]
+},
+{
+"id": "juujijuugofun",
+"ja": "十時十五分",
+"kana": "じゅうじじゅうごふん",
+"ro": "jūji jūgofun",
+"en": "a quarter past ten",
+"tag": [
+725,
+174
+]
+},
+{
+"id": "gozen",
+"ja": "午前",
+"kana": "ごぜん",
+"ro": "gozen",
+"en": "a.m., morning",
+"tag": [
+220,
+288
+]
+},
+{
+"id": "gogo",
+"ja": "午後",
+"kana": "ごご",
+"ro": "gogo",
+"en": "p.m., afternoon",
+"tag": [
+580,
+288
+]
+},
+{
+"id": "asa",
+"ja": "朝",
+"kana": "あさ",
+"ro": "asa",
+"en": "morning",
+"tag": [
+125,
+352
+]
+},
+{
+"id": "hiru",
+"ja": "昼",
+"kana": "ひる",
+"ro": "hiru",
+"en": "noon, daytime",
+"tag": [
+310,
+422
+]
+},
+{
+"id": "yuugata",
+"ja": "夕方",
+"kana": "ゆうがた",
+"ro": "yūgata",
+"en": "early evening",
+"tag": [
+495,
+352
+]
+},
+{
+"id": "yoru",
+"ja": "夜",
+"kana": "よる",
+"ro": "yoru",
+"en": "night",
+"tag": [
+677,
+422
+]
+}
+]
+},
+"week": {
+"title": "曜日",
+"en": "The days of the week, each with the picture behind its first kanji, and today, yesterday, tomorrow and the weekend",
+"w": 800,
+"h": 380,
+"items": [
+{
+"id": "getsuyoobi",
+"ja": "月曜日",
+"kana": "げつようび",
+"ro": "getsuyōbi",
+"en": "Monday",
+"tag": [
+66,
+240
+]
+},
+{
+"id": "kayoobi",
+"ja": "火曜日",
+"kana": "かようび",
+"ro": "kayōbi",
+"en": "Tuesday",
+"tag": [
+176,
+240
+]
+},
+{
+"id": "suiyoobi",
+"ja": "水曜日",
+"kana": "すいようび",
+"ro": "suiyōbi",
+"en": "Wednesday",
+"tag": [
+286,
+240
+]
+},
+{
+"id": "mokuyoobi",
+"ja": "木曜日",
+"kana": "もくようび",
+"ro": "mokuyōbi",
+"en": "Thursday",
+"tag": [
+396,
+240
+]
+},
+{
+"id": "kinyoobi",
+"ja": "金曜日",
+"kana": "きんようび",
+"ro": "kin'yōbi",
+"en": "Friday",
+"tag": [
+506,
+240
+]
+},
+{
+"id": "doyoobi",
+"ja": "土曜日",
+"kana": "どようび",
+"ro": "doyōbi",
+"en": "Saturday",
+"tag": [
+616,
+240
+]
+},
+{
+"id": "nichiyoobi",
+"ja": "日曜日",
+"kana": "にちようび",
+"ro": "nichiyōbi",
+"en": "Sunday",
+"tag": [
+726,
+240
+]
+},
+{
+"id": "kinoo",
+"ja": "昨日",
+"kana": "きのう",
+"ro": "kinō",
+"en": "yesterday",
+"tag": [
+205,
+56
+]
+},
+{
+"id": "kyoo",
+"ja": "今日",
+"kana": "きょう",
+"ro": "kyō",
+"en": "today",
+"tag": [
+286,
+56
+]
+},
+{
+"id": "ashita",
+"ja": "明日",
+"kana": "あした",
+"ro": "ashita",
+"en": "tomorrow",
+"tag": [
+367,
+56
+]
+},
+{
+"id": "shuumatsu",
+"ja": "週末",
+"kana": "しゅうまつ",
+"ro": "shūmatsu",
+"en": "weekend",
+"tag": [
+675,
+324
+]
+},
+{
+"id": "maishuu",
+"ja": "毎週",
+"kana": "まいしゅう",
+"ro": "maishū",
+"en": "every week",
+"tag": [
+400,
+350
+]
+}
+]
+},
+"town": {
+"title": "町",
+"en": "A town street: twelve buildings and places, each with a picture sign",
+"w": 800,
+"h": 600,
+"items": [
+{
+"id": "eki",
+"ja": "駅",
+"kana": "えき",
+"ro": "eki",
+"en": "station",
+"tag": [
+100,
+118
+]
+},
+{
+"id": "ginkoo",
+"ja": "銀行",
+"kana": "ぎんこう",
+"ro": "ginkō",
+"en": "bank",
+"tag": [
+265,
+88
+]
+},
+{
+"id": "yuubinkyoku",
+"ja": "郵便局",
+"kana": "ゆうびんきょく",
+"ro": "yūbinkyoku",
+"en": "post office",
+"tag": [
+410,
+128
+]
+},
+{
+"id": "byooin",
+"ja": "病院",
+"kana": "びょういん",
+"ro": "byōin",
+"en": "hospital",
+"tag": [
+595,
+48
+]
+},
+{
+"id": "kooban",
+"ja": "交番",
+"kana": "こうばん",
+"ro": "kōban",
+"en": "police box",
+"tag": [
+740,
+138
+]
+},
+{
+"id": "konbini2",
+"ja": "コンビニ",
+"kana": "コンビニ",
+"ro": "konbini",
+"en": "convenience store",
+"tag": [
+90,
+432
+]
+},
+{
+"id": "yakkyoku",
+"ja": "薬局",
+"kana": "やっきょく",
+"ro": "yakkyoku",
+"en": "pharmacy",
+"tag": [
+240,
+432
+]
+},
+{
+"id": "jinja",
+"ja": "神社",
+"kana": "じんじゃ",
+"ro": "jinja",
+"en": "Shinto shrine",
+"tag": [
+360,
+420
+]
+},
+{
+"id": "otera",
+"ja": "お寺",
+"kana": "おてら",
+"ro": "otera",
+"en": "Buddhist temple",
+"tag": [
+505,
+410
+]
+},
+{
+"id": "basutei",
+"ja": "バス停",
+"kana": "バスてい",
+"ro": "basutei",
+"en": "bus stop",
+"tag": [
+602,
+392
+]
+},
+{
+"id": "kooen",
+"ja": "公園",
+"kana": "こうえん",
+"ro": "kōen",
+"en": "park",
+"tag": [
+700,
+432
+]
+},
+{
+"id": "toire",
+"ja": "トイレ",
+"kana": "トイレ",
+"ro": "toire",
+"en": "toilet(s)",
+"tag": [
+735,
+390
+]
+}
+]
+},
+"washitsu": {
+"title": "和室",
+"en": "A Japanese-style room: tatami, sliding doors and screens, the alcove, a low table, and a futon laid out",
+"w": 800,
+"h": 540,
+"items": [
+{
+"id": "tatami",
+"ja": "畳",
+"kana": "たたみ",
+"ro": "tatami",
+"en": "tatami mat",
+"tag": [
+300,
+510
+]
+},
+{
+"id": "fusuma",
+"ja": "襖",
+"kana": "ふすま",
+"ro": "fusuma",
+"en": "sliding paper door (opaque)",
+"tag": [
+135,
+40
+]
+},
+{
+"id": "tokonoma",
+"ja": "床の間",
+"kana": "とこのま",
+"ro": "tokonoma",
+"en": "alcove for a scroll and flowers",
+"tag": [
+370,
+40
+]
+},
+{
+"id": "kakejiku",
+"ja": "掛け軸",
+"kana": "かけじく",
+"ro": "kakejiku",
+"en": "hanging scroll",
+"tag": [
+355,
+316
+]
+},
+{
+"id": "shooji",
+"ja": "障子",
+"kana": "しょうじ",
+"ro": "shōji",
+"en": "sliding paper screen",
+"tag": [
+635,
+40
+]
+},
+{
+"id": "zataku",
+"ja": "座卓",
+"kana": "ざたく",
+"ro": "zataku",
+"en": "low table",
+"tag": [
+280,
+452
+]
+},
+{
+"id": "zabuton",
+"ja": "座布団",
+"kana": "ざぶとん",
+"ro": "zabuton",
+"en": "floor cushion",
+"tag": [
+60,
+440
+]
+},
+{
+"id": "futon",
+"ja": "布団",
+"kana": "ふとん",
+"ro": "futon",
+"en": "futon (bedding)",
+"tag": [
+620,
+515
+]
+},
+{
+"id": "makura",
+"ja": "枕",
+"kana": "まくら",
+"ro": "makura",
+"en": "pillow",
+"tag": [
+765,
+395
+]
+},
+{
+"id": "yukata",
+"ja": "浴衣",
+"kana": "ゆかた",
+"ro": "yukata",
+"en": "cotton kimono for the room and bath",
+"tag": [
+460,
+516
+]
+},
+{
+"id": "surippa",
+"ja": "スリッパ",
+"kana": "スリッパ",
+"ro": "surippa",
+"en": "slippers",
+"tag": [
+56,
+498
+]
+}
+]
+},
+"bath": {
+"title": "トイレとお風呂",
+"en": "A toilet with its flush lever, and a Japanese bathroom with a tub, shower, stool and washbowl",
+"w": 800,
+"h": 520,
+"items": [
+{
+"id": "toire2",
+"ja": "トイレ",
+"kana": "トイレ",
+"ro": "toire",
+"en": "toilet",
+"tag": [
+150,
+470
+]
+},
+{
+"id": "nagasu",
+"ja": "流す",
+"kana": "ながす",
+"ro": "nagasu",
+"en": "flush",
+"tag": [
+200,
+222
+]
+},
+{
+"id": "dai",
+"ja": "大",
+"kana": "だい",
+"ro": "dai",
+"en": "big (full flush)",
+"tag": [
+270,
+236
+]
+},
+{
+"id": "shoo",
+"ja": "小",
+"kana": "しょう",
+"ro": "shō",
+"en": "small (half flush)",
+"tag": [
+270,
+280
+]
+},
+{
+"id": "toiretto-peepaa",
+"ja": "トイレットペーパー",
+"kana": "トイレットペーパー",
+"ro": "toiretto pēpā",
+"en": "toilet paper",
+"tag": [
+90,
+216
+]
+},
+{
+"id": "yubune",
+"ja": "湯船",
+"kana": "ゆぶね",
+"ro": "yubune",
+"en": "bathtub",
+"tag": [
+670,
+380
+]
+},
+{
+"id": "shawaa",
+"ja": "シャワー",
+"kana": "シャワー",
+"ro": "shawā",
+"en": "shower",
+"tag": [
+440,
+60
+]
+},
+{
+"id": "jaguchi",
+"ja": "蛇口",
+"kana": "じゃぐち",
+"ro": "jaguchi",
+"en": "tap, faucet",
+"tag": [
+430,
+300
+]
+},
+{
+"id": "oke",
+"ja": "桶",
+"kana": "おけ",
+"ro": "oke",
+"en": "washbowl",
+"tag": [
+420,
+466
+]
+},
+{
+"id": "isu2",
+"ja": "風呂椅子",
+"kana": "ふろいす",
+"ro": "furo-isu",
+"en": "bath stool",
+"tag": [
+515,
+470
+]
+},
+{
+"id": "sekken",
+"ja": "石鹸",
+"kana": "せっけん",
+"ro": "sekken",
+"en": "soap",
+"tag": [
+370,
+356
+]
+},
+{
+"id": "shanpuu",
+"ja": "シャンプー",
+"kana": "シャンプー",
+"ro": "shanpū",
+"en": "shampoo",
+"tag": [
+484,
+360
+]
+},
+{
+"id": "taoru",
+"ja": "タオル",
+"kana": "タオル",
+"ro": "taoru",
+"en": "towel",
+"tag": [
+665,
+230
+]
+},
+{
+"id": "kagami",
+"ja": "鏡",
+"kana": "かがみ",
+"ro": "kagami",
+"en": "mirror",
+"tag": [
+525,
+60
+]
+}
+]
+}
+}
