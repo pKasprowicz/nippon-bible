@@ -4,6 +4,14 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.23.0] - 2026-11-24
+
+### Added
+- **Kana test.** A tests-only module between the katakana and kanji courses that checks hiragana and katakana together: reading (choose or type), listening, twin pairs (あ ↔ ア), look-alikes within and across the scripts (シ/ツ, ぬ/め, り/リ) and real words, in four levels and a 40-question final exam. After each test a report colours every character by result and links the weakest to the course unit that teaches them.
+
+### Changed
+- The home page shows the five course tiles in one row on wide screens.
+
 ## [1.22.2] - 2026-11-24
 
 ### Added
