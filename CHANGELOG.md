@@ -4,6 +4,11 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.22.1] - 2026-11-24
+
+### Added
+- **Full screen for pictures.** Every picture in the picture dictionary has a Full screen button: the picture fills the window at the largest size that fits, with its labels and quizzes, and the browser's bars are hidden where the browser allows it. Esc or Close returns to the page. On a phone held sideways the toolbar is compact; held upright, a hint suggests turning it.
+
 ## [1.22.0] - 2026-11-24
 
 ### Added
