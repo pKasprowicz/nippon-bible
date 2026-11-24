@@ -12,7 +12,7 @@ const fail = (msg) => errors.push(msg);
 const app = readFileSync('assets/app.js', 'utf8');
 const entries = [...app.matchAll(/\{ id: '([^']+)', file: '([^']+)'/g)].map((m) => ({ id: m[1], file: m[2] }));
 const registered = entries.map((e) => e.file);
-const pageFiles = ['lessons', 'hiragana', 'katakana', 'kanji', 'cuisine', 'folklore', 'popculture', 'bathing', 'railways', 'festivals', 'pictures', 'signs'].flatMap((dir) =>
+const pageFiles = ['lessons', 'hiragana', 'katakana', 'kanji', 'cuisine', 'folklore', 'popculture', 'bathing', 'railways', 'festivals', 'pictures', 'kanatest', 'signs'].flatMap((dir) =>
   readdirSync(dir).filter((f) => f.endsWith('.md')).map((f) => `${dir}/${f}`));
 for (const e of entries) if (!existsSync(e.file)) fail(`assets/app.js lists '${e.id}' but ${e.file} is missing`);
 for (const f of pageFiles) if (!registered.includes(f)) fail(`${f} is not listed in LESSONS in assets/app.js`);
@@ -157,6 +157,19 @@ for (const hb of HANDBOOKS) {
     }
   }
   for (const id of Object.keys(scenes)) if (!used.has(id)) fail(`pictures/scenes.json: picture '${id}' is not used by any page`);
+}
+
+// 4d. Kana tests: every ```kanatest block has a known kind and level, and word tests have words.
+for (const file of pageFiles.filter((f) => f.startsWith('kanatest/'))) {
+  const text = readFileSync(file, 'utf8');
+  for (const [, body] of text.matchAll(/```kanatest\n([\s\S]*?)```/g)) {
+    const cfg = Object.fromEntries([...body.matchAll(/^(\w+):\s*(.*)$/gm)].map((m) => [m[1], m[2].trim()]));
+    const rows = body.split('\n').filter((l) => l.includes('|'));
+    if (!['read', 'listen', 'twins', 'lookalike', 'words', 'exam'].includes(cfg.kind)) fail(`${file}: kanatest '${cfg.title}' has unknown kind '${cfg.kind}'`);
+    if (cfg.level && !['basic', 'voiced', 'combo', 'all'].includes(cfg.level)) fail(`${file}: kanatest '${cfg.title}' has unknown level '${cfg.level}'`);
+    if (cfg.kind === 'words' && rows.length < 4) fail(`${file}: kanatest '${cfg.title}' needs at least 4 word rows`);
+    for (const r of rows) if (r.split('|').length < 3) fail(`${file}: kanatest row "${r}" needs word | romaji | meaning`);
+  }
 }
 
 // 4b. Installable offline app: manifest icons exist; the service worker can be stamped at deploy.

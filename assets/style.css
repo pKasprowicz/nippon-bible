@@ -14,6 +14,7 @@
   --tile-hira: #2f5f9e;
   --tile-kata: #2f7d4f;
   --tile-kanji: #7b4b94;
+  --tile-kanatest: #3f5f8a;
   --tile-cuisine: #94530f;
   --tile-folklore: #5b4a8a;
   --tile-popculture: #a3385f;
@@ -35,14 +36,14 @@
     --bg: #15130f; --surface: #1e1b17; --surface-2: #27231e; --ink: #efe8dd; --ink-soft: #b2a898;
     --line: #36302a; --accent: #e5594c; --accent-ink: #1a0c0a; --accent-soft: #3a201c; --good: #6cc48f;
     --code-bg: #24201b; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 24px rgba(0,0,0,.25); color-scheme: dark;
-    --tile-guide: #e5594c; --tile-hira: #6f9fe0; --tile-kata: #6cc48f; --tile-kanji: #c39be0; --tile-cuisine: #e3a35a; --tile-folklore: #a99ae0; --tile-popculture: #e88aab; --tile-bathing: #6fb8d6; --tile-railways: #8fb0e0; --tile-festivals: #d9b45a; --tile-pictures: #6cc1b8; --tile-signs: #6cc7bb;
+    --tile-guide: #e5594c; --tile-hira: #6f9fe0; --tile-kata: #6cc48f; --tile-kanji: #c39be0; --tile-kanatest: #8fb3d9; --tile-cuisine: #e3a35a; --tile-folklore: #a99ae0; --tile-popculture: #e88aab; --tile-bathing: #6fb8d6; --tile-railways: #8fb0e0; --tile-festivals: #d9b45a; --tile-pictures: #6cc1b8; --tile-signs: #6cc7bb;
   }
 }
 :root[data-theme="dark"] {
   --bg: #15130f; --surface: #1e1b17; --surface-2: #27231e; --ink: #efe8dd; --ink-soft: #b2a898;
   --line: #36302a; --accent: #e5594c; --accent-ink: #1a0c0a; --accent-soft: #3a201c; --good: #6cc48f;
   --code-bg: #24201b; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 24px rgba(0,0,0,.25); color-scheme: dark;
-    --tile-guide: #e5594c; --tile-hira: #6f9fe0; --tile-kata: #6cc48f; --tile-kanji: #c39be0; --tile-cuisine: #e3a35a; --tile-folklore: #a99ae0; --tile-popculture: #e88aab; --tile-bathing: #6fb8d6; --tile-railways: #8fb0e0; --tile-festivals: #d9b45a; --tile-pictures: #6cc1b8; --tile-signs: #6cc7bb;
+    --tile-guide: #e5594c; --tile-hira: #6f9fe0; --tile-kata: #6cc48f; --tile-kanji: #c39be0; --tile-kanatest: #8fb3d9; --tile-cuisine: #e3a35a; --tile-folklore: #a99ae0; --tile-popculture: #e88aab; --tile-bathing: #6fb8d6; --tile-railways: #8fb0e0; --tile-festivals: #d9b45a; --tile-pictures: #6cc1b8; --tile-signs: #6cc7bb;
 }
 
 * { box-sizing: border-box; }
@@ -201,7 +202,7 @@ details[open] summary { border-bottom: 1px solid var(--line); margin-bottom: 8px
 .home-hero-kicker { margin: 0 0 6px; font-size: 14px; font-weight: 600; color: var(--accent); letter-spacing: .02em; }
 .content .home-hero h1 { font-size: clamp(34px, 5vw, 52px); margin: 0 0 12px; }
 .home-lead { font-size: 18px; color: var(--ink-soft); margin: 0; }
-.home-tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.home-tiles { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
 .home-tile {
   --tile: var(--tile-guide);
   position: relative; display: flex; flex-direction: column; gap: 6px; min-height: 360px; padding: 24px 22px 20px;
@@ -211,6 +212,8 @@ details[open] summary { border-bottom: 1px solid var(--line); margin-bottom: 8px
 .home-tile.tile-hiragana { --tile: var(--tile-hira); }
 .home-tile.tile-katakana { --tile: var(--tile-kata); }
 .home-tile.tile-kanji { --tile: var(--tile-kanji); }
+.home-tile.tile-kanatest { --tile: var(--tile-kanatest); }
+.tile-kanatest .home-glyph { font-size: 34px; letter-spacing: -.02em; }
 .home-tile.tile-cuisine { --tile: var(--tile-cuisine); grid-column: 1 / -1; min-height: 0; }
 .home-tile.tile-folklore { --tile: var(--tile-folklore); grid-column: 1 / -1; min-height: 0; }
 .home-tile.tile-popculture { --tile: var(--tile-popculture); grid-column: 1 / -1; min-height: 0; }
@@ -253,7 +256,7 @@ details[open] summary { border-bottom: 1px solid var(--line); margin-bottom: 8px
 :root[data-theme="dark"] .home-cta { color: #10100e; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .home-cta { color: #10100e; } }
 .home-foot { margin: 26px 0 0; color: var(--ink-soft); font-size: 14px; }
-@media (max-width: 1439px) { .home-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 1439px) { .home-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } .home-tile.tile-guide { grid-column: 1 / -1; min-height: 0; } }
 @media (max-width: 720px) {
   .home-tiles { grid-template-columns: minmax(0, 1fr); }
   .home-tile { min-height: 0; }
@@ -779,3 +782,27 @@ html.pic-lock, html.pic-lock body { overflow: hidden; }
 .pic-opt.right { background: #2f9a5a; color: #fff; border-color: #2f9a5a; }
 .pic-opt.wrong { background: #c0392b; color: #fff; border-color: #c0392b; }
 tr.pic-row-on td { background: color-mix(in srgb, #e5594c 14%, transparent); }
+
+/* ---------- kana test ---------- */
+.kt .hw-big { margin: 4px 0 10px; }
+.kt-listen { margin: 6px 0 12px; }
+.kt-twins { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-width: 420px; margin: 10px auto 0; }
+.kt-col { display: grid; gap: 8px; }
+.kt-tile { font-size: 30px; padding: 8px 0; border-radius: 12px; border: 2px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+.kt-tile.sel { border-color: var(--accent); background: var(--accent-soft); }
+.kt-tile.done { border-color: var(--good); background: color-mix(in srgb, var(--good) 14%, var(--surface)); opacity: .7; cursor: default; }
+.kt-tile.wrong { animation: kt-shake .35s; border-color: var(--accent); }
+@keyframes kt-shake { 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
+@media (prefers-reduced-motion: reduce) { .kt-tile.wrong { animation: none; } }
+.kt-twin-note { min-height: 1.4em; text-align: center; }
+.kt-report { display: grid; gap: 12px; margin: 10px 0; }
+.kt-grid-head { margin: 0 0 4px; font-size: 13px; font-weight: 700; color: var(--ink-soft); text-transform: uppercase; letter-spacing: .06em; }
+.kt-grid { display: flex; flex-wrap: wrap; gap: 4px; }
+.kt-cell { display: inline-grid; place-items: center; min-width: 34px; height: 34px; padding: 0 4px; border-radius: 8px; font-size: 18px; border: 1px solid var(--line); background: var(--surface); }
+.kt-cell.good { background: color-mix(in srgb, var(--good) 22%, var(--surface)); border-color: color-mix(in srgb, var(--good) 50%, transparent); }
+.kt-cell.mid { background: color-mix(in srgb, #e0a020 26%, var(--surface)); border-color: color-mix(in srgb, #e0a020 55%, transparent); }
+.kt-cell.bad { background: var(--accent-soft); border-color: var(--accent); }
+.kt-legend .kt-cell { min-width: 16px; height: 16px; vertical-align: -3px; padding: 0; }
+.kt-weak-head { margin: 14px 0 4px; font-weight: 700; }
+.kt-weak { margin: 0 0 10px; padding-left: 1.2em; }
+.kt-weak-k { font-size: 20px; font-weight: 700; }

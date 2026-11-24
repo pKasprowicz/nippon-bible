@@ -24,7 +24,7 @@ const json = (f) => (existsSync(ROOT + f) ? JSON.parse(read(f)) : []);
 export const JA_RUN = /[々぀-ヿ㐀-䶿一-鿿～〜]+(?:[、。\s]?[々぀-ヿ㐀-䶿一-鿿～〜]+)*/g;
 const JA_ONLY = /^[々぀-ヿ㐀-䶿一-鿿～〜、。・\s　（）()…！？]+$/;
 // Fenced blocks that are exercises: their text is not explained, so it needs no pop-up.
-export const EXERCISE_BLOCKS = /^```(quiz|practice|game|cards|review|reset|map|contrast)[^\n]*\n[\s\S]*?^```[ \t]*$/gm;
+export const EXERCISE_BLOCKS = /^```(quiz|practice|game|cards|review|reset|map|contrast|kanatest)[^\n]*\n[\s\S]*?^```[ \t]*$/gm;
 
 // Plain text of a Markdown fragment: links to their text, emphasis and code marks dropped.
 export const plain = (s) => s.replace(/!\[[^\]]*\]\([^)]*\)/g, '').replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
