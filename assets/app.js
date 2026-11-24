@@ -976,9 +976,103 @@
       box.classList.toggle('pic-quiz', m !== 'study');
       seg.querySelectorAll('.chip').forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-mode') === m); b.setAttribute('aria-pressed', b.getAttribute('data-mode') === m); });
       prompt.hidden = m === 'study';
-      if (m === 'study') caption.textContent = 'Tap anything in the picture to hear its name.';
+      if (m === 'study') caption.textContent = 'Tap anything in the picture to hear its name. Pinch, double-tap or use + to zoom; drag to move.';
       else startQuiz(m);
     }
+    // ---------- zoom and pan ----------
+    // The frame is scaled and moved inside the stage. Pinch, the + / − buttons, a double tap,
+    // or the wheel (Ctrl + wheel on the page, any wheel in full screen) zoom; dragging moves a
+    // zoomed picture. Labels keep their size. A drag never counts as a tap on an object.
+    var Z = { z: 1, x: 0, y: 0 }, MAXZ = 5;
+    function bounds() {
+      var sw = stage.clientWidth, sh = stage.clientHeight, fw = frame.offsetWidth, fh = frame.offsetHeight;
+      return { sw: sw, sh: sh, fw: fw, fh: fh, ol: frame.offsetLeft, ot: frame.offsetTop };
+    }
+    function clampAxis(t, size, view, off) {
+      return size <= view ? (view - size) / 2 - off : Math.min(-off, Math.max(view - off - size, t));
+    }
+    function applyZoom() {
+      var b = bounds();
+      Z.x = clampAxis(Z.x, b.fw * Z.z, b.sw, b.ol);
+      Z.y = clampAxis(Z.y, b.fh * Z.z, b.sh, b.ot);
+      if (Z.z === 1) { Z.x = 0; Z.y = 0; }
+      frame.style.transform = Z.z === 1 ? '' : 'translate(' + Z.x + 'px,' + Z.y + 'px) scale(' + Z.z + ')';
+      frame.style.setProperty('--z', Z.z);
+      stage.classList.toggle('pic-zoomed', Z.z > 1);
+      zoomOut.disabled = Z.z <= 1; zoomReset.disabled = Z.z <= 1; zoomIn.disabled = Z.z >= MAXZ;
+    }
+    function zoomAt(px, py, nz) {
+      nz = Math.max(1, Math.min(MAXZ, nz));
+      var b = bounds(), cx = (px - b.ol - Z.x) / Z.z, cy = (py - b.ot - Z.y) / Z.z;
+      Z.x = px - b.ol - cx * nz; Z.y = py - b.ot - cy * nz; Z.z = nz;
+      applyZoom();
+    }
+    function zoomCentre(f) { zoomAt(stage.clientWidth / 2, stage.clientHeight / 2, Z.z * f); }
+    function resetZoom() { Z.z = 1; Z.x = 0; Z.y = 0; applyZoom(); }
+    var zoomIn = el('button', { type: 'button', 'class': 'pic-zbtn', 'aria-label': 'Zoom in', text: '+', onclick: function () { zoomCentre(1.6); } });
+    var zoomOut = el('button', { type: 'button', 'class': 'pic-zbtn', 'aria-label': 'Zoom out', text: '−', onclick: function () { zoomCentre(1 / 1.6); } });
+    var zoomReset = el('button', { type: 'button', 'class': 'pic-zbtn', 'aria-label': 'Show the whole picture', text: '⤢', onclick: resetZoom });
+    stage.appendChild(el('div', { 'class': 'pic-zoom' }, [zoomIn, zoomOut, zoomReset]));
+    function local(e) { var r = stage.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; }
+    var ptrs = {}, gesture = null, dragged = false, lastTap = null;
+    stage.addEventListener('pointerdown', function (e) {
+      if (e.target.closest('.pic-zoom')) return;
+      ptrs[e.pointerId] = local(e);
+      var ids = Object.keys(ptrs);
+      if (ids.length === 2) {
+        var a = ptrs[ids[0]], c = ptrs[ids[1]];
+        gesture = { kind: 'pinch', d: Math.hypot(a[0] - c[0], a[1] - c[1]) || 1, z: Z.z };
+      } else if (ids.length === 1) {
+        gesture = { kind: 'pan', p: ptrs[ids[0]], x: Z.x, y: Z.y, moved: 0 };
+        dragged = false;
+      }
+    });
+    window.addEventListener('pointermove', function (e) {
+      if (!ptrs[e.pointerId] || !gesture) return;
+      var p = local(e), prev = ptrs[e.pointerId]; ptrs[e.pointerId] = p;
+      var ids = Object.keys(ptrs);
+      if (gesture.kind === 'pinch' && ids.length === 2) {
+        var a = ptrs[ids[0]], c = ptrs[ids[1]];
+        zoomAt((a[0] + c[0]) / 2, (a[1] + c[1]) / 2, gesture.z * Math.hypot(a[0] - c[0], a[1] - c[1]) / gesture.d);
+        dragged = true;
+      } else if (gesture.kind === 'pan') {
+        gesture.moved += Math.abs(p[0] - prev[0]) + Math.abs(p[1] - prev[1]);
+        if (gesture.moved > 8) dragged = true;
+        if (Z.z > 1) { Z.x = gesture.x + p[0] - gesture.p[0]; Z.y = gesture.y + p[1] - gesture.p[1]; applyZoom(); }
+      }
+    });
+    function endPtr(e) {
+      if (!ptrs[e.pointerId]) return;
+      var p = ptrs[e.pointerId];
+      delete ptrs[e.pointerId];
+      if (Object.keys(ptrs).length === 0) {
+        // Double tap (touch or pen; mice use dblclick) zooms in there, or back out.
+        if (e.pointerType !== 'mouse' && !dragged && gesture && gesture.kind === 'pan') {
+          var now = Date.now();
+          if (lastTap && now - lastTap.t < 320 && Math.hypot(p[0] - lastTap.p[0], p[1] - lastTap.p[1]) < 30) {
+            if (Z.z > 1) resetZoom(); else zoomAt(p[0], p[1], 2.5);
+            lastTap = null;
+          } else lastTap = { t: now, p: p };
+        }
+        gesture = null;
+      } else if (gesture && gesture.kind === 'pinch') {
+        var id = Object.keys(ptrs)[0]; gesture = { kind: 'pan', p: ptrs[id], x: Z.x, y: Z.y, moved: 99 };
+      }
+    }
+    window.addEventListener('pointerup', endPtr);
+    window.addEventListener('pointercancel', endPtr);
+    stage.addEventListener('click', function (e) { if (dragged) { e.stopPropagation(); e.preventDefault(); dragged = false; } }, true);
+    stage.addEventListener('dblclick', function (e) {
+      if (e.target.closest('.pic-zoom')) return;
+      var p = local(e); if (Z.z > 1) resetZoom(); else zoomAt(p[0], p[1], 2.5);
+    });
+    stage.addEventListener('wheel', function (e) {
+      if (!e.ctrlKey && !e.metaKey && !box.classList.contains('pic-full')) return;
+      e.preventDefault();
+      var p = local(e); zoomAt(p[0], p[1], Z.z * Math.exp(-e.deltaY * (e.deltaMode === 1 ? 0.05 : 0.0025)));
+    }, { passive: false });
+    window.addEventListener('resize', applyZoom);
+    applyZoom();
     // Full screen: the picture fills the window (works everywhere, including iPhone); where the
     // browser allows it, real full screen also hides the browser's own bars.
     var fullBtn = el('button', { type: 'button', 'class': 'btn pic-full-btn', 'aria-pressed': 'false', title: 'Full screen (Esc to close)' });
@@ -986,6 +1080,7 @@
     function setFull(on) {
       if (on === isFull()) return;
       box.classList.toggle('pic-full', on);
+      requestAnimationFrame(resetZoom);
       document.documentElement.classList.toggle('pic-lock', on);
       fullBtn.textContent = on ? '✕ Close' : '⛶ Full screen';
       fullBtn.setAttribute('aria-pressed', String(on));
