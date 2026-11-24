@@ -89,7 +89,7 @@ for (const page of pagesFromApp()) {
   const md = readFileSync(ROOT + page.file, 'utf8').replace(/^#{2,3} Sources\b[\s\S]*?(?=^## |(?![\s\S]))/gm, '');
   // Word and station lists: "kana | romaji | …".
   for (const [, kind, body] of md.matchAll(/^```(\w+)[^\n]*\n([\s\S]*?)^```/gm)) {
-    if (kind !== 'words' && kind !== 'station') continue;
+    if (kind !== 'words' && kind !== 'station' && kind !== 'kanatest') continue;
     for (const line of body.split('\n')) {
       const cols = line.split('|').map((c) => c.trim());
       if (cols.length >= 2 && !/^\w+:/.test(line) && JA_RUN.test(cols[0])) add(cols[0], cols[1], page.id);

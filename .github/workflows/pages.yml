@@ -24,7 +24,7 @@ jobs:
         run: |
           mkdir _site
           git ls-files -z | grep -zvE '^(\.github|scripts|terms)/' | xargs -0 cp --parents -t _site
-          test -f _site/index.html && test -d _site/lessons && test -d _site/hiragana && test -d _site/katakana && test -d _site/kanji && test -d _site/cuisine/img && test -d _site/folklore/img && test -d _site/popculture/img && test -d _site/bathing/img && test -d _site/railways/img && test -d _site/festivals/img && test -f _site/pictures/scenes.json && test -f _site/assets/signs/photos.json
+          test -f _site/index.html && test -d _site/lessons && test -d _site/hiragana && test -d _site/katakana && test -d _site/kanatest && test -d _site/kanji && test -d _site/cuisine/img && test -d _site/folklore/img && test -d _site/popculture/img && test -d _site/bathing/img && test -d _site/railways/img && test -d _site/festivals/img && test -f _site/pictures/scenes.json && test -f _site/assets/signs/photos.json
           find _site -type f | wc -l
       - name: Build the search index
         run: |
