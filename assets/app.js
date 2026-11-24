@@ -11,6 +11,7 @@
     { id: 'popculture', title: 'Pop culture handbook' },
     { id: 'bathing', title: 'Bathing handbook' },
     { id: 'railways', title: 'Railways handbook' },
+    { id: 'festivals', title: 'Festivals handbook' },
     { id: 'signs', title: 'Signs in the wild' }
   ];
   var LESSONS = [
@@ -137,6 +138,21 @@
     { id: 'railways-13', file: 'railways/13-language.md', group: 'railways', title: 'Railway Japanese' },
     { id: 'railways-glossary', file: 'railways/14-glossary.md', group: 'railways', title: 'Glossary', label: 'A–Z', kind: 'Glossary' },
     { id: 'railways-sources', file: 'railways/15-sources.md', group: 'railways', title: 'Sources and image credits', label: '§', kind: 'Sources' },
+    { id: 'festivals', file: 'festivals/00-start.md', group: 'festivals', title: 'Start here', label: '★' },
+    { id: 'festivals-1', file: 'festivals/01-calendars.md', group: 'festivals', title: 'The old calendar and the switch of 1873' },
+    { id: 'festivals-2', file: 'festivals/02-solar-terms.md', group: 'festivals', title: 'Solar terms, lucky days and month names' },
+    { id: 'festivals-3', file: 'festivals/03-holidays.md', group: 'festivals', title: 'National holidays and Golden Week' },
+    { id: 'festivals-4', file: 'festivals/04-sekku.md', group: 'festivals', title: 'The five seasonal festivals' },
+    { id: 'festivals-5', file: 'festivals/05-new-year.md', group: 'festivals', title: 'New Year' },
+    { id: 'festivals-6', file: 'festivals/06-spring.md', group: 'festivals', title: 'Setsubun and spring' },
+    { id: 'festivals-7', file: 'festivals/07-summer.md', group: 'festivals', title: 'Summer: Bon, dances and fireworks' },
+    { id: 'festivals-8', file: 'festivals/08-autumn-winter.md', group: 'festivals', title: 'Autumn and the end of the year' },
+    { id: 'festivals-9', file: 'festivals/09-matsuri.md', group: 'festivals', title: 'What a matsuri is' },
+    { id: 'festivals-10', file: 'festivals/10-great-festivals.md', group: 'festivals', title: 'The great festivals' },
+    { id: 'festivals-11', file: 'festivals/11-visiting.md', group: 'festivals', title: 'Going to a festival' },
+    { id: 'festivals-12', file: 'festivals/12-language.md', group: 'festivals', title: 'Festival and season Japanese' },
+    { id: 'festivals-glossary', file: 'festivals/13-glossary.md', group: 'festivals', title: 'Glossary', label: 'A–Z', kind: 'Glossary' },
+    { id: 'festivals-sources', file: 'festivals/14-sources.md', group: 'festivals', title: 'Sources and image credits', label: '§', kind: 'Sources' },
     { id: 'signs', file: 'signs/00-gallery.md', group: 'signs', title: 'Photo gallery', label: '▦', kind: 'Gallery' }
   ];
   // Number lessons within their group unless they have their own label.
@@ -847,7 +863,7 @@
     var i = LESSONS.findIndex(function (l) { return l.id === id; });
     var next = LESSONS[i + 1] && LESSONS[i + 1].group === LESSONS[i].group ? LESSONS[i + 1] : null;
     var btn = el('button', { 'class': 'btn' + (done[id] ? ' done' : ''), type: 'button' });
-    var reading = id.indexOf('cuisine') === 0 || id.indexOf('folklore') === 0 || id.indexOf('popculture') === 0 || id.indexOf('bathing') === 0 || id.indexOf('railways') === 0;
+    var reading = id.indexOf('cuisine') === 0 || id.indexOf('folklore') === 0 || id.indexOf('popculture') === 0 || id.indexOf('bathing') === 0 || id.indexOf('railways') === 0 || id.indexOf('festivals') === 0;
     function label() {
       btn.textContent = done[id] ? (reading ? '✓ Read' : '✓ Completed') : (reading ? 'Mark chapter as read' : 'Mark lesson as completed');
       btn.className = 'btn' + (done[id] ? ' done' : '');
@@ -866,7 +882,7 @@
     if (l.kind) return l.kind;
     if (l.label === '★') return l.group === 'course' ? 'Overview' : 'Start here';
     if (l.label === '↻') return 'Daily review';
-    return (l.group === 'course' ? 'Lesson ' : (l.group === 'cuisine' || l.group === 'folklore' || l.group === 'popculture' || l.group === 'bathing' || l.group === 'railways') ? 'Chapter ' : 'Unit ') + l.label;
+    return (l.group === 'course' ? 'Lesson ' : (l.group === 'cuisine' || l.group === 'folklore' || l.group === 'popculture' || l.group === 'bathing' || l.group === 'railways' || l.group === 'festivals') ? 'Chapter ' : 'Unit ') + l.label;
   }
   function neighbours(id) {
     var i = LESSONS.findIndex(function (l) { return l.id === id; });
@@ -1174,6 +1190,17 @@
       cta: !g.done ? 'Open the handbook' : g.next ? 'Continue: chapter ' + g.next.label : 'Browse the glossary'
     });
   }
+  function festivalsTile() {
+    var g = groupProgress('festivals');
+    return tile({
+      id: 'festivals', glyph: '祭', kicker: 'Festivals handbook', title: 'The Japanese year',
+      desc: 'The old calendar and the switch of 1873, solar terms and lucky days, national holidays and Golden Week, the five seasonal festivals; New Year, setsubun, cherry blossom, Bon, the harvest moon and red leaves; what a matsuri is, the great festivals from Kyoto to Sapporo, and how to join in safely. Cited from official sources, with dated festival and bloom dates.',
+      examples: '祭り · 花見 · 神輿 · 正月',
+      href: !g.done ? '#/festivals' : g.next ? '#/' + g.next.id : '#/festivals-glossary',
+      value: g.done, total: g.total, progressLabel: g.done + ' of ' + g.total + ' chapters read',
+      cta: !g.done ? 'Open the handbook' : g.next ? 'Continue: chapter ' + g.next.label : 'Browse the glossary'
+    });
+  }
   function signsTile() {
     return tile({
       id: 'signs', glyph: '看', kicker: 'Photo gallery', title: 'Signs in the wild',
@@ -1200,7 +1227,7 @@
       el('header', { 'class': 'home-hero' }, [
         el('p', { 'class': 'home-hero-kicker' }, [el('span', { lang: 'ja', text: '日本へようこそ' }), ' · welcome to Japan']),
         el('h1', { text: 'Japanese for your trip' }),
-        el('p', { 'class': 'home-lead', text: 'Ten ways in. Get the practical know-how for travelling in Japan, learn to read the scripts on every sign, menu and station board, then go deeper into how Japanese food is made, into the kami, ghosts and yōkai of Japanese belief, into manga, anime, film and the rest of Japanese pop culture, into hot springs and bathhouses, and into Japan’s railways. Then try your reading on photos of real signs.' })
+        el('p', { 'class': 'home-lead', text: 'Eleven ways in. Get the practical know-how for travelling in Japan, learn to read the scripts on every sign, menu and station board, then go deeper into how Japanese food is made, into the kami, ghosts and yōkai of Japanese belief, into manga, anime, film and the rest of Japanese pop culture, into hot springs and bathhouses, into Japan’s railways, and into the festivals and seasons of the Japanese year. Then try your reading on photos of real signs.' })
       ]),
       el('div', { 'class': 'home-tiles' }, [
         tile({
@@ -1218,6 +1245,7 @@
         popcultureTile(),
         bathingTile(),
         railwaysTile(),
+        festivalsTile(),
         signsTile()
       ]),
       el('p', { 'class': 'home-foot' }, [

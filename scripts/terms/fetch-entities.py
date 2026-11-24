@@ -4,7 +4,7 @@
 # Writes terms/entities.json. Run from the repository root: python3 scripts/terms/fetch-entities.py
 import json, re, glob, time, urllib.request, urllib.parse
 UA = {'User-Agent': 'NipponBibleTerms/1.0 (educational static site; low volume)'}
-DIRS = ['lessons', 'hiragana', 'katakana', 'kanji', 'cuisine', 'folklore', 'popculture', 'bathing', 'railways']
+DIRS = ['lessons', 'hiragana', 'katakana', 'kanji', 'cuisine', 'folklore', 'popculture', 'bathing', 'railways', 'festivals']
 urls = {}
 for d in DIRS:
     for f in sorted(glob.glob(d + '/*.md')):
