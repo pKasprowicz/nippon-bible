@@ -4,6 +4,14 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.22.0] - 2026-11-24
+
+### Added
+- **Picture dictionary: words you can see.** 19 drawn scenes in nine topics teach about 220 everyday words and 70 phrases: where things are and finding the way; a set meal, ramen, sushi and tastes; a convenience store and a restaurant; a station and a hotel; the body and a pharmacy; money and counters; clocks and the week; a town street; a Japanese-style room and the bath.
+  - **Study:** tap anything in a picture to hear its name and see it in kanji and kana; its row in the word table lights up. Romaji is hidden until you switch it on.
+  - **Find it** and **Name it** quizzes on every picture. Words you miss join the daily review of the hiragana, katakana or kanji course; *Add all to my review* adds a whole picture.
+  - Phrase tables and a self-check on every topic, with recorded audio and pop-ups.
+
 ## [1.21.0] - 2026-11-24
 
 ### Added
