@@ -4,6 +4,11 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.22.2] - 2026-11-24
+
+### Added
+- **Zoom and pan pictures.** Pictures in the picture dictionary zoom up to 5× by pinching, with the + / − buttons, by a double tap, or with Ctrl + wheel (any wheel in full screen), and a zoomed picture is moved by dragging. ⤢ shows the whole picture again. Labels keep their size, taps on objects still work, and one finger scrolls the page until the picture is zoomed.
+
 ## [1.22.1] - 2026-11-24
 
 ### Added
